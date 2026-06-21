@@ -3,6 +3,7 @@
 /data/interim/*
 /data/processed/*
 /data/features/*
+/data/scratch/                # CEM por estado (input grande, fuera de DVC y del guardarraíl 08)
 !/data/**/.gitkeep
 *.mdb
 *.kmz
