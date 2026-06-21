@@ -6,21 +6,28 @@
 regiones_hidrologicas: [12, 18, 26]
 
 cuencas_piloto:
+  # bbox = [min_lon, min_lat, max_lon, max_lat]. Aproximación generosa al área de la
+  # cuenca para (a) recortar el CEM en INEGI y (b) filtrar estaciones por geometría real
+  # (la RH del catálogo trae errores: ABASOLO Morelos figura en lon=-116 = Tijuana).
   - nombre: "Cutzamala"
     region_hidrologica: 18          # subsistema dentro de Balsas
+    bbox: [-100.7, 18.4, -99.4, 19.7]
     prioridad: 1
     cem_resolucion_m: 30
     nota: "Abastece ~30% de la ZMVM; opera recurrente <40% de capacidad útil."
   - nombre: "Lerma-Santiago"
     region_hidrologica: 12
+    bbox: [-105.7, 19.3, -99.5, 22.7]
     prioridad: 1
     cem_resolucion_m: 30
   - nombre: "Panuco"
     region_hidrologica: 26
+    bbox: [-100.7, 18.9, -97.5, 24.1]
     prioridad: 1
     cem_resolucion_m: 30
   - nombre: "Alta del Balsas"
     region_hidrologica: 18
+    bbox: [-99.5, 18.0, -97.6, 19.5]
     prioridad: 1
     cem_resolucion_m: 15          # cuenca pequeña/montañosa de cabecera: mayor detalle
     nota: "Zona de la Unidad Académica del IPN; poco estudiada. Prueba de sensibilidad a 15 m."
