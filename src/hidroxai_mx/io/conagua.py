@@ -7,7 +7,9 @@ y un catálogo maestro por tipo. No hay selector JS: la descarga es directa.
 from __future__ import annotations
 
 import io
+import os
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import pandas as pd
@@ -136,21 +138,36 @@ def read_series_csv(path: Path) -> pd.DataFrame:
 
 
 def download_series(tipo: str, claves: list[str] | None = None,
-                    limit: int | None = None, overwrite: bool = False) -> list[Path]:
-    """Descarga las series CSV directas. Si no se pasan claves, usa todo el catálogo."""
+                    limit: int | None = None, overwrite: bool = False,
+                    max_workers: int | None = None) -> list[Path]:
+    """Descarga las series CSV directas en paralelo. Si no se pasan claves, usa el catálogo.
+
+    El paralelismo (por defecto 16, o `HIDROXAI_DL_WORKERS`) acelera la ingesta nacional
+    sin saturar al servidor. `fetch` es idempotente (cache-hit) y el manifest usa lock.
+    """
     if claves is None:
         cat = download_catalog(tipo, overwrite=overwrite)
         claves = claves_from_catalog(cat)
     if limit:
         claves = claves[:limit]
-    out: list[Path] = []
-    for clave in claves:
+    if max_workers is None:
+        max_workers = int(os.environ.get("HIDROXAI_DL_WORKERS", "16"))
+
+    def _one(clave: str) -> Path | None:
         dest = RAW / "sih_series" / tipo / f"{clave}.csv"
         try:
-            out.append(fetch(series_url(tipo, clave), dest, overwrite=overwrite))
+            return fetch(series_url(tipo, clave), dest, overwrite=overwrite)
         except Exception as exc:  # noqa: BLE001
             log.warning("No se pudo descargar %s/%s: %s", tipo, clave, exc)
-    log.info("Descargadas %d/%d series (%s)", len(out), len(claves), tipo)
+            return None
+
+    out: list[Path] = []
+    with ThreadPoolExecutor(max_workers=max_workers) as ex:
+        for fut in as_completed(ex.submit(_one, c) for c in claves):
+            res = fut.result()
+            if res is not None:
+                out.append(res)
+    log.info("Descargadas %d/%d series (%s, workers=%d)", len(out), len(claves), tipo, max_workers)
     return out
 
 

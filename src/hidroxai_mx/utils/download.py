@@ -6,6 +6,7 @@ manifiesto JSON dentro de data/raw/_manifest.json para trazabilidad del snapshot
 from __future__ import annotations
 
 import json
+import threading
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,20 +17,22 @@ from . import RAW, get_logger, sha256
 
 log = get_logger("io.download")
 _MANIFEST = RAW / "_manifest.json"
+_MANIFEST_LOCK = threading.Lock()
 DEFAULT_HEADERS = {"User-Agent": "Mozilla/5.0 (HidroXAI-MX ingest)"}
 
 
 def _record(url: str, dest: Path) -> None:
-    manifest = {}
-    if _MANIFEST.exists():
-        manifest = json.loads(_MANIFEST.read_text(encoding="utf-8"))
-    manifest[str(dest.relative_to(RAW))] = {
-        "url": url,
-        "sha256": sha256(dest),
-        "bytes": dest.stat().st_size,
-        "downloaded_at": datetime.now(timezone.utc).isoformat(),
-    }
-    _MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+    with _MANIFEST_LOCK:
+        manifest = {}
+        if _MANIFEST.exists():
+            manifest = json.loads(_MANIFEST.read_text(encoding="utf-8"))
+        manifest[str(dest.relative_to(RAW))] = {
+            "url": url,
+            "sha256": sha256(dest),
+            "bytes": dest.stat().st_size,
+            "downloaded_at": datetime.now(timezone.utc).isoformat(),
+        }
+        _MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def fetch(
