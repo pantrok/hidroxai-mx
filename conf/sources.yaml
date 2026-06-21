@@ -1,0 +1,162 @@
+# =====================================================================
+# Registro central de fuentes de datos — HidroXAI-MX (OE1)
+# Estado verificado: 2026-06-18. Re-verificar antes de cada snapshot.
+# Los conectores en src/hidroxai_mx/io leen este archivo.
+# =====================================================================
+
+crs_pipeline: "EPSG:6372"      # CONUS Lambert / INEGI (metros) para distancias
+crs_geografico: "EPSG:4326"    # lon/lat de entrada
+periodo_objetivo: { inicio: "2010-01-01", fin: "2025-12-31" }
+
+fuentes:
+
+  # ---------------------------------------------------------------
+  # 1. SIH-CONAGUA — Catálogos maestros (datos.gob.mx, alternativa)
+  # ---------------------------------------------------------------
+  sih_catalogos:
+    descripcion: "Catálogos de estaciones (alternativa datos.gob.mx). El portal SIH ya trae catálogo propio (ver sih_series)."
+    estado: "OK (datos.gob.mx es SPA JS; preferir catálogo del portal SIH)"
+    formato: csv
+    licencia: "Libre Uso MX (CONAGUA)"
+    recursos:
+      estaciones_hidrometricas:
+        url: "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/3cfc549d-1aa4-4ee0-b4d4-82b21a19136f/download/estaciones_hidrometricas_sih.csv"
+      estaciones_climatologicas:
+        url: "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/2c135da3-118e-43f3-be63-39c5c3928b61/download/estaciones_climatologicas_sih2.csv"
+      presas:
+        url: "https://www.datos.gob.mx/dataset/ea2fb2bc-3974-4025-b814-a8f3e4443b67/resource/35e8d001-6195-45c7-9a1c-58a8594fb3a1/download/presas_sih.csv"
+
+  # ---------------------------------------------------------------
+  # 2. SIH-CONAGUA — Series + catálogo (CSV directo)  *** PRIMARIA ***
+  #    Verificado 2026-06-18: un CSV por estación en URL predecible
+  #    https://sih.conagua.gob.mx/basedatos/{Hidros|Climas}/<CLAVE>.csv
+  #    Codificación Latin-1; faltantes "-" o vacío; fecha YYYY/MM/DD.
+  # ---------------------------------------------------------------
+  sih_series:
+    descripcion: "Series diarias del SIH (CSV directo por estación) + catálogo maestro por tipo."
+    estado: "OK (verificado 2026-06-18)"
+    licencia: "Libre Uso MX (CONAGUA)"
+    base: "https://sih.conagua.gob.mx/basedatos/"
+    encoding: "latin-1"
+    na_values: ["-", ""]
+    hidrometricas:
+      dir: "Hidros"
+      catalogo: "0_Catalogo de estaciones hidrometricas.csv"
+      columnas_serie: ["Fecha", "Nivel(m)", "Gasto(m3/s)"]
+      region_col: "R.H."
+    climatologicas:
+      dir: "Climas"
+      catalogo: "0_Catalogo_de_estaciones_climatologicas.csv"
+      columnas_serie: ["Fecha", "Precipitacion(mm)", "Temperatura Media", "Temperatura Maxima", "Temperatura Minima", "Evaporacion(mm)"]
+      region_col: "Numero de la region hidrologica"
+    notas: >
+      El conector descarga el catálogo, lee las claves y construye la URL directa
+      por estación. BANDAS .mdb queda como respaldo histórico profundo (<2013) y presas.
+
+  # ---------------------------------------------------------------
+  # 3. BANDAS-CONAGUA — Series históricas profundas (.mdb) y presas
+  # ---------------------------------------------------------------
+  bandas:
+    descripcion: "Banco Nacional de Datos de Aguas Superficiales. Respaldo histórico (pre-2013) y presas."
+    estado: "OK (verificado 2026-06-18)"
+    formato: mdb
+    licencia: "Libre Uso MX (CONAGUA)"
+    portal: "https://app.conagua.gob.mx/bandas/"
+    tablas_mdb:
+      gastos_diarios: "DH<clave>_DM"
+      gastos_mensuales: "DH<clave>_MM"
+      anuales: "DH<clave>_AN"
+    cobertura: "1940–2013 (núcleo ~1,126 estaciones validadas)"
+
+  # ---------------------------------------------------------------
+  # 4. SMN — Redes meteorológicas (catálogos espaciales)
+  # ---------------------------------------------------------------
+  smn:
+    descripcion: "Red Climatológica Convencional (~5,400) y EMAS (~190 activas)."
+    estado: "OK (verificado 2026-06-18)"
+    licencia: "Libre Uso MX (CONAGUA-SMN)"
+    recursos:
+      estaciones_climatologicas_kmz:
+        url: "https://smn.conagua.gob.mx/tools/RESOURCES/Normales_Climatologicas/EstacionesClimatologicas.kmz"
+        formato: kmz
+      emas_kmz:
+        url: "https://smn.conagua.gob.mx/tools/DATA/Observando%20el%20Tiempo/EMAS/kml/EMAS.kmz"
+        formato: kmz
+      emas_xlsx:
+        url: "https://smn.conagua.gob.mx/tools/DATA/Observando%20el%20Tiempo/EMAS/EMAS.xlsx"
+        formato: xlsx
+    headers: { User-Agent: "Mozilla/5.0" }
+
+  # ---------------------------------------------------------------
+  # 5. CICESE-CLICOM — Series climáticas diarias (1920–2012)
+  # ---------------------------------------------------------------
+  clicom:
+    descripcion: "Datos diarios CLICOM del SMN vía CICESE (estaciones puntuales y malla 1/8°)."
+    estado: "OK (verificado 2026-06-18)"
+    formato: "csv | mat"
+    licencia: "Uso académico con cita obligatoria"
+    portal: "http://clicom-mex.cicese.mx"
+    cita: "Datos climáticos diarios del CLICOM del SMN a través de su plataforma web del CICESE (http://clicom-mex.cicese.mx)"
+
+  # ---------------------------------------------------------------
+  # 6. INEGI — Capas geoespaciales
+  # ---------------------------------------------------------------
+  inegi_cem:
+    descripcion: "Continuo de Elevaciones Mexicano 3.0 (raster GeoTIFF)."
+    estado: "OK (verificado 2026-06-18, versión 202508)"
+    formato: geotiff
+    licencia: "Términos de Libre Uso INEGI"
+    portal: "https://www.inegi.org.mx/app/geo2/elevacionesmex/"
+    resoluciones_m: [15, 30, 60, 90, 120]
+    resolucion_default: 30        # 30 m por defecto (balance precisión/costo); 15 m solo Alta del Balsas
+    nota: "Descargar por estado/cuenca recortado al bbox (descarga total no recomendable)."
+  inegi_siatl:
+    descripcion: "Red Hidrográfica 1:50,000 (líneas de flujo, subcuencas, cuerpos de agua)."
+    estado: "OK"
+    formato: shapefile
+    licencia: "Términos de Libre Uso INEGI"
+    portal: "https://antares.inegi.org.mx/analisis/red_hidro/siatl/"
+  conabio_espejo:
+    descripcion: "Red hidrográfica 1:50,000 (espejo CONABIO redsub84gw)."
+    estado: "OK (respaldo si INEGI intermitente)"
+    formato: shapefile
+    licencia: "CC BY-NC 2.5 MX"
+    portal: "http://www.conabio.gob.mx/informacion/gis/"
+
+  # ---------------------------------------------------------------
+  # 7. Acuíferos y disponibilidad subterránea
+  # ---------------------------------------------------------------
+  acuiferos:
+    descripcion: "Delimitación de 653 acuíferos + disponibilidad media anual (DOF)."
+    estado: "OK (datos.gob.mx SPA; reconfirmar descarga)"
+    formato: shapefile
+    licencia: "Libre Uso MX (CONAGUA)"
+    portales:
+      delimitacion: "https://www.datos.gob.mx/busca/dataset/acuiferos"
+      disponibilidad: "https://www.datos.gob.mx/busca/dataset/disponibilidad-de-agua-subterranea"
+
+  # ---------------------------------------------------------------
+  # 8. DataMéxico — Socioeconómico municipal (AUXILIAR, prioridad baja)
+  # ---------------------------------------------------------------
+  datamexico:
+    descripcion: "Indicadores municipales (población, agua entubada, marginación, PIB agropecuario)."
+    estado: "MIGRADO — reconfirmar endpoint API antes de usar"
+    formato: "json | csv"
+    licencia: "Libre Uso MX (Secretaría de Economía)"
+    portal: "https://www.economia.gob.mx/datamexico/"
+    api_legacy: "https://api.datamexico.org/tesseract/data.jsonrecords"
+    llave_union: "cve_municipio (2 dig estado + 3 dig municipio)"
+
+  # ---------------------------------------------------------------
+  # 9. Complementarias
+  # ---------------------------------------------------------------
+  monitor_sequia:
+    descripcion: "Monitor de Sequía de México (categorías D0–D4 quincenales por municipio)."
+    estado: "OK"
+    formato: "shp | xlsx"
+    portal: "https://smn.conagua.gob.mx/es/climatologia/monitor-de-sequia/monitor-de-sequia-en-mexico"
+  chirps:
+    descripcion: "Precipitación grillada 0.05° (USGS/UCSB) para zonas de baja densidad."
+    estado: "OK"
+    formato: "geotiff | netcdf"
+    portal: "https://data.chc.ucsb.edu/products/CHIRPS-2.0/"

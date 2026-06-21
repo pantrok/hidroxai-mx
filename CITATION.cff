@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Si usas este software o el dataset, por favor cítalo como se indica."
+title: "HidroXAI-MX: pronóstico explicable de niveles hidrométricos y clima local en México"
+abstract: >-
+  Biblioteca y pipeline reproducible para integrar, curar y versionar datos abiertos
+  hidroclimáticos de México (CONAGUA-SIH, SMN, INEGI) y para el pronóstico explicable
+  con aprendizaje profundo temporal y reglas difusas.
+type: software
+authors:
+  - family-names: "Sánchez Ruiz"
+    given-names: "Daniel"
+    affiliation: "Unidad Profesional Interdisciplinaria de Ingeniería campus Tlaxcala (UPIIT), Instituto Politécnico Nacional (IPN)"
+version: "0.1.0"
+date-released: "2026-06-21"
+license: MIT
+repository-code: "https://github.com/pantrok/hidroxai-mx"
+keywords:
+  - hidrología
+  - aprendizaje profundo
+  - series de tiempo
+  - IA explicable
+  - datos abiertos
+  - México
+  - CONAGUA
+  - SMN
+  - INEGI
+notes: >-
+  Proyecto IND-2026-0335, Instituto Politécnico Nacional (IPN), Convocatoria de
+  Proyectos de Investigación Científica y Desarrollo Tecnológico 2026.
+  Dataset curado depositado en Zenodo bajo CC BY 4.0.

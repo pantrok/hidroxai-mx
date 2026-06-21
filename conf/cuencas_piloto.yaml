@@ -1,0 +1,31 @@
+# Cuencas / regiones hidrológicas piloto para HidroXAI-MX (OE6)
+# Filtro maestro aplicado sobre los catálogos del SIH (columna de región hidrológica).
+
+# Regiones hidrológicas (número) que cubren las cuencas piloto.
+# 12 = Lerma-Santiago · 26 = Pánuco · 18 = Balsas (incluye Cutzamala y Alta del Balsas)
+regiones_hidrologicas: [12, 18, 26]
+
+cuencas_piloto:
+  - nombre: "Cutzamala"
+    region_hidrologica: 18          # subsistema dentro de Balsas
+    prioridad: 1
+    cem_resolucion_m: 30
+    nota: "Abastece ~30% de la ZMVM; opera recurrente <40% de capacidad útil."
+  - nombre: "Lerma-Santiago"
+    region_hidrologica: 12
+    prioridad: 1
+    cem_resolucion_m: 30
+  - nombre: "Panuco"
+    region_hidrologica: 26
+    prioridad: 1
+    cem_resolucion_m: 30
+  - nombre: "Alta del Balsas"
+    region_hidrologica: 18
+    prioridad: 1
+    cem_resolucion_m: 15          # cuenca pequeña/montañosa de cabecera: mayor detalle
+    nota: "Zona de la Unidad Académica del IPN; poco estudiada. Prueba de sensibilidad a 15 m."
+
+criterios_seleccion_estaciones:
+  cobertura_minima: 0.80          # ≥80% de datos no faltantes en el periodo objetivo
+  n_minimo_estaciones: 200        # OE1
+  periodo: { inicio: "2010-01-01", fin: "2025-12-31" }

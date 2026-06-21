@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5b6470"/>
+    </marker>
+    <marker id="arrowg" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2e7d5b"/>
+    </marker>
+    <style>
+      .src   { fill:#f4eef1; stroke:#7a1737; stroke-width:1.4; rx:8; }
+      .srct  { fill:#5a1129; font-size:12.5px; font-weight:600; }
+      .srcs  { fill:#8a6e78; font-size:10.5px; }
+      .stage { fill:#eef3f8; stroke:#2f5e8c; stroke-width:1.6; rx:10; }
+      .stitle{ fill:#1f3d5c; font-size:14px; font-weight:700; }
+      .stext { fill:#3a4a5a; font-size:11px; }
+      .store { fill:#fff6e9; stroke:#c98a1b; stroke-width:1.6; rx:10; }
+      .geo   { fill:#eaf5ef; stroke:#2e7d5b; stroke-width:1.5; rx:9; }
+      .geot  { fill:#1d5e42; font-size:12px; font-weight:600; }
+      .out   { fill:#7a1737; stroke:#5a1129; stroke-width:1.6; rx:10; }
+      .outt  { fill:#ffffff; font-size:13.5px; font-weight:700; }
+      .lbl   { fill:#5b6470; font-size:11px; font-style:italic; }
+      .flow  { stroke:#5b6470; stroke-width:1.8; fill:none; }
+      .flowg { stroke:#2e7d5b; stroke-width:1.8; fill:none; }
+      .star  { fill:#c9971b; font-size:11px; font-weight:700; }
+      .h     { fill:#7a1737; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1280" height="54" class="h"/>
+  <text x="28" y="34" fill="#ffffff" font-size="20" font-weight="700">HidroXAI-MX · Flujo de ingesta y curado del dataset (OE1)</text>
+  <text x="1252" y="34" fill="#f0d9e0" font-size="12" text-anchor="end">IPN · PICDT2026 — fuentes verificadas 2026-06-18</text>
+
+  <!-- ============ COLUMN 1: FUENTES ============ -->
+  <text x="30" y="84" class="lbl">Fuentes abiertas federales</text>
+
+  <!-- CONAGUA group -->
+  <rect class="src" x="30" y="94"  width="250" height="46"/>
+  <text class="srct" x="44" y="114">SIH · catálogos (CSV)</text>
+  <text class="srcs" x="44" y="130">estaciones hidro/clima/presas · claves</text>
+
+  <rect class="src" x="30" y="148" width="250" height="46"/>
+  <text class="srct" x="44" y="168">SIH · series diarias (CSV)  <tspan class="star">★ primaria</tspan></text>
+  <text class="srcs" x="44" y="184">sih.conagua.gob.mx · 2010–2025</text>
+
+  <rect class="src" x="30" y="202" width="250" height="46"/>
+  <text class="srct" x="44" y="222">BANDAS · .mdb</text>
+  <text class="srcs" x="44" y="238">respaldo histórico &lt;2013 · presas</text>
+
+  <rect class="src" x="30" y="256" width="250" height="46"/>
+  <text class="srct" x="44" y="276">SMN · KMZ / EMAS + CLICOM</text>
+  <text class="srcs" x="44" y="292">catálogos espaciales · precip/temp</text>
+
+  <rect class="src" x="30" y="310" width="250" height="46"/>
+  <text class="srct" x="44" y="330">INEGI · CEM 3.0 + SIATL</text>
+  <text class="srcs" x="44" y="346">elevación (GeoTIFF) · red hidrográfica</text>
+
+  <rect class="src" x="30" y="364" width="250" height="46"/>
+  <text class="srct" x="44" y="384">Acuíferos (SHP)</text>
+  <text class="srcs" x="44" y="400">contexto subterráneo · disponibilidad</text>
+
+  <rect class="src" x="30" y="418" width="250" height="46"/>
+  <text class="srct" x="44" y="438">DataMéxico  <tspan class="srcs">(aux · reconfirmar API)</tspan></text>
+  <text class="srcs" x="44" y="454">socioeconómico municipal</text>
+
+  <!-- ============ STAGE: L1 INGESTA ============ -->
+  <rect class="stage" x="340" y="150" width="170" height="150"/>
+  <text class="stitle" x="358" y="178">L1 · Ingesta</text>
+  <text class="stext" x="358" y="200">conectores Python</text>
+  <text class="stext" x="358" y="216">descarga incremental</text>
+  <text class="stext" x="358" y="232">caché (pooch) + hash</text>
+  <text class="stext" x="358" y="248">validación pandera</text>
+  <text class="stext" x="358" y="264">_manifest.json</text>
+  <text class="stext" x="358" y="284">(procedencia)</text>
+
+  <!-- RAW store -->
+  <rect class="store" x="340" y="318" width="170" height="60"/>
+  <text class="stitle" x="358" y="344" fill="#9a6a12">data/raw</text>
+  <text class="stext" x="358" y="364">inmutable · tal cual</text>
+
+  <!-- ============ STAGE: L3 LIMPIEZA ============ -->
+  <rect class="stage" x="552" y="150" width="178" height="150"/>
+  <text class="stitle" x="570" y="178">L3 · Limpieza / QC</text>
+  <text class="stext" x="570" y="200">−9999/0 → NaN</text>
+  <text class="stext" x="570" y="216">outliers &gt; Q99.9·3 (flag)</text>
+  <text class="stext" x="570" y="232">a frecuencia diaria</text>
+  <text class="stext" x="570" y="248">imputación &lt;7d (spline)</text>
+  <text class="stext" x="570" y="264">huecos largos: k-vecinos</text>
+  <text class="stext" x="570" y="284">esquema canónico</text>
+
+  <!-- ============ STAGE: L3 FEATURES ============ -->
+  <rect class="stage" x="772" y="150" width="178" height="150"/>
+  <text class="stitle" x="790" y="178">L3 · Features</text>
+  <text class="stext" x="790" y="200">lags 1/3/7/14/30</text>
+  <text class="stext" x="790" y="216">medias móviles 7/30</text>
+  <text class="stext" x="790" y="232">SPI / SPEI (sequía)</text>
+  <text class="stext" x="790" y="248">descomposición STL</text>
+  <text class="stext" x="790" y="264">IDW estación → cuenca</text>
+  <text class="stext" x="790" y="284">norm. por estación</text>
+
+  <!-- ============ STORE: L2 PERSISTENCIA ============ -->
+  <rect class="store" x="992" y="150" width="178" height="150"/>
+  <text class="stitle" x="1010" y="178" fill="#9a6a12">L2 · Persistencia</text>
+  <text class="stext" x="1010" y="200">Parquet particionado</text>
+  <text class="stext" x="1010" y="216">por región / año</text>
+  <text class="stext" x="1010" y="240">processed/ · features/</text>
+  <text class="stext" x="1010" y="264">DVC + bucket S3</text>
+  <text class="stext" x="1010" y="284">snapshot v2026.06</text>
+
+  <!-- ============ OUTPUT TENSOR ============ -->
+  <rect class="out" x="1016" y="330" width="150" height="70"/>
+  <text class="outt" x="1091" y="360" text-anchor="middle">Tensor</text>
+  <text class="outt" x="1091" y="380" text-anchor="middle" font-size="11">(B, T=256, F)</text>
+  <text class="lbl" x="1091" y="418" text-anchor="middle">→ ConvNeXt-1D / PatchTST</text>
+
+  <!-- ============ GEO BAND (bottom) ============ -->
+  <rect class="geo" x="340" y="470" width="610" height="120"/>
+  <text class="geot" x="358" y="496">Subflujo geoespacial (INEGI)</text>
+  <text class="stext" x="358" y="520">CEM (raster) → fill_depressions → d8_pointer → flow_accumulation</text>
+  <text class="stext" x="358" y="540">→ extract_streams → watershed por estación (whitebox)</text>
+  <text class="stext" x="358" y="564">SIATL → grafo cuenca–subcuenca · features: área, pendiente, TWI</text>
+  <text class="stext" x="358" y="584">salida: GeoPackage por cuenca (EPSG:6372)</text>
+
+  <rect class="geo" x="992" y="470" width="178" height="120"/>
+  <text class="geot" x="1010" y="496">Reagregado a cuenca</text>
+  <text class="stext" x="1010" y="520">spatial join estaciones</text>
+  <text class="stext" x="1010" y="536">↔ cuencas / acuíferos</text>
+  <text class="stext" x="1010" y="552">↔ municipios (DataMéxico)</text>
+  <text class="stext" x="1010" y="574">etiqueta RH + contexto</text>
+
+  <!-- ============ FLOWS ============ -->
+  <!-- sources -> L1 -->
+  <path class="flow" d="M280,117 C310,117 312,210 338,212" marker-end="url(#arrow)"/>
+  <path class="flow" d="M280,171 C306,171 312,216 338,220" marker-end="url(#arrow)"/>
+  <path class="flow" d="M280,225 C306,225 312,224 338,226" marker-end="url(#arrow)"/>
+  <path class="flow" d="M280,279 C306,279 312,236 338,234" marker-end="url(#arrow)"/>
+  <path class="flow" d="M280,387 C300,387 316,244 338,242" marker-end="url(#arrow)"/>
+  <path class="flow" d="M280,441 C300,441 316,250 338,248" marker-end="url(#arrow)"/>
+
+  <!-- INEGI -> geo band -->
+  <path class="flowg" d="M280,333 C300,333 316,520 338,522" marker-end="url(#arrowg)"/>
+
+  <!-- L1 -> RAW -->
+  <path class="flow" d="M425,300 L425,316" marker-end="url(#arrow)"/>
+  <!-- RAW -> L3 limpieza -->
+  <path class="flow" d="M510,344 C532,344 532,240 550,232" marker-end="url(#arrow)"/>
+  <!-- limpieza -> features -->
+  <path class="flow" d="M730,225 L770,225" marker-end="url(#arrow)"/>
+  <!-- features -> persistencia -->
+  <path class="flow" d="M950,225 L990,225" marker-end="url(#arrow)"/>
+  <!-- persistencia -> tensor -->
+  <path class="flow" d="M1091,300 L1091,328" marker-end="url(#arrow)"/>
+
+  <!-- geo band -> reagregado -> features (up) -->
+  <path class="flowg" d="M950,530 L990,530" marker-end="url(#arrowg)"/>
+  <path class="flowg" d="M1081,470 C1081,440 861,330 861,302" marker-end="url(#arrowg)"/>
+
+  <!-- footer note -->
+  <text x="30" y="618" class="lbl">Reproducibilidad: Git (código) · DVC (datos) · MLflow (experimentos) · seed 1729 · contenedores Docker · CRISP-DM</text>
+  <text x="30" y="700" class="srcs">Licencias: código MIT · datos derivados CC BY 4.0 (compatible Libre Uso MX). Atribución: CONAGUA · SMN · INEGI · CICESE-CLICOM.</text>
+</svg>

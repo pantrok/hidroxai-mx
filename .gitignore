@@ -1,0 +1,35 @@
+# Datos (los gestiona DVC, no Git)
+/data/raw/*
+/data/interim/*
+/data/processed/*
+/data/features/*
+!/data/**/.gitkeep
+*.mdb
+*.kmz
+*.tif
+*.parquet
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.egg-info/
+build/
+dist/
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# DVC
+/.dvc/cache
+/.dvc/tmp
+/.dvc/config.local
+
+# Tensores derivados (no versionar)
+*.npz
+
