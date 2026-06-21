@@ -31,14 +31,16 @@ def flag_outliers(df: pd.DataFrame, value_col: str, group: str = "clave_estacion
     if "calidad" not in df:
         df["calidad"] = 0
 
-    def _flag(g: pd.DataFrame) -> pd.DataFrame:
+    pieces = []
+    for key, g in df.groupby(group, sort=False):
+        g = g.copy()
         v = g[value_col]
         thr = v.quantile(0.999) * 3 if v.notna().any() else np.inf
         mask = (v < 0) | (v > thr)
         g.loc[mask, "calidad"] = 2
-        return g
-
-    return df.groupby(group, group_keys=False).apply(_flag)
+        g[group] = key
+        pieces.append(g)
+    return pd.concat(pieces) if pieces else df
 
 
 def impute_short_gaps(
@@ -49,14 +51,16 @@ def impute_short_gaps(
     if "calidad" not in df:
         df["calidad"] = 0
 
-    def _imp(g: pd.DataFrame) -> pd.DataFrame:
+    pieces = []
+    for key, g in df.groupby(group, sort=False):
+        g = g.copy()
         before = g[value_col].isna()
         g[value_col] = g[value_col].interpolate(method="cubic", limit=max_gap, limit_area="inside")
         newly = before & g[value_col].notna()
         g.loc[newly, "calidad"] = g.loc[newly, "calidad"].clip(lower=1)
-        return g
-
-    return df.groupby(group, group_keys=False).apply(_imp)
+        g[group] = key
+        pieces.append(g)
+    return pd.concat(pieces) if pieces else df
 
 
 def to_daily(df: pd.DataFrame, group: str = "clave_estacion", tz: str = "America/Mexico_City"):
