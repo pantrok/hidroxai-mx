@@ -2,5 +2,5 @@
     remote = r2
 ['remote "r2"']
     url = s3://hidroxai-mx/dvcstore
-    endpointurl = https://REEMPLAZA_ACCOUNT_ID.r2.cloudflarestorage.com
+    endpointurl = https://a58b1fd53854961de8f3373a0da0f97b.r2.cloudflarestorage.com
     region = auto
