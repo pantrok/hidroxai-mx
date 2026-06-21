@@ -28,23 +28,27 @@ Imprime, por cuenca y resolución, los estados que debes descargar. A junio 2026
 
 ## 2. Dónde dejar los TIFFs
 
-Guarda los archivos así (el nombre del `.tif` es libre):
+Guarda los archivos así (el nombre del `.tif` es libre — el portal INEGI los nombra
+por código de entidad federativa, p.ej. `15_México_r15m_v4.tif`):
 
 ```
-data/scratch/cem_estados/
+data/scratch/
 ├── 30m/
-│   ├── mexico.tif
-│   ├── michoacan.tif
-│   ├── guerrero.tif
+│   ├── 15_México_r30m_v4.tif
+│   ├── 16_Michoacán_r30m_v4.tif
 │   └── ...
 └── 15m/
-    ├── morelos.tif
-    ├── puebla.tif
+    ├── 17_Morelos_r15m_v4.tif
+    ├── 21_Puebla_r15m_v4.tif
     └── ...
 ```
 
+Solo necesitas la subcarpeta de la resolución que descargaste. Si el portal solo te
+permitió descargar 15m, deja todo en `data/scratch/15m/` y el script hará fallback
+automático (usará los 15m incluso para cuencas que pidan 30m, con un warning).
+
 `data/scratch/` está fuera de DVC y fuera del guardarraíl de `08_storage_report`,
-así que los TIFFs estatales (200–400 MB c/u, ~3 GB en total) **no se suben a
+así que los TIFFs estatales (200–400 MB c/u a 30m; ~4x más a 15m) **no se suben a
 R2**.
 
 ## 3. Mosaico + recorte por cuenca

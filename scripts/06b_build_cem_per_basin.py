@@ -31,6 +31,7 @@ from pathlib import Path
 
 import click
 import rasterio
+from rasterio.io import MemoryFile
 from rasterio.mask import mask as rio_mask
 from rasterio.merge import merge as rio_merge
 from shapely.geometry import box, mapping
@@ -40,7 +41,8 @@ from hidroxai_mx.utils import RAW, get_logger, load_cuencas
 log = get_logger("06b_cem")
 
 # Carpeta scratch fuera de DVC para los CEM crudos por estado.
-SCRATCH = Path("data/scratch/cem_estados")
+# Estructura esperada: data/scratch/<res>m/<archivo>.tif (p.ej. 15m/, 30m/).
+SCRATCH = Path("data/scratch")
 
 # Estados sugeridos por cuenca (referencia para descarga manual; no se valida).
 ESTADOS_SUGERIDOS: dict[str, list[str]] = {
@@ -71,6 +73,25 @@ def _tif_intersects_bbox(tif_path: Path, bbox: tuple[float, float, float, float]
     return not (r < min_lon or l > max_lon or t < min_lat or b > max_lat)
 
 
+def _find_cem_source_dir(resolucion_m: int) -> tuple[Path | None, int | None]:
+    """Devuelve (subdir con TIFFs, resolución real). Hace fallback a otra resolución si la
+    pedida no está disponible (por ejemplo: pediste 30m pero solo descargaron 15m).
+    """
+    preferred = SCRATCH / f"{resolucion_m}m"
+    if preferred.exists() and any(preferred.glob("*.tif")):
+        return preferred, resolucion_m
+    if SCRATCH.exists():
+        for sub in sorted(SCRATCH.iterdir()):
+            if sub.is_dir() and any(sub.glob("*.tif")):
+                # Espera nombres tipo "15m", "30m"; si no parsea, se devuelve sin resolución.
+                actual = None
+                name = sub.name.lower()
+                if name.endswith("m") and name[:-1].isdigit():
+                    actual = int(name[:-1])
+                return sub, actual
+    return None, None
+
+
 def _build_cem_for_basin(
     nombre: str,
     bbox: tuple[float, float, float, float],
@@ -83,17 +104,16 @@ def _build_cem_for_basin(
         log.info("%s: cache-hit %s", nombre, dest.name)
         return True
 
-    subdir = SCRATCH / f"{resolucion_m}m"
-    if not subdir.exists():
-        log.warning("%s: falta %s/ — descarga los TIFFs estatales a esa carpeta. Sugeridos: %s",
-                    nombre, subdir, ", ".join(ESTADOS_SUGERIDOS.get(nombre, [])))
+    subdir, actual_res = _find_cem_source_dir(resolucion_m)
+    if subdir is None:
+        log.warning("%s: no hay TIFFs en %s/. Sugeridos: %s",
+                    nombre, SCRATCH, ", ".join(ESTADOS_SUGERIDOS.get(nombre, [])))
         return False
+    if actual_res is not None and actual_res != resolucion_m:
+        log.warning("%s: se pidió %sm pero solo hay %sm en %s/. Se usa %sm (sin resamplear).",
+                    nombre, resolucion_m, actual_res, subdir, actual_res)
 
     candidatos = sorted(subdir.glob("*.tif"))
-    if not candidatos:
-        log.warning("%s: sin TIFFs en %s/. Sugeridos: %s",
-                    nombre, subdir, ", ".join(ESTADOS_SUGERIDOS.get(nombre, [])))
-        return False
 
     usables = [p for p in candidatos if _tif_intersects_bbox(p, bbox)]
     if not usables:
@@ -103,47 +123,49 @@ def _build_cem_for_basin(
                     ", ".join(ESTADOS_SUGERIDOS.get(nombre, [])))
         return False
 
+    import numpy as np
     log.info("%s: %d TIFF(s) usables de %d (resolución %sm)",
-             nombre, len(usables), len(candidatos), resolucion_m)
+             nombre, len(usables), len(candidatos), actual_res or resolucion_m)
     sources = [rasterio.open(p) for p in usables]
     try:
         mosaic, out_transform = rio_merge(sources)
         meta = sources[0].meta.copy()
+        # LZW predictor: 3 solo aplica a floats; 2 para enteros (delta).
+        pred = 3 if np.issubdtype(np.dtype(meta["dtype"]), np.floating) else 2
         meta.update(
             driver="GTiff",
             height=mosaic.shape[1],
             width=mosaic.shape[2],
             transform=out_transform,
             compress="lzw",
-            predictor=3,
+            predictor=pred,
             tiled=True,
         )
     finally:
         for s in sources:
             s.close()
 
-    # Recortar al bbox curado.
-    tmp = dest.with_suffix(".mosaic.tif")
-    tmp.parent.mkdir(parents=True, exist_ok=True)
-    with rasterio.open(tmp, "w", **meta) as dst:
-        dst.write(mosaic)
-
+    # Recortar al bbox curado en memoria (evita bloqueos de archivo en Windows/GDrive).
+    dest.parent.mkdir(parents=True, exist_ok=True)
     geom = [mapping(box(*bbox))]
-    with rasterio.open(tmp) as src:
-        clipped, clipped_transform = rio_mask(src, geom, crop=True)
-        clip_meta = src.meta.copy()
+    with MemoryFile() as memfile:
+        with memfile.open(**meta) as dst:
+            dst.write(mosaic)
+        with memfile.open() as src:
+            clipped, clipped_transform = rio_mask(src, geom, crop=True)
+            clip_meta = src.meta.copy()
+    pred = 3 if np.issubdtype(np.dtype(clip_meta["dtype"]), np.floating) else 2
     clip_meta.update(
         driver="GTiff",
         height=clipped.shape[1],
         width=clipped.shape[2],
         transform=clipped_transform,
         compress="lzw",
-        predictor=3,
+        predictor=pred,
         tiled=True,
     )
     with rasterio.open(dest, "w", **clip_meta) as dst:
         dst.write(clipped)
-    tmp.unlink(missing_ok=True)
 
     size_mb = dest.stat().st_size / (1 << 20)
     log.info("%s: %s escrito (%.1f MB, %dx%d píxeles)",
