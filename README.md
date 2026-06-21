@@ -1,178 +1,188 @@
 # hidroxai-mx
 
-Biblioteca y pipeline reproducible para **HidroXAI-MX** (IPN · PICDT2026): pronóstico
-explicable de niveles hidrométricos y clima local en México sobre datos abiertos de
-CONAGUA, SMN e INEGI.
+Reproducible library and data pipeline for **HidroXAI-MX** (IPN · PICDT2026):
+explainable forecasting of streamflow gauge levels and local climate in Mexico
+on top of open data from CONAGUA, SMN and INEGI.
 
-Este repositorio cubre **OE1 — Integración y curado del dataset nacional** (Mes 2 del
-cronograma). Las capas posteriores (modelado, explicabilidad, difuso, dashboard) se
-añaden sobre la misma estructura modular.
+This repository covers **OE1 — National dataset integration and curation**
+(Month 2 of the roadmap). The downstream layers (modeling, explainability,
+fuzzy rules, dashboard) are built on top of this modular structure.
 
-> Estado de las fuentes verificado el **2026-06-18**. Ver `conf/sources.yaml` y
-> `docs/fuentes_verificacion.md` para el detalle de cada endpoint.
+> Source status verified on **2026-06-18**. See `conf/sources.yaml` and
+> `docs/fuentes_verificacion.md` for the per-endpoint details.
 
-## Estructura
+## Layout
 
 ```
 hidroxai-mx/
 ├── conf/
-│   ├── sources.yaml          # Registro de fuentes (URLs verificadas, formatos, licencias)
-│   └── cuencas_piloto.yaml    # Cuencas y regiones hidrológicas objetivo
-├── data/                      # NO versionar el contenido (lo gestiona DVC)
-│   ├── raw/                   # Tal como se descarga (inmutable)
-│   ├── interim/               # Conversiones intermedias (mdb→csv, kmz→parquet)
-│   ├── processed/             # Series limpias e imputadas (esquema canónico)
-│   └── features/              # Tensores listos para entrenamiento
+│   ├── sources.yaml          # Source registry (verified URLs, formats, licenses)
+│   └── cuencas_piloto.yaml    # Target basins and hydrological regions
+├── data/                      # Do NOT track contents in git (managed by DVC)
+│   ├── raw/                   # As downloaded (immutable)
+│   ├── interim/               # Intermediate conversions (mdb→csv, kmz→parquet)
+│   ├── processed/             # Cleaned + imputed series (canonical schema)
+│   └── features/              # Training-ready tensors
 ├── src/hidroxai_mx/
-│   ├── io/                    # Conectores de descarga (CONAGUA/SMN/INEGI/DataMéxico)
-│   ├── data/                  # Esquemas (pandera), limpieza, imputación, persistencia
-│   ├── features/              # Lags, SPI/SPEI, STL, ventanas, tensores
-│   └── utils/                 # Logging, caché, geo, fechas
-├── scripts/                   # Entrypoints ejecutables por etapa (01..05)
-├── notebooks/                 # Exploración y reportes de cobertura
-├── tests/                     # Pruebas de esquema y de I/O
+│   ├── io/                    # Download connectors (CONAGUA/SMN/INEGI/DataMéxico)
+│   ├── data/                  # Schemas (pandera), cleaning, imputation, persistence
+│   ├── features/              # Lags, SPI/SPEI, STL, windows, tensors
+│   └── utils/                 # Logging, cache, geo, dates
+├── scripts/                   # Executable entrypoints, one per stage (01..08)
+├── notebooks/                 # Exploration and coverage reports
+├── tests/                     # Schema and I/O tests
 ├── pyproject.toml
-├── dvc.yaml                    # Stages del pipeline de datos
+├── dvc.yaml                    # Data pipeline stages
 └── Makefile
 ```
 
 ## Quickstart
 
 ```bash
-# 1. Entorno (uv recomendado; pip funciona igual)
-uv venv && source .venv/bin/activate        # o: python -m venv .venv
-uv pip install -e ".[dev]"                   # o: pip install -e ".[dev]"
+# 1. Environment (uv recommended; plain pip works as well)
+uv venv && source .venv/bin/activate        # or: python -m venv .venv
+uv pip install -e ".[dev]"                   # or: pip install -e ".[dev]"
 
-# 2. Descargar catálogos maestros del SIH (rápido, ~1 MB)
+# 2. Download SIH master catalogs (fast, ~1 MB)
 python scripts/01_download_sih_catalogs.py
 
-# 3. Descargar catálogos espaciales de redes meteorológicas (KMZ/XLSX)
+# 3. Download spatial catalogs of weather networks (KMZ/XLSX)
 python scripts/02_download_smn_kmz.py
 
-# 4. Descargar series históricas diarias del SIH (CSV, cobertura reciente 2010–2025)
+# 4. Download daily historical SIH series (CSV, recent coverage 2010–2025)
 python scripts/03_download_sih_series.py --tipo hidrometricas
 
-# 5. Construir el esquema canónico y persistir en Parquet particionado
+# 5. Build the canonical schema and persist as partitioned Parquet
 python scripts/04_build_canonical.py
 
-# 6. (Opcional) Versionar el snapshot con DVC
+# 6. (Optional) Version the snapshot with DVC
 dvc add data/processed && git add data/processed.dvc && git commit -m "dataset v0.1"
 ```
 
-## Decisión de fuentes (importante)
+## Source decision (important)
 
-El inventario original (`datasets_HidroXAI_MX.docx`) apuntaba a los catálogos estáticos
-de `datos.gob.mx` y a las series históricas en archivos `.mdb` de **BANDAS**. La
-verificación en vivo (2026-06-18) encontró que:
+The original inventory (`datasets_HidroXAI_MX.docx`) pointed at the static catalogs
+on `datos.gob.mx` and at the deep historical archives stored as `.mdb` files in
+**BANDAS**. Live verification (2026-06-18) found that:
 
-- El **portal SIH** (`https://sih.conagua.gob.mx`) ahora publica las **series históricas
-  diarias de estaciones climatológicas e hidrométricas como CSV UTF-8**, con
-  actualización semanal. Es la **fuente primaria recomendada** para la cobertura
-  2010–2025 (no requiere conversión `.mdb`).
-- **BANDAS** (`https://app.conagua.gob.mx/bandas`) sigue activo y se usa como **respaldo
-  histórico profundo** (pre-2013) y para el catálogo/series de **presas**.
-- **DataMéxico** migró a `https://www.economia.gob.mx/datamexico`; su API Tesseract debe
-  reconfirmarse antes de usarse (capa socioeconómica auxiliar, prioridad baja).
+- The **SIH portal** (`https://sih.conagua.gob.mx`) now publishes the **daily
+  historical series for climatological and hydrometric stations as UTF-8 CSV**,
+  refreshed weekly. It is the **recommended primary source** for the 2010–2025
+  coverage (no `.mdb` conversion required).
+- **BANDAS** (`https://app.conagua.gob.mx/bandas`) is still online and is used as
+  the **deep historical backup** (pre-2013) and for the dam catalog and series.
+- **DataMéxico** migrated to `https://www.economia.gob.mx/datamexico`; its
+  Tesseract API must be re-confirmed before use (auxiliary socioeconomic layer,
+  low priority).
 
-Ver `docs/fuentes_verificacion.md`.
+See `docs/fuentes_verificacion.md`.
 
-## Licencias
+## Licenses
 
-Código: **MIT**. Datos derivados redistribuibles: **CC BY 4.0** (compatible con Libre Uso
-MX). Atribución obligatoria a CONAGUA, SMN, INEGI y CICESE-CLICOM según corresponda.
+Code: **MIT**. Redistributable derived data: **CC BY 4.0** (compatible with the
+*Libre Uso MX* terms). Attribution to CONAGUA, SMN, INEGI and CICESE-CLICOM is
+mandatory where applicable.
 
 ---
 
-## Flujo de ingesta actualizado (verificado 2026-06-18)
+## Updated ingestion flow (verified 2026-06-18)
 
-El SIH publica **CSV directos por estación** (`/basedatos/{Hidros|Climas}/<CLAVE>.csv`),
-por lo que la ingesta es dirigida por catálogo (sin parseo de HTML ni selector JS):
+The SIH publishes **direct per-station CSVs** at
+`/basedatos/{Hidros|Climas}/<CLAVE>.csv`, so ingestion is driven by the catalog
+(no HTML scraping, no JS selectors):
 
 ```bash
-python scripts/01_download_sih_catalogs.py     # catálogos hidro + clima (CSV)
-python scripts/05_select_stations.py            # candidatas por región hidrológica (12,18,26)
-python scripts/03_download_sih_series.py --tipo hidrometricas    # descarga dirigida por candidatas
+python scripts/01_download_sih_catalogs.py     # hydro + climate catalogs (CSV)
+python scripts/05_select_stations.py            # candidates by hydrological region (12,18,26)
+python scripts/03_download_sih_series.py --tipo hidrometricas    # catalog-driven download
 python scripts/03_download_sih_series.py --tipo climatologicas
-python scripts/04_build_canonical.py --tipo hidrometricas        # esquema canónico -> Parquet
-python scripts/05_select_stations.py --refine   # filtra por cobertura >=80% + k vecinos clima
+python scripts/04_build_canonical.py --tipo hidrometricas        # canonical schema -> Parquet
+python scripts/05_select_stations.py --refine   # filter by >=80% coverage + climate neighbors
 ```
 
-Notas de formato: codificación **Latin-1**; faltantes `-`/vacío; fecha `YYYY/MM/DD`; el lector
-salta el bloque de metadatos y normaliza encabezados automáticamente.
+Format notes: encoding **Latin-1**; missing values encoded as `-` or empty;
+date format `YYYY/MM/DD`; the reader skips the metadata block and normalizes
+column headers automatically.
 
-## CEM (INEGI): resolución
+## CEM (INEGI): resolution
 
-`conf/sources.yaml` fija `resolucion_default: 30` m. En `conf/cuencas_piloto.yaml`,
-la **Alta del Balsas** usa **15 m** (cuenca pequeña de cabecera); el resto, 30 m.
-Descargar recortado al bbox de cada cuenca (no el mosaico nacional).
+`conf/sources.yaml` sets `resolucion_default: 30` m. In `conf/cuencas_piloto.yaml`
+the **Alta del Balsas** basin uses **15 m** (small headwater basin); everything
+else uses 30 m. Always download clipped to each basin's bounding box (never the
+national mosaic).
 
-## Almacenamiento remoto: Cloudflare R2 (DVC)
+## Remote storage: Cloudflare R2 (DVC)
 
-R2 es S3-compatible y sin costo de egreso (10 GB gratis). Configuración:
+R2 is S3-compatible with no egress fees (10 GB free tier). Setup:
 
 ```bash
-cp .env.example .env          # completa R2_ENDPOINT_URL y las llaves S3 de R2
-bash scripts/setup_dvc_r2.sh  # crea el remoto 'r2' (claves solo en .dvc/config.local)
-dvc add data/processed && dvc push   # versiona y sube el snapshot
+cp .env.example .env          # fill in R2_ENDPOINT_URL and the R2 S3 keys
+bash scripts/setup_dvc_r2.sh  # configures the 'r2' remote (keys land in .dvc/config.local)
+dvc add data/processed && dvc push   # version and upload the snapshot
 git add data/processed.dvc .dvc/config && git commit -m "dataset v0.1" && git tag v2026.06
 ```
 
-## Acceso remoto desde un notebook
+## Remote access from a notebook
 
-Ver `notebooks/01_acceso_datos_r2.ipynb` (Colab/Jupyter): instala `dvc[s3]`, fija las
-credenciales R2 por variables de entorno y trae los datos con `dvc pull` (todo el dataset)
-o `dvc.api.get_url(...)` (un archivo puntual), luego `pd.read_parquet(...)`.
+See `notebooks/01_acceso_datos_r2.ipynb` (Colab/Jupyter): it installs
+`dvc[s3]`, sets R2 credentials as environment variables, and pulls data with
+`dvc pull` (whole dataset) or `dvc.api.get_url(...)` (single file), then
+`pd.read_parquet(...)`.
 
-## Subflujo geoespacial (script 06) y features (script 07)
+## Geospatial sub-flow (script 06) and features (script 07)
 
-Requiere el extra geo:  `pip install -e ".[geo]"`
+Requires the `geo` extra:  `pip install -e ".[geo]"`
 
 ```bash
-# 06 — delineación de cuencas (necesita el CEM por cuenca en data/raw/inegi/cem_<cuenca>.tif)
+# 06 — basin delineation (needs the per-basin DEM at data/raw/inegi/cem_<cuenca>.tif)
 python scripts/06_delineate_basins.py --threshold 1000
-#   CEM(tif) -> fill_depressions -> d8_pointer + flow_accumulation -> extract_streams
-#   -> snap pour points (estaciones) -> watershed -> GeoPackage por cuenca
-#   (área_km2, elevación_media, pendiente_media) en data/processed/cuencas/<cuenca>.gpkg
+#   DEM(tif) -> fill_depressions -> d8_pointer + flow_accumulation -> extract_streams
+#   -> snap pour points (stations) -> watershed -> per-basin GeoPackage
+#   (area_km2, mean elevation, mean slope) in data/processed/cuencas/<cuenca>.gpkg
 
-# 07 — features y tensores
+# 07 — features and tensors
 python scripts/07_build_features.py --t-in 256 --horizon 7
-#   une clima vecino por IDW (pot. 2) a cada estación hidrométrica, genera lags
-#   (1/3/7/14/30) y medias móviles, normaliza por estación y arma tensores (B,T,F)
-#   -> data/features/feature_table.parquet y data/features/tensors_h7.npz
+#   joins nearest-climate stations via IDW (power 2) to each hydrometric station,
+#   generates lags (1/3/7/14/30) and rolling means, normalizes per station, and
+#   assembles (B,T,F) tensors -> data/features/feature_table.parquet and
+#   data/features/tensors_h7.npz
 ```
 
-El módulo `hidroxai_mx.geo` (delineación + uniones espaciales) y las funciones de
-`hidroxai_mx.features` (lags, SPI/SPEI, STL, IDW, ventanas) importan las dependencias
-pesadas (whitebox/rasterio/geopandas) de forma diferida.
+The `hidroxai_mx.geo` module (delineation + spatial joins) and the
+`hidroxai_mx.features` helpers (lags, SPI/SPEI, STL, IDW, windows) lazy-import
+the heavy dependencies (whitebox/rasterio/geopandas).
 
-## Reporte de cobertura y validación (notebook 02)
+## Coverage report and validation (notebook 02)
 
-`notebooks/02_reporte_cobertura.ipynb` genera las tablas y figuras de validación del
-*data paper* (inventario, cobertura, estadística descriptiva, calidad, consistencia entre
-fuentes, coherencia espacial, patrones temporales, precip→gasto y procedencia). La lógica
-vive en `hidroxai_mx.report` (con pruebas). Si no hay Parquet aún, el notebook simula un
-dataset de demostración. Las salidas se guardan en `data/processed/reportes/`.
+`notebooks/02_reporte_cobertura.ipynb` produces the tables and figures used in
+the *data paper* validation (inventory, coverage, descriptive statistics,
+quality, cross-source consistency, spatial coherence, temporal patterns,
+precip→discharge response, and provenance). The logic lives in
+`hidroxai_mx.report` (with tests). If no Parquet is available yet, the notebook
+simulates a demo dataset. Outputs are written to `data/processed/reportes/`.
 
-## Corrida oficial por etapas (presupuesto R2 = 10 GB)
+## Official staged runs (R2 budget = 10 GB)
 
-> El `dvc push` se ejecuta en **tu** máquina con **tus** credenciales R2 (el repo no las
-> incluye). **Regla de oro: NO versionar los tensores `.npz`** (se generan al entrenar);
-> con eso, hasta el catálogo nacional completo (~5 GB) cabe en 10 GB.
+> `dvc push` runs on **your** machine with **your** R2 credentials (the repo
+> does not ship any). **Golden rule: never version the `.npz` tensors** (they
+> are regenerated at training time); with that rule in place even the full
+> national catalog (~5 GB) fits within 10 GB.
 
-Presupuesto **medido** (Parquet, sin tensores):
+**Measured** budget (Parquet, no tensors):
 
-| Alcance | raw CSV | canónico | features | Total |
+| Scope | raw CSV | canonical | features | Total |
 |---|---|---|---|---|
-| Piloto (~20 est.) | ~1 MB | ~2 MB | ~10 MB | **~13 MB** |
-| OE1 (~200 est.) | ~10 MB | ~24 MB | ~100 MB | **~134 MB** |
-| 4 cuencas (~600 est.) | ~30 MB | ~71 MB | ~301 MB | **~402 MB** |
-| Catálogo (~7400 est.) | ~370 MB | ~878 MB | ~3.7 GB | **~5.0 GB** |
+| Pilot (~20 stations) | ~1 MB | ~2 MB | ~10 MB | **~13 MB** |
+| OE1 (~200 stations) | ~10 MB | ~24 MB | ~100 MB | **~134 MB** |
+| 4 basins (~600 stations) | ~30 MB | ~71 MB | ~301 MB | **~402 MB** |
+| Full catalog (~7400 stations) | ~370 MB | ~878 MB | ~3.7 GB | **~5.0 GB** |
 
-Riesgo: los `.npz` de ventana deslizante (stride 1) pesan ~9 GB con 200 estaciones y ~336 GB
-con el catálogo → por eso `07` no los materializa por defecto y `08` falla si se superan 9.5 GB.
-Súmale el CEM por cuenca (30 m: ~0.1–0.5 GB c/u); aun así cabe holgado.
+Risk: the sliding-window `.npz` tensors (stride 1) weigh ~9 GB at 200 stations
+and ~336 GB at the full catalog. That is why `07` does not materialize them by
+default and `08` fails if the versioned footprint exceeds 9.5 GB. Add the
+per-basin DEM on top (30 m: ~0.1–0.5 GB each); it still fits comfortably.
 
-### Etapa 1 — Prueba (pocos datos, ~13 MB)
+### Stage 1 — Smoke test (small data, ~13 MB)
 ```bash
 python scripts/01_download_sih_catalogs.py
 python scripts/05_select_stations.py
@@ -181,35 +191,37 @@ python scripts/03_download_sih_series.py --tipo climatologicas --limit 5
 python scripts/04_build_canonical.py --tipo hidrometricas
 python scripts/04_build_canonical.py --tipo climatologicas
 python scripts/07_build_features.py --no-save-tensors
-python scripts/08_storage_report.py        # debe decir OK (dentro del presupuesto)
+python scripts/08_storage_report.py        # must say OK (within budget)
 dvc add data/processed data/features && dvc push
 ```
 
-### Etapa 2 — Consolidación (4 cuencas piloto, ~0.4 GB)
+### Stage 2 — Consolidation (4 pilot basins, ~0.4 GB)
 ```bash
-python scripts/03_download_sih_series.py --tipo hidrometricas     # todas las candidatas
+python scripts/03_download_sih_series.py --tipo hidrometricas     # all candidates
 python scripts/03_download_sih_series.py --tipo climatologicas
-python scripts/05_select_stations.py --refine                     # cobertura >=80% + vecinos
+python scripts/05_select_stations.py --refine                     # >=80% coverage + neighbors
 python scripts/04_build_canonical.py --tipo hidrometricas
 python scripts/04_build_canonical.py --tipo climatologicas
 python scripts/07_build_features.py --no-save-tensors
-python scripts/08_storage_report.py        # guardarraíl: falla si > 9.5 GB
+python scripts/08_storage_report.py        # guardrail: fails if > 9.5 GB
 dvc add data/processed data/features && dvc push && git tag v2026.06
 ```
 
-`03 --all` descarga el catálogo nacional completo (~5 GB sin tensores): cabe, pero solo úsalo
-si de verdad quieres cobertura nacional. Ajusta el tope con `R2_CAP_GB` si cambias de plan.
+`03 --all` downloads the full national catalog (~5 GB without tensors): it
+fits, but use it only if you actually need nation-wide coverage. Tune the cap
+with `R2_CAP_GB` if you switch plan.
 
-## Créditos y financiamiento
+## Credits and funding
 
-Proyecto **IND-2026-0335** — "Pronóstico explicable de niveles hidrométricos y clima
-local en México mediante aprendizaje profundo temporal y reglas difusas, sobre datos
-abiertos de CONAGUA y el Servicio Meteorológico Nacional".
+Project **IND-2026-0335** — "Explainable forecasting of streamflow gauge
+levels and local climate in Mexico via temporal deep learning and fuzzy rules,
+on top of CONAGUA and Servicio Meteorológico Nacional open data".
 
-Desarrollado en el **Instituto Politécnico Nacional (IPN)**, Unidad Profesional
-Interdisciplinaria de Ingeniería campus Tlaxcala (**UPIIT**), en el marco de la
-**Convocatoria de Proyectos de Investigación Científica y Desarrollo Tecnológico 2026**
-de la **Secretaría de Investigación y Posgrado**. Responsable técnico: **Daniel Sánchez Ruiz**.
+Developed at the **Instituto Politécnico Nacional (IPN)**, Unidad Profesional
+Interdisciplinaria de Ingeniería campus Tlaxcala (**UPIIT**), under the
+**2026 Call for Scientific Research and Technological Development Projects**
+of the **Secretaría de Investigación y Posgrado**. Technical lead:
+**Daniel Sánchez Ruiz**.
 
-Licencias: código **MIT** (`LICENSE`); datos derivados **CC BY 4.0** (`LICENSE-DATA.md`).
-Cómo citar: ver `CITATION.cff`. Créditos completos: `CREDITOS.md`.
+Licenses: code **MIT** (`LICENSE`); derived data **CC BY 4.0**
+(`LICENSE-DATA.md`). Citation: see `CITATION.cff`. Full credits: `CREDITOS.md`.
