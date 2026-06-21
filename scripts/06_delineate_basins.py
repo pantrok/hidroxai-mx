@@ -46,14 +46,21 @@ def main(threshold: int, snap_dist: float) -> None:
     for c in cfg["cuencas_piloto"]:
         nombre, rh = c["nombre"], str(c["region_hidrologica"])
         res = c.get("cem_resolucion_m", cfg.get("cem_resolucion_default", 30))
-        sub = est[est["region_hidrologica"].astype(str) == rh]
+        bbox = c.get("bbox")
+        if bbox is None:
+            log.warning("%s: falta `bbox` en conf/cuencas_piloto.yaml; se omite.", nombre)
+            continue
+        min_lon, min_lat, max_lon, max_lat = bbox
+        sub = est[(est["longitud"].between(min_lon, max_lon))
+                  & (est["latitud"].between(min_lat, max_lat))]
+        log.info("%s (RH %s): %d estaciones dentro del bbox %s",
+                 nombre, rh, len(sub), [round(b, 3) for b in bbox])
         if sub.empty:
-            log.warning("%s (RH %s): sin estaciones seleccionadas, se omite.", nombre, rh)
+            log.warning("%s: sin estaciones dentro del bbox, se omite delineación.", nombre)
             continue
         slug = _slug(nombre)
         cem = RAW / "inegi" / f"cem_{slug}.tif"
         if not cem.exists():
-            bbox = spatial.bbox_from_latlon(sub["latitud"], sub["longitud"])
             log.warning("Falta CEM %s. Descárgalo a %sm y recórtalo al bbox %s. Guía: %s",
                         cem.name, res, [round(b, 3) for b in bbox], inegi.cem_download_hint(nombre, res))
             continue
