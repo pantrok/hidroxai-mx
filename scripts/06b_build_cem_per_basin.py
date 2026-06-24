@@ -31,9 +31,11 @@ from pathlib import Path
 
 import click
 import rasterio
+from rasterio import Affine
 from rasterio.io import MemoryFile
 from rasterio.mask import mask as rio_mask
 from rasterio.merge import merge as rio_merge
+from rasterio.warp import Resampling, reproject
 from shapely.geometry import box, mapping
 
 from hidroxai_mx.utils import RAW, get_logger, load_cuencas
@@ -109,9 +111,10 @@ def _build_cem_for_basin(
         log.warning("%s: no hay TIFFs en %s/. Sugeridos: %s",
                     nombre, SCRATCH, ", ".join(ESTADOS_SUGERIDOS.get(nombre, [])))
         return False
-    if actual_res is not None and actual_res != resolucion_m:
-        log.warning("%s: se pidió %sm pero solo hay %sm en %s/. Se usa %sm (sin resamplear).",
-                    nombre, resolucion_m, actual_res, subdir, actual_res)
+    will_resample = actual_res is not None and actual_res != resolucion_m
+    if will_resample:
+        log.info("%s: se pidió %sm y hay %sm en %s/. Se resampleará al recortar.",
+                 nombre, resolucion_m, actual_res, subdir)
 
     candidatos = sorted(subdir.glob("*.tif"))
 
@@ -154,6 +157,30 @@ def _build_cem_for_basin(
         with memfile.open() as src:
             clipped, clipped_transform = rio_mask(src, geom, crop=True)
             clip_meta = src.meta.copy()
+
+    # Downsample/upsample si la resolución pedida en YAML difiere de la disponible.
+    # Reduce uso de RAM aguas abajo (whitebox carga el raster completo varias veces).
+    if will_resample and actual_res:
+        scale = resolucion_m / actual_res  # >1 = downsample (15m → 30m = 2.0)
+        new_h = max(1, int(clipped.shape[1] / scale))
+        new_w = max(1, int(clipped.shape[2] / scale))
+        new_transform = clipped_transform * Affine.scale(scale, scale)
+        dst_arr = np.empty((clipped.shape[0], new_h, new_w), dtype=clipped.dtype)
+        reproject(
+            source=clipped,
+            destination=dst_arr,
+            src_transform=clipped_transform,
+            src_crs=clip_meta["crs"],
+            dst_transform=new_transform,
+            dst_crs=clip_meta["crs"],
+            resampling=Resampling.average if scale > 1 else Resampling.bilinear,
+        )
+        log.info("%s: resamplado %sm → %sm (%dx%d → %dx%d)",
+                 nombre, actual_res, resolucion_m,
+                 clipped.shape[2], clipped.shape[1], new_w, new_h)
+        clipped = dst_arr
+        clipped_transform = new_transform
+
     pred = 3 if np.issubdtype(np.dtype(clip_meta["dtype"]), np.floating) else 2
     clip_meta.update(
         driver="GTiff",
