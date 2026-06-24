@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import io
 import os
+import time
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -139,11 +140,14 @@ def read_series_csv(path: Path) -> pd.DataFrame:
 
 def download_series(tipo: str, claves: list[str] | None = None,
                     limit: int | None = None, overwrite: bool = False,
-                    max_workers: int | None = None) -> list[Path]:
+                    max_workers: int | None = None,
+                    delay_s: float | None = None) -> list[Path]:
     """Descarga las series CSV directas en paralelo. Si no se pasan claves, usa el catálogo.
 
-    El paralelismo (por defecto 16, o `HIDROXAI_DL_WORKERS`) acelera la ingesta nacional
-    sin saturar al servidor. `fetch` es idempotente (cache-hit) y el manifest usa lock.
+    Concurrency:
+      - `max_workers` (env `HIDROXAI_DL_WORKERS`, def. 16). 1 = secuencial.
+      - `delay_s` (env `HIDROXAI_DL_DELAY_S`, def. 0). Espera tras cada descarga real
+        (no en cache-hit). Útil para simular ritmo humano y no activar WAFs.
     """
     if claves is None:
         cat = download_catalog(tipo, overwrite=overwrite)
@@ -152,11 +156,17 @@ def download_series(tipo: str, claves: list[str] | None = None,
         claves = claves[:limit]
     if max_workers is None:
         max_workers = int(os.environ.get("HIDROXAI_DL_WORKERS", "16"))
+    if delay_s is None:
+        delay_s = float(os.environ.get("HIDROXAI_DL_DELAY_S", "0"))
 
     def _one(clave: str) -> Path | None:
         dest = RAW / "sih_series" / tipo / f"{clave}.csv"
+        was_cached = dest.exists() and not overwrite
         try:
-            return fetch(series_url(tipo, clave), dest, overwrite=overwrite)
+            result = fetch(series_url(tipo, clave), dest, overwrite=overwrite)
+            if not was_cached and delay_s > 0:
+                time.sleep(delay_s)
+            return result
         except Exception as exc:  # noqa: BLE001
             log.warning("No se pudo descargar %s/%s: %s", tipo, clave, exc)
             return None
@@ -167,7 +177,8 @@ def download_series(tipo: str, claves: list[str] | None = None,
             res = fut.result()
             if res is not None:
                 out.append(res)
-    log.info("Descargadas %d/%d series (%s, workers=%d)", len(out), len(claves), tipo, max_workers)
+    log.info("Descargadas %d/%d series (%s, workers=%d, delay=%ss)",
+             len(out), len(claves), tipo, max_workers, delay_s)
     return out
 
 
