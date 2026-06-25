@@ -4,6 +4,7 @@ Verificado 2026-06-18: el portal SIH publica un CSV por estación en URL predeci
     https://sih.conagua.gob.mx/basedatos/{Hidros|Climas}/<CLAVE>.csv
 y un catálogo maestro por tipo. No hay selector JS: la descarga es directa.
 """
+
 from __future__ import annotations
 
 import io
@@ -60,8 +61,13 @@ _CAT_MAP = [
     ("altitud", lambda n: n.startswith("altitud")),
     ("estado", lambda n: n == "estado"),
     ("municipio", lambda n: n.startswith("municipio")),
-    ("region_hidrologica", lambda n: n.replace(".", "").replace(" ", "").startswith("rh")
-        or ("region" in n and ("numero" in n or "num" in n))),
+    (
+        "region_hidrologica",
+        lambda n: (
+            n.replace(".", "").replace(" ", "").startswith("rh")
+            or ("region" in n and ("numero" in n or "num" in n))
+        ),
+    ),
     ("cuenca", lambda n: n.startswith("cuenca")),
 ]
 
@@ -77,8 +83,21 @@ def read_catalog(path: Path) -> pd.DataFrame:
                 rename[col] = target
                 break
     out = df.rename(columns=rename)
-    keep = [c for c in ["clave", "nombre", "latitud", "longitud", "altitud",
-                        "estado", "municipio", "region_hidrologica", "cuenca"] if c in out.columns]
+    keep = [
+        c
+        for c in [
+            "clave",
+            "nombre",
+            "latitud",
+            "longitud",
+            "altitud",
+            "estado",
+            "municipio",
+            "region_hidrologica",
+            "cuenca",
+        ]
+        if c in out.columns
+    ]
     out = out[keep].copy()
     for c in ("latitud", "longitud", "altitud"):
         if c in out:
@@ -98,13 +117,13 @@ def claves_from_catalog(path: Path) -> list[str]:
 # Series
 # --------------------------------------------------------------------------- #
 _SER_MAP = [
-    ("fecha", lambda n: n.startswith("fecha")),
+    ("fecha", lambda n: n == "fecha" or n.startswith("fecha")),
     ("gasto_medio_m3s", lambda n: "gasto" in n),
     ("nivel_m", lambda n: "nivel" in n),
     ("precip_mm", lambda n: "precip" in n),
-    ("tmax_c", lambda n: "temperatura" in n and "maxima" in n),
-    ("tmin_c", lambda n: "temperatura" in n and "minima" in n),
-    ("tmed_c", lambda n: "temperatura" in n and "media" in n),
+    ("tmax_c", lambda n: ("temperatura" in n or "temp" in n) and "max" in n),
+    ("tmin_c", lambda n: ("temperatura" in n or "temp" in n) and "min" in n),
+    ("tmed_c", lambda n: ("temperatura" in n or "temp" in n) and ("media" in n or "amb" in n)),
     ("evap_mm", lambda n: "evap" in n),
 ]
 
@@ -116,7 +135,16 @@ def read_series_csv(path: Path) -> pd.DataFrame:
     """
     raw = Path(path).read_text(encoding=ENCODING, errors="replace")
     lines = raw.splitlines()
-    hdr = next((i for i, ln in enumerate(lines) if _norm(ln).startswith("fecha")), None)
+    # SIH has two real header variants: Fecha,... and Estacion,Fecha,...
+    # Detect Fecha as a complete CSV field instead of assuming its position.
+    hdr = next(
+        (
+            i
+            for i, line in enumerate(lines)
+            if "fecha" in {_norm(field) for field in line.split(",")}
+        ),
+        None,
+    )
     if hdr is None:
         raise ValueError(f"No se encontró encabezado 'Fecha' en {Path(path).name}")
     df = pd.read_csv(io.StringIO("\n".join(lines[hdr:])), na_values=NA, skipinitialspace=True)
@@ -129,7 +157,8 @@ def read_series_csv(path: Path) -> pd.DataFrame:
                 break
     df = df.rename(columns=rename)
     df = df[[c for c in df.columns if c in {t for t, _ in _SER_MAP}]].copy()
-    df["fecha"] = pd.to_datetime(df["fecha"], format="%Y/%m/%d", errors="coerce")
+    # SIH publishes both YYYY/MM/DD and YYYY-MM-DD depending on station family.
+    df["fecha"] = pd.to_datetime(df["fecha"], format="mixed", errors="coerce")
     for c in df.columns:
         if c != "fecha":
             df[c] = pd.to_numeric(df[c], errors="coerce")
@@ -138,10 +167,14 @@ def read_series_csv(path: Path) -> pd.DataFrame:
     return df
 
 
-def download_series(tipo: str, claves: list[str] | None = None,
-                    limit: int | None = None, overwrite: bool = False,
-                    max_workers: int | None = None,
-                    delay_s: float | None = None) -> list[Path]:
+def download_series(
+    tipo: str,
+    claves: list[str] | None = None,
+    limit: int | None = None,
+    overwrite: bool = False,
+    max_workers: int | None = None,
+    delay_s: float | None = None,
+) -> list[Path]:
     """Descarga las series CSV directas en paralelo. Si no se pasan claves, usa el catálogo.
 
     Concurrency:
@@ -177,8 +210,14 @@ def download_series(tipo: str, claves: list[str] | None = None,
             res = fut.result()
             if res is not None:
                 out.append(res)
-    log.info("Descargadas %d/%d series (%s, workers=%d, delay=%ss)",
-             len(out), len(claves), tipo, max_workers, delay_s)
+    log.info(
+        "Descargadas %d/%d series (%s, workers=%d, delay=%ss)",
+        len(out),
+        len(claves),
+        tipo,
+        max_workers,
+        delay_s,
+    )
     return out
 
 
