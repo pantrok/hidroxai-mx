@@ -55,7 +55,16 @@ def impute_short_gaps(
     for key, g in df.groupby(group, sort=False):
         g = g.copy()
         before = g[value_col].isna()
-        g[value_col] = g[value_col].interpolate(method="cubic", limit=max_gap, limit_area="inside")
+        try:
+            g[value_col] = g[value_col].interpolate(
+                method="cubic", limit=max_gap, limit_area="inside"
+            )
+        except (ValueError, TypeError) as exc:
+            # scipy cubic spline needs >=4 valid points; fall back to linear for sparse series.
+            log.debug("%s: cubic interpolation failed (%s); using linear", key, exc)
+            g[value_col] = g[value_col].interpolate(
+                method="linear", limit=max_gap, limit_area="inside"
+            )
         newly = before & g[value_col].notna()
         g.loc[newly, "calidad"] = g.loc[newly, "calidad"].clip(lower=1)
         g[group] = key

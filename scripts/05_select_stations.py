@@ -11,6 +11,7 @@ Uso:
     python scripts/05_select_stations.py            # candidatas por región
     python scripts/05_select_stations.py --refine   # refina por cobertura + vecinos
 """
+
 from __future__ import annotations
 
 import click
@@ -55,7 +56,16 @@ def main(refine: bool, k: int) -> None:
     cfg = load_cuencas()
     regiones = {str(r) for r in cfg.get("regiones_hidrologicas", [12, 18, 26])}
     crit = cfg.get("criterios_seleccion_estaciones", {})
-    cov_min = float(crit.get("cobertura_minima", 0.80))
+    cov_cfg = crit.get("cobertura_minima", 0.80)
+    if isinstance(cov_cfg, dict):
+        cov_min = {
+            "hidrometricas": float(cov_cfg.get("hidrometricas", 0.60)),
+            "climatologicas": float(cov_cfg.get("climatologicas", 0.80)),
+        }
+    else:
+        # Backward compatibility with the former single scalar threshold.
+        cov_min = {"hidrometricas": float(cov_cfg), "climatologicas": float(cov_cfg)}
+    cov_ext_hidro = float(crit.get("cobertura_extendida_hidrometricas", 0.30))
     per = crit.get("periodo", {"inicio": "2010-01-01", "fin": "2025-12-31"})
 
     cats = {}
@@ -65,7 +75,8 @@ def main(refine: bool, k: int) -> None:
         sel = df[df["region_hidrologica"].isin(regiones)].copy()
         cats[tipo] = sel
         (PROCESSED / f"estaciones_candidatas_{tipo}.csv").write_text(
-            sel.to_csv(index=False), encoding="utf-8")
+            sel.to_csv(index=False), encoding="utf-8"
+        )
         log.info("%-15s candidatas en RH %s: %d", tipo, sorted(regiones), len(sel))
 
     if not refine:
@@ -73,26 +84,67 @@ def main(refine: bool, k: int) -> None:
         return
 
     out = {}
+    scored = {}
     for tipo, value_col in (("hidrometricas", "gasto_medio_m3s"), ("climatologicas", "precip_mm")):
         df = cats[tipo].copy()
         df["cobertura"] = [
             _coverage(tipo, c, value_col, per["inicio"], per["fin"]) for c in df["clave"]
         ]
-        keep = df[df["cobertura"] >= cov_min].copy()
+        scored[tipo] = df
+        threshold = cov_min[tipo]
+        keep = df[df["cobertura"] >= threshold].copy()
         out[tipo] = keep
-        log.info("%-15s con cobertura>=%.0f%%: %d/%d", tipo, cov_min * 100, len(keep), len(df))
+        log.info(
+            "%-15s con cobertura>=%.0f%%: %d/%d",
+            tipo,
+            threshold * 100,
+            len(keep),
+            len(df),
+        )
 
     hid, cli = out["hidrometricas"], out["climatologicas"]
-    if not cli.empty:
+
+    def _add_climate_neighbors(stations: pd.DataFrame) -> pd.DataFrame:
+        if stations.empty or cli.empty:
+            return stations
         neigh = []
-        for _, r in hid.iterrows():
-            d = _haversine(r["latitud"], r["longitud"], cli["latitud"].values, cli["longitud"].values)
+        for _, r in stations.iterrows():
+            d = _haversine(
+                r["latitud"], r["longitud"], cli["latitud"].values, cli["longitud"].values
+            )
             idx = np.argsort(d)[:k]
             neigh.append(",".join(cli.iloc[idx]["clave"].tolist()))
-        hid = hid.assign(vecinos_clima=neigh)
-    (PROCESSED / "estaciones_seleccionadas_hidrometricas.csv").write_text(hid.to_csv(index=False), encoding="utf-8")
-    (PROCESSED / "estaciones_seleccionadas_climatologicas.csv").write_text(cli.to_csv(index=False), encoding="utf-8")
-    log.info("Seleccionadas: %d hidro (+%d vecinos clima). Meta OE1 >=200.", len(hid), k)
+        return stations.assign(vecinos_clima=neigh)
+
+    hid = _add_climate_neighbors(hid)
+    hid_all = scored["hidrometricas"]
+    hid_ext = hid_all[
+        (hid_all["cobertura"] >= cov_ext_hidro) & (hid_all["cobertura"] < cov_min["hidrometricas"])
+    ].copy()
+    hid_ext = _add_climate_neighbors(hid_ext)
+    hid_ext["uso_recomendado"] = "sensibilidad_reconstruccion"
+
+    (PROCESSED / "estaciones_seleccionadas_hidrometricas.csv").write_text(
+        hid.to_csv(index=False), encoding="utf-8"
+    )
+    (PROCESSED / "estaciones_seleccionadas_climatologicas.csv").write_text(
+        cli.to_csv(index=False), encoding="utf-8"
+    )
+    (PROCESSED / "estaciones_extendidas_hidrometricas.csv").write_text(
+        hid_ext.to_csv(index=False), encoding="utf-8"
+    )
+    log.info(
+        "Seleccionadas principales: %d hidro (+%d vecinos clima), %d clima. "
+        "Extendidas hidro %.0f%%-<%.0f%%: %d. Universo hidro >=%.0f%%: %d.",
+        len(hid),
+        k,
+        len(cli),
+        cov_ext_hidro * 100,
+        cov_min["hidrometricas"] * 100,
+        len(hid_ext),
+        cov_ext_hidro * 100,
+        len(hid) + len(hid_ext),
+    )
 
 
 if __name__ == "__main__":

@@ -33,6 +33,11 @@ cuencas_piloto:
     nota: "Zona de la Unidad Académica del IPN; poco estudiada. Prueba de sensibilidad a 15 m."
 
 criterios_seleccion_estaciones:
-  cobertura_minima: 0.80          # ≥80% de datos no faltantes en el periodo objetivo
+  # Main thresholds reflect the continuity of each monitoring network.
+  # Hydro series from 30% to <60% remain separate for sensitivity/reconstruction.
+  cobertura_minima:
+    hidrometricas: 0.60
+    climatologicas: 0.80
+  cobertura_extendida_hidrometricas: 0.30
   n_minimo_estaciones: 200        # OE1
   periodo: { inicio: "2010-01-01", fin: "2025-12-31" }
