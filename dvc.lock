@@ -22,8 +22,8 @@ stages:
     deps:
     - path: conf/cuencas_piloto.yaml
       hash: md5
-      md5: e19d03568ae7b1e683295b9b08d829ff
-      size: 1243
+      md5: 1bf6f3caec3bc995946f8b24afe5c68c
+      size: 1833
     - path: data/raw/sih
       hash: md5
       md5: 9da6c84333defa37c48d23a0abc9dc65.dir
@@ -31,8 +31,8 @@ stages:
       nfiles: 2
     - path: scripts/05_select_stations.py
       hash: md5
-      md5: f001ac960bf9c042e564557dbe08a6ef
-      size: 3980
+      md5: b4b337700a58826e5788d19ed9818490
+      size: 5521
     outs:
     - path: data/processed/estaciones_candidatas_climatologicas.csv
       hash: md5
@@ -56,9 +56,9 @@ stages:
     outs:
     - path: data/raw/sih_series/hidrometricas
       hash: md5
-      md5: e352e5d2e42bb7e5b4df44e3e4c580ff.dir
-      size: 946909
-      nfiles: 5
+      md5: fff92fa722c2d3c3f77649068ceae4e8.dir
+      size: 181680906
+      nfiles: 547
   download_series_clima:
     cmd: python scripts/03_download_sih_series.py --tipo climatologicas
     deps:
@@ -73,63 +73,63 @@ stages:
     outs:
     - path: data/raw/sih_series/climatologicas
       hash: md5
-      md5: e13c624509113b30395edec809e8481d.dir
-      size: 4850364
-      nfiles: 5
+      md5: c8e85094312007484c234c33a8c36464.dir
+      size: 1595922588
+      nfiles: 2659
   build_canonical_hidro:
     cmd: python scripts/04_build_canonical.py --tipo hidrometricas
     deps:
     - path: data/raw/sih_series/hidrometricas
       hash: md5
-      md5: e352e5d2e42bb7e5b4df44e3e4c580ff.dir
-      size: 946909
-      nfiles: 5
+      md5: fff92fa722c2d3c3f77649068ceae4e8.dir
+      size: 181680906
+      nfiles: 547
     - path: scripts/04_build_canonical.py
       hash: md5
       md5: caee6dfecbbc41bf3fb36ca3618df487
       size: 2067
     - path: src/hidroxai_mx
       hash: md5
-      md5: eebb864111aedf703ddacb4a928d29e9.dir
-      size: 100263
+      md5: 4e531e5b08fb88f869176bbd4551dde2.dir
+      size: 105035
       nfiles: 32
     outs:
     - path: data/processed/series_hidrometricas.parquet
       hash: md5
-      md5: bb370d9dc6aa7b1a59b913e9ee85ae76.dir
-      size: 1523956
-      nfiles: 62
+      md5: 81152b377aaa0edb648ce4ad011a26bc.dir
+      size: 142891675
+      nfiles: 197
   build_canonical_clima:
     cmd: python scripts/04_build_canonical.py --tipo climatologicas
     deps:
     - path: data/raw/sih_series/climatologicas
       hash: md5
-      md5: e13c624509113b30395edec809e8481d.dir
-      size: 4850364
-      nfiles: 5
+      md5: c8e85094312007484c234c33a8c36464.dir
+      size: 1595922588
+      nfiles: 2659
     - path: scripts/04_build_canonical.py
       hash: md5
       md5: caee6dfecbbc41bf3fb36ca3618df487
       size: 2067
     - path: src/hidroxai_mx
       hash: md5
-      md5: eebb864111aedf703ddacb4a928d29e9.dir
-      size: 100263
+      md5: 4e531e5b08fb88f869176bbd4551dde2.dir
+      size: 105035
       nfiles: 32
     outs:
     - path: data/processed/series_climatologicas.parquet
       hash: md5
-      md5: 1f4d293f7d25ead21a8ed3092cbe014f.dir
-      size: 4704984
-      nfiles: 292
+      md5: 13aa8ee6e03c814dac5ab93416adfaec.dir
+      size: 7057476
+      nfiles: 438
   build_features:
     cmd: python scripts/07_build_features.py --no-save-tensors
     deps:
     - path: data/processed/series_hidrometricas.parquet
       hash: md5
-      md5: bb370d9dc6aa7b1a59b913e9ee85ae76.dir
-      size: 1523956
-      nfiles: 62
+      md5: 81152b377aaa0edb648ce4ad011a26bc.dir
+      size: 142891675
+      nfiles: 197
     - path: scripts/07_build_features.py
       hash: md5
       md5: f8b93d4b0940e0938e99bc21d1080f7b
@@ -142,5 +142,5 @@ stages:
     outs:
     - path: data/features/feature_table.parquet
       hash: md5
-      md5: 44c6167b9fd8480e45a9c22913c17abb
-      size: 1429132
+      md5: 9b1a8df5ad488487133e18e349efa661
+      size: 182261384
