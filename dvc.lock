@@ -22,8 +22,8 @@ stages:
     deps:
     - path: conf/cuencas_piloto.yaml
       hash: md5
-      md5: 1bf6f3caec3bc995946f8b24afe5c68c
-      size: 1833
+      md5: 7e818f21dcae610df12efbcfea57215a
+      size: 2454
     - path: data/raw/sih
       hash: md5
       md5: 9da6c84333defa37c48d23a0abc9dc65.dir
@@ -119,9 +119,9 @@ stages:
     outs:
     - path: data/processed/series_climatologicas.parquet
       hash: md5
-      md5: 13aa8ee6e03c814dac5ab93416adfaec.dir
-      size: 7057476
-      nfiles: 438
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0
   build_features:
     cmd: python scripts/07_build_features.py --no-save-tensors
     deps:
@@ -142,5 +142,5 @@ stages:
     outs:
     - path: data/features/feature_table.parquet
       hash: md5
-      md5: 9b1a8df5ad488487133e18e349efa661
-      size: 182261384
+      md5: d83e7f7adbcedab0d7db422cf573f908
+      size: 182249407
