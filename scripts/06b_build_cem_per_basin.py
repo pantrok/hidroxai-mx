@@ -49,9 +49,9 @@ SCRATCH = Path("data/scratch")
 # Estados sugeridos por cuenca (referencia para descarga manual; no se valida).
 ESTADOS_SUGERIDOS: dict[str, list[str]] = {
     "Cutzamala": ["Mexico", "Michoacan", "Guerrero"],
-    "Lerma-Santiago": ["Jalisco", "Guanajuato", "Michoacan", "Queretaro",
-                       "Mexico", "Aguascalientes", "Zacatecas", "SanLuisPotosi",
-                       "Nayarit"],
+    "Lerma Alto": ["Mexico", "Queretaro", "Michoacan"],
+    "Bajio": ["Guanajuato", "Michoacan", "Queretaro", "Jalisco"],
+    "Santiago": ["Jalisco", "Nayarit", "Zacatecas", "Aguascalientes"],
     "Panuco": ["SanLuisPotosi", "Tamaulipas", "Hidalgo", "Veracruz",
                "Queretaro", "Mexico", "Puebla", "Tlaxcala"],
     "Alta del Balsas": ["Morelos", "Puebla", "Tlaxcala", "Mexico",
