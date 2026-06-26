@@ -37,3 +37,6 @@ dist/
 
 # Claude Code (allowlist local del usuario)
 /.claude/settings.local.json
+
+# MS Office lock files (aparecen mientras un .docx/.xlsx está abierto)
+~$*
