@@ -119,9 +119,9 @@ stages:
     outs:
     - path: data/processed/series_climatologicas.parquet
       hash: md5
-      md5: d751713988987e9331980363e24189ce.dir
-      size: 0
-      nfiles: 0
+      md5: 17984ab1ea26f648f73c2b8b3f3cf25b.dir
+      size: 836473785
+      nfiles: 150
   build_features:
     cmd: python scripts/07_build_features.py --no-save-tensors
     deps:
@@ -142,5 +142,5 @@ stages:
     outs:
     - path: data/features/feature_table.parquet
       hash: md5
-      md5: d83e7f7adbcedab0d7db422cf573f908
-      size: 182249407
+      md5: 254d190094fdd5c47d5509c4c8527237
+      size: 184492271
