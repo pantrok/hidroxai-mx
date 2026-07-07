@@ -15,11 +15,13 @@ Contenido del ZIP (definitivo tras las decisiones de sesión):
     inegi/                       6 CEMs cem_<cuenca>.tif (30 m / 15 m)
   processed/               — parquets canónicos + estaciones + cuencas + reportes
   features/                — feature_table.parquet
-  README.md                — metadata + estructura + citación (autogenerado)
-  LICENSE-DATA.md          — CC BY 4.0 (copiado del repo)
-  CITATION.cff             — con placeholder de DOI Zenodo (copiado del repo)
+  README.md                — metadata + estructura (autogenerado, en inglés)
+  LICENSE-DATA.md          — CC BY 4.0 (autogenerado, en inglés)
   conf/cuencas_piloto.yaml — configuración de cuencas usada en la corrida
   manifest_zenodo.json     — SHA-256, tamaño y ruta relativa de cada archivo
+
+CITATION.cff no se incluye a propósito: la citación oficial la genera Zenodo
+al asignar el DOI del depósito.
 
 Se excluyen: .npz (regla de oro), data/interim (rasters intermedios de whitebox),
 data/scratch, .venv, .env, .dvc/config.local, __pycache__, .git.
@@ -49,8 +51,9 @@ INCLUDES: list[tuple[Path, str]] = [
     (REPO / "data" / "processed", "processed"),
     (REPO / "data" / "features", "features"),
     (REPO / "conf" / "cuencas_piloto.yaml", "conf/cuencas_piloto.yaml"),
-    (REPO / "LICENSE-DATA.md", "LICENSE-DATA.md"),
-    (REPO / "CITATION.cff", "CITATION.cff"),
+    # LICENSE-DATA.md and README.md are generated in English at packaging time.
+    # CITATION.cff is intentionally excluded: Zenodo issues the canonical citation
+    # when the DOI is minted.
 ]
 
 # Patrones que NO se suben a Zenodo.
@@ -96,127 +99,168 @@ def load_metrics() -> dict:
 
 
 def build_readme(version: str, metrics: dict, files_count: int, total_bytes: int) -> str:
-    """Genera el README.md que acompaña al ZIP en Zenodo."""
+    """Generate the English README.md that ships inside the Zenodo ZIP."""
     ds = metrics.get("dataset", {})
     hid = ds.get("hidrometricas", {})
     cli = ds.get("climatologicas", {})
     fig1 = metrics.get("fig1", {})
     fig8 = metrics.get("fig8", {})
     sub_by = fig8.get("subcuencas_por_cuenca", {})
-    hoy = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     def n(x, default="—"):
         try:
-            return f"{int(x):,}".replace(",", " ")
+            return f"{int(x):,}"
         except Exception:
             return default
 
-    def _sub(nombre: str) -> str:
-        return str(sub_by.get(nombre, "—"))
+    def _sub(name: str) -> str:
+        return str(sub_by.get(name, "—"))
 
-    return f"""# HidroXAI-MX — Snapshot {version}
+    return f"""# HidroXAI-MX — snapshot {version}
 
-Dataset hidroclimático reproducible para cuatro cuencas piloto de México
-(Cutzamala, Lerma–Santiago —dividida en Lerma Alto / Bajío / Santiago—, Pánuco
-y Alta del Balsas), construido a partir de las fuentes públicas
-CONAGUA-SIH e INEGI CEM 3.0. Este ZIP es el depósito en Zenodo asociado al
-artículo *data paper* enviado a **Data in Brief**.
+Reproducible hydroclimatic dataset for four pilot basins in Mexico
+(Cutzamala, Lerma–Santiago —split into Lerma Alto / Bajío / Santiago—, Pánuco
+and Alta del Balsas), built from the open sources CONAGUA-SIH and INEGI
+CEM 3.0. This archive is the Zenodo deposit that supports the *Data in Brief*
+manuscript associated with the dataset.
 
-Fecha de empaquetado: {hoy} (UTC).
-Repositorio del código y pipeline: https://github.com/pantrok/hidroxai-mx.
+Packaging date: {today} (UTC).
+Source code and pipeline: https://github.com/pantrok/hidroxai-mx.
 
 ---
 
-## Contenido y volumen
+## Contents and volume
 
-* Archivos totales: **{files_count:,}** (aprox. **{total_bytes / 1e9:.2f} GB**).
-* Estaciones hidrométricas: **{n(hid.get("n_estaciones"))}** con
-  **{n(hid.get("n_filas"))}** observaciones diarias
+* Total files: **{files_count:,}** (approximately **{total_bytes / 1e9:.2f} GB**
+  uncompressed).
+* Hydrometric stations: **{n(hid.get("n_estaciones"))}** with
+  **{n(hid.get("n_filas"))}** daily observations
   ({hid.get("fecha_min", "—")} → {hid.get("fecha_max", "—")}).
-* Estaciones climatológicas: **{n(cli.get("n_estaciones"))}** con
-  **{n(cli.get("n_filas"))}** observaciones diarias
+* Climatological stations: **{n(cli.get("n_estaciones"))}** with
+  **{n(cli.get("n_filas"))}** daily observations
   ({cli.get("fecha_min", "—")} → {cli.get("fecha_max", "—")}).
-* Subcuencas delineadas con WhiteboxTools: **{n(fig8.get("subcuencas_total"))}**
+* Sub-basins delineated with WhiteboxTools: **{n(fig8.get("subcuencas_total"))}**
   (Cutzamala {_sub("Cutzamala")}, Lerma Alto {_sub("Lerma Alto")},
   Bajío {_sub("Bajío")}, Santiago {_sub("Santiago")},
   Pánuco {_sub("Pánuco")}, Alta del Balsas {_sub("Alta del Balsas")}).
-* Cobertura media del universo hidrométrico (2010–2025):
+* Mean coverage of the hydrometric universe (2010–2025):
   **{fig1.get("cobertura_media_pct", 0):.1f} %**;
-  estaciones ≥ 60 %: **{fig1.get("estaciones_ge_60pct", 0)}**;
+  stations ≥ 60 %: **{fig1.get("estaciones_ge_60pct", 0)}**;
   ≥ 80 %: **{fig1.get("estaciones_ge_80pct", 0)}**.
 
-## Estructura
+## Layout
 
 ```
 raw/
   sih/
-    catalogo_hidrometricas.csv       catálogo oficial (SIH)
-    catalogo_climatologicas.csv      catálogo oficial (SIH)
-    _manifest.json                   URL + SHA-256 + fecha UTC por archivo
+    catalogo_hidrometricas.csv        official SIH catalog
+    catalogo_climatologicas.csv       official SIH catalog
+    _manifest.json                    URL + SHA-256 + UTC timestamp per file
   sih_series/
-    hidrometricas/<CLAVE>.csv        series diarias por estación
-    climatologicas/<CLAVE>.csv       series diarias por estación
+    hidrometricas/<KEY>.csv           daily series per station
+    climatologicas/<KEY>.csv          daily series per station
   inegi/
-    cem_<cuenca>.tif                 6 modelos digitales de elevación
+    cem_<basin>.tif                   6 per-basin digital elevation models
 
 processed/
-  series_hidrometricas.parquet/      canónico particionado por año
-  series_climatologicas.parquet/     canónico particionado por año
-  estaciones_candidatas_*.csv        universo por región hidrológica
-  estaciones_seleccionadas_*.csv     conjunto principal (≥ 60 % / ≥ 80 %)
-  estaciones_extendidas_hidrometricas.csv     30 %–59 % (sensibilidad)
-  cuencas/                           6 GeoPackages (subcuencas delineadas)
-  reportes/                          8 figuras 300 dpi + metrics.json + CSV
-                                     cobertura por estación
+  series_hidrometricas.parquet/       canonical, partitioned by year
+  series_climatologicas.parquet/      canonical, partitioned by year
+  estaciones_candidatas_*.csv         universe per hydrological region
+  estaciones_seleccionadas_*.csv      primary set (≥ 60 % / ≥ 80 % coverage)
+  estaciones_extendidas_hidrometricas.csv     30 %–59 % (sensitivity set)
+  cuencas/                            6 GeoPackages (delineated sub-basins)
+  reportes/                           8 figures at 300 dpi + metrics.json +
+                                      coverage CSV per station
 
 features/
-  feature_table.parquet              rezagos + medias móviles por estación
+  feature_table.parquet               lags + rolling means per station
 
-conf/cuencas_piloto.yaml             bboxes curados por cuenca
-LICENSE-DATA.md                      Creative Commons Attribution 4.0 (CC BY 4.0)
-CITATION.cff                         cómo citar el dataset
-manifest_zenodo.json                 SHA-256 + tamaño + ruta de cada archivo
+conf/cuencas_piloto.yaml              curated per-basin bounding boxes
+LICENSE-DATA.md                       Creative Commons Attribution 4.0
+manifest_zenodo.json                  SHA-256, size and path for every file
 ```
 
-## Fuentes originales
+## Original data sources
 
 * **CONAGUA — Sistema de Información Hidrológica (SIH):**
-  https://sih.conagua.gob.mx (catálogos maestros y series diarias por estación).
+  https://sih.conagua.gob.mx (master catalogs and daily series per station).
 * **INEGI — Continuo de Elevaciones Mexicano 3.0 (CEM 3.0):**
-  https://www.inegi.org.mx/temas/relieve/continental/ (modelos digitales de
-  elevación por entidad federativa, mosaicados y recortados por cuenca).
+  https://www.inegi.org.mx/temas/relieve/continental/ (state-level digital
+  elevation models, mosaicked and clipped per basin).
 
-## Cómo reproducir
+## How to reproduce
 
 ```bash
 git clone https://github.com/pantrok/hidroxai-mx.git
 cd hidroxai-mx
 pip install -e ".[dev,geo]"
-# opción 1: reconstruir desde este ZIP
+# Option 1: rebuild directly from this archive
 unzip HidroXAI-MX-{version}.zip -d data_zenodo/
-# opción 2: descargar el mismo snapshot desde el remoto DVC (Cloudflare R2)
+# Option 2: pull the same snapshot from the DVC remote (Cloudflare R2)
 dvc pull
-python scripts/09_make_report_figures.py   # regenera las 8 figuras a 300 dpi
+python scripts/09_make_report_figures.py   # regenerates the 8 figures at 300 dpi
 ```
 
-## Cómo citar
+## How to cite
 
-Si utilizas este dataset, cítalo como se indica en `CITATION.cff`. Al asignarse
-un DOI de Zenodo se debe reemplazar el placeholder correspondiente. También se
-solicita la atribución obligatoria a CONAGUA (SIH) e INEGI (CEM 3.0) por ser las
-fuentes primarias.
+Please use the citation that Zenodo displays for this deposit once the DOI is
+issued; that is the canonical reference for the dataset. Attribution to
+CONAGUA (SIH) and INEGI (CEM 3.0) as primary data sources is also required.
 
-## Licencia
+## License
 
-Datos derivados: **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
-Código y pipeline (repositorio en GitHub): **MIT**.
+Derived data: **Creative Commons Attribution 4.0 International (CC BY 4.0)** —
+see `LICENSE-DATA.md` inside this archive. Source code and pipeline
+(GitHub repository): **MIT**.
 
-## Financiamiento
+## Funding
 
-Proyecto **IND-2026-0335**, Instituto Politécnico Nacional (IPN), Unidad
+Project **IND-2026-0335**, Instituto Politécnico Nacional (IPN), Unidad
 Profesional Interdisciplinaria de Ingeniería campus Tlaxcala (UPIIT).
-Convocatoria de Proyectos de Investigación Científica y Desarrollo Tecnológico
-2026 (PICDT 2026), Secretaría de Investigación y Posgrado.
+2026 Call for Scientific Research and Technological Development Projects
+(PICDT 2026), Secretaría de Investigación y Posgrado.
+"""
+
+
+def build_license_data_en() -> str:
+    """English CC BY 4.0 statement bundled with the Zenodo archive."""
+    return """# Data license
+
+The dataset distributed in this archive (curated hydroclimatic data for
+HidroXAI-MX, versioned via DVC and deposited on Zenodo) is released under
+**Creative Commons Attribution 4.0 International (CC BY 4.0)** —
+https://creativecommons.org/licenses/by/4.0/.
+
+The **source code** and pipeline that produced these data are published in a
+separate repository under the **MIT License**
+(https://github.com/pantrok/hidroxai-mx).
+
+## Mandatory attribution to primary sources
+
+The dataset is a derivative work of the following open sources. When you reuse
+this dataset you must also credit them, per their own terms of use:
+
+- **CONAGUA — Sistema de Información Hidrológica (SIH) and BANDAS**:
+  Términos de Libre Uso MX. Cite as "Comisión Nacional del Agua (CONAGUA),
+  Sistema de Información Hidrológica, https://sih.conagua.gob.mx".
+- **Servicio Meteorológico Nacional (CONAGUA)**: Términos de Libre Uso MX.
+- **INEGI (CEM 3.0, hydrographic network)**: Términos de Libre Uso del INEGI.
+  Cite as "Instituto Nacional de Estadística y Geografía (INEGI), Continuo de
+  Elevaciones Mexicano 3.0, https://www.inegi.org.mx/temas/relieve/continental/".
+- **CICESE-CLICOM** (relevant if you later extend the dataset with CLICOM series):
+  academic use with the required citation "Datos climáticos diarios del CLICOM
+  del SMN a través de su plataforma web del CICESE
+  (http://clicom-mex.cicese.mx)".
+- **CONABIO** (hydrographic mirror layers, when applicable): CC BY-NC 2.5 MX.
+
+## Institutional credit
+
+Data and software produced within project **IND-2026-0335**, Instituto
+Politécnico Nacional (IPN), Unidad Profesional Interdisciplinaria de
+Ingeniería campus Tlaxcala (UPIIT). 2026 Call for Scientific Research and
+Technological Development Projects (PICDT 2026), Secretaría de Investigación y
+Posgrado.
 """
 
 
@@ -270,6 +314,12 @@ def main() -> int:
         zf.writestr("README.md", readme_bytes)
         manifest.append({"path": "README.md", "sha256": hashlib.sha256(readme_bytes).hexdigest(),
                          "bytes": len(readme_bytes)})
+
+        license_bytes = build_license_data_en().encode("utf-8")
+        zf.writestr("LICENSE-DATA.md", license_bytes)
+        manifest.append({"path": "LICENSE-DATA.md",
+                         "sha256": hashlib.sha256(license_bytes).hexdigest(),
+                         "bytes": len(license_bytes)})
 
         manifest_json = json.dumps({
             "version": args.version,
