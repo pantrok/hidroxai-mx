@@ -144,7 +144,7 @@ def fig3_calidad(hid: pd.DataFrame, metrics: dict) -> None:
         ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 0.5, f"{int(n):,}", ha="center", fontsize=8)
     ax.set_ylabel("% of observations")
     ax.set_title("Distribution of quality flags")
-    ax.set_ylim(0, 100)
+    ax.set_ylim(0, 108)
     plt.tight_layout()
     plt.savefig(OUT / "fig3_calidad.png")
     plt.close(fig)
@@ -298,7 +298,7 @@ def fig8_basin_map(metrics: dict) -> None:
         # Centro del label = punto medio del bounding box de toda la cuenca.
         minx, miny, maxx, maxy = gdf.total_bounds
         cx, cy = (minx + maxx) / 2, (miny + maxy) / 2
-        ax.annotate(f"{nombre}\n({len(gdf)} subcuencas)", (cx, cy),
+        ax.annotate(f"{nombre}\n({len(gdf)} sub-basins)", (cx, cy),
                     ha="center", fontsize=8, fontweight="bold",
                     color=colors.get(nombre, "black"),
                     bbox=dict(boxstyle="round,pad=0.2", fc="white", ec=colors.get(nombre, "gray"), alpha=0.85))
