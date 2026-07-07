@@ -150,7 +150,7 @@ children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after:
   children: [new TextRun({ text: "a Instituto Politécnico Nacional (IPN), Unidad Profesional Interdisciplinaria de Ingeniería campus Tlaxcala (UPIIT). * Correspondencia: pantrok@gmail.com", font: FONT, size: 20, italics: true })] }));
 children.push(new Paragraph({ spacing: { after: 200 }, alignment: AlignmentType.JUSTIFIED,
   shading: { fill: "FFF6E6", type: ShadingType.CLEAR },
-  children: [new TextRun({ text: "AVISO (no para envío): borrador con figuras y métricas reales generadas a partir del snapshot actual del repositorio hidroxai-mx (commit reciente, dataset descargado manualmente desde sih.conagua.gob.mx). Único pendiente no técnico: depositar el snapshot v2026.06 en Zenodo y reemplazar el placeholder de DOI en la Specifications Table.", font: FONT, size: 20, italics: true })] }));
+  children: [new TextRun({ text: "AVISO (no para envío): borrador con figuras y métricas reales generadas a partir del snapshot actual del repositorio hidroxai-mx (commit reciente, dataset descargado manualmente desde sih.conagua.gob.mx). El snapshot v2026.06 ya está depositado en Zenodo con DOI 10.5281/zenodo.21231601. Pendientes no técnicos: completar coautores/roles CRediT y redactar la lista final de referencias.", font: FONT, size: 20, italics: true })] }));
 
 // Abstract
 children.push(h1("Abstract"));
@@ -172,7 +172,7 @@ children.push(new Table({
     specRow("Data source location",
       "Mexico. Pilot basins: Cutzamala (Edo. de México / Michoacán / Guerrero), Lerma Alto (Toluca / Querétaro sur), Bajío (Guanajuato / Michoacán / Querétaro), Santiago (Jalisco / Nayarit), Pánuco (S. L. P. / Tamaulipas / Hidalgo / Veracruz / Querétaro / Puebla / Tlaxcala), Alta del Balsas (Morelos / Puebla / Tlaxcala / Edo. de México)."),
     specRow("Data accessibility",
-      "Repository: GitHub — https://github.com/pantrok/hidroxai-mx (code, dvc.yaml, dvc.lock, configuration). DVC remote: Cloudflare R2 (S3-compatible), pulled with `dvc pull`. Snapshot DOI: TO BE ASSIGNED (Zenodo deposit pending). Licenses: code MIT, derived data CC BY 4.0, attribution to CONAGUA, SMN and INEGI required."),
+      "Repository: GitHub — https://github.com/pantrok/hidroxai-mx (code, dvc.yaml, dvc.lock, configuration). DVC remote: Cloudflare R2 (S3-compatible), pulled with `dvc pull`. Zenodo deposit (snapshot v2026.06): DOI 10.5281/zenodo.21231601 — https://doi.org/10.5281/zenodo.21231601. Licenses: code MIT, derived data CC BY 4.0, attribution to CONAGUA, SMN and INEGI required."),
     specRow("Related research article",
       "Sánchez Ruiz, D. et al. (in preparation). Explainable forecasting of streamflow gauge levels and local climate in Mexico via temporal deep learning and fuzzy rules over CONAGUA and Servicio Meteorológico Nacional open data. IND-2026-0335, IPN — UPIIT, PICDT 2026."),
   ],
@@ -341,8 +341,7 @@ children.push(h1("Limitations"));
   `Cobertura hidrométrica heterogénea. La cobertura media de las ${N_HID} estaciones hidrométricas es ${COV_MEAN.toFixed(1)} % en el periodo 2010–2025: muchas series terminan en 2021 o presentan grandes huecos. Para no excluir cuencas críticas, se publicó un conjunto extendido (30 %–60 %) para análisis de sensibilidad y los modelos deben entrenarse sólo sobre ventanas válidas.`,
   "Resolución efectiva del CEM. El portal INEGI sólo permitió descargar los tiles a 15 m; para cuencas grandes (Lerma medio, Pánuco, Santiago) el procesamiento de delineación se hizo tras un remuestreo a 30 m por restricción de memoria. Esto reduce el detalle hidrológico fino en zonas de cabecera.",
   "Errores del catálogo SIH. Cuatro estaciones hidrométricas (entre ellas B18558 ABASOLO, listada en Morelos con coordenadas correspondientes a Tijuana) presentan inconsistencias entre estado, región hidrológica y latitud/longitud reportadas. Se documentan en este artículo y se descartan automáticamente al filtrar por el bbox geográfico curado de cada cuenca.",
-  "Restricciones del proveedor. El portal SIH usa el WAF Imperva Incapsula con un JavaScript challenge: descargas concurrentes > 4 hilos disparan bloqueos por IP. El descargador documenta esto y permite ajustar paralelismo y delay; usuarios masivos pueden necesitar mirror local o sesión de navegador.",
-  "Sin DOI todavía. El snapshot v2026.06 está pendiente de depósito en Zenodo al cierre de este borrador.",
+  "Restricciones del proveedor SIH. El portal usa el WAF Imperva Incapsula con un JavaScript challenge: descargas concurrentes > 4 hilos disparan bloqueos por IP; el descargador documenta esto y permite ajustar paralelismo y delay, pero usuarios masivos pueden necesitar mirror local o sesión de navegador. Esta limitación es del proveedor primario, no del snapshot ya publicado en Zenodo (DOI 10.5281/zenodo.21231601).",
 ].forEach((t) => children.push(bullet(t)));
 
 // Future Work
@@ -372,7 +371,7 @@ children.push(p("PENDIENTE: completar coautorías y roles del equipo IPN/UPIIT q
 
 // Data Availability
 children.push(h1("Data Availability"));
-children.push(p("Código: https://github.com/pantrok/hidroxai-mx (MIT). Snapshot de datos: a depositar en Zenodo (CC BY 4.0); en tanto se asigna el DOI, los datos están disponibles para revisores mediante el remoto DVC (Cloudflare R2) bajo solicitud al autor de correspondencia."));
+children.push(p("Código: https://github.com/pantrok/hidroxai-mx (MIT). Snapshot de datos v2026.06 depositado en Zenodo: DOI 10.5281/zenodo.21231601 (https://doi.org/10.5281/zenodo.21231601), licencia CC BY 4.0. La misma versión del dataset también está disponible en el remoto DVC (Cloudflare R2) mediante `dvc pull` sobre el repositorio."));
 
 // Acknowledgements
 children.push(h1("Acknowledgements"));
@@ -402,11 +401,14 @@ children.push(h2("Cubierto"));
   `Validación física inicial. La correlación rezagada precipitación → gasto alcanza r = ${CORR.toFixed(3)} a ${LAG} días (Fig. 7), un comportamiento físicamente esperable.`,
 ].forEach((t) => children.push(bullet(t)));
 
-children.push(h2("Pendientes no negociables (3) — solo bloquea el envío el #1"));
+children.push(h2("Pendientes no negociables (2)"));
 [
-  "Zenodo. Depositar el snapshot v2026.06 y reemplazar el placeholder de DOI en la Specifications Table y en Data Availability.",
   "Completar coautores y roles CRediT (¿alguien del equipo UPIIT participa en validación, supervisión o curación?).",
   "Redactar la lista de referencias bibliográficas a partir del placeholder al final del manuscrito.",
+].forEach((t) => children.push(bullet(t)));
+children.push(h2("Cerrado"));
+[
+  "Zenodo. Snapshot v2026.06 depositado con DOI 10.5281/zenodo.21231601, ya referenciado en Specifications Table y Data Availability.",
 ].forEach((t) => children.push(bullet(t)));
 
 children.push(h2("Mejoras deseables (no bloquean)"));
@@ -418,7 +420,7 @@ children.push(h2("Mejoras deseables (no bloquean)"));
 
 children.push(h2("Recomendación"));
 children.push(p(
-  "El borrador con figuras reales está listo para revisión interna y, una vez cerrados los tres pendientes no negociables (especialmente el depósito en Zenodo con DOI), puede enviarse a Data in Brief sin trabajo metodológico adicional."
+  "El borrador con figuras reales, DOI de Zenodo (10.5281/zenodo.21231601) y coherencia entre snapshot y manuscrito está listo para revisión interna. Una vez cerrados los dos pendientes restantes (autores/CRediT y lista de referencias), puede enviarse a Data in Brief sin trabajo metodológico adicional."
 ));
 
 // --- Build doc --------------------------------------------------------------
