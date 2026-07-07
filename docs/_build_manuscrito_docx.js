@@ -150,7 +150,7 @@ children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after:
   children: [new TextRun({ text: "a Instituto Politécnico Nacional, Unidad Profesional Interdisciplinaria de Ingeniería Campus Tlaxcala (UPIIT), Tlaxcala, Tlax., México. * Corresponding author: dsanchezro@ipn.mx", font: FONT, size: 20, italics: true })] }));
 children.push(new Paragraph({ spacing: { after: 200 }, alignment: AlignmentType.JUSTIFIED,
   shading: { fill: "FFF6E6", type: ShadingType.CLEAR },
-  children: [new TextRun({ text: "AVISO (no para envío): esta versión del borrador incorpora las secciones DATA DESCRIPTION y EXPERIMENTAL DESIGN, MATERIALS AND METHODS reescritas siguiendo las instrucciones del template Data in Brief v.19 (no ofrecer background, interpretaciones o conclusiones en esas secciones) y completa el campo \"Instructions for accessing these data\" en la Specifications Table. Snapshot v2026.06 depositado en Zenodo con DOI 10.5281/zenodo.21231601 (público, sin registro). Pendientes no técnicos: cerrar el CRediT Author Statement y completar la lista final de referencias.", font: FONT, size: 20, italics: true })] }));
+  children: [new TextRun({ text: "AVISO (no para envío): esta versión del borrador incorpora las secciones DATA DESCRIPTION y EXPERIMENTAL DESIGN, MATERIALS AND METHODS reescritas siguiendo las instrucciones del template Data in Brief v.19 (no ofrecer background, interpretaciones o conclusiones en esas secciones); completa el campo \"Instructions for accessing these data\" en la Specifications Table; y cierra el CRediT Author Statement con la lista de coautores del artículo. Snapshot v2026.06 depositado en Zenodo con DOI 10.5281/zenodo.21231601 (público, sin registro). Único pendiente no técnico: completar la lista final de referencias bibliográficas. Los roles CRediT asignados son sugerencias razonables sobre la base habitual para un data paper; se solicita a cada coautor confirmar / ajustar sus roles.", font: FONT, size: 20, italics: true })] }));
 
 // Abstract
 children.push(h1("Abstract"));
@@ -431,8 +431,14 @@ children.push(p(
 
 // CRediT
 children.push(h1("CRediT Author Statement"));
-children.push(p("Daniel Sánchez Ruiz: Conceptualización, Metodología, Software, Curación de datos, Redacción — borrador original, Redacción — revisión y edición, Visualización, Administración del proyecto, Obtención de financiamiento.", { italics: true }));
-children.push(p("PENDIENTE: completar coautorías y roles del equipo IPN/UPIIT que hayan participado en validación, ingeniería de datos o curación.", { italics: true, size: 20, color: "555555" }));
+[
+  "Daniel Sánchez-Ruiz: Conceptualization, Methodology, Software, Data curation, Formal analysis, Visualization, Writing – Original draft, Project administration, Funding acquisition.",
+  "Cecilia Reyes-Peña: Methodology, Validation, Writing – Review & Editing.",
+  "Lauro Reyes-Cocoletzi: Software, Validation, Writing – Review & Editing.",
+  "Jesús García-Ramírez: Methodology, Formal analysis, Writing – Review & Editing.",
+  "Eric Ramos-Aguilar: Investigation, Resources, Writing – Review & Editing.",
+  "Ricardo Ramos-Aguilar: Supervision, Resources, Writing – Review & Editing.",
+].forEach((t) => children.push(bullet(t)));
 
 // Data Availability
 children.push(h1("Data Availability"));
@@ -468,7 +474,7 @@ children.push(h2("Cubierto"));
 
 children.push(h2("Pendientes no negociables (2)"));
 [
-  "Completar coautores y roles CRediT (¿alguien del equipo UPIIT participa en validación, supervisión o curación?).",
+  "Confirmar con cada coautor la asignación específica de roles CRediT propuesta en el manuscrito.",
   "Redactar la lista de referencias bibliográficas a partir del placeholder al final del manuscrito.",
 ].forEach((t) => children.push(bullet(t)));
 children.push(h2("Cerrado"));
@@ -485,7 +491,7 @@ children.push(h2("Mejoras deseables (no bloquean)"));
 
 children.push(h2("Recomendación"));
 children.push(p(
-  "El borrador con figuras reales, DOI de Zenodo (10.5281/zenodo.21231601) y coherencia entre snapshot y manuscrito está listo para revisión interna. Una vez cerrados los dos pendientes restantes (autores/CRediT y lista de referencias), puede enviarse a Data in Brief sin trabajo metodológico adicional."
+  "El borrador con figuras reales, DOI de Zenodo (10.5281/zenodo.21231601), CRediT completo y coherencia entre snapshot y manuscrito está listo para revisión interna. El único pendiente restante es completar la lista final de referencias bibliográficas."
 ));
 
 // --- Build doc --------------------------------------------------------------

@@ -37,10 +37,10 @@ def coverage_table(df: pd.DataFrame, value_col: str, group: str = "clave_estacio
 
 
 def quality_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """Conteo y % de banderas de calidad (0=ok, 1=imputado, 2=outlier)."""
+    """Conteo y % de banderas de calidad (0=ok, 1=imputed, 2=outlier)."""
     counts = df["calidad"].value_counts().reindex([0, 1, 2]).fillna(0).astype(int)
     total = int(counts.sum()) or 1
-    return pd.DataFrame({"calidad": [0, 1, 2], "etiqueta": ["ok", "imputado", "outlier"],
+    return pd.DataFrame({"calidad": [0, 1, 2], "etiqueta": ["ok", "imputed", "outlier"],
                          "n": counts.to_numpy(), "pct": counts.to_numpy() / total * 100})
 
 
