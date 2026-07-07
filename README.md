@@ -1,8 +1,15 @@
 # hidroxai-mx
 
+[![Dataset DOI (Zenodo)](https://zenodo.org/badge/DOI/10.5281/zenodo.21231601.svg)](https://doi.org/10.5281/zenodo.21231601)
+[![Data license: CC BY 4.0](https://img.shields.io/badge/data%20license-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
+
 Reproducible library and data pipeline for **HidroXAI-MX** (IPN · PICDT2026):
 explainable forecasting of streamflow gauge levels and local climate in Mexico
 on top of open data from CONAGUA, SMN and INEGI.
+
+> **Dataset snapshot `v2026.06`** — DOI [10.5281/zenodo.21231601](https://doi.org/10.5281/zenodo.21231601).
+> Full versioned mirror also available via the DVC remote on Cloudflare R2 (`dvc pull`).
 
 This repository covers **OE1 — National dataset integration and curation**
 (Month 2 of the roadmap). The downstream layers (modeling, explainability,
