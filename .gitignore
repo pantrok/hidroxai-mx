@@ -40,3 +40,6 @@ dist/
 
 # MS Office lock files (aparecen mientras un .docx/.xlsx está abierto)
 ~$*
+
+# Zenodo bundle (empaquetado one-shot, no se versiona)
+/dist/
