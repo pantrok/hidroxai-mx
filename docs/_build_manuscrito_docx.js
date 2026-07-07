@@ -115,8 +115,8 @@ function row3(c1, c2, c3, isHeader = false) {
 const fmt = (n, decimals = 0) => Number(n).toLocaleString("es-MX", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
 // --- content ----------------------------------------------------------------
-const TITLE_ES = "HidroXAI-MX: un dataset hidroclimático reproducible para cuencas piloto de México (CONAGUA-SIH e INEGI) con modelos digitales de elevación y delineación de subcuencas";
-const TITLE_EN = "HidroXAI-MX: a reproducible hydroclimatic dataset for Mexican pilot basins (CONAGUA-SIH and INEGI) with per-basin digital elevation models and watershed delineations";
+const TITLE_ES = "Hidro-MX: un dataset hidroclimático reproducible para cuencas piloto de México (CONAGUA-SIH e INEGI) con modelos digitales de elevación y delineación de subcuencas";
+const TITLE_EN = "Hidro-MX: a reproducible hydroclimatic dataset for pilot basins in Mexico (CONAGUA-SIH and INEGI) with digital elevation models and sub-basin delineation";
 
 const M = METRICS;
 const N_HID = M.dataset.hidrometricas.n_estaciones;
@@ -145,12 +145,12 @@ children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after:
 children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 },
   children: [new TextRun({ text: TITLE_EN, font: FONT, size: 22, italics: true })] }));
 children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 },
-  children: [new TextRun({ text: "Daniel Sánchez Ruiz a,*", font: FONT, size: 22, bold: true })] }));
+  children: [new TextRun({ text: "Daniel Sánchez-Ruiz a,*, Cecilia Reyes-Peña a, Lauro Reyes-Cocoletzi a, Jesús García-Ramírez a, Eric Ramos-Aguilar a, Ricardo Ramos-Aguilar a", font: FONT, size: 22, bold: true })] }));
 children.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 },
-  children: [new TextRun({ text: "a Instituto Politécnico Nacional (IPN), Unidad Profesional Interdisciplinaria de Ingeniería campus Tlaxcala (UPIIT). * Correspondencia: pantrok@gmail.com", font: FONT, size: 20, italics: true })] }));
+  children: [new TextRun({ text: "a Instituto Politécnico Nacional, Unidad Profesional Interdisciplinaria de Ingeniería Campus Tlaxcala (UPIIT), Tlaxcala, Tlax., México. * Corresponding author: dsanchezro@ipn.mx", font: FONT, size: 20, italics: true })] }));
 children.push(new Paragraph({ spacing: { after: 200 }, alignment: AlignmentType.JUSTIFIED,
   shading: { fill: "FFF6E6", type: ShadingType.CLEAR },
-  children: [new TextRun({ text: "AVISO (no para envío): borrador con figuras y métricas reales generadas a partir del snapshot actual del repositorio hidroxai-mx (commit reciente, dataset descargado manualmente desde sih.conagua.gob.mx). El snapshot v2026.06 ya está depositado en Zenodo con DOI 10.5281/zenodo.21231601. Pendientes no técnicos: completar coautores/roles CRediT y redactar la lista final de referencias.", font: FONT, size: 20, italics: true })] }));
+  children: [new TextRun({ text: "AVISO (no para envío): esta versión del borrador incorpora las secciones DATA DESCRIPTION y EXPERIMENTAL DESIGN, MATERIALS AND METHODS reescritas siguiendo las instrucciones del template Data in Brief v.19 (no ofrecer background, interpretaciones o conclusiones en esas secciones) y completa el campo \"Instructions for accessing these data\" en la Specifications Table. Snapshot v2026.06 depositado en Zenodo con DOI 10.5281/zenodo.21231601 (público, sin registro). Pendientes no técnicos: cerrar el CRediT Author Statement y completar la lista final de referencias.", font: FONT, size: 20, italics: true })] }));
 
 // Abstract
 children.push(h1("Abstract"));
@@ -172,7 +172,7 @@ children.push(new Table({
     specRow("Data source location",
       "Mexico. Pilot basins: Cutzamala (Edo. de México / Michoacán / Guerrero), Lerma Alto (Toluca / Querétaro sur), Bajío (Guanajuato / Michoacán / Querétaro), Santiago (Jalisco / Nayarit), Pánuco (S. L. P. / Tamaulipas / Hidalgo / Veracruz / Querétaro / Puebla / Tlaxcala), Alta del Balsas (Morelos / Puebla / Tlaxcala / Edo. de México)."),
     specRow("Data accessibility",
-      "Repository: GitHub — https://github.com/pantrok/hidroxai-mx (code, dvc.yaml, dvc.lock, configuration). DVC remote: Cloudflare R2 (S3-compatible), pulled with `dvc pull`. Zenodo deposit (snapshot v2026.06): DOI 10.5281/zenodo.21231601 — https://doi.org/10.5281/zenodo.21231601. Licenses: code MIT, derived data CC BY 4.0, attribution to CONAGUA, SMN and INEGI required."),
+      "Repository name: HidroXAI-MX v2026.06 — a reproducible hydroclimatic dataset for Mexican pilot basins (CONAGUA-SIH and INEGI). Data identification number: 10.5281/zenodo.21231601. Direct URL to data: https://doi.org/10.5281/zenodo.21231601. Instructions for accessing these data: the deposit is publicly downloadable under CC BY 4.0 without registration. From the Zenodo record page, download HidroXAI-MX-v2026.06.zip (about 0.9 GB compressed, 3.2 GB uncompressed) and extract it; the archive expands into the folders raw/, processed/, features/, conf/ and ships with an English README.md, an English LICENSE-DATA.md, and manifest_zenodo.json with the SHA-256 hash and size of every archived file for integrity checks. Alternatively, clone the source-code repository https://github.com/pantrok/hidroxai-mx (MIT-licensed pipeline; `pip install -e \".[dev,geo]\"`) and run `dvc pull` to fetch the same snapshot from the Cloudflare R2 remote (S3-compatible; anonymous read requires no credentials for this deposit). Attribution to CONAGUA-SIH and INEGI-CEM 3.0 as primary sources is mandatory under the reused terms of use."),
     specRow("Related research article",
       "Sánchez Ruiz, D. et al. (in preparation). Explainable forecasting of streamflow gauge levels and local climate in Mexico via temporal deep learning and fuzzy rules over CONAGUA and Servicio Meteorológico Nacional open data. IND-2026-0335, IPN — UPIIT, PICDT 2026."),
   ],
@@ -201,138 +201,184 @@ children.push(p(
 
 // Data Description
 children.push(h1("Data Description"));
-children.push(p("El dataset se distribuye en cuatro zonas dentro del repositorio:"));
-[
-  "data/raw/sih/: catálogos maestros del SIH para estaciones hidrométricas y climatológicas (CSV originales).",
-  "data/raw/sih_series/{hidrometricas|climatologicas}/<CLAVE>.csv: series temporales diarias por estación, tal como fueron descargadas (codificación Latin-1).",
-  "data/raw/inegi/cem_<cuenca>.tif: modelos digitales de elevación recortados por cuenca (30 m por defecto, 15 m para Alta del Balsas).",
-  "data/processed/: tablas canónicas en Parquet particionado por año, listas de estaciones seleccionadas y extendidas, y la cartografía de subcuencas (GeoPackage por cuenca).",
-  "data/features/feature_table.parquet: tabla compacta lista para modelado (rezagos, medias móviles, normalización por estación), sin tensores deslizantes.",
-  "data/raw/_manifest.json: procedencia de cada archivo descargado (URL, SHA-256, bytes, marca de tiempo UTC).",
-].forEach((t) => children.push(bullet(t)));
+children.push(p(
+  "The dataset is distributed as a single Zenodo archive (HidroXAI-MX-v2026.06.zip) whose top-level layout mirrors the working repository. When uncompressed, it expands into four content folders (raw/, processed/, features/, conf/) plus three self-contained documentation files (README.md, LICENSE-DATA.md, manifest_zenodo.json). Table 1 summarises the folders and Table 2 summarises the columns of every tabular file. All CSV files are UTF-8 (the raw SIH files retain the provider's Latin-1 encoding); all Parquet directories are Apache Parquet (Snappy-compressed) partitioned by year using Hive-style keys (anio=YYYY/*.parquet); rasters are GeoTIFF (LZW-compressed); vector layers are OGC GeoPackage; configuration is YAML; provenance is JSON."
+));
+children.push(blank());
 
-children.push(h2("Inventario por cuenca piloto"));
+children.push(h2("Table 1. Folder layout of the archive"));
+children.push(new Table({
+  width: { size: 9360, type: WidthType.DXA },
+  columnWidths: [2600, 6760],
+  rows: [
+    row3("Folder / file", "Content", "", true),
+    row3("raw/sih/", `Master catalogs downloaded from the CONAGUA Hydrological Information System (SIH): catalogo_hidrometricas.csv (1,189 rows) and catalogo_climatologicas.csv (7,499 rows), plus _manifest.json listing the source URL, SHA-256 hash, size in bytes and UTC download timestamp for every raw file.`, ""),
+    row3("raw/sih_series/hidrometricas/", `547 per-station daily CSVs named <KEY>.csv (Latin-1). Columns: Fecha (YYYY/MM/DD or YYYY-MM-DD), Gasto medio (m³/s), Nivel (m). Missing values encoded as "-" or empty.`, ""),
+    row3("raw/sih_series/climatologicas/", `2,659 per-station daily CSVs named <KEY>.csv (Latin-1). Columns: Fecha, Precipitación (mm), Temperatura máxima/mínima/media (°C), Evaporación (mm).`, ""),
+    row3("raw/inegi/", `Six per-basin digital elevation models (GeoTIFF, int16, EPSG:6362, LZW compression): cem_cutzamala.tif, cem_lerma_alto.tif, cem_bajio.tif, cem_santiago.tif, cem_panuco.tif at 30 m spatial resolution, and cem_alta_del_balsas.tif at 15 m.`, ""),
+    row3("processed/", `Curated datasets ready for analysis (see Table 2): series_hidrometricas.parquet/, series_climatologicas.parquet/, estaciones_candidatas_*.csv, estaciones_seleccionadas_*.csv, estaciones_extendidas_hidrometricas.csv, cuencas/*.gpkg, reportes/*.png + metrics.json + cobertura_por_estacion.csv.`, ""),
+    row3("features/", `feature_table.parquet — model-ready table with lags and rolling means per station (see Table 2).`, ""),
+    row3("conf/cuencas_piloto.yaml", `Basin configuration: for each of the six operational basins (Cutzamala, Lerma Alto, Bajío, Santiago, Pánuco, Alta del Balsas), it stores the curated bounding box [min_lon, min_lat, max_lon, max_lat] in EPSG:4326, the reference hydrological region code, the target CEM resolution in metres and an optional priority label.`, ""),
+    row3("README.md, LICENSE-DATA.md", `Auto-generated English README with the archive's layout, provenance and reuse instructions; CC BY 4.0 licence text with mandatory attribution to CONAGUA and INEGI.`, ""),
+    row3("manifest_zenodo.json", `Machine-readable index listing every archived file with its relative path, byte size and SHA-256 hash for integrity verification.`, ""),
+  ],
+}));
+children.push(blank());
+
+children.push(h2("Table 2. Columns and units of the tabular files"));
+children.push(new Table({
+  width: { size: 9360, type: WidthType.DXA },
+  columnWidths: [2800, 6560],
+  rows: [
+    row3("File", "Columns (name — type — units / valid range)", "", true),
+    row3("series_hidrometricas.parquet",
+      "clave_estacion — string (1–8 alphanumeric, leading zeros preserved). fecha — datetime64[ns] (local, no time-of-day). gasto_medio_m3s — float64 ≥ 0. nivel_m — float64 (station-referenced datum, may be missing). fuente — categorical {SIH, BANDAS, CLICOM, EMAS}; SIH in this deposit. calidad — int8 in {0, 1, 2} (0 = original observation; 1 = imputed by short-gap interpolation, gap < 7 days; 2 = physical outlier retained for auditability). anio — int32 (Hive partition key; not stored inside the row-group).", ""),
+    row3("series_climatologicas.parquet",
+      "clave_estacion — string. fecha — datetime64[ns]. precip_mm — float64 ≥ 0. tmax_c, tmin_c, tmed_c — float64 (°C). evap_mm — float64 ≥ 0. fuente, calidad, anio as above.", ""),
+    row3("estaciones_candidatas_hidrometricas.csv (550 rows) / _climatologicas.csv (2,731 rows)",
+      "clave — string. nombre — string. estado — string. municipio — string. region_hidrologica — string (SIH code). cuenca — string. latitud, longitud — float64 (WGS 84 decimal degrees). altitud — float64 (m a.s.l.).", ""),
+    row3("estaciones_seleccionadas_hidrometricas.csv (108 rows) / _climatologicas.csv (415 rows)",
+      "All columns from the candidate file plus: cobertura — float64 in [0, 1] (fraction of non-missing daily observations of the target variable within 2010-01-01…2025-12-31). vecinos_clima (hydrometric file only) — string, comma-separated list of the three closest climate station keys by haversine distance.", ""),
+    row3("estaciones_extendidas_hidrometricas.csv (107 rows)",
+      "Same schema as estaciones_seleccionadas_hidrometricas.csv, restricted to stations with 0.30 ≤ cobertura < 0.60. Column uso_recomendado = \"sensibilidad_reconstruccion\".", ""),
+    row3("cuencas/<basin>.gpkg",
+      "OGC GeoPackage; layer cuenca; polygon geometries (EPSG:6362). Attributes: area_km2 — float64; elevacion_media_m — float64; pendiente_media — float64 (dimensionless slope, tan θ); clave_estacion — string (pour-point station key).", ""),
+    row3("feature_table.parquet (6,028,437 rows × 8 columns; 478 stations)",
+      "clave_estacion, fecha, gasto_medio_m3s, calidad as in series_hidrometricas.parquet, plus per-station lagged and rolling-mean features: gasto_medio_m3s_lag1, _lag3, _lag7, _lag14, _lag30 (float64, m³/s at t − k days); gasto_medio_m3s_ma7, _ma30 (float64, m³/s moving averages).", ""),
+    row3("reportes/cobertura_por_estacion.csv",
+      "clave_estacion — string. n_obs — int64 (non-missing days). dias_periodo — int64 (target-window length, days). cobertura — float64 in [0, 1]. inicio, fin — datetime64[ns] (first/last observation).", ""),
+    row3("reportes/metrics.json",
+      "JSON document with sub-objects fig1…fig8 mirroring the numerical summaries used to caption Figs. 1–8 (station counts, coverage percentiles, quality-flag counts, monthly climatology, annual means, lag/correlation of the precipitation–discharge relationship, sub-basin counts per basin).", ""),
+    row3("cuencas_piloto.yaml",
+      "Fields per basin: nombre — string. region_hidrologica — int. bbox — [min_lon, min_lat, max_lon, max_lat] (EPSG:4326). cem_resolucion_m — int (m). prioridad — int. Optional nota — string (short annotation).", ""),
+  ],
+}));
+children.push(blank());
+
+children.push(h2("Table 3. Station counts per basin bounding box"));
+children.push(p("Stations are assigned to a basin by geometric containment in the curated bbox (conf/cuencas_piloto.yaml). Sub-basin polygons per basin are the outputs of the WhiteboxTools delineation described in §4.7."));
 children.push(new Table({
   width: { size: 9360, type: WidthType.DXA },
   columnWidths: [3120, 3120, 3120],
   rows: [
-    row3("Cuenca", "Estaciones hidro en el bbox (sel ≥60%)", "Subcuencas delineadas", true),
+    row3("Basin", "Hydrometric stations ≥60% inside bbox", "Sub-basin polygons", true),
     row3("Cutzamala", "8", String(SUB_BY["Cutzamala"])),
     row3("Lerma Alto", "9", String(SUB_BY["Lerma Alto"])),
     row3("Bajío", "26", String(SUB_BY["Bajío"])),
     row3("Santiago", "13", String(SUB_BY["Santiago"])),
     row3("Pánuco", "52", String(SUB_BY["Pánuco"])),
     row3("Alta del Balsas", "17", String(SUB_BY["Alta del Balsas"])),
-    row3("Total (a)", `${N_SEL} únicas`, String(N_SUB)),
+    row3("Total (unique)", `${N_SEL}`, String(N_SUB)),
   ],
 }));
-children.push(p("(a) La suma por cuenca excede las estaciones únicas porque algunas caen en bboxes contiguos (overlap geográfico, sobre todo entre Bajío y Pánuco). La asignación final se hace por proximidad al pour point durante la delineación.", { italics: true, size: 20 }));
-
-children.push(h2("Esquema canónico de las series"));
-children.push(p("Cada fila de las tablas Parquet representa una observación diaria con las siguientes columnas (validadas con pandera):"));
-[
-  "clave_estacion (string): clave SIH alfanumérica (1–8 caracteres, ceros preservados).",
-  "fecha (datetime64[ns]): fecha local sin componente horaria.",
-  "gasto_medio_m3s (float, ≥ 0): caudal medio diario para series hidrométricas.",
-  "nivel_m (float, opcional): nivel del agua sobre referencia local.",
-  "precip_mm (float, ≥ 0): precipitación acumulada del día (series climatológicas).",
-  "tmax_c, tmin_c, tmed_c (float): temperaturas extremas y media diaria.",
-  "evap_mm (float, ≥ 0): evaporación diaria reportada por la estación.",
-  "fuente (categoría: SIH, BANDAS, CLICOM, EMAS): origen de la observación; en este snapshot todas son SIH.",
-  "calidad (entero {0,1,2}): 0 = original, 1 = imputado por interpolación corta (huecos < 7 días, cúbica con fallback a lineal), 2 = outlier físico marcado y conservado.",
-].forEach((t) => children.push(bullet(t)));
+children.push(p("The sum by basin exceeds the number of unique selected stations because a small number of stations lie in the overlap between contiguous bboxes (Bajío/Pánuco); each station is then assigned to a single sub-basin by proximity to the snapped pour point during delineation.", { italics: true, size: 20 }));
+children.push(blank());
 
 // ==== FIGURAS REALES EMBEBIDAS ====
-children.push(h2("Figuras de validación (generadas a 300 DPI desde el snapshot publicado)"));
+children.push(h2("Figures included in reportes/"));
 
 children.push(...figure(
   "fig1_inventario_cobertura.png",
-  `Fig. 1. (Izq.) Inventario de las ${N_HID} estaciones hidrométricas por región hidrológica: RH 12 = ${M.fig1.inventario_por_rh["12"]}, RH 18 = ${M.fig1.inventario_por_rh["18"]}, RH 26 = ${M.fig1.inventario_por_rh["26"]}. (Der.) Distribución de cobertura observada 2010–2025; las líneas marcan los umbrales operativos (60 % hidro, 80 % clima). La cobertura media nacional es ${COV_MEAN.toFixed(1)} %; ${N_HID_60} estaciones superan el 60 % y ${N_HID_80} el 80 %.`,
+  `Fig. 1. Left: number of hydrometric stations per hydrological region among the ${N_HID} stations in series_hidrometricas.parquet (RH 12 = ${M.fig1.inventario_por_rh["12"]}, RH 18 = ${M.fig1.inventario_por_rh["18"]}, RH 26 = ${M.fig1.inventario_por_rh["26"]}). Right: histogram of the coverage of gasto_medio_m3s per station over 2010-01-01…2025-12-31. Vertical dashed lines mark the operational thresholds (60% for hydrometric selection, 80% for climatological selection). Mean coverage across all stations = ${COV_MEAN.toFixed(1)}%; ${N_HID_60} stations meet the 60% cut-off; ${N_HID_80} meet 80%.`,
 ));
 
 children.push(...figure(
   "fig2_descriptiva.png",
-  `Fig. 2. Distribución del gasto medio diario por región hidrológica (escala logarítmica). Estadísticos globales: mediana ${M.fig2.describe_global["50%"].toFixed(2)} m³/s, p75 ${M.fig2.describe_global["75%"].toFixed(2)} m³/s, máximo ${fmt(M.fig2.describe_global.max, 0)} m³/s. Temporada lluviosa (mayo–octubre) mediana ${M.fig2.por_temporada.median.lluviosa.toFixed(2)} m³/s vs. seca ${M.fig2.por_temporada.median.seca.toFixed(2)} m³/s.`,
+  `Fig. 2. Boxplot of the daily gasto_medio_m3s values in series_hidrometricas.parquet grouped by hydrological region (RH 12, 18, 26); y-axis is on a base-10 log scale. Sample statistics of the pooled series: median = ${M.fig2.describe_global["50%"].toFixed(2)} m³/s, third quartile = ${M.fig2.describe_global["75%"].toFixed(2)} m³/s, maximum = ${fmt(M.fig2.describe_global.max, 0)} m³/s. Median value in the wet season (May–October) = ${M.fig2.por_temporada.median.lluviosa.toFixed(2)} m³/s; dry season = ${M.fig2.por_temporada.median.seca.toFixed(2)} m³/s.`,
 ));
 
 children.push(...figure(
   "fig3_calidad.png",
-  `Fig. 3. Distribución de banderas de calidad sobre las ${fmt(M.fig3.n.ok + M.fig3.n.imputado + M.fig3.n.outlier)} observaciones hidrométricas: ${PCT_OK.toFixed(2)} % originales, ${PCT_IMP.toFixed(2)} % imputadas por interpolación corta y ${PCT_OUT.toFixed(3)} % marcadas como outliers físicos (conservadas para análisis XAI).`,
+  `Fig. 3. Counts and percentages of the calidad flag over ${fmt(M.fig3.n.ok + M.fig3.n.imputado + M.fig3.n.outlier)} hydrometric daily observations: ${PCT_OK.toFixed(2)}% flagged 0 (original), ${PCT_IMP.toFixed(2)}% flagged 1 (imputed by short-gap interpolation, gap < 7 days), and ${PCT_OUT.toFixed(3)}% flagged 2 (physical outliers retained in the archive).`,
 ));
 
 children.push(...figure(
   "fig5_mapa.png",
-  "Fig. 5. Coherencia espacial: ubicación de las estaciones hidrométricas geolocalizadas por región hidrológica. La separación geográfica entre RH 12 (Lerma-Santiago, occidente), RH 18 (Balsas, centro-sur) y RH 26 (Pánuco, oriente) es consistente con el catálogo oficial.",
+  "Fig. 5. Latitude–longitude scatter of the geolocated hydrometric stations recorded in estaciones_seleccionadas_hidrometricas.csv, coloured by the reported hydrological region (RH 12, 18, 26). Point counts per region are given in the legend.",
 ));
 
 children.push(...figure(
   "fig6_temporal.png",
-  "Fig. 6. (Izq.) Climatología mensual del gasto medio (media ± 1σ): pico en septiembre, mínimos en abril–mayo, consistente con el régimen de monzón mexicano. (Der.) Serie de medias anuales 1922–2025 con líneas punteadas marcando las sequías severas conocidas (2011, 2021, 2023); los mínimos del dataset son temporalmente coherentes con esos eventos.",
+  "Fig. 6. Left: monthly climatology of gasto_medio_m3s aggregated over all hydrometric stations (mean ± 1σ); x-axis month 1–12. Right: annual mean of gasto_medio_m3s from 1922 to 2025; vertical dotted lines mark the years 2011, 2021 and 2023 for reference. Numerical values are stored in reportes/metrics.json under fig6.climatologia_mensual and fig6.media_anual.",
 ));
 
 children.push(...figure(
   "fig7_precip_gasto.png",
-  `Fig. 7. Correlación rezagada entre precipitación (promedio nacional diario, ${N_CLI} estaciones) y gasto medio (promedio nacional diario, ${N_HID} estaciones). La correlación máxima ocurre a un rezago de ${LAG} días con r = ${CORR.toFixed(3)} (n = ${fmt(M.fig7.n_fechas_comunes)} fechas comunes), físicamente compatible con el tiempo de tránsito agregado precipitación → escorrentía en cuencas medianas mexicanas.`,
+  `Fig. 7. Lagged Pearson correlation between the daily national mean of precip_mm (averaged over the ${N_CLI} climatological stations) shifted back by lag L days and the daily national mean of gasto_medio_m3s (averaged over the ${N_HID} hydrometric stations). Lags 0–15 days are shown; number of matched dates n = ${fmt(M.fig7.n_fechas_comunes)}. The maximum correlation is r = ${CORR.toFixed(3)} at lag = ${LAG} days.`,
   540, 0.45,
 ));
 
 children.push(...figure(
   "fig8_cuencas_subcuencas.png",
-  `Fig. 8. Cuencas piloto y subcuencas delineadas con WhiteboxTools (${N_SUB} subcuencas en total): Cutzamala (${SUB_BY.Cutzamala}), Lerma Alto (${SUB_BY["Lerma Alto"]}), Bajío (${SUB_BY["Bajío"]}), Santiago (${SUB_BY.Santiago}), Pánuco (${SUB_BY["Pánuco"]}) y Alta del Balsas (${SUB_BY["Alta del Balsas"]}). Las líneas continuas son los contornos de subcuenca derivados del CEM; las líneas punteadas los bboxes curados en conf/cuencas_piloto.yaml; los puntos negros las ${N_SEL} estaciones hidrométricas con cobertura ≥ 60 % usadas como pour points.`,
+  `Fig. 8. Map of the six operational basins and their delineated sub-basins (${N_SUB} in total): Cutzamala (${SUB_BY.Cutzamala}), Lerma Alto (${SUB_BY["Lerma Alto"]}), Bajío (${SUB_BY["Bajío"]}), Santiago (${SUB_BY.Santiago}), Pánuco (${SUB_BY["Pánuco"]}) and Alta del Balsas (${SUB_BY["Alta del Balsas"]}). Solid lines: sub-basin boundaries stored in processed/cuencas/<basin>.gpkg. Dotted rectangles: curated bboxes from conf/cuencas_piloto.yaml. Black dots: the ${N_SEL} hydrometric stations with ≥60% coverage used as pour points.`,
   580, 0.85,
 ));
 
 // Methods
 children.push(h1("Experimental Design, Materials and Methods"));
 children.push(p(
-  "El pipeline se ejecuta como una secuencia de scripts numerados, cada uno con responsabilidad única y reproducible mediante DVC. Las dos etapas oficiales son: Etapa 1 (prueba, ≈ 13 MB versionados, 5 estaciones por tipo) y Etapa 2 (consolidación, ≈ 2.4 GB versionados, las 4 cuencas piloto con la subdivisión de Lerma-Santiago). El dataset distribuido corresponde al cierre de Etapa 2."
+  "The dataset was assembled by a scripted pipeline of ten Python entry points (scripts/01…scripts/11) run against Python 3.10+ with the following libraries pinned in pyproject.toml: pandas 2.2, numpy 1.26, scipy 1.13, pyarrow 16, geopandas 1.0, shapely 2, rasterio 1.3, rioxarray 0.15, whitebox 2.3, pandera 0.20, requests 2.32, PyYAML 6, click 8.1, python-dotenv 1.0, dvc[s3] 3.50. Version control uses Git; data versioning uses DVC 3.50 with a Cloudflare R2 (S3-compatible) backend. All step numbers below refer to script filenames in the source repository."
 ));
 
-children.push(h2("Paso 01 — Descarga de catálogos maestros del SIH"));
+children.push(h2("4.1. Master-catalog acquisition (scripts/01_download_sih_catalogs.py)"));
 children.push(p(
-  "Se descargan los catálogos públicos de estaciones hidrométricas (n = 1 189) y climatológicas (n = 7 499) directamente desde el SIH como CSV, sin scrapeo HTML. Se normalizan los encabezados (RH, número de región hidrológica, latitud, longitud, altitud, estado, municipio, cuenca) y se conserva el archivo crudo bajo data/raw/sih/."
+  "The hydrometric and climatological master catalogs were retrieved from the CONAGUA SIH portal (https://sih.conagua.gob.mx) as UTF-8 CSV files without HTML scraping. Requests were issued through requests.Session with User-Agent \"Mozilla/5.0 (HidroXAI-MX ingest)\" and a 60-second timeout. Each response was streamed to disk under data/raw/sih/, its SHA-256 digest computed with hashlib, and an entry was appended to data/raw/_manifest.json recording the URL, byte size, digest and UTC download timestamp. Header names were normalised (NFKD, lowercased, diacritic-stripped) and mapped to a canonical column set {clave, nombre, latitud, longitud, altitud, estado, municipio, region_hidrologica, cuenca}; numeric coordinates were coerced with pandas.to_numeric(errors=\"coerce\")."
 ));
 
-children.push(h2("Paso 05 — Selección de estaciones candidatas y refinamiento"));
+children.push(h2("4.2. Basin configuration and per-basin bounding boxes (conf/cuencas_piloto.yaml)"));
 children.push(p(
-  `Primer pase (sin --refine): el script filtra el catálogo por las regiones hidrológicas piloto (12 Lerma-Santiago, 18 Balsas, 26 Pánuco), generando 550 candidatas hidrométricas y 2 731 climatológicas. Segundo pase (--refine, tras descargar las series): se calcula la cobertura observada por estación dentro del periodo 2010–2025 y se aplica un umbral diferenciado: 60 % para hidrométricas y 80 % para climatológicas. Las estaciones hidrométricas con cobertura intermedia (30 %–60 %) se conservan en un archivo extendido para estudios de sensibilidad y reconstrucción con vecinos. Para cada estación hidrométrica seleccionada se calculan los k = 3 vecinos climatológicos más cercanos por distancia haversine. Resultado del snapshot publicado: ${N_HID_60} estaciones hidrométricas en el conjunto principal (≥ 60 %), ${N_HID_80} en el conjunto estricto (≥ 80 %).`
+  "Each pilot basin is declared as a YAML entry with its name, its reference SIH hydrological region (12, 18 or 26), a curated bbox [min_lon, min_lat, max_lon, max_lat] in EPSG:4326, and the requested DEM resolution in metres. Lerma–Santiago is represented as three operational sub-entries (Lerma Alto, Bajío, Santiago) because the full bbox of the historical Lerma–Santiago region exceeds the memory budget of the WhiteboxTools chain used in §4.7 on a 16 GB reference workstation. The YAML file is the single source of truth for §4.6 (DEM assembly), §4.7 (delineation) and downstream station-to-basin assignment."
 ));
 
-children.push(h2("Paso 03 — Descarga de series temporales por estación"));
+children.push(h2("4.3. Candidate-station filter (scripts/05_select_stations.py, default mode)"));
 children.push(p(
-  "Las series se descargan desde los endpoints directos del SIH (`/basedatos/{Hidros|Climas}/<CLAVE>.csv`). El descargador implementa un ThreadPoolExecutor configurable (variable HIDROXAI_DL_WORKERS) y un retardo opcional entre descargas (HIDROXAI_DL_DELAY_S) para no activar el firewall de aplicación (Imperva Incapsula) que protege al portal del SIH. Cada descarga registra en `_manifest.json` el hash SHA-256, los bytes y la fecha UTC, garantizando trazabilidad."
+  "The two master catalogs were filtered to the hydrological regions listed in conf/cuencas_piloto.yaml (regiones_hidrologicas = [12, 18, 26]) using pandas boolean indexing on the region_hidrologica column. The result was written to data/processed/estaciones_candidatas_hidrometricas.csv (550 rows) and data/processed/estaciones_candidatas_climatologicas.csv (2,731 rows) and used as input for the following download step."
 ));
 
-children.push(h2("Paso 04 — Esquema canónico y persistencia Parquet"));
+children.push(h2("4.4. Per-station time-series download (scripts/03_download_sih_series.py)"));
 children.push(p(
-  "Las series crudas se leen con un parser flexible que reconoce dos variantes de encabezado (`Fecha,…` y `Estacion,Fecha,…`) y dos formatos de fecha (YYYY/MM/DD y YYYY-MM-DD). Se aplica un control de calidad por estación: reemplazo de centinelas (-9999) por NaN, marcado de outliers físicos (calidad = 2, conservados), e imputación de huecos cortos (< 7 días) mediante interpolación cúbica con fallback automático a lineal cuando la serie tiene menos de cuatro puntos válidos consecutivos. El resultado se valida con pandera y se persiste como Parquet particionado por año."
+  "For every candidate key, the file at https://sih.conagua.gob.mx/basedatos/{Hidros|Climas}/<KEY>.csv was fetched. Concurrency is controlled by two environment variables: HIDROXAI_DL_WORKERS (default 16; a ThreadPoolExecutor with N workers) and HIDROXAI_DL_DELAY_S (default 0; per-request sleep applied only after real downloads, not on cache hits). The SIH portal is fronted by the Imperva Incapsula WAF; sustained concurrency above ~4 workers triggered per-IP challenges (302 loops or 403 responses) during our runs. The snapshot published in this article was completed at HIDROXAI_DL_WORKERS=1 and HIDROXAI_DL_DELAY_S=5 from a mobile-tethered IPv4. Each retrieved file was recorded in _manifest.json exactly as in §4.1. Failures were retried three times with exponential back-off (2s, 4s, 6s); series that ultimately failed were logged and excluded from downstream stages."
 ));
 
-children.push(h2("Paso 06b — Construcción del CEM por cuenca"));
+children.push(h2("4.5. Canonical schema, quality control and Parquet persistence (scripts/04_build_canonical.py)"));
 children.push(p(
-  "El portal CEM 3.0 de INEGI no permite descargas por bounding box arbitrario sin selección manual; entrega los modelos por entidad federativa. El script `06b_build_cem_per_basin.py` (a) lista los TIFFs disponibles en `data/scratch/<resolución>m/`, (b) selecciona los que intersectan el bbox curado de cada cuenca en `cuencas_piloto.yaml`, (c) hace mosaico con `rasterio.merge`, (d) recorta al bbox con `rasterio.mask` usando un `MemoryFile` intermedio (evita bloqueos de archivo bajo Windows + Google Drive), y (e) cuando la resolución de los tiles supera la solicitada (caso típico del snapshot: el portal sólo entregó 15 m mientras las cuencas grandes piden 30 m), aplica un remuestreo con `rasterio.warp.reproject` y `Resampling.average`."
+  "The raw CSVs were parsed with a permissive reader that accepts two header variants used by SIH (\"Fecha,…\" and \"Estacion,Fecha,…\") and two date formats (\"YYYY/MM/DD\" and \"YYYY-MM-DD\"). Header lines were located as the first row containing \"fecha\" as a comma-separated field; parsing uses pandas.read_csv with encoding=\"latin-1\", na_values=[\"-\", \"\"] and pandas.to_datetime(format=\"mixed\", errors=\"coerce\"). For every station the following transformations are applied, in order: (i) rebuild a continuous daily index via to_daily(); (ii) mark physical outliers with calidad = 2 using per-station thresholds v < 0 or v > 3·q99.9, where v is the target variable (gasto_medio_m3s for hydro, precip_mm for climate); (iii) impute internal gaps < 7 days with pandas.Series.interpolate(method=\"cubic\", limit=7, limit_area=\"inside\"), falling back to method=\"linear\" when scipy's cubic spline rejects the input for lack of boundary points; each imputed cell receives calidad = 1. The resulting DataFrame is validated against a pandera DataFrameSchema (src/hidroxai_mx/data/schema.py) that enforces column dtypes, ranges (e.g. gasto_medio_m3s ≥ 0, tmax_c ∈ [−30, 60]) and the allowed set of calidad and fuente labels. Validation errors are logged as warnings and do not abort the run. Outputs are written with pyarrow as a Hive-partitioned Parquet directory (partition_cols=[\"anio\"]) under data/processed/."
 ));
 
-children.push(h2("Paso 06 — Delineación automática de subcuencas"));
+children.push(h2("4.6. Per-basin digital elevation model (scripts/06b_build_cem_per_basin.py)"));
 children.push(p(
-  `Para cada cuenca, las estaciones hidrométricas seleccionadas dentro del bbox se usan como puntos de aforo, se ejecuta la cadena WhiteboxTools fill_depressions → d8_pointer → flow_accumulation → extract_streams → snap_pour_points → watershed y se exporta el resultado como GeoPackage con atributos de área (km²), elevación media y pendiente media. Para evitar agotar la RAM (referencia: 16 GB), la cuenca Lerma–Santiago se subdividió en tres sub-cuencas piloto cuyos bboxes individuales caben en memoria a 30 m. La corrida produjo ${N_SUB} subcuencas (ver Fig. 8 y Tabla de inventario).`
+  "State-level tiles of the INEGI CEM 3.0 were downloaded manually from https://www.inegi.org.mx/temas/relieve/continental/ (the portal does not offer bbox-based downloads) and placed under data/scratch/<resolution>m/. For every basin declared in cuencas_piloto.yaml the following pipeline runs: (i) select the tiles whose extents intersect the basin bbox using rasterio.warp.transform_bounds to reproject tile extents to EPSG:4326; (ii) mosaic the selected tiles with rasterio.merge.merge; (iii) copy the mosaic into a rasterio.io.MemoryFile buffer to avoid file locks on Windows / Google Drive; (iv) clip the mosaic to the basin bbox with rasterio.mask.mask(shapes=[shapely.geometry.box(*bbox)], crop=True); (v) if the tile resolution differs from the resolution requested in the YAML (typical case: portal-supplied 15 m vs. requested 30 m), reproject with rasterio.warp.reproject using an affine scaled by the resolution ratio and Resampling.average when downsampling or Resampling.bilinear when upsampling; (vi) write the output as LZW-compressed, tiled GeoTIFF (predictor=2 for int16 rasters, 3 for floating-point) to data/raw/inegi/cem_<basin>.tif."
 ));
 
-children.push(h2("Paso 07 — Tabla de features"));
+children.push(h2("4.7. Watershed delineation (scripts/06_delineate_basins.py)"));
 children.push(p(
-  "Une cada estación hidrométrica con la precipitación de sus k vecinos climatológicos mediante inverse distance weighting (IDW, potencia 2), genera rezagos a 1, 3, 7, 14 y 30 días, medias móviles y normaliza por estación, produciendo `data/features/feature_table.parquet`. Los tensores deslizantes en `.npz` —que con 200 estaciones rondan los 9 GB— no se materializan por defecto: se regeneran on-the-fly al entrenar, evitando inflar el remoto DVC."
+  "For every basin, the selected hydrometric stations that fall inside its bbox were exported as an ESRI Shapefile of pour points (data/interim/delineacion/<basin>/pour_points.shp) in EPSG:6362. The delineation runs the following WhiteboxTools chain on data/raw/inegi/cem_<basin>.tif: fill_depressions_wang_and_liu → d8_pointer → d8_flow_accumulation → extract_streams (threshold in cells, default 1000) → snap_pour_points (snap distance in map units, default 0.01) → watershed. The resulting raster was polygonised, and per-polygon attributes (area_km²; mean elevation and mean slope computed from the DEM with rasterstats-style zonal statistics) were written to data/processed/cuencas/<basin>.gpkg (layer cuenca). Because the historical Lerma–Santiago bbox exceeded the resident memory budget of d8_pointer / d8_flow_accumulation at 30 m on a 16 GB reference workstation, it was split into the three operational sub-entries described in §4.2."
 ));
 
-children.push(h2("Paso 08 — Guardarraíl de almacenamiento"));
+children.push(h2("4.8. Refined station selection with coverage thresholds (scripts/05_select_stations.py --refine)"));
 children.push(p(
-  "Antes de cada `dvc push`, este script suma el tamaño de `data/{raw,processed,features}` excluyendo cualquier `.npz`. Si supera el tope configurable (R2_CAP_GB, por defecto 9.5 GB), aborta con código de salida 1, protegiendo la cuota gratuita del bucket R2."
+  "After §4.4 and §4.5, per-station coverage was computed as cov = valid_days / expected_days, where expected_days = 5844 (2010-01-01 through 2025-12-31 inclusive) and valid_days is the count of non-missing observations of the target variable within that window. Threshold values are read from conf/cuencas_piloto.yaml (cobertura_minima: hidrometricas = 0.60, climatologicas = 0.80). Stations at or above the threshold are written to estaciones_seleccionadas_<type>.csv; hydrometric stations with 0.30 ≤ cov < 0.60 are additionally written to estaciones_extendidas_hidrometricas.csv with an extra column uso_recomendado = \"sensibilidad_reconstruccion\". For every selected hydrometric station, the k = 3 nearest climatological stations are computed with a spherical-earth haversine distance (R = 6371.0 km) and their comma-separated keys are stored in the column vecinos_clima."
 ));
 
-children.push(h2("Versionado y reproducibilidad"));
-children.push(p("Pipeline declarado en `dvc.yaml` (8 stages) y `dvc.lock` con hashes md5 por output. Distribución física con DVC sobre Cloudflare R2 (S3-compatible). Para reproducir el snapshot publicado en una máquina nueva:"));
-code("git clone https://github.com/pantrok/hidroxai-mx.git");
-code("cd hidroxai-mx && pip install -e \".[dev,geo]\"");
-code("dvc pull   # descarga ~2.4 GB desde R2 (requiere credenciales)");
+children.push(h2("4.9. Feature engineering (scripts/07_build_features.py --no-save-tensors)"));
+children.push(p(
+  "For every hydrometric station, the daily precipitation value at time t was computed as the inverse-distance-weighted mean of the precip_mm series of the k = 3 climatological neighbours (weights w_i ∝ 1/d_i², with d_i = haversine distance station↔neighbour). Per-station lags at 1, 3, 7, 14 and 30 days and rolling means over 7 and 30 days were then generated for gasto_medio_m3s using pandas groupby(\"clave_estacion\").shift and rolling(window).mean. Numeric columns were left in their native units (m³/s, °C, mm). The resulting flat table is written to data/features/feature_table.parquet. Sliding-window tensor stacks (.npz) are not materialised by default because their size scales roughly as n_stations × window_length × n_features; they are re-generated on demand at training time."
+));
+
+children.push(h2("4.10. Storage guardrail and versioning (scripts/08_storage_report.py; DVC)"));
+children.push(p(
+  "Before every dvc push, scripts/08_storage_report.py walks data/{raw,processed,features}, excludes any file with the .npz suffix, and sums the remaining byte counts. If the total exceeds the ceiling read from the environment variable R2_CAP_GB (default 9.5 GB, chosen to stay below the 10 GB free tier of the Cloudflare R2 bucket used as remote), the script exits with status 1 and aborts the push. Reproducibility is enforced through DVC: dvc.yaml declares one stage per pipeline step with explicit deps and outs; dvc.lock stores an MD5 digest per stage output. On a clean checkout, `dvc pull` restores the exact byte contents of the archive from the R2 remote."
+));
+
+children.push(h2("4.11. Figure and metrics generation (scripts/09_make_report_figures.py)"));
+children.push(p(
+  "Figures 1–8 embedded in this article and the file processed/reportes/metrics.json were produced by scripts/09_make_report_figures.py using matplotlib (matplotlib.use(\"Agg\"); rcParams[\"savefig.dpi\"] = 300; rcParams[\"savefig.bbox\"] = \"tight\"). The script reads the Parquet directories as pyarrow.dataset objects (partitioning=\"hive\") and augments the hydrometric dataframe with the catalog columns via a left join on clave_estacion. Sub-basin polygons for Fig. 8 are loaded from processed/cuencas/*.gpkg with geopandas.read_file, reprojected to EPSG:4326, and rendered with GeoDataFrame.boundary.plot; overlaid rectangles are the bboxes from conf/cuencas_piloto.yaml, and overlaid points are the ${N_SEL} pour points from estaciones_seleccionadas_hidrometricas.csv."
+));
+
+children.push(h2("4.12. Deposit packaging (scripts/11_build_zenodo_bundle.py)"));
+children.push(p(
+  "The Zenodo archive was produced with zipfile.ZipFile(..., compression=ZIP_DEFLATED, compresslevel=6, allowZip64=True) over data/{raw/sih, raw/sih_series/hidrometricas, raw/sih_series/climatologicas, raw/inegi, processed, features} and conf/cuencas_piloto.yaml, and augmented with an autogenerated English README.md and LICENSE-DATA.md and a machine-readable manifest_zenodo.json listing the SHA-256 hash and byte size of every archived file. Files ending in .npz and the folders data/scratch/ and data/interim/ were excluded from the deposit. The resulting archive HidroXAI-MX-v2026.06.zip totals about 895 MB compressed (3,588 archived files, 3.2 GB uncompressed) and was uploaded to Zenodo, producing the DOI 10.5281/zenodo.21231601 referenced in the Specifications Table."
+));
 
 // Limitations
 children.push(h1("Limitations"));
