@@ -21,6 +21,13 @@ def write_parquet(
     base: Path = PROCESSED,
 ) -> Path:
     out = base / name
+    # pyarrow escribe cada corrida con un nombre de archivo nuevo ({uuid}-0.parquet) y no
+    # borra los anteriores: sin esta limpieza, re-ejecutar la etapa acumula fragmentos
+    # viejos y quien lea el directorio obtiene filas (clave, fecha) duplicadas.
+    if out.exists():
+        import shutil
+
+        shutil.rmtree(out) if out.is_dir() else out.unlink()
     df.to_parquet(out, partition_cols=partition_cols, index=False)
     log.info("Parquet -> %s (%d filas, partición=%s)", out, len(df), partition_cols)
     return out

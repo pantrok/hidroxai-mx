@@ -1,10 +1,13 @@
 """Limpieza y control de calidad de series (Capa 3).
 
-Reglas (del inventario de datasets):
-- NaN codificados como -9999.0 o 0.0 espurios -> np.nan.
-- Outliers físicos: gastos negativos y valores > Q99.9 * 3 por estación -> marcar (calidad=2).
-- Imputación corta (<7 días): interpolación cúbica restringida.
-- Imputación larga: modelo auxiliar con k=3 vecinos espaciales (corr >= 0.6) [ver features].
+Reglas:
+- NaN codificados como -9999.0 -> np.nan.
+- Outliers físicos: gastos negativos y valores > Q99.9 * 3 por estación -> marcar (calidad=2),
+  sin eliminarlos.
+- Imputación corta del gasto: interpolación lineal de huecos internos de 1 a 6 días
+  (calidad=1). El método se eligió con el experimento de enmascaramiento de
+  scripts/dib_03_imputation_masking.py (lineal ≈ PCHIP; el spline cúbico sobreoscila y
+  produce negativos). La precipitación no se imputa en el tiempo.
 """
 from __future__ import annotations
 
@@ -43,10 +46,28 @@ def flag_outliers(df: pd.DataFrame, value_col: str, group: str = "clave_estacion
     return pd.concat(pieces) if pieces else df
 
 
+def _short_gap_mask(isna: np.ndarray, max_gap: int) -> np.ndarray:
+    """True en los días de huecos internos completos de menos de `max_gap` días."""
+    d = np.diff(np.r_[0, isna.astype(np.int8), 0])
+    starts, ends = np.nonzero(d == 1)[0], np.nonzero(d == -1)[0]
+    fill = np.zeros(len(isna), dtype=bool)
+    for s, e in zip(starts, ends, strict=True):
+        if e - s < max_gap and s > 0 and e < len(isna):
+            fill[s:e] = True
+    return fill
+
+
 def impute_short_gaps(
     df: pd.DataFrame, value_col: str, group: str = "clave_estacion", max_gap: int = 7
 ) -> pd.DataFrame:
-    """Interpolación cúbica para huecos < max_gap días; marca calidad=1 lo imputado."""
+    """Interpolación lineal de huecos internos de menos de `max_gap` días; calidad=1.
+
+    - Solo se imputan huecos completos (1 … max_gap−1 días con dato a ambos lados); un
+      hueco de `max_gap` días o más queda íntegro, sin relleno parcial.
+    - Los nodos son solo observaciones originales (calidad 0): un outlier marcado no se
+      usa para interpolar. Como todo valor negativo está marcado, lo imputado es ≥ 0.
+    - Espera una serie diaria continua por estación (ver `to_daily`).
+    """
     df = df.sort_values([group, "fecha"]).copy()
     if "calidad" not in df:
         df["calidad"] = 0
@@ -54,19 +75,17 @@ def impute_short_gaps(
     pieces = []
     for key, g in df.groupby(group, sort=False):
         g = g.copy()
-        before = g[value_col].isna()
-        try:
-            g[value_col] = g[value_col].interpolate(
-                method="cubic", limit=max_gap, limit_area="inside"
-            )
-        except (ValueError, TypeError) as exc:
-            # scipy cubic spline needs >=4 valid points; fall back to linear for sparse series.
-            log.debug("%s: cubic interpolation failed (%s); using linear", key, exc)
-            g[value_col] = g[value_col].interpolate(
-                method="linear", limit=max_gap, limit_area="inside"
-            )
-        newly = before & g[value_col].notna()
-        g.loc[newly, "calidad"] = g.loc[newly, "calidad"].clip(lower=1)
+        v = g[value_col]
+        cal = g["calidad"].fillna(0)
+        fill = _short_gap_mask(v.isna().to_numpy(), max_gap)
+        if fill.any():
+            knots = v.where(cal == 0).reset_index(drop=True)
+            interp = knots.interpolate(method="linear", limit_area="inside").to_numpy()
+            ok = fill & ~np.isnan(interp)
+            vals = v.to_numpy(dtype=float, copy=True)
+            vals[ok] = interp[ok]
+            g[value_col] = vals
+            g.loc[g.index[ok], "calidad"] = 1
         g[group] = key
         pieces.append(g)
     return pd.concat(pieces) if pieces else df

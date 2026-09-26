@@ -32,21 +32,32 @@ def _load(name):
 @click.option("--horizon", type=click.Choice(["1", "7", "14"]), default="7")
 @click.option("--save-tensors/--no-save-tensors", default=False,
               help="Materializar .npz (¡pesado! solo para el set piloto).")
-def main(t_in: int, horizon: str, save_tensors: bool) -> None:
+@click.option("--normalize/--no-normalize", default=False,
+              help="Estandarizar por estación (z-score con estadísticas de todo el periodo). "
+                   "Por defecto la tabla se entrega en unidades físicas: normalizar con todo "
+                   "el periodo filtra información del test a cualquier partición temporal.")
+def main(t_in: int, horizon: str, save_tensors: bool, normalize: bool) -> None:
     horizon = int(horizon)
     hid = _load("series_hidrometricas.parquet")
-    cli = _load("series_climatologicas.parquet")
     if hid is None:
         raise SystemExit("Falta data/processed/series_hidrometricas.parquet (corre 04).")
 
     sel = PROCESSED / "estaciones_seleccionadas_hidrometricas.csv"
     est = pd.read_csv(sel, dtype={"clave": str}) if sel.exists() else pd.DataFrame()
     clamap = {}
-    if cli is not None:
-        cat = PROCESSED / "estaciones_seleccionadas_climatologicas.csv"
-        if cat.exists():
-            cc = pd.read_csv(cat, dtype={"clave": str})
-            clamap = {r["clave"]: (r["latitud"], r["longitud"]) for _, r in cc.iterrows()}
+    cli = None
+    cat = PROCESSED / "estaciones_seleccionadas_climatologicas.csv"
+    if cat.exists() and (PROCESSED / "series_climatologicas.parquet").exists() and not est.empty:
+        cc = pd.read_csv(cat, dtype={"clave": str})
+        clamap = {r["clave"]: (r["latitud"], r["longitud"]) for _, r in cc.iterrows()}
+        # Solo las estaciones clima que son vecinas de alguna hidrométrica seleccionada.
+        needed = sorted({k for v in est.get("vecinos_clima", pd.Series(dtype=str)).dropna()
+                         for k in str(v).split(",") if k in clamap})
+        if needed:
+            cli = persist.read_parquet("series_climatologicas.parquet",
+                                       columns=["clave_estacion", "fecha", "precip_mm"],
+                                       filters=[("clave_estacion", "in", needed)])
+            cli = {k: g.set_index("fecha")["precip_mm"] for k, g in cli.groupby("clave_estacion")}
 
     target = "gasto_medio_m3s" if "gasto_medio_m3s" in hid.columns else "nivel_m"
     frames = []
@@ -57,9 +68,8 @@ def main(t_in: int, horizon: str, save_tensors: bool) -> None:
             tlat, tlon = row.iloc[0]["latitud"], row.iloc[0]["longitud"]
             neigh = []
             for vk in str(row.iloc[0]["vecinos_clima"]).split(","):
-                if vk in clamap and "precip_mm" in cli.columns:
-                    s = cli[cli["clave_estacion"] == vk].set_index("fecha")["precip_mm"]
-                    neigh.append((clamap[vk][0], clamap[vk][1], s))
+                if vk in clamap and vk in cli:
+                    neigh.append((clamap[vk][0], clamap[vk][1], cli[vk]))
             if neigh:
                 g["precip_idw_mm"] = F.idw_to_station(tlat, tlon, neigh).reindex(g["fecha"].values).values
         g = F.add_lags(g, target)
@@ -68,7 +78,8 @@ def main(t_in: int, horizon: str, save_tensors: bool) -> None:
 
     df = pd.concat(frames, ignore_index=True)
     feat_cols = [c for c in df.columns if c.startswith(target + "_") or c == "precip_idw_mm"]
-    df, _ = F.normalize_per_station(df, [target] + feat_cols)
+    if normalize:
+        df, _ = F.normalize_per_station(df, [target] + feat_cols)
     df = df.dropna(subset=[target])
     persist.write_parquet(df, "feature_table.parquet", partition_cols=None, base=FEATURES)
     log.info("feature_table.parquet: %d filas, %d estaciones, %d features",
