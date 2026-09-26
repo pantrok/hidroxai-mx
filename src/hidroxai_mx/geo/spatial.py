@@ -14,6 +14,17 @@ CRS_GEO = _CFG.get("crs_geografico", "EPSG:4326")
 CRS_PIPE = _CFG.get("crs_pipeline", "EPSG:6372")
 
 
+def meters_per_degree(lat_deg):
+    """Metros por grado de latitud y de longitud en el elipsoide GRS80 (el de EPSG:6365)."""
+    a, f = 6378137.0, 1 / 298.257222101
+    e2 = f * (2 - f)
+    phi = np.radians(np.asarray(lat_deg, dtype=float))
+    s2 = np.sin(phi) ** 2
+    m_lat = np.pi / 180 * a * (1 - e2) / (1 - e2 * s2) ** 1.5
+    m_lon = np.pi / 180 * a * np.cos(phi) / np.sqrt(1 - e2 * s2)
+    return m_lat, m_lon
+
+
 def bbox_from_latlon(lats, lons, margin_deg: float = 0.15) -> tuple[float, float, float, float]:
     """Caja envolvente (minlon, minlat, maxlon, maxlat) con margen, en grados.
 

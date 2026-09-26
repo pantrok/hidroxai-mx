@@ -5,6 +5,12 @@
 # 12 = Lerma-Santiago · 26 = Pánuco · 18 = Balsas (incluye Cutzamala y Alta del Balsas)
 regiones_hidrologicas: [12, 18, 26]
 
+# Vínculo estación → red HydroRIVERS v1.0 (etapa 06). Se buscan los tramos a menos de
+# `radio_grados` de la coordenada de catálogo; se reportan el más cercano y el de mayor
+# área aportante (UPLAND_SKM), que suele ser el cauce principal que mide el aforo.
+vinculo_hydrorivers:
+  radio_grados: 0.01              # ~1.1 km
+
 cuencas_piloto:
   # bbox = [min_lon, min_lat, max_lon, max_lat]. Aproximación generosa al área de la
   # cuenca para (a) recortar el CEM en INEGI y (b) filtrar estaciones por geometría real
