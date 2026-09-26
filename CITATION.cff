@@ -16,8 +16,11 @@ license: MIT
 repository-code: "https://github.com/pantrok/hidroxai-mx"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.21231600"
+    description: "Concept DOI of the HidroXAI-MX dataset on Zenodo (resolves to the latest snapshot; CC BY 4.0)."
+  - type: doi
     value: "10.5281/zenodo.21231601"
-    description: "Zenodo deposit of the HidroXAI-MX v2026.06 dataset snapshot (CC BY 4.0)."
+    description: "Zenodo deposit of the HidroXAI-MX v2026.06 dataset snapshot."
 keywords:
   - hidrología
   - aprendizaje profundo

@@ -1,22 +1,24 @@
 #!/usr/bin/env python
-"""Etapa 11 — Paquete Zenodo del snapshot v2026.06.
+"""Etapa 11 — Paquete Zenodo del snapshot (v2026.10).
 
 Empaqueta el dataset HidroXAI-MX en un único ZIP listo para subir a Zenodo,
-con un manifiesto SHA-256 y un README autocontenido en español que explica la
+con un manifiesto SHA-256 y un README autocontenido (en inglés) que explica la
 estructura, la procedencia y cómo citar. Toda la información se lee del
-repositorio (conf/, data/, docs/, LICENSE-DATA.md, CITATION.cff) y del
-metrics.json generado por scripts/09_make_report_figures.py.
+repositorio (conf/, data/, CHANGELOG.md) y del metrics.json generado por
+scripts/09_make_report_figures.py.
 
-Contenido del ZIP (definitivo tras las decisiones de sesión):
+Contenido del ZIP:
   raw/                     — CSV originales del SIH + catálogos + CEMs por cuenca
-    sih/                     catálogos + _manifest.json (procedencia SHA-256)
+    _manifest.json           procedencia por archivo (URL, SHA-256, bytes, fechas)
+    sih/                     catálogos del SIH
     sih_series/hidrometricas/    547 CSVs
     sih_series/climatologicas/   2 659 CSVs
     inegi/                       6 CEMs cem_<cuenca>.tif (30 m / 15 m)
-  processed/               — parquets canónicos + estaciones + cuencas + reportes
-  features/                — feature_table.parquet
+  processed/               — parquets canónicos + estaciones + vínculo HydroRIVERS + reportes
+  features/                — feature_table.parquet (unidades físicas)
   README.md                — metadata + estructura (autogenerado, en inglés)
   LICENSE-DATA.md          — CC BY 4.0 (autogenerado, en inglés)
+  CHANGELOG.md             — cambios entre versiones del snapshot
   conf/cuencas_piloto.yaml — configuración de cuencas usada en la corrida
   manifest_zenodo.json     — SHA-256, tamaño y ruta relativa de cada archivo
 
@@ -27,14 +29,13 @@ Se excluyen: .npz (regla de oro), data/interim (rasters intermedios de whitebox)
 data/scratch, .venv, .env, .dvc/config.local, __pycache__, .git.
 
 Uso:
-    python scripts/11_build_zenodo_bundle.py [--version v2026.06] [--out dist/]
+    python scripts/11_build_zenodo_bundle.py [--version v2026.10] [--out dist/]
 """
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
-import shutil
 import sys
 import zipfile
 from datetime import datetime, timezone
@@ -44,6 +45,7 @@ REPO = Path(__file__).resolve().parents[1]
 
 # Ruta origen -> ruta relativa dentro del ZIP.
 INCLUDES: list[tuple[Path, str]] = [
+    (REPO / "data" / "raw" / "_manifest.json", "raw/_manifest.json"),
     (REPO / "data" / "raw" / "sih", "raw/sih"),
     (REPO / "data" / "raw" / "sih_series" / "hidrometricas", "raw/sih_series/hidrometricas"),
     (REPO / "data" / "raw" / "sih_series" / "climatologicas", "raw/sih_series/climatologicas"),
@@ -51,6 +53,7 @@ INCLUDES: list[tuple[Path, str]] = [
     (REPO / "data" / "processed", "processed"),
     (REPO / "data" / "features", "features"),
     (REPO / "conf" / "cuencas_piloto.yaml", "conf/cuencas_piloto.yaml"),
+    (REPO / "CHANGELOG.md", "CHANGELOG.md"),
     # LICENSE-DATA.md and README.md are generated in English at packaging time.
     # CITATION.cff is intentionally excluded: Zenodo issues the canonical citation
     # when the DOI is minted.
@@ -98,14 +101,22 @@ def load_metrics() -> dict:
     return {}
 
 
+def load_numbers() -> dict:
+    m = REPO / "results" / "dib_revision" / "numbers.json"
+    if m.exists():
+        return json.loads(m.read_text(encoding="utf-8"))
+    return {}
+
+
 def build_readme(version: str, metrics: dict, files_count: int, total_bytes: int) -> str:
     """Generate the English README.md that ships inside the Zenodo ZIP."""
     ds = metrics.get("dataset", {})
     hid = ds.get("hidrometricas", {})
     cli = ds.get("climatologicas", {})
-    fig1 = metrics.get("fig1", {})
-    fig8 = metrics.get("fig8", {})
-    sub_by = fig8.get("subcuencas_por_cuenca", {})
+    cov = metrics.get("fig4", {})
+    nums = load_numbers()
+    obs = nums.get("observaciones", {})
+    est = nums.get("estaciones", {})
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     def n(x, default="—"):
@@ -114,16 +125,14 @@ def build_readme(version: str, metrics: dict, files_count: int, total_bytes: int
         except Exception:
             return default
 
-    def _sub(name: str) -> str:
-        return str(sub_by.get(name, "—"))
-
     return f"""# HidroXAI-MX — snapshot {version}
 
 Reproducible hydroclimatic dataset for four pilot basins in Mexico
 (Cutzamala, Lerma–Santiago —split into Lerma Alto / Bajío / Santiago—, Pánuco
 and Alta del Balsas), built from the open sources CONAGUA-SIH and INEGI
 CEM 3.0. This archive is the Zenodo deposit that supports the *Data in Brief*
-manuscript associated with the dataset.
+manuscript associated with the dataset. Changes with respect to previous
+versions are listed in `CHANGELOG.md`.
 
 Packaging date: {today} (UTC).
 Source code and pipeline: https://github.com/pantrok/hidroxai-mx.
@@ -134,34 +143,36 @@ Source code and pipeline: https://github.com/pantrok/hidroxai-mx.
 
 * Total files: **{files_count:,}** (approximately **{total_bytes / 1e9:.2f} GB**
   uncompressed).
-* Hydrometric stations: **{n(hid.get("n_estaciones"))}** with
-  **{n(hid.get("n_filas"))}** daily observations
-  ({hid.get("fecha_min", "—")} → {hid.get("fecha_max", "—")}).
-* Climatological stations: **{n(cli.get("n_estaciones"))}** with
-  **{n(cli.get("n_filas"))}** daily observations
-  ({cli.get("fecha_min", "—")} → {cli.get("fecha_max", "—")}).
-* Sub-basins delineated with WhiteboxTools: **{n(fig8.get("subcuencas_total"))}**
-  (Cutzamala {_sub("Cutzamala")}, Lerma Alto {_sub("Lerma Alto")},
-  Bajío {_sub("Bajío")}, Santiago {_sub("Santiago")},
-  Pánuco {_sub("Pánuco")}, Alta del Balsas {_sub("Alta del Balsas")}).
-* Mean coverage of the hydrometric universe (2010–2025):
-  **{fig1.get("cobertura_media_pct", 0):.1f} %**;
-  stations ≥ 60 %: **{fig1.get("estaciones_ge_60pct", 0)}**;
-  ≥ 80 %: **{fig1.get("estaciones_ge_80pct", 0)}**.
+* Hydrometric stations: **{n(hid.get("n_estaciones"))}**; **{n(hid.get("n_filas"))}**
+  station-days over the full record ({hid.get("fecha_min", "—")} → {hid.get("fecha_max", "—")}),
+  of which **{n(obs.get("hidro_con_valor_2010_2025"))}** carry a streamflow value
+  inside the 2010–2025 reference window.
+* Climatological stations: **{n(cli.get("n_estaciones"))}**; **{n(cli.get("n_filas"))}**
+  station-days ({cli.get("fecha_min", "—")} → {cli.get("fecha_max", "—")}), of which
+  **{n(obs.get("clima_precip_con_valor_2010_2025"))}** carry a precipitation value in 2010–2025.
+* Selected hydrometric stations (≥ 60 % original observations in 2010–2025):
+  **{n(est.get("hidro_seleccionadas"))}**, of which **{n(est.get("hidro_seleccionadas_en_unidad"))}**
+  lie inside a pilot unit; **{n(est.get("hidro_vinculadas_hydrorivers"))}** are linked to a
+  HydroRIVERS v1.0 reach. Mean coverage of the hydrometric universe:
+  **{cov.get("cobertura_media_pct", 0):.1f} %**.
+* Quality flag `calidad`: 0 = original observation; 1 = linearly interpolated
+  inside an internal gap of 1–6 days (streamflow only; precipitation is not
+  interpolated); 2 = flagged outlier (negative or > 3 × station P99.9), retained.
 
 ## Layout
 
 ```
 raw/
+  _manifest.json                      per-file provenance: source URL, SHA-256, bytes,
+                                      download timestamp when recorded, file mtime
   sih/
     catalogo_hidrometricas.csv        official SIH catalog
     catalogo_climatologicas.csv       official SIH catalog
-    _manifest.json                    URL + SHA-256 + UTC timestamp per file
   sih_series/
     hidrometricas/<KEY>.csv           daily series per station
     climatologicas/<KEY>.csv          daily series per station
   inegi/
-    cem_<basin>.tif                   6 per-basin digital elevation models
+    cem_<basin>.tif                   6 per-basin digital elevation models (EPSG:6365)
 
 processed/
   series_hidrometricas.parquet/       canonical, partitioned by year
@@ -169,14 +180,15 @@ processed/
   estaciones_candidatas_*.csv         universe per hydrological region
   estaciones_seleccionadas_*.csv      primary set (≥ 60 % / ≥ 80 % coverage)
   estaciones_extendidas_hidrometricas.csv     30 %–59 % (sensitivity set)
-  cuencas/                            6 GeoPackages (delineated sub-basins)
-  reportes/                           8 figures at 300 dpi + metrics.json +
-                                      coverage CSV per station
+  estaciones_hidrorivers.csv          station → HydroRIVERS v1.0 reach and upstream area
+  reportes/                           Fig1–Fig7 (PNG + TIFF, 300 dpi), metrics.json,
+                                      coverage per station, schema validation reports
 
 features/
-  feature_table.parquet               lags + rolling means per station
+  feature_table.parquet               streamflow lags and rolling means (m³/s)
 
-conf/cuencas_piloto.yaml              curated per-basin bounding boxes
+conf/cuencas_piloto.yaml              curated per-unit bounding boxes
+CHANGELOG.md                          changes between snapshots
 LICENSE-DATA.md                       Creative Commons Attribution 4.0
 manifest_zenodo.json                  SHA-256, size and path for every file
 ```
@@ -188,6 +200,9 @@ manifest_zenodo.json                  SHA-256, size and path for every file
 * **INEGI — Continuo de Elevaciones Mexicano 3.0 (CEM 3.0):**
   https://www.inegi.org.mx/temas/relieve/continental/ (state-level digital
   elevation models, mosaicked and clipped per basin).
+* **HydroSHEDS — HydroRIVERS v1.0** (Lehner & Grill, 2013,
+  https://doi.org/10.1002/hyp.9740): river network used for the station–reach
+  link; not redistributed here (https://www.hydrosheds.org).
 
 ## How to reproduce
 
@@ -199,13 +214,17 @@ pip install -e ".[dev,geo]"
 unzip HidroXAI-MX-{version}.zip -d data_zenodo/
 # Option 2: pull the same snapshot from the DVC remote (Cloudflare R2)
 dvc pull
-python scripts/09_make_report_figures.py   # regenerates the 8 figures at 300 dpi
+python scripts/09_make_report_figures.py   # regenerates Fig2–Fig7 (needs the boundary
+                                           # layers listed in conf/sources.yaml)
+python scripts/12_make_workflow_figure.py  # Fig1
 ```
+
+The file-to-figure map is given in the repository README.
 
 ## How to cite
 
-Please use the citation that Zenodo displays for this deposit once the DOI is
-issued; that is the canonical reference for the dataset. Attribution to
+Cite the dataset with its Zenodo concept DOI, which always resolves to the
+latest version: https://doi.org/10.5281/zenodo.21231600. Attribution to
 CONAGUA (SIH) and INEGI (CEM 3.0) as primary data sources is also required.
 
 ## License
@@ -252,7 +271,11 @@ this dataset you must also credit them, per their own terms of use:
   academic use with the required citation "Datos climáticos diarios del CLICOM
   del SMN a través de su plataforma web del CICESE
   (http://clicom-mex.cicese.mx)".
-- **CONABIO** (hydrographic mirror layers, when applicable): CC BY-NC 2.5 MX.
+- **HydroSHEDS (HydroRIVERS v1.0)**: used for the station–reach link in
+  processed/estaciones_hidrorivers.csv (reach identifiers and upstream areas
+  only). Cite Lehner, B., & Grill, G. (2013), Hydrological Processes 27(15),
+  2171–2186, https://doi.org/10.1002/hyp.9740, and follow the HydroSHEDS terms
+  of use (https://www.hydrosheds.org).
 
 ## Institutional credit
 
@@ -266,7 +289,7 @@ Posgrado.
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--version", default="v2026.06", help="Etiqueta de versión del ZIP.")
+    ap.add_argument("--version", default="v2026.10", help="Etiqueta de versión del ZIP.")
     ap.add_argument("--out", default="dist", help="Carpeta de salida del ZIP.")
     ap.add_argument("--dry-run", action="store_true", help="Solo listar y calcular tamaño; no crea el ZIP.")
     args = ap.parse_args()

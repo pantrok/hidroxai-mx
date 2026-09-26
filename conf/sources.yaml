@@ -4,8 +4,9 @@
 # Los conectores en src/hidroxai_mx/io leen este archivo.
 # =====================================================================
 
-crs_pipeline: "EPSG:6372"      # CONUS Lambert / INEGI (metros) para distancias
-crs_geografico: "EPSG:4326"    # lon/lat de entrada
+crs_pipeline: "EPSG:6372"      # Mexico ITRF2008 / LCC (Lambert cónica conforme, metros): mapas y distancias
+crs_geografico: "EPSG:4326"    # WGS 84 geográfico (lon/lat): coordenadas de catálogo y bbox
+# El CEM 3.0 de INEGI se distribuye en EPSG:6365 (Mexico ITRF2008, geográfico).
 periodo_objetivo: { inicio: "2010-01-01", fin: "2025-12-31" }
 
 fuentes:
@@ -160,3 +161,30 @@ fuentes:
     estado: "OK"
     formato: "geotiff | netcdf"
     portal: "https://data.chc.ucsb.edu/products/CHIRPS-2.0/"
+
+  # ---------------------------------------------------------------
+  # 10. Capas externas usadas en v2026.10 (no se redistribuyen)
+  # ---------------------------------------------------------------
+  hydrorivers:
+    descripcion: "HydroRIVERS v1.0, Norteamérica: red fluvial con área aportante (UPLAND_SKM). Etapa 06."
+    estado: "OK (verificado 2026-09-26)"
+    formato: "shp (zip)"
+    url: "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_na_shp.zip"
+    licencia: "HydroSHEDS terms of use (atribución requerida)"
+    cita: "Lehner, B. & Grill, G. (2013). Hydrological Processes 27(15), 2171-2186. doi:10.1002/hyp.9740"
+    ruta_local_sugerida: "data/scratch/hydrorivers/HydroRIVERS_v10_na.shp"
+  natural_earth_admin1:
+    descripcion: "Límites estatales (admin-1) 10m v5.1.1 para el mapa de estaciones (Fig. 2)."
+    estado: "OK (verificado 2026-09-26)"
+    formato: "shp (zip)"
+    url: "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip"
+    licencia: "Dominio público (Natural Earth)"
+    ruta_local: "data/scratch/limites/ne_10m_admin_1/"
+  regiones_hidrologicas:
+    descripcion: "CONAGUA – Subdirección General Técnica (2007). Regiones Hidrológicas, escala 1:250000. Fig. 2."
+    estado: "OK (verificado 2026-09-26)"
+    formato: "shp (zip)"
+    url: "http://www.conabio.gob.mx/informacion/gis/maps/geo/rh250kgw.zip"
+    distribuidor: "CONABIO (2009)"
+    licencia: "Uso sin restricciones según el metadato de la capa"
+    ruta_local: "data/scratch/limites/rh250kgw/"
