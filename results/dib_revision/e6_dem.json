@@ -1,0 +1,27 @@
+{
+  "unidad": "alta_del_balsas",
+  "celda_15m_aprox_m": [
+    14.65,
+    15.37
+  ],
+  "elevacion_sesgo_m": -0.022,
+  "elevacion_rmsd_m": 2.38,
+  "elevacion_media_15m": 2008.4,
+  "elevacion_media_30m": 2008.3,
+  "pendiente_15m": {
+    "media": 0.197,
+    "mediana": 0.1416,
+    "p90": 0.4307,
+    "frac_gt_0.3": 0.2283,
+    "n_celdas": 118442734
+  },
+  "pendiente_30m": {
+    "media": 0.1849,
+    "mediana": 0.1312,
+    "p90": 0.4158,
+    "frac_gt_0.3": 0.2084,
+    "n_celdas": 29615274
+  },
+  "atenuacion_pendiente_media_pct": 6.1,
+  "atenuacion_pendiente_p90_pct": 3.4
+}

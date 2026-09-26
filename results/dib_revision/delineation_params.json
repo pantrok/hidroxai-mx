@@ -1,0 +1,74 @@
+{
+  "nota": "Parametros con que se delinearon los poligonos de subcuencas de v2026.06 (retirados en v2026.10). El CEM esta en EPSG:6365 (geografico): el umbral de extract_streams va en celdas y la distancia de jenson_snap_pour_points en grados; los equivalentes fisicos se calculan a la latitud media de cada unidad.",
+  "herramienta": "WhiteboxTools: fill_depressions, d8_pointer, d8_flow_accumulation(cells), extract_streams, jenson_snap_pour_points, watershed",
+  "stream_threshold_celdas": 1000,
+  "snap_dist_grados": 0.01,
+  "unidades": {
+    "Cutzamala": {
+      "dem": "cem_cutzamala.tif",
+      "celda_m_aprox": [
+        29.24,
+        30.75
+      ],
+      "stream_threshold_km2": 0.899,
+      "snap_dist_m_aprox": 1079.8,
+      "n_estaciones": 8,
+      "n_poligonos": 8
+    },
+    "Lerma Alto": {
+      "dem": "cem_lerma_alto.tif",
+      "celda_m_aprox": [
+        29.14,
+        30.75
+      ],
+      "stream_threshold_km2": 0.8961,
+      "snap_dist_m_aprox": 1078.0,
+      "n_estaciones": 9,
+      "n_poligonos": 9
+    },
+    "Bajio": {
+      "dem": "cem_bajio.tif",
+      "celda_m_aprox": [
+        28.93,
+        30.75
+      ],
+      "stream_threshold_km2": 0.8897,
+      "snap_dist_m_aprox": 1074.3,
+      "n_estaciones": 26,
+      "n_poligonos": 25
+    },
+    "Santiago": {
+      "dem": "cem_santiago.tif",
+      "celda_m_aprox": [
+        28.76,
+        30.76
+      ],
+      "stream_threshold_km2": 0.8847,
+      "snap_dist_m_aprox": 1071.4,
+      "n_estaciones": 13,
+      "n_poligonos": 13
+    },
+    "Panuco": {
+      "dem": "cem_panuco.tif",
+      "celda_m_aprox": [
+        28.78,
+        30.76
+      ],
+      "stream_threshold_km2": 0.8853,
+      "snap_dist_m_aprox": 1071.7,
+      "n_estaciones": 52,
+      "n_poligonos": 51
+    },
+    "Alta del Balsas": {
+      "dem": "cem_alta_del_balsas.tif",
+      "celda_m_aprox": [
+        14.65,
+        15.37
+      ],
+      "stream_threshold_km2": 0.2252,
+      "snap_dist_m_aprox": 1080.7,
+      "n_estaciones": 17,
+      "n_poligonos": 17
+    }
+  }
+}

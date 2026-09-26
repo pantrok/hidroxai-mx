@@ -1,0 +1,21 @@
+{
+  "nota": "Metadatos verificados contra api.crossref.org el 2026-09-26. Solo se verificó existencia y metadatos; no se leyó el texto completo. Cotejar cualquier afirmación puntual sobre sus resultados antes de citarla.",
+  "referencias": [
+    {"uso": "E4: evento documentado de sep-2013 (Ingrid y Manuel)", "doi": "10.1002/wea.2355",
+     "cita": "Pedrozo-Acuña, A., Breña-Naranjo, J. A., & Domínguez-Mora, R. (2014). The hydrological setting of the 2013 floods in Mexico. Weather, 69(11), 295–302."},
+    {"uso": "E3: relleno de huecos en caudales diarios", "doi": "10.2166/nh.2012.110",
+     "cita": "Harvey, C. L., Dixon, H., & Hannaford, J. (2012). An appraisal of the performance of data-infilling methods for application to daily mean river flow records in the UK. Hydrology Research, 43(5), 618–636."},
+    {"uso": "E3: revisión de procesamiento de datos hidrológicos faltantes", "doi": "10.1007/s12665-018-7228-6",
+     "cita": "Gao, Y., Merz, C., Lischeid, G., & Schneider, M. (2018). A review on missing hydrological data processing. Environmental Earth Sciences, 77(2), 47."},
+    {"uso": "E3: relleno de caudales diarios (herramienta de casos)", "doi": "10.1016/j.envsoft.2016.04.013",
+     "cita": "Giustarini, L., Parisot, O., Ghoniem, M., Hostache, R., Trebs, I., & Otjacques, B. (2016). A user-driven case-based reasoning tool for infilling missing values in daily mean river flow records. Environmental Modelling & Software, 82, 308–320."},
+    {"uso": "Vínculo estación–red (HydroRIVERS v1.0)", "doi": "10.1002/hyp.9740",
+     "cita": "Lehner, B., & Grill, G. (2013). Global river hydrography and network routing: baseline data and new approaches to study the world's large river systems. Hydrological Processes, 27(15), 2171–2186."}
+  ],
+  "capas_para_figuras": [
+    {"uso": "Fig. 2: límites estatales/nacional", "fuente": "Natural Earth 10m admin-1 states/provinces v5.1.1 (dominio público)",
+     "url": "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip"},
+    {"uso": "Fig. 2: regiones hidrológicas 12, 18, 26", "fuente": "CONAGUA – Subdirección General Técnica (2007). Regiones Hidrológicas, escala 1:250000. República Mexicana. Distribuido por CONABIO (2009); uso sin restricciones según su metadato.",
+     "url": "http://www.conabio.gob.mx/informacion/gis/maps/geo/rh250kgw.zip"}
+  ]
+}

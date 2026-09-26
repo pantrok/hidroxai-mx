@@ -1,0 +1,29 @@
+{
+  "estaciones": 94,
+  "con_referencia": 88,
+  "snap_a_celda_de_menor_acumulacion_x10": 39,
+  "mediana_abs_err_pct_snap_jenson": 99.5,
+  "mediana_abs_err_pct_max_acum_en_radio": 97.3,
+  "frac_dentro_20pct_max_acum_en_radio": 0.045,
+  "frac_subestima_mas_50pct_max_acum": 0.716,
+  "unidades": {
+    "Cutzamala": {
+      "frac_sin_dato_cem": 0.1108
+    },
+    "Lerma Alto": {
+      "frac_sin_dato_cem": 0.0
+    },
+    "Bajio": {
+      "frac_sin_dato_cem": 0.0301
+    },
+    "Santiago": {
+      "frac_sin_dato_cem": 0.4892
+    },
+    "Panuco": {
+      "frac_sin_dato_cem": 0.062
+    },
+    "Alta del Balsas": {
+      "frac_sin_dato_cem": 0.1982
+    }
+  }
+}

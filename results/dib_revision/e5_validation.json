@@ -1,0 +1,615 @@
+{
+  "subcuencas": 94,
+  "con_referencia": 88,
+  "sin_referencia": 6,
+  "mediana_abs_err_pct": 99.5,
+  "frac_dentro_20pct": 0.011,
+  "frac_dentro_intervalo_tramo": 0.091,
+  "solo_area_ge_10km2": {
+    "n": 39,
+    "mediana_abs_err_pct": 99.2,
+    "frac_dentro_20pct": 0.026
+  },
+  "casos_mayores_50pct": [
+    {
+      "clave_estacion": "RFRTP",
+      "unidad": "Panuco",
+      "area_km2": 174.991,
+      "area_ref_km2": 14.2,
+      "diagnostico": "razón de áreas 12: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TTLMX",
+      "unidad": "Panuco",
+      "area_km2": 115.676,
+      "area_ref_km2": 15.0,
+      "diagnostico": "razón de áreas 7.7: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "GDLMX",
+      "unidad": "Panuco",
+      "area_km2": 1740.786,
+      "area_ref_km2": 350.5,
+      "diagnostico": "truncada por el bbox de la unidad"
+    },
+    {
+      "clave_estacion": "ZCTMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 64.274,
+      "area_ref_km2": 15.3,
+      "diagnostico": "sin causa identificable en el archivo"
+    },
+    {
+      "clave_estacion": "SLMGJ",
+      "unidad": "Bajio",
+      "area_km2": 0.013,
+      "area_ref_km2": 22261.9,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 6e-07: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ALUMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 0.0,
+      "area_ref_km2": 569.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 7.9e-07: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TMTSL",
+      "unidad": "Panuco",
+      "area_km2": 0.018,
+      "area_ref_km2": 6901.0,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 2.6e-06: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CVAHD",
+      "unidad": "Panuco",
+      "area_km2": 0.002,
+      "area_ref_km2": 493.1,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 3.6e-06: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ATQJL",
+      "unidad": "Bajio",
+      "area_km2": 1.55,
+      "area_ref_km2": 46335.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 3.3e-05: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "XICMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 0.246,
+      "area_ref_km2": 6114.0,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 4e-05: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CDCHD",
+      "unidad": "Panuco",
+      "area_km2": 0.166,
+      "area_ref_km2": 3737.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 4.4e-05: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SLCGJ",
+      "unidad": "Panuco",
+      "area_km2": 0.872,
+      "area_ref_km2": 8476.1,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0001: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CHPNR",
+      "unidad": "Santiago",
+      "area_km2": 1.25,
+      "area_ref_km2": 12074.0,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0001: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TBLSL",
+      "unidad": "Panuco",
+      "area_km2": 1.891,
+      "area_ref_km2": 18151.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0001: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "OLVVC",
+      "unidad": "Panuco",
+      "area_km2": 4.08,
+      "area_ref_km2": 33711.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00012: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ACEHD",
+      "unidad": "Panuco",
+      "area_km2": 0.659,
+      "area_ref_km2": 3737.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00018: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "EGIMC",
+      "unidad": "Lerma Alto",
+      "area_km2": 1.343,
+      "area_ref_km2": 7135.1,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00019: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "RTTHD",
+      "unidad": "Panuco",
+      "area_km2": 1.04,
+      "area_ref_km2": 5465.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00019: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SRSJL",
+      "unidad": "Santiago",
+      "area_km2": 16.352,
+      "area_ref_km2": 81644.7,
+      "diagnostico": "razón de áreas 0.0002: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TJCMX",
+      "unidad": "Panuco",
+      "area_km2": 0.038,
+      "area_ref_km2": 190.3,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0002: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "JMANR",
+      "unidad": "Santiago",
+      "area_km2": 1.392,
+      "area_ref_km2": 4510.0,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00031: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CXXMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 0.245,
+      "area_ref_km2": 569.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00043: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ZULJL",
+      "unidad": "Bajio",
+      "area_km2": 0.981,
+      "area_ref_km2": 2017.7,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00049: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "BLNJL",
+      "unidad": "Santiago",
+      "area_km2": 6.974,
+      "area_ref_km2": 12029.9,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00058: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SCRMC",
+      "unidad": "Bajio",
+      "area_km2": 1.384,
+      "area_ref_km2": 2226.9,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00062: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TMSTP",
+      "unidad": "Panuco",
+      "area_km2": 10.388,
+      "area_ref_km2": 14995.1,
+      "diagnostico": "razón de áreas 0.00069: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "AJJJL",
+      "unidad": "Santiago",
+      "area_km2": 6.769,
+      "area_ref_km2": 6876.4,
+      "diagnostico": "truncada por el bbox de la unidad; cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.00098: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "LSRTP",
+      "unidad": "Panuco",
+      "area_km2": 2.882,
+      "area_ref_km2": 2782.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.001: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "LESNR",
+      "unidad": "Santiago",
+      "area_km2": 5.724,
+      "area_ref_km2": 4911.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0012: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "AMCMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 3.505,
+      "area_ref_km2": 2248.9,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0016: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ATCHD",
+      "unidad": "Panuco",
+      "area_km2": 1.446,
+      "area_ref_km2": 874.9,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0017: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SCRJL",
+      "unidad": "Bajio",
+      "area_km2": 125.254,
+      "area_ref_km2": 71129.3,
+      "diagnostico": "razón de áreas 0.0018: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "LADGJ",
+      "unidad": "Bajio",
+      "area_km2": 7.128,
+      "area_ref_km2": 3334.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0021: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TMPVC",
+      "unidad": "Panuco",
+      "area_km2": 12.519,
+      "area_ref_km2": 5217.7,
+      "diagnostico": "razón de áreas 0.0024: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ANSGJ",
+      "unidad": "Bajio",
+      "area_km2": 7.357,
+      "area_ref_km2": 2665.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0028: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "PUJSL",
+      "unidad": "Panuco",
+      "area_km2": 71.251,
+      "area_ref_km2": 25637.5,
+      "diagnostico": "razón de áreas 0.0028: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CPEHD",
+      "unidad": "Panuco",
+      "area_km2": 5.235,
+      "area_ref_km2": 1758.7,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.003: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "RSTHD",
+      "unidad": "Panuco",
+      "area_km2": 1.523,
+      "area_ref_km2": 487.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0031: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SGRJL",
+      "unidad": "Bajio",
+      "area_km2": 13.701,
+      "area_ref_km2": 4368.1,
+      "diagnostico": "razón de áreas 0.0031: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SLAMX",
+      "unidad": "Panuco",
+      "area_km2": 1.089,
+      "area_ref_km2": 340.7,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0032: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "PERGJ",
+      "unidad": "Bajio",
+      "area_km2": 33.838,
+      "area_ref_km2": 9701.9,
+      "diagnostico": "truncada por el bbox de la unidad; razón de áreas 0.0035: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "K27MX",
+      "unidad": "Panuco",
+      "area_km2": 18.978,
+      "area_ref_km2": 5267.7,
+      "diagnostico": "razón de áreas 0.0036: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ECHGJ",
+      "unidad": "Bajio",
+      "area_km2": 0.92,
+      "area_ref_km2": 239.0,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0038: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SL2GJ",
+      "unidad": "Bajio",
+      "area_km2": 42.243,
+      "area_ref_km2": 8476.1,
+      "diagnostico": "truncada por el bbox de la unidad; razón de áreas 0.005: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "STRSL",
+      "unidad": "Panuco",
+      "area_km2": 16.608,
+      "area_ref_km2": 3326.6,
+      "diagnostico": "razón de áreas 0.005: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CDFHD",
+      "unidad": "Panuco",
+      "area_km2": 19.229,
+      "area_ref_km2": 3737.2,
+      "diagnostico": "razón de áreas 0.0051: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TEMMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 1.881,
+      "area_ref_km2": 363.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0052: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CAPNR",
+      "unidad": "Santiago",
+      "area_km2": 707.089,
+      "area_ref_km2": 122317.3,
+      "diagnostico": "razón de áreas 0.0058: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SGBTP",
+      "unidad": "Panuco",
+      "area_km2": 29.293,
+      "area_ref_km2": 4922.7,
+      "diagnostico": "razón de áreas 0.006: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SVTSL",
+      "unidad": "Panuco",
+      "area_km2": 169.353,
+      "area_ref_km2": 27402.5,
+      "diagnostico": "truncada por el bbox de la unidad; razón de áreas 0.0062: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "MGSTP",
+      "unidad": "Panuco",
+      "area_km2": 67.879,
+      "area_ref_km2": 10907.4,
+      "diagnostico": "razón de áreas 0.0062: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SLVGJ",
+      "unidad": "Bajio",
+      "area_km2": 70.269,
+      "area_ref_km2": 9288.5,
+      "diagnostico": "razón de áreas 0.0076: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "YURMC",
+      "unidad": "Bajio",
+      "area_km2": 288.015,
+      "area_ref_km2": 35200.3,
+      "diagnostico": "razón de áreas 0.0082: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "BCSJL",
+      "unidad": "Santiago",
+      "area_km2": 27.593,
+      "area_ref_km2": 3163.1,
+      "diagnostico": "razón de áreas 0.0087: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "BLMSL",
+      "unidad": "Panuco",
+      "area_km2": 3.033,
+      "area_ref_km2": 346.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.0088: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "AMCGJ",
+      "unidad": "Bajio",
+      "area_km2": 23.309,
+      "area_ref_km2": 2449.3,
+      "diagnostico": "truncada por el bbox de la unidad; razón de áreas 0.0095: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "YAHMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 6.259,
+      "area_ref_km2": 558.5,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.011: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ROMNR",
+      "unidad": "Santiago",
+      "area_km2": 2.273,
+      "area_ref_km2": 188.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.012: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CL1HD",
+      "unidad": "Panuco",
+      "area_km2": 6.583,
+      "area_ref_km2": 448.0,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.015: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "MBLMX",
+      "unidad": "Panuco",
+      "area_km2": 3.286,
+      "area_ref_km2": 215.6,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.015: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ESTMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 1.609,
+      "area_ref_km2": 84.8,
+      "diagnostico": "truncada por el bbox de la unidad; cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.019: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "PSNVC",
+      "unidad": "Panuco",
+      "area_km2": 72.252,
+      "area_ref_km2": 3731.6,
+      "diagnostico": "razón de áreas 0.019: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "AHLTP",
+      "unidad": "Panuco",
+      "area_km2": 1.665,
+      "area_ref_km2": 83.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.02: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TICMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 21.353,
+      "area_ref_km2": 1065.0,
+      "diagnostico": "razón de áreas 0.02: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "TESMX",
+      "unidad": "Cutzamala",
+      "area_km2": 3.141,
+      "area_ref_km2": 106.2,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.03: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SB2MX",
+      "unidad": "Lerma Alto",
+      "area_km2": 61.285,
+      "area_ref_km2": 2070.7,
+      "diagnostico": "razón de áreas 0.03: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CUAMR",
+      "unidad": "Alta del Balsas",
+      "area_km2": 10.919,
+      "area_ref_km2": 351.5,
+      "diagnostico": "razón de áreas 0.031: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CHPMX",
+      "unidad": "Panuco",
+      "area_km2": 1.208,
+      "area_ref_km2": 36.4,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.033: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CYUGJ",
+      "unidad": "Bajio",
+      "area_km2": 0.905,
+      "area_ref_km2": 24.8,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.037: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ADUMC",
+      "unidad": "Bajio",
+      "area_km2": 3.434,
+      "area_ref_km2": 75.8,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.045: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CALMX",
+      "unidad": "Lerma Alto",
+      "area_km2": 12.714,
+      "area_ref_km2": 229.6,
+      "diagnostico": "razón de áreas 0.055: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "LAYMX",
+      "unidad": "Cutzamala",
+      "area_km2": 3.524,
+      "area_ref_km2": 53.5,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.066: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SAUJL",
+      "unidad": "Bajio",
+      "area_km2": 12.7,
+      "area_ref_km2": 177.9,
+      "diagnostico": "truncada por el bbox de la unidad; razón de áreas 0.071: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CSTHD",
+      "unidad": "Panuco",
+      "area_km2": 33.907,
+      "area_ref_km2": 446.5,
+      "diagnostico": "razón de áreas 0.076: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ARSHD",
+      "unidad": "Panuco",
+      "area_km2": 6.073,
+      "area_ref_km2": 77.7,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.078: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SBNTP",
+      "unidad": "Panuco",
+      "area_km2": 58.06,
+      "area_ref_km2": 575.2,
+      "diagnostico": "razón de áreas 0.1: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "SMLMX",
+      "unidad": "Lerma Alto",
+      "area_km2": 2.716,
+      "area_ref_km2": 24.7,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.11: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ARBMX",
+      "unidad": "Panuco",
+      "area_km2": 2.202,
+      "area_ref_km2": 16.8,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS); razón de áreas 0.13: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "CSTGJ",
+      "unidad": "Bajio",
+      "area_km2": 18.396,
+      "area_ref_km2": 113.8,
+      "diagnostico": "razón de áreas 0.16: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "ATOMX",
+      "unidad": "Lerma Alto",
+      "area_km2": 20.518,
+      "area_ref_km2": 121.3,
+      "diagnostico": "razón de áreas 0.17: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "EMOMX",
+      "unidad": "Panuco",
+      "area_km2": 37.591,
+      "area_ref_km2": 215.6,
+      "diagnostico": "razón de áreas 0.17: posible ajuste a un cauce distinto (inferencia)"
+    },
+    {
+      "clave_estacion": "OBSMX",
+      "unidad": "Panuco",
+      "area_km2": 5.864,
+      "area_ref_km2": 21.8,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS)"
+    },
+    {
+      "clave_estacion": "IXCMX",
+      "unidad": "Lerma Alto",
+      "area_km2": 7.259,
+      "area_ref_km2": 25.1,
+      "diagnostico": "cuenca < 10 km² (bajo el umbral de HydroRIVERS)"
+    },
+    {
+      "clave_estacion": "TROMX",
+      "unidad": "Lerma Alto",
+      "area_km2": 18.797,
+      "area_ref_km2": 54.4,
+      "diagnostico": "sin causa identificable en el archivo"
+    },
+    {
+      "clave_estacion": "RQTSL",
+      "unidad": "Panuco",
+      "area_km2": 409.511,
+      "area_ref_km2": 903.0,
+      "diagnostico": "truncada por el bbox de la unidad"
+    }
+  ],
+  "comparacion_v2026_06": {
+    "n": 88,
+    "mediana_abs_err_pct_v2026_06": 99.5,
+    "mediana_abs_err_pct_v2026_10": 99.5
+  }
+}

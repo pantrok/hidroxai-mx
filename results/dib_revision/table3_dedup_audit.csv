@@ -1,0 +1,8 @@
+unidad,region_hidrologica,resolucion_cem_m,estaciones_en_bbox,poligonos_tras_dedup,poligonos_que_tocan_bbox
+Cutzamala,18,30,8,2,0
+Lerma Alto,12,30,9,7,0
+Bajio,12,30,26,23,4
+Santiago,12,30,13,10,1
+Panuco,26,30,52,40,3
+Alta del Balsas,18,15,17,12,1
+Total (únicas),,,95,94,9

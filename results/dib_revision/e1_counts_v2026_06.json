@@ -1,0 +1,152 @@
+{
+  "fecha_conciliacion": "2026-09-26",
+  "ventana": [
+    "2010-01-01",
+    "2025-12-31"
+  ],
+  "dias_ventana": 5844,
+  "estaciones_sin_poligono_en_su_unidad": [
+    {
+      "unidad": "Bajio",
+      "VALUE": 5,
+      "clave": "BRAGJ"
+    },
+    {
+      "unidad": "Panuco",
+      "VALUE": 2,
+      "clave": "BRAGJ"
+    }
+  ],
+  "distancia_estacion_poligono_m": {
+    "mediana": 15.7,
+    "p95": 244.15,
+    "max": 498.7
+  },
+  "seleccionadas_publicadas_filas": 101,
+  "seleccionadas_publicadas_igual_a_principal_en_bbox": false,
+  "principal_fuera_de_bbox": [
+    "CHAMC",
+    "CMNMC",
+    "LPNMC",
+    "LPSMC",
+    "LPZMC",
+    "TLAMC"
+  ],
+  "hidrometricas": {
+    "catalogo_maestro": 1189,
+    "candidatas_region_12_18_26": 550,
+    "archivo_descargado": 547,
+    "archivo_legible": 547,
+    "con_dato_2010_2025": 325,
+    "cobertura_ge_0.6": 101,
+    "dentro_de_algun_bbox": 95,
+    "filas_estacion_unidad": 125,
+    "estaciones_en_2_o_mas_unidades": 23,
+    "poligonos_publicados": 123,
+    "estaciones_con_al_menos_un_poligono": 94,
+    "candidatas_publicadas_coinciden": true,
+    "cobertura_media_pct_descargadas": 24.11395240293956,
+    "cobertura_mediana_pct_descargadas": 13.158795345653662
+  },
+  "climatologicas": {
+    "catalogo_maestro": 7499,
+    "candidatas_region_12_18_26": 2731,
+    "archivo_descargado": 2659,
+    "archivo_legible": 2659,
+    "con_dato_2010_2025": 1899,
+    "cobertura_ge_0.8": 415,
+    "candidatas_publicadas_coinciden": true,
+    "cobertura_media_pct_descargadas": 42.036512056350915,
+    "cobertura_mediana_pct_descargadas": 49.84599589322382
+  },
+  "observaciones": {
+    "hidrometricas": {
+      "rows_total": 10594758,
+      "rows_with_value": 6028438,
+      "rows_window": 2619708,
+      "with_value_window": 934402,
+      "duplicate_rows": 204614
+    },
+    "climatologicas": {
+      "rows_total": 55590466,
+      "rows_with_value": 36744755,
+      "rows_window": 13307789,
+      "with_value_window": 6794778,
+      "duplicate_rows": 0
+    }
+  },
+  "calidad": {
+    "hidrometricas|filas_con_valor|0": {
+      "n": 5899726,
+      "pct": 97.8649
+    },
+    "hidrometricas|filas_con_valor|1": {
+      "n": 128195,
+      "pct": 2.1265
+    },
+    "hidrometricas|filas_con_valor|2": {
+      "n": 517,
+      "pct": 0.0086
+    },
+    "hidrometricas|filas_con_valor_2010_2025|0": {
+      "n": 870114,
+      "pct": 93.1199
+    },
+    "hidrometricas|filas_con_valor_2010_2025|1": {
+      "n": 64095,
+      "pct": 6.8595
+    },
+    "hidrometricas|filas_con_valor_2010_2025|2": {
+      "n": 193,
+      "pct": 0.0207
+    },
+    "hidrometricas|todas_las_filas|0": {
+      "n": 10466046,
+      "pct": 98.7851
+    },
+    "hidrometricas|todas_las_filas|1": {
+      "n": 128195,
+      "pct": 1.21
+    },
+    "hidrometricas|todas_las_filas|2": {
+      "n": 517,
+      "pct": 0.0049
+    },
+    "climatologicas|filas_con_valor|0": {
+      "n": 36188342,
+      "pct": 98.4857
+    },
+    "climatologicas|filas_con_valor|1": {
+      "n": 556208,
+      "pct": 1.5137
+    },
+    "climatologicas|filas_con_valor|2": {
+      "n": 205,
+      "pct": 0.0006
+    },
+    "climatologicas|filas_con_valor_2010_2025|0": {
+      "n": 6532087,
+      "pct": 96.1339
+    },
+    "climatologicas|filas_con_valor_2010_2025|1": {
+      "n": 262642,
+      "pct": 3.8654
+    },
+    "climatologicas|filas_con_valor_2010_2025|2": {
+      "n": 49,
+      "pct": 0.0007
+    },
+    "climatologicas|todas_las_filas|0": {
+      "n": 55034053,
+      "pct": 98.9991
+    },
+    "climatologicas|todas_las_filas|1": {
+      "n": 556208,
+      "pct": 1.0005
+    },
+    "climatologicas|todas_las_filas|2": {
+      "n": 205,
+      "pct": 0.0004
+    }
+  }
+}

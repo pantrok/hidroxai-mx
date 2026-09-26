@@ -1,0 +1,9 @@
+variante,clave,n_train,n_val,n_test,motivo
+congelada,CAPNR,3255,647,28,pocos datos
+congelada,GDLMX,3122,728,101,sin varianza en test
+congelada,PUJSL,2878,0,353,sin varianza en test
+congelada,SRSJL,2683,522,57,pocos datos
+sin_outliers_en_predictores,CAPNR,3255,647,28,pocos datos
+sin_outliers_en_predictores,GDLMX,3122,728,101,sin varianza en test
+sin_outliers_en_predictores,PUJSL,2878,0,353,sin varianza en test
+sin_outliers_en_predictores,SRSJL,2683,522,57,pocos datos

@@ -1,0 +1,79 @@
+{
+  "filas_estacion_unidad": 125,
+  "poligonos_antes": 123,
+  "estaciones_unicas_en_bbox": 95,
+  "estaciones_con_mas_de_un_poligono": 22,
+  "reglas_aplicadas": {
+    "2_region": 14,
+    "1_borde_bbox": 4,
+    "3_area": 3,
+    "1_borde_bbox+3_area": 1
+  },
+  "poligonos_despues": 94,
+  "estaciones_sin_poligono": [
+    "BRAGJ"
+  ],
+  "conservados_que_tocan_bbox": [
+    {
+      "clave_estacion": "AJJJL",
+      "unidad": "Santiago",
+      "dist_borde_bbox_m": 13.2,
+      "area_km2": 6.768758075489621
+    },
+    {
+      "clave_estacion": "AMCGJ",
+      "unidad": "Bajio",
+      "dist_borde_bbox_m": 13.3,
+      "area_km2": 23.308862546287923
+    },
+    {
+      "clave_estacion": "ESTMR",
+      "unidad": "Alta del Balsas",
+      "dist_borde_bbox_m": 0.0,
+      "area_km2": 1.6091811895401782
+    },
+    {
+      "clave_estacion": "GDLMX",
+      "unidad": "Panuco",
+      "dist_borde_bbox_m": 13.3,
+      "area_km2": 1740.7864097936513
+    },
+    {
+      "clave_estacion": "PERGJ",
+      "unidad": "Bajio",
+      "dist_borde_bbox_m": 13.3,
+      "area_km2": 33.837946634242556
+    },
+    {
+      "clave_estacion": "RQTSL",
+      "unidad": "Panuco",
+      "dist_borde_bbox_m": 13.2,
+      "area_km2": 409.51122294972544
+    },
+    {
+      "clave_estacion": "SAUJL",
+      "unidad": "Bajio",
+      "dist_borde_bbox_m": 13.2,
+      "area_km2": 12.699687325872267
+    },
+    {
+      "clave_estacion": "SL2GJ",
+      "unidad": "Bajio",
+      "dist_borde_bbox_m": 13.3,
+      "area_km2": 42.24285705002302
+    },
+    {
+      "clave_estacion": "SVTSL",
+      "unidad": "Panuco",
+      "dist_borde_bbox_m": 13.1,
+      "area_km2": 169.35281663528343
+    }
+  ],
+  "gate_una_por_estacion": false,
+  "n_por_estacion": {
+    "1": 72,
+    "2": 15,
+    "3": 7,
+    "0": 1
+  }
+}

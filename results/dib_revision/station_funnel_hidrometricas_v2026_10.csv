@@ -1,0 +1,551 @@
+clave,nombre,latitud,longitud,altitud,estado,municipio,region_hidrologica,cuenca,downloaded,readable,n_valid_window,cobertura,principal,unidades_bbox,n_unidades_bbox
+ACSGJ,"Arroyo los castillos, Gto.",21.2,-101.666667,1874,Guanajuato,León,12,Medio Lerma,True,True,4104,0.702258726899384,True,Bajio,1
+AMCGJ,"Ameche, Gto.",20.553889,-100.5825,1786,Guanajuato,Apaseo el Grande,12,La Laja,True,True,5319,0.910164271047228,True,Bajio;Panuco,2
+ANSGJ,"Arandas, Gto.",20.712778,-101.370833,1740,Guanajuato,Irapuato,12,Medio Lerma,True,True,4930,0.8436002737850787,True,Bajio,1
+BEGGJ,"La Begoña hidrométrica, Gto.",20.833333,-100.816667,1820,Guanajuato,San Miguel de Allende,12,La Laja,True,True,4786,0.8189596167008898,True,Bajio,1
+BRAGJ,"Braniff, Gto.",20.05,-100.666667,1879,Guanajuato,Acámbaro,12,Alto Lerma,True,True,4761,0.8146817248459959,True,Bajio;Panuco,2
+CEYGJ,"Canal extracciones Yuriria, Gto.",20.266667,-101.216667,1730,Guanajuato,Jaral del Progreso,12,Alto Lerma,True,True,4787,0.8191307323750856,True,Bajio,1
+CSTGJ,"Los Castillos, Gto.",21.195556,-101.6675,1874,Guanajuato,León,12,Medio Lerma,True,True,5290,0.905201916495551,True,Bajio,1
+CYUGJ,"Canal alimentador Yuriria, Gto.",20.216667,-101.133333,1736,Guanajuato,Yuriria,12,Alto Lerma,True,True,4761,0.8146817248459959,True,Bajio,1
+ECBGJ,"El Cubo, Gto.",20.279722,-100.9,1775,Guanajuato,Salvatierra,12,Alto Lerma,True,True,4793,0.8201574264202601,True,Bajio,1
+ECHGJ,"El Chapín, Gto.",20.872222,-101.244444,1775,Guanajuato,Guanajuato,12,Medio Lerma,True,True,5299,0.9067419575633128,True,Bajio,1
+JCRGJ,"Jerécuaro, Gto.",20.145556,-100.518333,1931,Guanajuato,Jerécuaro,12,Alto Lerma,True,True,2745,0.4697125256673511,False,Bajio;Panuco,2
+LADGJ,"Las Adjuntas, Gto.",20.675278,-101.844167,1802,Guanajuato,Manuel Doblado,12,La Laja,True,True,5299,0.9067419575633128,True,Bajio,1
+LMTGJ,"Lomo de Toro, Gto.",20.3,-101.0,1890,Guanajuato,Salvatierra,12,Alto Lerma,True,True,1555,0.2660848733744011,False,Bajio,1
+PDLGJ,"Puente Dolores, Gto.",21.168056,-100.900556,1837,Guanajuato,Dolores Hidalgo Cuna de la Independencia Nacional,12,La Laja,True,True,2893,0.49503764544832307,False,Bajio,1
+PERGJ,"Pericos, Gto.",20.5225,-101.111389,1722,Guanajuato,Salamanca,12,La Laja,True,True,5320,0.9103353867214237,True,Bajio,1
+SL2GJ,"Solis, Gto.",20.05,-100.666667,1879,Guanajuato,Acámbaro,12,Alto Lerma,True,True,4285,0.7332306639288159,True,Bajio;Panuco,2
+SLCGJ,"Canal Solis, Gto.",20.052222,-100.671667,1879,Guanajuato,Acámbaro,12,Alto Lerma,True,True,4687,0.80201916495551,True,Bajio;Panuco,2
+SLMGJ,"Salamanca, Gto.",20.565833,-101.199444,1713,Guanajuato,Salamanca,12,Medio Lerma,True,True,5347,0.9149555099247091,True,Bajio,1
+SLVGJ,"Salvatierra, Gto.",20.216667,-100.885833,1758,Guanajuato,Salvatierra,12,Alto Lerma,True,True,5355,0.9163244353182751,True,Bajio,1
+TEMGJ,"Temascatío, Gto.",20.6,-101.3,1840,Guanajuato,Irapuato,12,Alto Lerma,True,True,38,0.006502395619438741,False,Bajio,1
+TGRGJ,"Tres Guerras, Gto.",20.515833,-100.775278,1368,Guanajuato,Celaya,12,La Laja,True,True,2224,0.3805612594113621,False,Bajio,1
+ACEHD,"Arroyo del centro, Hgo.",20.455833,-99.230833,0,Hidalgo,Tecomán,26,Valle de México,True,True,4565,0.7811430527036276,True,Panuco,1
+ARSHD,"Al Río el Salto, Hgo.",19.937778,-99.283333,0,Hidalgo,Tepeji del Río de Ocampo,26,Valle de México,True,True,4577,0.7831964407939768,True,Panuco,1
+ATCHD,"Atlapexco, Hgo.",21.019444,-98.348056,156,Hidalgo,Atlapexco,26,Bajo Pánuco,True,True,3727,0.6377481177275839,True,Panuco,1
+CDCHD,"Canal del centro, Hgo.",20.454167,-99.231111,0,Hidalgo,Ixmiquilpan,26,Valle de México,True,True,4568,0.7816563997262149,True,Panuco,1
+CDFHD,"Canal de fuerza, Hgo.",20.452778,-99.230833,0,Hidalgo,Ixmiquilpan,26,Valle de México,True,True,4576,0.783025325119781,True,Panuco,1
+CL1HD,"Canal de liga 1 Rojo Gómez a Vicente Aguirre, Hgo.",20.366667,-99.322222,0,Hidalgo,Ixmiquilpan,26,Valle de México,True,True,4576,0.783025325119781,True,Panuco,1
+CPEHD,"Canal a Presa Endhó, Hgo.",20.132222,-99.351944,0,Hidalgo,Alfajayucan,26,Valle de México,True,True,4574,0.7826830937713894,True,Panuco,1
+CSTHD,"Canal Salto Tlamaco, Hgo.",20.0375,-99.222778,0,Hidalgo,Tepetitlán,26,Valle de México,True,True,4582,0.7840520191649555,True,Panuco,1
+CVAHD,"Canal Vicente Aguirre, Hgo.",20.414167,-99.3575,0,Hidalgo,Atitalaquia,26,Valle de México,True,True,4574,0.7826830937713894,True,Panuco,1
+RSTHD,"Río Salado Tablón, Hgo.",20.051111,-99.225278,0,Hidalgo,Atitalaquia,26,Valle de México,True,True,4563,0.7808008213552361,True,Panuco,1
+RTTHD,"Río Tula Tasquillo, Hgo.",20.576389,-99.342778,0,Hidalgo,Tasquillo,26,Valle de México,True,True,4468,0.7645448323066393,True,Panuco,1
+ORZHD,"San Felipe Orizatlán, Hgo.",21.166667,-98.6,2370,Hidalgo,San Felipe Orizatlán,26,Bajo Pánuco,True,True,2672,0.45722108145106094,False,Panuco,1
+AJJJL,"Ajojúcar, Jal.",21.599444,-102.436944,1751,Jalisco,Teocaltiche,12,Río Alto Santiago,True,True,3971,0.6795003422313484,True,Santiago,1
+ATEJL,"Atemajac, Jal.",20.723056,-102.34,0,Jalisco,Arandas,12,Bajo Lerma,True,True,4376,0.7488021902806297,True,Bajio;Santiago,2
+ATQJL,"Atequiza, Jal.",20.397222,-103.091944,1528,Jalisco,Chapala,12,Río Alto Santiago,True,True,3835,0.6562286105407256,True,Bajio,1
+BCSJL,"Bocas, Jal.",22.406111,-103.724444,1743,Jalisco,Mezquitic,12,Rio Bajo Santiago,True,True,4222,0.7224503764544832,True,Santiago,1
+BLNJL,"Bolaños, Jal.",21.831667,-103.782778,916,Jalisco,Bolaños,12,Rio Bajo Santiago,True,True,4050,0.6930184804928131,True,Santiago,1
+CUNJL,"La Cuña, Jal.",21.133333,-102.85,1700,Jalisco,Yahualica de González Gallo,12,Río Alto Santiago,True,True,2503,0.4283025325119781,False,Bajio;Santiago,2
+CXTJL,"Cuixtla, Jal.",21.066667,-103.45,816,Jalisco,San Cristóbal de la Barranca,12,Río Alto Santiago,True,True,3850,0.6587953456536618,True,Bajio;Santiago,2
+ELCJL,"El Corcovado, Jal.",19.845833,-104.285278,898,Jalisco,Autlán de Navarro,12,Río Armería,True,True,1837,0.31433949349760437,False,,0
+EXPJL,"La Experiencia, Jal.",20.723333,-103.335,1550,Jalisco,Guadalajara,12,Alto Lerma,True,True,5,0.0008555783709787816,False,Bajio;Santiago,2
+LDMJL,"Lagos de Moreno, Jal.",21.359722,-101.919722,1871,Jalisco,Lagos de Moreno,12,Río Alto Santiago,True,True,3255,0.5569815195071869,False,Bajio,1
+LGLJL,"La Gloria, Jal.",22.068056,-103.396389,1465,Jalisco,Colotlán,12,Alto Lerma,True,True,651,0.11139630390143737,False,Santiago,1
+PDSJL,"Paso del Sabino, Jal.",21.337222,-102.532778,1699,Jalisco,Teocaltiche,12,Alto Lerma,True,True,0,0.0,False,Bajio;Santiago,2
+PINJL,"El Pinito, Jal.",22.6,-103.916667,1858,Jalisco,Huejuquilla el Alto,12,Rio Bajo Santiago,True,True,2587,0.4426762491444216,False,Santiago,1
+SAUJL,"La Sauceda, Jal.",21.35,-101.85,1940,Jalisco,Lagos de Moreno,12,Río Alto Santiago,True,True,4562,0.7806297056810404,True,Bajio,1
+SCRJL,"San Cristóbal 2, Jal.",21.038889,-103.429167,0,Jalisco,San Cristóbal de la Barranca,12,Río Alto Santiago,True,True,4167,0.7130390143737166,True,Bajio;Santiago,2
+SGRJL,"San Gaspar de los Reyes, Jal.",21.3,-102.5,1740,Jalisco,Jalostotitlán,12,Río Alto Santiago,True,True,3956,0.676933607118412,True,Bajio;Santiago,2
+SRSJL,"Manuel M. Diéguez, Jal.",20.908889,-103.705556,730,Jalisco,Amatitán,12,Río Alto Santiago,True,True,3606,0.6170431211498973,True,Santiago,1
+ZPTJL,"El Zapote, Jal.",22.05,-103.05,1589,Jalisco,El Plateado de Joaquín Amaro,12,Bajo Lerma,True,True,354,0.060574948665297744,False,Santiago,1
+ZULJL,"Zula río, Jal.",20.395278,-102.729444,0,Jalisco,Ocotlán,12,Bajo Lerma,True,True,5198,0.8894592744695414,True,Bajio,1
+ARBMX,"Las Arboledas, Méx.",19.566667,-99.216667,2280,México,Atizapán de Zaragoza,26,Valle de México,True,True,4812,0.8234086242299795,True,Panuco,1
+ATEMX,"Atenco, Méx.",19.543611,-98.912222,2248,México,Atenco,26,Valle de México,True,True,146,0.024982888432580425,False,Panuco,1
+ATOMX,"Atotonilco 2, Méx.",19.452778,-99.776389,2557,México,Almoloya de Juárez,12,Alto Lerma,True,True,4084,0.6988364134154689,True,Cutzamala;Lerma Alto;Panuco,3
+AURMX,"Canal la Aurora, Méx.",19.638056,-99.250556,0,México,Lázaro Cárdenas,26,Valle de México,True,True,2114,0.3617385352498289,False,Panuco,1
+CALMX,"Calixtlahuaca, Méx.",19.333333,-99.7,2635,México,Toluca,12,Alto Lerma,True,True,4140,0.7084188911704312,True,Cutzamala;Lerma Alto;Panuco,3
+CHPMX,"Chapingo, Méx.",19.483333,-98.884722,2250,México,Texcoco,26,Valle de México,True,True,4824,0.8254620123203286,True,Panuco;Alta del Balsas,2
+EMOMX,"El Molinito Río Hondo, Méx.",19.453611,-99.238333,229,México,Naucalpan de Juárez,26,Valle de México,True,True,4624,0.7912388774811773,True,Panuco;Alta del Balsas,2
+GDLMX,"Sierra de Guadalupe, Méx.",19.635556,-99.252222,2290,México,Cuautitlán Izcalli,26,Valle de México,True,True,4010,0.6861738535249828,True,Panuco,1
+GRDMX,"La Grande, Méx.",19.578889,-98.917222,2252,México,Tezoyuca,26,Valle de México,True,True,32,0.0054757015742642025,False,Panuco,1
+IXCMX,"Ixtlahuaca, Méx.",19.5675,-99.769444,2544,México,Ixtlahuaca,12,Alto Lerma,True,True,4179,0.7150924024640657,True,Cutzamala;Lerma Alto;Panuco,3
+K27MX,"km 27+250, Méx.",19.633333,-99.05,2250,México,Ecatepec de Morelos,26,Valle de México,True,True,4960,0.8487337440109514,True,Panuco,1
+LAYMX,"La Y, Méx.",19.404444,-99.593889,2576,México,Otzolotepec,12,Alto Lerma,True,True,3980,0.6810403832991102,True,Cutzamala;Lerma Alto;Panuco,3
+MBLMX,"Molino Blanco, Méx.",19.477778,-99.220833,2326,México,Naucalpan de Juárez,26,Valle de México,True,True,4604,0.7878165639972622,True,Panuco;Alta del Balsas,2
+OBSMX,"San Martín Obispo, Méx.",19.616667,-99.193611,2253,México,Cuautitlán Izcalli,26,Valle de México,True,True,4520,0.7734428473648186,True,Panuco,1
+PCGMX,"Puente Colgante, Méx.",19.743056,-99.181944,2254,México,Teoloyucan,26,Valle de México,True,True,2,0.00034223134839151266,False,Panuco,1
+PPBMX,"Planta Potabilizadora Madín, Méx.",19.465556,-99.2675,0,México,Naucalpan de Juárez,26,Valle de México,True,True,769,0.13158795345653662,False,Panuco;Alta del Balsas,2
+PTCMX,"Puente Carretero, Méx",19.283611,-99.521944,2577,México,San Mateo Atenco,12,Alto Lerma,True,True,2274,0.3891170431211499,False,Cutzamala;Lerma Alto;Panuco,3
+SADMX,"San Andrés, Méx.",19.530556,-98.911111,2268,México,Texcoco,26,Valle de México,True,True,3,0.000513347022587269,False,Panuco,1
+SB2MX,"San Bernabe, Méx",19.465556,-99.703889,2571,México,Temoaya,12,Alto Lerma,True,True,3734,0.6389459274469541,True,Cutzamala;Lerma Alto;Panuco,3
+SBBMX,"José Antonio Alzate, Méx.",19.465833,-99.704722,2571,México,Temoaya,12,Alto Lerma,True,True,254,0.043463381245722105,False,Cutzamala;Lerma Alto;Panuco,3
+SLAMX,"San Luis Ameca, Méx.",19.190278,-98.870833,2279,México,Temamatla,26,Valle de México,True,True,4843,0.828713210130048,True,Panuco;Alta del Balsas,2
+SMLMX,"Santa María del Llano, Méx.",19.633333,-99.8,2618,México,Ixtlahuaca,12,Alto Lerma,True,True,4042,0.6916495550992471,True,Cutzamala;Lerma Alto;Panuco,3
+SNLMX,"San Lucas, Méx.",19.644722,-98.858611,2240,México,Acolman,26,Valle de México,True,True,303,0.05184804928131417,False,Panuco,1
+TBRMX,"Tres Barrancas, Méx.",19.343056,-99.799167,2682,México,Almoloya de Juárez,12,Alto Lerma,True,True,2644,0.45242984257357977,False,Cutzamala;Lerma Alto;Panuco,3
+TESMX,"Texcaltitlán, Méx.",18.931389,-99.935833,2383,México,Texcaltitlán,12,Medio Balsas,True,True,3861,0.6606776180698152,True,Cutzamala;Panuco,2
+TJCMX,"El Tejocote, Méx.",19.856944,-99.905278,2449,México,Atlacomulco,26,Valle de México,True,True,3864,0.6611909650924025,True,Lerma Alto;Panuco,2
+TROMX,"Trojes, Méx.",19.429167,-99.6125,2577,México,Temoaya,12,Medio Balsas,True,True,4190,0.716974674880219,True,Cutzamala;Lerma Alto;Panuco,3
+TTLMX,"Totolica hidrométrica, Méx.",19.4525,-99.283056,2325,México,Naucalpan de Juárez,26,Valle de México,True,True,4833,0.8270020533880903,True,Panuco;Alta del Balsas,2
+VDCMX,"Vaso de Cristo, Méx.",19.510278,-99.211667,2263,México,Tlalnepantla de Baz,26,Valle de México,True,True,1,0.00017111567419575633,False,Panuco,1
+ADUMC,"Adjuntas, Mich.",20.231389,-101.99,1630,Michoacán de Ocampo,Numarán,12,Bajo Lerma,True,True,4008,0.6858316221765913,True,Bajio,1
+CBLMC,"Casa Blanca, Mich.",20.324167,-101.461389,1694,Michoacán de Ocampo,José Sixto Verduzco,12,Medio Lerma,True,True,399,0.06827515400410678,False,Bajio,1
+CHAMC,"Chaparaco, Mich.",19.973611,-102.265278,159,Michoacán de Ocampo,Zamora,12,Bajo Lerma,True,True,4035,0.6904517453798767,True,,0
+CMNMC,"Caimanera, Mich.",18.5,-100.9,234,Michoacán de Ocampo,Huetamo,18,Medio Balsas,True,True,4407,0.7541067761806981,True,,0
+CORMC,"Corrales, Mich.",20.207222,-101.861667,1693,Michoacán de Ocampo,Penjamillo,12,Bajo Lerma,True,True,2728,0.4668035592060233,False,Bajio,1
+EGIMC,"El Gigante, Mich.",19.966667,-100.45,1961,Michoacán de Ocampo,Maravatío,12,Alto Lerma,True,True,5041,0.8625941136208076,True,Lerma Alto;Panuco,2
+LPDMC,"La Piedad, Mich.",20.354444,-102.004444,1672,Michoacán de Ocampo,La Piedad,12,Bajo Lerma,True,True,1346,0.230321697467488,False,Bajio,1
+LPNMC,"Los Panches, Mich.",18.848611,-102.133333,207,Michoacán de Ocampo,La Huacana,18,Bajo Balsas (Tepalcatepec),True,True,4358,0.7457221081451061,True,,0
+LPSMC,"La Pastoría, Mich.",18.8,-102.2,221,Michoacán de Ocampo,La Huacana,18,Bajo Balsas (Tepalcatepec),True,True,4499,0.7698494182067077,True,,0
+LPZMC,"Los Pinzanes, Mich.",18.8,-101.2,199,Michoacán de Ocampo,Huetamo,18,Bajo Balsas (Tepalcatepec),True,True,4090,0.6998631074606434,True,,0
+RCEMC,"Río Celio, Mich.",19.972222,-102.295,1568,Michoacán de Ocampo,Zamora,12,Bajo Lerma,True,True,3368,0.5763175906913073,False,,0
+SCRMC,"San Cristóbal, Mich.",20.208333,-102.464722,1561,Michoacán de Ocampo,Vista Hermosa,12,Bajo Lerma,True,True,3687,0.6309034907597536,True,Bajio,1
+TLAMC,"Río Tlazazalca, Mich.",19.970278,-102.059722,1797,Michoacán de Ocampo,Tlazazalca,12,Bajo Lerma,True,True,4290,0.7340862422997947,True,,0
+VJIMC,"Villa Jiménez, Mich.",19.55,-101.45,1980,Michoacán de Ocampo,Huiramba,12,Alto Lerma,True,True,47,0.008042436687200548,False,,0
+YURMC,"Yurécuaro, Mich.",20.339444,-102.242222,1537,Michoacán de Ocampo,Ayotlán,12,Bajo Lerma,True,True,5041,0.8625941136208076,True,Bajio,1
+ALUMR,"Alpuyeca, Mor.",18.734722,-99.258056,1041,Morelos,Xochitepec,18,Medio Balsas,True,True,3918,0.6704312114989733,True,Alta del Balsas,1
+AMCMR,"Amacuzac, Mor.",18.596111,-99.376944,911,Morelos,Amacuzac,18,Medio Balsas,True,True,4033,0.6901095140314852,True,Alta del Balsas,1
+CRDMR,"Canal Rodeo, Mor.",18.764444,-99.331944,1088,Morelos,Miacatlán,18,Medio Balsas,True,True,3867,0.6617043121149897,True,Alta del Balsas,1
+CUAMR,"Cuautla, Mor.",18.808611,-98.948889,1303,Morelos,Cuautla,18,Medio Balsas,True,True,4440,0.7597535934291582,True,Alta del Balsas,1
+CXXMR,"Canal Xoxocotla, Mor.",18.735,-99.258333,1018,Morelos,Xochitepec,18,Bajo Balsas (Tepalcatepec),True,True,3711,0.6350102669404517,True,Alta del Balsas,1
+ESTMR,"Las Estacas, Mor.",18.725,-98.1125,1130,Morelos,Tlaltizapán de Zapata,18,Alto Balsas,True,True,3709,0.6346680355920602,True,Alta del Balsas,1
+LCUMR,"La Cuera, Mor.",18.683611,-98.914444,1186,Morelos,Ayala,18,Medio Balsas,True,True,19,0.0032511978097193705,False,Alta del Balsas,1
+PERMR,"Canal Perritos, Mor.",18.784167,-99.315278,1099,Morelos,Miacatlán,18,Medio Balsas,True,True,3806,0.6512662559890486,True,Alta del Balsas,1
+TEMMR,"Temixco, Mor.",18.856944,-99.223611,1265,Morelos,Jiutepec,18,Medio Balsas,True,True,3930,0.6724845995893224,True,Alta del Balsas,1
+TICMR,"Ticumán, Mor.",18.794167,-99.103889,988,Morelos,Tlaltizapán de Zapata,18,Medio Balsas,True,True,3923,0.671286789869952,True,Alta del Balsas,1
+XICMR,"Xicatlacotla, Mor.",18.528889,-99.190278,814,Morelos,Tlaquiltenango,18,Medio Balsas,True,True,3959,0.6774469541409993,True,Alta del Balsas,1
+YAHMR,"Yautepec, Mor.",18.899167,-99.050556,1244,Morelos,Yautepec,18,Medio Balsas,True,True,4312,0.7378507871321013,True,Alta del Balsas,1
+ZCTMR,"Observatorio de Zacatepec, Mor.",18.651389,-99.196667,932,Morelos,Zacatepec,18,Medio Balsas,True,True,4309,0.7373374401095141,True,Alta del Balsas,1
+CAINR,"El Caimán, Nay.",21.201389,-104.080556,0,Nayarit,La Yesca,12,Rio Bajo Santiago,True,True,107,0.018309377138945926,False,Santiago,1
+CAPNR,"Capomal, Nay.",21.831111,-105.1125,13,Nayarit,Santiago Ixcuintla,12,Rio Bajo Santiago,True,True,4302,0.7361396303901437,True,Santiago,1
+CHPNR,"Chapalagana, Nay.",21.944167,-104.5,320,Nayarit,Del Nayar,12,Rio Bajo Santiago,True,True,4121,0.7051676933607118,True,Santiago,1
+JMANR,"Jesús María, Nay.",22.250833,-104.516944,960,Nayarit,Del Nayar,12,Rio Bajo Santiago,True,True,4377,0.7489733059548255,True,Santiago,1
+LESNR,"La Estancia, Nay.",22.558333,-105.341667,90,Nayarit,Acaponeta,12,Presidio San Pedro,True,True,3636,0.62217659137577,True,Santiago,1
+MOLNR,"Mololoa, Nay.",21.516111,-104.889722,620,Nayarit,Tepic,12,Rio Bajo Santiago,True,True,2541,0.43480492813141686,False,Santiago,1
+ROMNR,"Rosamorada, Nay.",22.119722,-105.211667,30,Nayarit,Rosamorada,12,San Pedro - Rosa Morada,True,True,4411,0.7547912388774812,True,Santiago,1
+AJTSL,"Las Adjuntas, S.L.P.",21.972222,-98.558333,18,San Luis Potosí,Tamuín,26,Bajo Pánuco,True,True,3406,0.582819986310746,False,Panuco,1
+BLMSL,"Ballesmi, S.L.P.",21.748889,-98.955833,44,San Luis Potosí,Ciudad Valles,26,Bajo Pánuco,True,True,4837,0.8276865160848734,True,Panuco,1
+GANSL,"Gallinas, S.L.P.",21.906944,-99.239444,280,San Luis Potosí,Aquismón,26,Bajo Pánuco,True,True,4144,0.7091033538672142,True,Panuco,1
+MICSL,"Micos, S.L.P.",22.12,-99.159444,310,San Luis Potosí,Ciudad Valles,26,Bajo Pánuco,True,True,412,0.07049965776865161,False,Panuco,1
+PUJSL,"El Pujal, S.L.P.",21.847222,-98.939722,43,San Luis Potosí,Ciudad Valles,26,Bajo Pánuco,True,True,3510,0.6006160164271047,True,Panuco,1
+RQTSL,"Requetemu, S.L.P.",21.425,-98.888611,82,San Luis Potosí,Axtla de Terrazas,26,Río Alto Pánuco,True,True,5034,0.8613963039014374,True,Panuco,1
+STRSL,"Santa Rosa, S.L.P.",22.02,-99.055833,96,San Luis Potosí,Ciudad Valles,26,Bajo Pánuco,True,True,5080,0.8692676249144422,True,Panuco,1
+SVTSL,"San Vicente, S.L.P.",21.692778,-98.617222,32,San Luis Potosí,San Vicente Tancuayalab,26,Bajo Pánuco,True,True,4062,0.6950718685831622,True,Panuco,1
+TBLSL,"Tierra Blanca, S.L.P.",21.246667,-98.857222,155,San Luis Potosí,Tamazunchale,26,Río Alto Pánuco,True,True,4585,0.7845653661875428,True,Panuco,1
+TMISL,"Observatorio de Tamuín, S.L.P.",22.003611,-98.773333,22,San Luis Potosí,Tamuín,26,Bajo Pánuco,True,True,3159,0.5405544147843943,False,Panuco,1
+TMTSL,"Temamatla, S.L.P.",21.241111,-98.758889,125,San Luis Potosí,Tamazunchale,26,Río Alto Pánuco,True,True,4174,0.714236824093087,True,Panuco,1
+TZBSL,"Tanzabaca, S.L.P.",21.663889,-99.213333,196,San Luis Potosí,Jalpan de Serra,26,Bajo Pánuco,True,True,1,0.00017111567419575633,False,Panuco,1
+AHLTP,"Ahualulco, Tamps.",22.986944,-99.145556,82,Tamaulipas,Gómez Farías,26,Río Soto la Marina,True,True,4054,0.6937029431895961,True,Panuco,1
+BALTP,"Bombas Altamira, Tamps.",22.386111,-97.926944,2,Tamaulipas,Altamira,26,Bajo Pánuco,True,True,32,0.0054757015742642025,False,Panuco,1
+ENNTP,"La Encantada, Tamps.",23.384444,-99.078611,375,Tamaulipas,Llera,26,Bajo Pánuco,True,True,2731,0.46731690622861055,False,Panuco,1
+LSRTP,"La Servilleta, Tamps.",22.852778,-99.120556,210,Tamaulipas,El Mante,26,Bajo Pánuco,True,True,4820,0.8247775496235455,True,Panuco,1
+MGSTP,"Magiscatzín Dos, Tamps.",22.795833,-98.705556,40,Tamaulipas,González,26,Bajo Pánuco,True,True,4983,0.8526694045174538,True,Panuco,1
+RFRTP,"Río Frío, Tamps.",22.843056,-99.026111,60,Tamaulipas,Xicoténcatl,26,Bajo Pánuco,True,True,5101,0.8728610540725531,True,Panuco,1
+SBNTP,"Sabinas, Tamps.",23.031389,-99.093056,100,Tamaulipas,Gómez Farías,26,Bajo Pánuco,True,True,5053,0.8646475017111568,True,Panuco,1
+SGBTP,"San Gabriel, Tamps.",23.085556,-98.7875,140,Tamaulipas,Xicoténcatl,26,Bajo Pánuco,True,True,5150,0.8812457221081451,True,Panuco,1
+TMSTP,"Tamesí, Tamps.",22.413611,-98.421944,12,Tamaulipas,González,26,Bajo Pánuco,True,True,3842,0.6574264202600958,True,Panuco,1
+HLSVC,"Los Hules, Ver.",21.194444,-98.2875,75,Veracruz de Ignacio de la Llave,Chalma,26,Bajo Pánuco,True,True,3256,0.5571526351813826,False,Panuco,1
+OLVVC,"El Olivo, Ver.",21.832222,-98.503889,25,Veracruz de Ignacio de la Llave,Pánuco,26,Bajo Pánuco,True,True,5186,0.8874058863791924,True,Panuco,1
+PSNVC,"Platón Sánchez, Ver.",21.297778,-98.356667,80,Veracruz de Ignacio de la Llave,Tantoyuca,26,Bajo Pánuco,True,True,4780,0.8179329226557153,True,Panuco,1
+TMPVC,"Tempoal, Ver.",21.499722,-98.409444,38,Veracruz de Ignacio de la Llave,Tempoal,26,Bajo Pánuco,True,True,5020,0.8590006844626967,True,Panuco,1
+ELPZC,"El Platanito, Zac.",22.611389,-104.050833,1030,Zacatecas,Valparaíso,12,Rio Bajo Santiago,True,True,0,0.0,False,Santiago,1
+LFLZC,"La Florida, Zac.",22.686944,-103.603056,1840,Zacatecas,Valparaíso,12,Rio Bajo Santiago,True,True,0,0.0,False,Santiago,1
+B006ABR,ABELARDO RODRIGUEZ,21.916667,-102.426944,0,Aguascalientes,Jesús María,12,,True,True,0,0.0,False,Santiago,1
+B015ACH,ACHIMEC,22.325833,-103.225833,1850,Jalisco,Huejúcar,12,,True,True,0,0.0,False,Santiago,1
+B030AGO,AGOSTITLAN,19.55,-100.942222,0,Michoacán de Ocampo,Tzitzio,18,,True,True,0,0.0,False,,0
+B042BRJ,"Barraje de Ibarra, Mich.",20.236111,-102.616111,0,Michoacán de Ocampo,Briseñas,12,,True,True,0,0.0,False,Bajio,1
+B055CLL,PRESA CALLES,22.142222,-102.415556,2020,Aguascalientes,San José de Gracia,12,,True,True,0,0.0,False,Santiago,1
+B062CTA,CINCUENTA ANIVERSARIO,22.188611,-102.466944,2050,Aguascalientes,San José de Gracia,12,,True,True,0,0.0,False,Santiago,1
+B065COI,PRESA COINTZIO,19.625,-101.281111,2096,Michoacán de Ocampo,Morelia,12,,True,True,0,0.0,False,,0
+B070CON,CONSTITUCION 1917,20.418333,-100.0725,1295,Querétaro,San Juan del Río,26,,True,True,0,0.0,False,Panuco,1
+B080CRT,PRESA CUARENTA,21.5,-101.7,0,Jalisco,Lagos de Moreno,12,,True,True,0,0.0,False,Bajio,1
+B085DAM,PRESA DANXHO,19.9,-99.6,1249,México,Jilotepec,26,,True,True,0,0.0,False,Lerma Alto;Panuco,2
+B086DGZ,PRESA DE GONZALO,20.3,-102.4,0,Michoacán de Ocampo,Tanhuato,18,,True,True,0,0.0,False,Bajio,1
+B095CTN,PRESA CENTENARIO,20.589444,-100.406667,1820,Querétaro,Querétaro,26,,True,True,0,0.0,False,Panuco,1
+B100CHI,PRESA EL CHIQUE,22.0,-102.889722,1620,Zacatecas,Tabasco,12,,True,True,0,0.0,False,Santiago,1
+B102EST,EL ESTRIBON,21.2,-102.9,0,Jalisco,Yahualica de González Gallo,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B105MOL,PRESA EL MOLINO,20.1,-99.7,2740,México,Jilotepec,26,,True,True,0,0.0,False,Panuco,1
+B11082,CUCHARAS,22.35,-105.183333,0,Nayarit,Acaponeta,12,,True,True,0,0.0,False,Santiago,1
+B110NIA,PRESA EL NIAGARA,21.778889,-102.441389,1828,Aguascalientes,Aguascalientes,12,,True,True,0,0.0,False,Santiago,1
+B115PAT,EL PALOTE,21.166667,-101.666667,1856,Guanajuato,León,12,,True,True,0,0.0,False,Bajio,1
+B12007,SALAMANCA,20.383333,-101.166667,1721,Guanajuato,Salamanca,12,,True,True,0,0.0,False,Bajio,1
+B12014,PASARELA VILLA JIMENEZ,19.916667,-101.745833,1971,Michoacán de Ocampo,Jiménez,12,,True,True,0,0.0,False,,0
+B12022,REFORMA NUMERO 1,20.191667,-100.883333,1761,Guanajuato,Santiago Maravatío,12,,True,True,1704,0.2915811088295688,False,Bajio,1
+B12023,REFORMA NUMERO 2,20.195833,-100.883333,1764,San Luis Potosí,Villa de Guadalupe,12,,True,True,1523,0.2606091718001369,False,Bajio,1
+B12034,MARAVATIO,20.198333,-100.904167,2024,Michoacán de Ocampo,Maravatío,12,,True,True,0,0.0,False,Bajio,1
+B12067,EMENGUARO,20.170833,-100.875,1765,Guanajuato,Salvatierra,12,,True,True,0,0.0,False,Bajio,1
+B12093,ZINZIMEO,19.870833,-100.976389,0,Michoacán de Ocampo,Tzitzio,12,,True,True,757,0.12953456536618754,False,,0
+B12095,YURECUARO,20.341667,-102.270833,1537,Michoacán de Ocampo,Yurécuaro,12,,True,True,0,0.0,False,Bajio,1
+B12104,ACAMBARO,20.05,-100.733333,1850,Guanajuato,Acámbaro,12,,True,True,0,0.0,False,Bajio,1
+B12128,CORONA,20.404167,-103.083333,1521,Jalisco,Chapala,12,,True,True,1583,0.2708761122518823,False,Bajio,1
+B12209,EL TAMBOR,19.994444,-100.2375,0,Michoacán de Ocampo,Contepec,12,,True,True,0,0.0,False,Lerma Alto;Panuco,2
+B12210,VERTEDOR POTRERILLOS,22.234722,-102.435278,0,Aguascalientes,Rincón de Romos,12,,True,True,0,0.0,False,Santiago,1
+B12219,COINTZIO,19.641667,-101.258333,2096,Michoacán de Ocampo,Morelia,12,,True,True,365,0.06245722108145106,False,,0
+B12221,ATAPANEO,19.725,-101.176389,0,Michoacán de Ocampo,Morelia,12,,True,True,0,0.0,False,,0
+B12233,CORRALES,20.195833,-101.804167,1693,Michoacán de Ocampo,Penjamillo,12,,True,True,0,0.0,False,Bajio,1
+B12238,PERICOS,20.525,-101.108333,1722,Guanajuato,Salamanca,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12277,SAN BARTOLO,19.815278,-101.011111,1858,Michoacán de Ocampo,Álvaro Obregón,12,,True,True,1397,0.2390485968514716,False,,0
+B12278,ATOYAC,20.016667,-103.483333,1373,Jalisco,Atoyac,12,,True,True,1096,0.18754277891854895,False,Bajio,1
+B12280,TUNEL NUMERO 2,22.234722,-102.442778,2094,Jalisco,Jalostotitlán,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12281,KM. 1 +400 (PRESA JOCOQUE),22.133056,-102.345,1841,Aguascalientes,Pabellón de Arteaga,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12283,ZACAPENDO,19.815278,-101.004167,1858,Michoacán de Ocampo,Indaparapeo,12,,True,True,1339,0.22912388774811773,False,,0
+B12288,ZAPOTLANEJO,20.404167,-103.0875,1521,Jalisco,Chapala,12,,True,True,1033,0.1767624914442163,False,Bajio,1
+B12310,LA ESTANZUELA,20.116667,-102.370833,1551,Michoacán de Ocampo,Ixtlán,12,,True,True,0,0.0,False,Bajio,1
+B12312,COINTZIO,19.6375,-101.256944,1884,Michoacán de Ocampo,Morelia,12,,True,True,365,0.06245722108145106,False,,0
+B12314,QUERENDARO,19.811667,-100.889444,1862,Michoacán de Ocampo,Queréndaro,12,,True,True,0,0.0,False,,0
+B12328,GUARACHA,19.958333,-102.579167,0,Michoacán de Ocampo,Jiquilpan,12,,True,True,0,0.0,False,,0
+B12338,SAN ANTONIO GUARACHA,19.945833,-102.558333,0,Michoacán de Ocampo,Villamar,12,,True,True,0,0.0,False,,0
+B12341,SALIDA TUNEL,19.633333,-101.259167,1956,Michoacán de Ocampo,Morelia,12,,True,True,580,0.09924709103353867,False,,0
+B12344,PLATANAL,19.941667,-102.258333,1586,Michoacán de Ocampo,Tangancícuaro,12,,True,True,0,0.0,False,,0
+B12349,SOLIS,20.05,-100.666667,1884,Guanajuato,Acámbaro,12,,True,True,0,0.0,False,Bajio;Panuco,2
+B12350,LA BEGOÑA 2,20.845833,-100.829167,1836,Guanajuato,San Miguel de Allende,12,,True,True,0,0.0,False,Bajio,1
+B12352,SALAMANCA 2,20.566667,-101.2,1723,Guanajuato,Salamanca,12,,True,True,0,0.0,False,Bajio,1
+B12358,AJOJUCAR,21.541667,-102.440278,1751,Jalisco,Teocaltiche,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12359,EL SALTO,20.526389,-103.168611,0,Jalisco,Mexticacán,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12365,EL SALTO,19.6375,-101.259722,1955,Michoacán de Ocampo,Morelia,12,,True,True,730,0.12491444216290212,False,,0
+B12370,SAN GASPAR,21.284722,-102.497222,1740,Jalisco,Jalostotitlán,12,,True,True,1461,0.25,False,Bajio;Santiago,2
+B12374,LA Y,19.406111,-99.589444,2566,México,Otzolotepec,12,,True,True,1826,0.3124572210814511,False,Cutzamala;Lerma Alto;Panuco,3
+B12376,SALVATIERRA,20.216667,-100.904167,1740,Guanajuato,Salvatierra,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12377,OTZOLOTEPEC,19.4,-99.576389,2568,México,Otzolotepec,12,,True,True,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B12378,PRESA CALLES,22.138333,-102.413889,2020,Aguascalientes,San José de Gracia,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12379,JACONA,19.983333,-102.304167,0,Michoacán de Ocampo,Zamora,12,,True,True,0,0.0,False,,0
+B12382,PASO DEL SABINO,21.316667,-102.538889,1699,Jalisco,Teocaltiche,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12390,CAMECUARO,19.916667,-102.2125,93,Michoacán de Ocampo,Tangancícuaro,12,,True,True,0,0.0,False,,0
+B12391,LAS ADJUNTAS,20.679167,-101.854167,1741,Guanajuato,Manuel Doblado,12,,True,True,1461,0.25,False,Bajio,1
+B12392,PUENTE MEXTEPEC,19.65,-99.941667,2560,México,San Felipe del Progreso,12,,True,True,1096,0.18754277891854895,False,Cutzamala;Lerma Alto;Panuco,3
+B12394,SANTA JULIA,20.395833,-101.025,1723,Guanajuato,Jaral del Progreso,12,,True,True,0,0.0,False,Bajio,1
+B12395,UREPETIRO,19.975,-102.1375,1807,Michoacán de Ocampo,Tlazazalca,12,,True,True,366,0.06262833675564682,False,,0
+B12397,CAMECUARO,19.916667,-102.216667,0,Michoacán de Ocampo,Tangancícuaro,12,,True,True,0,0.0,False,,0
+B12402,KM. 0 +262,19.659722,-99.951944,0,México,San Felipe del Progreso,12,,True,True,1096,0.18754277891854895,False,Cutzamala;Lerma Alto;Panuco,3
+B12408,EL AGUILA,19.979167,-102.258333,0,Michoacán de Ocampo,Zamora,12,,True,True,0,0.0,False,,0
+B12409,CHAPARACO,19.970833,-102.266667,1632,Michoacán de Ocampo,Zamora,12,,True,True,0,0.0,False,,0
+B12412,JARIPO,19.958333,-102.6,0,Michoacán de Ocampo,Villamar,12,,True,True,0,0.0,False,,0
+B12418,LOS CASTILLOS,21.175,-101.679167,1874,Guanajuato,León,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12422,CUARENTA 2,21.488889,-101.752778,1998,Jalisco,Lagos de Moreno,12,,True,True,1127,0.1928473648186174,False,Bajio,1
+B12423,PUENTE ATLACOMULCO,19.788889,-99.893056,2496,México,Atlacomulco,12,,True,True,1826,0.3124572210814511,False,Lerma Alto;Panuco,2
+B12424,PUERTA DEL MONTE,20.264444,-101.033889,1742,Guanajuato,Jaral del Progreso,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12428,BOLAÑOS,21.825,-103.783333,916,Jalisco,Bolaños,12,,True,True,1795,0.30715263518138264,False,Santiago,1
+B12438,LA YESCA,21.193056,-104.090278,420,Jalisco,Tequila,12,,True,True,730,0.12491444216290212,False,Santiago,1
+B12439,ORANDINO 2,19.966667,-102.329167,0,Michoacán de Ocampo,Jacona,12,,True,True,0,0.0,False,,0
+B12441,LA BOQUILLA,21.058333,-103.397222,0,Jalisco,San Cristóbal de la Barranca,12,,True,True,1733,0.2965434633812457,False,Bajio;Santiago,2
+B12454,LAGOS,21.3625,-101.913889,1942,Jalisco,Lagos de Moreno,12,,True,True,1343,0.22980835044490075,False,Bajio,1
+B12466,JERECUARO,20.141667,-100.522222,1931,Guanajuato,Jerécuaro,12,,True,True,944,0.16153319644079397,False,Bajio;Panuco,2
+B12469,CUIXTLA,21.051389,-103.441667,816,Jalisco,San Cristóbal de la Barranca,12,,True,True,1795,0.30715263518138264,False,Bajio;Santiago,2
+B12470,HUAYNAMOTA,21.843056,-104.711111,960,Nayarit,Del Nayar,12,,True,True,0,0.0,False,Santiago,1
+B12471,SAN CRISTOBAL,21.048611,-103.443056,1561,Michoacán de Ocampo,Vista Hermosa,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12476,KM. 0 +340,21.481944,-101.741667,0,Jalisco,Lagos de Moreno,12,,True,True,0,0.0,False,Bajio,1
+B12477,JARAL,20.341667,-101.058333,1726,Guanajuato,Cortázar,12,,True,True,0,0.0,False,Bajio,1
+B12484,EL PLATANITO,22.568056,-104.063056,0,Zacatecas,Valparaíso,12,,True,True,2191,0.3749144421629021,False,Santiago,1
+B12485,EL ZAPOTE,22.065556,-103.398611,1458,Jalisco,Totatiche,12,,True,True,365,0.06245722108145106,False,Santiago,1
+B12486,CAPITIRO,20.2875,-101.020833,1734,Guanajuato,Jaral del Progreso,12,,True,True,0,0.0,False,Bajio,1
+B12487,LA FLORIDA,22.686389,-103.603611,1870,Zacatecas,Valparaíso,12,,True,True,0,0.0,False,Santiago,1
+B12488,LA GLORIA,22.068056,-103.396389,1465,Zacatecas,Valparaíso,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12489,TEOCALTICHE,21.441667,-102.58,0,Jalisco,Teocaltiche,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12493,CASTILLOS,21.191667,-101.666667,1874,Guanajuato,León,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12494,PLANTA POTABILIZADORA,19.676389,-101.1875,0,Michoacán de Ocampo,Morelia,12,,True,True,730,0.12491444216290212,False,,0
+B12496,CAPOMAL,21.825,-105.118056,13,Nayarit,Santiago Ixcuintla,12,,True,True,1430,0.24469541409993156,False,Santiago,1
+B12504,LA CUÑA,21.004167,-102.833056,1700,Jalisco,Yahualica de González Gallo,12,,True,True,1095,0.18737166324435317,False,Bajio;Santiago,2
+B12511,ORANDINO,19.966667,-102.325,1647,Michoacán de Ocampo,Jacona,12,,True,True,0,0.0,False,,0
+B12512,SILAO,20.958333,-101.441667,1782,Guanajuato,Silao de la Victoria,12,,True,True,0,0.0,False,Bajio,1
+B12514,EL CAIMAN,21.201389,-104.080556,0,Nayarit,La Yesca,12,,True,True,0,0.0,False,Santiago,1
+B12516,MOLOLOA,21.502778,-104.879167,620,Nayarit,Tepic,12,,True,True,1522,0.2604380561259411,False,Santiago,1
+B12521,SANTA ROSA 2,20.922222,-103.726389,740,Jalisco,Amatitán,12,,True,True,1277,0.21851471594798083,False,Santiago,1
+B12532,SAN CRISTOBAL 2,21.038889,-103.429167,816,Jalisco,San Cristóbal de la Barranca,12,,True,True,1826,0.3124572210814511,False,Bajio;Santiago,2
+B12533,UREPETIRO 2,19.95,-102.154167,0,Michoacán de Ocampo,Tangancícuaro,12,,True,True,0,0.0,False,,0
+B12534,ATOTONILCO 2,19.452778,-99.776389,0,México,Almoloya de Juárez,12,,True,True,1340,0.2292950034223135,False,Cutzamala;Lerma Alto;Panuco,3
+B12535,CINCO SEÑORES,20.958333,-100.916667,1808,Guanajuato,San Miguel de Allende,12,,True,True,0,0.0,False,Bajio,1
+B12539,SAN BERNABE,19.472778,-99.72,2571,México,Temoaya,12,,True,True,1826,0.3124572210814511,False,Cutzamala;Lerma Alto;Panuco,3
+B12541,LA RED,20.719444,-102.798611,1758,Jalisco,Acatic,12,,True,True,1096,0.18754277891854895,False,Bajio;Santiago,2
+B12543,CALIXTLAHUACA,19.338889,-99.6875,2635,México,Toluca,12,,True,True,1826,0.3124572210814511,False,Cutzamala;Lerma Alto;Panuco,3
+B12545,EL NIÁGARA 3,21.779167,-102.375,1810,Aguascalientes,Aguascalientes,12,,True,True,1096,0.18754277891854895,False,Santiago,1
+B12556,CERRO BLANCO,21.415,-104.572778,1000,Nayarit,Santa María del Oro,12,,True,True,0,0.0,False,Santiago,1
+B12557,CUQUIO,20.973611,-103.033333,1799,Jalisco,Cuquío,12,,True,True,1096,0.18754277891854895,False,Bajio;Santiago,2
+B12558,EL BATAN,20.504167,-100.416667,1881,Querétaro,Huimilpan,12,,True,True,1551,0.26540041067761805,False,Panuco,1
+B12560,XOCONOLE,19.801944,-101.008333,0,Michoacán de Ocampo,Álvaro Obregón,12,,True,True,1579,0.2701916495550992,False,,0
+B12568,EL TEJOCOTE,19.856111,-99.910278,2431,México,Atlacomulco,12,,True,True,1826,0.3124572210814511,False,Lerma Alto;Panuco,2
+B12570,LA CODORNIZ,21.988889,-102.683333,1783,Aguascalientes,Calvillo,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12572,LA EXPERIENCIA,20.730556,-103.331944,1550,Jalisco,Guadalajara,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12573,LA EXPERIENCIA,20.729167,-103.329167,1580,Jalisco,Guadalajara,12,,True,True,1826,0.3124572210814511,False,Bajio;Santiago,2
+B12574,LOS VELAZQUEZ,19.419444,-99.866667,2559,México,Villa Victoria,12,,True,True,730,0.12491444216290212,False,Cutzamala;Lerma Alto;Panuco,3
+B12578,PUENTE LOS VELASQUEZ,19.424167,-99.868056,2557,México,Villa Victoria,12,,True,True,730,0.12491444216290212,False,Cutzamala;Lerma Alto;Panuco,3
+B12579,EL PINITO,22.608889,-103.941944,1858,Jalisco,Huejuquilla el Alto,12,,True,True,1096,0.18754277891854895,False,Santiago,1
+B12581,SAN BARTOLO DEL LLANO,19.6,-99.709722,2547,México,Jiquipilco,12,,True,True,1826,0.3124572210814511,False,Cutzamala;Lerma Alto;Panuco,3
+B12585,CALERITA,21.475,-102.593056,0,Jalisco,Teocaltiche,12,,True,True,1826,0.3124572210814511,False,Bajio;Santiago,2
+B12588,EL PLAN,19.819444,-101.011111,1823,Michoacán de Ocampo,Álvaro Obregón,12,,True,True,1308,0.22381930184804927,False,,0
+B12589,HUASCATO,20.483333,-102.254167,1619,Jalisco,Jesús María,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12592,SANTA MARIA DEL LLANO,19.633333,-99.722222,2527,México,Ixtlahuaca,12,,True,True,730,0.12491444216290212,False,Cutzamala;Lerma Alto;Panuco,3
+B12602,BOCA DEL TESORERO,22.825278,-102.957778,2166,Zacatecas,Jerez,12,,True,True,0,0.0,False,,0
+B12605,TEMASCALES 2,20.0625,-100.151389,2409,Querétaro,Amealco de Bonfil,12,,True,True,0,0.0,False,Panuco,1
+B12609,UREPETIRO,19.95,-102.154167,0,Michoacán de Ocampo,Tangancícuaro,12,,True,True,0,0.0,False,,0
+B12611,HACIENDA DE SANCHEZ,20.220833,-100.9,1768,Guanajuato,Salvatierra,12,,True,True,0,0.0,False,Bajio,1
+B12615,PALOMAS (SALIDAS PRESA PALOMAS),22.345,-102.806944,2089,Zacatecas,Villanueva,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12619,KM. 0 +050,21.991667,-102.681944,1790,Aguascalientes,Calvillo,12,,True,True,0,0.0,False,Santiago,1
+B12627,PASARELA SOLIS,20.05,-100.666667,1888,Guanajuato,Acámbaro,12,,True,True,0,0.0,False,Bajio;Panuco,2
+B12628,LA BOQUILLA,21.058333,-103.397222,0,Jalisco,San Cristóbal de la Barranca,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12655,ATOTONILCO I,19.443611,-99.773611,2570,México,Almoloya de Juárez,12,,True,True,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B12656,EL NIAGARA,21.7875,-102.375,1828,Aguascalientes,Aguascalientes,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12664,EL GIGANTE,19.966667,-100.45,1961,Michoacán de Ocampo,Maravatío,12,,True,True,1826,0.3124572210814511,False,Lerma Alto;Panuco,2
+B12669,MEDIA LUNA,21.793056,-102.806944,1585,Aguascalientes,Calvillo,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12674,LA TRINIDAD,20.666667,-101.3125,1732,Guanajuato,Irapuato,12,,True,True,0,0.0,False,Bajio,1
+B12681,LOS SABINOS,21.941111,-104.553889,1964,Nayarit,Del Nayar,12,,False,False,0,0.0,False,Santiago,1
+B12686,JESUS MARIA,22.250833,-104.516944,960,Nayarit,Del Nayar,12,,True,True,0,0.0,False,Santiago,1
+B12710,YURÉCUARO 2,20.333333,-102.252222,1534,Michoacán de Ocampo,Yurécuaro,12,,True,True,0,0.0,False,Bajio,1
+B12711,EL MEZQUITE,20.34,-102.246389,0,Jalisco,Ayotlán,12,,True,True,1399,0.2393908281998631,False,Bajio,1
+B12712,EL ZAPOTE,20.336111,-102.248889,0,Michoacán de Ocampo,Yurécuaro,12,,True,True,1369,0.23425735797399042,False,Bajio,1
+B12713,ANGAMACUTIRO 2,20.1375,-101.708333,0,Michoacán de Ocampo,Angamacutiro,12,,True,True,0,0.0,False,Bajio,1
+B12715,PUENTE DOLORES,21.166944,-100.899722,1837,Guanajuato,Dolores Hidalgo Cuna de la Independencia Nacional,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12717,EL CHAPIN,20.871389,-101.235556,1860,Guanajuato,Guanajuato,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12718,AMECHE,20.558333,-100.5875,1786,Guanajuato,Apaseo el Grande,12,,True,True,1826,0.3124572210814511,False,Bajio;Panuco,2
+B12719,TRES GUERRAS,20.520833,-100.772222,0,Guanajuato,Celaya,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12720,SAN NICOLÁS 3,20.202222,-100.889444,1758,Guanajuato,Salvatierra,12,,True,True,0,0.0,False,Bajio,1
+B12728,TEPALCATES,20.740278,-101.370833,1770,Guanajuato,Irapuato,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12729,TROJES,19.428333,-99.611944,2577,México,Temoaya,12,,True,True,1096,0.18754277891854895,False,Cutzamala;Lerma Alto;Panuco,3
+B12730,ATEQUIZA,20.404167,-103.0875,1528,Jalisco,Chapala,12,,True,True,0,0.0,False,Bajio,1
+B12733,CHAPALAGANA,21.945,-104.508056,320,Nayarit,Del Nayar,12,,True,True,0,0.0,False,Santiago,1
+B12741,LA LOMA,19.288333,-99.556667,2570,México,Lerma,12,,True,True,1826,0.3124572210814511,False,Cutzamala;Lerma Alto;Panuco,3
+B12749,ATEQUIZA 2,20.398333,-103.094444,1521,Jalisco,Chapala,12,,True,True,0,0.0,False,Bajio,1
+B12750,UREPETIRO,19.95,-102.154167,0,Michoacán de Ocampo,Tangancícuaro,12,,True,True,0,0.0,False,,0
+B12751,TLACOPA NUMERO 1,19.3175,-99.633333,2600,México,Toluca,12,,True,True,487,0.08333333333333333,False,Cutzamala;Lerma Alto;Panuco,3
+B12752,TLACOPA NUMERO 2,19.3175,-99.633333,2600,México,Toluca,12,,True,True,517,0.08846680355920603,False,Cutzamala;Lerma Alto;Panuco,3
+B12753,TLACOPA NUMERO 3,19.3175,-93.633333,2600,México,Toluca,12,,True,True,518,0.08863791923340178,False,,0
+B12755,ANGAMACUTIRO 2,20.133333,-101.704167,0,Michoacán de Ocampo,Angamacutiro,12,,True,True,0,0.0,False,Bajio,1
+B12756,ANGAMACUTIRO 2,20.133333,-101.704167,0,Michoacán de Ocampo,Angamacutiro,12,,True,True,0,0.0,False,Bajio,1
+B12759,EL CUBO,20.280278,-100.899444,1740,Guanajuato,Salvatierra,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12764,ATEMAJAC,20.723056,-102.34,2350,Jalisco,Guadalajara,12,,True,True,1826,0.3124572210814511,False,Bajio;Santiago,2
+B12765,SAN ANDRES,20.715,-103.281667,0,Jalisco,Guadalajara,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12767,LA SAUCEDA,21.351389,-101.851111,1940,Jalisco,Lagos de Moreno,12,,True,True,1399,0.2393908281998631,False,Bajio,1
+B12768,RANCHO DE ENMEDIO,22.562222,-103.588889,0,Zacatecas,Monte Escobedo,12,,True,True,0,0.0,False,Santiago,1
+B12769,AMADO NERVO,21.730556,-105.036667,0,Nayarit,Santiago Ixcuintla,12,,True,True,0,0.0,False,Santiago,1
+B12771,VICENTE GUERRERO,22.315833,-103.439722,1925,Zacatecas,Monte Escobedo,12,,True,True,0,0.0,False,Santiago,1
+B12773,KM. 0 +412 (PRESA MEDIA LUNA),21.804444,-102.785556,0,Aguascalientes,Calvillo,12,,True,True,1826,0.3124572210814511,False,Santiago,1
+B12774,AHUETITA,21.398611,-103.647778,1711,Jalisco,Tequila,12,,True,True,0,0.0,False,Santiago,1
+B12778,TENZOMPA,22.376111,-103.924444,1700,Jalisco,Huejuquilla el Alto,12,,True,True,1642,0.2809719370294319,False,Santiago,1
+B12781,PRESA MOCHA,21.45,-101.683333,0,Jalisco,Lagos de Moreno,12,,True,True,0,0.0,False,Bajio,1
+B12789,PRESA SALAZAR SALIDAS,19.305,-99.390556,2989,México,Ocoyoacac,12,,True,True,1430,0.24469541409993156,False,Panuco;Alta del Balsas,2
+B12791,BOCAS,22.416667,-103.725833,1743,Jalisco,Mezquitic,12,,True,True,1704,0.2915811088295688,False,Santiago,1
+B12792,ARELLANOS,21.766944,-102.968611,1495,Zacatecas,Huanusco,12,,True,True,0,0.0,False,Santiago,1
+B12908,ARANDAS,20.7125,-101.370833,1740,Guanajuato,Irapuato,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12926,IXTLAHUACA,19.5675,-99.769444,2544,México,Ixtlahuaca,12,,True,True,1096,0.18754277891854895,False,Cutzamala;Lerma Alto;Panuco,3
+B12928,TRES BARRANCAS,19.333333,-99.8,0,México,Almoloya de Juárez,12,,True,True,1096,0.18754277891854895,False,Cutzamala;Lerma Alto;Panuco,3
+B12929,EL BARRIAL,21.05,-101.983333,1736,Jalisco,Unión de San Antonio,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12930,EL BARRIAL,21.05,-101.833333,2043,Guanajuato,San Francisco del Rincón,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12932,ZINZIMEO,19.825556,-101.008333,1858,Michoacán de Ocampo,Álvaro Obregón,12,,True,True,1153,0.19729637234770706,False,,0
+B12934,KM. 0 +100 (PRESA 50 ANIVERSARIO),22.188611,-102.466944,2050,Aguascalientes,San José de Gracia,12,,True,True,0,0.0,False,Santiago,1
+B12937,ZULA,20.399722,-102.716667,0,Jalisco,Ocotlán,12,,True,True,1826,0.3124572210814511,False,Bajio,1
+B12938,MALTARAÑA,20.3,-102.666667,0,Jalisco,Jamay,12,,True,True,395,0.06759069130732374,False,Bajio,1
+B12939,EL PURGATORIO,20.8,-103.25,0,Jalisco,Ixtlahuacán del Río,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B12941,CUIXTLA,21.616667,-103.438889,1816,Zacatecas,Tepechitlán,12,,True,True,0,0.0,False,Santiago,1
+B12943,KM. 0+710 (EXTRACCIONES),19.608333,-104.525,490,Jalisco,Casimiro Castillo,12,,True,True,0,0.0,False,,0
+B135ROD,LAGUNA EL RODEO,18.8,-99.4,1200,Morelos,Miacatlán,18,,True,True,0,0.0,False,Cutzamala;Alta del Balsas,2
+B141TUL,PRESA EL TULE,20.733333,-102.4,2033,Jalisco,Arandas,12,,True,True,0,0.0,False,Bajio;Santiago,2
+B145END,PRESA ENDO,20.163889,-99.36,2048,Hidalgo,Tepetitlán,26,,True,True,0,0.0,False,Panuco,1
+B146ERA,ESTUDIANTE RAMIRO CABALLERO DORANTES,22.622778,-98.688333,50,Tamaulipas,González,26,,True,True,0,0.0,False,Panuco,1
+B147EPG,EMILIO PORTES GIL,22.941944,-98.788611,12,Tamaulipas,Xicoténcatl,26,,True,True,0,0.0,False,Panuco,1
+B176GPE,DE GUADALUPE,19.633333,-99.25,2290,México,Cuautitlán Izcalli,26,,True,True,0,0.0,False,Panuco,1
+B18005,SAN JACINTO,19.154167,-98.241667,0,Tlaxcala,Cuautlancingo,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18089,EL RODEO 2,18.775,-99.333333,1195,Morelos,Miacatlán,18,,True,True,393,0.06724845995893224,False,Alta del Balsas,1
+B180GUA,PRESA GUARACHA,19.9,-102.7,0,Michoacán de Ocampo,Jiquilpan,12,,True,True,0,0.0,False,,0
+B18129,LOS GRANJENOS,19.93,-102.879167,1805,Jalisco,Quitupan,18,,True,True,1826,0.3124572210814511,False,,0
+B18135,PANOTLA,19.308333,-98.2625,2400,Tlaxcala,Chiautempan,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18140,XICOTZINGO,19.166667,-98.25,0,Tlaxcala,Xicohtzinco,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18148,ECHEVERRIA,18.970833,-98.283333,2075,Puebla,San Andrés Cholula,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18153,BALCON DEL DIABLO,18.908333,-98.095833,2060,Puebla,Puebla,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18174,SAN JOSE,18.808333,-99.95,1301,Morelos,Cuautla,18,,True,True,1826,0.3124572210814511,False,Cutzamala,1
+B18175,OACALCO,18.904167,-99.029167,1363,Morelos,Xochitepec,18,,True,True,1735,0.2968856947296372,False,Panuco;Alta del Balsas,2
+B18176,EL ZAPOTE,18.8125,-98.95,1302,Morelos,Cuautla,18,,True,True,1765,0.3020191649555099,False,Alta del Balsas,1
+B18177,EL ALMEAL,18.8125,-98.95,1302,Morelos,Cuautla,18,,True,True,1734,0.29671457905544146,False,Alta del Balsas,1
+B18192,AGUA DULCE,18.808333,-98.933333,1303,Morelos,Cuautla,18,,True,True,1826,0.3124572210814511,False,Alta del Balsas,1
+B18193,YAUTEPEC,18.895833,-99.05,1360,Morelos,Yautepec,18,,True,True,1733,0.2965434633812457,False,Alta del Balsas,1
+B18197,ITZAMATITLAN,18.904167,-99.020833,1365,Morelos,Yautepec,18,,True,True,730,0.12491444216290212,False,Panuco;Alta del Balsas,2
+B18199,OAXTEPEC,18.9,-98.966667,1360,Morelos,Yautepec,18,,True,True,730,0.12491444216290212,False,Panuco;Alta del Balsas,2
+B18200,COCOYOC,18.9,-98.966667,1360,Morelos,Yautepec,18,,True,True,1551,0.26540041067761805,False,Panuco;Alta del Balsas,2
+B18204,TAZA GRANDE,18.8375,-98.954167,1300,Morelos,Cuautla,18,,True,True,730,0.12491444216290212,False,Alta del Balsas,1
+B18219,PERRITOS NUMERO 2,18.779167,-99.329167,1200,Morelos,Miacatlán,18,,True,True,730,0.12491444216290212,False,Alta del Balsas,1
+B18223,TICUMAN,18.791667,-99.104167,1130,Morelos,Tlaltizapán de Zapata,18,,True,True,1095,0.18737166324435317,False,Alta del Balsas,1
+B18225,CUAUTLA,18.808333,-99.95,1302,Morelos,Cuautla,18,,True,True,1826,0.3124572210814511,False,Cutzamala,1
+B18231,TIQUICHEO,18.901389,-100.713889,0,Michoacán de Ocampo,Tiquicheo de Nicolás Romero,18,,True,True,0,0.0,False,,0
+B18232,AMACUZAC,18.6,-99.370833,900,Morelos,Amacuzac,18,,True,True,1675,0.28661875427789185,False,Alta del Balsas,1
+B18237,PORTEZUELO,18.958333,-98.279167,0,Puebla,Ocoyucan,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18264,ZACATEPEC,18.65,-99.195833,910,Morelos,Zacatepec,18,,True,True,1767,0.30236139630390146,False,Alta del Balsas,1
+B18269,ALPUYECA,18.733333,-99.258333,1050,Morelos,Xochitepec,18,,True,True,1675,0.28661875427789185,False,Alta del Balsas,1
+B18270,ALPUYECA,18.733333,-99.258333,1050,Morelos,Xochitepec,18,,True,True,1826,0.3124572210814511,False,Alta del Balsas,1
+B18271,TEMIXCO,18.854167,-99.220833,1350,Morelos,Temixco,18,,True,True,487,0.08333333333333333,False,Alta del Balsas,1
+B18272,TEMIXCO,18.85,-99.225,1348,Morelos,Temixco,18,,True,True,0,0.0,False,Alta del Balsas,1
+B18291,A-10 TEXCALTITLAN,18.929167,-99.941667,1347,México,Almoloya de Alquisiras,18,,True,True,1461,0.25,False,Cutzamala;Panuco,2
+B18293,A-4 ALPANOCAN,18.875,-98.716667,0,Morelos,Tetela del Volcán,18,,True,True,1765,0.3020191649555099,False,Alta del Balsas,1
+B18294,A-8 TOTOLMAJAC,18.933333,-99.683333,2070,México,Villa Guerrero,18,,True,True,0,0.0,False,Cutzamala;Panuco,2
+B18295,A-9 EL MOLINO,18.916667,-99.820833,2090,México,Coatepec Harinas,18,,True,True,0,0.0,False,Cutzamala;Panuco,2
+B18311,EL GALLO,18.6875,-100.680556,0,Guerrero,Cutzamala de Pinzón,18,,True,True,0,0.0,False,Cutzamala,1
+B18316,LA CUERA,18.683333,-98.916667,1300,Morelos,Ayala,18,,True,True,1461,0.25,False,Alta del Balsas,1
+B18322,TLAXCALA,19.320833,-98.241667,2250,Tlaxcala,Tlaxcala,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18323,TETLAMA,18.833333,-99.279167,1250,Morelos,Temixco,18,,True,True,1826,0.3124572210814511,False,Alta del Balsas,1
+B18324,ATLANGA KM. 0 +220,19.558333,-98.195833,2480,Tlaxcala,Atlangatepec,18,,True,True,1734,0.29671457905544146,False,Panuco,1
+B18325,ATLANGA KM. 0 +060,19.55,-98.2,2480,Tlaxcala,Atlangatepec,18,,True,True,0,0.0,False,Panuco,1
+B18329,PINZAN MORADO,18.160556,-100.8875,0,Guerrero,Coyuca de Catalán,18,,True,True,0,0.0,False,,0
+B18349,HUAMANTLA,19.316667,-97.854167,2400,Tlaxcala,Huamantla,18,,True,True,1280,0.2190280629705681,False,Panuco;Alta del Balsas,2
+B18354,HUAJUAPAN DE LEON,18.683333,-98.916667,0,Oaxaca,Heroica Ciudad de Huajuapan de León,18,,True,True,0,0.0,False,Alta del Balsas,1
+B18358,LA CUERA,18.683333,-98.916667,1300,Morelos,Ayala,18,,True,True,365,0.06245722108145106,False,Alta del Balsas,1
+B18372,COATEPEQUITO,18.741667,-99.566667,1550,México,Zumpahuacán,18,,True,True,1826,0.3124572210814511,False,Cutzamala,1
+B18375,LA CALERA,18.429167,-100.997222,0,Guerrero,Zirándaro,18,,True,True,0,0.0,False,,0
+B18395,COYOL,18.21,-100.740278,0,Ciudad de México,Gustavo A. Madero,18,,True,True,0,0.0,False,,0
+B18406,LAS ESTACAS,18.725,-99.1125,1130,Puebla,La Magdalena Tlatlauquitepec,18,,True,True,1796,0.3073237508555784,False,Alta del Balsas,1
+B18420,CORONDIRO,18.9875,-102.12,0,Michoacán de Ocampo,Múgica,18,,True,True,0,0.0,False,,0
+B18421,CORONDIRO,18.9875,-102.116667,0,Michoacán de Ocampo,Múgica,18,,True,True,0,0.0,False,,0
+B18425,PARACUARO NUMERO 2,19.148611,-102.219444,0,Michoacán de Ocampo,Parácuaro,18,,True,True,0,0.0,False,,0
+B18426,PARACUARO NUMERO 3,19.147222,-102.226389,0,Michoacán de Ocampo,Parácuaro,18,,True,True,0,0.0,False,,0
+B18427,PARACUARO NUMERO 4,19.151667,-102.225,0,Michoacán de Ocampo,Parácuaro,18,,True,True,0,0.0,False,,0
+B18428,PARACUARO NUMERO 5,19.151389,-102.225,0,Michoacán de Ocampo,Parácuaro,18,,True,True,0,0.0,False,,0
+B18429,PARACUARO NUMERO 6,19.151667,-102.225,0,Michoacán de Ocampo,Parácuaro,18,,True,True,0,0.0,False,,0
+B18434,EL FRAILE,18.179167,-98.391667,0,Puebla,Axutla,18,,True,True,0,0.0,False,Alta del Balsas,1
+B18436,ATENANGO DEL RIO,18.1125,-99.108333,0,Guerrero,Atenango del Río,18,,True,True,0,0.0,False,Alta del Balsas,1
+B18437,XICATLACOTLA,18.520833,-99.191667,1000,Morelos,Tlaquiltenango,18,,True,True,699,0.11960985626283367,False,Alta del Balsas,1
+B18439,SAN JUAN TETELCINGO,17.916667,-99.520833,0,Guerrero,Mártir de Cuilapan,18,,True,True,0,0.0,False,,0
+B18440,PAPALUTLA,18.016667,-98.9,0,Guerrero,Copalillo,18,,True,True,0,0.0,False,Alta del Balsas,1
+B18453,EL MARQUEZ,19.069444,-102.073611,98,Oaxaca,Santa María Jalapa del Marqués,18,,True,True,730,0.12491444216290212,False,,0
+B18454,ZICUIRAN,18.936111,-101.927778,288,Michoacán de Ocampo,La Huacana,18,,True,True,0,0.0,False,,0
+B18455,TAMACUARO,19.138889,-101.997222,0,Michoacán de Ocampo,Gabriel Zamora,18,,True,True,0,0.0,False,,0
+B18460,RIO CHIQUITO,19.573611,-100.4625,0,Michoacán de Ocampo,Tuxpan,26,,True,True,365,0.06245722108145106,False,Cutzamala;Lerma Alto;Panuco,3
+B18471,KM. 4+200,19.525,-100.479167,0,Michoacán de Ocampo,Tuxpan,26,,True,True,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B18487,LOS PINZANES,18.545833,-101.118056,0,Michoacán de Ocampo,Huetamo,18,,True,True,0,0.0,False,,0
+B18494,LOS PANCHES,18.886111,-102.226667,0,Michoacán de Ocampo,Aguililla,18,,True,True,0,0.0,False,,0
+B18495,LA PASTORIA,18.927778,-102.056944,0,Michoacán de Ocampo,La Huacana,18,,True,True,0,0.0,False,,0
+B18496,EL CARRIZO,19.036111,-102.986111,0,Michoacán de Ocampo,Tepalcatepec,18,,True,True,0,0.0,False,,0
+B18502,EL ZOPILOTE,19.206667,-102.2,0,Michoacán de Ocampo,Parácuaro,18,,True,True,0,0.0,False,,0
+B18509,SANTA ANA,19.205,-102.583333,0,Michoacán de Ocampo,Buenavista,18,,True,True,0,0.0,False,,0
+B18511,ZIMANCA,19.141667,-102.561111,0,Michoacán de Ocampo,Buenavista,18,,True,True,0,0.0,False,,0
+B18513,LAS BURRAS,19.156667,-102.206944,0,Michoacán de Ocampo,Parácuaro,18,,True,True,0,0.0,False,,0
+B18521,PRESA VALLE DE BRAVO,19.207778,-100.180833,0,México,Valle de Bravo,18,,False,False,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B18525,GUARANDICHO,19.134722,-102.455556,0,Michoacán de Ocampo,Buenavista,18,,True,True,0,0.0,False,,0
+B18527,PUNTA DE AGUA,19.098611,-102.666667,0,Michoacán de Ocampo,Buenavista,18,,True,True,0,0.0,False,,0
+B18528,PUNTA DE AGUA,19.100833,-102.663889,0,Michoacán de Ocampo,Buenavista,18,,True,True,0,0.0,False,,0
+B18532,CHORROS DEL VARAL,19.505556,-102.581944,0,Michoacán de Ocampo,Peribán,18,,True,True,0,0.0,False,,0
+B18534,LOS OLIVOS,19.216389,-102.883056,0,Jalisco,Jilotlán de los Dolores,18,,True,True,0,0.0,False,,0
+B18540,TEMASCALTEPEC,19.037778,-100.065833,1700,México,Temascaltepec,18,,True,True,1306,0.22347707049965776,False,Cutzamala;Panuco,2
+B18554,EL MIRADOR,18.806111,-99.766667,1720,México,Coatepec Harinas,18,,True,True,1826,0.3124572210814511,False,Cutzamala,1
+B18556,MEYUCA,18.864722,-99.781667,1850,México,Coatepec Harinas,18,,True,True,1826,0.3124572210814511,False,Cutzamala,1
+B18557,EL TUNEL,18.9375,-99.236111,1558,Morelos,Cuernavaca,18,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B18558,ABASOLO,32.833333,-116.453889,1550,Morelos,Cuernavaca,18,,True,True,0,0.0,False,,0
+B18581,HUITZUCO,18.302222,-99.332778,975,Guerrero,Huitzuco de los Figueroa,18,,True,True,0,0.0,False,Alta del Balsas,1
+B18584,ANDRES FIGUEROA,18.073333,-100.511389,0,Guerrero,Ajuchitlán del Progreso,18,,True,True,0,0.0,False,,0
+B18591,PIEDRA CHINA,18.886667,-100.760833,0,Michoacán de Ocampo,Tiquicheo de Nicolás Romero,26,,True,True,0,0.0,False,,0
+B18592,EL MANGO,18.886667,-100.721944,0,Michoacán de Ocampo,Tiquicheo de Nicolás Romero,26,,True,True,0,0.0,False,,0
+B185HUA,PRESA HUAPANGO,20.066667,-99.7,2623,México,Aculco,26,,True,True,0,0.0,False,Panuco,1
+B190IAL,IGNACIO ALLENDE,20.833333,-100.816667,1820,Guanajuato,San Miguel de Allende,12,,True,True,0,0.0,False,Bajio,1
+B205JAR,PRESA JARIPO,19.9,-102.6,0,Michoacán de Ocampo,Villamar,12,,True,True,0,0.0,False,,0
+B210JAA,JOSE ANTONIO ALZATE,19.465556,-99.703889,2571,México,Temoaya,12,,True,True,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B212JRG,JAVIER ROJO GOMEZ,20.733333,-99.333333,0,Hidalgo,Zimapán,26,,True,True,0,0.0,False,Panuco,1
+B217JLA,JULIAN ADAME,22.120833,-102.859167,1703,Zacatecas,Villanueva,12,,True,True,0,0.0,False,Santiago,1
+B230CAL,LA CALERA,21.7,-99.1,0,San Luis Potosí,Aquismón,18,,True,True,0,0.0,False,Panuco,1
+B233CDZ,LA CODORNIZ,21.995556,-102.674722,1783,Aguascalientes,Calvillo,12,,True,True,0,0.0,False,Santiago,1
+B235ESP,PRESA LA ESPERANZA,20.058889,-98.336111,2210,Hidalgo,Cuautepec de Hinojosa,26,,True,True,0,0.0,False,Panuco,1
+B245LCH,LAGO DE CHAPALA,20.3,-103.2,1523,Jalisco,Chapala,12,,True,True,0,0.0,False,Bajio,1
+B26020,TAXHIE,20.225,-99.9,2220,México,Aculco,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26022,PASO DE TABLAS,20.55,-99.833333,1860,Querétaro,El Marqués,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26023,AHUALULCO,22.95,-99.118056,0,San Luis Potosí,Ahualulco,26,,True,True,1461,0.25,False,Panuco,1
+B26032,MOLINO BLANCO,19.4775,-99.220833,2326,México,Naucalpan de Juárez,26,,True,True,365,0.06245722108145106,False,Panuco;Alta del Balsas,2
+B26039,KM. 6 + 250  ( ANTES KM. 6 + 500 ),19.476667,-99.091389,0,México,Nezahualcóyotl,26,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B26054,SAN JUAN IXHUATEPEC,19.520833,-99.118611,2240,México,Tlalnepantla de Baz,26,,True,True,0,0.0,False,Panuco,1
+B26057,TOTOLICA,19.465278,-99.244444,2325,México,Naucalpan de Juárez,26,,True,True,365,0.06245722108145106,False,Panuco;Alta del Balsas,2
+B260LFR,LAGUNA DEL FRESNO,19.839167,-100.413333,2078,Michoacán de Ocampo,Maravatío,12,,True,True,0,0.0,False,Lerma Alto;Panuco,2
+B26124,JASSO,19.9875,-99.323611,0,Tamaulipas,Aldama,26,,True,True,0,0.0,False,Panuco,1
+B26137,IXMIQUILPAN A,20.4625,-99.226389,1700,Hidalgo,Ixmiquilpan,26,,True,True,0,0.0,False,Panuco,1
+B26142,XICOTENCATL,22.968056,-98.968056,100,Tamaulipas,Xicoténcatl,26,,True,True,0,0.0,False,Panuco,1
+B26151,TEQUISQUIAPAN,20.525,-99.895833,1912,Querétaro,Colón,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26170,SAN ILDEFONSO,20.208333,-99.966667,0,México,Aculco,26,,True,True,0,0.0,False,Panuco,1
+B26181,DESVIACION ALTA PEDREGAL,19.3,-99.205,0,Ciudad de México,Tlalpan,26,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B26183,CHAPINGO,19.485278,-98.884722,2250,México,Texcoco,26,,True,True,1765,0.3020191649555099,False,Panuco;Alta del Balsas,2
+B26184,SAN ANDRES,19.529167,-98.9125,2268,México,Texcoco,26,,True,True,1645,0.28148528405201917,False,Panuco,1
+B26193,LA GRANDE,19.579167,-98.916667,0,México,Tezoyuca,26,,True,True,0,0.0,False,Panuco,1
+B26194,TEPEXPAN,19.611389,-98.920278,0,México,Acolman,26,,True,True,0,0.0,False,Panuco,1
+B26201,KM. 0 + 700,20.370833,-100.004167,1945,Querétaro,Corregidora,26,,True,True,730,0.12491444216290212,False,Panuco,1
+B26205,PASO DE TABLAS,20.55,-99.833333,1880,Querétaro,Colón,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26218,LA ENCANTADA,23.383333,-99.083333,375,Tamaulipas,Llera,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26221,SAN RAFAEL,23.316667,-99.0,1555,Nuevo León,Galeana,26,,True,True,0,0.0,False,Panuco,1
+B26224,TAMUIN,22.002222,-98.768333,22,San Luis Potosí,Tamuín,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26241,BALLESMI,21.734722,-98.95,40,San Luis Potosí,Tanlajás,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26243,REQUETEMU,21.418056,-98.883333,82,San Luis Potosí,Axtla de Terrazas,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26244,EL HIGO,21.763889,-98.433333,50,Veracruz de Ignacio de la Llave,El Higo,26,,True,True,0,0.0,False,Panuco,1
+B26248,TEMPOAL,21.533333,-98.383333,38,Veracruz de Ignacio de la Llave,Tempoal,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26249,MAGISCATZÍN 2,22.801389,-98.718056,40,Tamaulipas,González,26,,True,True,1369,0.23425735797399042,False,Panuco,1
+B26255,LAS ADJUNTAS,25.983333,-98.566667,18,San Luis Potosí,Tamuín,26,,True,True,1826,0.3124572210814511,False,,0
+B26257,CALACOAYA,19.525833,-99.250556,0,México,Tlalnepantla de Baz,26,,True,True,1096,0.18754277891854895,False,Panuco,1
+B26262,SAN JOSE,20.3625,-100.0,1940,Querétaro,Cadereyta de Montes,26,,True,True,730,0.12491444216290212,False,Panuco,1
+B26263,SANTA ROSA,22.016667,-99.05,82,San Luis Potosí,Axtla de Terrazas,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26267,GALLINAS,21.934722,-99.25,300,San Luis Potosí,Tamasopo,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26268,TANSABACA,21.651389,-99.2,196,Querétaro,Jalpan de Serra,26,,True,True,0,0.0,False,Panuco,1
+B26270,TIERRA BLANCA,21.218056,-98.884722,155,San Luis Potosí,Tamazunchale,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26272,EL PUJAL,21.834722,-99.918056,43,San Luis Potosí,Ciudad Valles,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26274,SAN MATEO,19.476944,-98.877778,0,México,Texcoco,26,,True,True,730,0.12491444216290212,False,Panuco;Alta del Balsas,2
+B26277,LOS HULES,21.166667,-98.266806,75,Veracruz de Ignacio de la Llave,Chalma,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26280,LA SERVILLETA,22.85,-99.118056,210,Tamaulipas,Ocampo,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26282,EL ALAMO,20.5125,-98.625,1380,Hidalgo,San Agustín Metzquititlán,26,,True,True,0,0.0,False,Panuco,1
+B26283,CANAL BAJO,22.95,-99.133333,82,Tamaulipas,Ocampo,26,,True,True,365,0.06245722108145106,False,Panuco,1
+B26285,MICOS,22.116806,-99.166667,310,San Luis Potosí,Ciudad Valles,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26289,TERRERILLOS,21.033472,-98.133472,106,Veracruz de Ignacio de la Llave,Chicontepec,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26291,TANCUILIN,21.384722,-98.868056,100,San Luis Potosí,Axtla de Terrazas,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26292,TANLACUT,21.668056,-99.284722,100,San Luis Potosí,Santa Catarina,26,,True,True,0,0.0,False,Panuco,1
+B26293,TEMAMATLA,21.233472,-98.750139,125,San Luis Potosí,Tamazunchale,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26294,EL ALAMO,20.5125,-98.625,1380,Hidalgo,San Agustín Metzquititlán,26,,True,True,0,0.0,False,Panuco,1
+B26295,EL ALAMO,20.5125,-98.625,1380,Hidalgo,San Agustín Metzquititlán,26,,True,True,0,0.0,False,Panuco,1
+B26296,RIO FRIO,22.834722,-99.018056,60,Tamaulipas,Xicoténcatl,26,,True,True,1489,0.2547912388774812,False,Panuco,1
+B26309,SAN LUIS AMECA 2,19.183889,-99.87,0,México,Temamatla,26,,True,True,1339,0.22912388774811773,False,Cutzamala;Panuco,2
+B26313,KM. 27 + 250  ( ANTES KM. 27 + 000 ),19.641389,-99.053611,2250,México,Ecatepec de Morelos,26,,True,True,1308,0.22381930184804927,False,Panuco,1
+B26320,TEPETITLAN,20.161111,-99.359722,2584,México,San Felipe del Progreso,26,,True,True,1705,0.29175222450376453,False,Panuco,1
+B26341,OJO CALIENTE,21.85,-100.8,1790,San Luis Potosí,Santa María del Río,26,,True,True,0,0.0,False,,0
+B26346,PUENTE COLGANTE,19.763889,-99.185,0,México,Teoloyucan,26,,True,True,31,0.0053045859000684465,False,Panuco,1
+B26352,LAS ARBOLEDAS,19.562778,-99.215833,2280,México,Atizapán de Zaragoza,26,,True,True,1583,0.2708761122518823,False,Panuco,1
+B26354,SAN LORENZO,19.7125,-99.195833,0,México,Cuautitlán,26,,True,True,1185,0.20277207392197125,False,Panuco,1
+B26357,SAN MARTIN KM. 13 +521,19.616667,-99.191667,2253,México,Cuautitlán Izcalli,26,,True,True,1158,0.19815195071868583,False,Panuco,1
+B26387,EL OLIVO,21.833472,-98.500139,25,Veracruz de Ignacio de la Llave,Pánuco,26,,True,True,1795,0.30715263518138264,False,Panuco,1
+B26388,SABINAS,23.034722,-99.084722,100,Tamaulipas,Gómez Farías,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26389,VIGAS,21.784722,-99.85,920,San Luis Potosí,Rioverde,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26406,IXMIQUILPAN 2,20.481944,-99.220833,1700,Hidalgo,Ixmiquilpan,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26414,SALIDAS PRESA CONSTITUCION 1917,20.420278,-100.087222,1925,Querétaro,Corregidora,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26415,SAN VICENTE,21.689167,-98.609167,32,San Luis Potosí,San Vicente Tancuayalab,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26416,TAMESI,22.426667,-98.4275,12,Tamaulipas,González,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26424,PANUCO,22.0575,-98.170556,10,Veracruz de Ignacio de la Llave,Pánuco,26,,True,True,1765,0.3020191649555099,False,Panuco,1
+B26430,AGUA BUENA,21.9525,-99.379722,372,San Luis Potosí,Tamasopo,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26433,PLATON SANCHEZ,21.293611,-98.335278,80,Veracruz de Ignacio de la Llave,Tantoyuca,26,,True,True,0,0.0,False,Panuco,1
+B26435,LA H 2,20.3625,-100.079167,1940,Querétaro,Querétaro,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26439,CALACOAYA 3,19.525,-99.255278,0,México,Tlalnepantla de Baz,26,,True,True,0,0.0,False,Panuco,1
+B26441,LOS REYES,19.3625,-98.961111,2260,Puebla,Huauchinango,26,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B26442,Santa Cruz,19.504167,-99.221667,0,México,Tlalnepantla de Baz,26,,True,True,1464,0.25051334702258726,False,Panuco,1
+B26447,SAN GABRIEL,23.083611,-98.787222,140,Tamaulipas,Xicoténcatl,26,,True,True,0,0.0,False,Panuco,1
+B26453,MEDIA LUNA,21.883333,-100.068056,1010,San Luis Potosí,Rioverde,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26457,PRESA ITURBIDE,19.529167,-99.465,0,México,Isidro Fabela,26,,True,True,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B26461,SAN FELIPE ORIZATLAN,21.166667,-98.6,2370,Hidalgo,San Felipe Orizatlán,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26464,ATLAPEXCO,21.016667,-98.333333,0,Hidalgo,Atlapexco,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26470,SAN FELIPE ORIZATLAN,21.173889,-98.600556,160,Hidalgo,San Felipe Orizatlán,26,,True,True,1733,0.2965434633812457,False,Panuco,1
+B26516,AMEALCO,19.526667,-99.160833,2640,Querétaro,Amealco de Bonfil,26,,True,True,821,0.14048596851471595,False,Panuco,1
+B26520,SAN ANDRES ATENCO,19.530556,-98.910278,0,México,Texcoco,26,,True,True,0,0.0,False,Panuco,1
+B26807,TULANCINGO,20.083333,-98.369444,2222,Hidalgo,Tulancingo de Bravo,26,,True,True,1826,0.3124572210814511,False,Panuco,1
+B26984,CALACOAYA 2,19.45,-99.241667,0,México,Tlalnepantla de Baz,26,,True,True,0,0.0,False,Panuco;Alta del Balsas,2
+B27006,EL RAUDAL,20.158333,-96.713333,10,Veracruz de Ignacio de la Llave,Nautla,26,,True,True,0,0.0,False,,0
+B27075,SAN JOAQUIN,19.815,-97.123333,0,México,Naucalpan de Juárez,26,,True,True,0,0.0,False,,0
+B270LYU,LAGUNA DE YURIRIA,20.216667,-101.133333,1736,Guanajuato,Yuriria,12,,True,True,0,0.0,False,Bajio,1
+B295OLE,PRESA LOS OLIVOS,19.213889,-102.866667,0,Jalisco,Jilotlán de los Dolores,18,,True,True,0,0.0,False,,0
+B302MOM,PRESA MADIN,19.533056,-99.258333,2325,México,Atizapán de Zaragoza,26,,True,True,0,0.0,False,Panuco,1
+B305MAL,PRESA MALPAIS,19.9,-100.9,0,Michoacán de Ocampo,Zinapécuaro,12,,True,True,0,0.0,False,,0
+B315MAZ,PRESA INSURGENTE MARIANO ABASOLO,20.5,-101.95,1740,Guanajuato,Pénjamo,12,,True,True,0,0.0,False,Bajio,1
+B321MLU,MEDIA LUNA,21.7925,-102.801667,1585,Aguascalientes,Calvillo,12,,True,True,0,0.0,False,Santiago,1
+B333PAS,PALOMAS,22.345,-102.798333,2089,Zacatecas,Villanueva,12,,True,True,0,0.0,False,Santiago,1
+B334PPI,PRESA PASO DE PIEDRAS,21.737222,-98.152778,40,Veracruz de Ignacio de la Llave,Ozuluama de Mascareñas,26,,True,True,0,0.0,False,Panuco,1
+B340PEN,PEÑUELITAS,21.104444,-100.875833,1915,Guanajuato,Dolores Hidalgo Cuna de la Independencia Nacional,12,,True,True,0,0.0,False,Bajio,1
+B350PAL,PRESIDENTE ALEMAN,21.649444,-103.339722,1740,Zacatecas,Tepechitlán,12,,True,True,0,0.0,False,Santiago,1
+B355PUC,PRESA PUCUATO,19.621667,-100.686111,0,Michoacán de Ocampo,Hidalgo,18,,True,True,0,0.0,False,Cutzamala;Panuco,2
+B37012,TULA,23.001389,-99.7125,0,Hidalgo,Tula de Allende,26,,True,True,0,0.0,False,Panuco,1
+B370RDG,PRESA RODRIGUEZ,21.916667,-102.426944,0,Aguascalientes,Jesús María,12,,True,True,0,0.0,False,Santiago,1
+B375SAB,PRESA SABANETA,19.619444,-100.670833,0,Michoacán de Ocampo,Hidalgo,18,,True,True,0,0.0,False,Cutzamala;Panuco,2
+B385SIL,SAN ILDEFONSO,20.208333,-99.966667,0,México,Aculco,26,,True,True,0,0.0,False,Panuco,1
+B390SJA,SAN JOSE ATLANGA,19.55,-98.2,2498,Tlaxcala,Atlangatepec,18,,True,True,0,0.0,False,Panuco,1
+B400SRO,SANTA ROSA,20.910556,-103.711944,730,Jalisco,Amatitán,12,,True,True,0,0.0,False,Santiago,1
+B410SOL,PRESA SOLIS,20.05,-100.816667,1849,Guanajuato,Acámbaro,12,,True,True,0,0.0,False,Bajio,1
+B420TAX,PRESA TAXHIMAY,19.835833,-99.385,0,México,Villa del Carbón,26,,True,True,0,0.0,False,Panuco,1
+B425TEN,PRESA TENASCO,22.173889,-103.197222,1850,Jalisco,Santa María de los Ángeles,12,,True,True,0,0.0,False,Santiago,1
+B435TPN,TEPETITLAN NUEVA,19.663333,-99.958611,2584,México,San Felipe del Progreso,12,,True,True,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B440TPX,PRESA TEPUXTEPEC,19.98,-100.230278,2380,Michoacán de Ocampo,Contepec,12,,True,True,0,0.0,False,Lerma Alto;Panuco,2
+B441TMU,TERCER MUNDO,19.48,-100.2,0,México,Villa de Allende,12,,True,True,0,0.0,False,Cutzamala;Lerma Alto;Panuco,3
+B445URE,PRESA UREPETIRO,19.971944,-102.134167,1807,Michoacán de Ocampo,Tlazazalca,12,,True,True,0,0.0,False,,0
+B450VCV,VICENTE C. VILLASEÑOR,19.938333,-104.0,0,Jalisco,Ejutla,18,,True,True,0,0.0,False,,0
+B455VTR,PRESA VALERIO TRUJANO,18.416667,-99.5,0,Guerrero,Buenavista de Cuéllar,18,,True,True,0,0.0,False,Cutzamala;Alta del Balsas,2
+B465VAG,VICENTE AGUIRRE,20.439444,-99.377778,0,Hidalgo,Alfajayucan,26,,True,True,0,0.0,False,Panuco,1
+B470VGU,VICENTE GUERRERO,22.315833,-103.441389,1925,Zacatecas,Monte Escobedo,18,,True,True,0,0.0,False,Santiago,1
+B477YOS,YOSOCUTA,17.725,-97.829167,1410,Oaxaca,San Marcos Arteaga,18,,True,True,0,0.0,False,,0
+B480ZIR,PRESA ZICUIRAN,18.920278,-101.929722,0,Michoacán de Ocampo,La Huacana,18,,True,True,0,0.0,False,,0
+B516CHI,CHICAYAN,21.737222,-98.152778,40,Veracruz de Ignacio de la Llave,Ozuluama de Mascareñas,26,,True,True,0,0.0,False,Panuco,1
+B517CAP,CONSTITUCION DE APATZINGAN,20.418333,-100.0725,1295,Querétaro,San Juan del Río,18,,True,True,0,0.0,False,Panuco,1
+B552JCO,JOCOQUE,22.121111,-102.354444,1970,Aguascalientes,San José de Gracia,12,,True,True,0,0.0,False,Santiago,1
+B560CPI,PRESA LA CONCEPCION,20.148056,-99.908889,2360,México,Aculco,26,,False,False,0,0.0,False,Panuco,1
+B580PSA,PRESA LA PURISIMA,20.85,-101.283333,1839,Guanajuato,Guanajuato,12,,True,True,0,0.0,False,Bajio,1

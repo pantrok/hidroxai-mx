@@ -1,0 +1,61 @@
+{
+  "variantes": {
+    "congelada": {
+      "estaciones_evaluadas": 97,
+      "estaciones_excluidas": 4,
+      "ridge_mejor_que_persistencia_NSE": 69
+    },
+    "sin_outliers_en_predictores": {
+      "estaciones_evaluadas": 97,
+      "estaciones_excluidas": 4,
+      "ridge_mejor_que_persistencia_NSE": 75
+    }
+  },
+  "tabla": [
+    {
+      "variante": "congelada",
+      "modelo": "persistencia",
+      "n_estaciones": 97,
+      "NSE_mediana": 0.453,
+      "NSE_q25": -0.033,
+      "NSE_q75": 0.699,
+      "KGE_mediana": 0.712,
+      "KGE_q25": 0.464,
+      "KGE_q75": 0.851
+    },
+    {
+      "variante": "congelada",
+      "modelo": "ridge",
+      "n_estaciones": 97,
+      "NSE_mediana": 0.33,
+      "NSE_q25": -0.033,
+      "NSE_q75": 0.657,
+      "KGE_mediana": 0.421,
+      "KGE_q25": -0.063,
+      "KGE_q75": 0.708
+    },
+    {
+      "variante": "sin_outliers_en_predictores",
+      "modelo": "persistencia",
+      "n_estaciones": 97,
+      "NSE_mediana": 0.528,
+      "NSE_q25": 0.125,
+      "NSE_q75": 0.772,
+      "KGE_mediana": 0.764,
+      "KGE_q25": 0.545,
+      "KGE_q75": 0.882
+    },
+    {
+      "variante": "sin_outliers_en_predictores",
+      "modelo": "ridge",
+      "n_estaciones": 97,
+      "NSE_mediana": 0.594,
+      "NSE_q25": 0.293,
+      "NSE_q75": 0.717,
+      "KGE_mediana": 0.642,
+      "KGE_q25": 0.353,
+      "KGE_q75": 0.815
+    }
+  ],
+  "segundos": 2.8
+}
