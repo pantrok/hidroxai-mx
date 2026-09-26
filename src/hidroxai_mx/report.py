@@ -36,8 +36,14 @@ def coverage_table(df: pd.DataFrame, value_col: str, group: str = "clave_estacio
     return pd.DataFrame(rows).sort_values("cobertura", ascending=False)
 
 
-def quality_summary(df: pd.DataFrame) -> pd.DataFrame:
-    """Conteo y % de banderas de calidad (0=ok, 1=imputed, 2=outlier)."""
+def quality_summary(df: pd.DataFrame, value_col: str | None = None) -> pd.DataFrame:
+    """Conteo y % de banderas de calidad (0=ok, 1=imputed, 2=outlier).
+
+    Con ``value_col`` solo cuenta los días con valor: un día sin dato no es una
+    "observación original" aunque su bandera sea 0.
+    """
+    if value_col is not None:
+        df = df[df[value_col].notna()]
     counts = df["calidad"].value_counts().reindex([0, 1, 2]).fillna(0).astype(int)
     total = int(counts.sum()) or 1
     return pd.DataFrame({"calidad": [0, 1, 2], "etiqueta": ["ok", "imputed", "outlier"],
@@ -73,6 +79,42 @@ def lagged_corr(df: pd.DataFrame, a: str, b: str, max_lag: int = 30,
                 cs.append(c)
         res[lag] = float(np.mean(cs)) if cs else np.nan
     return pd.Series(res, name=f"corr_{a}(t-lag)_vs_{b}")
+
+
+def deseasonalized_anomalies(df: pd.DataFrame, col: str, group: str = "clave_estacion",
+                             inicio: str = "2010-01-01", fin: str = "2025-12-31",
+                             window: int = 31) -> pd.DataFrame:
+    """Anomalía estandarizada por estación respecto de su climatología de día del año.
+
+    Climatología = media por día del año en [inicio, fin], suavizada con media móvil
+    circular de ``window`` días; la anomalía se divide entre su desviación estándar.
+    Devuelve columnas (group, fecha, anomalia).
+    """
+    d = df[(df["fecha"] >= inicio) & (df["fecha"] <= fin)].dropna(subset=[col])
+    d = d[[group, "fecha", col]].copy()
+    d["doy"] = d["fecha"].dt.dayofyear.clip(upper=365)
+    clim = d.groupby([group, "doy"])[col].mean().unstack().reindex(columns=range(1, 366))
+    half = window // 2
+    wrapped = pd.concat([clim.iloc[:, -half:], clim, clim.iloc[:, :half]], axis=1)
+    smooth = wrapped.T.rolling(window, center=True, min_periods=1).mean().T.iloc[:, half:half + 365]
+    smooth.columns = range(1, 366)
+    lut = smooth.stack().rename("clim").reset_index()
+    lut.columns = [group, "doy", "clim"]
+    d = d.merge(lut, on=[group, "doy"], how="left")
+    d["anomalia"] = d[col] - d["clim"]
+    sd = d.groupby(group)["anomalia"].transform("std").replace(0, np.nan)
+    d["anomalia"] = d["anomalia"] / sd
+    return d[[group, "fecha", "anomalia"]].dropna()
+
+
+def regional_lag_correlation(x: pd.Series, y: pd.Series, max_lag: int = 30) -> pd.DataFrame:
+    """Pearson y Spearman de x(t−lag) vs y(t) para lag = 0 … max_lag (series por fecha)."""
+    rows = []
+    for lag in range(max_lag + 1):
+        j = pd.concat([x.shift(lag, freq="D").rename("x"), y.rename("y")], axis=1, sort=True).dropna()
+        rows.append({"lag": lag, "pearson": j["x"].corr(j["y"]),
+                     "spearman": j["x"].corr(j["y"], method="spearman"), "n": len(j)})
+    return pd.DataFrame(rows)
 
 
 def cross_source_agreement(df_a: pd.DataFrame, df_b: pd.DataFrame, value_col: str,

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Etapa 12 — Diagrama de flujo compacto del pipeline (para la sección Methods).
 
-Salida: data/processed/reportes/fig0_workflow.png (300 dpi).
+Salida: data/processed/reportes/Fig1_workflow.{png,tif} (300 dpi).
 Se agrupa el trabajo en cuatro fases con textos cortos en dos líneas para
 que ningún subtítulo se salga del recuadro.
 """
@@ -68,7 +68,7 @@ def arrow(x1, y1, x2, y2):
 box(2, 82, 46, 14,
     "Primary sources",
     ["CONAGUA-SIH catalogs and daily series",
-     "INEGI CEM 3.0 tiles"],
+     "INEGI CEM 3.0 tiles · HydroRIVERS v1.0"],
     fill=INPUT, edge=INPUT_EDGE)
 box(52, 82, 46, 14,
     "Pilot-basin configuration",
@@ -86,14 +86,14 @@ arrow(25, 82, 25, 74)
 box(52, 60, 46, 14,
     "Phase 3  ·  Basin geometry",
     ["Per-basin DEM mosaic and clip",
-     "+ sub-basin delineation"])
+     "+ station–river link (HydroRIVERS)"])
 arrow(75, 82, 75, 74)
 
 # ---- Row 3 : phases 2 and 4 ----
 box(2, 38, 46, 14,
     "Phase 2  ·  Curation and QC",
     ["Parsing, outlier flag,",
-     "short-gap imputation, schema check"])
+     "linear gap filling (1–6 d), schema check"])
 arrow(25, 60, 25, 52)
 
 box(52, 38, 46, 14,
@@ -114,7 +114,7 @@ box(27, 8, 23, 18,
     fill=OUTPUT, edge=OUTPUT_EDGE, title_size=9.5, body_size=8)
 box(52, 8, 23, 18,
     "Output 3",
-    ["Per-basin DEM and", "sub-basin polygons"],
+    ["Per-basin DEMs and", "station–river links"],
     fill=OUTPUT, edge=OUTPUT_EDGE, title_size=9.5, body_size=8)
 box(77, 8, 21, 18,
     "Output 4",
@@ -136,7 +136,8 @@ labels = ["Primary sources / configuration", "Processing phase", "Distributed ou
 ax.legend(handles, labels, loc="lower center", ncol=3, frameon=False,
           fontsize=9, bbox_to_anchor=(0.5, -0.05))
 
-out_path = OUT / "fig0_workflow.png"
+out_path = OUT / "Fig1_workflow.png"
 plt.savefig(out_path)
+plt.savefig(OUT / "Fig1_workflow.tif", pil_kwargs={"compression": "tiff_lzw"})
 plt.close(fig)
 log.info("Workflow figure -> %s", out_path)
