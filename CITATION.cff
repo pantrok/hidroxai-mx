@@ -1,37 +1,36 @@
 cff-version: 1.2.0
-message: "Si usas este software o el dataset, por favor cítalo como se indica."
-title: "HidroXAI-MX: pronóstico explicable de niveles hidrométricos y clima local en México"
+message: "If you use this software or the dataset, please cite them as below."
+title: "HidroXAI-MX: reproducible pipeline for the Hidro-MX hydroclimatic dataset"
 abstract: >-
-  Biblioteca y pipeline reproducible para integrar, curar y versionar datos abiertos
-  hidroclimáticos de México (CONAGUA-SIH, SMN, INEGI) y para el pronóstico explicable
-  con aprendizaje profundo temporal y reglas difusas.
+  Library and reproducible pipeline that downloads, curates, validates and versions
+  open hydroclimatic data for Mexican pilot basins (CONAGUA-SIH daily series and
+  INEGI CEM 3.0) and builds the Hidro-MX dataset deposited on Zenodo.
 type: software
 authors:
   - family-names: "Sánchez Ruiz"
     given-names: "Daniel"
     affiliation: "Unidad Profesional Interdisciplinaria de Ingeniería campus Tlaxcala (UPIIT), Instituto Politécnico Nacional (IPN)"
-version: "0.1.0"
-date-released: "2026-06-21"
+version: "v2026.10"
+date-released: "2026-10-04"
 license: MIT
 repository-code: "https://github.com/pantrok/hidroxai-mx"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21231600"
-    description: "Concept DOI of the HidroXAI-MX dataset on Zenodo (resolves to the latest snapshot; CC BY 4.0)."
+    description: "Concept DOI of the Hidro-MX dataset on Zenodo (resolves to the latest snapshot; CC BY 4.0)."
   - type: doi
     value: "10.5281/zenodo.21231601"
-    description: "Zenodo deposit of the HidroXAI-MX v2026.06 dataset snapshot."
+    description: "Zenodo deposit of the Hidro-MX v2026.06 dataset snapshot."
 keywords:
-  - hidrología
-  - aprendizaje profundo
-  - series de tiempo
-  - IA explicable
-  - datos abiertos
-  - México
+  - hydrology
+  - streamflow
+  - precipitation
+  - open data
+  - reproducibility
+  - Mexico
   - CONAGUA
-  - SMN
   - INEGI
 notes: >-
-  Proyecto IND-2026-0335, Instituto Politécnico Nacional (IPN), Convocatoria de
-  Proyectos de Investigación Científica y Desarrollo Tecnológico 2026.
-  Dataset curado depositado en Zenodo bajo CC BY 4.0.
+  Project IND-2026-0335, Instituto Politécnico Nacional (IPN), 2026 Call for
+  Scientific Research and Technological Development Projects (PICDT 2026).
+  The curated dataset is deposited on Zenodo under CC BY 4.0.
