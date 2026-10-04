@@ -1,5 +1,5 @@
 {
-  "fecha_conciliacion": "2026-09-26",
+  "fecha_conciliacion": "2026-10-04",
   "ventana": [
     "2010-01-01",
     "2025-12-31"
@@ -97,27 +97,27 @@
       "pct": 0.0049
     },
     "climatologicas|filas_con_valor|0": {
-      "n": 36188342,
+      "n": 36188334,
       "pct": 99.9994
     },
     "climatologicas|filas_con_valor|2": {
-      "n": 205,
+      "n": 213,
       "pct": 0.0006
     },
     "climatologicas|filas_con_valor_2010_2025|0": {
-      "n": 6532087,
+      "n": 6532084,
       "pct": 99.9992
     },
     "climatologicas|filas_con_valor_2010_2025|2": {
-      "n": 49,
+      "n": 52,
       "pct": 0.0008
     },
     "climatologicas|todas_las_filas|0": {
-      "n": 55590261,
+      "n": 55590246,
       "pct": 99.9996
     },
     "climatologicas|todas_las_filas|2": {
-      "n": 205,
+      "n": 220,
       "pct": 0.0004
     }
   }

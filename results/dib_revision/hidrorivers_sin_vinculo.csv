@@ -1,0 +1,9 @@
+clave,unidad_piloto,fuera_de_toda_unidad,motivo
+BEGGJ,Bajio,False,sin tramo HydroRIVERS a ≤ 0.01°
+CEYGJ,Bajio,False,sin tramo HydroRIVERS a ≤ 0.01°
+CXTJL,Bajio,False,sin tramo HydroRIVERS a ≤ 0.01°
+CHAMC,,True,sin tramo HydroRIVERS a ≤ 0.01°; además fuera de toda unidad
+CMNMC,,True,sin tramo HydroRIVERS a ≤ 0.01°; además fuera de toda unidad
+LPSMC,,True,sin tramo HydroRIVERS a ≤ 0.01°; además fuera de toda unidad
+CRDMR,Alta del Balsas,False,sin tramo HydroRIVERS a ≤ 0.01°
+GANSL,Panuco,False,sin tramo HydroRIVERS a ≤ 0.01°

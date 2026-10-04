@@ -1,0 +1,132 @@
+{
+  "fecha": "2026-10-04",
+  "fuente": "scripts/dib_12_clima_physical_limits.py --despues; results/dib_revision/clima_fuera_de_rango.csv; data/processed/series_climatologicas.parquet",
+  "limites": {
+    "tmax_c": [
+      -30,
+      60
+    ],
+    "tmin_c": [
+      -40,
+      50
+    ],
+    "tmed_c": [
+      -40,
+      55
+    ],
+    "evap_mm": [
+      0,
+      null
+    ]
+  },
+  "valores_fuera_de_limites": 24,
+  "valores_fuera_de_limites_por_variable": {
+    "tmed_c": 9,
+    "tmin_c": 7,
+    "tmax_c": 7,
+    "evap_mm": 1
+  },
+  "filas_fuera_de_limites": 15,
+  "clima": {
+    "filas_nueva": 55590466,
+    "filas_previa": 55590466,
+    "llaves_distintas": 0,
+    "columnas_distintas": [],
+    "valores_cambiados": {
+      "precip_mm": 0,
+      "evap_mm": 0,
+      "tmax_c": 0,
+      "tmin_c": 0,
+      "tmed_c": 0
+    },
+    "celdas_nan_a_valor": {
+      "tmax_c": 23459380,
+      "tmin_c": 23459380
+    },
+    "filas_que_cambian_de_bandera": 15
+  },
+  "cambios_de_bandera_fuera_del_csv": [],
+  "filas_csv_sin_calidad_2": [],
+  "filas_csv_que_ya_tenian_calidad_2": 0,
+  "validacion_esquema_valido": {
+    "climatologicas": true,
+    "hidrometricas": true
+  },
+  "composicion_calidad": {
+    "todas_las_filas": {
+      "0": {
+        "n": 55590246,
+        "pct": 99.999604
+      },
+      "2": {
+        "n": 220,
+        "pct": 0.000396
+      }
+    },
+    "por_variable_dias_con_valor": {
+      "precip_mm": {
+        "0": {
+          "n": 36188334,
+          "pct": 99.999411
+        },
+        "2": {
+          "n": 213,
+          "pct": 0.000589
+        }
+      },
+      "evap_mm": {
+        "0": {
+          "n": 17255856,
+          "pct": 99.999635
+        },
+        "2": {
+          "n": 63,
+          "pct": 0.000365
+        }
+      },
+      "tmax_c": {
+        "0": {
+          "n": 29230460,
+          "pct": 99.999453
+        },
+        "2": {
+          "n": 160,
+          "pct": 0.000547
+        }
+      },
+      "tmin_c": {
+        "0": {
+          "n": 25960053,
+          "pct": 99.999449
+        },
+        "2": {
+          "n": 143,
+          "pct": 0.000551
+        }
+      },
+      "tmed_c": {
+        "0": {
+          "n": 24057740,
+          "pct": 99.999451
+        },
+        "2": {
+          "n": 132,
+          "pct": 0.000549
+        }
+      }
+    }
+  },
+  "hidro": {
+    "filas_nueva": 10390144,
+    "filas_previa": 10390144,
+    "llaves_distintas": 0,
+    "columnas_distintas": [],
+    "valores_cambiados": {
+      "nivel_m": 0,
+      "gasto_medio_m3s": 0
+    },
+    "celdas_nan_a_valor": {},
+    "filas_que_cambian_de_bandera": 0
+  },
+  "criterio_cumplido": true
+}

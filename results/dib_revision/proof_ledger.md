@@ -347,3 +347,79 @@ cualquier cambio de imputación hasta la decisión del autor.
   recomendado de la bandera. Se añade la variante "sin outliers en predictores" (excluye
   emisiones cuya ventana t−30…t contiene `calidad == 2`). La variante congelada se conserva
   y se reporta; el artículo usa la enmendada y lo declara.
+
+## Paso 2 (congelado 2026-10-04, antes de ejecutar)
+
+### P2-T2 — Límites físicos en la serie climatológica (decisión del autor, opción A)
+
+- **Hecho observado:** `reportes/validacion_climatologicas.json` del dato v2026.10 falla en
+  13 valores: 1 `evap_mm < 0`, 9 `tmed_c` fuera de [−40, 55] y 3 `tmin_c` fuera de [−40, 50].
+- **Regla (congelada):** una fila estación-día con cualquier variable climatológica fuera de
+  su límite físico recibe `calidad = 2` y conserva el valor (se marca, no se borra), con la
+  misma lógica que el gasto. Límites = los del esquema vigente: `tmax_c` [−30, 60],
+  `tmin_c` [−40, 50], `tmed_c` [−40, 55], `evap_mm` ≥ 0 (`precip_mm` < 0 ya lo marca la
+  regla de outliers). La bandera es por fila; la variable que la causa queda registrada en
+  `clima_fuera_de_rango.csv`. Las reglas de rango del esquema aceptan un valor fuera de
+  límites solo si su fila tiene `calidad = 2`, igual que gasto y precipitación.
+- **Registro previo:** antes de reconstruir se listan los valores fuera de límites en
+  `clima_fuera_de_rango.csv` (estación, fecha, variable, valor, límite violado) y se archiva
+  la serie previa para comparar fila por fila.
+- **Criterio de éxito:** tras reconstruir, `validacion_climatologicas.json` con
+  `valido: true`; toda fila de `clima_fuera_de_rango.csv` tiene `calidad = 2`; ninguna otra
+  fila cambia de bandera y ningún valor cambia. **Rechazo:** cualquier otra diferencia.
+- **Verificación de no cambio:** 415 climatológicas seleccionadas, 55,590,466 filas,
+  6,532,136 precipitaciones con valor en 2010–2025 y los resultados de Fig7. Si alguna cifra
+  cambia, se actualiza en `numbers.json` y se informa al autor.
+
+### P2-T3 — Contornos de las cuencas piloto en Fig. 2 (revisor 4)
+
+- **Regla (congelada):** solo se dibuja una capa oficial y verificable de cuencas
+  hidrológicas de México (URL, licencia y fecha registradas en `conf/sources.yaml`). Cada
+  cuenca piloto (Cutzamala, Lerma–Santiago, Pánuco, Alta del Balsas) se asigna a polígonos
+  oficiales por nombre y clave oficiales, y la tabla queda en `pilot_basin_outlines.csv`.
+  Una correspondencia que no sea inequívoca se anota y no se dibuja; no se fuerza ni se
+  construye un contorno propio.
+- **Criterio:** cada contorno dibujado se explica con polígonos oficiales citados en la
+  tabla; los conteos de la leyenda de Fig. 2 no cambian. Si no existe capa oficial
+  verificable, el mapa queda como está y `report.md` documenta la búsqueda.
+
+### Enmienda P2-T2a (2026-10-04, antes de ejecutar; decisión del autor)
+
+- **Hecho observado al preparar T2:** los 2,659 CSV climatológicos del SIH están en UTF-8 y
+  `conagua.read_series_csv` los decodifica como Latin-1; los encabezados "Temperatura
+  Máxima/Mínima" quedan ilegibles para el mapeo y las columnas se descartan en 1,961
+  estaciones. Diagnóstico sobre los crudos: 29,230,620 valores de `tmax` y 25,960,196 de
+  `tmin` en los CSV frente a 5,771,240 y 2,500,816 en la serie v2026.10 previa. Precipitación,
+  temperatura media, evaporación y las series hidrométricas no se ven afectadas. Los catálogos
+  sí están en Latin-1 y se leen bien.
+- **Decisión:** las series por estación se decodifican como UTF-8 (respaldo Latin-1 si un
+  archivo no es UTF-8 válido). Se reconstruyen las dos series canónicas.
+- **Cambio al registro previo de P2-T2:** `clima_fuera_de_rango.csv` se calcula desde los CSV
+  crudos con el parser corregido (antes de reconstruir), porque la serie previa no contiene
+  la mayoría de `tmax`/`tmin`.
+- **Criterio de éxito (sustituye al de P2-T2):** misma llave estación-día y mismas filas;
+  `precip_mm`, `tmed_c`, `evap_mm`, `nivel_m` y `gasto_medio_m3s` idénticos; en `tmax_c` y
+  `tmin_c`, todo valor previo se conserva igual y solo cambian celdas de NaN a valor; la serie
+  hidrométrica queda idéntica en todas sus columnas; solo cambian de bandera las filas de
+  `clima_fuera_de_rango.csv`, todas a `calidad = 2`; `validacion_climatologicas.json` con
+  `valido: true`. **Rechazo:** cualquier otra diferencia.
+
+### Evidencia Paso 2 (2026-10-04)
+
+- **P2-T2a — `SUPPORTED`** (`dib_12_clima_physical_limits.py --despues`,
+  `e12_clima_limites.json`, `criterio_cumplido: true`). Serie climatológica: 55,590,466
+  filas antes y después, 0 llaves distintas, 0 valores previos cambiados; 23,459,380
+  celdas de `tmax_c` y 23,459,380 de `tmin_c` pasan de NaN a valor (totales 29,230,620 y
+  25,960,196, iguales a los CSV crudos). 24 valores fuera de límites en 15 estación-días
+  (7 `tmax_c` = −99999, 9 `tmed_c`, 7 `tmin_c`, 1 `evap_mm`); exactamente esas 15 filas
+  pasan de `calidad` 0 a 2. Serie hidrométrica idéntica (10,390,144 filas, 0 valores ni
+  banderas cambiados). Ambas validaciones de esquema con `valido: true`. La tabla de
+  features reconstruida es idéntica a la previa; `metrics.json` no cambia en ninguna cifra.
+- **P2-T3 — `SUPPORTED`** (`dib_14_pilot_basin_outlines.py`, `pilot_basin_outlines.csv`).
+  Capa oficial: CNA (1998) "Cuencas Hidrológicas" 1:250 000, CONABIO `cue250kgw`, sin
+  restricciones de uso. Cutzamala ↔ "Río Cutzamala" (inequívoca por nombre; se dibuja).
+  Lerma–Santiago y Pánuco ↔ regiones "Lerma-Santiago" (12 cuencas) y "Pánuco" (4 cuencas),
+  que coinciden con las regiones 12 y 26 ya dibujadas. Alta del Balsas: ninguna cuenca
+  oficial lleva ese nombre (su recuadro cae 60 % en Río Atoyac-A y 22 % en Río Grande de
+  Amacuzac); no se dibuja. Se descartó la capa de 757 cuencas CONAGUA 2020 de IDEFOR por
+  su licencia CC BY-NC-SA 2.5 MX. Leyenda de Fig. 2 sin cambios en los conteos.

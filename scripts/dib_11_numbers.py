@@ -41,6 +41,11 @@ def _clima_imputed_v2026_06() -> dict:
     return {"imputados": int(len(v)), "negativos": int(pc.sum(pc.less(v, 0)).as_py() or 0)}
 
 
+def _opt(p):
+    """JSON opcional (bloques del paso 2 que dependen de etapas posteriores)."""
+    return _j(p) if p.exists() else None
+
+
 def main() -> None:
     e1 = _j(R / "e1_counts_v2026_10.json")
     funnel = pd.read_csv(R / "counts_reconciliation_v2026_10.csv").set_index(["tipo", "etapa"])["n"]
@@ -65,6 +70,9 @@ def main() -> None:
     num = {
         "version": "v2026.10", "generado": date.today().isoformat(),
         "estaciones": {
+            "fuente": "results/dib_revision/counts_reconciliation_v2026_10.csv, e1_counts_v2026_10.json "
+                      "(dib_01); data/processed/estaciones_hidrorivers.csv, "
+                      "estaciones_extendidas_hidrometricas.csv; data/processed/reportes/metrics.json",
             "hidro_catalogo": int(funnel["hidrometricas", "catalogo_maestro"]),
             "hidro_candidatas": int(funnel["hidrometricas", "candidatas_region_12_18_26"]),
             "hidro_descargadas": int(funnel["hidrometricas", "archivo_descargado"]),
@@ -84,12 +92,15 @@ def main() -> None:
             "inventario_hidro_por_rh": met["fig4"]["inventario_por_rh"],
         },
         "descargas_faltantes": {
+            "fuente": "results/dib_revision/missing_downloads_v2026_06.csv (dib_01 --probe)",
             "hidro": int((miss["tipo"] == "hidrometricas").sum()),
             "clima": int((miss["tipo"] == "climatologicas").sum()),
             "motivo": miss["motivo"].value_counts().to_dict(),
             "fecha_consulta": miss["fecha_consulta"].dropna().unique().tolist(),
         },
         "observaciones": {
+            "fuente": "results/dib_revision/observation_counts_v2026_10.csv (dib_01); "
+                      "data/processed/reportes/metrics.json",
             "hidro_filas_registro_completo": int(h["rows_total"]),
             "hidro_con_valor": int(h["rows_with_value"]),
             "hidro_con_valor_2010_2025": int(h["with_value_window"]),
@@ -100,26 +111,72 @@ def main() -> None:
             "hidro_fechas": [met["dataset"]["hidrometricas"]["fecha_min"], met["dataset"]["hidrometricas"]["fecha_max"]],
             "clima_fechas": [met["dataset"]["climatologicas"]["fecha_min"], met["dataset"]["climatologicas"]["fecha_max"]],
         },
-        "cobertura_hidro": {k: met["fig4"][k] for k in ("cobertura_media_pct", "cobertura_mediana_pct", "estaciones_ge_60pct")},
-        "calidad_hidro": {"dias_con_valor": comp("hidrometricas", "filas_con_valor"),
+        "cobertura_hidro": {"fuente": "data/processed/reportes/metrics.json (fig4)",
+                            **{k: met["fig4"][k] for k in ("cobertura_media_pct", "cobertura_mediana_pct", "estaciones_ge_60pct")}},
+        "calidad_hidro": {"fuente": "results/dib_revision/calidad_composition_v2026_10.csv (dib_01)",
+                          "dias_con_valor": comp("hidrometricas", "filas_con_valor"),
                           "dias_con_valor_2010_2025": comp("hidrometricas", "filas_con_valor_2010_2025")},
         "imputacion_E3": {
+            "fuente": "results/dib_revision/e3_imputation.json (dib_03); parquet v2026.06 archivado",
             "huecos_por_L": e3["huecos_por_L"], "global_L1_6": e3["global_L1_6"]["todos"],
             "ascensos_L1_6": e3["global_L1_6"]["ascensos"], "regla_a": e3["regla_a"], "regla_b": e3["regla_b"],
             "dato_v2026_06": e3["diagnostico_dato_publicado"],
             "clima_precip_imputada_v2026_06": _clima_imputed_v2026_06(),
         },
-        "outliers_E4": e4,
-        "subcuencas_v2026_06_E5": {"validacion": e5, "diagnostico": e5b},
-        "parametros_delineacion_v2026_06_E7": dparams,
-        "dem_15_vs_30_E6": e6,
-        "baseline_E9": {"estaciones": e9["variantes"], "tabla": bl, "segundos": e9["segundos"]},
-        "correlacion_precip_gasto_E8": met["fig7"],
-        "validacion_esquema": val,
-        "dois": {"dataset_concepto": "10.5281/zenodo.21231600", "dataset_v2026_06": "10.5281/zenodo.21231601",
+        "outliers_E4": {"fuente": "results/dib_revision/e4_outliers.json (dib_04)", **e4},
+        "subcuencas_v2026_06_E5": {"fuente": "results/dib_revision/e5_validation.json, e5b_snap_diagnosis.json",
+                                   "validacion": e5, "diagnostico": e5b},
+        "parametros_delineacion_v2026_06_E7": {"fuente": "results/dib_revision/delineation_params.json", **dparams},
+        "dem_15_vs_30_E6": {"fuente": "results/dib_revision/e6_dem.json (dib_06)", **e6},
+        "baseline_E9": {"fuente": "results/dib_revision/e9_baseline.json, baseline_excluidas.csv (dib_09)",
+                        "estaciones": e9["variantes"], "tabla": bl, "segundos": e9["segundos"]},
+        "correlacion_precip_gasto_E8": {"fuente": "data/processed/reportes/metrics.json (fig7)", **met["fig7"]},
+        "validacion_esquema": {"fuente": "data/processed/reportes/validacion_<tipo>.json (etapa 04)", **val},
+        "dois": {"fuente": "Zenodo (registro del dataset); CITATION.cff",
+                 "dataset_concepto": "10.5281/zenodo.21231600", "dataset_v2026_06": "10.5281/zenodo.21231601",
                  "dataset_v2026_10": None, "software_github_zenodo": None,
                  "nota": "Los DOI de v2026.10 y del software los asigna Zenodo al publicar."},
     }
+    # ---- Paso 2 (2026-10-04): T1 cifras faltantes, T2 límites físicos del clima, T3, T4, T6 ----
+    p2 = _j(R / "e13_paso2_t1.json")
+    for k in ("tabla3_v2026_10", "hidrorivers_sin_vinculo", "manifest_raw", "duplicados_v2026_06",
+              "feature_table_v2026_10"):
+        num[k] = p2[k]
+    num["imputacion_E3"]["curva_por_L"] = p2["curva_por_L"]
+    num["baseline_E9"]["excluidas"] = p2["baseline_excluidas"]
+    e12 = _opt(R / "e12_clima_limites.json")
+    if e12:
+        comp_cli = e12["composicion_calidad"]
+        num["calidad_clima"] = {
+            "fuente": e12["fuente"], "limites_fisicos": e12["limites"],
+            "valores_fuera_de_limites": e12["valores_fuera_de_limites"],
+            "valores_fuera_de_limites_por_variable": e12["valores_fuera_de_limites_por_variable"],
+            "estacion_dias_marcados_por_limites": e12["filas_fuera_de_limites"],
+            "criterio_P2_T2a_cumplido": e12["criterio_cumplido"],
+            "composicion": comp_cli,
+        }
+        dias = comp_cli["por_variable_dias_con_valor"]
+        num["temperaturas_lectura_utf8"] = {
+            "fuente": e12["fuente"],
+            "celdas_recuperadas": e12["clima"]["celdas_nan_a_valor"],
+            "dias_con_valor": {c: sum(v["n"] for v in dias[c].values()) for c in ("tmax_c", "tmin_c", "tmed_c")},
+        }
+    pb = pd.read_csv(R / "pilot_basin_outlines.csv")
+    num["contornos_cuencas_piloto"] = {
+        "fuente": "results/dib_revision/pilot_basin_outlines.csv (dib_14); capa CNA (1998) cue250kgw",
+        "por_cuenca_piloto": {k: {"correspondencia": g["correspondencia"].iloc[0],
+                                  "se_dibuja": bool(g["se_dibuja"].iloc[0]),
+                                  "cuencas_oficiales": g["cuenca_oficial"].tolist()}
+                              for k, g in pb.groupby("cuenca_piloto", sort=False)},
+    }
+    fe = R / "figuras_envio.csv"
+    if fe.exists():
+        num["figuras_envio"] = {"fuente": "results/dib_revision/figuras_envio.csv (dib_15)",
+                                "figuras": pd.read_csv(fe).to_dict("records")}
+    cc = _opt(R / "clean_copy_check.json")
+    if cc:
+        num["clean_copy_check"] = cc
+
     g = e3["global_L1_6"]["todos"]
     num["correcciones_articulo"] = [
         {"donde": "Abstract, Value of the data, Data description", "dice": "547 / 2,659 stations; 10,594,758 and 55,590,466 daily observations over 2010–2025",
@@ -148,7 +205,26 @@ def main() -> None:
         {"donde": "Fig. 8 → Fig. 7", "dice": "Lagged Pearson correlation between the daily national means",
          "debe_decir": "Pearson and Spearman correlation of deseasonalized anomalies, aggregate of hydrological regions 12, 18 and 26 "
                        f"(peak at {met['fig7']['lag_max_pearson']} d, r = {met['fig7']['pearson_max']})"},
+        {"donde": "Table 1 (directory structure), raw/sih/ and raw/sih_series/",
+         "dice": "raw/sih/: CSV (UTF-8); raw/sih_series/<type>/: CSV (Latin-1)",
+         "debe_decir": "raw/sih/ catalogs: CSV (Latin-1); raw/sih_series/<type>/ per-station series: CSV (UTF-8)"},
+        {"donde": "Table 3 (stations and sub-basins per pilot basin)",
+         "dice": "stations inside each bounding box and delineated sub-basin polygons",
+         "debe_decir": "selected stations assigned to one operational unit (rule in numbers.json tabla3_v2026_10), "
+                       "linked to HydroRIVERS, nearest reach ≠ largest-area reach, DEM resolution: "
+                       + "; ".join(f"{r['unidad']} {r['estaciones_asignadas']}/{r['vinculadas_hydrorivers']}/"
+                                   f"{r['tramo_cercano_distinto']}/{r['cem_resolucion_m']} m"
+                                   for r in num["tabla3_v2026_10"]["por_unidad"])
+                       + f" (total {num['tabla3_v2026_10']['total_asignadas']})"},
     ]
+    if "calidad_clima" in num:
+        cc_ = num["calidad_clima"]
+        num["correcciones_articulo"].append(
+            {"donde": "Table 2 (series_climatologicas.parquet) and Methods (quality flag)",
+             "dice": "tmax_c, tmin_c, tmed_c — within physical bounds; calidad 2 = streamflow/precipitation outlier",
+             "debe_decir": f"values outside physical limits are flagged calidad = 2 and retained "
+                           f"({cc_['valores_fuera_de_limites']} values in {cc_['estacion_dias_marcados_por_limites']} "
+                           "station-days); the flag also covers climatological physical limits"})
     (R / "numbers.json").write_text(json.dumps(num, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     print("numbers.json:", len(num), "secciones;", len(num["correcciones_articulo"]), "correcciones")
 

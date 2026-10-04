@@ -1,7 +1,8 @@
 {
   "version": "v2026.10",
-  "generado": "2026-09-26",
+  "generado": "2026-10-04",
   "estaciones": {
+    "fuente": "results/dib_revision/counts_reconciliation_v2026_10.csv, e1_counts_v2026_10.json (dib_01); data/processed/estaciones_hidrorivers.csv, estaciones_extendidas_hidrometricas.csv; data/processed/reportes/metrics.json",
     "hidro_catalogo": 1189,
     "hidro_candidatas": 550,
     "hidro_descargadas": 547,
@@ -36,6 +37,7 @@
     }
   },
   "descargas_faltantes": {
+    "fuente": "results/dib_revision/missing_downloads_v2026_06.csv (dib_01 --probe)",
     "hidro": 3,
     "clima": 72,
     "motivo": {
@@ -46,6 +48,7 @@
     ]
   },
   "observaciones": {
+    "fuente": "results/dib_revision/observation_counts_v2026_10.csv (dib_01); data/processed/reportes/metrics.json",
     "hidro_filas_registro_completo": 10390144,
     "hidro_con_valor": 5831035,
     "hidro_con_valor_2010_2025": 815348,
@@ -63,11 +66,13 @@
     ]
   },
   "cobertura_hidro": {
+    "fuente": "data/processed/reportes/metrics.json (fig4)",
     "cobertura_media_pct": 24.11,
     "cobertura_mediana_pct": 13.16,
     "estaciones_ge_60pct": 101
   },
   "calidad_hidro": {
+    "fuente": "results/dib_revision/calidad_composition_v2026_10.csv (dib_01)",
     "dias_con_valor": {
       "0": {
         "n": 5748858,
@@ -98,6 +103,7 @@
     }
   },
   "imputacion_E3": {
+    "fuente": "results/dib_revision/e3_imputation.json (dib_03); parquet v2026.06 archivado",
     "huecos_por_L": {
       "1": 2000,
       "2": 2000,
@@ -217,9 +223,255 @@
     "clima_precip_imputada_v2026_06": {
       "imputados": 556208,
       "negativos": 228533
+    },
+    "curva_por_L": {
+      "fuente": "results/dib_revision/imputation_masking_summary.csv (subconjunto todos)",
+      "filas": [
+        {
+          "metodo": "lineal",
+          "L": 1,
+          "nRMSE": 0.6286,
+          "nMAE": 0.1524,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 2,
+          "nRMSE": 0.6065,
+          "nMAE": 0.1618,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 3,
+          "nRMSE": 0.5662,
+          "nMAE": 0.1644,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 4,
+          "nRMSE": 0.6122,
+          "nMAE": 0.1677,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 5,
+          "nRMSE": 0.6971,
+          "nMAE": 0.1964,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 6,
+          "nRMSE": 0.9389,
+          "nMAE": 0.2175,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 7,
+          "nRMSE": 0.923,
+          "nMAE": 0.2241,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 8,
+          "nRMSE": 0.749,
+          "nMAE": 0.216,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 9,
+          "nRMSE": 0.7115,
+          "nMAE": 0.2267,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "lineal",
+          "L": 10,
+          "nRMSE": 0.8496,
+          "nMAE": 0.2543,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 1,
+          "nRMSE": 0.6402,
+          "nMAE": 0.153,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 2,
+          "nRMSE": 0.615,
+          "nMAE": 0.1604,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 3,
+          "nRMSE": 0.5719,
+          "nMAE": 0.1622,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 4,
+          "nRMSE": 0.6222,
+          "nMAE": 0.1661,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 5,
+          "nRMSE": 0.7092,
+          "nMAE": 0.195,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 6,
+          "nRMSE": 0.9539,
+          "nMAE": 0.2141,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 7,
+          "nRMSE": 0.934,
+          "nMAE": 0.2217,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 8,
+          "nRMSE": 0.7567,
+          "nMAE": 0.2141,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 9,
+          "nRMSE": 0.7313,
+          "nMAE": 0.2247,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "pchip",
+          "L": 10,
+          "nRMSE": 0.8691,
+          "nMAE": 0.2551,
+          "tasa_sobreoscilacion": 0.0,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 1,
+          "nRMSE": 0.9381,
+          "nMAE": 0.2124,
+          "tasa_sobreoscilacion": 0.42,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 2,
+          "nRMSE": 0.9107,
+          "nMAE": 0.2481,
+          "tasa_sobreoscilacion": 0.467,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 3,
+          "nRMSE": 2.8283,
+          "nMAE": 0.3238,
+          "tasa_sobreoscilacion": 0.4923,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 4,
+          "nRMSE": 1.1486,
+          "nMAE": 0.3056,
+          "tasa_sobreoscilacion": 0.5295,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 5,
+          "nRMSE": 1.181,
+          "nMAE": 0.352,
+          "tasa_sobreoscilacion": 0.5437,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 6,
+          "nRMSE": 2.9906,
+          "nMAE": 0.4718,
+          "tasa_sobreoscilacion": 0.5588,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 7,
+          "nRMSE": 2.8,
+          "nMAE": 0.5344,
+          "tasa_sobreoscilacion": 0.5922,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 8,
+          "nRMSE": 1.7481,
+          "nMAE": 0.495,
+          "tasa_sobreoscilacion": 0.6115,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 9,
+          "nRMSE": 1.928,
+          "nMAE": 0.5447,
+          "tasa_sobreoscilacion": 0.5899,
+          "n_huecos": 2000
+        },
+        {
+          "metodo": "spline_pipeline",
+          "L": 10,
+          "nRMSE": 2.2049,
+          "nMAE": 0.6419,
+          "tasa_sobreoscilacion": 0.6116,
+          "n_huecos": 2000
+        }
+      ]
     }
   },
   "outliers_E4": {
+    "fuente": "results/dib_revision/e4_outliers.json (dib_04)",
     "registros_calidad_2": 507,
     "con_valor_nulo": 0,
     "negativos": 243,
@@ -306,6 +558,7 @@
     ]
   },
   "subcuencas_v2026_06_E5": {
+    "fuente": "results/dib_revision/e5_validation.json, e5b_snap_diagnosis.json",
     "validacion": {
       "subcuencas": 94,
       "con_referencia": 88,
@@ -952,6 +1205,7 @@
     }
   },
   "parametros_delineacion_v2026_06_E7": {
+    "fuente": "results/dib_revision/delineation_params.json",
     "nota": "Parametros con que se delinearon los poligonos de subcuencas de v2026.06 (retirados en v2026.10). El CEM esta en EPSG:6365 (geografico): el umbral de extract_streams va en celdas y la distancia de jenson_snap_pour_points en grados; los equivalentes fisicos se calculan a la latitud media de cada unidad.",
     "herramienta": "WhiteboxTools: fill_depressions, d8_pointer, d8_flow_accumulation(cells), extract_streams, jenson_snap_pour_points, watershed",
     "stream_threshold_celdas": 1000,
@@ -1026,6 +1280,7 @@
     }
   },
   "dem_15_vs_30_E6": {
+    "fuente": "results/dib_revision/e6_dem.json (dib_06)",
     "unidad": "alta_del_balsas",
     "celda_15m_aprox_m": [
       14.65,
@@ -1053,6 +1308,7 @@
     "atenuacion_pendiente_p90_pct": 3.4
   },
   "baseline_E9": {
+    "fuente": "results/dib_revision/e9_baseline.json, baseline_excluidas.csv (dib_09)",
     "estaciones": {
       "congelada": {
         "estaciones_evaluadas": 97,
@@ -1103,9 +1359,44 @@
         "KGE_q75": 0.815
       }
     },
-    "segundos": 2.8
+    "segundos": 2.8,
+    "excluidas": {
+      "fuente": "results/dib_revision/baseline_excluidas.csv",
+      "variante": "sin_outliers_en_predictores",
+      "estaciones": [
+        {
+          "clave": "CAPNR",
+          "n_train": 3255,
+          "n_val": 647,
+          "n_test": 28,
+          "motivo": "pocos datos"
+        },
+        {
+          "clave": "GDLMX",
+          "n_train": 3122,
+          "n_val": 728,
+          "n_test": 101,
+          "motivo": "sin varianza en test"
+        },
+        {
+          "clave": "PUJSL",
+          "n_train": 2878,
+          "n_val": 0,
+          "n_test": 353,
+          "motivo": "sin varianza en test"
+        },
+        {
+          "clave": "SRSJL",
+          "n_train": 2683,
+          "n_val": 522,
+          "n_test": 57,
+          "motivo": "pocos datos"
+        }
+      ]
+    }
   },
   "correlacion_precip_gasto_E8": {
+    "fuente": "data/processed/reportes/metrics.json (fig7)",
     "agregado": "regiones hidrologicas 12, 18 y 26",
     "ventana": [
       "2010-01-01",
@@ -1121,39 +1412,515 @@
     "pearson_max_crudo": 0.699
   },
   "validacion_esquema": {
+    "fuente": "data/processed/reportes/validacion_<tipo>.json (etapa 04)",
     "hidrometricas": {
       "valido": true,
       "filas": 10390144,
       "fallas": []
     },
     "climatologicas": {
-      "valido": false,
+      "valido": true,
       "filas": 55590466,
-      "fallas": [
-        {
-          "columna": "evap_mm",
-          "regla": "greater_than_or_equal_to(0)",
-          "n_filas": 1
-        },
-        {
-          "columna": "tmed_c",
-          "regla": "in_range(-40, 55)",
-          "n_filas": 9
-        },
-        {
-          "columna": "tmin_c",
-          "regla": "in_range(-40, 50)",
-          "n_filas": 3
-        }
-      ]
+      "fallas": []
     }
   },
   "dois": {
+    "fuente": "Zenodo (registro del dataset); CITATION.cff",
     "dataset_concepto": "10.5281/zenodo.21231600",
     "dataset_v2026_06": "10.5281/zenodo.21231601",
     "dataset_v2026_10": null,
     "software_github_zenodo": null,
     "nota": "Los DOI de v2026.10 y del software los asigna Zenodo al publicar."
+  },
+  "tabla3_v2026_10": {
+    "fuente": "results/dib_revision/tabla3_v2026_10.csv (data/processed/estaciones_hidrorivers.csv, conf/cuencas_piloto.yaml)",
+    "regla_asignacion": "Cada estación seleccionada se asigna a una sola unidad: entre los recuadros (bbox) de conf/cuencas_piloto.yaml que contienen su coordenada de catálogo, se prefieren los de la misma región hidrológica que la estación según el catálogo SIH, y entre ellos el primero en el orden del archivo; si ninguno es de su región, el primero que la contiene (scripts/06_link_hydrorivers.py, función _unit_of).",
+    "total_asignadas": 95,
+    "por_unidad": [
+      {
+        "unidad": "Cutzamala",
+        "region_hidrologica": 18,
+        "estaciones_asignadas": 1,
+        "vinculadas_hydrorivers": 1,
+        "tramo_cercano_distinto": 0,
+        "cem_resolucion_m": 30
+      },
+      {
+        "unidad": "Lerma Alto",
+        "region_hidrologica": 12,
+        "estaciones_asignadas": 8,
+        "vinculadas_hydrorivers": 8,
+        "tramo_cercano_distinto": 3,
+        "cem_resolucion_m": 30
+      },
+      {
+        "unidad": "Bajio",
+        "region_hidrologica": 12,
+        "estaciones_asignadas": 26,
+        "vinculadas_hydrorivers": 23,
+        "tramo_cercano_distinto": 2,
+        "cem_resolucion_m": 30
+      },
+      {
+        "unidad": "Santiago",
+        "region_hidrologica": 12,
+        "estaciones_asignadas": 9,
+        "vinculadas_hydrorivers": 9,
+        "tramo_cercano_distinto": 1,
+        "cem_resolucion_m": 30
+      },
+      {
+        "unidad": "Panuco",
+        "region_hidrologica": 26,
+        "estaciones_asignadas": 39,
+        "vinculadas_hydrorivers": 38,
+        "tramo_cercano_distinto": 5,
+        "cem_resolucion_m": 30
+      },
+      {
+        "unidad": "Alta del Balsas",
+        "region_hidrologica": 18,
+        "estaciones_asignadas": 12,
+        "vinculadas_hydrorivers": 11,
+        "tramo_cercano_distinto": 5,
+        "cem_resolucion_m": 15
+      }
+    ]
+  },
+  "hidrorivers_sin_vinculo": {
+    "fuente": "results/dib_revision/hidrorivers_sin_vinculo.csv",
+    "n": 8,
+    "seleccionadas": 101,
+    "vinculadas": 93,
+    "estaciones": [
+      {
+        "clave": "BEGGJ",
+        "unidad_piloto": "Bajio",
+        "fuera_de_toda_unidad": false,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°"
+      },
+      {
+        "clave": "CEYGJ",
+        "unidad_piloto": "Bajio",
+        "fuera_de_toda_unidad": false,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°"
+      },
+      {
+        "clave": "CXTJL",
+        "unidad_piloto": "Bajio",
+        "fuera_de_toda_unidad": false,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°"
+      },
+      {
+        "clave": "CHAMC",
+        "unidad_piloto": NaN,
+        "fuera_de_toda_unidad": true,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°; además fuera de toda unidad"
+      },
+      {
+        "clave": "CMNMC",
+        "unidad_piloto": NaN,
+        "fuera_de_toda_unidad": true,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°; además fuera de toda unidad"
+      },
+      {
+        "clave": "LPSMC",
+        "unidad_piloto": NaN,
+        "fuera_de_toda_unidad": true,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°; además fuera de toda unidad"
+      },
+      {
+        "clave": "CRDMR",
+        "unidad_piloto": "Alta del Balsas",
+        "fuera_de_toda_unidad": false,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°"
+      },
+      {
+        "clave": "GANSL",
+        "unidad_piloto": "Panuco",
+        "fuera_de_toda_unidad": false,
+        "motivo": "sin tramo HydroRIVERS a ≤ 0.01°"
+      }
+    ]
+  },
+  "manifest_raw": {
+    "fuente": "data/raw/_manifest.json",
+    "entradas": 3215,
+    "archivos_de_datos": 3214,
+    "por_carpeta": {
+      ".gitkeep": 1,
+      "inegi": 6,
+      "sih": 2,
+      "sih_series": 3206
+    },
+    "con_fecha_de_descarga": 49,
+    "solo_fecha_de_modificacion": 3165,
+    "con_url": 3208
+  },
+  "duplicados_v2026_06": {
+    "fuente": "data/interim/dib_revision/v2026.06_processed y data/interim/dib_revision/stale_fragments (parquets del release v2026.06 archivados durante la revisión)",
+    "hidro_filas_publicadas": 10594758,
+    "hidro_fragmentos_obsoletos_filas": 204614,
+    "hidro_estacion_dias_duplicados": 204614,
+    "hidro_estaciones_con_duplicados": 12,
+    "hidro_estaciones_con_duplicados_lista": [
+      "ACSGJ",
+      "AMCGJ",
+      "ANSGJ",
+      "BEGGJ",
+      "BRAGJ",
+      "CEYGJ",
+      "CYUGJ",
+      "ECHGJ",
+      "LADGJ",
+      "PDLGJ",
+      "SLCGJ",
+      "TEMGJ"
+    ],
+    "clima_filas": 55590466,
+    "clima_filas_fuente_vacia": 3337622
+  },
+  "feature_table_v2026_10": {
+    "fuente": "data/features/feature_table.parquet; scripts/07_build_features.py; src/hidroxai_mx/features",
+    "filas": 5831035,
+    "estaciones": 479,
+    "estaciones_con_precip_idw": 101,
+    "columnas": [
+      {
+        "columna": "fecha",
+        "unidad": "día (YYYY-MM-DD)"
+      },
+      {
+        "columna": "nivel_m",
+        "unidad": "m"
+      },
+      {
+        "columna": "gasto_medio_m3s",
+        "unidad": "m³/s"
+      },
+      {
+        "columna": "clave_estacion",
+        "unidad": "clave SIH"
+      },
+      {
+        "columna": "fuente",
+        "unidad": "texto (SIH)"
+      },
+      {
+        "columna": "calidad",
+        "unidad": "0/1/2 (bandera del gasto)"
+      },
+      {
+        "columna": "anio",
+        "unidad": "año"
+      },
+      {
+        "columna": "precip_idw_mm",
+        "unidad": "mm/día"
+      },
+      {
+        "columna": "gasto_medio_m3s_lag1",
+        "unidad": "m³/s"
+      },
+      {
+        "columna": "gasto_medio_m3s_lag3",
+        "unidad": "m³/s"
+      },
+      {
+        "columna": "gasto_medio_m3s_lag7",
+        "unidad": "m³/s"
+      },
+      {
+        "columna": "gasto_medio_m3s_lag14",
+        "unidad": "m³/s"
+      },
+      {
+        "columna": "gasto_medio_m3s_lag30",
+        "unidad": "m³/s"
+      },
+      {
+        "columna": "gasto_medio_m3s_ma7",
+        "unidad": "m³/s"
+      },
+      {
+        "columna": "gasto_medio_m3s_ma30",
+        "unidad": "m³/s"
+      }
+    ],
+    "filas_incluidas": "días con valor de gasto_medio_m3s (se descartan filas sin objetivo)",
+    "lags_dias": [
+      1,
+      3,
+      7,
+      14,
+      30
+    ],
+    "medias_moviles": [
+      {
+        "ventana_dias": 7,
+        "incluye_dia_t": true,
+        "min_periods": 3
+      },
+      {
+        "ventana_dias": 30,
+        "incluye_dia_t": true,
+        "min_periods": 15
+      }
+    ],
+    "precip_idw_mm": {
+      "vecinos": "estaciones climatológicas seleccionadas más cercanas por distancia haversine (columna vecinos_clima de estaciones_seleccionadas_hidrometricas.csv, etapa 05 --refine)",
+      "k_por_defecto_05": 3,
+      "k_observado": {
+        "3": 101
+      },
+      "potencia_idw": 2,
+      "faltantes": "los pesos se renormalizan cada día entre los vecinos con dato; NaN si ningún vecino tiene dato",
+      "valores_de_vecinos": "precip_mm tal como está en la serie climatológica (no se filtra calidad)",
+      "solo_estaciones_seleccionadas": true,
+      "codigo": "scripts/07_build_features.py; hidroxai_mx.features.idw_to_station"
+    }
+  },
+  "calidad_clima": {
+    "fuente": "scripts/dib_12_clima_physical_limits.py --despues; results/dib_revision/clima_fuera_de_rango.csv; data/processed/series_climatologicas.parquet",
+    "limites_fisicos": {
+      "tmax_c": [
+        -30,
+        60
+      ],
+      "tmin_c": [
+        -40,
+        50
+      ],
+      "tmed_c": [
+        -40,
+        55
+      ],
+      "evap_mm": [
+        0,
+        null
+      ]
+    },
+    "valores_fuera_de_limites": 24,
+    "valores_fuera_de_limites_por_variable": {
+      "tmed_c": 9,
+      "tmin_c": 7,
+      "tmax_c": 7,
+      "evap_mm": 1
+    },
+    "estacion_dias_marcados_por_limites": 15,
+    "criterio_P2_T2a_cumplido": true,
+    "composicion": {
+      "todas_las_filas": {
+        "0": {
+          "n": 55590246,
+          "pct": 99.999604
+        },
+        "2": {
+          "n": 220,
+          "pct": 0.000396
+        }
+      },
+      "por_variable_dias_con_valor": {
+        "precip_mm": {
+          "0": {
+            "n": 36188334,
+            "pct": 99.999411
+          },
+          "2": {
+            "n": 213,
+            "pct": 0.000589
+          }
+        },
+        "evap_mm": {
+          "0": {
+            "n": 17255856,
+            "pct": 99.999635
+          },
+          "2": {
+            "n": 63,
+            "pct": 0.000365
+          }
+        },
+        "tmax_c": {
+          "0": {
+            "n": 29230460,
+            "pct": 99.999453
+          },
+          "2": {
+            "n": 160,
+            "pct": 0.000547
+          }
+        },
+        "tmin_c": {
+          "0": {
+            "n": 25960053,
+            "pct": 99.999449
+          },
+          "2": {
+            "n": 143,
+            "pct": 0.000551
+          }
+        },
+        "tmed_c": {
+          "0": {
+            "n": 24057740,
+            "pct": 99.999451
+          },
+          "2": {
+            "n": 132,
+            "pct": 0.000549
+          }
+        }
+      }
+    }
+  },
+  "temperaturas_lectura_utf8": {
+    "fuente": "scripts/dib_12_clima_physical_limits.py --despues; results/dib_revision/clima_fuera_de_rango.csv; data/processed/series_climatologicas.parquet",
+    "celdas_recuperadas": {
+      "tmax_c": 23459380,
+      "tmin_c": 23459380
+    },
+    "dias_con_valor": {
+      "tmax_c": 29230620,
+      "tmin_c": 25960196,
+      "tmed_c": 24057872
+    }
+  },
+  "contornos_cuencas_piloto": {
+    "fuente": "results/dib_revision/pilot_basin_outlines.csv (dib_14); capa CNA (1998) cue250kgw",
+    "por_cuenca_piloto": {
+      "Cutzamala": {
+        "correspondencia": "inequívoca por nombre oficial de cuenca",
+        "se_dibuja": true,
+        "cuencas_oficiales": [
+          "Río Cutzamala"
+        ]
+      },
+      "Lerma–Santiago": {
+        "correspondencia": "inequívoca por nombre oficial de región",
+        "se_dibuja": false,
+        "cuencas_oficiales": [
+          "Río Verde Grande",
+          "Río Lerma-Toluca",
+          "Lago Chapala",
+          "Río Lerma-Chapala",
+          "Río Juchipila",
+          "Río Bolaños",
+          "Río Santiago Guadalajara",
+          "Río Lerma-Salamanca",
+          "Río Huaynamota",
+          "Río Laja",
+          "Lago de Patzcuaro-Cuitzeo y Lago de Yuriria",
+          "Santiago-Aguamilpa"
+        ]
+      },
+      "Pánuco": {
+        "correspondencia": "inequívoca por nombre oficial de región",
+        "se_dibuja": false,
+        "cuencas_oficiales": [
+          "Río Moctezuma",
+          "Río Tamuín",
+          "Río Pánuco",
+          "Río Tamesí"
+        ]
+      },
+      "Alta del Balsas": {
+        "correspondencia": "no inequívoca",
+        "se_dibuja": false,
+        "cuencas_oficiales": [
+          "Río Atoyac-A",
+          "Río Grande de Amacuzac",
+          "Río Balsas-Mezcala",
+          "Río Tlapaneco"
+        ]
+      }
+    }
+  },
+  "figuras_envio": {
+    "fuente": "results/dib_revision/figuras_envio.csv (dib_15)",
+    "figuras": [
+      {
+        "archivo": "Figure_1.tif",
+        "origen": "data/processed/reportes/Fig1_workflow.tif",
+        "ancho_px": 2733,
+        "alto_px": 1593,
+        "dpi": 300,
+        "ancho_mm_a_300dpi": 231.4,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_2.tif",
+        "origen": "data/processed/reportes/Fig2_station_map.tif",
+        "ancho_px": 3995,
+        "alto_px": 3402,
+        "dpi": 600,
+        "ancho_mm_a_300dpi": 338.2,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_3.tif",
+        "origen": "data/processed/reportes/Fig3_quality_flags.tif",
+        "ancho_px": 2764,
+        "alto_px": 1916,
+        "dpi": 600,
+        "ancho_mm_a_300dpi": 234.0,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_4.tif",
+        "origen": "data/processed/reportes/Fig4_inventory_coverage.tif",
+        "ancho_px": 6539,
+        "alto_px": 2098,
+        "dpi": 600,
+        "ancho_mm_a_300dpi": 553.6,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_5.tif",
+        "origen": "data/processed/reportes/Fig5_streamflow_by_region.tif",
+        "ancho_px": 4423,
+        "alto_px": 2218,
+        "dpi": 600,
+        "ancho_mm_a_300dpi": 374.5,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_6.tif",
+        "origen": "data/processed/reportes/Fig6_climatology_annual.tif",
+        "ancho_px": 6539,
+        "alto_px": 2098,
+        "dpi": 600,
+        "ancho_mm_a_300dpi": 553.6,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_7.tif",
+        "origen": "data/processed/reportes/Fig7_precip_streamflow.tif",
+        "ancho_px": 3902,
+        "alto_px": 2033,
+        "dpi": 600,
+        "ancho_mm_a_300dpi": 330.4,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_S1.tif",
+        "origen": "results/dib_revision/figs/figS_imputation_error_vs_L.tif",
+        "ancho_px": 3000,
+        "alto_px": 960,
+        "dpi": 300,
+        "ancho_mm_a_300dpi": 254.0,
+        "apta_pagina_completa": true
+      },
+      {
+        "archivo": "Figure_S2.tif",
+        "origen": "results/dib_revision/figs/figS_outliers_examples.tif",
+        "ancho_px": 2400,
+        "alto_px": 2160,
+        "dpi": 300,
+        "ancho_mm_a_300dpi": 203.2,
+        "apta_pagina_completa": true
+      }
+    ]
   },
   "correcciones_articulo": [
     {
@@ -1210,6 +1977,21 @@
       "donde": "Fig. 8 → Fig. 7",
       "dice": "Lagged Pearson correlation between the daily national means",
       "debe_decir": "Pearson and Spearman correlation of deseasonalized anomalies, aggregate of hydrological regions 12, 18 and 26 (peak at 2 d, r = 0.539)"
+    },
+    {
+      "donde": "Table 1 (directory structure), raw/sih/ and raw/sih_series/",
+      "dice": "raw/sih/: CSV (UTF-8); raw/sih_series/<type>/: CSV (Latin-1)",
+      "debe_decir": "raw/sih/ catalogs: CSV (Latin-1); raw/sih_series/<type>/ per-station series: CSV (UTF-8)"
+    },
+    {
+      "donde": "Table 3 (stations and sub-basins per pilot basin)",
+      "dice": "stations inside each bounding box and delineated sub-basin polygons",
+      "debe_decir": "selected stations assigned to one operational unit (rule in numbers.json tabla3_v2026_10), linked to HydroRIVERS, nearest reach ≠ largest-area reach, DEM resolution: Cutzamala 1/1/0/30 m; Lerma Alto 8/8/3/30 m; Bajio 26/23/2/30 m; Santiago 9/9/1/30 m; Panuco 39/38/5/30 m; Alta del Balsas 12/11/5/15 m (total 95)"
+    },
+    {
+      "donde": "Table 2 (series_climatologicas.parquet) and Methods (quality flag)",
+      "dice": "tmax_c, tmin_c, tmed_c — within physical bounds; calidad 2 = streamflow/precipitation outlier",
+      "debe_decir": "values outside physical limits are flagged calidad = 2 and retained (24 values in 15 station-days); the flag also covers climatological physical limits"
     }
   ]
 }

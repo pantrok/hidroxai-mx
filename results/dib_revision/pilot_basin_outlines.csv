@@ -1,0 +1,22 @@
+cuenca_piloto,id_rh,region,idcuenca,cuenca_oficial,area_km2,correspondencia,se_dibuja,nota
+Cutzamala,18,Balsas,71,Río Cutzamala,13663.2,inequívoca por nombre oficial de cuenca,True,
+Lerma–Santiago,12,Lerma-Santiago,41,Río Verde Grande,20607.2,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,42,Río Lerma-Toluca,7963.2,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,43,Lago Chapala,6615.2,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,44,Río Lerma-Chapala,9424.0,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,45,Río Juchipila,8352.2,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,46,Río Bolaños,14705.0,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,47,Río Santiago Guadalajara,10126.1,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,48,Río Lerma-Salamanca,12396.0,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,49,Río Huaynamota,17588.3,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,50,Río Laja,11978.8,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,51,Lago de Patzcuaro-Cuitzeo y Lago de Yuriria,6059.5,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Lerma–Santiago,12,Lerma-Santiago,52,Santiago-Aguamilpa,6902.7,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 12, cuyo contorno ya se dibuja en Fig. 2"
+Pánuco,26,Pánuco,110,Río Moctezuma,42581.5,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 26, cuyo contorno ya se dibuja en Fig. 2"
+Pánuco,26,Pánuco,111,Río Tamuín,30599.0,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 26, cuyo contorno ya se dibuja en Fig. 2"
+Pánuco,26,Pánuco,112,Río Pánuco,6705.2,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 26, cuyo contorno ya se dibuja en Fig. 2"
+Pánuco,26,Pánuco,113,Río Tamesí,16929.7,inequívoca por nombre oficial de región,False,"coincide con la región hidrológica 26, cuyo contorno ya se dibuja en Fig. 2"
+Alta del Balsas,18,Balsas,70,Río Atoyac-A,31807.7,no inequívoca,False,ninguna cuenca oficial lleva ese nombre; la unidad se define por su recuadro. Cuencas que lo cruzan (fracción del recuadro): Río Atoyac-A 0.60; Río Grande de Amacuzac 0.22; Río Balsas-Mezcala 0.05; Río Tlapaneco 0.00
+Alta del Balsas,18,Balsas,66,Río Grande de Amacuzac,8827.9,no inequívoca,False,ninguna cuenca oficial lleva ese nombre; la unidad se define por su recuadro. Cuencas que lo cruzan (fracción del recuadro): Río Atoyac-A 0.60; Río Grande de Amacuzac 0.22; Río Balsas-Mezcala 0.05; Río Tlapaneco 0.00
+Alta del Balsas,18,Balsas,74,Río Balsas-Mezcala,14148.6,no inequívoca,False,ninguna cuenca oficial lleva ese nombre; la unidad se define por su recuadro. Cuencas que lo cruzan (fracción del recuadro): Río Atoyac-A 0.60; Río Grande de Amacuzac 0.22; Río Balsas-Mezcala 0.05; Río Tlapaneco 0.00
+Alta del Balsas,18,Balsas,73,Río Tlapaneco,4911.1,no inequívoca,False,ninguna cuenca oficial lleva ese nombre; la unidad se define por su recuadro. Cuencas que lo cruzan (fracción del recuadro): Río Atoyac-A 0.60; Río Grande de Amacuzac 0.22; Río Balsas-Mezcala 0.05; Río Tlapaneco 0.00

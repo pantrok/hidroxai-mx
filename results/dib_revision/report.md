@@ -180,6 +180,58 @@ motivo.
    software; anotar ambos DOI en `numbers.json` (`dois`) y en `CITATION.cff`.
 5. Editar el manuscrito con la tabla "dice → debe decir" de `numbers.json` y redactar la carta.
 
+## Paso 2 (2026-10-04)
+
+Segunda lista de tareas de la revisión. Cada cifra está en `numbers.json` con su
+`"fuente"`; las decisiones que cambian datos quedaron congeladas antes en `proof_ledger.md`
+(P2-T2, enmienda P2-T2a y P2-T3).
+
+- **T1, cifras faltantes** (`dib_13_paso2_tables.py`):
+  - **Tabla 3** por unidad (asignadas / vinculadas a HydroRIVERS / tramo cercano ≠ de mayor
+    área / DEM): Cutzamala 1/1/0/30 m, Lerma Alto 8/8/3/30 m, Bajío 26/23/2/30 m, Santiago
+    9/9/1/30 m, Pánuco 39/38/5/30 m, Alta del Balsas 12/11/5/15 m; suma 95. La regla de
+    asignación para las 23 estaciones en dos o más recuadros está escrita en `numbers.json`.
+  - **Sin vínculo HydroRIVERS:** 8 de 101; ninguna tiene tramo a ≤ 0.01°, y 3 de ellas
+    además caen fuera de toda unidad.
+  - **Manifest:** 3,215 entradas = 3,214 archivos + `.gitkeep`. 49 tienen fecha de
+    descarga, 3,165 solo fecha de modificación y 3,208 tienen URL (faltan los 6 CEM).
+  - **Release v2026.06:** 204,614 estación-días duplicados en 12 estaciones de Guanajuato,
+    y 3,337,622 filas de clima con `fuente` vacía, contados sobre los parquets archivados.
+  - **Curva del enmascaramiento** por L = 1…10 para los tres métodos.
+  - **Feature table:** 5,831,035 filas, 479 estaciones y 15 columnas con unidades.
+    `precip_idw_mm`: 3 vecinos, potencia 2, pesos renormalizados por día y solo para las
+    101 seleccionadas.
+  - **Baseline:** 4 estaciones excluidas, con su motivo.
+- **T2, validación del clima:**
+  - Al preparar T2 apareció un error de lectura: los CSV de series del SIH están en UTF-8
+    y se leían como Latin-1. Por eso se descartaban `tmax`/`tmin` en 1,961 de 2,659
+    estaciones.
+  - Con decisión del autor (enmienda P2-T2a) se corrigió y se recuperaron 23,459,380
+    valores de cada una.
+  - Después se marcaron con `calidad = 2` 24 valores fuera de límites en 15 estación-días,
+    sin borrarlos.
+  - Ambas series pasan la validación; la verificación fila por fila cumple el criterio
+    congelado.
+  - No cambian 415 seleccionadas, 55,590,466 filas, 6,532,136 precipitaciones con valor
+    en 2010–2025 ni Fig7.
+- **T3, contornos de cuencas piloto** (`dib_14_pilot_basin_outlines.py`, capa CNA 1998
+  de CONABIO, sin restricciones de uso):
+  - Fig. 2 añade el contorno oficial de Río Cutzamala.
+  - Lerma–Santiago y Pánuco coinciden con las regiones 12 y 26, ya dibujadas.
+  - Alta del Balsas no tiene una cuenca oficial equivalente y no se fuerza.
+  - La capa CONAGUA 2020 de 757 cuencas (IDEFOR) se descartó por su licencia NC-SA.
+- **T4, reproducibilidad:** el ZIP incluye `src/`, `scripts/`, `tests/`, `conf/`,
+  `results/dib_revision/` (sin `audit_code/` ni logs), `pyproject.toml`, `LICENSE` y
+  `CITATION.cff`. El paquete encuentra los datos en la raíz del archivo. La prueba desde
+  copia limpia (`dib_16_clean_copy_check.py`) queda en `clean_copy_check.md`.
+- **T5:** `CITATION.cff` en inglés, versión 2026.10, autor único. Los DOI se llenan al
+  publicar.
+- **T6:** `dist/figuras_envio/` con Figure_1…7, S1 y S2. Las figuras de la etapa 09 se
+  guardan en TIFF a 600 dpi; las 9 tienen ≥ 2244 px de ancho (`figuras_envio.csv`).
+- **Observación sin cambio:** `precip_idw_mm` usa la precipitación de los vecinos tal como
+  está en la serie, sin filtrar `calidad = 2` (213 valores en toda la serie climatológica).
+  Se documenta en `numbers.json`.
+
 ## Lo que no se hizo
 
 - Rediseño completo de la delineación: descartado por el autor (requería teselas CEM

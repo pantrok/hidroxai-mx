@@ -1,0 +1,10 @@
+archivo,origen,ancho_px,alto_px,dpi,ancho_mm_a_300dpi,apta_pagina_completa
+Figure_1.tif,data/processed/reportes/Fig1_workflow.tif,2733,1593,300,231.4,True
+Figure_2.tif,data/processed/reportes/Fig2_station_map.tif,3995,3402,600,338.2,True
+Figure_3.tif,data/processed/reportes/Fig3_quality_flags.tif,2764,1916,600,234.0,True
+Figure_4.tif,data/processed/reportes/Fig4_inventory_coverage.tif,6539,2098,600,553.6,True
+Figure_5.tif,data/processed/reportes/Fig5_streamflow_by_region.tif,4423,2218,600,374.5,True
+Figure_6.tif,data/processed/reportes/Fig6_climatology_annual.tif,6539,2098,600,553.6,True
+Figure_7.tif,data/processed/reportes/Fig7_precip_streamflow.tif,3902,2033,600,330.4,True
+Figure_S1.tif,results/dib_revision/figs/figS_imputation_error_vs_L.tif,3000,960,300,254.0,True
+Figure_S2.tif,results/dib_revision/figs/figS_outliers_examples.tif,2400,2160,300,203.2,True
