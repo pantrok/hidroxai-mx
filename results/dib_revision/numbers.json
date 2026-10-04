@@ -1922,6 +1922,200 @@
       }
     ]
   },
+  "clean_copy_check": {
+    "ok": false,
+    "valores_identicos": true,
+    "figuras_identicas": "6/7",
+    "fecha": "2026-10-04",
+    "zip": "HidroXAI-MX-v2026.10.zip",
+    "zip_sha256": "ff8944c00c544f5aee1f794d3a49ac16310d906ec879bf7e3cd34fefbcc8c4f8",
+    "python_base": "3.12.6",
+    "python_entorno": "3.12.6",
+    "sistema": "Windows-11-10.0.26200-SP0",
+    "minutos_total": 11.4,
+    "minutos_pip_install": 5.2,
+    "versiones": {
+      "entorno_nuevo": {
+        "matplotlib": "3.11.2",
+        "geopandas": "1.2.0",
+        "shapely": "2.1.2",
+        "pyproj": "3.8.0",
+        "pyogrio": "0.13.0",
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "pyarrow": "25.0.1",
+        "pandera": "0.33.1",
+        "pillow": "12.3.0"
+      },
+      "repositorio (salidas empaquetadas)": {
+        "matplotlib": "3.11.0",
+        "geopandas": "1.1.3",
+        "shapely": "2.1.2",
+        "pyproj": "3.7.2",
+        "pyogrio": "0.12.1",
+        "numpy": "2.4.6",
+        "pandas": "3.0.3",
+        "pyarrow": "24.0.0",
+        "pandera": "0.32.0",
+        "pillow": "12.2.0"
+      }
+    },
+    "comparaciones": [
+      {
+        "archivo": "processed/reportes/metrics.json",
+        "resultado": "igual",
+        "detalle": "valores (sin fechas de ejecución)"
+      },
+      {
+        "archivo": "processed/reportes/cobertura_por_estacion.csv",
+        "resultado": "igual",
+        "detalle": "547 filas"
+      },
+      {
+        "archivo": "processed/reportes/precip_streamflow_lagcorr.csv",
+        "resultado": "igual",
+        "detalle": "31 filas"
+      },
+      {
+        "archivo": "processed/reportes/Fig1_workflow.png",
+        "resultado": "igual",
+        "detalle": "píxeles idénticos; bytes distintos (metadatos del PNG)"
+      },
+      {
+        "archivo": "processed/reportes/Fig2_station_map.png",
+        "resultado": "difiere",
+        "detalle": "4946 píxeles distintos (0.15 %), dentro de x 271–680, y 81–343 de 1994×1701 px"
+      },
+      {
+        "archivo": "processed/reportes/Fig3_quality_flags.png",
+        "resultado": "igual",
+        "detalle": "píxeles idénticos; bytes distintos (metadatos del PNG)"
+      },
+      {
+        "archivo": "processed/reportes/Fig4_inventory_coverage.png",
+        "resultado": "igual",
+        "detalle": "píxeles idénticos; bytes distintos (metadatos del PNG)"
+      },
+      {
+        "archivo": "processed/reportes/Fig5_streamflow_by_region.png",
+        "resultado": "igual",
+        "detalle": "píxeles idénticos; bytes distintos (metadatos del PNG)"
+      },
+      {
+        "archivo": "processed/reportes/Fig6_climatology_annual.png",
+        "resultado": "igual",
+        "detalle": "píxeles idénticos; bytes distintos (metadatos del PNG)"
+      },
+      {
+        "archivo": "processed/reportes/Fig7_precip_streamflow.png",
+        "resultado": "igual",
+        "detalle": "píxeles idénticos; bytes distintos (metadatos del PNG)"
+      },
+      {
+        "archivo": "results/dib_revision/counts_reconciliation_v2026_10.csv",
+        "resultado": "igual",
+        "detalle": "17 filas"
+      },
+      {
+        "archivo": "results/dib_revision/observation_counts_v2026_10.csv",
+        "resultado": "igual",
+        "detalle": "2 filas"
+      },
+      {
+        "archivo": "results/dib_revision/calidad_composition_v2026_10.csv",
+        "resultado": "igual",
+        "detalle": "15 filas"
+      },
+      {
+        "archivo": "results/dib_revision/tabla3_v2026_10.csv",
+        "resultado": "igual",
+        "detalle": "6 filas"
+      },
+      {
+        "archivo": "results/dib_revision/hidrorivers_sin_vinculo.csv",
+        "resultado": "igual",
+        "detalle": "8 filas"
+      },
+      {
+        "archivo": "results/dib_revision/e13_paso2_t1.json",
+        "resultado": "igual",
+        "detalle": "valores (sin fechas de ejecución)"
+      },
+      {
+        "archivo": "results/dib_revision/pilot_basin_outlines.csv",
+        "resultado": "igual",
+        "detalle": "21 filas"
+      }
+    ],
+    "comandos": [
+      {
+        "comando": "C:\\Python312\\python.exe -m venv <copia_limpia>\\venv",
+        "segundos": 9.5,
+        "codigo": 0,
+        "salida_final": ""
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -m pip install -q --upgrade pip",
+        "segundos": 9.4,
+        "codigo": 0,
+        "salida_final": ""
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -m pip install -q -e .[dev,geo]",
+        "segundos": 309.1,
+        "codigo": 0,
+        "salida_final": ""
+      },
+      {
+        "comando": "descarga https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip",
+        "bytes": 14909524
+      },
+      {
+        "comando": "descarga http://www.conabio.gob.mx/informacion/gis/maps/geo/rh250kgw.zip",
+        "bytes": 4280035
+      },
+      {
+        "comando": "descarga http://www.conabio.gob.mx/informacion/gis/maps/geo/cue250kgw.zip",
+        "bytes": 5963950
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -W ignore -m pytest -q -p no:cacheprovider -o addopts=",
+        "segundos": 16.1,
+        "codigo": 0,
+        "salida_final": "................................                                         [100%]\n32 passed in 13.06s\n"
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -W ignore scripts/09_make_report_figures.py",
+        "segundos": 90.0,
+        "codigo": 0,
+        "salida_final": "2026-10-04 17:46:43,984 | INFO    | 09_report | Fig2_station_map OK\n2026-10-04 17:46:46,069 | INFO    | 09_report | Fig3_quality_flags OK\n2026-10-04 17:46:50,828 | INFO    | 09_report | Fig4_inventory_coverage OK\n2026-10-04 17:46:53,914 | INFO    | 09_report | Fig5_streamflow_by_region OK\n2026-10-04 17:47:00,191 | INFO    | 09_report | Fig6_climatology_annual OK\n2026-10-04 17:47:26,374 | INFO    | 09_report | Fig7_precip_streamflow OK\n2026-10-04 17:47:26,740 | INFO    | 09_report | Métricas -> <copia_limpia>\\hidromx\\processed\\reportes\\metrics.json\n"
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -W ignore scripts/12_make_workflow_figure.py",
+        "segundos": 2.0,
+        "codigo": 0,
+        "salida_final": "2026-10-04 17:47:31,523 | INFO    | 12_workflow | Workflow figure -> <copia_limpia>\\hidromx\\processed\\reportes\\Fig1_workflow.png\n"
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -W ignore scripts/dib_01_reconcile_counts.py --suffix _v2026_10",
+        "segundos": 220.5,
+        "codigo": 0,
+        "salida_final": "2026-10-04 17:47:32,823 | INFO    | dib_01 | hidrometricas: catálogo=1189 candidatas=550 (publicadas=550)\n2026-10-04 17:48:00,854 | INFO    | dib_01 | climatologicas: catálogo=7499 candidatas=2731 (publicadas=2731)\n2026-10-04 17:51:11,930 | INFO    | dib_01 | E1 listo → <copia_limpia>\\hidromx\\results\\dib_revision\n"
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -W ignore scripts/dib_13_paso2_tables.py",
+        "segundos": 1.2,
+        "codigo": 0,
+        "salida_final": "2026-10-04 17:51:13,197 | INFO    | dib_13 | Tabla 3: 95 estaciones; sin vínculo: 8; manifest: 3215 entradas\n"
+      },
+      {
+        "comando": "<copia_limpia>\\venv\\Scripts\\python.exe -W ignore scripts/dib_14_pilot_basin_outlines.py",
+        "segundos": 2.0,
+        "codigo": 0,
+        "salida_final": "2026-10-04 17:51:15,232 | INFO    | dib_14 | 21 filas -> <copia_limpia>\\hidromx\\results\\dib_revision\\pilot_basin_outlines.csv\n"
+      }
+    ]
+  },
   "correcciones_articulo": [
     {
       "donde": "Abstract, Value of the data, Data description",
