@@ -87,3 +87,30 @@ def test_series_schema_rejects_bad_fuente():
     df["fuente"] = "DESCONOCIDA"
     with pytest.raises(Exception):
         schema.validate_series(df)
+
+
+def _clima(tmed, evap) -> pd.DataFrame:
+    n = len(tmed)
+    return pd.DataFrame({
+        "clave_estacion": ["C"] * n,
+        "fecha": pd.date_range("2010-01-01", periods=n, freq="D"),
+        "precip_mm": [0.0] * n,
+        "tmed_c": tmed,
+        "evap_mm": evap,
+        "fuente": ["SIH"] * n,
+        "calidad": [0] * n,
+    })
+
+
+def test_flag_physical_limits_marks_and_keeps_values():
+    df = _clima([20.0, 99.0, np.nan, 18.0], [3.0, 2.0, 1.0, -1.0])
+    out = clean.flag_physical_limits(df, schema.PHYSICAL_LIMITS)
+    assert out["calidad"].tolist() == [0, 2, 0, 2]
+    assert out["tmed_c"].iloc[1] == 99.0 and out["evap_mm"].iloc[3] == -1.0
+
+
+def test_schema_accepts_out_of_limits_only_when_flagged():
+    df = _clima([20.0, 99.0], [3.0, 2.0])
+    assert not schema.validation_report(df)["valido"]
+    flagged = clean.flag_physical_limits(df, schema.PHYSICAL_LIMITS)
+    assert schema.validation_report(flagged)["valido"]

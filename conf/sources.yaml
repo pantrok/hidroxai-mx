@@ -31,14 +31,16 @@ fuentes:
   # 2. SIH-CONAGUA — Series + catálogo (CSV directo)  *** PRIMARIA ***
   #    Verificado 2026-06-18: un CSV por estación en URL predecible
   #    https://sih.conagua.gob.mx/basedatos/{Hidros|Climas}/<CLAVE>.csv
-  #    Codificación Latin-1; faltantes "-" o vacío; fecha YYYY/MM/DD.
+  #    Catálogos en Latin-1; series por estación en UTF-8 (verificado 2026-10-04 en los
+  #    2,659 CSV climatológicos); faltantes "-" o vacío; fecha YYYY/MM/DD.
   # ---------------------------------------------------------------
   sih_series:
     descripcion: "Series diarias del SIH (CSV directo por estación) + catálogo maestro por tipo."
     estado: "OK (verificado 2026-06-18)"
     licencia: "Libre Uso MX (CONAGUA)"
     base: "https://sih.conagua.gob.mx/basedatos/"
-    encoding: "latin-1"
+    encoding: "latin-1"             # catálogos
+    encoding_series: "utf-8"        # CSV por estación (respaldo: encoding)
     na_values: ["-", ""]
     hidrometricas:
       dir: "Hidros"
@@ -188,3 +190,12 @@ fuentes:
     distribuidor: "CONABIO (2009)"
     licencia: "Uso sin restricciones según el metadato de la capa"
     ruta_local: "data/scratch/limites/rh250kgw/"
+  cuencas_hidrologicas:
+    descripcion: "Comisión Nacional del Agua (CNA) (1998). Cuencas Hidrológicas, escala 1:250000. Contornos de las cuencas piloto en Fig. 2."
+    estado: "OK (verificado 2026-10-04)"
+    formato: "shp (zip), EPSG:4326"
+    url: "http://www.conabio.gob.mx/informacion/gis/maps/geo/cue250kgw.zip"
+    distribuidor: "CONABIO (metadato publicado 2001-03-18)"
+    licencia: "Sin restricciones de acceso ni de uso según el metadato de la capa"
+    sha256_zip: "98b2a46a2c3c8466ecbfafd48270d61009df7f62bd74a89578eb71732ea28348"
+    ruta_local: "data/scratch/limites/cue250kgw/"

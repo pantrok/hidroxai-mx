@@ -21,7 +21,8 @@ from ..utils.download import fetch
 
 log = get_logger("io.conagua")
 _SRC = load_sources()["fuentes"]["sih_series"]
-ENCODING = _SRC.get("encoding", "latin-1")
+ENCODING = _SRC.get("encoding", "latin-1")               # catálogos
+SERIES_ENCODING = _SRC.get("encoding_series", "utf-8")   # CSV por estación
 NA = _SRC.get("na_values", ["-", ""])
 
 
@@ -131,9 +132,15 @@ _SER_MAP = [
 def read_series_csv(path: Path) -> pd.DataFrame:
     """Lee una serie del SIH saltando el bloque de metadatos y normaliza al esquema.
 
-    Devuelve columnas canónicas presentes + clave_estacion (de nombre de archivo).
+    Devuelve columnas canónicas presentes + clave_estacion (de nombre de archivo). Las
+    series del SIH vienen en UTF-8; leerlas como Latin-1 rompe "Máxima"/"Mínima" en los
+    encabezados y se perdían tmax/tmin. Si un archivo no es UTF-8 válido se usa Latin-1.
     """
-    raw = Path(path).read_text(encoding=ENCODING, errors="replace")
+    data = Path(path).read_bytes()
+    try:
+        raw = data.decode(SERIES_ENCODING)
+    except UnicodeDecodeError:
+        raw = data.decode(ENCODING, errors="replace")
     lines = raw.splitlines()
     # SIH has two real header variants: Fecha,... and Estacion,Fecha,...
     # Detect Fecha as a complete CSV field instead of assuming its position.

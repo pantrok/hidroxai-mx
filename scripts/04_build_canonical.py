@@ -42,6 +42,7 @@ def main(tipo: str) -> None:
     # Después de reconstruir el calendario: las filas de días faltantes también son SIH.
     df["fuente"] = "SIH"
     df = clean.flag_outliers(df, value_col)
+    df = clean.flag_physical_limits(df, schema.PHYSICAL_LIMITS)
     if tipo == "hidrometricas":
         df = clean.impute_short_gaps(df, value_col)
     else:

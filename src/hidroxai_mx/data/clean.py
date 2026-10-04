@@ -4,6 +4,8 @@ Reglas:
 - NaN codificados como -9999.0 -> np.nan.
 - Outliers físicos: gastos negativos y valores > Q99.9 * 3 por estación -> marcar (calidad=2),
   sin eliminarlos.
+- Límites físicos del clima (schema.PHYSICAL_LIMITS): una fila con alguna variable fuera de
+  su límite -> calidad=2, sin eliminar el valor.
 - Imputación corta del gasto: interpolación lineal de huecos internos de 1 a 6 días
   (calidad=1). El método se eligió con el experimento de enmascaramiento de
   scripts/dib_03_imputation_masking.py (lineal ≈ PCHIP; el spline cúbico sobreoscila y
@@ -44,6 +46,24 @@ def flag_outliers(df: pd.DataFrame, value_col: str, group: str = "clave_estacion
         g[group] = key
         pieces.append(g)
     return pd.concat(pieces) if pieces else df
+
+
+def flag_physical_limits(df: pd.DataFrame, limits: dict) -> pd.DataFrame:
+    """Marca calidad=2 en las filas con alguna variable fuera de su límite físico.
+
+    `limits` = {columna: (mínimo, máximo)}, con None para un lado sin límite. Los valores
+    se conservan; las columnas ausentes se ignoran.
+    """
+    out = pd.Series(False, index=df.index)
+    for col, (lo, hi) in limits.items():
+        if col not in df:
+            continue
+        if lo is not None:
+            out |= df[col] < lo
+        if hi is not None:
+            out |= df[col] > hi
+    cal = df["calidad"] if "calidad" in df else pd.Series(0, index=df.index)
+    return df.assign(calidad=cal.mask(out, 2))
 
 
 def _short_gap_mask(isna: np.ndarray, max_gap: int) -> np.ndarray:

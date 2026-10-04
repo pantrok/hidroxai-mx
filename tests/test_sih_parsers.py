@@ -68,6 +68,23 @@ def test_series_clima(tmp_path):
     assert abs(df["tmax_c"].iloc[0] - 26.3) < 1e-9
 
 
+def test_series_clima_utf8(tmp_path):
+    """El SIH publica las series en UTF-8: "Máxima"/"Mínima" deben mapearse."""
+    p = tmp_path / "ABASOLO.csv"
+    p.write_text(CLI, encoding="utf-8")
+    df = conagua.read_series_csv(p)
+    assert {"precip_mm", "tmax_c", "tmin_c", "tmed_c", "evap_mm"} <= set(df.columns)
+    assert abs(df["tmax_c"].iloc[0] - 26.3) < 1e-9
+    assert abs(df["tmin_c"].iloc[0] - 15.7) < 1e-9
+
+
+def test_series_hidro_utf8(tmp_path):
+    p = tmp_path / "ABSTP.csv"
+    p.write_text(HID, encoding="utf-8")
+    df = conagua.read_series_csv(p)
+    assert abs(df["gasto_medio_m3s"].iloc[1] - 1.5) < 1e-9
+
+
 def test_series_clima_estacion_fecha_and_hyphen_dates(tmp_path):
     p = tmp_path / "AGSAG.csv"
     p.write_text(CLI_ESTACION_FECHA, encoding="latin-1")
