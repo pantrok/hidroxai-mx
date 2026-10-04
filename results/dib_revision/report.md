@@ -168,17 +168,18 @@ motivo.
 
 ## Pendientes del autor
 
-1. `git push` de los commits de la revisión (el repositorio pide confirmación antes de
-   `git commit`/`push`/`tag` y `dvc push`).
-2. Hecho el 2026-10-03: `08_storage_report.py` (3.13 GB / 9.5 GB), `dvc commit` y
-   `dvc push` (225 archivos a R2). Los datos se versionan como salidas de las etapas de
-   `dvc.yaml`; `dvc.lock` registra el snapshot v2026.10.
-3. `python scripts/11_build_zenodo_bundle.py --version v2026.10` y subir el ZIP como
-   **New version** del registro existente en Zenodo; comprobar que el concept DOI
+1. Hecho: commits de la revisión en GitHub; datos en R2 con `dvc push` (2026-10-03 y, tras
+   el paso 2, 2026-10-04: 3.20 GB / 9.5 GB, remoto sincronizado). `dvc.lock` registra el
+   snapshot v2026.10.
+2. Hecho: ZIP `dist/HidroXAI-MX-v2026.10.zip` con datos y código, verificado desde copia
+   limpia (`clean_copy_check.md`), y tag `v2026.10` en GitHub.
+3. Subir el ZIP como **New version** del registro existente en Zenodo (texto del formulario
+   en `dist/zenodo_v2026.10_metadata.md`) y comprobar que el concept DOI
    10.5281/zenodo.21231600 resuelve a v2026.10.
-4. Crear el tag `v2026.10` en GitHub y activar la integración GitHub–Zenodo para el DOI del
-   software; anotar ambos DOI en `numbers.json` (`dois`) y en `CITATION.cff`.
-5. Editar el manuscrito con la tabla "dice → debe decir" de `numbers.json` y redactar la carta.
+4. Activar la integración GitHub–Zenodo y publicar el *release* `v2026.10` para el DOI del
+   software; anotar ambos DOI en `numbers.json` (`dois`), `CITATION.cff` y `README.md`.
+5. Editar el manuscrito con la tabla "dice → debe decir" de `numbers.json` y redactar la
+   carta; figuras de envío en `dist/figuras_envio/`.
 
 ## Paso 2 (2026-10-04)
 
@@ -236,4 +237,3 @@ Segunda lista de tareas de la revisión. Cada cifra está en `numbers.json` con 
 
 - Rediseño completo de la delineación: descartado por el autor (requería teselas CEM
   adicionales y un nuevo acondicionamiento del DEM).
-- Verificación desde una copia limpia del ZIP v2026.10: se hace después de construirlo.

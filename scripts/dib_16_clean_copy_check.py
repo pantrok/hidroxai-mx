@@ -56,12 +56,15 @@ VERSIONS = ("import importlib.metadata as m, json; "
             f"print(json.dumps({{p: m.version(p) for p in {PAQUETES!r}}}))")
 
 
-def run(cmd: list[str], cwd: Path, log: list) -> float:
+WORK = "<copia_limpia>"  # el registro no guarda rutas locales del directorio de trabajo
+
+
+def run(cmd: list[str], cwd: Path, log: list, work: Path) -> float:
     t0 = time.time()
     r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace")
     dt = time.time() - t0
-    log.append({"comando": " ".join(cmd), "segundos": round(dt, 1), "codigo": r.returncode,
-                "salida_final": (r.stdout + r.stderr)[-1500:]})
+    log.append({"comando": " ".join(cmd).replace(str(work), WORK), "segundos": round(dt, 1),
+                "codigo": r.returncode, "salida_final": (r.stdout + r.stderr)[-1500:].replace(str(work), WORK)})
     if r.returncode != 0:
         raise SystemExit(f"Falló: {' '.join(cmd)}\n{(r.stdout + r.stderr)[-3000:]}")
     return dt
@@ -144,10 +147,10 @@ def main() -> None:
             shutil.copy2(root / rel, ref / rel)
 
     venv = a.work / "venv"
-    run([a.python, "-m", "venv", str(venv)], a.work, log)
+    run([a.python, "-m", "venv", str(venv)], a.work, log, a.work)
     py = venv / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
-    run([str(py), "-m", "pip", "install", "-q", "--upgrade", "pip"], root, log)
-    t_pip = run([str(py), "-m", "pip", "install", "-q", "-e", ".[dev,geo]"], root, log)
+    run([str(py), "-m", "pip", "install", "-q", "--upgrade", "pip"], root, log, a.work)
+    t_pip = run([str(py), "-m", "pip", "install", "-q", "-e", ".[dev,geo]"], root, log, a.work)
     py_version = subprocess.run([str(py), "-c", "import sys; print(sys.version.split()[0])"],
                                 capture_output=True, text=True).stdout.strip()
 
@@ -166,7 +169,7 @@ def main() -> None:
                 ["scripts/09_make_report_figures.py"], ["scripts/12_make_workflow_figure.py"],
                 ["scripts/dib_01_reconcile_counts.py", "--suffix", "_v2026_10"],
                 ["scripts/dib_13_paso2_tables.py"], ["scripts/dib_14_pilot_basin_outlines.py"]):
-        run([str(py), "-W", "ignore", *cmd], root, log)
+        run([str(py), "-W", "ignore", *cmd], root, log, a.work)
 
     r = subprocess.run([str(py), str(Path(__file__)), "--zip", str(a.zip), "--work", str(a.work),
                         "--compare", str(root), str(ref)], capture_output=True, text=True, encoding="utf-8")
