@@ -50,6 +50,10 @@ REGEN = [
 IGNORE_KEYS = {"fecha", "fecha_conciliacion", "generado", "duplicados_v2026_06"}
 CAPAS = {"natural_earth_admin1": "ne_10m_admin_1", "regiones_hidrologicas": "rh250kgw",
          "cuencas_hidrologicas": "cue250kgw"}
+PAQUETES = ["matplotlib", "geopandas", "shapely", "pyproj", "pyogrio", "numpy", "pandas",
+            "pyarrow", "pandera", "pillow"]
+VERSIONS = ("import importlib.metadata as m, json; "
+            f"print(json.dumps({{p: m.version(p) for p in {PAQUETES!r}}}))")
 
 
 def run(cmd: list[str], cwd: Path, log: list) -> float:
@@ -100,10 +104,17 @@ def compare(base: Path, ref: Path) -> list[dict]:
             if ia.shape != ib.shape:
                 r.update(resultado="difiere", detalle=f"tamaño {ia.shape} vs {ib.shape}")
             else:
-                n = int((ia != ib).any(axis=2).sum())
-                r.update(resultado="igual" if n == 0 else "difiere",
-                         detalle=("bytes idénticos" if same_bytes else "píxeles idénticos; bytes distintos "
-                                  "(metadatos del PNG)") if n == 0 else f"{n} píxeles distintos")
+                mask = (ia != ib).any(axis=2)
+                n = int(mask.sum())
+                if n == 0:
+                    r.update(resultado="igual", detalle="bytes idénticos" if same_bytes else
+                             "píxeles idénticos; bytes distintos (metadatos del PNG)")
+                else:
+                    ys, xs = np.nonzero(mask)
+                    r.update(resultado="difiere",
+                             detalle=f"{n} píxeles distintos ({100 * n / mask.size:.2f} %), dentro de "
+                                     f"x {xs.min()}–{xs.max()}, y {ys.min()}–{ys.max()} de "
+                                     f"{ia.shape[1]}×{ia.shape[0]} px")
         res.append(r)
     return res
 
@@ -161,10 +172,19 @@ def main() -> None:
                         "--compare", str(root), str(ref)], capture_output=True, text=True, encoding="utf-8")
     cmp_ = json.loads(r.stdout)
     ok = all(c["resultado"] == "igual" for c in cmp_)
-    res = {"ok": ok, "fecha": time.strftime("%Y-%m-%d"), "zip": a.zip.name, "zip_sha256": zip_sha,
+    datos = [c for c in cmp_ if not c["archivo"].endswith(".png")]
+    figs = [c for c in cmp_ if c["archivo"].endswith(".png")]
+    vers = {"entorno_nuevo": json.loads(subprocess.run([str(py), "-c", VERSIONS], capture_output=True,
+                                                       text=True).stdout),
+            "repositorio (salidas empaquetadas)": json.loads(subprocess.run(
+                [sys.executable, "-c", VERSIONS], capture_output=True, text=True).stdout)}
+    res = {"ok": ok,
+           "valores_identicos": all(c["resultado"] == "igual" for c in datos),
+           "figuras_identicas": f"{sum(c['resultado'] == 'igual' for c in figs)}/{len(figs)}",
+           "fecha": time.strftime("%Y-%m-%d"), "zip": a.zip.name, "zip_sha256": zip_sha,
            "python_base": platform.python_version(), "python_entorno": py_version,
            "sistema": platform.platform(), "minutos_total": round((time.time() - t_start) / 60, 1),
-           "minutos_pip_install": round(t_pip / 60, 1),
+           "minutos_pip_install": round(t_pip / 60, 1), "versiones": vers,
            "comparaciones": cmp_, "comandos": log}
     (OUT / "clean_copy_check.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -172,14 +192,21 @@ def main() -> None:
           f"- Fecha: {res['fecha']}; ZIP SHA-256 `{zip_sha}`.",
           f"- Python del entorno nuevo: {py_version}; sistema: {res['sistema']}.",
           f"- Tiempo total: {res['minutos_total']} min (pip install: {res['minutos_pip_install']} min).",
-          f"- Resultado: **{'todo coincide' if ok else 'hay diferencias'}**.", "",
-          "## Comandos", "", "```"]
+          f"- Resultado: **{'todo coincide' if ok else 'hay diferencias'}**; valores (JSON y CSV) "
+          f"{'idénticos' if res['valores_identicos'] else 'con diferencias'}; figuras idénticas "
+          f"por píxel: {res['figuras_identicas']}.", "",
+          "## Versiones de bibliotecas", "",
+          "| Paquete | " + " | ".join(vers) + " |", "|---|" + "---|" * len(vers)]
+    md += [f"| {p} | " + " | ".join(v.get(p, "—") for v in vers.values()) + " |" for p in PAQUETES]
+    md += ["", "## Comandos", "", "```"]
     md += [f"{c['comando']}  # {c.get('segundos', '')} s" for c in log]
     md += ["```", "", "## Comparación (regenerado vs empaquetado)", "",
            "| Archivo | Resultado | Detalle |", "|---|---|---|"]
     md += [f"| `{c['archivo']}` | {c['resultado']} | {c['detalle']} |" for c in cmp_]
     md += ["", "Se ignoran las claves con la fecha de ejecución y el bloque `duplicados_v2026_06`, "
-               "que se calcula sobre parquets del release v2026.06 que no viajan en el archivo."]
+               "que se calcula sobre parquets del release v2026.06 que no viajan en el archivo. "
+               "Una figura con diferencias de píxeles y valores idénticos refleja el dibujo de "
+               "versiones distintas de las bibliotecas (tabla de versiones), no un cambio del dato."]
     (OUT / "clean_copy_check.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print(json.dumps({"ok": ok, "minutos": res["minutos_total"]}))
 

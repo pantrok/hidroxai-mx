@@ -147,8 +147,11 @@ def fig2_station_map(metrics: dict) -> None:
     inset.add_patch(plt.Rectangle((xmin - pad, ymin - pad), xmax - xmin + 2 * pad, ymax - ymin + 2 * pad,
                                   fill=False, color="red", linewidth=0.8))
     inset.set_xticks([]); inset.set_yticks([])
-    ax.set_xlabel("Easting (m, EPSG:6372)")
-    ax.set_ylabel("Northing (m, EPSG:6372)")
+    # geopandas ≥ 1.2 rotula los ejes con el CRS al dibujar; se fijan aquí para que la
+    # figura no dependa de la versión instalada.
+    inset.set_xlabel(""); inset.set_ylabel("")
+    ax.set_xlabel("Easting (m, EPSG:6372)", fontsize=plt.rcParams["axes.labelsize"])
+    ax.set_ylabel("Northing (m, EPSG:6372)", fontsize=plt.rcParams["axes.labelsize"])
     ax.ticklabel_format(style="plain")
     ax.tick_params(labelsize=7)
     ax.legend(loc="lower left", fontsize=6.5, frameon=True)
