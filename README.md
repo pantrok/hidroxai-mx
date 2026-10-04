@@ -71,14 +71,14 @@ python scripts/10_rebuild_manifest.py
 |---|---|
 | 0 | Original observation |
 | 1 | Streamflow linearly interpolated inside an internal gap of 1–6 days, using original observations only. Precipitation is not interpolated. |
-| 2 | Flagged outlier (negative value or > 3 × the station's 99.9th percentile), retained. Flagged values include single-day capture errors and a few real flood peaks; see `results/dib_revision/outliers_hidro.csv` before discarding them. |
+| 2 | Flagged and retained. Streamflow and precipitation: negative value or > 3 × the station's 99.9th percentile; flagged streamflow includes single-day capture errors and a few real flood peaks, see `results/dib_revision/outliers_hidro.csv` before discarding them. Climatological series: a station-day with any variable outside its physical limits (`hidroxai_mx.data.schema.PHYSICAL_LIMITS`; list in `results/dib_revision/clima_fuera_de_rango.csv`). |
 
 ## Data → figure map
 
 | Article figure | File (`data/processed/reportes/`) | Script | Input data |
 |---|---|---|---|
 | Fig. 1 Workflow | `Fig1_workflow.{png,tif}` | `12_make_workflow_figure.py` | — |
-| Fig. 2 Station map | `Fig2_station_map.{png,tif}` | `09_make_report_figures.py` | `estaciones_candidatas_hidrometricas.csv`, `estaciones_seleccionadas_hidrometricas.csv`, `raw/sih_series/hidrometricas/`, `conf/cuencas_piloto.yaml`; boundary layers in `conf/sources.yaml` |
+| Fig. 2 Station map | `Fig2_station_map.{png,tif}` | `09_make_report_figures.py` | `estaciones_candidatas_hidrometricas.csv`, `estaciones_seleccionadas_hidrometricas.csv`, `raw/sih_series/hidrometricas/`, `conf/cuencas_piloto.yaml` (units and official pilot-basin outlines, see `results/dib_revision/pilot_basin_outlines.csv`); boundary layers in `conf/sources.yaml` |
 | Fig. 3 Quality flags | `Fig3_quality_flags.{png,tif}` | `09_make_report_figures.py` | `series_hidrometricas.parquet` |
 | Fig. 4 Inventory and coverage | `Fig4_inventory_coverage.{png,tif}`, `cobertura_por_estacion.csv` | `09_make_report_figures.py` | `series_hidrometricas.parquet`, `raw/sih/catalogo_hidrometricas.csv` |
 | Fig. 5 Streamflow by region | `Fig5_streamflow_by_region.{png,tif}` | `09_make_report_figures.py` | same as Fig. 4 |
@@ -99,8 +99,9 @@ they produce. The changes it led to are listed in `CHANGELOG.md`.
 
 The **SIH portal** (`https://sih.conagua.gob.mx`) publishes daily historical series for
 climatological and hydrometric stations as per-station CSV files
-(`/basedatos/{Hidros|Climas}/<KEY>.csv`, Latin-1, missing values as `-` or empty, dates
-`YYYY/MM/DD`), which makes ingestion catalog-driven with no scraping. **BANDAS**
+(`/basedatos/{Hidros|Climas}/<KEY>.csv`, UTF-8, missing values as `-` or empty, dates
+`YYYY/MM/DD`; the master catalogs are Latin-1), which makes ingestion catalog-driven with
+no scraping. **BANDAS**
 (`https://app.conagua.gob.mx/bandas`) remains a deep historical backup. See
 `conf/sources.yaml` and `docs/fuentes_verificacion.md`.
 

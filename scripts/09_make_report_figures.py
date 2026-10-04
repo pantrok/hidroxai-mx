@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Etapa 09 — Figuras y métricas del data paper (numeración del artículo).
 
-Genera en data/processed/reportes/ (PNG y TIFF-LZW a 300 dpi) y exporta metrics.json:
+Genera en data/processed/reportes/ (PNG a 300 dpi y TIFF-LZW a 600 dpi) y exporta metrics.json:
 
     Fig2_station_map           estaciones sobre límites nacional/estatales, regiones
                                hidrológicas 12, 18 y 26 y bbox de las unidades (EPSG:6372)
@@ -21,6 +21,9 @@ Capas externas para la Fig. 2 (no se versionan; ver conf/sources.yaml):
     data/scratch/limites/ne_10m_admin_1/  Natural Earth 10m admin-1 (dominio público)
     data/scratch/limites/rh250kgw/        CONAGUA (2007) Regiones Hidrológicas 1:250 000,
                                           distribuido por CONABIO
+    data/scratch/limites/cue250kgw/       CNA (1998) Cuencas Hidrológicas 1:250 000, distribuido
+                                          por CONABIO (contornos de cuencas piloto declarados en
+                                          conf/cuencas_piloto.yaml: contornos_cuencas_piloto)
 
 Uso:  python scripts/09_make_report_figures.py
 """
@@ -37,12 +40,12 @@ import pyarrow.dataset as pa_ds
 
 from hidroxai_mx import report
 from hidroxai_mx.io import conagua
-from hidroxai_mx.utils import PROCESSED, RAW, ROOT, get_logger, load_cuencas
+from hidroxai_mx.utils import DATA, PROCESSED, RAW, get_logger, load_cuencas
 
 log = get_logger("09_report")
 OUT = PROCESSED / "reportes"
 OUT.mkdir(parents=True, exist_ok=True)
-LIMITES = ROOT / "data" / "scratch" / "limites"
+LIMITES = DATA / "scratch" / "limites"
 CRS_MAP = "EPSG:6372"
 T0, T1 = "2010-01-01", "2025-12-31"
 RH_COLORS = {"12": "#1F3D5C", "18": "#7A1737", "26": "#2E7D5B"}
@@ -55,9 +58,12 @@ plt.rcParams.update({
 })
 
 
+TIF_DPI = 600  # ancho ≥ 2244 px a página completa (190 mm) en todas las figuras
+
+
 def _save(fig, name: str) -> None:
     fig.savefig(OUT / f"{name}.png")
-    fig.savefig(OUT / f"{name}.tif", pil_kwargs={"compression": "tiff_lzw"})
+    fig.savefig(OUT / f"{name}.tif", dpi=TIF_DPI, pil_kwargs={"compression": "tiff_lzw"})
     plt.close(fig)
     log.info("%s OK", name)
 
@@ -87,6 +93,11 @@ def fig2_station_map(metrics: dict) -> None:
     units = gpd.GeoDataFrame({"nombre": [c["nombre"] for c in cfg["cuencas_piloto"]]},
                              geometry=[box(*c["bbox"]).segmentize(0.02) for c in cfg["cuencas_piloto"]],
                              crs="EPSG:4326").to_crs(CRS_MAP)
+    # Contornos oficiales de cuencas piloto con correspondencia inequívoca por nombre de cuenca
+    # (Lerma–Santiago y Pánuco coinciden con las regiones 12 y 26, ya dibujadas).
+    oficiales = [n for e in cfg.get("contornos_cuencas_piloto", []) for n in e.get("cuencas_oficiales", [])]
+    cuencas = gpd.read_file(LIMITES / "cue250kgw" / "cue250kgw.shp")
+    cuencas = cuencas[cuencas["CUENCA"].isin(oficiales)].dissolve(by="CUENCA").reset_index().to_crs(CRS_MAP)
     cand = pd.read_csv(PROCESSED / "estaciones_candidatas_hidrometricas.csv", dtype={"clave": str})
     downloaded = {p.stem for p in (RAW / "sih_series" / "hidrometricas").glob("*.csv")}
     cand = cand[cand["clave"].isin(downloaded)]
@@ -104,6 +115,10 @@ def fig2_station_map(metrics: dict) -> None:
                         label=f"Hydrological region {k} ({RH_NAMES[k]})")
     states.boundary.plot(ax=ax, color="0.55", linewidth=0.4)
     nation.boundary.plot(ax=ax, color="0.15", linewidth=0.9)
+    for c in cuencas.itertuples():
+        gpd.GeoSeries([c.geometry], crs=CRS_MAP).boundary.plot(
+            ax=ax, color="#C9971B", linewidth=1.3, linestyle="-.",
+            label=f"Pilot basin outline: {c.CUENCA} (CNA, 1998)")
     units.boundary.plot(ax=ax, color="black", linewidth=0.7, linestyle="--",
                         label="Operational units (curated bounding boxes)")
     pts(cand).plot(ax=ax, color="0.72", markersize=5, zorder=3,
@@ -140,7 +155,7 @@ def fig2_station_map(metrics: dict) -> None:
     _save(fig, "Fig2_station_map")
     metrics["fig2"] = {"estaciones_descargadas": int(len(cand)), "estaciones_seleccionadas": int(len(sel)),
                        "seleccionadas_por_rh": sel["region_hidrologica"].value_counts().sort_index().to_dict(),
-                       "crs": CRS_MAP}
+                       "contornos_cuencas_piloto": cuencas["CUENCA"].tolist(), "crs": CRS_MAP}
 
 
 def fig3_quality(hid: pd.DataFrame, metrics: dict) -> None:

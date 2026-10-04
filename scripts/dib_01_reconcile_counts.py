@@ -37,13 +37,13 @@ import numpy as np
 import pandas as pd
 
 from hidroxai_mx.io import conagua
-from hidroxai_mx.utils import PROCESSED, RAW, ROOT, get_logger, load_cuencas
+from hidroxai_mx.utils import INTERIM, PROCESSED, RAW, ROOT, get_logger, load_cuencas
 
 log = get_logger("dib_01")
 OUT = ROOT / "results" / "dib_revision"
 TYPES = {"hidrometricas": "gasto_medio_m3s", "climatologicas": "precip_mm"}
 # Polígonos de subcuencas de v2026.06 (retirados en v2026.10), conservados para auditoría.
-PUBLISHED_CUENCAS = ROOT / "data" / "interim" / "dib_revision" / "v2026.06_processed" / "cuencas"
+PUBLISHED_CUENCAS = INTERIM / "dib_revision" / "v2026.06_processed" / "cuencas"
 
 
 def _slug(s: str) -> str:

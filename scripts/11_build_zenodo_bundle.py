@@ -7,7 +7,7 @@ estructura, la procedencia y cómo citar. Toda la información se lee del
 repositorio (conf/, data/, CHANGELOG.md) y del metrics.json generado por
 scripts/09_make_report_figures.py.
 
-Contenido del ZIP:
+Contenido del ZIP (datos y código; el archivo reproduce productos y figuras):
   raw/                     — CSV originales del SIH + catálogos + CEMs por cuenca
     _manifest.json           procedencia por archivo (URL, SHA-256, bytes, fechas)
     sih/                     catálogos del SIH
@@ -16,17 +16,20 @@ Contenido del ZIP:
     inegi/                       6 CEMs cem_<cuenca>.tif (30 m / 15 m)
   processed/               — parquets canónicos + estaciones + vínculo HydroRIVERS + reportes
   features/                — feature_table.parquet (unidades físicas)
+  conf/                    — configuración usada en la corrida (fuentes, cuencas piloto)
+  src/, scripts/, tests/   — paquete hidroxai_mx, etapas 01–12 y scripts dib_* de la revisión
+  results/dib_revision/    — auditoría de la revisión (sin audit_code/ ni *.log)
+  pyproject.toml, LICENSE, CITATION.cff, README_repository.md (README del repositorio)
   README.md                — metadata + estructura (autogenerado, en inglés)
   LICENSE-DATA.md          — CC BY 4.0 (autogenerado, en inglés)
   CHANGELOG.md             — cambios entre versiones del snapshot
-  conf/cuencas_piloto.yaml — configuración de cuencas usada en la corrida
   manifest_zenodo.json     — SHA-256, tamaño y ruta relativa de cada archivo
 
-CITATION.cff no se incluye a propósito: la citación oficial la genera Zenodo
-al asignar el DOI del depósito.
+Con raw/, processed/ y features/ en la raíz, `hidroxai_mx.utils` toma la raíz del archivo
+como directorio de datos (o la que indique HIDROXAI_DATA).
 
 Se excluyen: .npz (regla de oro), data/interim (rasters intermedios de whitebox),
-data/scratch, .venv, .env, .dvc/config.local, __pycache__, .git.
+data/scratch, .venv, .env, .dvc/config.local, __pycache__, .git, .gitkeep.
 
 Uso:
     python scripts/11_build_zenodo_bundle.py [--version v2026.10] [--out dist/]
@@ -52,16 +55,24 @@ INCLUDES: list[tuple[Path, str]] = [
     (REPO / "data" / "raw" / "inegi", "raw/inegi"),
     (REPO / "data" / "processed", "processed"),
     (REPO / "data" / "features", "features"),
-    (REPO / "conf" / "cuencas_piloto.yaml", "conf/cuencas_piloto.yaml"),
+    (REPO / "conf", "conf"),
     (REPO / "CHANGELOG.md", "CHANGELOG.md"),
+    # Código para reproducir productos y figuras desde el archivo (revisor 3).
+    (REPO / "src", "src"),
+    (REPO / "scripts", "scripts"),
+    (REPO / "tests", "tests"),
+    (REPO / "results" / "dib_revision", "results/dib_revision"),
+    (REPO / "pyproject.toml", "pyproject.toml"),
+    (REPO / "LICENSE", "LICENSE"),
+    (REPO / "CITATION.cff", "CITATION.cff"),
+    (REPO / "README.md", "README_repository.md"),
     # LICENSE-DATA.md and README.md are generated in English at packaging time.
-    # CITATION.cff is intentionally excluded: Zenodo issues the canonical citation
-    # when the DOI is minted.
 ]
 
 # Patrones que NO se suben a Zenodo.
-EXCLUDE_SUFFIXES = {".npz"}
-EXCLUDE_DIRS = {"__pycache__", ".ipynb_checkpoints"}
+EXCLUDE_SUFFIXES = {".npz", ".log", ".pyc"}
+EXCLUDE_NAMES = {".gitkeep", ".gitignore"}
+EXCLUDE_DIRS = {"__pycache__", ".ipynb_checkpoints", "audit_code", ".pytest_cache"}
 
 
 def sha256(path: Path, chunk: int = 1 << 20) -> str:
@@ -78,7 +89,7 @@ def sha256(path: Path, chunk: int = 1 << 20) -> str:
 def iter_files(src: Path):
     """Recorre archivos bajo `src` aplicando los filtros de exclusión."""
     if src.is_file():
-        if src.suffix in EXCLUDE_SUFFIXES:
+        if src.suffix in EXCLUDE_SUFFIXES or src.name in EXCLUDE_NAMES:
             return
         yield src
         return
@@ -87,9 +98,9 @@ def iter_files(src: Path):
     for p in src.rglob("*"):
         if p.is_dir():
             continue
-        if any(part in EXCLUDE_DIRS for part in p.parts):
+        if any(part in EXCLUDE_DIRS or part.endswith(".egg-info") for part in p.parts):
             continue
-        if p.suffix in EXCLUDE_SUFFIXES:
+        if p.suffix in EXCLUDE_SUFFIXES or p.name in EXCLUDE_NAMES:
             continue
         yield p
 
@@ -157,7 +168,10 @@ Source code and pipeline: https://github.com/pantrok/hidroxai-mx.
   **{cov.get("cobertura_media_pct", 0):.1f} %**.
 * Quality flag `calidad`: 0 = original observation; 1 = linearly interpolated
   inside an internal gap of 1–6 days (streamflow only; precipitation is not
-  interpolated); 2 = flagged outlier (negative or > 3 × station P99.9), retained.
+  interpolated); 2 = flagged and retained: streamflow or precipitation negative or
+  > 3 × station P99.9, or a climatological variable outside its physical limits
+  (`hidroxai_mx.data.schema.PHYSICAL_LIMITS`).
+* The SIH per-station CSV files are UTF-8; the two master catalogs are Latin-1.
 
 ## Layout
 
@@ -181,13 +195,18 @@ processed/
   estaciones_seleccionadas_*.csv      primary set (≥ 60 % / ≥ 80 % coverage)
   estaciones_extendidas_hidrometricas.csv     30 %–59 % (sensitivity set)
   estaciones_hidrorivers.csv          station → HydroRIVERS v1.0 reach and upstream area
-  reportes/                           Fig1–Fig7 (PNG + TIFF, 300 dpi), metrics.json,
+  reportes/                           Fig1–Fig7 (PNG 300 dpi, TIFF ≥ 300 dpi), metrics.json,
                                       coverage per station, schema validation reports
 
 features/
   feature_table.parquet               streamflow lags and rolling means (m³/s)
 
-conf/cuencas_piloto.yaml              curated per-unit bounding boxes
+conf/                                 configuration used for this snapshot (sources,
+                                      curated per-unit bounding boxes, selection criteria)
+src/hidroxai_mx/, scripts/, tests/    pipeline code (stages 01–12) and revision scripts (dib_*)
+results/dib_revision/                 audit of the previous release and every figure cited
+                                      in the article (numbers.json)
+pyproject.toml, LICENSE (MIT), CITATION.cff, README_repository.md
 CHANGELOG.md                          changes between snapshots
 LICENSE-DATA.md                       Creative Commons Attribution 4.0
 manifest_zenodo.json                  SHA-256, size and path for every file
@@ -206,20 +225,22 @@ manifest_zenodo.json                  SHA-256, size and path for every file
 
 ## How to reproduce
 
+This archive contains the code next to the data; the package detects `raw/`,
+`processed/` and `features/` at the archive root (or set `HIDROXAI_DATA`).
+
 ```bash
-git clone https://github.com/pantrok/hidroxai-mx.git
-cd hidroxai-mx
+unzip HidroXAI-MX-{version}.zip -d hidromx && cd hidromx
+python -m venv .venv && . .venv/bin/activate     # Windows: .venv\\Scripts\\activate
 pip install -e ".[dev,geo]"
-# Option 1: rebuild directly from this archive
-unzip HidroXAI-MX-{version}.zip -d data_zenodo/
-# Option 2: pull the same snapshot from the DVC remote (Cloudflare R2)
-dvc pull
-python scripts/09_make_report_figures.py   # regenerates Fig2–Fig7 (needs the boundary
-                                           # layers listed in conf/sources.yaml)
+# Boundary layers for Fig. 2 (not redistributed): download the three layers listed in
+# conf/sources.yaml, section 10, into scratch/limites/ (ne_10m_admin_1/, rh250kgw/, cue250kgw/)
+python scripts/09_make_report_figures.py   # metrics.json, Fig2–Fig7
 python scripts/12_make_workflow_figure.py  # Fig1
+python scripts/dib_13_paso2_tables.py      # Table 3 and feature-table description
 ```
 
-The file-to-figure map is given in the repository README.
+The same snapshot can be pulled from the DVC remote of the GitHub repository
+(`dvc pull`). The file-to-figure map is given in `README_repository.md`.
 
 ## How to cite
 

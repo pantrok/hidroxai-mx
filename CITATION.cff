@@ -10,7 +10,7 @@ authors:
   - family-names: "Sánchez Ruiz"
     given-names: "Daniel"
     affiliation: "Unidad Profesional Interdisciplinaria de Ingeniería campus Tlaxcala (UPIIT), Instituto Politécnico Nacional (IPN)"
-version: "v2026.10"
+version: "2026.10"
 date-released: "2026-10-04"
 license: MIT
 repository-code: "https://github.com/pantrok/hidroxai-mx"

@@ -53,6 +53,16 @@ cuencas_piloto:
     cem_resolucion_m: 15          # cuenca pequeña/montañosa de cabecera: mayor detalle
     nota: "Zona de la Unidad Académica del IPN; poco estudiada. Prueba de sensibilidad a 15 m."
 
+# Contornos oficiales de las cuencas piloto (Fig. 2): CNA (1998) "Cuencas Hidrológicas"
+# 1:250 000, distribuida por CONABIO (cue250kgw; ver conf/sources.yaml). Solo se usan
+# correspondencias inequívocas por nombre oficial (tabla completa en
+# results/dib_revision/pilot_basin_outlines.csv, scripts/dib_14_pilot_basin_outlines.py).
+contornos_cuencas_piloto:
+  - {cuenca_piloto: "Cutzamala", cuencas_oficiales: ["Río Cutzamala"]}
+  - {cuenca_piloto: "Lerma–Santiago", region_oficial: "Lerma-Santiago"}   # = región hidrológica 12
+  - {cuenca_piloto: "Pánuco", region_oficial: "Pánuco"}                   # = región hidrológica 26
+  - {cuenca_piloto: "Alta del Balsas", unidad: "Alta del Balsas"}          # sin cuenca oficial equivalente
+
 criterios_seleccion_estaciones:
   # Main thresholds reflect the continuity of each monitoring network.
   # Hydro series from 30% to <60% remain separate for sensitivity/reconstruction.

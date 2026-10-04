@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
+import os
 from pathlib import Path
 from typing import Any
 
@@ -13,7 +14,19 @@ import yaml
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parents[3]
 CONF = ROOT / "conf"
-DATA = ROOT / "data"
+
+
+def _data_root() -> Path:
+    """`data/` en el repositorio; en el archivo de Zenodo (raw/, processed/ y features/ en
+    la raíz, junto a src/) la raíz misma. La variable HIDROXAI_DATA lo fija explícitamente."""
+    if env := os.environ.get("HIDROXAI_DATA"):
+        return Path(env).resolve()
+    if not (ROOT / "data").is_dir() and (ROOT / "raw").is_dir() and (ROOT / "processed").is_dir():
+        return ROOT
+    return ROOT / "data"
+
+
+DATA = _data_root()
 RAW, INTERIM, PROCESSED, FEATURES = (
     DATA / "raw",
     DATA / "interim",
