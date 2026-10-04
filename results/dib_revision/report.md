@@ -17,8 +17,8 @@ en `proof_ledger.md`.
 - **Subcuencas:** la validación contra HydroRIVERS mostró que los polígonos no representan
   la cuenca de los aforos (mediana del error de área 99.5 %); se retiran y se entrega en su
   lugar el vínculo estación–tramo HydroRIVERS con su área aportante.
-- **Baseline, Fig. 8 desestacionalizada, mapa, parámetros y mapa datos→figura** quedan
-  listos para el artículo.
+- **Baseline, correlación desestacionalizada (Fig. 8 del artículo, Fig7 en v2026.10), mapa,
+  parámetros y mapa datos→figura** quedan listos para el artículo.
 
 ## Por punto del brief
 
@@ -168,10 +168,11 @@ motivo.
 
 ## Pendientes del autor
 
-1. Revisar los cambios y autorizar el commit (el repositorio pide confirmación antes de
+1. `git push` de los commits de la revisión (el repositorio pide confirmación antes de
    `git commit`/`push`/`tag` y `dvc push`).
-2. `dvc add data/processed data/features data/raw && dvc push` (después de
-   `08_storage_report.py`).
+2. Hecho el 2026-10-03: `08_storage_report.py` (3.13 GB / 9.5 GB), `dvc commit` y
+   `dvc push` (225 archivos a R2). Los datos se versionan como salidas de las etapas de
+   `dvc.yaml`; `dvc.lock` registra el snapshot v2026.10.
 3. `python scripts/11_build_zenodo_bundle.py --version v2026.10` y subir el ZIP como
    **New version** del registro existente en Zenodo; comprobar que el concept DOI
    10.5281/zenodo.21231600 resuelve a v2026.10.
