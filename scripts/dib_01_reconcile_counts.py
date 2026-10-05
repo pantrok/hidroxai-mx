@@ -290,10 +290,10 @@ def main(probe: bool, probe_delay: float, published_cuencas: Path, suffix: str) 
     pd.DataFrame(missing_rows).to_csv(OUT / f"missing_downloads{suffix}.csv", index=False)
 
     obs, comps = [], []
-    s, c = _observation_counts_pandas("hidrometricas", "gasto_medio_m3s", t0, t1)
-    obs.append(s); comps.append(c)
-    s, c = _observation_counts_arrow("climatologicas", "precip_mm", t0, t1)
-    obs.append(s); comps.append(c)
+    for s, c in (_observation_counts_pandas("hidrometricas", "gasto_medio_m3s", t0, t1),
+                 _observation_counts_arrow("climatologicas", "precip_mm", t0, t1)):
+        obs.append(s)
+        comps.append(c)
     pd.DataFrame(obs).to_csv(OUT / f"observation_counts{suffix}.csv", index=False)
     comp = pd.concat(comps, ignore_index=True)
     comp.to_csv(OUT / f"calidad_composition{suffix}.csv", index=False)

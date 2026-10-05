@@ -66,13 +66,13 @@ def _slug(s: str) -> str:
 def _tif_intersects_bbox(tif_path: Path, bbox: tuple[float, float, float, float]) -> bool:
     """True si el extent del TIFF intersecta el bbox dado (en EPSG:4326 lon/lat)."""
     with rasterio.open(tif_path) as src:
-        l, b, r, t = src.bounds
+        left, b, r, t = src.bounds
         if src.crs and src.crs.to_epsg() != 4326:
             # bbox en lat/lon: reproyectar bounds del TIFF a 4326 para comparar.
             from rasterio.warp import transform_bounds
-            l, b, r, t = transform_bounds(src.crs, "EPSG:4326", l, b, r, t, densify_pts=21)
+            left, b, r, t = transform_bounds(src.crs, "EPSG:4326", left, b, r, t, densify_pts=21)
     min_lon, min_lat, max_lon, max_lat = bbox
-    return not (r < min_lon or l > max_lon or t < min_lat or b > max_lat)
+    return not (r < min_lon or left > max_lon or t < min_lat or b > max_lat)
 
 
 def _find_cem_source_dir(resolucion_m: int) -> tuple[Path | None, int | None]:

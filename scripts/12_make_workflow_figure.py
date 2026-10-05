@@ -8,9 +8,10 @@ que ningún subtítulo se salga del recuadro.
 from __future__ import annotations
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch, Rectangle
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 
 from hidroxai_mx.utils import PROCESSED, get_logger
 

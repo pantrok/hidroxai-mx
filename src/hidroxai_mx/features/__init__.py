@@ -29,7 +29,7 @@ def add_rolling(df: pd.DataFrame, col: str, group: str = "clave_estacion", windo
     df = df.sort_values([group, "fecha"]).copy()
     for w in windows:
         df[f"{col}_ma{w}"] = df.groupby(group)[col].transform(
-            lambda s: s.rolling(w, min_periods=max(2, w // 2)).mean())
+            lambda s, w=w: s.rolling(w, min_periods=max(2, w // 2)).mean())
     return df
 
 
@@ -141,7 +141,9 @@ def build_windows_multi(df: pd.DataFrame, feature_cols: list[str], target_col: s
         if len(arr) < t_in + horizon:
             continue
         X, y = make_windows(arr, t_in=t_in, horizon=horizon)
-        Xs.append(X); ys.append(y); meta += [(key, horizon)] * len(y)
+        Xs.append(X)
+        ys.append(y)
+        meta += [(key, horizon)] * len(y)
     if not Xs:
         return np.empty((0, t_in, len(cols))), np.empty((0,)), []
     return np.concatenate(Xs), np.concatenate(ys), meta

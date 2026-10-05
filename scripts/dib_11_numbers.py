@@ -191,7 +191,7 @@ def main() -> None:
          "debe_decir": "sub-basin polygons removed; station–HydroRIVERS link provided "
                        f"({num['estaciones']['hidro_vinculadas_hydrorivers']} stations linked)"},
         {"donde": "Value of the data, Fig. 3 caption", "dice": "98.78 % original, 1.21 % imputed, 0.005 % outliers",
-         "debe_decir": "{0} % / {1} % / {2} % of daily streamflow values".format(
+         "debe_decir": "{} % / {} % / {} % of daily streamflow values".format(
              *[num["calidad_hidro"]["dias_con_valor"][k]["pct"] for k in (0, 1, 2)])},
         {"donde": "Methods (canonical schema and QC), Value of the data", "dice": "gaps shorter than seven days imputed by cubic spline",
          "debe_decir": f"internal gaps of 1–6 days filled by linear interpolation (masking test: nRMSE {g['lineal']['nRMSE']:.2f} linear, "

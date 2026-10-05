@@ -33,6 +33,7 @@ import json
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -146,10 +147,12 @@ def fig2_station_map(metrics: dict) -> None:
     nation.plot(ax=inset, color="0.9", edgecolor="0.3", linewidth=0.4)
     inset.add_patch(plt.Rectangle((xmin - pad, ymin - pad), xmax - xmin + 2 * pad, ymax - ymin + 2 * pad,
                                   fill=False, color="red", linewidth=0.8))
-    inset.set_xticks([]); inset.set_yticks([])
+    inset.set_xticks([])
+    inset.set_yticks([])
     # geopandas ≥ 1.2 rotula los ejes con el CRS al dibujar; se fijan aquí para que la
     # figura no dependa de la versión instalada.
-    inset.set_xlabel(""); inset.set_ylabel("")
+    inset.set_xlabel("")
+    inset.set_ylabel("")
     ax.set_xlabel("Easting (m, EPSG:6372)", fontsize=plt.rcParams["axes.labelsize"])
     ax.set_ylabel("Northing (m, EPSG:6372)", fontsize=plt.rcParams["axes.labelsize"])
     ax.ticklabel_format(style="plain")
@@ -191,7 +194,8 @@ def fig4_inventory_coverage(hid: pd.DataFrame, metrics: dict) -> None:
     ax[1].set_xlabel("Coverage 2010–2025 (% of days with an original observation)")
     ax[1].set_ylabel("Number of stations")
     ax[1].legend()
-    ax[0].set_title("(a)", loc="left"); ax[1].set_title("(b)", loc="left")
+    ax[0].set_title("(a)", loc="left")
+    ax[1].set_title("(b)", loc="left")
     plt.tight_layout()
     _save(fig, "Fig4_inventory_coverage")
     metrics["fig4"] = {
@@ -225,13 +229,18 @@ def fig6_climatology_annual(hid: pd.DataFrame, metrics: dict) -> None:
     an = report.annual_means(d, "gasto_medio_m3s")
     fig, ax = plt.subplots(1, 2, figsize=(11, 3.6))
     ax[0].plot(mc["mes"], mc["mean"], marker="o", color="#1F3D5C")
-    ax[0].set_xlabel("Month"); ax[0].set_ylabel("Mean daily streamflow (m³ s⁻¹)")
-    ax[0].set_xticks(range(1, 13)); ax[0].grid(alpha=0.3)
+    ax[0].set_xlabel("Month")
+    ax[0].set_ylabel("Mean daily streamflow (m³ s⁻¹)")
+    ax[0].set_xticks(range(1, 13))
+    ax[0].grid(alpha=0.3)
     ax[1].plot(an["anio"], an["gasto_medio_m3s"], marker="o", ms=3, color="#7A1737")
     for yr in (2011, 2021, 2023):
         ax[1].axvline(yr, color="gray", alpha=0.4, ls=":")
-    ax[1].set_xlabel("Year"); ax[1].set_ylabel("Annual mean (m³ s⁻¹)"); ax[1].grid(alpha=0.3)
-    ax[0].set_title("(a)", loc="left"); ax[1].set_title("(b)", loc="left")
+    ax[1].set_xlabel("Year")
+    ax[1].set_ylabel("Annual mean (m³ s⁻¹)")
+    ax[1].grid(alpha=0.3)
+    ax[0].set_title("(a)", loc="left")
+    ax[1].set_title("(b)", loc="left")
     plt.tight_layout()
     _save(fig, "Fig6_climatology_annual")
     metrics["fig6"] = {"climatologia_mensual": mc.set_index("mes")["mean"].round(2).to_dict()}

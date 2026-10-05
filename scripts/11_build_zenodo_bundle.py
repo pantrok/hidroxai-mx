@@ -326,10 +326,7 @@ def main() -> int:
     entries: list[tuple[Path, str]] = []
     for src, dest in INCLUDES:
         for f in iter_files(src):
-            if src.is_file():
-                arcname = dest
-            else:
-                arcname = f"{dest}/{f.relative_to(src).as_posix()}"
+            arcname = dest if src.is_file() else f"{dest}/{f.relative_to(src).as_posix()}"
             entries.append((f, arcname))
 
     total_bytes = sum(f.stat().st_size for f, _ in entries)

@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import pytest
+from pandera.errors import SchemaErrors
 
 from hidroxai_mx.data import clean, schema
 
@@ -85,7 +86,7 @@ def test_series_schema_valid():
 def test_series_schema_rejects_bad_fuente():
     df = _toy_series()
     df["fuente"] = "DESCONOCIDA"
-    with pytest.raises(Exception):
+    with pytest.raises(SchemaErrors):
         schema.validate_series(df)
 
 

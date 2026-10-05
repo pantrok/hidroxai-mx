@@ -90,8 +90,8 @@ stages:
       size: 2747
     - path: src/hidroxai_mx
       hash: md5
-      md5: 60120fde71fedcba026117a25eb6d1dc.dir
-      size: 148509
+      md5: 632c9a98297b06811dfc5cd35a9369b8.dir
+      size: 148528
       nfiles: 32
     outs:
     - path: data/processed/series_hidrometricas.parquet
@@ -113,8 +113,8 @@ stages:
       size: 2747
     - path: src/hidroxai_mx
       hash: md5
-      md5: 60120fde71fedcba026117a25eb6d1dc.dir
-      size: 148509
+      md5: 632c9a98297b06811dfc5cd35a9369b8.dir
+      size: 148528
       nfiles: 32
     outs:
     - path: data/processed/series_climatologicas.parquet
@@ -149,8 +149,8 @@ stages:
       size: 4875
     - path: src/hidroxai_mx/features
       hash: md5
-      md5: b120f92c187a7601bc5d349f42d45cd0.dir
-      size: 17223
+      md5: 68abefae545dd35c61d7024e472096cf.dir
+      size: 17242
       nfiles: 2
     outs:
     - path: data/features/feature_table.parquet
