@@ -1428,9 +1428,9 @@
     "fuente": "Zenodo (registro del dataset); CITATION.cff",
     "dataset_concepto": "10.5281/zenodo.21231600",
     "dataset_v2026_06": "10.5281/zenodo.21231601",
-    "dataset_v2026_10": null,
+    "dataset_v2026_10": "10.5281/zenodo.23150556",
     "software_github_zenodo": null,
-    "nota": "Los DOI de v2026.10 y del software los asigna Zenodo al publicar."
+    "nota": "Sin DOI de software aparte: el código viaja dentro del archivo del dataset."
   },
   "tabla3_v2026_10": {
     "fuente": "results/dib_revision/tabla3_v2026_10.csv (data/processed/estaciones_hidrorivers.csv, conf/cuencas_piloto.yaml)",

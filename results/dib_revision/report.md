@@ -173,12 +173,11 @@ motivo.
    snapshot v2026.10.
 2. Hecho: ZIP `dist/HidroXAI-MX-v2026.10.zip` con datos y código, verificado desde copia
    limpia (`clean_copy_check.md`), y tag `v2026.10` en GitHub.
-3. Subir el ZIP como **New version** del registro existente en Zenodo (texto del formulario
-   en `dist/zenodo_v2026.10_metadata.md`) y comprobar que el concept DOI
-   10.5281/zenodo.21231600 resuelve a v2026.10.
-4. Activar la integración GitHub–Zenodo y publicar el *release* `v2026.10` para el DOI del
-   software; anotar ambos DOI en `numbers.json` (`dois`), `CITATION.cff` y `README.md`.
-5. Editar el manuscrito con la tabla "dice → debe decir" de `numbers.json` y redactar la
+3. Hecho: v2026.10 publicada en Zenodo como nueva versión del registro existente
+   (10.5281/zenodo.23150556; el archivo coincide en MD5 con el ZIP verificado) y el concept
+   DOI 10.5281/zenodo.21231600 resuelve a ella. No se publica un DOI de software aparte: el
+   código viaja dentro del archivo del dataset.
+4. Editar el manuscrito con la tabla "dice → debe decir" de `numbers.json` y redactar la
    carta; figuras de envío en `dist/figuras_envio/`.
 
 ## Paso 2 (2026-10-04)

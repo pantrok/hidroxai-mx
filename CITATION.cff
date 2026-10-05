@@ -19,6 +19,9 @@ identifiers:
     value: "10.5281/zenodo.21231600"
     description: "Concept DOI of the Hidro-MX dataset on Zenodo (resolves to the latest snapshot; CC BY 4.0)."
   - type: doi
+    value: "10.5281/zenodo.23150556"
+    description: "Zenodo deposit of the Hidro-MX v2026.10 dataset snapshot (data and code)."
+  - type: doi
     value: "10.5281/zenodo.21231601"
     description: "Zenodo deposit of the Hidro-MX v2026.06 dataset snapshot."
 keywords:

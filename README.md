@@ -9,7 +9,8 @@ a curated hydroclimatic dataset for pilot basins in Mexico built from open data
 of CONAGUA (SIH) and INEGI (CEM 3.0).
 
 > **Dataset:** cite the concept DOI [10.5281/zenodo.21231600](https://doi.org/10.5281/zenodo.21231600),
-> which resolves to the latest snapshot. Snapshot `v2026.06`:
+> which resolves to the latest snapshot. Snapshot `v2026.10` (code included in the archive):
+> [10.5281/zenodo.23150556](https://doi.org/10.5281/zenodo.23150556); snapshot `v2026.06`:
 > [10.5281/zenodo.21231601](https://doi.org/10.5281/zenodo.21231601). Changes between
 > snapshots are listed in [`CHANGELOG.md`](CHANGELOG.md). A versioned mirror is also
 > available through the DVC remote on Cloudflare R2 (`dvc pull`).

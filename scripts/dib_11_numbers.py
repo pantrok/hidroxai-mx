@@ -134,8 +134,8 @@ def main() -> None:
         "validacion_esquema": {"fuente": "data/processed/reportes/validacion_<tipo>.json (etapa 04)", **val},
         "dois": {"fuente": "Zenodo (registro del dataset); CITATION.cff",
                  "dataset_concepto": "10.5281/zenodo.21231600", "dataset_v2026_06": "10.5281/zenodo.21231601",
-                 "dataset_v2026_10": None, "software_github_zenodo": None,
-                 "nota": "Los DOI de v2026.10 y del software los asigna Zenodo al publicar."},
+                 "dataset_v2026_10": "10.5281/zenodo.23150556", "software_github_zenodo": None,
+                 "nota": "Sin DOI de software aparte: el código viaja dentro del archivo del dataset."},
     }
     # ---- Paso 2 (2026-10-04): T1 cifras faltantes, T2 límites físicos del clima, T3, T4, T6 ----
     p2 = _j(R / "e13_paso2_t1.json")
