@@ -50,6 +50,12 @@ geo = [
     "dask[complete]>=2024.6", # paralelización del pipeline
     "rioxarray>=0.15",
 ]
+# Benchmark de modelos, explicabilidad y alertas (results/xai_benchmark/protocol.md)
+ml = [
+    "torch>=2.4",             # TCN, ConvNeXt-1D, PatchTST (CPU basta)
+    "xgboost>=2.1",           # modelo de árboles + TreeSHAP nativo
+    "captum>=0.7",            # Integrated Gradients
+]
 # Conversión de BANDAS .mdb cuando no haya mdbtools del sistema
 mdb = [
     "pandas-access>=0.0.1",

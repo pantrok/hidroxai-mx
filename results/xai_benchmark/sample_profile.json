@@ -1,0 +1,195 @@
+{
+  "fecha": "2026-10-10",
+  "fuente": "scripts/xai_01_profile_samples.py; results/xai_benchmark/sample_profile.csv; data/features/feature_table.parquet (v2026.10)",
+  "estaciones": 101,
+  "fuera_de_unidad": [
+    "CHAMC",
+    "CMNMC",
+    "LPNMC",
+    "LPSMC",
+    "LPZMC",
+    "TLAMC"
+  ],
+  "min_muestras_prueba": 180,
+  "por_cuenca": {
+    "Lerma–Santiago": {
+      "estaciones": 43,
+      "h1": {
+        "muestras": {
+          "train": 113142,
+          "val": 25688,
+          "test": 31677
+        },
+        "evaluables_prueba": 41,
+        "no_evaluables": [
+          {
+            "clave": "SRSJL",
+            "n": 41
+          },
+          {
+            "clave": "CAPNR",
+            "n": 26
+          }
+        ]
+      },
+      "h7": {
+        "muestras": {
+          "train": 111530,
+          "val": 25301,
+          "test": 31058
+        },
+        "evaluables_prueba": 41,
+        "no_evaluables": [
+          {
+            "clave": "SRSJL",
+            "n": 36
+          },
+          {
+            "clave": "CAPNR",
+            "n": 20
+          }
+        ]
+      },
+      "h14": {
+        "muestras": {
+          "train": 109947,
+          "val": 24892,
+          "test": 30397
+        },
+        "evaluables_prueba": 41,
+        "no_evaluables": [
+          {
+            "clave": "SRSJL",
+            "n": 29
+          },
+          {
+            "clave": "CAPNR",
+            "n": 14
+          }
+        ]
+      }
+    },
+    "Pánuco": {
+      "estaciones": 39,
+      "h1": {
+        "muestras": {
+          "train": 112612,
+          "val": 25283,
+          "test": 24690
+        },
+        "evaluables_prueba": 37,
+        "no_evaluables": [
+          {
+            "clave": "GDLMX",
+            "n": 71
+          },
+          {
+            "clave": "TMTSL",
+            "n": 130
+          }
+        ]
+      },
+      "h7": {
+        "muestras": {
+          "train": 111834,
+          "val": 25026,
+          "test": 24238
+        },
+        "evaluables_prueba": 37,
+        "no_evaluables": [
+          {
+            "clave": "GDLMX",
+            "n": 65
+          },
+          {
+            "clave": "TMTSL",
+            "n": 121
+          }
+        ]
+      },
+      "h14": {
+        "muestras": {
+          "train": 111029,
+          "val": 24743,
+          "test": 23796
+        },
+        "evaluables_prueba": 37,
+        "no_evaluables": [
+          {
+            "clave": "GDLMX",
+            "n": 58
+          },
+          {
+            "clave": "TMTSL",
+            "n": 109
+          }
+        ]
+      }
+    },
+    "Alta del Balsas": {
+      "estaciones": 12,
+      "h1": {
+        "muestras": {
+          "train": 26739,
+          "val": 7552,
+          "test": 6710
+        },
+        "evaluables_prueba": 12,
+        "no_evaluables": []
+      },
+      "h7": {
+        "muestras": {
+          "train": 26375,
+          "val": 7477,
+          "test": 6386
+        },
+        "evaluables_prueba": 12,
+        "no_evaluables": []
+      },
+      "h14": {
+        "muestras": {
+          "train": 26048,
+          "val": 7418,
+          "test": 6091
+        },
+        "evaluables_prueba": 12,
+        "no_evaluables": []
+      }
+    },
+    "Cutzamala": {
+      "estaciones": 1,
+      "h1": {
+        "muestras": {
+          "train": 1988,
+          "val": 550,
+          "test": 401
+        },
+        "evaluables_prueba": 1,
+        "no_evaluables": []
+      },
+      "h7": {
+        "muestras": {
+          "train": 1924,
+          "val": 532,
+          "test": 374
+        },
+        "evaluables_prueba": 1,
+        "no_evaluables": []
+      },
+      "h14": {
+        "muestras": {
+          "train": 1850,
+          "val": 512,
+          "test": 346
+        },
+        "evaluables_prueba": 1,
+        "no_evaluables": []
+      }
+    }
+  },
+  "evaluables_agregado": {
+    "h1": 91,
+    "h7": 91,
+    "h14": 91
+  }
+}
