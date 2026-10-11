@@ -24,7 +24,7 @@ from datetime import date
 import pandas as pd
 import torch
 
-from hidroxai_mx.models import arima, nets, train
+from hidroxai_mx.models import arima, manifest, nets, train
 from hidroxai_mx.models import data as D
 from hidroxai_mx.models import xgb as XG
 from hidroxai_mx.utils import FEATURES, PROCESSED, ROOT, get_logger
@@ -105,8 +105,8 @@ def main() -> None:
     res["estimacion_diseno_principal"] = est
     res["presupuesto_h"] = 40
     (OUT / "timing_pilot.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
-    man = OUT / "compute_manifest.csv"
-    pd.DataFrame(rows).to_csv(man, mode="a", header=not man.exists(), index=False)
+    for row in rows:
+        manifest.append(OUT / "compute_manifest.csv", **row)
     log.info("estimación: %s", est)
 
 

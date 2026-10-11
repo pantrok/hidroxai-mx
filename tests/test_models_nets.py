@@ -59,6 +59,16 @@ def test_fit_resumes_from_checkpoint(tmp_path):
     assert r1["epochs"] == 2 and r2["epochs"] == 4 and r2["history"][:2] == r1["history"]
 
 
+def test_xgboost_save_load_keeps_best_iteration(tmp_path):
+    x, y = _toy(600)
+    model = X.fit(x[:500], y[:500], x[500:], y[500:], max_depth=4, seed=0, n_jobs=2)
+    model.save_model(tmp_path / "m.json")
+    loaded = xgboost.Booster()
+    loaded.load_model(tmp_path / "m.json")
+    assert loaded.best_iteration == model.best_iteration
+    np.testing.assert_allclose(X.predict(loaded, x[500:]), X.predict(model, x[500:]))
+
+
 def test_xgboost_fit_predict_and_treeshap():
     x, y = _toy(600)
     model = X.fit(x[:500], y[:500], x[500:], y[500:], max_depth=4, seed=0, n_jobs=2)
