@@ -1,0 +1,44 @@
+{
+  "fuente": "scripts/xai_02b_parallel_pilot.py",
+  "epocas_por_proceso": 2,
+  "configuraciones": [
+    {
+      "modelo": "tcn-32",
+      "procesos": 1,
+      "hilos": 16,
+      "s_por_epoca_por_proceso": [
+        26.9
+      ],
+      "epocas_por_hora_equipo": 133.6
+    },
+    {
+      "modelo": "tcn-32",
+      "procesos": 2,
+      "hilos": 8,
+      "s_por_epoca_por_proceso": [
+        31.2,
+        31.1
+      ],
+      "epocas_por_hora_equipo": 230.5
+    },
+    {
+      "modelo": "patchtst-32",
+      "procesos": 1,
+      "hilos": 16,
+      "s_por_epoca_por_proceso": [
+        39.6
+      ],
+      "epocas_por_hora_equipo": 90.8
+    },
+    {
+      "modelo": "patchtst-32",
+      "procesos": 2,
+      "hilos": 8,
+      "s_por_epoca_por_proceso": [
+        51.3,
+        51.7
+      ],
+      "epocas_por_hora_equipo": 139.3
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+fecha,tipo,dispositivo,hilos,modelo,config,cuenca,h,semilla,epocas,segundos,parametros
+2026-10-10,piloto,cpu,16,tcn,32,Lerma–Santiago,1,20261010.0,3.0,121.7,22593.0
+2026-10-10,piloto,cpu,16,tcn,64,Lerma–Santiago,1,20261010.0,3.0,180.7,88193.0
+2026-10-10,piloto,cpu,16,convnext,32,Lerma–Santiago,1,20261010.0,3.0,166.8,26433.0
+2026-10-10,piloto,cpu,16,convnext,64,Lerma–Santiago,1,20261010.0,3.0,321.3,102017.0
+2026-10-10,piloto,cpu,16,patchtst,32,Lerma–Santiago,1,20261010.0,3.0,304.0,18625.0
+2026-10-10,piloto,cpu,16,patchtst,64,Lerma–Santiago,1,20261010.0,3.0,255.8,70017.0
+2026-10-10,piloto,cpu,16,xgboost,4,Lerma–Santiago,1,20261010.0,312.0,11.6,
+2026-10-10,piloto,cpu,16,xgboost,6,Lerma–Santiago,1,20261010.0,132.0,9.1,
+2026-10-10,piloto,cpu,16,arima,"(2, 0, 2)",Lerma–Santiago,"1,7,14",,,40.4,

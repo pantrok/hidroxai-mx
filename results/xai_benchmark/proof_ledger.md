@@ -28,7 +28,20 @@ queda `OPEN` hasta tener evidencia.
 
 ## Enmiendas
 
-Ninguna.
+Ninguna. El protocolo no ha cambiado.
+
+## Notas de ejecución
+
+- **2026-10-10, antes de cualquier resultado:**
+  - **Piloto de tiempos** (`timing_pilot.json` y `timing_pilot_parallel.json`; solo
+    entrenamiento y validación, sin tocar la prueba). En CPU local, las 216 redes del diseño
+    principal requieren unas 30–35 h con dos procesos en paralelo si se detienen hacia la época
+    40, y hasta ~80 h en el peor caso, frente al tope de 40 h de la sección 8.
+  - **Decisión del autor:** las redes se entrenan en GPU de Kaggle, el respaldo previsto en
+    la sección 8 (notebook `notebooks/kaggle_xai_train_nets.ipynb`, código fijado por
+    commit). ARIMA, XGBoost, evaluación, explicaciones y alertas siguen en CPU local.
+  - **Lo que no cambia:** arquitecturas, malla, semillas, entrenamiento, particiones y
+    criterios. El manifiesto registra horas de GPU para las redes y de CPU para lo demás.
 
 ## Evidencia
 

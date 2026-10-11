@@ -19,12 +19,21 @@ LR, WEIGHT_DECAY, BATCH, MAX_EPOCHS, PATIENCE = 1e-3, 1e-4, 256, 100, 10
 def set_seed(seed: int) -> None:
     np.random.seed(seed)
     torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+
+
+def _device_of(model: nn.Module) -> torch.device:
+    return next(model.parameters()).device
 
 
 @torch.no_grad()
 def predict(model: nn.Module, X: np.ndarray, batch: int = 4096) -> np.ndarray:
     model.eval()
-    out = [model(torch.from_numpy(X[i:i + batch])).numpy() for i in range(0, len(X), batch)]
+    dev = _device_of(model)
+    out = [model(torch.from_numpy(X[i:i + batch]).to(dev)).cpu().numpy() for i in range(0, len(X), batch)]
     return np.concatenate(out) if out else np.empty(0, dtype=np.float32)
 
 
@@ -34,25 +43,27 @@ def _val_loss(model, X, y) -> float:
 
 def fit(model: nn.Module, Xtr: np.ndarray, ytr: np.ndarray, Xva: np.ndarray, yva: np.ndarray,
         seed: int, ckpt: Path | None = None, max_epochs: int = MAX_EPOCHS,
-        patience: int = PATIENCE) -> dict:
+        patience: int = PATIENCE, device: str | torch.device = "cpu") -> dict:
     """Entrena con early stopping; si `ckpt` existe, reanuda desde ahí."""
     set_seed(seed)
+    dev = torch.device(device)
+    model.to(dev)
     opt = torch.optim.AdamW(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
     gen = torch.Generator().manual_seed(seed)
     state = {"epoch": 0, "best": np.inf, "best_state": None, "wait": 0, "history": [], "seconds": 0.0}
     if ckpt is not None and Path(ckpt).exists():
-        saved = torch.load(ckpt, weights_only=False)
+        saved = torch.load(ckpt, weights_only=False, map_location=dev)
         model.load_state_dict(saved["model"])
         opt.load_state_dict(saved["opt"])
-        gen.set_state(saved["gen"])
-        torch.set_rng_state(saved["torch_rng"])
+        gen.set_state(saved["gen"].cpu())
+        torch.set_rng_state(saved["torch_rng"].cpu())
         state = saved["state"]
-    Xt, yt = torch.from_numpy(Xtr), torch.from_numpy(ytr)
+    Xt, yt = torch.from_numpy(Xtr).to(dev), torch.from_numpy(ytr).to(dev)
     loss_fn = nn.MSELoss()
     while state["epoch"] < max_epochs and state["wait"] < patience:
         t0 = time.perf_counter()
         model.train()
-        perm = torch.randperm(len(Xt), generator=gen)
+        perm = torch.randperm(len(Xt), generator=gen).to(dev)
         for i in range(0, len(perm), BATCH):
             idx = perm[i:i + BATCH]
             opt.zero_grad()

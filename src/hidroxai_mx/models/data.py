@@ -117,6 +117,32 @@ class Scaler:
         return np.expm1(np.asarray(z) * self.std[TARGET] + self.mean[TARGET])
 
 
+def group_arrays(panels: dict[str, pd.DataFrame], h: int,
+                 partitions: dict[str, tuple[str, str]] = PARTITIONS) -> dict:
+    """Arreglos de un grupo (cuenca) por partición, con escaladores por estación.
+
+    Devuelve {"scalers": {clave: Scaler}, particion: {"X", "y", "meta"}}; `meta` es un
+    DataFrame con clave, fecha de emisión, fecha objetivo, gasto observado y Q(t).
+    """
+    out: dict = {"scalers": {}}
+    acc = {k: {"X": [], "y": [], "meta": []} for k in partitions}
+    for clave, panel in panels.items():
+        sc = Scaler.fit(panel, partitions["train"])
+        out["scalers"][clave] = sc
+        for name, part in partitions.items():
+            s = station_samples(panel, sc, h, part)
+            acc[name]["X"].append(s["X"])
+            acc[name]["y"].append(s["y"])
+            acc[name]["meta"].append(pd.DataFrame({"clave": clave, "issue": s["issue"],
+                                                   "target_date": s["target_date"],
+                                                   "y_flow": s["y_flow"], "q_issue": s["q_issue"]}))
+    for name, a in acc.items():
+        out[name] = {"X": np.concatenate(a["X"]) if a["X"] else np.empty((0, WINDOW, len(CHANNELS)), np.float32),
+                     "y": np.concatenate(a["y"]) if a["y"] else np.empty(0, np.float32),
+                     "meta": pd.concat(a["meta"], ignore_index=True) if a["meta"] else pd.DataFrame()}
+    return out
+
+
 def station_samples(panel: pd.DataFrame, scaler: Scaler, h: int, part: tuple[str, str],
                     window: int = WINDOW) -> dict:
     """Ventanas X [n, window, 6], objetivo estandarizado y, y metadatos de la estación."""

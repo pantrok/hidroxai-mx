@@ -1,0 +1,71 @@
+{
+  "deep_s_per_epoch": {
+    "tcn-32": 40.57,
+    "tcn-64": 60.23,
+    "convnext-32": 55.6,
+    "convnext-64": 107.11,
+    "patchtst-32": 101.34,
+    "patchtst-64": 85.28
+  },
+  "xgb_s": {
+    "depth4": {
+      "segundos": 11.6,
+      "arboles": 312
+    },
+    "depth6": {
+      "segundos": 9.1,
+      "arboles": 132
+    }
+  },
+  "fuente": "scripts/xai_02_timing_pilot.py",
+  "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+  "hilos": 16,
+  "grupo_piloto": "Lerma–Santiago, h = 1",
+  "muestras_entrenamiento_piloto": 113142,
+  "muestras_entrenamiento": {
+    "Lerma–Santiago": {
+      "1": 113142,
+      "7": 111530,
+      "14": 109947
+    },
+    "Pánuco": {
+      "1": 112612,
+      "7": 111834,
+      "14": 111029
+    },
+    "Alta del Balsas": {
+      "1": 26739,
+      "7": 26375,
+      "14": 26048
+    },
+    "Cutzamala": {
+      "1": 1988,
+      "7": 1924,
+      "14": 1850
+    }
+  },
+  "arima_s_estacion": 40.4,
+  "arima_orden_piloto": {
+    "clave": "AMCGJ",
+    "orden": [
+      2,
+      0,
+      2
+    ]
+  },
+  "estimacion_diseno_principal": {
+    "central_40_epocas": {
+      "redes_h": 100.1,
+      "xgboost_h": 0.12,
+      "arima_h": 1.07,
+      "total_h": 101.3
+    },
+    "cota_100_epocas": {
+      "redes_h": 250.3,
+      "xgboost_h": 0.12,
+      "arima_h": 1.07,
+      "total_h": 251.5
+    }
+  },
+  "presupuesto_h": 40
+}
