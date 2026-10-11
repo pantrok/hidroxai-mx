@@ -1,0 +1,49 @@
+cuenca,h,modelo,rezago_precip_mas_importante
+Lerma–Santiago,1,xgboost,1
+Lerma–Santiago,1,tcn,1
+Lerma–Santiago,1,convnext,1
+Lerma–Santiago,1,patchtst,1
+Lerma–Santiago,7,xgboost,7
+Lerma–Santiago,7,tcn,7
+Lerma–Santiago,7,convnext,7
+Lerma–Santiago,7,patchtst,32
+Lerma–Santiago,14,xgboost,14
+Lerma–Santiago,14,tcn,14
+Lerma–Santiago,14,convnext,14
+Lerma–Santiago,14,patchtst,18
+Pánuco,1,xgboost,1
+Pánuco,1,tcn,1
+Pánuco,1,convnext,1
+Pánuco,1,patchtst,1
+Pánuco,7,xgboost,7
+Pánuco,7,tcn,7
+Pánuco,7,convnext,7
+Pánuco,7,patchtst,7
+Pánuco,14,xgboost,14
+Pánuco,14,tcn,14
+Pánuco,14,convnext,17
+Pánuco,14,patchtst,14
+Alta del Balsas,1,xgboost,1
+Alta del Balsas,1,tcn,1
+Alta del Balsas,1,convnext,1
+Alta del Balsas,1,patchtst,1
+Alta del Balsas,7,xgboost,29
+Alta del Balsas,7,tcn,7
+Alta del Balsas,7,convnext,7
+Alta del Balsas,7,patchtst,7
+Alta del Balsas,14,xgboost,15
+Alta del Balsas,14,tcn,14
+Alta del Balsas,14,convnext,17
+Alta del Balsas,14,patchtst,24
+Cutzamala,1,xgboost,1
+Cutzamala,1,tcn,1
+Cutzamala,1,convnext,1
+Cutzamala,1,patchtst,1
+Cutzamala,7,xgboost,7
+Cutzamala,7,tcn,7
+Cutzamala,7,convnext,8
+Cutzamala,7,patchtst,7
+Cutzamala,14,xgboost,43
+Cutzamala,14,tcn,14
+Cutzamala,14,convnext,14
+Cutzamala,14,patchtst,31

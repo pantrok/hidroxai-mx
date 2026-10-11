@@ -40,7 +40,12 @@ class TriangularMF(MembershipFunction):
 
 @dataclass(slots=True, frozen=True)
 class TrapezoidalMF(MembershipFunction):
-    """Trapezoidal con vértices a ≤ b ≤ c ≤ d."""
+    """Trapezoidal con vértices a ≤ b ≤ c ≤ d.
+
+    Con hombro vertical (a = b o c = d) la pertenencia en el vértice es 1: trapecio (0, 0, …)
+    vale 1 en x = 0 y (…, 1, 1) vale 1 en x = 1. La versión copiada de forecasting daba 0 en
+    ese punto (división entre 1e-12 de un numerador nulo); corregido el 2026-10-10.
+    """
     a: float
     b: float
     c: float
@@ -48,9 +53,10 @@ class TrapezoidalMF(MembershipFunction):
 
     def __call__(self, x):
         x = np.asarray(x, dtype=float)
-        left = (x - self.a) / max(self.b - self.a, 1e-12)
-        right = (self.d - x) / max(self.d - self.c, 1e-12)
-        return np.clip(np.minimum(np.minimum(left, np.ones_like(x)), right), 0.0, 1.0)
+        with np.errstate(divide="ignore", invalid="ignore"):
+            left = np.where(x >= self.b, 1.0, (x - self.a) / (self.b - self.a))
+            right = np.where(x <= self.c, 1.0, (self.d - x) / (self.d - self.c))
+        return np.clip(np.minimum(left, right), 0.0, 1.0)
 
 
 # --------------------------------------------------------------------------- variables y reglas

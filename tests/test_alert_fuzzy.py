@@ -24,6 +24,16 @@ def test_rule_outcomes():
     assert lv(0.995, 0.50) == 2           # extremo, alta → alerta
 
 
+def test_vertical_shoulders_are_full_membership():
+    np.testing.assert_allclose(F.TrapezoidalMF(0.0, 0.0, 0.05, 0.15)([0.0, 0.05, 0.10, 0.15]), [1, 1, 0.5, 0])
+    np.testing.assert_allclose(F.TrapezoidalMF(0.97, 0.99, 1.0, 1.0)([0.97, 0.98, 1.0]), [0, 0.5, 1])
+    fis = F.build_protocol_fis()
+    lv = lambda p, d: int(F.level_index(fis.infer({"percentil": p, "dispersion": d})))  # noqa: E731
+    assert lv(0.94, 0.0) == 2             # miembros idénticos: muy alto + baja → alerta
+    assert lv(1.0, 0.0) == 3              # por encima del máximo de entrenamiento → emergencia
+    assert lv(0.0, 0.0) == 0
+
+
 def test_rules_table_and_percentile():
     t = F.build_protocol_fis().rules_table()
     assert len(t) == 8 and set(t["nivel"]) == set(F.LEVELS)

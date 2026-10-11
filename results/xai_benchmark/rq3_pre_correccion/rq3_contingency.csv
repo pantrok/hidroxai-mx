@@ -1,0 +1,1093 @@
+cuenca,h,clave,evento,metodo,aciertos,fallos,falsas,negativos
+Lerma–Santiago,1,ACSGJ,P90,difuso,66,8,39,834
+Lerma–Santiago,1,ACSGJ,P90,umbral,74,0,408,465
+Lerma–Santiago,1,ACSGJ,P99,difuso,4,2,1,940
+Lerma–Santiago,1,ACSGJ,P99,umbral,0,6,0,941
+Lerma–Santiago,1,ADUMC,P90,difuso,154,18,14,650
+Lerma–Santiago,1,ADUMC,P90,umbral,155,17,14,650
+Lerma–Santiago,1,ADUMC,P99,difuso,8,4,2,822
+Lerma–Santiago,1,ADUMC,P99,umbral,6,6,1,823
+Lerma–Santiago,1,AJJJL,P90,difuso,57,32,17,672
+Lerma–Santiago,1,AJJJL,P90,umbral,56,33,17,672
+Lerma–Santiago,1,AJJJL,P99,difuso,2,9,5,762
+Lerma–Santiago,1,AJJJL,P99,umbral,0,11,1,766
+Lerma–Santiago,1,AMCGJ,P90,difuso,75,37,32,770
+Lerma–Santiago,1,AMCGJ,P90,umbral,72,40,30,772
+Lerma–Santiago,1,AMCGJ,P99,difuso,1,12,3,898
+Lerma–Santiago,1,AMCGJ,P99,umbral,0,13,1,900
+Lerma–Santiago,1,ANSGJ,P90,difuso,52,11,5,831
+Lerma–Santiago,1,ANSGJ,P90,umbral,52,11,4,832
+Lerma–Santiago,1,ANSGJ,P99,difuso,0,0,0,899
+Lerma–Santiago,1,ANSGJ,P99,umbral,0,0,0,899
+Lerma–Santiago,1,ATEJL,P90,difuso,0,0,0,584
+Lerma–Santiago,1,ATEJL,P90,umbral,0,0,0,584
+Lerma–Santiago,1,ATEJL,P99,difuso,0,0,0,584
+Lerma–Santiago,1,ATEJL,P99,umbral,0,0,0,584
+Lerma–Santiago,1,ATOMX,P90,difuso,44,6,3,573
+Lerma–Santiago,1,ATOMX,P90,umbral,44,6,3,573
+Lerma–Santiago,1,ATOMX,P99,difuso,0,5,2,619
+Lerma–Santiago,1,ATOMX,P99,umbral,0,5,0,621
+Lerma–Santiago,1,ATQJL,P90,difuso,6,15,12,586
+Lerma–Santiago,1,ATQJL,P90,umbral,5,16,11,587
+Lerma–Santiago,1,ATQJL,P99,difuso,0,1,1,617
+Lerma–Santiago,1,ATQJL,P99,umbral,0,1,0,618
+Lerma–Santiago,1,BCSJL,P90,difuso,20,9,7,760
+Lerma–Santiago,1,BCSJL,P90,umbral,20,9,6,761
+Lerma–Santiago,1,BCSJL,P99,difuso,0,2,1,793
+Lerma–Santiago,1,BCSJL,P99,umbral,0,2,0,794
+Lerma–Santiago,1,BEGGJ,P90,difuso,45,22,4,873
+Lerma–Santiago,1,BEGGJ,P90,umbral,46,21,3,874
+Lerma–Santiago,1,BEGGJ,P99,difuso,10,3,7,924
+Lerma–Santiago,1,BEGGJ,P99,umbral,1,12,1,930
+Lerma–Santiago,1,BLNJL,P90,difuso,48,12,10,667
+Lerma–Santiago,1,BLNJL,P90,umbral,48,12,10,667
+Lerma–Santiago,1,BLNJL,P99,difuso,0,2,1,734
+Lerma–Santiago,1,BLNJL,P99,umbral,0,2,0,735
+Lerma–Santiago,1,BRAGJ,P90,difuso,68,9,5,865
+Lerma–Santiago,1,BRAGJ,P90,umbral,68,9,6,864
+Lerma–Santiago,1,BRAGJ,P99,difuso,10,1,5,931
+Lerma–Santiago,1,BRAGJ,P99,umbral,4,7,2,934
+Lerma–Santiago,1,CALMX,P90,difuso,33,17,14,491
+Lerma–Santiago,1,CALMX,P90,umbral,33,17,13,492
+Lerma–Santiago,1,CALMX,P99,difuso,0,5,0,550
+Lerma–Santiago,1,CALMX,P99,umbral,0,5,0,550
+Lerma–Santiago,1,CEYGJ,P90,difuso,43,5,1,896
+Lerma–Santiago,1,CEYGJ,P90,umbral,43,5,1,896
+Lerma–Santiago,1,CEYGJ,P99,difuso,0,0,0,945
+Lerma–Santiago,1,CEYGJ,P99,umbral,0,0,0,945
+Lerma–Santiago,1,CHPNR,P90,difuso,38,15,18,628
+Lerma–Santiago,1,CHPNR,P90,umbral,38,15,15,631
+Lerma–Santiago,1,CHPNR,P99,difuso,0,2,2,695
+Lerma–Santiago,1,CHPNR,P99,umbral,0,2,1,696
+Lerma–Santiago,1,CSTGJ,P90,difuso,77,7,36,825
+Lerma–Santiago,1,CSTGJ,P90,umbral,84,0,400,461
+Lerma–Santiago,1,CSTGJ,P99,difuso,3,5,2,935
+Lerma–Santiago,1,CSTGJ,P99,umbral,0,8,0,937
+Lerma–Santiago,1,CXTJL,P90,difuso,38,22,15,543
+Lerma–Santiago,1,CXTJL,P90,umbral,42,18,16,542
+Lerma–Santiago,1,CXTJL,P99,difuso,0,7,2,609
+Lerma–Santiago,1,CXTJL,P99,umbral,0,7,0,611
+Lerma–Santiago,1,CYUGJ,P90,difuso,58,9,2,876
+Lerma–Santiago,1,CYUGJ,P90,umbral,57,10,2,876
+Lerma–Santiago,1,CYUGJ,P99,difuso,0,1,0,944
+Lerma–Santiago,1,CYUGJ,P99,umbral,0,1,0,944
+Lerma–Santiago,1,ECBGJ,P90,difuso,32,24,17,874
+Lerma–Santiago,1,ECBGJ,P90,umbral,31,25,17,874
+Lerma–Santiago,1,ECBGJ,P99,difuso,0,1,0,946
+Lerma–Santiago,1,ECBGJ,P99,umbral,0,1,0,946
+Lerma–Santiago,1,ECHGJ,P90,difuso,69,28,27,822
+Lerma–Santiago,1,ECHGJ,P90,umbral,68,29,25,824
+Lerma–Santiago,1,ECHGJ,P99,difuso,0,5,1,940
+Lerma–Santiago,1,ECHGJ,P99,umbral,0,5,0,941
+Lerma–Santiago,1,EGIMC,P90,difuso,69,8,7,449
+Lerma–Santiago,1,EGIMC,P90,umbral,69,8,7,449
+Lerma–Santiago,1,EGIMC,P99,difuso,15,2,5,511
+Lerma–Santiago,1,EGIMC,P99,umbral,9,8,1,515
+Lerma–Santiago,1,IXCMX,P90,difuso,90,8,7,496
+Lerma–Santiago,1,IXCMX,P90,umbral,88,10,7,496
+Lerma–Santiago,1,IXCMX,P99,difuso,7,3,4,587
+Lerma–Santiago,1,IXCMX,P99,umbral,6,4,2,589
+Lerma–Santiago,1,JMANR,P90,difuso,59,24,27,635
+Lerma–Santiago,1,JMANR,P90,umbral,58,25,25,637
+Lerma–Santiago,1,JMANR,P99,difuso,4,11,5,725
+Lerma–Santiago,1,JMANR,P99,umbral,3,12,3,727
+Lerma–Santiago,1,LADGJ,P90,difuso,75,22,16,833
+Lerma–Santiago,1,LADGJ,P90,umbral,74,23,13,836
+Lerma–Santiago,1,LADGJ,P99,difuso,0,9,2,935
+Lerma–Santiago,1,LADGJ,P99,umbral,0,9,0,937
+Lerma–Santiago,1,LAYMX,P90,difuso,32,28,18,575
+Lerma–Santiago,1,LAYMX,P90,umbral,32,28,17,576
+Lerma–Santiago,1,LAYMX,P99,difuso,0,0,0,653
+Lerma–Santiago,1,LAYMX,P99,umbral,0,0,0,653
+Lerma–Santiago,1,LESNR,P90,difuso,3,20,5,589
+Lerma–Santiago,1,LESNR,P90,umbral,3,20,5,589
+Lerma–Santiago,1,LESNR,P99,difuso,0,1,0,616
+Lerma–Santiago,1,LESNR,P99,umbral,0,1,0,616
+Lerma–Santiago,1,PERGJ,P90,difuso,75,23,20,827
+Lerma–Santiago,1,PERGJ,P90,umbral,75,23,20,827
+Lerma–Santiago,1,PERGJ,P99,difuso,3,11,0,931
+Lerma–Santiago,1,PERGJ,P99,umbral,0,14,0,931
+Lerma–Santiago,1,ROMNR,P90,difuso,34,26,20,518
+Lerma–Santiago,1,ROMNR,P90,umbral,34,26,19,519
+Lerma–Santiago,1,ROMNR,P99,difuso,0,7,1,590
+Lerma–Santiago,1,ROMNR,P99,umbral,0,7,1,590
+Lerma–Santiago,1,SAUJL,P90,difuso,0,2,14,607
+Lerma–Santiago,1,SAUJL,P90,umbral,0,2,11,610
+Lerma–Santiago,1,SAUJL,P99,difuso,0,2,0,621
+Lerma–Santiago,1,SAUJL,P99,umbral,0,2,0,621
+Lerma–Santiago,1,SB2MX,P90,difuso,82,18,3,473
+Lerma–Santiago,1,SB2MX,P90,umbral,82,18,3,473
+Lerma–Santiago,1,SB2MX,P99,difuso,13,1,14,548
+Lerma–Santiago,1,SB2MX,P99,umbral,11,3,2,560
+Lerma–Santiago,1,SCRJL,P90,difuso,46,25,16,633
+Lerma–Santiago,1,SCRJL,P90,umbral,46,25,16,633
+Lerma–Santiago,1,SCRJL,P99,difuso,3,2,0,715
+Lerma–Santiago,1,SCRJL,P99,umbral,2,3,0,715
+Lerma–Santiago,1,SCRMC,P90,difuso,137,18,17,597
+Lerma–Santiago,1,SCRMC,P90,umbral,136,19,17,597
+Lerma–Santiago,1,SCRMC,P99,difuso,15,2,10,742
+Lerma–Santiago,1,SCRMC,P99,umbral,8,9,1,751
+Lerma–Santiago,1,SGRJL,P90,difuso,57,10,6,540
+Lerma–Santiago,1,SGRJL,P90,umbral,57,10,5,541
+Lerma–Santiago,1,SGRJL,P99,difuso,3,1,4,605
+Lerma–Santiago,1,SGRJL,P99,umbral,1,3,1,608
+Lerma–Santiago,1,SL2GJ,P90,difuso,40,52,10,813
+Lerma–Santiago,1,SL2GJ,P90,umbral,45,47,10,813
+Lerma–Santiago,1,SL2GJ,P99,difuso,0,29,1,885
+Lerma–Santiago,1,SL2GJ,P99,umbral,2,27,1,885
+Lerma–Santiago,1,SLCGJ,P90,difuso,80,36,9,818
+Lerma–Santiago,1,SLCGJ,P90,umbral,78,38,8,819
+Lerma–Santiago,1,SLCGJ,P99,difuso,0,3,1,939
+Lerma–Santiago,1,SLCGJ,P99,umbral,0,3,1,939
+Lerma–Santiago,1,SLMGJ,P90,difuso,64,11,5,865
+Lerma–Santiago,1,SLMGJ,P90,umbral,64,11,4,866
+Lerma–Santiago,1,SLMGJ,P99,difuso,0,1,0,944
+Lerma–Santiago,1,SLMGJ,P99,umbral,0,1,0,944
+Lerma–Santiago,1,SLVGJ,P90,difuso,33,18,7,888
+Lerma–Santiago,1,SLVGJ,P90,umbral,32,19,7,888
+Lerma–Santiago,1,SLVGJ,P99,difuso,7,2,5,932
+Lerma–Santiago,1,SLVGJ,P99,umbral,2,7,2,935
+Lerma–Santiago,1,SMLMX,P90,difuso,111,4,4,433
+Lerma–Santiago,1,SMLMX,P90,umbral,111,4,4,433
+Lerma–Santiago,1,SMLMX,P99,difuso,0,0,0,552
+Lerma–Santiago,1,SMLMX,P99,umbral,0,0,0,552
+Lerma–Santiago,1,TROMX,P90,difuso,12,4,3,574
+Lerma–Santiago,1,TROMX,P90,umbral,12,4,3,574
+Lerma–Santiago,1,TROMX,P99,difuso,0,0,0,593
+Lerma–Santiago,1,TROMX,P99,umbral,0,0,0,593
+Lerma–Santiago,1,YURMC,P90,difuso,36,5,6,652
+Lerma–Santiago,1,YURMC,P90,umbral,36,5,6,652
+Lerma–Santiago,1,YURMC,P99,difuso,0,3,4,692
+Lerma–Santiago,1,YURMC,P99,umbral,0,3,0,696
+Lerma–Santiago,1,ZULJL,P90,difuso,102,19,14,716
+Lerma–Santiago,1,ZULJL,P90,umbral,102,19,14,716
+Lerma–Santiago,1,ZULJL,P99,difuso,25,5,7,814
+Lerma–Santiago,1,ZULJL,P99,umbral,19,11,3,818
+Lerma–Santiago,7,ACSGJ,P90,difuso,70,4,162,705
+Lerma–Santiago,7,ACSGJ,P90,umbral,73,1,315,552
+Lerma–Santiago,7,ACSGJ,P99,difuso,0,6,0,935
+Lerma–Santiago,7,ACSGJ,P99,umbral,0,6,0,935
+Lerma–Santiago,7,ADUMC,P90,difuso,87,85,18,632
+Lerma–Santiago,7,ADUMC,P90,umbral,87,85,18,632
+Lerma–Santiago,7,ADUMC,P99,difuso,0,12,0,810
+Lerma–Santiago,7,ADUMC,P99,umbral,0,12,0,810
+Lerma–Santiago,7,AJJJL,P90,difuso,16,72,6,674
+Lerma–Santiago,7,AJJJL,P90,umbral,16,72,6,674
+Lerma–Santiago,7,AJJJL,P99,difuso,0,11,0,757
+Lerma–Santiago,7,AJJJL,P99,umbral,0,11,0,757
+Lerma–Santiago,7,AMCGJ,P90,difuso,39,71,36,762
+Lerma–Santiago,7,AMCGJ,P90,umbral,39,71,34,764
+Lerma–Santiago,7,AMCGJ,P99,difuso,0,12,0,896
+Lerma–Santiago,7,AMCGJ,P99,umbral,0,12,0,896
+Lerma–Santiago,7,ANSGJ,P90,difuso,26,37,10,822
+Lerma–Santiago,7,ANSGJ,P90,umbral,26,37,10,822
+Lerma–Santiago,7,ANSGJ,P99,difuso,0,0,0,895
+Lerma–Santiago,7,ANSGJ,P99,umbral,0,0,0,895
+Lerma–Santiago,7,ATEJL,P90,difuso,0,0,0,579
+Lerma–Santiago,7,ATEJL,P90,umbral,0,0,0,579
+Lerma–Santiago,7,ATEJL,P99,difuso,0,0,0,579
+Lerma–Santiago,7,ATEJL,P99,umbral,0,0,0,579
+Lerma–Santiago,7,ATOMX,P90,difuso,13,37,8,533
+Lerma–Santiago,7,ATOMX,P90,umbral,13,37,8,533
+Lerma–Santiago,7,ATOMX,P99,difuso,0,5,0,586
+Lerma–Santiago,7,ATOMX,P99,umbral,0,5,0,586
+Lerma–Santiago,7,ATQJL,P90,difuso,0,19,5,582
+Lerma–Santiago,7,ATQJL,P90,umbral,0,19,4,583
+Lerma–Santiago,7,ATQJL,P99,difuso,0,1,0,605
+Lerma–Santiago,7,ATQJL,P99,umbral,0,1,0,605
+Lerma–Santiago,7,BCSJL,P90,difuso,0,29,16,739
+Lerma–Santiago,7,BCSJL,P90,umbral,0,29,15,740
+Lerma–Santiago,7,BCSJL,P99,difuso,0,2,0,782
+Lerma–Santiago,7,BCSJL,P99,umbral,0,2,0,782
+Lerma–Santiago,7,BEGGJ,P90,difuso,0,67,2,869
+Lerma–Santiago,7,BEGGJ,P90,umbral,0,67,2,869
+Lerma–Santiago,7,BEGGJ,P99,difuso,0,13,0,925
+Lerma–Santiago,7,BEGGJ,P99,umbral,0,13,0,925
+Lerma–Santiago,7,BLNJL,P90,difuso,19,41,29,632
+Lerma–Santiago,7,BLNJL,P90,umbral,19,41,28,633
+Lerma–Santiago,7,BLNJL,P99,difuso,0,2,0,719
+Lerma–Santiago,7,BLNJL,P99,umbral,0,2,0,719
+Lerma–Santiago,7,BRAGJ,P90,difuso,0,77,0,864
+Lerma–Santiago,7,BRAGJ,P90,umbral,2,75,0,864
+Lerma–Santiago,7,BRAGJ,P99,difuso,0,11,0,930
+Lerma–Santiago,7,BRAGJ,P99,umbral,0,11,0,930
+Lerma–Santiago,7,CALMX,P90,difuso,20,28,17,449
+Lerma–Santiago,7,CALMX,P90,umbral,20,28,17,449
+Lerma–Santiago,7,CALMX,P99,difuso,0,5,0,509
+Lerma–Santiago,7,CALMX,P99,umbral,0,5,0,509
+Lerma–Santiago,7,CEYGJ,P90,difuso,0,48,0,891
+Lerma–Santiago,7,CEYGJ,P90,umbral,0,48,0,891
+Lerma–Santiago,7,CEYGJ,P99,difuso,0,0,0,939
+Lerma–Santiago,7,CEYGJ,P99,umbral,0,0,0,939
+Lerma–Santiago,7,CHPNR,P90,difuso,24,29,28,598
+Lerma–Santiago,7,CHPNR,P90,umbral,22,31,26,600
+Lerma–Santiago,7,CHPNR,P99,difuso,0,2,0,677
+Lerma–Santiago,7,CHPNR,P99,umbral,0,2,0,677
+Lerma–Santiago,7,CSTGJ,P90,difuso,72,12,132,723
+Lerma–Santiago,7,CSTGJ,P90,umbral,83,1,360,495
+Lerma–Santiago,7,CSTGJ,P99,difuso,0,8,0,931
+Lerma–Santiago,7,CSTGJ,P99,umbral,0,8,0,931
+Lerma–Santiago,7,CXTJL,P90,difuso,9,51,25,521
+Lerma–Santiago,7,CXTJL,P90,umbral,9,51,25,521
+Lerma–Santiago,7,CXTJL,P99,difuso,0,7,0,599
+Lerma–Santiago,7,CXTJL,P99,umbral,0,7,0,599
+Lerma–Santiago,7,CYUGJ,P90,difuso,8,59,0,872
+Lerma–Santiago,7,CYUGJ,P90,umbral,7,60,0,872
+Lerma–Santiago,7,CYUGJ,P99,difuso,0,1,0,938
+Lerma–Santiago,7,CYUGJ,P99,umbral,0,1,0,938
+Lerma–Santiago,7,ECBGJ,P90,difuso,11,45,22,863
+Lerma–Santiago,7,ECBGJ,P90,umbral,11,45,21,864
+Lerma–Santiago,7,ECBGJ,P99,difuso,0,1,0,940
+Lerma–Santiago,7,ECBGJ,P99,umbral,0,1,0,940
+Lerma–Santiago,7,ECHGJ,P90,difuso,44,53,37,806
+Lerma–Santiago,7,ECHGJ,P90,umbral,41,56,36,807
+Lerma–Santiago,7,ECHGJ,P99,difuso,0,5,0,935
+Lerma–Santiago,7,ECHGJ,P99,umbral,0,5,0,935
+Lerma–Santiago,7,EGIMC,P90,difuso,53,18,6,438
+Lerma–Santiago,7,EGIMC,P90,umbral,53,18,6,438
+Lerma–Santiago,7,EGIMC,P99,difuso,2,15,0,498
+Lerma–Santiago,7,EGIMC,P99,umbral,0,17,0,498
+Lerma–Santiago,7,IXCMX,P90,difuso,52,46,13,455
+Lerma–Santiago,7,IXCMX,P90,umbral,52,46,12,456
+Lerma–Santiago,7,IXCMX,P99,difuso,0,10,0,556
+Lerma–Santiago,7,IXCMX,P99,umbral,0,10,0,556
+Lerma–Santiago,7,JMANR,P90,difuso,48,35,26,612
+Lerma–Santiago,7,JMANR,P90,umbral,47,36,25,613
+Lerma–Santiago,7,JMANR,P99,difuso,0,15,1,705
+Lerma–Santiago,7,JMANR,P99,umbral,0,15,0,706
+Lerma–Santiago,7,LADGJ,P90,difuso,18,79,14,829
+Lerma–Santiago,7,LADGJ,P90,umbral,18,79,13,830
+Lerma–Santiago,7,LADGJ,P99,difuso,0,9,0,931
+Lerma–Santiago,7,LADGJ,P99,umbral,0,9,0,931
+Lerma–Santiago,7,LAYMX,P90,difuso,17,42,15,550
+Lerma–Santiago,7,LAYMX,P90,umbral,17,42,15,550
+Lerma–Santiago,7,LAYMX,P99,difuso,0,0,0,624
+Lerma–Santiago,7,LAYMX,P99,umbral,0,0,0,624
+Lerma–Santiago,7,LESNR,P90,difuso,0,23,0,562
+Lerma–Santiago,7,LESNR,P90,umbral,0,23,0,562
+Lerma–Santiago,7,LESNR,P99,difuso,0,1,0,584
+Lerma–Santiago,7,LESNR,P99,umbral,0,1,0,584
+Lerma–Santiago,7,PERGJ,P90,difuso,32,66,31,810
+Lerma–Santiago,7,PERGJ,P90,umbral,31,67,31,810
+Lerma–Santiago,7,PERGJ,P99,difuso,0,14,0,925
+Lerma–Santiago,7,PERGJ,P99,umbral,0,14,0,925
+Lerma–Santiago,7,ROMNR,P90,difuso,15,45,19,491
+Lerma–Santiago,7,ROMNR,P90,umbral,15,45,19,491
+Lerma–Santiago,7,ROMNR,P99,difuso,0,7,0,563
+Lerma–Santiago,7,ROMNR,P99,umbral,0,7,0,563
+Lerma–Santiago,7,SAUJL,P90,difuso,0,1,98,515
+Lerma–Santiago,7,SAUJL,P90,umbral,0,1,67,546
+Lerma–Santiago,7,SAUJL,P99,difuso,0,1,0,613
+Lerma–Santiago,7,SAUJL,P99,umbral,0,1,0,613
+Lerma–Santiago,7,SB2MX,P90,difuso,69,31,16,432
+Lerma–Santiago,7,SB2MX,P90,umbral,67,33,16,432
+Lerma–Santiago,7,SB2MX,P99,difuso,0,14,13,521
+Lerma–Santiago,7,SB2MX,P99,umbral,0,14,0,534
+Lerma–Santiago,7,SCRJL,P90,difuso,11,60,16,625
+Lerma–Santiago,7,SCRJL,P90,umbral,10,61,16,625
+Lerma–Santiago,7,SCRJL,P99,difuso,0,5,0,707
+Lerma–Santiago,7,SCRJL,P99,umbral,0,5,0,707
+Lerma–Santiago,7,SCRMC,P90,difuso,85,70,21,579
+Lerma–Santiago,7,SCRMC,P90,umbral,80,75,21,579
+Lerma–Santiago,7,SCRMC,P99,difuso,0,17,0,738
+Lerma–Santiago,7,SCRMC,P99,umbral,0,17,0,738
+Lerma–Santiago,7,SGRJL,P90,difuso,29,35,13,522
+Lerma–Santiago,7,SGRJL,P90,umbral,29,35,13,522
+Lerma–Santiago,7,SGRJL,P99,difuso,0,4,0,595
+Lerma–Santiago,7,SGRJL,P99,umbral,0,4,0,595
+Lerma–Santiago,7,SL2GJ,P90,difuso,0,88,0,821
+Lerma–Santiago,7,SL2GJ,P90,umbral,0,88,0,821
+Lerma–Santiago,7,SL2GJ,P99,difuso,0,29,0,880
+Lerma–Santiago,7,SL2GJ,P99,umbral,0,29,0,880
+Lerma–Santiago,7,SLCGJ,P90,difuso,34,82,2,819
+Lerma–Santiago,7,SLCGJ,P90,umbral,30,86,2,819
+Lerma–Santiago,7,SLCGJ,P99,difuso,0,3,0,934
+Lerma–Santiago,7,SLCGJ,P99,umbral,0,3,0,934
+Lerma–Santiago,7,SLMGJ,P90,difuso,6,69,0,864
+Lerma–Santiago,7,SLMGJ,P90,umbral,4,71,0,864
+Lerma–Santiago,7,SLMGJ,P99,difuso,0,1,0,938
+Lerma–Santiago,7,SLMGJ,P99,umbral,0,1,0,938
+Lerma–Santiago,7,SLVGJ,P90,difuso,6,45,0,889
+Lerma–Santiago,7,SLVGJ,P90,umbral,10,41,0,889
+Lerma–Santiago,7,SLVGJ,P99,difuso,0,9,0,931
+Lerma–Santiago,7,SLVGJ,P99,umbral,0,9,0,931
+Lerma–Santiago,7,SMLMX,P90,difuso,103,11,7,399
+Lerma–Santiago,7,SMLMX,P90,umbral,102,12,7,399
+Lerma–Santiago,7,SMLMX,P99,difuso,0,0,0,520
+Lerma–Santiago,7,SMLMX,P99,umbral,0,0,0,520
+Lerma–Santiago,7,TROMX,P90,difuso,0,16,0,543
+Lerma–Santiago,7,TROMX,P90,umbral,0,16,0,543
+Lerma–Santiago,7,TROMX,P99,difuso,0,0,0,559
+Lerma–Santiago,7,TROMX,P99,umbral,0,0,0,559
+Lerma–Santiago,7,YURMC,P90,difuso,1,40,13,621
+Lerma–Santiago,7,YURMC,P90,umbral,1,40,12,622
+Lerma–Santiago,7,YURMC,P99,difuso,0,3,0,672
+Lerma–Santiago,7,YURMC,P99,umbral,0,3,0,672
+Lerma–Santiago,7,ZULJL,P90,difuso,61,60,14,709
+Lerma–Santiago,7,ZULJL,P90,umbral,60,61,14,709
+Lerma–Santiago,7,ZULJL,P99,difuso,1,29,6,808
+Lerma–Santiago,7,ZULJL,P99,umbral,0,30,0,814
+Lerma–Santiago,14,ACSGJ,P90,difuso,65,9,220,640
+Lerma–Santiago,14,ACSGJ,P90,umbral,70,4,498,362
+Lerma–Santiago,14,ACSGJ,P99,difuso,0,6,0,928
+Lerma–Santiago,14,ACSGJ,P99,umbral,0,6,0,928
+Lerma–Santiago,14,ADUMC,P90,difuso,56,116,5,631
+Lerma–Santiago,14,ADUMC,P90,umbral,55,117,5,631
+Lerma–Santiago,14,ADUMC,P99,difuso,0,12,0,796
+Lerma–Santiago,14,ADUMC,P99,umbral,0,12,0,796
+Lerma–Santiago,14,AJJJL,P90,difuso,0,87,2,666
+Lerma–Santiago,14,AJJJL,P90,umbral,2,85,2,666
+Lerma–Santiago,14,AJJJL,P99,difuso,0,11,0,744
+Lerma–Santiago,14,AJJJL,P99,umbral,0,11,0,744
+Lerma–Santiago,14,AMCGJ,P90,difuso,12,103,13,773
+Lerma–Santiago,14,AMCGJ,P90,umbral,7,108,12,774
+Lerma–Santiago,14,AMCGJ,P99,difuso,0,12,0,889
+Lerma–Santiago,14,AMCGJ,P99,umbral,0,12,0,889
+Lerma–Santiago,14,ANSGJ,P90,difuso,17,46,1,826
+Lerma–Santiago,14,ANSGJ,P90,umbral,16,47,1,826
+Lerma–Santiago,14,ANSGJ,P99,difuso,0,0,0,890
+Lerma–Santiago,14,ANSGJ,P99,umbral,0,0,0,890
+Lerma–Santiago,14,ATEJL,P90,difuso,0,0,0,568
+Lerma–Santiago,14,ATEJL,P90,umbral,0,0,0,568
+Lerma–Santiago,14,ATEJL,P99,difuso,0,0,0,568
+Lerma–Santiago,14,ATEJL,P99,umbral,0,0,0,568
+Lerma–Santiago,14,ATOMX,P90,difuso,7,43,0,502
+Lerma–Santiago,14,ATOMX,P90,umbral,7,43,0,502
+Lerma–Santiago,14,ATOMX,P99,difuso,0,5,0,547
+Lerma–Santiago,14,ATOMX,P99,umbral,0,5,0,547
+Lerma–Santiago,14,ATQJL,P90,difuso,0,19,4,566
+Lerma–Santiago,14,ATQJL,P90,umbral,0,19,4,566
+Lerma–Santiago,14,ATQJL,P99,difuso,0,1,0,588
+Lerma–Santiago,14,ATQJL,P99,umbral,0,1,0,588
+Lerma–Santiago,14,BCSJL,P90,difuso,0,29,8,735
+Lerma–Santiago,14,BCSJL,P90,umbral,0,29,8,735
+Lerma–Santiago,14,BCSJL,P99,difuso,0,2,0,770
+Lerma–Santiago,14,BCSJL,P99,umbral,0,2,0,770
+Lerma–Santiago,14,BEGGJ,P90,difuso,0,67,0,864
+Lerma–Santiago,14,BEGGJ,P90,umbral,0,67,0,864
+Lerma–Santiago,14,BEGGJ,P99,difuso,0,13,0,918
+Lerma–Santiago,14,BEGGJ,P99,umbral,0,13,0,918
+Lerma–Santiago,14,BLNJL,P90,difuso,8,52,25,621
+Lerma–Santiago,14,BLNJL,P90,umbral,8,52,24,622
+Lerma–Santiago,14,BLNJL,P99,difuso,0,2,0,704
+Lerma–Santiago,14,BLNJL,P99,umbral,0,2,0,704
+Lerma–Santiago,14,BRAGJ,P90,difuso,0,77,0,857
+Lerma–Santiago,14,BRAGJ,P90,umbral,0,77,0,857
+Lerma–Santiago,14,BRAGJ,P99,difuso,0,11,0,923
+Lerma–Santiago,14,BRAGJ,P99,umbral,0,11,0,923
+Lerma–Santiago,14,CALMX,P90,difuso,21,27,10,410
+Lerma–Santiago,14,CALMX,P90,umbral,21,27,10,410
+Lerma–Santiago,14,CALMX,P99,difuso,0,5,0,463
+Lerma–Santiago,14,CALMX,P99,umbral,0,5,0,463
+Lerma–Santiago,14,CEYGJ,P90,difuso,0,48,0,884
+Lerma–Santiago,14,CEYGJ,P90,umbral,0,48,0,884
+Lerma–Santiago,14,CEYGJ,P99,difuso,0,0,0,932
+Lerma–Santiago,14,CEYGJ,P99,umbral,0,0,0,932
+Lerma–Santiago,14,CHPNR,P90,difuso,15,38,29,579
+Lerma–Santiago,14,CHPNR,P90,umbral,12,41,29,579
+Lerma–Santiago,14,CHPNR,P99,difuso,0,2,0,659
+Lerma–Santiago,14,CHPNR,P99,umbral,0,2,0,659
+Lerma–Santiago,14,CSTGJ,P90,difuso,76,8,182,666
+Lerma–Santiago,14,CSTGJ,P90,umbral,80,4,500,348
+Lerma–Santiago,14,CSTGJ,P99,difuso,0,8,0,924
+Lerma–Santiago,14,CSTGJ,P99,umbral,0,8,0,924
+Lerma–Santiago,14,CXTJL,P90,difuso,6,54,19,515
+Lerma–Santiago,14,CXTJL,P90,umbral,6,54,19,515
+Lerma–Santiago,14,CXTJL,P99,difuso,0,7,0,587
+Lerma–Santiago,14,CXTJL,P99,umbral,0,7,0,587
+Lerma–Santiago,14,CYUGJ,P90,difuso,0,67,0,865
+Lerma–Santiago,14,CYUGJ,P90,umbral,0,67,0,865
+Lerma–Santiago,14,CYUGJ,P99,difuso,0,1,0,931
+Lerma–Santiago,14,CYUGJ,P99,umbral,0,1,0,931
+Lerma–Santiago,14,ECBGJ,P90,difuso,15,41,18,860
+Lerma–Santiago,14,ECBGJ,P90,umbral,14,42,17,861
+Lerma–Santiago,14,ECBGJ,P99,difuso,0,1,0,933
+Lerma–Santiago,14,ECBGJ,P99,umbral,0,1,0,933
+Lerma–Santiago,14,ECHGJ,P90,difuso,28,69,30,806
+Lerma–Santiago,14,ECHGJ,P90,umbral,26,71,24,812
+Lerma–Santiago,14,ECHGJ,P99,difuso,0,5,0,928
+Lerma–Santiago,14,ECHGJ,P99,umbral,0,5,0,928
+Lerma–Santiago,14,EGIMC,P90,difuso,39,25,7,424
+Lerma–Santiago,14,EGIMC,P90,umbral,37,27,7,424
+Lerma–Santiago,14,EGIMC,P99,difuso,0,17,0,478
+Lerma–Santiago,14,EGIMC,P99,umbral,0,17,0,478
+Lerma–Santiago,14,IXCMX,P90,difuso,32,65,7,421
+Lerma–Santiago,14,IXCMX,P90,umbral,32,65,6,422
+Lerma–Santiago,14,IXCMX,P99,difuso,0,10,0,515
+Lerma–Santiago,14,IXCMX,P99,umbral,0,10,0,515
+Lerma–Santiago,14,JMANR,P90,difuso,27,54,31,592
+Lerma–Santiago,14,JMANR,P90,umbral,27,54,30,593
+Lerma–Santiago,14,JMANR,P99,difuso,0,15,0,689
+Lerma–Santiago,14,JMANR,P99,umbral,0,15,0,689
+Lerma–Santiago,14,LADGJ,P90,difuso,7,90,3,833
+Lerma–Santiago,14,LADGJ,P90,umbral,6,91,2,834
+Lerma–Santiago,14,LADGJ,P99,difuso,0,9,0,924
+Lerma–Santiago,14,LADGJ,P99,umbral,0,9,0,924
+Lerma–Santiago,14,LAYMX,P90,difuso,16,43,8,525
+Lerma–Santiago,14,LAYMX,P90,umbral,15,44,8,525
+Lerma–Santiago,14,LAYMX,P99,difuso,0,0,0,592
+Lerma–Santiago,14,LAYMX,P99,umbral,0,0,0,592
+Lerma–Santiago,14,LESNR,P90,difuso,0,23,0,535
+Lerma–Santiago,14,LESNR,P90,umbral,0,23,0,535
+Lerma–Santiago,14,LESNR,P99,difuso,0,1,0,557
+Lerma–Santiago,14,LESNR,P99,umbral,0,1,0,557
+Lerma–Santiago,14,PERGJ,P90,difuso,7,91,14,820
+Lerma–Santiago,14,PERGJ,P90,umbral,7,91,12,822
+Lerma–Santiago,14,PERGJ,P99,difuso,0,14,0,918
+Lerma–Santiago,14,PERGJ,P99,umbral,0,14,0,918
+Lerma–Santiago,14,ROMNR,P90,difuso,1,62,21,460
+Lerma–Santiago,14,ROMNR,P90,umbral,1,62,18,463
+Lerma–Santiago,14,ROMNR,P99,difuso,0,7,0,537
+Lerma–Santiago,14,ROMNR,P99,umbral,0,7,0,537
+Lerma–Santiago,14,SAUJL,P90,difuso,1,0,130,486
+Lerma–Santiago,14,SAUJL,P90,umbral,1,0,122,494
+Lerma–Santiago,14,SAUJL,P99,difuso,0,1,0,616
+Lerma–Santiago,14,SAUJL,P99,umbral,0,1,0,616
+Lerma–Santiago,14,SB2MX,P90,difuso,37,63,5,408
+Lerma–Santiago,14,SB2MX,P90,umbral,37,63,5,408
+Lerma–Santiago,14,SB2MX,P99,difuso,0,14,0,499
+Lerma–Santiago,14,SB2MX,P99,umbral,0,14,0,499
+Lerma–Santiago,14,SCRJL,P90,difuso,5,66,9,622
+Lerma–Santiago,14,SCRJL,P90,umbral,5,66,9,622
+Lerma–Santiago,14,SCRJL,P99,difuso,0,5,0,697
+Lerma–Santiago,14,SCRJL,P99,umbral,0,5,0,697
+Lerma–Santiago,14,SCRMC,P90,difuso,36,119,22,563
+Lerma–Santiago,14,SCRMC,P90,umbral,34,121,19,566
+Lerma–Santiago,14,SCRMC,P99,difuso,0,17,0,723
+Lerma–Santiago,14,SCRMC,P99,umbral,0,17,0,723
+Lerma–Santiago,14,SGRJL,P90,difuso,8,50,12,516
+Lerma–Santiago,14,SGRJL,P90,umbral,6,52,11,517
+Lerma–Santiago,14,SGRJL,P99,difuso,0,4,0,582
+Lerma–Santiago,14,SGRJL,P99,umbral,0,4,0,582
+Lerma–Santiago,14,SL2GJ,P90,difuso,0,85,0,817
+Lerma–Santiago,14,SL2GJ,P90,umbral,0,85,0,817
+Lerma–Santiago,14,SL2GJ,P99,difuso,0,29,0,873
+Lerma–Santiago,14,SL2GJ,P99,umbral,0,29,0,873
+Lerma–Santiago,14,SLCGJ,P90,difuso,13,103,0,814
+Lerma–Santiago,14,SLCGJ,P90,umbral,12,104,0,814
+Lerma–Santiago,14,SLCGJ,P99,difuso,0,3,0,927
+Lerma–Santiago,14,SLCGJ,P99,umbral,0,3,0,927
+Lerma–Santiago,14,SLMGJ,P90,difuso,0,75,0,857
+Lerma–Santiago,14,SLMGJ,P90,umbral,0,75,0,857
+Lerma–Santiago,14,SLMGJ,P99,difuso,0,1,0,931
+Lerma–Santiago,14,SLMGJ,P99,umbral,0,1,0,931
+Lerma–Santiago,14,SLVGJ,P90,difuso,0,51,0,882
+Lerma–Santiago,14,SLVGJ,P90,umbral,0,51,0,882
+Lerma–Santiago,14,SLVGJ,P99,difuso,0,9,0,924
+Lerma–Santiago,14,SLVGJ,P99,umbral,0,9,0,924
+Lerma–Santiago,14,SMLMX,P90,difuso,86,23,13,365
+Lerma–Santiago,14,SMLMX,P90,umbral,82,27,13,365
+Lerma–Santiago,14,SMLMX,P99,difuso,0,0,0,487
+Lerma–Santiago,14,SMLMX,P99,umbral,0,0,0,487
+Lerma–Santiago,14,TROMX,P90,difuso,1,15,16,488
+Lerma–Santiago,14,TROMX,P90,umbral,1,15,16,488
+Lerma–Santiago,14,TROMX,P99,difuso,0,0,0,520
+Lerma–Santiago,14,TROMX,P99,umbral,0,0,0,520
+Lerma–Santiago,14,YURMC,P90,difuso,0,41,1,605
+Lerma–Santiago,14,YURMC,P90,umbral,0,41,1,605
+Lerma–Santiago,14,YURMC,P99,difuso,0,3,0,644
+Lerma–Santiago,14,YURMC,P99,umbral,0,3,0,644
+Lerma–Santiago,14,ZULJL,P90,difuso,41,80,12,703
+Lerma–Santiago,14,ZULJL,P90,umbral,41,80,12,703
+Lerma–Santiago,14,ZULJL,P99,difuso,0,30,0,806
+Lerma–Santiago,14,ZULJL,P99,umbral,0,30,0,806
+Pánuco,1,ACEHD,P90,difuso,3,2,3,931
+Pánuco,1,ACEHD,P90,umbral,5,0,394,540
+Pánuco,1,ACEHD,P99,difuso,0,0,0,939
+Pánuco,1,ACEHD,P99,umbral,0,0,0,939
+Pánuco,1,AHLTP,P90,difuso,104,21,8,705
+Pánuco,1,AHLTP,P90,umbral,104,21,8,705
+Pánuco,1,AHLTP,P99,difuso,4,6,2,826
+Pánuco,1,AHLTP,P99,umbral,3,7,0,828
+Pánuco,1,ARBMX,P90,difuso,0,0,0,398
+Pánuco,1,ARBMX,P90,umbral,0,0,0,398
+Pánuco,1,ARBMX,P99,difuso,0,0,0,398
+Pánuco,1,ARBMX,P99,umbral,0,0,0,398
+Pánuco,1,ARSHD,P90,difuso,13,35,13,872
+Pánuco,1,ARSHD,P90,umbral,13,35,12,873
+Pánuco,1,ARSHD,P99,difuso,0,2,1,930
+Pánuco,1,ARSHD,P99,umbral,0,2,0,931
+Pánuco,1,ATCHD,P90,difuso,109,18,5,554
+Pánuco,1,ATCHD,P90,umbral,109,18,5,554
+Pánuco,1,ATCHD,P99,difuso,3,4,2,677
+Pánuco,1,ATCHD,P99,umbral,2,5,0,679
+Pánuco,1,BLMSL,P90,difuso,122,18,12,611
+Pánuco,1,BLMSL,P90,umbral,122,18,12,611
+Pánuco,1,BLMSL,P99,difuso,36,39,6,682
+Pánuco,1,BLMSL,P99,umbral,17,58,2,686
+Pánuco,1,CDCHD,P90,difuso,0,3,3,928
+Pánuco,1,CDCHD,P90,umbral,0,3,7,924
+Pánuco,1,CDCHD,P99,difuso,0,1,0,933
+Pánuco,1,CDCHD,P99,umbral,0,1,6,927
+Pánuco,1,CDFHD,P90,difuso,0,3,1,934
+Pánuco,1,CDFHD,P90,umbral,0,3,1,934
+Pánuco,1,CDFHD,P99,difuso,0,0,0,938
+Pánuco,1,CDFHD,P99,umbral,0,0,0,938
+Pánuco,1,CHPMX,P90,difuso,0,1,2,367
+Pánuco,1,CHPMX,P90,umbral,0,1,2,367
+Pánuco,1,CHPMX,P99,difuso,0,1,0,369
+Pánuco,1,CHPMX,P99,umbral,0,1,2,367
+Pánuco,1,CL1HD,P90,difuso,0,66,2,870
+Pánuco,1,CL1HD,P90,umbral,4,62,4,868
+Pánuco,1,CL1HD,P99,difuso,0,16,0,922
+Pánuco,1,CL1HD,P99,umbral,0,16,0,922
+Pánuco,1,CPEHD,P90,difuso,12,14,10,903
+Pánuco,1,CPEHD,P90,umbral,15,11,13,900
+Pánuco,1,CPEHD,P99,difuso,0,0,0,939
+Pánuco,1,CPEHD,P99,umbral,0,0,0,939
+Pánuco,1,CSTHD,P90,difuso,103,47,25,762
+Pánuco,1,CSTHD,P90,umbral,106,44,25,762
+Pánuco,1,CSTHD,P99,difuso,27,26,14,870
+Pánuco,1,CSTHD,P99,umbral,26,27,11,873
+Pánuco,1,CVAHD,P90,difuso,41,18,8,870
+Pánuco,1,CVAHD,P90,umbral,42,17,9,869
+Pánuco,1,CVAHD,P99,difuso,6,2,1,928
+Pánuco,1,CVAHD,P99,umbral,0,8,0,929
+Pánuco,1,EMOMX,P90,difuso,0,2,2,321
+Pánuco,1,EMOMX,P90,umbral,0,2,2,321
+Pánuco,1,EMOMX,P99,difuso,0,1,0,324
+Pánuco,1,EMOMX,P99,umbral,0,1,0,324
+Pánuco,1,GANSL,P90,difuso,77,3,0,313
+Pánuco,1,GANSL,P90,umbral,77,3,0,313
+Pánuco,1,GANSL,P99,difuso,0,0,0,393
+Pánuco,1,GANSL,P99,umbral,0,0,0,393
+Pánuco,1,K27MX,P90,difuso,0,0,0,253
+Pánuco,1,K27MX,P90,umbral,0,0,0,253
+Pánuco,1,K27MX,P99,difuso,0,0,0,253
+Pánuco,1,K27MX,P99,umbral,0,0,0,253
+Pánuco,1,LSRTP,P90,difuso,73,14,8,701
+Pánuco,1,LSRTP,P90,umbral,73,14,5,704
+Pánuco,1,LSRTP,P99,difuso,5,4,6,781
+Pánuco,1,LSRTP,P99,umbral,0,9,0,787
+Pánuco,1,MBLMX,P90,difuso,0,8,5,319
+Pánuco,1,MBLMX,P90,umbral,0,8,4,320
+Pánuco,1,MBLMX,P99,difuso,0,1,0,331
+Pánuco,1,MBLMX,P99,umbral,0,1,0,331
+Pánuco,1,MGSTP,P90,difuso,51,16,12,685
+Pánuco,1,MGSTP,P90,umbral,50,17,12,685
+Pánuco,1,MGSTP,P99,difuso,4,6,5,749
+Pánuco,1,MGSTP,P99,umbral,3,7,2,752
+Pánuco,1,OBSMX,P90,difuso,0,1,0,464
+Pánuco,1,OBSMX,P90,umbral,0,1,0,464
+Pánuco,1,OBSMX,P99,difuso,0,1,0,464
+Pánuco,1,OBSMX,P99,umbral,0,1,0,464
+Pánuco,1,OLVVC,P90,difuso,65,15,10,573
+Pánuco,1,OLVVC,P90,umbral,65,15,9,574
+Pánuco,1,OLVVC,P99,difuso,1,1,1,660
+Pánuco,1,OLVVC,P99,umbral,0,2,0,661
+Pánuco,1,PSNVC,P90,difuso,74,15,5,543
+Pánuco,1,PSNVC,P90,umbral,71,18,5,543
+Pánuco,1,PSNVC,P99,difuso,4,2,3,628
+Pánuco,1,PSNVC,P99,umbral,3,3,0,631
+Pánuco,1,PUJSL,P90,difuso,6,3,0,332
+Pánuco,1,PUJSL,P90,umbral,6,3,0,332
+Pánuco,1,PUJSL,P99,difuso,0,0,0,341
+Pánuco,1,PUJSL,P99,umbral,0,0,0,341
+Pánuco,1,RFRTP,P90,difuso,87,20,13,705
+Pánuco,1,RFRTP,P90,umbral,82,25,13,705
+Pánuco,1,RFRTP,P99,difuso,3,9,5,808
+Pánuco,1,RFRTP,P99,umbral,3,9,1,812
+Pánuco,1,RQTSL,P90,difuso,4,9,0,412
+Pánuco,1,RQTSL,P90,umbral,4,9,0,412
+Pánuco,1,RQTSL,P99,difuso,0,0,0,425
+Pánuco,1,RQTSL,P99,umbral,0,0,0,425
+Pánuco,1,RSTHD,P90,difuso,0,0,1,934
+Pánuco,1,RSTHD,P90,umbral,0,0,0,935
+Pánuco,1,RSTHD,P99,difuso,0,0,0,935
+Pánuco,1,RSTHD,P99,umbral,0,0,0,935
+Pánuco,1,RTTHD,P90,difuso,88,26,14,744
+Pánuco,1,RTTHD,P90,umbral,87,27,13,745
+Pánuco,1,RTTHD,P99,difuso,10,8,2,852
+Pánuco,1,RTTHD,P99,umbral,8,10,1,853
+Pánuco,1,SBNTP,P90,difuso,92,12,6,702
+Pánuco,1,SBNTP,P90,umbral,92,12,6,702
+Pánuco,1,SBNTP,P99,difuso,10,8,10,784
+Pánuco,1,SBNTP,P99,umbral,7,11,2,792
+Pánuco,1,SGBTP,P90,difuso,117,10,8,688
+Pánuco,1,SGBTP,P90,umbral,117,10,8,688
+Pánuco,1,SGBTP,P99,difuso,21,7,9,786
+Pánuco,1,SGBTP,P99,umbral,15,13,2,793
+Pánuco,1,SLAMX,P90,difuso,17,17,3,382
+Pánuco,1,SLAMX,P90,umbral,16,18,3,382
+Pánuco,1,SLAMX,P99,difuso,2,2,3,412
+Pánuco,1,SLAMX,P99,umbral,2,2,0,415
+Pánuco,1,STRSL,P90,difuso,115,21,6,651
+Pánuco,1,STRSL,P90,umbral,116,20,5,652
+Pánuco,1,STRSL,P99,difuso,10,8,9,766
+Pánuco,1,STRSL,P99,umbral,5,13,5,770
+Pánuco,1,SVTSL,P90,difuso,53,14,9,504
+Pánuco,1,SVTSL,P90,umbral,53,14,9,504
+Pánuco,1,SVTSL,P99,difuso,3,0,1,576
+Pánuco,1,SVTSL,P99,umbral,2,1,0,577
+Pánuco,1,TBLSL,P90,difuso,0,1,0,508
+Pánuco,1,TBLSL,P90,umbral,0,1,0,508
+Pánuco,1,TBLSL,P99,difuso,0,1,0,508
+Pánuco,1,TBLSL,P99,umbral,0,1,0,508
+Pánuco,1,TJCMX,P90,difuso,65,21,28,439
+Pánuco,1,TJCMX,P90,umbral,64,22,27,440
+Pánuco,1,TJCMX,P99,difuso,0,8,0,545
+Pánuco,1,TJCMX,P99,umbral,0,8,0,545
+Pánuco,1,TMPVC,P90,difuso,31,6,5,691
+Pánuco,1,TMPVC,P90,umbral,31,6,5,691
+Pánuco,1,TMPVC,P99,difuso,7,3,1,722
+Pánuco,1,TMPVC,P99,umbral,3,7,1,722
+Pánuco,1,TMSTP,P90,difuso,54,12,4,188
+Pánuco,1,TMSTP,P90,umbral,54,12,4,188
+Pánuco,1,TMSTP,P99,difuso,0,0,1,257
+Pánuco,1,TMSTP,P99,umbral,0,0,0,258
+Pánuco,1,TTLMX,P90,difuso,0,6,23,404
+Pánuco,1,TTLMX,P90,umbral,1,5,34,393
+Pánuco,1,TTLMX,P99,difuso,0,1,10,422
+Pánuco,1,TTLMX,P99,umbral,0,1,6,426
+Pánuco,7,ACEHD,P90,difuso,0,5,47,881
+Pánuco,7,ACEHD,P90,umbral,5,0,518,410
+Pánuco,7,ACEHD,P99,difuso,0,0,0,933
+Pánuco,7,ACEHD,P99,umbral,0,0,0,933
+Pánuco,7,AHLTP,P90,difuso,36,89,13,688
+Pánuco,7,AHLTP,P90,umbral,36,89,13,688
+Pánuco,7,AHLTP,P99,difuso,0,10,0,816
+Pánuco,7,AHLTP,P99,umbral,0,10,0,816
+Pánuco,7,ARBMX,P90,difuso,0,0,0,393
+Pánuco,7,ARBMX,P90,umbral,0,0,0,393
+Pánuco,7,ARBMX,P99,difuso,0,0,0,393
+Pánuco,7,ARBMX,P99,umbral,0,0,0,393
+Pánuco,7,ARSHD,P90,difuso,0,48,0,879
+Pánuco,7,ARSHD,P90,umbral,0,48,0,879
+Pánuco,7,ARSHD,P99,difuso,0,2,0,925
+Pánuco,7,ARSHD,P99,umbral,0,2,0,925
+Pánuco,7,ATCHD,P90,difuso,43,84,6,537
+Pánuco,7,ATCHD,P90,umbral,40,87,6,537
+Pánuco,7,ATCHD,P99,difuso,0,7,0,663
+Pánuco,7,ATCHD,P99,umbral,0,7,0,663
+Pánuco,7,BLMSL,P90,difuso,62,78,22,583
+Pánuco,7,BLMSL,P90,umbral,59,81,20,585
+Pánuco,7,BLMSL,P99,difuso,0,75,0,670
+Pánuco,7,BLMSL,P99,umbral,0,75,0,670
+Pánuco,7,CDCHD,P90,difuso,0,3,0,925
+Pánuco,7,CDCHD,P90,umbral,0,3,0,925
+Pánuco,7,CDCHD,P99,difuso,0,1,0,927
+Pánuco,7,CDCHD,P99,umbral,0,1,0,927
+Pánuco,7,CDFHD,P90,difuso,0,3,0,929
+Pánuco,7,CDFHD,P90,umbral,0,3,0,929
+Pánuco,7,CDFHD,P99,difuso,0,0,0,932
+Pánuco,7,CDFHD,P99,umbral,0,0,0,932
+Pánuco,7,CHPMX,P90,difuso,0,1,1,363
+Pánuco,7,CHPMX,P90,umbral,0,1,1,363
+Pánuco,7,CHPMX,P99,difuso,0,1,0,364
+Pánuco,7,CHPMX,P99,umbral,0,1,1,363
+Pánuco,7,CL1HD,P90,difuso,0,66,0,866
+Pánuco,7,CL1HD,P90,umbral,0,66,0,866
+Pánuco,7,CL1HD,P99,difuso,0,16,0,916
+Pánuco,7,CL1HD,P99,umbral,0,16,0,916
+Pánuco,7,CPEHD,P90,difuso,3,23,13,894
+Pánuco,7,CPEHD,P90,umbral,3,23,19,888
+Pánuco,7,CPEHD,P99,difuso,0,0,0,933
+Pánuco,7,CPEHD,P99,umbral,0,0,0,933
+Pánuco,7,CSTHD,P90,difuso,43,107,33,748
+Pánuco,7,CSTHD,P90,umbral,47,103,35,746
+Pánuco,7,CSTHD,P99,difuso,8,45,9,869
+Pánuco,7,CSTHD,P99,umbral,6,47,5,873
+Pánuco,7,CVAHD,P90,difuso,3,56,7,865
+Pánuco,7,CVAHD,P90,umbral,3,56,7,865
+Pánuco,7,CVAHD,P99,difuso,0,8,0,923
+Pánuco,7,CVAHD,P99,umbral,0,8,0,923
+Pánuco,7,EMOMX,P90,difuso,0,1,1,318
+Pánuco,7,EMOMX,P90,umbral,0,1,6,313
+Pánuco,7,EMOMX,P99,difuso,0,0,0,320
+Pánuco,7,EMOMX,P99,umbral,0,0,0,320
+Pánuco,7,GANSL,P90,difuso,4,76,0,295
+Pánuco,7,GANSL,P90,umbral,4,76,0,295
+Pánuco,7,GANSL,P99,difuso,0,0,0,375
+Pánuco,7,GANSL,P99,umbral,0,0,0,375
+Pánuco,7,K27MX,P90,difuso,0,0,0,240
+Pánuco,7,K27MX,P90,umbral,0,0,0,240
+Pánuco,7,K27MX,P99,difuso,0,0,0,240
+Pánuco,7,K27MX,P99,umbral,0,0,0,240
+Pánuco,7,LSRTP,P90,difuso,45,38,12,684
+Pánuco,7,LSRTP,P90,umbral,44,39,12,684
+Pánuco,7,LSRTP,P99,difuso,0,9,0,770
+Pánuco,7,LSRTP,P99,umbral,0,9,0,770
+Pánuco,7,MBLMX,P90,difuso,0,7,0,314
+Pánuco,7,MBLMX,P90,umbral,0,7,0,314
+Pánuco,7,MBLMX,P99,difuso,0,0,0,321
+Pánuco,7,MBLMX,P99,umbral,0,0,0,321
+Pánuco,7,MGSTP,P90,difuso,14,53,20,665
+Pánuco,7,MGSTP,P90,umbral,14,53,20,665
+Pánuco,7,MGSTP,P99,difuso,0,10,0,742
+Pánuco,7,MGSTP,P99,umbral,0,10,0,742
+Pánuco,7,OBSMX,P90,difuso,0,0,0,459
+Pánuco,7,OBSMX,P90,umbral,0,0,0,459
+Pánuco,7,OBSMX,P99,difuso,0,0,0,459
+Pánuco,7,OBSMX,P99,umbral,0,0,0,459
+Pánuco,7,OLVVC,P90,difuso,19,57,13,553
+Pánuco,7,OLVVC,P90,umbral,17,59,13,553
+Pánuco,7,OLVVC,P99,difuso,0,2,0,640
+Pánuco,7,OLVVC,P99,umbral,0,2,0,640
+Pánuco,7,PSNVC,P90,difuso,38,45,0,533
+Pánuco,7,PSNVC,P90,umbral,37,46,0,533
+Pánuco,7,PSNVC,P99,difuso,0,6,0,610
+Pánuco,7,PSNVC,P99,umbral,0,6,0,610
+Pánuco,7,PUJSL,P90,difuso,0,9,0,326
+Pánuco,7,PUJSL,P90,umbral,0,9,0,326
+Pánuco,7,PUJSL,P99,difuso,0,0,0,335
+Pánuco,7,PUJSL,P99,umbral,0,0,0,335
+Pánuco,7,RFRTP,P90,difuso,34,73,18,688
+Pánuco,7,RFRTP,P90,umbral,33,74,18,688
+Pánuco,7,RFRTP,P99,difuso,0,12,0,801
+Pánuco,7,RFRTP,P99,umbral,0,12,0,801
+Pánuco,7,RQTSL,P90,difuso,0,11,0,380
+Pánuco,7,RQTSL,P90,umbral,0,11,0,380
+Pánuco,7,RQTSL,P99,difuso,0,0,0,391
+Pánuco,7,RQTSL,P99,umbral,0,0,0,391
+Pánuco,7,RSTHD,P90,difuso,0,0,0,929
+Pánuco,7,RSTHD,P90,umbral,0,0,0,929
+Pánuco,7,RSTHD,P99,difuso,0,0,0,929
+Pánuco,7,RSTHD,P99,umbral,0,0,0,929
+Pánuco,7,RTTHD,P90,difuso,41,73,11,735
+Pánuco,7,RTTHD,P90,umbral,41,73,11,735
+Pánuco,7,RTTHD,P99,difuso,0,18,0,842
+Pánuco,7,RTTHD,P99,umbral,0,18,0,842
+Pánuco,7,SBNTP,P90,difuso,48,56,17,679
+Pánuco,7,SBNTP,P90,umbral,48,56,16,680
+Pánuco,7,SBNTP,P99,difuso,0,18,0,782
+Pánuco,7,SBNTP,P99,umbral,0,18,0,782
+Pánuco,7,SGBTP,P90,difuso,62,65,17,667
+Pánuco,7,SGBTP,P90,umbral,64,63,17,667
+Pánuco,7,SGBTP,P99,difuso,0,28,0,783
+Pánuco,7,SGBTP,P99,umbral,0,28,0,783
+Pánuco,7,SLAMX,P90,difuso,7,25,4,378
+Pánuco,7,SLAMX,P90,umbral,7,25,4,378
+Pánuco,7,SLAMX,P99,difuso,0,4,0,410
+Pánuco,7,SLAMX,P99,umbral,0,4,0,410
+Pánuco,7,STRSL,P90,difuso,66,70,5,642
+Pánuco,7,STRSL,P90,umbral,66,70,4,643
+Pánuco,7,STRSL,P99,difuso,0,18,0,765
+Pánuco,7,STRSL,P99,umbral,0,18,0,765
+Pánuco,7,SVTSL,P90,difuso,24,43,11,491
+Pánuco,7,SVTSL,P90,umbral,24,43,11,491
+Pánuco,7,SVTSL,P99,difuso,0,3,0,566
+Pánuco,7,SVTSL,P99,umbral,0,3,0,566
+Pánuco,7,TBLSL,P90,difuso,0,1,0,490
+Pánuco,7,TBLSL,P90,umbral,0,1,0,490
+Pánuco,7,TBLSL,P99,difuso,0,1,0,490
+Pánuco,7,TBLSL,P99,umbral,0,1,0,490
+Pánuco,7,TJCMX,P90,difuso,55,28,28,406
+Pánuco,7,TJCMX,P90,umbral,53,30,26,408
+Pánuco,7,TJCMX,P99,difuso,0,8,0,509
+Pánuco,7,TJCMX,P99,umbral,0,8,0,509
+Pánuco,7,TMPVC,P90,difuso,13,24,13,672
+Pánuco,7,TMPVC,P90,umbral,12,25,13,672
+Pánuco,7,TMPVC,P99,difuso,0,10,0,712
+Pánuco,7,TMPVC,P99,umbral,0,10,0,712
+Pánuco,7,TMSTP,P90,difuso,45,15,8,172
+Pánuco,7,TMSTP,P90,umbral,45,15,8,172
+Pánuco,7,TMSTP,P99,difuso,0,0,0,240
+Pánuco,7,TMSTP,P99,umbral,0,0,0,240
+Pánuco,7,TTLMX,P90,difuso,0,5,60,362
+Pánuco,7,TTLMX,P90,umbral,0,5,75,347
+Pánuco,7,TTLMX,P99,difuso,0,0,30,397
+Pánuco,7,TTLMX,P99,umbral,0,0,16,411
+Pánuco,14,ACEHD,P90,difuso,0,5,66,855
+Pánuco,14,ACEHD,P90,umbral,5,0,455,466
+Pánuco,14,ACEHD,P99,difuso,0,0,0,926
+Pánuco,14,ACEHD,P99,umbral,0,0,0,926
+Pánuco,14,AHLTP,P90,difuso,6,119,1,689
+Pánuco,14,AHLTP,P90,umbral,6,119,1,689
+Pánuco,14,AHLTP,P99,difuso,0,10,0,805
+Pánuco,14,AHLTP,P99,umbral,0,10,0,805
+Pánuco,14,ARBMX,P90,difuso,0,0,0,387
+Pánuco,14,ARBMX,P90,umbral,0,0,0,387
+Pánuco,14,ARBMX,P99,difuso,0,0,0,387
+Pánuco,14,ARBMX,P99,umbral,0,0,0,387
+Pánuco,14,ARSHD,P90,difuso,0,48,0,872
+Pánuco,14,ARSHD,P90,umbral,0,48,0,872
+Pánuco,14,ARSHD,P99,difuso,0,2,0,918
+Pánuco,14,ARSHD,P99,umbral,0,2,0,918
+Pánuco,14,ATCHD,P90,difuso,0,127,0,525
+Pánuco,14,ATCHD,P90,umbral,0,127,0,525
+Pánuco,14,ATCHD,P99,difuso,0,7,0,645
+Pánuco,14,ATCHD,P99,umbral,0,7,0,645
+Pánuco,14,BLMSL,P90,difuso,6,134,0,593
+Pánuco,14,BLMSL,P90,umbral,1,139,0,593
+Pánuco,14,BLMSL,P99,difuso,0,75,0,658
+Pánuco,14,BLMSL,P99,umbral,0,75,0,658
+Pánuco,14,CDCHD,P90,difuso,0,3,0,918
+Pánuco,14,CDCHD,P90,umbral,0,3,0,918
+Pánuco,14,CDCHD,P99,difuso,0,1,0,920
+Pánuco,14,CDCHD,P99,umbral,0,1,0,920
+Pánuco,14,CDFHD,P90,difuso,0,3,0,922
+Pánuco,14,CDFHD,P90,umbral,0,3,0,922
+Pánuco,14,CDFHD,P99,difuso,0,0,0,925
+Pánuco,14,CDFHD,P99,umbral,0,0,0,925
+Pánuco,14,CHPMX,P90,difuso,0,1,5,350
+Pánuco,14,CHPMX,P90,umbral,0,1,5,350
+Pánuco,14,CHPMX,P99,difuso,0,1,0,355
+Pánuco,14,CHPMX,P99,umbral,0,1,5,350
+Pánuco,14,CL1HD,P90,difuso,0,66,0,859
+Pánuco,14,CL1HD,P90,umbral,0,66,0,859
+Pánuco,14,CL1HD,P99,difuso,0,16,0,909
+Pánuco,14,CL1HD,P99,umbral,0,16,0,909
+Pánuco,14,CPEHD,P90,difuso,0,26,20,880
+Pánuco,14,CPEHD,P90,umbral,0,26,25,875
+Pánuco,14,CPEHD,P99,difuso,0,0,0,926
+Pánuco,14,CPEHD,P99,umbral,0,0,0,926
+Pánuco,14,CSTHD,P90,difuso,10,140,16,758
+Pánuco,14,CSTHD,P90,umbral,16,134,22,752
+Pánuco,14,CSTHD,P99,difuso,1,52,4,867
+Pánuco,14,CSTHD,P99,umbral,3,50,7,864
+Pánuco,14,CVAHD,P90,difuso,0,59,0,865
+Pánuco,14,CVAHD,P90,umbral,0,59,0,865
+Pánuco,14,CVAHD,P99,difuso,0,8,0,916
+Pánuco,14,CVAHD,P99,umbral,0,8,0,916
+Pánuco,14,EMOMX,P90,difuso,0,1,0,312
+Pánuco,14,EMOMX,P90,umbral,0,1,0,312
+Pánuco,14,EMOMX,P99,difuso,0,0,0,313
+Pánuco,14,EMOMX,P99,umbral,0,0,0,313
+Pánuco,14,GANSL,P90,difuso,0,80,0,274
+Pánuco,14,GANSL,P90,umbral,0,80,0,274
+Pánuco,14,GANSL,P99,difuso,0,0,0,354
+Pánuco,14,GANSL,P99,umbral,0,0,0,354
+Pánuco,14,K27MX,P90,difuso,0,0,0,229
+Pánuco,14,K27MX,P90,umbral,0,0,0,229
+Pánuco,14,K27MX,P99,difuso,0,0,0,229
+Pánuco,14,K27MX,P99,umbral,0,0,0,229
+Pánuco,14,LSRTP,P90,difuso,11,75,8,673
+Pánuco,14,LSRTP,P90,umbral,10,76,8,673
+Pánuco,14,LSRTP,P99,difuso,0,9,0,758
+Pánuco,14,LSRTP,P99,umbral,0,9,0,758
+Pánuco,14,MBLMX,P90,difuso,0,8,0,300
+Pánuco,14,MBLMX,P90,umbral,0,8,0,300
+Pánuco,14,MBLMX,P99,difuso,0,0,0,308
+Pánuco,14,MBLMX,P99,umbral,0,0,0,308
+Pánuco,14,MGSTP,P90,difuso,3,64,7,670
+Pánuco,14,MGSTP,P90,umbral,3,64,11,666
+Pánuco,14,MGSTP,P99,difuso,0,10,0,734
+Pánuco,14,MGSTP,P99,umbral,0,10,0,734
+Pánuco,14,OBSMX,P90,difuso,0,0,0,452
+Pánuco,14,OBSMX,P90,umbral,0,0,0,452
+Pánuco,14,OBSMX,P99,difuso,0,0,0,452
+Pánuco,14,OBSMX,P99,umbral,0,0,0,452
+Pánuco,14,OLVVC,P90,difuso,1,82,0,554
+Pánuco,14,OLVVC,P90,umbral,1,82,0,554
+Pánuco,14,OLVVC,P99,difuso,0,2,0,635
+Pánuco,14,OLVVC,P99,umbral,0,2,0,635
+Pánuco,14,PSNVC,P90,difuso,4,75,0,519
+Pánuco,14,PSNVC,P90,umbral,9,70,0,519
+Pánuco,14,PSNVC,P99,difuso,0,6,0,592
+Pánuco,14,PSNVC,P99,umbral,0,6,0,592
+Pánuco,14,PUJSL,P90,difuso,0,9,0,319
+Pánuco,14,PUJSL,P90,umbral,0,9,0,319
+Pánuco,14,PUJSL,P99,difuso,0,0,0,328
+Pánuco,14,PUJSL,P99,umbral,0,0,0,328
+Pánuco,14,RFRTP,P90,difuso,0,107,1,696
+Pánuco,14,RFRTP,P90,umbral,0,107,0,697
+Pánuco,14,RFRTP,P99,difuso,0,12,0,792
+Pánuco,14,RFRTP,P99,umbral,0,12,0,792
+Pánuco,14,RQTSL,P90,difuso,0,17,0,348
+Pánuco,14,RQTSL,P90,umbral,0,17,0,348
+Pánuco,14,RQTSL,P99,difuso,0,3,0,362
+Pánuco,14,RQTSL,P99,umbral,0,3,0,362
+Pánuco,14,RSTHD,P90,difuso,0,0,0,922
+Pánuco,14,RSTHD,P90,umbral,0,0,0,922
+Pánuco,14,RSTHD,P99,difuso,0,0,0,922
+Pánuco,14,RSTHD,P99,umbral,0,0,0,922
+Pánuco,14,RTTHD,P90,difuso,7,107,0,732
+Pánuco,14,RTTHD,P90,umbral,6,108,0,732
+Pánuco,14,RTTHD,P99,difuso,0,18,0,828
+Pánuco,14,RTTHD,P99,umbral,0,18,0,828
+Pánuco,14,SBNTP,P90,difuso,15,89,10,674
+Pánuco,14,SBNTP,P90,umbral,20,84,9,675
+Pánuco,14,SBNTP,P99,difuso,0,18,0,770
+Pánuco,14,SBNTP,P99,umbral,0,18,0,770
+Pánuco,14,SGBTP,P90,difuso,13,114,5,667
+Pánuco,14,SGBTP,P90,umbral,13,114,9,663
+Pánuco,14,SGBTP,P99,difuso,0,28,0,771
+Pánuco,14,SGBTP,P99,umbral,0,28,0,771
+Pánuco,14,SLAMX,P90,difuso,0,24,0,383
+Pánuco,14,SLAMX,P90,umbral,0,24,0,383
+Pánuco,14,SLAMX,P99,difuso,0,2,0,405
+Pánuco,14,SLAMX,P99,umbral,0,2,0,405
+Pánuco,14,STRSL,P90,difuso,5,131,0,634
+Pánuco,14,STRSL,P90,umbral,10,126,0,634
+Pánuco,14,STRSL,P99,difuso,0,18,0,752
+Pánuco,14,STRSL,P99,umbral,0,18,0,752
+Pánuco,14,SVTSL,P90,difuso,6,60,1,488
+Pánuco,14,SVTSL,P90,umbral,6,60,1,488
+Pánuco,14,SVTSL,P99,difuso,0,3,0,552
+Pánuco,14,SVTSL,P99,umbral,0,3,0,552
+Pánuco,14,TBLSL,P90,difuso,0,1,0,478
+Pánuco,14,TBLSL,P90,umbral,0,1,0,478
+Pánuco,14,TBLSL,P99,difuso,0,1,0,478
+Pánuco,14,TBLSL,P99,umbral,0,1,0,478
+Pánuco,14,TJCMX,P90,difuso,42,41,22,375
+Pánuco,14,TJCMX,P90,umbral,42,41,21,376
+Pánuco,14,TJCMX,P99,difuso,0,8,0,472
+Pánuco,14,TJCMX,P99,umbral,0,8,0,472
+Pánuco,14,TMPVC,P90,difuso,0,37,1,670
+Pánuco,14,TMPVC,P90,umbral,0,37,1,670
+Pánuco,14,TMPVC,P99,difuso,0,10,0,698
+Pánuco,14,TMPVC,P99,umbral,0,10,0,698
+Pánuco,14,TMSTP,P90,difuso,43,11,4,166
+Pánuco,14,TMSTP,P90,umbral,43,11,4,166
+Pánuco,14,TMSTP,P99,difuso,0,0,0,224
+Pánuco,14,TMSTP,P99,umbral,0,0,0,224
+Pánuco,14,TTLMX,P90,difuso,1,3,48,366
+Pánuco,14,TTLMX,P90,umbral,1,3,60,354
+Pánuco,14,TTLMX,P99,difuso,0,0,32,386
+Pánuco,14,TTLMX,P99,umbral,0,0,25,393
+Alta del Balsas,1,ALUMR,P90,difuso,85,26,40,477
+Alta del Balsas,1,ALUMR,P90,umbral,85,26,37,480
+Alta del Balsas,1,ALUMR,P99,difuso,0,6,0,622
+Alta del Balsas,1,ALUMR,P99,umbral,0,6,0,622
+Alta del Balsas,1,AMCMR,P90,difuso,9,20,10,550
+Alta del Balsas,1,AMCMR,P90,umbral,9,20,10,550
+Alta del Balsas,1,AMCMR,P99,difuso,0,8,0,581
+Alta del Balsas,1,AMCMR,P99,umbral,0,8,0,581
+Alta del Balsas,1,CRDMR,P90,difuso,0,1,0,486
+Alta del Balsas,1,CRDMR,P90,umbral,0,1,0,486
+Alta del Balsas,1,CRDMR,P99,difuso,0,1,0,486
+Alta del Balsas,1,CRDMR,P99,umbral,0,1,0,486
+Alta del Balsas,1,CUAMR,P90,difuso,28,48,15,566
+Alta del Balsas,1,CUAMR,P90,umbral,28,48,15,566
+Alta del Balsas,1,CUAMR,P99,difuso,0,6,2,649
+Alta del Balsas,1,CUAMR,P99,umbral,0,6,1,650
+Alta del Balsas,1,CXXMR,P90,difuso,195,55,7,226
+Alta del Balsas,1,CXXMR,P90,umbral,168,82,6,227
+Alta del Balsas,1,CXXMR,P99,difuso,0,1,2,480
+Alta del Balsas,1,CXXMR,P99,umbral,0,1,1,481
+Alta del Balsas,1,ESTMR,P90,difuso,0,0,0,423
+Alta del Balsas,1,ESTMR,P90,umbral,0,0,0,423
+Alta del Balsas,1,ESTMR,P99,difuso,0,0,0,423
+Alta del Balsas,1,ESTMR,P99,umbral,0,0,0,423
+Alta del Balsas,1,PERMR,P90,difuso,38,20,17,399
+Alta del Balsas,1,PERMR,P90,umbral,38,20,17,399
+Alta del Balsas,1,PERMR,P99,difuso,0,6,0,468
+Alta del Balsas,1,PERMR,P99,umbral,0,6,0,468
+Alta del Balsas,1,TEMMR,P90,difuso,8,25,13,510
+Alta del Balsas,1,TEMMR,P90,umbral,6,27,13,510
+Alta del Balsas,1,TEMMR,P99,difuso,0,3,0,553
+Alta del Balsas,1,TEMMR,P99,umbral,0,3,0,553
+Alta del Balsas,1,TICMR,P90,difuso,28,27,16,447
+Alta del Balsas,1,TICMR,P90,umbral,26,29,15,448
+Alta del Balsas,1,TICMR,P99,difuso,0,10,0,508
+Alta del Balsas,1,TICMR,P99,umbral,0,10,0,508
+Alta del Balsas,1,XICMR,P90,difuso,66,20,4,516
+Alta del Balsas,1,XICMR,P90,umbral,66,20,4,516
+Alta del Balsas,1,XICMR,P99,difuso,0,19,1,586
+Alta del Balsas,1,XICMR,P99,umbral,0,19,0,587
+Alta del Balsas,1,YAHMR,P90,difuso,16,41,14,507
+Alta del Balsas,1,YAHMR,P90,umbral,16,41,14,507
+Alta del Balsas,1,YAHMR,P99,difuso,0,0,0,578
+Alta del Balsas,1,YAHMR,P99,umbral,0,0,0,578
+Alta del Balsas,1,ZCTMR,P90,difuso,30,52,26,603
+Alta del Balsas,1,ZCTMR,P90,umbral,30,52,26,603
+Alta del Balsas,1,ZCTMR,P99,difuso,0,11,0,700
+Alta del Balsas,1,ZCTMR,P99,umbral,0,11,0,700
+Alta del Balsas,7,ALUMR,P90,difuso,60,48,43,450
+Alta del Balsas,7,ALUMR,P90,umbral,59,49,42,451
+Alta del Balsas,7,ALUMR,P99,difuso,0,6,0,595
+Alta del Balsas,7,ALUMR,P99,umbral,0,6,0,595
+Alta del Balsas,7,AMCMR,P90,difuso,0,28,0,528
+Alta del Balsas,7,AMCMR,P90,umbral,0,28,0,528
+Alta del Balsas,7,AMCMR,P99,difuso,0,8,0,548
+Alta del Balsas,7,AMCMR,P99,umbral,0,8,0,548
+Alta del Balsas,7,CRDMR,P90,difuso,0,1,0,457
+Alta del Balsas,7,CRDMR,P90,umbral,0,1,0,457
+Alta del Balsas,7,CRDMR,P99,difuso,0,1,0,457
+Alta del Balsas,7,CRDMR,P99,umbral,0,1,0,457
+Alta del Balsas,7,CUAMR,P90,difuso,6,70,3,557
+Alta del Balsas,7,CUAMR,P90,umbral,6,70,3,557
+Alta del Balsas,7,CUAMR,P99,difuso,0,6,0,630
+Alta del Balsas,7,CUAMR,P99,umbral,0,6,0,630
+Alta del Balsas,7,CXXMR,P90,difuso,28,209,7,210
+Alta del Balsas,7,CXXMR,P90,umbral,31,206,7,210
+Alta del Balsas,7,CXXMR,P99,difuso,0,0,0,454
+Alta del Balsas,7,CXXMR,P99,umbral,0,0,0,454
+Alta del Balsas,7,ESTMR,P90,difuso,0,0,0,392
+Alta del Balsas,7,ESTMR,P90,umbral,0,0,0,392
+Alta del Balsas,7,ESTMR,P99,difuso,0,0,0,392
+Alta del Balsas,7,ESTMR,P99,umbral,0,0,0,392
+Alta del Balsas,7,PERMR,P90,difuso,13,41,7,383
+Alta del Balsas,7,PERMR,P90,umbral,13,41,7,383
+Alta del Balsas,7,PERMR,P99,difuso,0,5,0,439
+Alta del Balsas,7,PERMR,P99,umbral,0,5,0,439
+Alta del Balsas,7,TEMMR,P90,difuso,0,32,0,496
+Alta del Balsas,7,TEMMR,P90,umbral,0,32,0,496
+Alta del Balsas,7,TEMMR,P99,difuso,0,3,0,525
+Alta del Balsas,7,TEMMR,P99,umbral,0,3,0,525
+Alta del Balsas,7,TICMR,P90,difuso,7,48,1,432
+Alta del Balsas,7,TICMR,P90,umbral,7,48,1,432
+Alta del Balsas,7,TICMR,P99,difuso,0,10,0,478
+Alta del Balsas,7,TICMR,P99,umbral,0,10,0,478
+Alta del Balsas,7,XICMR,P90,difuso,6,79,1,488
+Alta del Balsas,7,XICMR,P90,umbral,5,80,0,489
+Alta del Balsas,7,XICMR,P99,difuso,0,19,0,555
+Alta del Balsas,7,XICMR,P99,umbral,0,19,0,555
+Alta del Balsas,7,YAHMR,P90,difuso,4,53,8,490
+Alta del Balsas,7,YAHMR,P90,umbral,4,53,8,490
+Alta del Balsas,7,YAHMR,P99,difuso,0,0,0,555
+Alta del Balsas,7,YAHMR,P99,umbral,0,0,0,555
+Alta del Balsas,7,ZCTMR,P90,difuso,3,79,2,616
+Alta del Balsas,7,ZCTMR,P90,umbral,3,79,1,617
+Alta del Balsas,7,ZCTMR,P99,difuso,0,11,0,689
+Alta del Balsas,7,ZCTMR,P99,umbral,0,11,0,689
+Alta del Balsas,14,ALUMR,P90,difuso,47,56,27,446
+Alta del Balsas,14,ALUMR,P90,umbral,43,60,23,450
+Alta del Balsas,14,ALUMR,P99,difuso,0,6,0,570
+Alta del Balsas,14,ALUMR,P99,umbral,0,6,0,570
+Alta del Balsas,14,AMCMR,P90,difuso,0,25,0,509
+Alta del Balsas,14,AMCMR,P90,umbral,0,25,0,509
+Alta del Balsas,14,AMCMR,P99,difuso,0,6,0,528
+Alta del Balsas,14,AMCMR,P99,umbral,0,6,0,528
+Alta del Balsas,14,CRDMR,P90,difuso,0,1,0,423
+Alta del Balsas,14,CRDMR,P90,umbral,0,1,0,423
+Alta del Balsas,14,CRDMR,P99,difuso,0,1,0,423
+Alta del Balsas,14,CRDMR,P99,umbral,0,1,0,423
+Alta del Balsas,14,CUAMR,P90,difuso,4,72,3,542
+Alta del Balsas,14,CUAMR,P90,umbral,4,72,3,542
+Alta del Balsas,14,CUAMR,P99,difuso,0,6,0,615
+Alta del Balsas,14,CUAMR,P99,umbral,0,6,0,615
+Alta del Balsas,14,CXXMR,P90,difuso,68,150,8,197
+Alta del Balsas,14,CXXMR,P90,umbral,60,158,8,197
+Alta del Balsas,14,CXXMR,P99,difuso,0,0,12,411
+Alta del Balsas,14,CXXMR,P99,umbral,0,0,9,414
+Alta del Balsas,14,ESTMR,P90,difuso,0,0,0,360
+Alta del Balsas,14,ESTMR,P90,umbral,0,0,0,360
+Alta del Balsas,14,ESTMR,P99,difuso,0,0,0,360
+Alta del Balsas,14,ESTMR,P99,umbral,0,0,0,360
+Alta del Balsas,14,PERMR,P90,difuso,14,35,2,361
+Alta del Balsas,14,PERMR,P90,umbral,14,35,2,361
+Alta del Balsas,14,PERMR,P99,difuso,0,5,0,407
+Alta del Balsas,14,PERMR,P99,umbral,0,5,0,407
+Alta del Balsas,14,TEMMR,P90,difuso,0,29,0,470
+Alta del Balsas,14,TEMMR,P90,umbral,0,29,0,470
+Alta del Balsas,14,TEMMR,P99,difuso,0,2,0,497
+Alta del Balsas,14,TEMMR,P99,umbral,0,2,0,497
+Alta del Balsas,14,TICMR,P90,difuso,0,49,0,415
+Alta del Balsas,14,TICMR,P90,umbral,0,49,0,415
+Alta del Balsas,14,TICMR,P99,difuso,0,10,0,454
+Alta del Balsas,14,TICMR,P99,umbral,0,10,0,454
+Alta del Balsas,14,XICMR,P90,difuso,3,77,0,471
+Alta del Balsas,14,XICMR,P90,umbral,3,77,0,471
+Alta del Balsas,14,XICMR,P99,difuso,0,17,0,534
+Alta del Balsas,14,XICMR,P99,umbral,0,17,0,534
+Alta del Balsas,14,YAHMR,P90,difuso,1,56,1,476
+Alta del Balsas,14,YAHMR,P90,umbral,1,56,1,476
+Alta del Balsas,14,YAHMR,P99,difuso,0,0,0,534
+Alta del Balsas,14,YAHMR,P99,umbral,0,0,0,534
+Alta del Balsas,14,ZCTMR,P90,difuso,5,77,0,611
+Alta del Balsas,14,ZCTMR,P90,umbral,4,78,0,611
+Alta del Balsas,14,ZCTMR,P99,difuso,0,11,0,682
+Alta del Balsas,14,ZCTMR,P99,umbral,0,11,0,682
+Cutzamala,1,TESMX,P90,difuso,18,6,3,374
+Cutzamala,1,TESMX,P90,umbral,17,7,3,374
+Cutzamala,1,TESMX,P99,difuso,0,4,0,397
+Cutzamala,1,TESMX,P99,umbral,0,4,0,397
+Cutzamala,7,TESMX,P90,difuso,9,17,5,343
+Cutzamala,7,TESMX,P90,umbral,9,17,5,343
+Cutzamala,7,TESMX,P99,difuso,0,4,0,370
+Cutzamala,7,TESMX,P99,umbral,0,4,0,370
+Cutzamala,14,TESMX,P90,difuso,0,22,0,324
+Cutzamala,14,TESMX,P90,umbral,0,22,0,324
+Cutzamala,14,TESMX,P99,difuso,0,4,0,342
+Cutzamala,14,TESMX,P99,umbral,0,4,0,342

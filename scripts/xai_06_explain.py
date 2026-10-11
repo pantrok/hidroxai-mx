@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import platform
+import time
 from datetime import date
 from pathlib import Path
 
@@ -23,7 +25,7 @@ import torch
 import xgboost as xgb
 
 from hidroxai_mx.models import data as D
-from hidroxai_mx.models import nets
+from hidroxai_mx.models import manifest, nets
 from hidroxai_mx.models import xgb as XG
 from hidroxai_mx.utils import FEATURES, PROCESSED, ROOT, get_logger
 from hidroxai_mx.xai import attributions as A
@@ -45,7 +47,8 @@ def main() -> None:
     ap.add_argument("--threads", type=int, default=16)
     a = ap.parse_args()
     torch.set_num_threads(a.threads)
-    chosen = json.loads((OUT / "e_rq1.json").read_text(encoding="utf-8"))["configuracion_elegida"]
+    t0 = time.perf_counter()
+    chosen =json.loads((OUT / "e_rq1.json").read_text(encoding="utf-8"))["configuracion_elegida"]
     st = pd.read_csv(OUT / "rq1_station_metrics.csv", dtype={"clave": str})
     n_eval = st[st["modelo"] == "persistencia"].groupby(["cuenca", "h"])["clave"].nunique()
 
@@ -129,6 +132,10 @@ def main() -> None:
            "H2b": {"pares": l1[["cuenca", "modelo", "rezago_precip_mas_importante"]].to_dict("records"),
                    "proporcion_1_3_dias": round(prop, 3), "veredicto": v2b}}
     (OUT / "e_rq2.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
+    sec = round(time.perf_counter() - t0, 1)
+    manifest.replace(OUT / "compute_manifest.csv", fecha=date.today().isoformat(), tipo="evaluacion",
+                     run="xai_06_explain", modelo="explicabilidad_rq2", dispositivo=platform.processor() or "cpu",
+                     hilos=a.threads, segundos=sec, pared_s=sec)
     log.info("H2-a %s | H2-b %s", v2a, v2b)
 
 

@@ -18,17 +18,41 @@ Para verificarlo: `git show <commit>:results/xai_benchmark/protocol.md | sha256s
 Los criterios SUPPORTED/REJECTED son los de `protocol.md`, sección 7. Cada afirmación
 queda `OPEN` hasta tener evidencia.
 
-| ID | Verificador | Estado |
-|---|---|---|
-| H1 | Bootstrap de estaciones (10,000) de la mediana de SS contra persistencia, *h* = 7 y 14, agregado | OPEN |
-| H1-b | Bootstrap de la mediana de ΔNSE (profundo − XGBoost), por horizonte | OPEN |
-| H2-a | Mediana de Spearman entre pares de modelos sobre importancias 6 × 30 | OPEN |
-| H2-b | Proporción de pares (modelo, cuenca) con el rezago de precipitación más importante en 1–3 días respecto al objetivo, *h* = 1 | OPEN |
-| H3 | Bootstrap de ΔCSI (difuso − umbral), eventos P90, *h* = 1 y 7, agregado | OPEN |
+| ID | Verificador | Estado (2026-10-10) | Evidencia |
+|---|---|---|---|
+| H1 | Bootstrap de estaciones (10,000) de la mediana de SS contra persistencia, *h* = 7 y 14, agregado | **SUPPORTED** (4 de 4 modelos con IC > 0 en ambos horizontes) | `e_rq1.json` → `H1` |
+| H1-b | Bootstrap de la mediana de ΔNSE (profundo − XGBoost), por horizonte | **h = 1: SUPPORTED** (solo TCN); **h = 7: OPEN; h = 14: OPEN** | `e_rq1.json` → `H1b` |
+| H2-a | Mediana de Spearman entre pares de modelos sobre importancias 6 × 30 | **REJECTED** (0 de 9 combinaciones ≥ 0.5; 7 de 9 < 0.3) | `e_rq2.json` → `H2a` |
+| H2-b | Proporción de pares (modelo, cuenca) con el rezago de precipitación más importante en 1–3 días respecto al objetivo, *h* = 1 | **SUPPORTED** (12 de 12) | `e_rq2.json` → `H2b` |
+| H3 | Bootstrap de ΔCSI (difuso − umbral), eventos P90, *h* = 1 y 7, agregado | **SUPPORTED** (también en la variante pre-corrección) | `e_rq3.json` → `H3`; `rq3_pre_correccion/` |
+
+Las cifras de cada veredicto están en `numbers.json` (bloques `rq1`, `rq2`, `rq3` y
+`veredictos`), generado por `scripts/xai_08_report.py`.
 
 ## Enmiendas
 
-Ninguna. El protocolo no ha cambiado.
+El protocolo no ha cambiado (su SHA-256 coincide con el congelado; `numbers.json` →
+`protocolo`). Hubo una corrección de implementación, posterior a ver resultados:
+
+- **2026-10-10 · corrección *post hoc* del motor difuso.**
+  - **Qué:** `TrapezoidalMF`, copiado de forecasting, daba pertenencia 0 en los hombros verticales
+    de los trapecios (a = b o c = d): dispersión = 0 en "baja" y percentil = 1 en "extremo".
+    Con miembros idénticos o un pronóstico por encima del máximo de entrenamiento, ninguna
+    regla se activaba y el nivel quedaba en "normal". La fracción de muestras afectadas está en
+    `numbers.json` → `rq3.variante_pre_correccion.muestras_afectadas`; por ejemplo, el 12.76 %
+    de las muestras con percentil ≥ 0.90 tiene dispersión exactamente 0, típicamente en
+    estaciones intermitentes con muchos empates en cero.
+  - **Cuándo se detectó:** al revisar los resultados de `xai_07`, después de la primera
+    ejecución.
+  - **Corrección:** implementar los trapecios como los define el protocolo §6 (pertenencia 1 en
+    el vértice). No cambia ninguna función de pertenencia, regla, umbral ni criterio. La prueba
+    `test_vertical_shoulders_are_full_membership` lo cubre.
+  - **Efecto:** H3 sigue SUPPORTED, con un efecto menor: ΔCSI P90 *h* = 1 pasa de 0.0918
+    [0.0039, 0.174] a 0.0385 [0.0038, 0.0685] (`e_rq3.json` y `rq3_pre_correccion/e_rq3.json`).
+  - **Reporte:** ambas variantes se reportan; la previa está en `rq3_pre_correccion/` y en
+    `numbers.json` → `rq3.variante_pre_correccion`.
+  - **Pendiente fuera de este repo:** el mismo defecto existe en `hidroxmx-forecasting`
+    (`src/hidroxmx/alert/fuzzy.py`); no se toca porque ese repositorio está congelado.
 
 ## Notas de ejecución
 
@@ -42,7 +66,87 @@ Ninguna. El protocolo no ha cambiado.
     commit). ARIMA, XGBoost, evaluación, explicaciones y alertas siguen en CPU local.
   - **Lo que no cambia:** arquitecturas, malla, semillas, entrenamiento, particiones y
     criterios. El manifiesto registra horas de GPU para las redes y de CPU para lo demás.
+- **2026-10-10, integración de Kaggle:** `scripts/xai_03c_import_kaggle.py` → `kaggle_import.json`.
+  - Están las 216 corridas con predicciones y pesos.
+  - Las muestras coinciden una por una con las de CPU; solo difiere la precisión de las fechas
+    (ns frente a µs).
+  - No hay NaN.
+  - Horas de GPU: `kaggle_import.json` → `gpu_h`.
+  - La comprobación de muestras de `xai_05` se ajustó para comparar valores, no tipos.
+- **2026-10-10, resúmenes descriptivos añadidos después de ver resultados** (no preregistrados;
+  marcados como tales en `numbers.json`). Ninguno entra en un veredicto:
+  - ΔNSE contra ARIMA;
+  - participación de cada grupo de canales en la importancia;
+  - fracción de pares cuyo rezago de precipitación más importante es el mínimo posible (= *h*);
+  - frontera de decisión del sistema difuso;
+  - desglose de alarmas por método (`rq3_mechanism.csv`).
+
+## Especificación de ejecución del walk-forward (2026-10-11, antes de correrlo)
+
+El protocolo §3 define el walk-forward:
+- años de prueba *Y* = 2021…2025;
+- entrenamiento 2010 – *Y*−2, validación *Y*−1 y prueba *Y* (2025 hasta el 09-03);
+- configuraciones fijadas en la partición principal y una semilla.
+
+Aquí se completan los detalles de ejecución. No cambia ningún criterio de H1–H3.
+
+**Datos, modelos y cómputo**
+
+- **Pliegues:** se mantienen los del protocolo (`walk_forward_partitions`). La propuesta del
+  brief de robustez (entrenar hasta *Y*−1) no se adopta, porque dejaría al early stopping sin
+  año de validación.
+- **Semilla:** 20261010, para XGBoost y las redes.
+- **Configuraciones:** las de `e_rq1.json` → `configuracion_elegida`, por modelo y horizonte.
+- **ARIMA:** orden fijo por estación, el elegido en la partición principal
+  (`arima_orders.csv`). Los coeficientes se reestiman en 2010 – *Y*−2 y el filtro corre como
+  en el diseño principal. Una estación cuyo ajuste no converja queda fuera de ese año y se
+  reporta.
+- **Referencias:** climatología del entrenamiento del pliegue; persistencia sin cambios.
+- **Escalado:** estadísticos por estación del entrenamiento del pliegue.
+- **Reglas sin cambio:** muestra válida, pertenencia a la partición y estación evaluable
+  (≥ 180 muestras y varianza > 0), aplicadas a cada año de prueba.
+- **Salvedad conocida:** para *Y* = 2021 y 2022, la configuración (2 tamaños) se eligió con la
+  validación principal 2021–2022, es decir, con esos años. Para 2023–2025 no hay traslape. Se
+  declara y no se corrige.
+- **Cómputo:**
+  - redes en GPU de Kaggle (`notebooks/kaggle_xai_walk_forward.ipynb`, código fijado por
+    commit); lo demás en CPU local;
+  - filas `tipo = walk_forward` en el manifiesto.
+
+**Análisis por año**
+
+- **H1:** regla congelada en cada año. Nota: aquí se usa una semilla; el diseño principal
+  promedia tres.
+- **H1-b:** regla congelada por año y horizonte.
+- **Ranking:** los 7 modelos se ordenan por NSE mediana en cada año y horizonte. Se reportan la
+  W de Kendall entre los 5 años y la τ de Kendall media entre pares de años.
+- **H2-a:** TreeSHAP e IG con el modelo del pliegue y la misma regla de muestra (≤ 2,000
+  ventanas de la prueba del año, semilla 20261010). Regla congelada sobre las cuencas con
+  ≥ 8 estaciones evaluables ese año.
+- **H2-b:** por año, descriptivo.
+- **H3:** con una semilla el ensamble tiene 4 miembros, no 12, y la dispersión es el IQR de 4
+  percentiles. Por eso el ΔCSI anual es descriptivo. Como referencia se reporta también la
+  partición principal con ese mismo ensamble de 4 miembros (semilla 20261010).
+
+**Veredicto de robustez por hipótesis**
+
+- Se aplica el criterio congelado en cada año y se compara con el veredicto principal (por
+  horizonte en H1-b):
+  - **estable** si coincide en 5 de 5 años;
+  - **estable con excepciones** si coincide en 3 o 4, y se listan los años;
+  - **inestable** si coincide en 2 o menos.
+- No cambia los veredictos de §7.
+- El ranking y el ΔCSI con 4 miembros se marcan "descriptivo (no preregistrado)".
 
 ## Evidencia
 
-Pendiente.
+- `e_rq1.json`, `e_rq2.json` y `e_rq3.json`: veredictos con sus IC.
+- `rq1_*.csv`, `rq2_*.csv` y `rq3_*.csv`: datos por estación, cuenca y par de modelos.
+- `numbers.json`, `report.md`, `figures/` y `tables/`: salidas de `scripts/xai_08_report.py`.
+- `compute_manifest.csv`: una fila por corrida, CPU y GPU.
+
+### No realizado
+
+- **Walk-forward anual** (protocolo §3): especificado arriba el 2026-10-11; todavía no se
+  corre.
+- **Informer:** fuera del diseño principal (protocolo §4).

@@ -1,0 +1,2520 @@
+{
+  "proyecto": "HidroXAI-MX · IND-2026-0335 (IPN, PICDT 2026), OE2–OE5",
+  "generado": "2026-10-10",
+  "fuente": "scripts/xai_08_report.py",
+  "protocolo": {
+    "fuente": "results/xai_benchmark/protocol.md",
+    "sha256": "8df99290b17bfc8a5a15dd46492772866ace00ec57d9687d0b5e73809db05799",
+    "coincide_con_congelado": true
+  },
+  "datos": {
+    "fuente": "results/xai_benchmark/sample_profile.json (scripts/xai_01_profile_samples.py); rq1_station_metrics.csv",
+    "snapshot": "v2026.10 (10.5281/zenodo.23150556)",
+    "estaciones_universo": 101,
+    "fuera_de_unidad": [
+      "CHAMC",
+      "CMNMC",
+      "LPNMC",
+      "LPSMC",
+      "LPZMC",
+      "TLAMC"
+    ],
+    "estaciones_modeladas": 95,
+    "estaciones_por_cuenca": {
+      "Lerma–Santiago": 43,
+      "Pánuco": 39,
+      "Alta del Balsas": 12,
+      "Cutzamala": 1
+    },
+    "evaluables": {
+      "h1": 91,
+      "h7": 91,
+      "h14": 91
+    },
+    "evaluables_por_cuenca": {
+      "Alta del Balsas": 12,
+      "Cutzamala": 1,
+      "Lerma–Santiago": 41,
+      "Pánuco": 37
+    },
+    "no_evaluables": [
+      "CAPNR",
+      "GDLMX",
+      "SRSJL",
+      "TMTSL"
+    ],
+    "muestras": {
+      "h1": {
+        "train": 254481,
+        "val": 59073,
+        "test": 63478
+      },
+      "h7": {
+        "train": 251663,
+        "val": 58336,
+        "test": 62056
+      },
+      "h14": {
+        "train": 248874,
+        "val": 57565,
+        "test": 60630
+      }
+    }
+  },
+  "computo": {
+    "fuente": "results/xai_benchmark/compute_manifest.csv; kaggle_import.json",
+    "nota": "horas = suma de la columna 'segundos' (tiempo de pared por corrida; en ARIMA, suma por estación)",
+    "gpu": {
+      "dispositivo": [
+        "Tesla T4"
+      ],
+      "corridas": 216,
+      "horas_por_modelo": {
+        "tcn": 0.412,
+        "convnext": 0.433,
+        "patchtst": 0.781
+      },
+      "horas_total": 1.625
+    },
+    "cpu": {
+      "procesador": "Intel Core Ultra 7 155H (22 hilos)",
+      "horas_por_modelo": {
+        "arima": 1.665,
+        "xgboost": 0.184
+      },
+      "horas_piloto": 0.392,
+      "horas_evaluacion": {
+        "xai_05_evaluate": 0.004,
+        "xai_06_explain": 0.553,
+        "xai_07_alerts": 0.002
+      },
+      "horas_total": 2.8
+    },
+    "presupuesto_cpu_h": 40,
+    "epocas_redes": {
+      "convnext": {
+        "mediana": 23.0,
+        "min": 12,
+        "max": 100,
+        "parada_temprana_frac": 0.986
+      },
+      "patchtst": {
+        "mediana": 19.5,
+        "min": 13,
+        "max": 52,
+        "parada_temprana_frac": 1.0
+      },
+      "tcn": {
+        "mediana": 17.0,
+        "min": 11,
+        "max": 43,
+        "parada_temprana_frac": 1.0
+      }
+    },
+    "verificacion_kaggle": {
+      "ok": true,
+      "corridas_esperadas": 216,
+      "predicciones": 216,
+      "pesos": 216,
+      "zip_md5": "1a64cedcd65a37b04cdf703b7694dcd9"
+    }
+  },
+  "rq1": {
+    "fuente": "scripts/xai_05_evaluate.py; results/xai_benchmark/e_rq1.json, rq1_summary.csv, rq1_station_metrics.csv",
+    "configuracion_elegida": {
+      "xgboost_h1": "xgboost-6",
+      "xgboost_h7": "xgboost-4",
+      "xgboost_h14": "xgboost-6",
+      "tcn_h1": "tcn-64",
+      "tcn_h7": "tcn-32",
+      "tcn_h14": "tcn-32",
+      "convnext_h1": "convnext-64",
+      "convnext_h7": "convnext-64",
+      "convnext_h14": "convnext-32",
+      "patchtst_h1": "patchtst-32",
+      "patchtst_h7": "patchtst-32",
+      "patchtst_h14": "patchtst-64"
+    },
+    "agregado": {
+      "h1": {
+        "persistencia": {
+          "estaciones": 91,
+          "nse_mediana": 0.5577,
+          "nse_iqr": [
+            0.1245,
+            0.7774
+          ],
+          "kge_mediana": 0.7756,
+          "rmse_mediana_m3s": 4.8034,
+          "ss_mediana": 0.0,
+          "ss_ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "climatologia": {
+          "estaciones": 91,
+          "nse_mediana": 0.0355,
+          "nse_iqr": [
+            -0.202,
+            0.2059
+          ],
+          "kge_mediana": 0.0503,
+          "rmse_mediana_m3s": 7.4515,
+          "ss_mediana": -1.6238,
+          "ss_ic95": [
+            -2.9599,
+            -0.8031
+          ]
+        },
+        "arima": {
+          "estaciones": 91,
+          "nse_mediana": 0.6133,
+          "nse_iqr": [
+            0.3157,
+            0.7591
+          ],
+          "kge_mediana": 0.6545,
+          "rmse_mediana_m3s": 4.6213,
+          "ss_mediana": 0.1746,
+          "ss_ic95": [
+            0.1148,
+            0.2008
+          ]
+        },
+        "xgboost": {
+          "estaciones": 91,
+          "nse_mediana": 0.5994,
+          "nse_iqr": [
+            0.3081,
+            0.7456
+          ],
+          "kge_mediana": 0.5789,
+          "rmse_mediana_m3s": 4.6122,
+          "ss_mediana": 0.1494,
+          "ss_ic95": [
+            0.0597,
+            0.19
+          ]
+        },
+        "tcn": {
+          "estaciones": 91,
+          "nse_mediana": 0.6061,
+          "nse_iqr": [
+            0.3229,
+            0.7448
+          ],
+          "kge_mediana": 0.5975,
+          "rmse_mediana_m3s": 4.6554,
+          "ss_mediana": 0.1612,
+          "ss_ic95": [
+            0.0815,
+            0.2264
+          ]
+        },
+        "convnext": {
+          "estaciones": 91,
+          "nse_mediana": 0.5845,
+          "nse_iqr": [
+            0.2846,
+            0.7389
+          ],
+          "kge_mediana": 0.582,
+          "rmse_mediana_m3s": 4.6603,
+          "ss_mediana": 0.1429,
+          "ss_ic95": [
+            0.0775,
+            0.176
+          ]
+        },
+        "patchtst": {
+          "estaciones": 91,
+          "nse_mediana": 0.6071,
+          "nse_iqr": [
+            0.3153,
+            0.739
+          ],
+          "kge_mediana": 0.6185,
+          "rmse_mediana_m3s": 4.6006,
+          "ss_mediana": 0.1587,
+          "ss_ic95": [
+            0.0839,
+            0.1956
+          ]
+        }
+      },
+      "h7": {
+        "persistencia": {
+          "estaciones": 91,
+          "nse_mediana": -0.1581,
+          "nse_iqr": [
+            -0.5665,
+            0.2032
+          ],
+          "kge_mediana": 0.3753,
+          "rmse_mediana_m3s": 8.7834,
+          "ss_mediana": 0.0,
+          "ss_ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "climatologia": {
+          "estaciones": 91,
+          "nse_mediana": 0.0396,
+          "nse_iqr": [
+            -0.2412,
+            0.2147
+          ],
+          "kge_mediana": 0.0564,
+          "rmse_mediana_m3s": 7.4633,
+          "ss_mediana": 0.0615,
+          "ss_ic95": [
+            -0.0978,
+            0.2187
+          ]
+        },
+        "arima": {
+          "estaciones": 91,
+          "nse_mediana": 0.1402,
+          "nse_iqr": [
+            0.0399,
+            0.3542
+          ],
+          "kge_mediana": 0.1325,
+          "rmse_mediana_m3s": 6.9878,
+          "ss_mediana": 0.3104,
+          "ss_ic95": [
+            0.2637,
+            0.3382
+          ]
+        },
+        "xgboost": {
+          "estaciones": 91,
+          "nse_mediana": 0.1726,
+          "nse_iqr": [
+            0.0821,
+            0.3881
+          ],
+          "kge_mediana": 0.1669,
+          "rmse_mediana_m3s": 6.9229,
+          "ss_mediana": 0.3144,
+          "ss_ic95": [
+            0.2862,
+            0.3474
+          ]
+        },
+        "tcn": {
+          "estaciones": 91,
+          "nse_mediana": 0.1728,
+          "nse_iqr": [
+            0.063,
+            0.3824
+          ],
+          "kge_mediana": 0.1644,
+          "rmse_mediana_m3s": 6.9128,
+          "ss_mediana": 0.3225,
+          "ss_ic95": [
+            0.2732,
+            0.3643
+          ]
+        },
+        "convnext": {
+          "estaciones": 91,
+          "nse_mediana": 0.179,
+          "nse_iqr": [
+            0.0484,
+            0.3822
+          ],
+          "kge_mediana": 0.1565,
+          "rmse_mediana_m3s": 6.9745,
+          "ss_mediana": 0.3214,
+          "ss_ic95": [
+            0.2853,
+            0.3598
+          ]
+        },
+        "patchtst": {
+          "estaciones": 91,
+          "nse_mediana": 0.1709,
+          "nse_iqr": [
+            0.0345,
+            0.3869
+          ],
+          "kge_mediana": 0.1612,
+          "rmse_mediana_m3s": 6.8563,
+          "ss_mediana": 0.306,
+          "ss_ic95": [
+            0.2712,
+            0.3471
+          ]
+        }
+      },
+      "h14": {
+        "persistencia": {
+          "estaciones": 91,
+          "nse_mediana": -0.3896,
+          "nse_iqr": [
+            -0.656,
+            -0.0148
+          ],
+          "kge_mediana": 0.2824,
+          "rmse_mediana_m3s": 8.8592,
+          "ss_mediana": 0.0,
+          "ss_ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "climatologia": {
+          "estaciones": 91,
+          "nse_mediana": 0.0349,
+          "nse_iqr": [
+            -0.2341,
+            0.2108
+          ],
+          "kge_mediana": 0.0646,
+          "rmse_mediana_m3s": 7.4781,
+          "ss_mediana": 0.2212,
+          "ss_ic95": [
+            0.1344,
+            0.3021
+          ]
+        },
+        "arima": {
+          "estaciones": 91,
+          "nse_mediana": 0.0464,
+          "nse_iqr": [
+            -0.0067,
+            0.2093
+          ],
+          "kge_mediana": -0.0516,
+          "rmse_mediana_m3s": 7.3404,
+          "ss_mediana": 0.3199,
+          "ss_ic95": [
+            0.2689,
+            0.3449
+          ]
+        },
+        "xgboost": {
+          "estaciones": 91,
+          "nse_mediana": 0.1092,
+          "nse_iqr": [
+            0.0143,
+            0.2915
+          ],
+          "kge_mediana": 0.0709,
+          "rmse_mediana_m3s": 7.2375,
+          "ss_mediana": 0.3613,
+          "ss_ic95": [
+            0.3309,
+            0.3851
+          ]
+        },
+        "tcn": {
+          "estaciones": 91,
+          "nse_mediana": 0.0888,
+          "nse_iqr": [
+            0.0111,
+            0.2852
+          ],
+          "kge_mediana": 0.0576,
+          "rmse_mediana_m3s": 7.2134,
+          "ss_mediana": 0.3499,
+          "ss_ic95": [
+            0.3225,
+            0.3699
+          ]
+        },
+        "convnext": {
+          "estaciones": 91,
+          "nse_mediana": 0.0796,
+          "nse_iqr": [
+            -0.0002,
+            0.253
+          ],
+          "kge_mediana": 0.0312,
+          "rmse_mediana_m3s": 7.2809,
+          "ss_mediana": 0.3429,
+          "ss_ic95": [
+            0.2979,
+            0.3591
+          ]
+        },
+        "patchtst": {
+          "estaciones": 91,
+          "nse_mediana": 0.0789,
+          "nse_iqr": [
+            0.0002,
+            0.2554
+          ],
+          "kge_mediana": 0.0156,
+          "rmse_mediana_m3s": 7.2002,
+          "ss_mediana": 0.3275,
+          "ss_ic95": [
+            0.2928,
+            0.3509
+          ]
+        }
+      }
+    },
+    "por_cuenca": {
+      "Lerma–Santiago": {
+        "h1": {
+          "persistencia": {
+            "estaciones": 41,
+            "nse_mediana": 0.6092,
+            "nse_iqr": [
+              0.1712,
+              0.8971
+            ],
+            "kge_mediana": 0.8045,
+            "rmse_mediana_m3s": 4.4897,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 41,
+            "nse_mediana": 0.1759,
+            "nse_iqr": [
+              -0.0015,
+              0.34
+            ],
+            "kge_mediana": 0.1468,
+            "rmse_mediana_m3s": 7.4515,
+            "ss_mediana": -1.745,
+            "ss_ic95": [
+              -4.0579,
+              -0.6401
+            ]
+          },
+          "arima": {
+            "estaciones": 41,
+            "nse_mediana": 0.6806,
+            "nse_iqr": [
+              0.3864,
+              0.8937
+            ],
+            "kge_mediana": 0.712,
+            "rmse_mediana_m3s": 4.007,
+            "ss_mediana": 0.1148,
+            "ss_ic95": [
+              -0.0181,
+              0.1938
+            ]
+          },
+          "xgboost": {
+            "estaciones": 41,
+            "nse_mediana": 0.6798,
+            "nse_iqr": [
+              0.3859,
+              0.8673
+            ],
+            "kge_mediana": 0.6563,
+            "rmse_mediana_m3s": 3.9494,
+            "ss_mediana": 0.1097,
+            "ss_ic95": [
+              -0.0345,
+              0.1892
+            ]
+          },
+          "tcn": {
+            "estaciones": 41,
+            "nse_mediana": 0.687,
+            "nse_iqr": [
+              0.3926,
+              0.8577
+            ],
+            "kge_mediana": 0.6828,
+            "rmse_mediana_m3s": 3.9671,
+            "ss_mediana": 0.1537,
+            "ss_ic95": [
+              0.0228,
+              0.2264
+            ]
+          },
+          "convnext": {
+            "estaciones": 41,
+            "nse_mediana": 0.6964,
+            "nse_iqr": [
+              0.392,
+              0.8798
+            ],
+            "kge_mediana": 0.7246,
+            "rmse_mediana_m3s": 3.9654,
+            "ss_mediana": 0.1399,
+            "ss_ic95": [
+              0.0475,
+              0.1701
+            ]
+          },
+          "patchtst": {
+            "estaciones": 41,
+            "nse_mediana": 0.6775,
+            "nse_iqr": [
+              0.3871,
+              0.8732
+            ],
+            "kge_mediana": 0.7139,
+            "rmse_mediana_m3s": 3.9945,
+            "ss_mediana": 0.1587,
+            "ss_ic95": [
+              0.0471,
+              0.1995
+            ]
+          }
+        },
+        "h7": {
+          "persistencia": {
+            "estaciones": 41,
+            "nse_mediana": 0.0697,
+            "nse_iqr": [
+              -0.3389,
+              0.5283
+            ],
+            "kge_mediana": 0.5226,
+            "rmse_mediana_m3s": 7.7723,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 41,
+            "nse_mediana": 0.1871,
+            "nse_iqr": [
+              -0.0017,
+              0.3393
+            ],
+            "kge_mediana": 0.1467,
+            "rmse_mediana_m3s": 7.4633,
+            "ss_mediana": 0.0426,
+            "ss_ic95": [
+              -0.1984,
+              0.2264
+            ]
+          },
+          "arima": {
+            "estaciones": 41,
+            "nse_mediana": 0.274,
+            "nse_iqr": [
+              0.1032,
+              0.4438
+            ],
+            "kge_mediana": 0.1958,
+            "rmse_mediana_m3s": 6.6665,
+            "ss_mediana": 0.2503,
+            "ss_ic95": [
+              0.1581,
+              0.3156
+            ]
+          },
+          "xgboost": {
+            "estaciones": 41,
+            "nse_mediana": 0.3515,
+            "nse_iqr": [
+              0.1453,
+              0.485
+            ],
+            "kge_mediana": 0.2456,
+            "rmse_mediana_m3s": 6.8393,
+            "ss_mediana": 0.2767,
+            "ss_ic95": [
+              0.1853,
+              0.3248
+            ]
+          },
+          "tcn": {
+            "estaciones": 41,
+            "nse_mediana": 0.3251,
+            "nse_iqr": [
+              0.1647,
+              0.4759
+            ],
+            "kge_mediana": 0.2681,
+            "rmse_mediana_m3s": 6.7181,
+            "ss_mediana": 0.2573,
+            "ss_ic95": [
+              0.1985,
+              0.326
+            ]
+          },
+          "convnext": {
+            "estaciones": 41,
+            "nse_mediana": 0.3305,
+            "nse_iqr": [
+              0.1324,
+              0.4535
+            ],
+            "kge_mediana": 0.2334,
+            "rmse_mediana_m3s": 6.8995,
+            "ss_mediana": 0.2881,
+            "ss_ic95": [
+              0.2109,
+              0.339
+            ]
+          },
+          "patchtst": {
+            "estaciones": 41,
+            "nse_mediana": 0.3254,
+            "nse_iqr": [
+              0.1465,
+              0.4768
+            ],
+            "kge_mediana": 0.212,
+            "rmse_mediana_m3s": 6.6089,
+            "ss_mediana": 0.2651,
+            "ss_ic95": [
+              0.2064,
+              0.3072
+            ]
+          }
+        },
+        "h14": {
+          "persistencia": {
+            "estaciones": 41,
+            "nse_mediana": -0.1076,
+            "nse_iqr": [
+              -0.5217,
+              0.2684
+            ],
+            "kge_mediana": 0.4078,
+            "rmse_mediana_m3s": 8.3058,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 41,
+            "nse_mediana": 0.1843,
+            "nse_iqr": [
+              0.0037,
+              0.3332
+            ],
+            "kge_mediana": 0.1466,
+            "rmse_mediana_m3s": 7.4781,
+            "ss_mediana": 0.2275,
+            "ss_ic95": [
+              0.0782,
+              0.3158
+            ]
+          },
+          "arima": {
+            "estaciones": 41,
+            "nse_mediana": 0.1205,
+            "nse_iqr": [
+              0.021,
+              0.2517
+            ],
+            "kge_mediana": -0.0217,
+            "rmse_mediana_m3s": 7.3404,
+            "ss_mediana": 0.2099,
+            "ss_ic95": [
+              0.1455,
+              0.3161
+            ]
+          },
+          "xgboost": {
+            "estaciones": 41,
+            "nse_mediana": 0.2126,
+            "nse_iqr": [
+              0.0676,
+              0.3605
+            ],
+            "kge_mediana": 0.1281,
+            "rmse_mediana_m3s": 7.2375,
+            "ss_mediana": 0.3309,
+            "ss_ic95": [
+              0.2195,
+              0.3826
+            ]
+          },
+          "tcn": {
+            "estaciones": 41,
+            "nse_mediana": 0.174,
+            "nse_iqr": [
+              0.0477,
+              0.381
+            ],
+            "kge_mediana": 0.1124,
+            "rmse_mediana_m3s": 7.2134,
+            "ss_mediana": 0.3455,
+            "ss_ic95": [
+              0.2575,
+              0.3759
+            ]
+          },
+          "convnext": {
+            "estaciones": 41,
+            "nse_mediana": 0.1403,
+            "nse_iqr": [
+              0.0486,
+              0.3347
+            ],
+            "kge_mediana": 0.1058,
+            "rmse_mediana_m3s": 7.2809,
+            "ss_mediana": 0.3068,
+            "ss_ic95": [
+              0.2159,
+              0.3493
+            ]
+          },
+          "patchtst": {
+            "estaciones": 41,
+            "nse_mediana": 0.1738,
+            "nse_iqr": [
+              0.0496,
+              0.347
+            ],
+            "kge_mediana": 0.0709,
+            "rmse_mediana_m3s": 7.2002,
+            "ss_mediana": 0.3149,
+            "ss_ic95": [
+              0.1748,
+              0.3436
+            ]
+          }
+        }
+      },
+      "Pánuco": {
+        "h1": {
+          "persistencia": {
+            "estaciones": 37,
+            "nse_mediana": 0.5153,
+            "nse_iqr": [
+              0.1185,
+              0.6932
+            ],
+            "kge_mediana": 0.7562,
+            "rmse_mediana_m3s": 9.6801,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 37,
+            "nse_mediana": -0.029,
+            "nse_iqr": [
+              -0.8585,
+              0.1394
+            ],
+            "kge_mediana": -0.0275,
+            "rmse_mediana_m3s": 16.7753,
+            "ss_mediana": -1.6829,
+            "ss_ic95": [
+              -3.1973,
+              -0.824
+            ]
+          },
+          "arima": {
+            "estaciones": 37,
+            "nse_mediana": 0.5351,
+            "nse_iqr": [
+              0.3145,
+              0.6935
+            ],
+            "kge_mediana": 0.6201,
+            "rmse_mediana_m3s": 8.6322,
+            "ss_mediana": 0.1751,
+            "ss_ic95": [
+              0.0881,
+              0.2146
+            ]
+          },
+          "xgboost": {
+            "estaciones": 37,
+            "nse_mediana": 0.5258,
+            "nse_iqr": [
+              0.2918,
+              0.6556
+            ],
+            "kge_mediana": 0.5423,
+            "rmse_mediana_m3s": 8.1772,
+            "ss_mediana": 0.1511,
+            "ss_ic95": [
+              0.0124,
+              0.198
+            ]
+          },
+          "tcn": {
+            "estaciones": 37,
+            "nse_mediana": 0.5436,
+            "nse_iqr": [
+              0.2371,
+              0.6803
+            ],
+            "kge_mediana": 0.5902,
+            "rmse_mediana_m3s": 8.3076,
+            "ss_mediana": 0.1507,
+            "ss_ic95": [
+              0.0393,
+              0.2278
+            ]
+          },
+          "convnext": {
+            "estaciones": 37,
+            "nse_mediana": 0.537,
+            "nse_iqr": [
+              0.238,
+              0.6614
+            ],
+            "kge_mediana": 0.5531,
+            "rmse_mediana_m3s": 8.4945,
+            "ss_mediana": 0.13,
+            "ss_ic95": [
+              -0.1416,
+              0.2066
+            ]
+          },
+          "patchtst": {
+            "estaciones": 37,
+            "nse_mediana": 0.5842,
+            "nse_iqr": [
+              0.2507,
+              0.6657
+            ],
+            "kge_mediana": 0.6077,
+            "rmse_mediana_m3s": 8.3058,
+            "ss_mediana": 0.1445,
+            "ss_ic95": [
+              -0.0377,
+              0.1956
+            ]
+          }
+        },
+        "h7": {
+          "persistencia": {
+            "estaciones": 37,
+            "nse_mediana": -0.3351,
+            "nse_iqr": [
+              -0.8301,
+              -0.0561
+            ],
+            "kge_mediana": 0.3519,
+            "rmse_mediana_m3s": 13.1243,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 37,
+            "nse_mediana": -0.0309,
+            "nse_iqr": [
+              -1.0187,
+              0.1387
+            ],
+            "kge_mediana": -0.0382,
+            "rmse_mediana_m3s": 16.9561,
+            "ss_mediana": 0.081,
+            "ss_ic95": [
+              -0.1426,
+              0.2837
+            ]
+          },
+          "arima": {
+            "estaciones": 37,
+            "nse_mediana": 0.0898,
+            "nse_iqr": [
+              -0.0106,
+              0.2337
+            ],
+            "kge_mediana": 0.0479,
+            "rmse_mediana_m3s": 14.5044,
+            "ss_mediana": 0.3249,
+            "ss_ic95": [
+              0.2945,
+              0.3655
+            ]
+          },
+          "xgboost": {
+            "estaciones": 37,
+            "nse_mediana": 0.1267,
+            "nse_iqr": [
+              0.0016,
+              0.2162
+            ],
+            "kge_mediana": 0.0702,
+            "rmse_mediana_m3s": 15.0441,
+            "ss_mediana": 0.3051,
+            "ss_ic95": [
+              0.2743,
+              0.3822
+            ]
+          },
+          "tcn": {
+            "estaciones": 37,
+            "nse_mediana": 0.0935,
+            "nse_iqr": [
+              0.0095,
+              0.2126
+            ],
+            "kge_mediana": 0.0739,
+            "rmse_mediana_m3s": 15.1976,
+            "ss_mediana": 0.3458,
+            "ss_ic95": [
+              0.2687,
+              0.378
+            ]
+          },
+          "convnext": {
+            "estaciones": 37,
+            "nse_mediana": 0.088,
+            "nse_iqr": [
+              -0.0815,
+              0.2089
+            ],
+            "kge_mediana": 0.0274,
+            "rmse_mediana_m3s": 15.1776,
+            "ss_mediana": 0.3135,
+            "ss_ic95": [
+              0.274,
+              0.3788
+            ]
+          },
+          "patchtst": {
+            "estaciones": 37,
+            "nse_mediana": 0.0654,
+            "nse_iqr": [
+              -0.0572,
+              0.2001
+            ],
+            "kge_mediana": 0.0205,
+            "rmse_mediana_m3s": 14.835,
+            "ss_mediana": 0.3009,
+            "ss_ic95": [
+              0.2457,
+              0.361
+            ]
+          }
+        },
+        "h14": {
+          "persistencia": {
+            "estaciones": 37,
+            "nse_mediana": -0.5497,
+            "nse_iqr": [
+              -0.7005,
+              -0.1607
+            ],
+            "kge_mediana": 0.21,
+            "rmse_mediana_m3s": 16.1521,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 37,
+            "nse_mediana": -0.0307,
+            "nse_iqr": [
+              -0.8336,
+              0.1378
+            ],
+            "kge_mediana": -0.0518,
+            "rmse_mediana_m3s": 17.2964,
+            "ss_mediana": 0.204,
+            "ss_ic95": [
+              0.0651,
+              0.3613
+            ]
+          },
+          "arima": {
+            "estaciones": 37,
+            "nse_mediana": -0.0027,
+            "nse_iqr": [
+              -0.0358,
+              0.0956
+            ],
+            "kge_mediana": -0.1502,
+            "rmse_mediana_m3s": 14.7944,
+            "ss_mediana": 0.3478,
+            "ss_ic95": [
+              0.2464,
+              0.3725
+            ]
+          },
+          "xgboost": {
+            "estaciones": 37,
+            "nse_mediana": 0.0386,
+            "nse_iqr": [
+              -0.0679,
+              0.1193
+            ],
+            "kge_mediana": -0.0009,
+            "rmse_mediana_m3s": 15.6078,
+            "ss_mediana": 0.3638,
+            "ss_ic95": [
+              0.296,
+              0.3893
+            ]
+          },
+          "tcn": {
+            "estaciones": 37,
+            "nse_mediana": 0.0265,
+            "nse_iqr": [
+              -0.1487,
+              0.106
+            ],
+            "kge_mediana": -0.042,
+            "rmse_mediana_m3s": 16.0144,
+            "ss_mediana": 0.3468,
+            "ss_ic95": [
+              0.2629,
+              0.3876
+            ]
+          },
+          "convnext": {
+            "estaciones": 37,
+            "nse_mediana": 0.0035,
+            "nse_iqr": [
+              -0.1166,
+              0.07
+            ],
+            "kge_mediana": -0.058,
+            "rmse_mediana_m3s": 16.2769,
+            "ss_mediana": 0.3551,
+            "ss_ic95": [
+              0.2343,
+              0.3749
+            ]
+          },
+          "patchtst": {
+            "estaciones": 37,
+            "nse_mediana": 0.0062,
+            "nse_iqr": [
+              -0.1193,
+              0.0876
+            ],
+            "kge_mediana": -0.0605,
+            "rmse_mediana_m3s": 15.4014,
+            "ss_mediana": 0.3219,
+            "ss_ic95": [
+              0.2355,
+              0.3708
+            ]
+          }
+        }
+      },
+      "Alta del Balsas": {
+        "h1": {
+          "persistencia": {
+            "estaciones": 12,
+            "nse_mediana": 0.1866,
+            "nse_iqr": [
+              0.0665,
+              0.5632
+            ],
+            "kge_mediana": 0.5745,
+            "rmse_mediana_m3s": 5.0052,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 12,
+            "nse_mediana": -0.0466,
+            "nse_iqr": [
+              -0.7487,
+              0.0353
+            ],
+            "kge_mediana": -0.1487,
+            "rmse_mediana_m3s": 6.5358,
+            "ss_mediana": -0.4442,
+            "ss_ic95": [
+              -3.1926,
+              -0.0639
+            ]
+          },
+          "arima": {
+            "estaciones": 12,
+            "nse_mediana": 0.3538,
+            "nse_iqr": [
+              0.2551,
+              0.5246
+            ],
+            "kge_mediana": 0.3891,
+            "rmse_mediana_m3s": 4.29,
+            "ss_mediana": 0.2655,
+            "ss_ic95": [
+              0.181,
+              0.3014
+            ]
+          },
+          "xgboost": {
+            "estaciones": 12,
+            "nse_mediana": 0.3503,
+            "nse_iqr": [
+              0.1932,
+              0.5618
+            ],
+            "kge_mediana": 0.3443,
+            "rmse_mediana_m3s": 4.2382,
+            "ss_mediana": 0.2768,
+            "ss_ic95": [
+              0.1092,
+              0.3282
+            ]
+          },
+          "tcn": {
+            "estaciones": 12,
+            "nse_mediana": 0.3452,
+            "nse_iqr": [
+              0.195,
+              0.549
+            ],
+            "kge_mediana": 0.338,
+            "rmse_mediana_m3s": 4.2589,
+            "ss_mediana": 0.2582,
+            "ss_ic95": [
+              0.0946,
+              0.3165
+            ]
+          },
+          "convnext": {
+            "estaciones": 12,
+            "nse_mediana": 0.3484,
+            "nse_iqr": [
+              0.202,
+              0.5472
+            ],
+            "kge_mediana": 0.335,
+            "rmse_mediana_m3s": 4.2441,
+            "ss_mediana": 0.2549,
+            "ss_ic95": [
+              0.1196,
+              0.3207
+            ]
+          },
+          "patchtst": {
+            "estaciones": 12,
+            "nse_mediana": 0.3592,
+            "nse_iqr": [
+              0.2202,
+              0.5564
+            ],
+            "kge_mediana": 0.3737,
+            "rmse_mediana_m3s": 4.1922,
+            "ss_mediana": 0.2758,
+            "ss_ic95": [
+              0.1083,
+              0.3325
+            ]
+          }
+        },
+        "h7": {
+          "persistencia": {
+            "estaciones": 12,
+            "nse_mediana": -0.3522,
+            "nse_iqr": [
+              -0.6308,
+              -0.1003
+            ],
+            "kge_mediana": 0.3203,
+            "rmse_mediana_m3s": 5.8557,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 12,
+            "nse_mediana": -0.0443,
+            "nse_iqr": [
+              -0.6607,
+              0.0339
+            ],
+            "kge_mediana": -0.1535,
+            "rmse_mediana_m3s": 6.652,
+            "ss_mediana": 0.0395,
+            "ss_ic95": [
+              -1.1591,
+              0.4654
+            ]
+          },
+          "arima": {
+            "estaciones": 12,
+            "nse_mediana": 0.0836,
+            "nse_iqr": [
+              0.0254,
+              0.2903
+            ],
+            "kge_mediana": 0.0179,
+            "rmse_mediana_m3s": 4.7895,
+            "ss_mediana": 0.3686,
+            "ss_ic95": [
+              0.3302,
+              0.4312
+            ]
+          },
+          "xgboost": {
+            "estaciones": 12,
+            "nse_mediana": 0.1408,
+            "nse_iqr": [
+              0.0535,
+              0.2955
+            ],
+            "kge_mediana": 0.1067,
+            "rmse_mediana_m3s": 4.6845,
+            "ss_mediana": 0.4017,
+            "ss_ic95": [
+              0.3316,
+              0.4318
+            ]
+          },
+          "tcn": {
+            "estaciones": 12,
+            "nse_mediana": 0.1476,
+            "nse_iqr": [
+              0.0552,
+              0.2978
+            ],
+            "kge_mediana": 0.108,
+            "rmse_mediana_m3s": 4.6832,
+            "ss_mediana": 0.4093,
+            "ss_ic95": [
+              0.3316,
+              0.4291
+            ]
+          },
+          "convnext": {
+            "estaciones": 12,
+            "nse_mediana": 0.1408,
+            "nse_iqr": [
+              0.0367,
+              0.3316
+            ],
+            "kge_mediana": 0.1629,
+            "rmse_mediana_m3s": 4.6661,
+            "ss_mediana": 0.4066,
+            "ss_ic95": [
+              0.3436,
+              0.4549
+            ]
+          },
+          "patchtst": {
+            "estaciones": 12,
+            "nse_mediana": 0.1291,
+            "nse_iqr": [
+              0.0519,
+              0.3001
+            ],
+            "kge_mediana": 0.1344,
+            "rmse_mediana_m3s": 4.6389,
+            "ss_mediana": 0.409,
+            "ss_ic95": [
+              0.3443,
+              0.4334
+            ]
+          }
+        },
+        "h14": {
+          "persistencia": {
+            "estaciones": 12,
+            "nse_mediana": -0.4725,
+            "nse_iqr": [
+              -0.7742,
+              -0.2605
+            ],
+            "kge_mediana": 0.2147,
+            "rmse_mediana_m3s": 5.8724,
+            "ss_mediana": 0.0,
+            "ss_ic95": [
+              0.0,
+              0.0
+            ]
+          },
+          "climatologia": {
+            "estaciones": 12,
+            "nse_mediana": -0.0448,
+            "nse_iqr": [
+              -0.6984,
+              0.0275
+            ],
+            "kge_mediana": -0.1898,
+            "rmse_mediana_m3s": 6.5539,
+            "ss_mediana": 0.2137,
+            "ss_ic95": [
+              -1.0917,
+              0.4978
+            ]
+          },
+          "arima": {
+            "estaciones": 12,
+            "nse_mediana": 0.0382,
+            "nse_iqr": [
+              -0.0063,
+              0.2118
+            ],
+            "kge_mediana": -0.1043,
+            "rmse_mediana_m3s": 4.8369,
+            "ss_mediana": 0.3655,
+            "ss_ic95": [
+              0.3214,
+              0.4642
+            ]
+          },
+          "xgboost": {
+            "estaciones": 12,
+            "nse_mediana": 0.1291,
+            "nse_iqr": [
+              0.0085,
+              0.2068
+            ],
+            "kge_mediana": 0.0678,
+            "rmse_mediana_m3s": 4.6244,
+            "ss_mediana": 0.4149,
+            "ss_ic95": [
+              0.346,
+              0.5022
+            ]
+          },
+          "tcn": {
+            "estaciones": 12,
+            "nse_mediana": 0.1379,
+            "nse_iqr": [
+              0.0286,
+              0.2584
+            ],
+            "kge_mediana": 0.1412,
+            "rmse_mediana_m3s": 4.492,
+            "ss_mediana": 0.4561,
+            "ss_ic95": [
+              0.3401,
+              0.5076
+            ]
+          },
+          "convnext": {
+            "estaciones": 12,
+            "nse_mediana": 0.1525,
+            "nse_iqr": [
+              0.0105,
+              0.2844
+            ],
+            "kge_mediana": 0.0817,
+            "rmse_mediana_m3s": 4.4925,
+            "ss_mediana": 0.4495,
+            "ss_ic95": [
+              0.3288,
+              0.5132
+            ]
+          },
+          "patchtst": {
+            "estaciones": 12,
+            "nse_mediana": 0.1196,
+            "nse_iqr": [
+              0.0104,
+              0.2524
+            ],
+            "kge_mediana": 0.0993,
+            "rmse_mediana_m3s": 4.6328,
+            "ss_mediana": 0.4123,
+            "ss_ic95": [
+              0.3407,
+              0.4998
+            ]
+          }
+        }
+      },
+      "Cutzamala": {
+        "h1": {
+          "persistencia": {
+            "estaciones": 1,
+            "nse_mediana": 0.6404,
+            "nse_iqr": [
+              0.6404,
+              0.6404
+            ],
+            "kge_mediana": 0.8217,
+            "rmse_mediana_m3s": 0.3673,
+            "ss_mediana": 0.0
+          },
+          "climatologia": {
+            "estaciones": 1,
+            "nse_mediana": 0.1071,
+            "nse_iqr": [
+              0.1071,
+              0.1071
+            ],
+            "kge_mediana": 0.3772,
+            "rmse_mediana_m3s": 0.5788,
+            "ss_mediana": -1.483
+          },
+          "arima": {
+            "estaciones": 1,
+            "nse_mediana": 0.726,
+            "nse_iqr": [
+              0.726,
+              0.726
+            ],
+            "kge_mediana": 0.8137,
+            "rmse_mediana_m3s": 0.3206,
+            "ss_mediana": 0.238
+          },
+          "xgboost": {
+            "estaciones": 1,
+            "nse_mediana": 0.7171,
+            "nse_iqr": [
+              0.7171,
+              0.7171
+            ],
+            "kge_mediana": 0.7673,
+            "rmse_mediana_m3s": 0.3258,
+            "ss_mediana": 0.2133
+          },
+          "tcn": {
+            "estaciones": 1,
+            "nse_mediana": 0.7284,
+            "nse_iqr": [
+              0.7284,
+              0.7284
+            ],
+            "kge_mediana": 0.7642,
+            "rmse_mediana_m3s": 0.3192,
+            "ss_mediana": 0.2448
+          },
+          "convnext": {
+            "estaciones": 1,
+            "nse_mediana": 0.6683,
+            "nse_iqr": [
+              0.6683,
+              0.6683
+            ],
+            "kge_mediana": 0.6767,
+            "rmse_mediana_m3s": 0.3528,
+            "ss_mediana": 0.0775
+          },
+          "patchtst": {
+            "estaciones": 1,
+            "nse_mediana": 0.718,
+            "nse_iqr": [
+              0.718,
+              0.718
+            ],
+            "kge_mediana": 0.7544,
+            "rmse_mediana_m3s": 0.3253,
+            "ss_mediana": 0.2158
+          }
+        },
+        "h7": {
+          "persistencia": {
+            "estaciones": 1,
+            "nse_mediana": 0.2598,
+            "nse_iqr": [
+              0.2598,
+              0.2598
+            ],
+            "kge_mediana": 0.6286,
+            "rmse_mediana_m3s": 0.5484,
+            "ss_mediana": 0.0
+          },
+          "climatologia": {
+            "estaciones": 1,
+            "nse_mediana": 0.1097,
+            "nse_iqr": [
+              0.1097,
+              0.1097
+            ],
+            "kge_mediana": 0.3622,
+            "rmse_mediana_m3s": 0.6015,
+            "ss_mediana": -0.2029
+          },
+          "arima": {
+            "estaciones": 1,
+            "nse_mediana": 0.4529,
+            "nse_iqr": [
+              0.4529,
+              0.4529
+            ],
+            "kge_mediana": 0.6122,
+            "rmse_mediana_m3s": 0.4715,
+            "ss_mediana": 0.2608
+          },
+          "xgboost": {
+            "estaciones": 1,
+            "nse_mediana": 0.4959,
+            "nse_iqr": [
+              0.4959,
+              0.4959
+            ],
+            "kge_mediana": 0.5318,
+            "rmse_mediana_m3s": 0.4526,
+            "ss_mediana": 0.319
+          },
+          "tcn": {
+            "estaciones": 1,
+            "nse_mediana": 0.5011,
+            "nse_iqr": [
+              0.5011,
+              0.5011
+            ],
+            "kge_mediana": 0.5366,
+            "rmse_mediana_m3s": 0.4502,
+            "ss_mediana": 0.326
+          },
+          "convnext": {
+            "estaciones": 1,
+            "nse_mediana": 0.4238,
+            "nse_iqr": [
+              0.4238,
+              0.4238
+            ],
+            "kge_mediana": 0.4346,
+            "rmse_mediana_m3s": 0.4838,
+            "ss_mediana": 0.2216
+          },
+          "patchtst": {
+            "estaciones": 1,
+            "nse_mediana": 0.4893,
+            "nse_iqr": [
+              0.4893,
+              0.4893
+            ],
+            "kge_mediana": 0.5459,
+            "rmse_mediana_m3s": 0.4555,
+            "ss_mediana": 0.31
+          }
+        },
+        "h14": {
+          "persistencia": {
+            "estaciones": 1,
+            "nse_mediana": -0.0097,
+            "nse_iqr": [
+              -0.0097,
+              -0.0097
+            ],
+            "kge_mediana": 0.5096,
+            "rmse_mediana_m3s": 0.6361,
+            "ss_mediana": 0.0
+          },
+          "climatologia": {
+            "estaciones": 1,
+            "nse_mediana": 0.0838,
+            "nse_iqr": [
+              0.0838,
+              0.0838
+            ],
+            "kge_mediana": 0.352,
+            "rmse_mediana_m3s": 0.6059,
+            "ss_mediana": 0.0926
+          },
+          "arima": {
+            "estaciones": 1,
+            "nse_mediana": 0.3101,
+            "nse_iqr": [
+              0.3101,
+              0.3101
+            ],
+            "kge_mediana": 0.4977,
+            "rmse_mediana_m3s": 0.5258,
+            "ss_mediana": 0.3167
+          },
+          "xgboost": {
+            "estaciones": 1,
+            "nse_mediana": 0.427,
+            "nse_iqr": [
+              0.427,
+              0.427
+            ],
+            "kge_mediana": 0.4601,
+            "rmse_mediana_m3s": 0.4791,
+            "ss_mediana": 0.4325
+          },
+          "tcn": {
+            "estaciones": 1,
+            "nse_mediana": 0.3139,
+            "nse_iqr": [
+              0.3139,
+              0.3139
+            ],
+            "kge_mediana": 0.3617,
+            "rmse_mediana_m3s": 0.5243,
+            "ss_mediana": 0.3205
+          },
+          "convnext": {
+            "estaciones": 1,
+            "nse_mediana": 0.2659,
+            "nse_iqr": [
+              0.2659,
+              0.2659
+            ],
+            "kge_mediana": 0.2936,
+            "rmse_mediana_m3s": 0.5423,
+            "ss_mediana": 0.273
+          },
+          "patchtst": {
+            "estaciones": 1,
+            "nse_mediana": 0.2316,
+            "nse_iqr": [
+              0.2316,
+              0.2316
+            ],
+            "kge_mediana": 0.2857,
+            "rmse_mediana_m3s": 0.5549,
+            "ss_mediana": 0.239
+          }
+        }
+      }
+    },
+    "cuencas_con_inferencia": [
+      "Lerma–Santiago",
+      "Pánuco",
+      "Alta del Balsas"
+    ],
+    "mejor_por_nse_mediana": {
+      "h1": "arima",
+      "h7": "convnext",
+      "h14": "xgboost"
+    },
+    "sd_nse_entre_semillas_mediana": {
+      "xgboost_h1": 0.0047,
+      "xgboost_h7": 0.0045,
+      "xgboost_h14": 0.0056,
+      "tcn_h1": 0.0093,
+      "tcn_h7": 0.0117,
+      "tcn_h14": 0.0148,
+      "convnext_h1": 0.0092,
+      "convnext_h7": 0.0142,
+      "convnext_h14": 0.0196,
+      "patchtst_h1": 0.0092,
+      "patchtst_h7": 0.0095,
+      "patchtst_h14": 0.0167
+    },
+    "H1": {
+      "ic_mediana_ss": {
+        "xgboost_h7": [
+          0.3144,
+          0.2862,
+          0.3474
+        ],
+        "xgboost_h14": [
+          0.3613,
+          0.3309,
+          0.3851
+        ],
+        "tcn_h7": [
+          0.3225,
+          0.2732,
+          0.3643
+        ],
+        "tcn_h14": [
+          0.3499,
+          0.3225,
+          0.3699
+        ],
+        "convnext_h7": [
+          0.3214,
+          0.2853,
+          0.3598
+        ],
+        "convnext_h14": [
+          0.3429,
+          0.2979,
+          0.3591
+        ],
+        "patchtst_h7": [
+          0.306,
+          0.2712,
+          0.3471
+        ],
+        "patchtst_h14": [
+          0.3275,
+          0.2928,
+          0.3509
+        ]
+      },
+      "modelos_con_ic_positivo": {
+        "h7": 4,
+        "h14": 4
+      },
+      "veredicto": "SUPPORTED"
+    },
+    "H1b": {
+      "ic_mediana_delta_nse": {
+        "tcn_h1": [
+          0.003,
+          0.0007,
+          0.0058
+        ],
+        "convnext_h1": [
+          0.001,
+          -0.0044,
+          0.0041
+        ],
+        "patchtst_h1": [
+          0.0028,
+          -0.0053,
+          0.0062
+        ],
+        "tcn_h7": [
+          -0.0009,
+          -0.0099,
+          0.004
+        ],
+        "convnext_h7": [
+          -0.0027,
+          -0.0107,
+          0.0032
+        ],
+        "patchtst_h7": [
+          -0.0045,
+          -0.0122,
+          0.0012
+        ],
+        "tcn_h14": [
+          -0.0066,
+          -0.0172,
+          0.0064
+        ],
+        "convnext_h14": [
+          -0.0278,
+          -0.0382,
+          -0.0208
+        ],
+        "patchtst_h14": [
+          -0.0206,
+          -0.0346,
+          -0.0053
+        ]
+      },
+      "veredicto": {
+        "h1": "SUPPORTED",
+        "h7": "OPEN",
+        "h14": "OPEN"
+      }
+    },
+    "delta_nse_vs_arima": {
+      "tipo": "descriptivo (no preregistrado)",
+      "metodo": "mediana por estación de NSE_modelo − NSE_ARIMA; bootstrap de estaciones (10,000, semilla 20261010)",
+      "ic95": {
+        "xgboost_h1": [
+          -0.0044,
+          -0.0186,
+          0.0047
+        ],
+        "tcn_h1": [
+          0.0025,
+          -0.0048,
+          0.0075
+        ],
+        "convnext_h1": [
+          -0.0048,
+          -0.0199,
+          0.0047
+        ],
+        "patchtst_h1": [
+          -0.0049,
+          -0.0141,
+          0.0025
+        ],
+        "xgboost_h7": [
+          0.0207,
+          0.0123,
+          0.0374
+        ],
+        "tcn_h7": [
+          0.0224,
+          0.0019,
+          0.0331
+        ],
+        "convnext_h7": [
+          0.0028,
+          -0.0072,
+          0.023
+        ],
+        "patchtst_h7": [
+          0.0136,
+          0.0026,
+          0.0283
+        ],
+        "xgboost_h14": [
+          0.0435,
+          0.0281,
+          0.065
+        ],
+        "tcn_h14": [
+          0.0329,
+          0.013,
+          0.0616
+        ],
+        "convnext_h14": [
+          0.0186,
+          0.0052,
+          0.043
+        ],
+        "patchtst_h14": [
+          0.0229,
+          0.0025,
+          0.0446
+        ]
+      }
+    }
+  },
+  "rq2": {
+    "fuente": "scripts/xai_06_explain.py; results/xai_benchmark/e_rq2.json, rq2_*.csv",
+    "muestra": {
+      "max_ventanas": 2000,
+      "semilla": 20261010,
+      "ig_pasos": 64,
+      "linea_base_ig": "cero en el espacio estandarizado"
+    },
+    "cuencas_con_inferencia": [
+      "Lerma–Santiago",
+      "Pánuco",
+      "Alta del Balsas"
+    ],
+    "H2a": {
+      "spearman_mediano": {
+        "Alta del Balsas_h1": 0.274,
+        "Alta del Balsas_h7": 0.263,
+        "Alta del Balsas_h14": 0.209,
+        "Lerma–Santiago_h1": 0.337,
+        "Lerma–Santiago_h7": 0.245,
+        "Lerma–Santiago_h14": 0.224,
+        "Pánuco_h1": 0.311,
+        "Pánuco_h7": 0.274,
+        "Pánuco_h14": 0.228
+      },
+      "fraccion_ge_0.5": 0.0,
+      "fraccion_lt_0.3": 0.778,
+      "veredicto": "REJECTED"
+    },
+    "H2b": {
+      "pares": [
+        {
+          "cuenca": "Lerma–Santiago",
+          "modelo": "xgboost",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Lerma–Santiago",
+          "modelo": "tcn",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Lerma–Santiago",
+          "modelo": "convnext",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Lerma–Santiago",
+          "modelo": "patchtst",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Pánuco",
+          "modelo": "xgboost",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Pánuco",
+          "modelo": "tcn",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Pánuco",
+          "modelo": "convnext",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Pánuco",
+          "modelo": "patchtst",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Alta del Balsas",
+          "modelo": "xgboost",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Alta del Balsas",
+          "modelo": "tcn",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Alta del Balsas",
+          "modelo": "convnext",
+          "rezago_precip_mas_importante": 1
+        },
+        {
+          "cuenca": "Alta del Balsas",
+          "modelo": "patchtst",
+          "rezago_precip_mas_importante": 1
+        }
+      ],
+      "proporcion_1_3_dias": 1.0,
+      "veredicto": "SUPPORTED"
+    },
+    "spearman_mediano_todas": {
+      "Alta del Balsas_h1": 0.274,
+      "Alta del Balsas_h7": 0.263,
+      "Alta del Balsas_h14": 0.209,
+      "Cutzamala_h1": 0.263,
+      "Cutzamala_h7": 0.088,
+      "Cutzamala_h14": -0.078,
+      "Lerma–Santiago_h1": 0.337,
+      "Lerma–Santiago_h7": 0.245,
+      "Lerma–Santiago_h14": 0.224,
+      "Pánuco_h1": 0.311,
+      "Pánuco_h7": 0.274,
+      "Pánuco_h14": 0.228
+    },
+    "spearman_medio_por_par": {
+      "convnext~patchtst": 0.318,
+      "convnext~tcn": 0.406,
+      "convnext~xgboost": 0.284,
+      "patchtst~tcn": 0.183,
+      "patchtst~xgboost": 0.257,
+      "tcn~xgboost": 0.169
+    },
+    "rezago_precip_mas_importante": {
+      "Lerma–Santiago_h1_xgboost": 1,
+      "Lerma–Santiago_h1_tcn": 1,
+      "Lerma–Santiago_h1_convnext": 1,
+      "Lerma–Santiago_h1_patchtst": 1,
+      "Lerma–Santiago_h7_xgboost": 7,
+      "Lerma–Santiago_h7_tcn": 7,
+      "Lerma–Santiago_h7_convnext": 7,
+      "Lerma–Santiago_h7_patchtst": 32,
+      "Lerma–Santiago_h14_xgboost": 14,
+      "Lerma–Santiago_h14_tcn": 14,
+      "Lerma–Santiago_h14_convnext": 14,
+      "Lerma–Santiago_h14_patchtst": 18,
+      "Pánuco_h1_xgboost": 1,
+      "Pánuco_h1_tcn": 1,
+      "Pánuco_h1_convnext": 1,
+      "Pánuco_h1_patchtst": 1,
+      "Pánuco_h7_xgboost": 7,
+      "Pánuco_h7_tcn": 7,
+      "Pánuco_h7_convnext": 7,
+      "Pánuco_h7_patchtst": 7,
+      "Pánuco_h14_xgboost": 14,
+      "Pánuco_h14_tcn": 14,
+      "Pánuco_h14_convnext": 17,
+      "Pánuco_h14_patchtst": 14,
+      "Alta del Balsas_h1_xgboost": 1,
+      "Alta del Balsas_h1_tcn": 1,
+      "Alta del Balsas_h1_convnext": 1,
+      "Alta del Balsas_h1_patchtst": 1,
+      "Alta del Balsas_h7_xgboost": 29,
+      "Alta del Balsas_h7_tcn": 7,
+      "Alta del Balsas_h7_convnext": 7,
+      "Alta del Balsas_h7_patchtst": 7,
+      "Alta del Balsas_h14_xgboost": 15,
+      "Alta del Balsas_h14_tcn": 14,
+      "Alta del Balsas_h14_convnext": 17,
+      "Alta del Balsas_h14_patchtst": 24,
+      "Cutzamala_h1_xgboost": 1,
+      "Cutzamala_h1_tcn": 1,
+      "Cutzamala_h1_convnext": 1,
+      "Cutzamala_h1_patchtst": 1,
+      "Cutzamala_h7_xgboost": 7,
+      "Cutzamala_h7_tcn": 7,
+      "Cutzamala_h7_convnext": 8,
+      "Cutzamala_h7_patchtst": 7,
+      "Cutzamala_h14_xgboost": 43,
+      "Cutzamala_h14_tcn": 14,
+      "Cutzamala_h14_convnext": 14,
+      "Cutzamala_h14_patchtst": 31
+    },
+    "rezago_igual_al_minimo": {
+      "tipo": "descriptivo (no preregistrado)",
+      "nota": "rezago respecto al objetivo = h equivale a la precipitación del día de emisión",
+      "fraccion_por_h": {
+        "h1": 1.0,
+        "h7": 0.833,
+        "h14": 0.583
+      }
+    },
+    "participacion_canales": {
+      "tipo": "descriptivo (no preregistrado)",
+      "nota": "suma de importancias por grupo de canales, media de las cuencas con inferencia",
+      "valores": {
+        "xgboost_h1": {
+          "gasto": 0.842,
+          "precipitacion": 0.093,
+          "estacionalidad": 0.065
+        },
+        "tcn_h1": {
+          "gasto": 0.744,
+          "precipitacion": 0.088,
+          "estacionalidad": 0.168
+        },
+        "convnext_h1": {
+          "gasto": 0.685,
+          "precipitacion": 0.063,
+          "estacionalidad": 0.253
+        },
+        "patchtst_h1": {
+          "gasto": 0.711,
+          "precipitacion": 0.107,
+          "estacionalidad": 0.182
+        },
+        "xgboost_h7": {
+          "gasto": 0.737,
+          "precipitacion": 0.068,
+          "estacionalidad": 0.195
+        },
+        "tcn_h7": {
+          "gasto": 0.618,
+          "precipitacion": 0.101,
+          "estacionalidad": 0.281
+        },
+        "convnext_h7": {
+          "gasto": 0.678,
+          "precipitacion": 0.094,
+          "estacionalidad": 0.228
+        },
+        "patchtst_h7": {
+          "gasto": 0.617,
+          "precipitacion": 0.113,
+          "estacionalidad": 0.269
+        },
+        "xgboost_h14": {
+          "gasto": 0.666,
+          "precipitacion": 0.076,
+          "estacionalidad": 0.258
+        },
+        "tcn_h14": {
+          "gasto": 0.571,
+          "precipitacion": 0.103,
+          "estacionalidad": 0.326
+        },
+        "convnext_h14": {
+          "gasto": 0.674,
+          "precipitacion": 0.093,
+          "estacionalidad": 0.233
+        },
+        "patchtst_h14": {
+          "gasto": 0.59,
+          "precipitacion": 0.134,
+          "estacionalidad": 0.276
+        }
+      }
+    },
+    "participacion_ultimos_3_dias": {
+      "tipo": "descriptivo (no preregistrado)",
+      "valores": {
+        "xgboost_h1": 0.723,
+        "tcn_h1": 0.692,
+        "convnext_h1": 0.557,
+        "patchtst_h1": 0.416,
+        "xgboost_h7": 0.499,
+        "tcn_h7": 0.432,
+        "convnext_h7": 0.337,
+        "patchtst_h7": 0.261,
+        "xgboost_h14": 0.414,
+        "tcn_h14": 0.352,
+        "convnext_h14": 0.225,
+        "patchtst_h14": 0.225
+      }
+    },
+    "ig_error_completitud": {
+      "convnext": {
+        "mediana_abs": 5.96e-08,
+        "p95_abs_max": 4.4e-07
+      },
+      "patchtst": {
+        "mediana_abs": 1.11e-07,
+        "p95_abs_max": 6.57e-07
+      },
+      "tcn": {
+        "mediana_abs": 0.00125,
+        "p95_abs_max": 0.0189
+      }
+    },
+    "atencion_patchtst_por_parche": {
+      "h1": {
+        "t-29…t-25": 0.1595,
+        "t-24…t-20": 0.1586,
+        "t-19…t-15": 0.1565,
+        "t-14…t-10": 0.16,
+        "t-9…t-5": 0.1672,
+        "t-4…t-0": 0.1982
+      },
+      "h7": {
+        "t-29…t-25": 0.1663,
+        "t-24…t-20": 0.1613,
+        "t-19…t-15": 0.1623,
+        "t-14…t-10": 0.1642,
+        "t-9…t-5": 0.1679,
+        "t-4…t-0": 0.1781
+      },
+      "h14": {
+        "t-29…t-25": 0.1701,
+        "t-24…t-20": 0.1588,
+        "t-19…t-15": 0.1574,
+        "t-14…t-10": 0.1623,
+        "t-9…t-5": 0.1642,
+        "t-4…t-0": 0.1871
+      }
+    }
+  },
+  "rq3": {
+    "fuente": "scripts/xai_07_alerts.py; results/xai_benchmark/e_rq3.json, rq3_summary.csv, rq3_contingency.csv",
+    "ensamble": {
+      "miembros": 12,
+      "modelos": [
+        "xgboost",
+        "tcn",
+        "convnext",
+        "patchtst"
+      ]
+    },
+    "H3": {
+      "delta_csi_ic": {
+        "P90_h1": [
+          0.0385,
+          0.0038,
+          0.0685
+        ],
+        "P99_h1": [
+          0.0985,
+          0.0574,
+          0.1407
+        ],
+        "P90_h7": [
+          0.0089,
+          0.0013,
+          0.0162
+        ],
+        "P99_h7": [
+          0.006,
+          0.0,
+          0.0131
+        ],
+        "P90_h14": [
+          0.0126,
+          0.0028,
+          0.0234
+        ],
+        "P99_h14": [
+          -0.0001,
+          -0.0005,
+          0.0001
+        ]
+      },
+      "veredicto": "SUPPORTED"
+    },
+    "agregado": {
+      "P90_h1": {
+        "difuso_pod": 0.7455,
+        "difuso_far": 0.2672,
+        "difuso_csi": 0.5862,
+        "umbral_pod": 0.7374,
+        "umbral_far": 0.3196,
+        "umbral_csi": 0.5477,
+        "difuso_eventos_observados": 5883,
+        "estaciones": 91
+      },
+      "P99_h1": {
+        "difuso_pod": 0.4236,
+        "difuso_far": 0.4155,
+        "difuso_csi": 0.3256,
+        "umbral_pod": 0.2493,
+        "umbral_far": 0.2822,
+        "umbral_csi": 0.227,
+        "difuso_eventos_observados": 694,
+        "estaciones": 91
+      },
+      "P90_h7": {
+        "difuso_pod": 0.3363,
+        "difuso_far": 0.5009,
+        "difuso_csi": 0.2514,
+        "umbral_pod": 0.3328,
+        "umbral_far": 0.5278,
+        "umbral_csi": 0.2426,
+        "difuso_eventos_observados": 5808,
+        "estaciones": 91
+      },
+      "P99_h7": {
+        "difuso_pod": 0.016,
+        "difuso_far": 0.8706,
+        "difuso_csi": 0.0145,
+        "umbral_pod": 0.0087,
+        "umbral_far": 0.7857,
+        "umbral_csi": 0.0085,
+        "difuso_eventos_observados": 686,
+        "estaciones": 91
+      },
+      "P90_h14": {
+        "difuso_pod": 0.1755,
+        "difuso_far": 0.6031,
+        "difuso_csi": 0.1386,
+        "umbral_pod": 0.1724,
+        "umbral_far": 0.6812,
+        "umbral_csi": 0.126,
+        "difuso_eventos_observados": 5738,
+        "estaciones": 91
+      },
+      "P99_h14": {
+        "difuso_pod": 0.0044,
+        "difuso_far": 0.9545,
+        "difuso_csi": 0.004,
+        "umbral_pod": 0.0044,
+        "umbral_far": 0.9388,
+        "umbral_csi": 0.0041,
+        "difuso_eventos_observados": 682,
+        "estaciones": 91
+      }
+    },
+    "variante_pre_correccion": {
+      "fuente": "results/xai_benchmark/rq3_pre_correccion/ (misma versión de xai_07 con el TrapezoidalMF anterior)",
+      "motivo": "pertenencia 0 en los hombros verticales de los trapecios (dispersión = 0 o percentil = 1)",
+      "H3": {
+        "delta_csi_ic": {
+          "P90_h1": [
+            0.0918,
+            0.0039,
+            0.174
+          ],
+          "P99_h1": [
+            0.0981,
+            0.0566,
+            0.1409
+          ],
+          "P90_h7": [
+            0.0289,
+            0.0033,
+            0.06
+          ],
+          "P99_h7": [
+            0.0063,
+            0.0,
+            0.0134
+          ],
+          "P90_h14": [
+            0.0193,
+            0.0033,
+            0.0371
+          ],
+          "P99_h14": [
+            -0.0028,
+            -0.008,
+            0.0
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      },
+      "muestras_afectadas": {
+        "muestras": 186164,
+        "fraccion_dispersion_cero": 0.0688,
+        "fraccion_percentil_uno": 0.0001,
+        "fraccion_dispersion_cero_si_percentil_ge_0.90": 0.1276
+      },
+      "agregado": {
+        "P90_h1": {
+          "difuso_pod": 0.7406,
+          "difuso_far": 0.1761,
+          "difuso_csi": 0.6394
+        },
+        "P99_h1": {
+          "difuso_pod": 0.4164,
+          "difuso_far": 0.4029,
+          "difuso_csi": 0.3251
+        },
+        "P90_h7": {
+          "difuso_pod": 0.3338,
+          "difuso_far": 0.4076,
+          "difuso_csi": 0.2715
+        },
+        "P99_h7": {
+          "difuso_pod": 0.016,
+          "difuso_far": 0.8429,
+          "difuso_csi": 0.0148
+        },
+        "P90_h14": {
+          "difuso_pod": 0.1739,
+          "difuso_far": 0.5317,
+          "difuso_csi": 0.1452
+        },
+        "P99_h14": {
+          "difuso_pod": 0.0015,
+          "difuso_far": 0.9796,
+          "difuso_csi": 0.0014
+        }
+      }
+    },
+    "frontera_decision_difusa": {
+      "tipo": "descriptivo (propiedad del sistema congelado)",
+      "valores": {
+        "dispersion_0.00": {
+          "percentil_min_alerta": 0.8985,
+          "percentil_min_emergencia": 0.9825
+        },
+        "dispersion_0.05": {
+          "percentil_min_alerta": 0.8985,
+          "percentil_min_emergencia": 0.9825
+        },
+        "dispersion_0.10": {
+          "percentil_min_alerta": 0.8985,
+          "percentil_min_emergencia": null
+        },
+        "dispersion_0.15": {
+          "percentil_min_alerta": 0.975,
+          "percentil_min_emergencia": null
+        },
+        "dispersion_0.30": {
+          "percentil_min_alerta": 0.975,
+          "percentil_min_emergencia": null
+        }
+      }
+    },
+    "mecanismo": {
+      "tipo": "descriptivo (no preregistrado)",
+      "fuente": "results/xai_benchmark/rq3_mechanism.csv",
+      "nota": "alarmas de ambos métodos, solo del umbral (suprimidas por el sistema difuso) y solo difusas; dispersion_alta = dispersión ≥ 0.15",
+      "valores": {
+        "P90_h1_ambos": {
+          "alarmas": 5881,
+          "aciertos": 4323,
+          "dispersion_alta": 14,
+          "tasa_acierto": 0.7351
+        },
+        "P90_h1_solo_difuso": {
+          "alarmas": 104,
+          "aciertos": 63,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.6058
+        },
+        "P90_h1_solo_umbral": {
+          "alarmas": 495,
+          "aciertos": 15,
+          "dispersion_alta": 479,
+          "tasa_acierto": 0.0303
+        },
+        "P99_h1_ambos": {
+          "alarmas": 233,
+          "aciertos": 171,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.7339
+        },
+        "P99_h1_solo_difuso": {
+          "alarmas": 270,
+          "aciertos": 123,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.4556
+        },
+        "P99_h1_solo_umbral": {
+          "alarmas": 8,
+          "aciertos": 2,
+          "dispersion_alta": 6,
+          "tasa_acierto": 0.25
+        },
+        "P90_h7_ambos": {
+          "alarmas": 3817,
+          "aciertos": 1910,
+          "dispersion_alta": 22,
+          "tasa_acierto": 0.5004
+        },
+        "P90_h7_solo_difuso": {
+          "alarmas": 96,
+          "aciertos": 43,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.4479
+        },
+        "P90_h7_solo_umbral": {
+          "alarmas": 277,
+          "aciertos": 23,
+          "dispersion_alta": 265,
+          "tasa_acierto": 0.083
+        },
+        "P99_h7_ambos": {
+          "alarmas": 27,
+          "aciertos": 6,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.2222
+        },
+        "P99_h7_solo_difuso": {
+          "alarmas": 58,
+          "aciertos": 5,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.0862
+        },
+        "P99_h7_solo_umbral": {
+          "alarmas": 1,
+          "aciertos": 0,
+          "dispersion_alta": 1,
+          "tasa_acierto": 0.0
+        },
+        "P90_h14_ambos": {
+          "alarmas": 2450,
+          "aciertos": 960,
+          "dispersion_alta": 17,
+          "tasa_acierto": 0.3918
+        },
+        "P90_h14_solo_difuso": {
+          "alarmas": 87,
+          "aciertos": 47,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.5402
+        },
+        "P90_h14_solo_umbral": {
+          "alarmas": 652,
+          "aciertos": 29,
+          "dispersion_alta": 619,
+          "tasa_acierto": 0.0445
+        },
+        "P99_h14_ambos": {
+          "alarmas": 43,
+          "aciertos": 3,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.0698
+        },
+        "P99_h14_solo_difuso": {
+          "alarmas": 23,
+          "aciertos": 0,
+          "dispersion_alta": 0,
+          "tasa_acierto": 0.0
+        },
+        "P99_h14_solo_umbral": {
+          "alarmas": 6,
+          "aciertos": 0,
+          "dispersion_alta": 5,
+          "tasa_acierto": 0.0
+        }
+      }
+    }
+  },
+  "veredictos": {
+    "fuente": "e_rq1.json, e_rq2.json, e_rq3.json",
+    "H1": "SUPPORTED",
+    "H1-b": {
+      "h1": "SUPPORTED",
+      "h7": "OPEN",
+      "h14": "OPEN"
+    },
+    "H2-a": "REJECTED",
+    "H2-b": "SUPPORTED",
+    "H3": "SUPPORTED",
+    "H3_pre_correccion": "SUPPORTED"
+  },
+  "no_realizado": [
+    {
+      "item": "Walk-forward anual (protocolo §3)",
+      "motivo": "no corrido todavía; requiere reentrenar por año (redes en Kaggle)"
+    },
+    {
+      "item": "Informer",
+      "motivo": "fuera del diseño principal (protocolo §4)"
+    }
+  ],
+  "figuras": {
+    "fuente": "scripts/xai_08_report.py",
+    "carpeta": "results/xai_benchmark/figures",
+    "estacion_ejemplo_fig9": "ADUMC",
+    "regla_estacion_ejemplo": "estación de Lerma–Santiago con más eventos P90 observados a h = 1"
+  }
+}

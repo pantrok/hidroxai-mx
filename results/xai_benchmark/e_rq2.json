@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-10-10",
+  "fuente": "scripts/xai_06_explain.py; results/xai_benchmark/rq2_*.csv",
+  "muestra": {
+    "max_ventanas": 2000,
+    "semilla": 20261010,
+    "ig_pasos": 64,
+    "linea_base_ig": "cero en el espacio estandarizado"
+  },
+  "cuencas_con_inferencia": [
+    "Lerma–Santiago",
+    "Pánuco",
+    "Alta del Balsas"
+  ],
+  "H2a": {
+    "spearman_mediano": {
+      "Alta del Balsas_h1": 0.274,
+      "Alta del Balsas_h7": 0.263,
+      "Alta del Balsas_h14": 0.209,
+      "Lerma–Santiago_h1": 0.337,
+      "Lerma–Santiago_h7": 0.245,
+      "Lerma–Santiago_h14": 0.224,
+      "Pánuco_h1": 0.311,
+      "Pánuco_h7": 0.274,
+      "Pánuco_h14": 0.228
+    },
+    "fraccion_ge_0.5": 0.0,
+    "fraccion_lt_0.3": 0.778,
+    "veredicto": "REJECTED"
+  },
+  "H2b": {
+    "pares": [
+      {
+        "cuenca": "Lerma–Santiago",
+        "modelo": "xgboost",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Lerma–Santiago",
+        "modelo": "tcn",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Lerma–Santiago",
+        "modelo": "convnext",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Lerma–Santiago",
+        "modelo": "patchtst",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Pánuco",
+        "modelo": "xgboost",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Pánuco",
+        "modelo": "tcn",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Pánuco",
+        "modelo": "convnext",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Pánuco",
+        "modelo": "patchtst",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Alta del Balsas",
+        "modelo": "xgboost",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Alta del Balsas",
+        "modelo": "tcn",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Alta del Balsas",
+        "modelo": "convnext",
+        "rezago_precip_mas_importante": 1
+      },
+      {
+        "cuenca": "Alta del Balsas",
+        "modelo": "patchtst",
+        "rezago_precip_mas_importante": 1
+      }
+    ],
+    "proporcion_1_3_dias": 1.0,
+    "veredicto": "SUPPORTED"
+  }
+}

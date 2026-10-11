@@ -1,0 +1,48 @@
+{
+  "fecha": "2026-10-10",
+  "fuente": "scripts/xai_07_alerts.py; results/xai_benchmark/rq3_contingency.csv",
+  "ensamble": {
+    "miembros": 12,
+    "modelos": [
+      "xgboost",
+      "tcn",
+      "convnext",
+      "patchtst"
+    ]
+  },
+  "H3": {
+    "delta_csi_ic": {
+      "P90_h1": [
+        0.0385,
+        0.0038,
+        0.0685
+      ],
+      "P99_h1": [
+        0.0985,
+        0.0574,
+        0.1407
+      ],
+      "P90_h7": [
+        0.0089,
+        0.0013,
+        0.0162
+      ],
+      "P99_h7": [
+        0.006,
+        0.0,
+        0.0131
+      ],
+      "P90_h14": [
+        0.0126,
+        0.0028,
+        0.0234
+      ],
+      "P99_h14": [
+        -0.0001,
+        -0.0005,
+        0.0001
+      ]
+    },
+    "veredicto": "SUPPORTED"
+  }
+}

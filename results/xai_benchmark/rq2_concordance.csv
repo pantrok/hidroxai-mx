@@ -1,0 +1,73 @@
+modelo_a,modelo_b,spearman,cuenca,h
+convnext,patchtst,0.40518946058005906,Lerma–Santiago,1
+convnext,tcn,0.5021245511692748,Lerma–Santiago,1
+convnext,xgboost,0.3481897589431773,Lerma–Santiago,1
+patchtst,tcn,0.22916756690021295,Lerma–Santiago,1
+patchtst,xgboost,0.29667170797452597,Lerma–Santiago,1
+tcn,xgboost,0.32569729518400775,Lerma–Santiago,1
+convnext,patchtst,0.34279453069539184,Lerma–Santiago,7
+convnext,tcn,0.3421957467823081,Lerma–Santiago,7
+convnext,xgboost,0.3536323137545397,Lerma–Santiago,7
+patchtst,tcn,0.14768357048057038,Lerma–Santiago,7
+patchtst,xgboost,0.1333004105064971,Lerma–Santiago,7
+tcn,xgboost,0.09658322787740363,Lerma–Santiago,7
+convnext,patchtst,0.2417214523081988,Lerma–Santiago,14
+convnext,tcn,0.3473522845355309,Lerma–Santiago,14
+convnext,xgboost,0.26886838071133884,Lerma–Santiago,14
+patchtst,tcn,0.1482494315668179,Lerma–Santiago,14
+patchtst,xgboost,0.2072059837237775,Lerma–Santiago,14
+tcn,xgboost,0.08906447729868205,Lerma–Santiago,14
+convnext,patchtst,0.3367511342942684,Pánuco,1
+convnext,tcn,0.4458244596026626,Pánuco,1
+convnext,xgboost,0.13461938125662312,Pánuco,1
+patchtst,tcn,0.28578865602847825,Pánuco,1
+patchtst,xgboost,0.34770826260069754,Pánuco,1
+tcn,xgboost,0.2514110517814336,Pánuco,1
+convnext,patchtst,0.43300924925666423,Pánuco,7
+convnext,tcn,0.4028046133111104,Pánuco,7
+convnext,xgboost,0.16674794489541855,Pánuco,7
+patchtst,tcn,0.2451063304422976,Pánuco,7
+patchtst,xgboost,0.3024187989341235,Pánuco,7
+tcn,xgboost,0.1433295266314804,Pánuco,7
+convnext,patchtst,0.29212012716441865,Pánuco,14
+convnext,tcn,0.37924010000308656,Pánuco,14
+convnext,xgboost,0.1233865242754406,Pánuco,14
+patchtst,tcn,0.1644433470168832,Pánuco,14
+patchtst,xgboost,0.30404024815580727,Pánuco,14
+tcn,xgboost,0.10038375670030966,Pánuco,14
+convnext,patchtst,0.27740362356862863,Alta del Balsas,1
+convnext,tcn,0.4885850386328796,Alta del Balsas,1
+convnext,xgboost,0.27084580799818925,Alta del Balsas,1
+patchtst,tcn,0.17970307725547083,Alta del Balsas,1
+patchtst,xgboost,0.3210448882167145,Alta del Balsas,1
+tcn,xgboost,0.22982190808358283,Alta del Balsas,1
+convnext,patchtst,0.3020916283424385,Alta del Balsas,7
+convnext,tcn,0.4787760939123635,Alta del Balsas,7
+convnext,xgboost,0.35564220751707387,Alta del Balsas,7
+patchtst,tcn,0.06153070568021647,Alta del Balsas,7
+patchtst,xgboost,0.22388369892950036,Alta del Balsas,7
+tcn,xgboost,0.12961232973236303,Alta del Balsas,7
+convnext,patchtst,0.2328734425959649,Alta del Balsas,14
+convnext,tcn,0.2688395732378571,Alta del Balsas,14
+convnext,xgboost,0.5358622179696905,Alta del Balsas,14
+patchtst,tcn,0.1846703087543854,Alta del Balsas,14
+patchtst,xgboost,0.1769622519213556,Alta del Balsas,14
+tcn,xgboost,0.15239153471814973,Alta del Balsas,14
+convnext,patchtst,0.23642087718756752,Cutzamala,1
+convnext,tcn,0.2918958404065969,Cutzamala,1
+convnext,xgboost,0.7594267312777143,Cutzamala,1
+patchtst,tcn,0.11786989310369661,Cutzamala,1
+patchtst,xgboost,0.2888525366009239,Cutzamala,1
+tcn,xgboost,0.2213319341131928,Cutzamala,1
+convnext,patchtst,0.0797308558906139,Cutzamala,7
+convnext,tcn,0.04938629793100611,Cutzamala,7
+convnext,xgboost,0.2748484947258757,Cutzamala,7
+patchtst,tcn,0.062431968064857964,Cutzamala,7
+patchtst,xgboost,0.3130701408358934,Cutzamala,7
+tcn,xgboost,0.09703367614255295,Cutzamala,7
+convnext,patchtst,-0.20486846301840592,Cutzamala,14
+convnext,tcn,-0.04904060824922579,Cutzamala,14
+convnext,xgboost,-0.2154181713427369,Cutzamala,14
+patchtst,tcn,-0.05348107451876087,Cutzamala,14
+patchtst,xgboost,0.13016451125034723,Cutzamala,14
+tcn,xgboost,-0.10197845612518903,Cutzamala,14

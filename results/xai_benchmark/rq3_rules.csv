@@ -1,0 +1,9 @@
+percentil,dispersion,nivel
+bajo,baja,normal
+bajo,alta,normal
+alto,baja,vigilancia
+alto,alta,vigilancia
+muy_alto,baja,alerta
+muy_alto,alta,vigilancia
+extremo,baja,emergencia
+extremo,alta,alerta

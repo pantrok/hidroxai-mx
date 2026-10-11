@@ -1,0 +1,126 @@
+{
+  "fecha": "2026-10-10",
+  "fuente": "scripts/xai_05_evaluate.py; results/xai_benchmark/rq1_station_metrics.csv",
+  "configuracion_elegida": {
+    "xgboost_h1": "xgboost-6",
+    "xgboost_h7": "xgboost-4",
+    "xgboost_h14": "xgboost-6",
+    "tcn_h1": "tcn-64",
+    "tcn_h7": "tcn-32",
+    "tcn_h14": "tcn-32",
+    "convnext_h1": "convnext-64",
+    "convnext_h7": "convnext-64",
+    "convnext_h14": "convnext-32",
+    "patchtst_h1": "patchtst-32",
+    "patchtst_h7": "patchtst-32",
+    "patchtst_h14": "patchtst-64"
+  },
+  "estaciones_evaluables": {
+    "h1": 91,
+    "h7": 91,
+    "h14": 91
+  },
+  "H1": {
+    "ic_mediana_ss": {
+      "xgboost_h7": [
+        0.3144,
+        0.2862,
+        0.3474
+      ],
+      "xgboost_h14": [
+        0.3613,
+        0.3309,
+        0.3851
+      ],
+      "tcn_h7": [
+        0.3225,
+        0.2732,
+        0.3643
+      ],
+      "tcn_h14": [
+        0.3499,
+        0.3225,
+        0.3699
+      ],
+      "convnext_h7": [
+        0.3214,
+        0.2853,
+        0.3598
+      ],
+      "convnext_h14": [
+        0.3429,
+        0.2979,
+        0.3591
+      ],
+      "patchtst_h7": [
+        0.306,
+        0.2712,
+        0.3471
+      ],
+      "patchtst_h14": [
+        0.3275,
+        0.2928,
+        0.3509
+      ]
+    },
+    "modelos_con_ic_positivo": {
+      "h7": 4,
+      "h14": 4
+    },
+    "veredicto": "SUPPORTED"
+  },
+  "H1b": {
+    "ic_mediana_delta_nse": {
+      "tcn_h1": [
+        0.003,
+        0.0007,
+        0.0058
+      ],
+      "convnext_h1": [
+        0.001,
+        -0.0044,
+        0.0041
+      ],
+      "patchtst_h1": [
+        0.0028,
+        -0.0053,
+        0.0062
+      ],
+      "tcn_h7": [
+        -0.0009,
+        -0.0099,
+        0.004
+      ],
+      "convnext_h7": [
+        -0.0027,
+        -0.0107,
+        0.0032
+      ],
+      "patchtst_h7": [
+        -0.0045,
+        -0.0122,
+        0.0012
+      ],
+      "tcn_h14": [
+        -0.0066,
+        -0.0172,
+        0.0064
+      ],
+      "convnext_h14": [
+        -0.0278,
+        -0.0382,
+        -0.0208
+      ],
+      "patchtst_h14": [
+        -0.0206,
+        -0.0346,
+        -0.0053
+      ]
+    },
+    "veredicto": {
+      "h1": "SUPPORTED",
+      "h7": "OPEN",
+      "h14": "OPEN"
+    }
+  }
+}

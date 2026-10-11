@@ -9,13 +9,16 @@ Ensamble de 12 miembros (XGBoost, TCN, ConvNeXt-1D, PatchTST con la configuraci�
 El sistema Mamdani del protocolo da el nivel 0–3. Se compara contra el umbral simple sobre la
 media del ensamble para eventos P90 y P99 del gasto observado (percentiles de entrenamiento).
 
-Salidas: results/xai_benchmark/rq3_contingency.csv, rq3_summary.csv, rq3_rules.csv, e_rq3.json
-         y niveles por muestra en data/interim/xai_benchmark/alerts/<cuenca>_h<h>.parquet
+Salidas: results/xai_benchmark/rq3_contingency.csv, rq3_summary.csv, rq3_rules.csv, e_rq3.json,
+         rq3_mechanism.csv (descriptivo: alarmas comunes, solo del umbral y solo difusas, con su
+         tasa de acierto) y niveles por muestra en data/interim/xai_benchmark/alerts/<cuenca>_h<h>.parquet
 """
 from __future__ import annotations
 
 import argparse
 import json
+import platform
+import time
 from datetime import date
 from pathlib import Path
 
@@ -24,6 +27,7 @@ import pandas as pd
 
 from hidroxai_mx.alert import fuzzy as F
 from hidroxai_mx.models import data as D
+from hidroxai_mx.models import manifest
 from hidroxai_mx.utils import FEATURES, PROCESSED, ROOT, get_logger
 
 log = get_logger("xai_07")
@@ -69,7 +73,8 @@ def main() -> None:
     ap.add_argument("--cpu", type=Path, default=ROOT / "data" / "interim" / "xai_benchmark" / "cpu")
     ap.add_argument("--nets", type=Path, default=ROOT / "data" / "interim" / "xai_benchmark" / "nets")
     a = ap.parse_args()
-    alerts_dir = ROOT / "data" / "interim" / "xai_benchmark" / "alerts"
+    t0 = time.perf_counter()
+    alerts_dir =ROOT / "data" / "interim" / "xai_benchmark" / "alerts"
     alerts_dir.mkdir(parents=True, exist_ok=True)
     chosen = json.loads((OUT / "e_rq1.json").read_text(encoding="utf-8"))["configuracion_elegida"]
     st = pd.read_csv(OUT / "rq1_station_metrics.csv", dtype={"clave": str})
@@ -87,7 +92,7 @@ def main() -> None:
 
     fis = F.build_protocol_fis()
     fis.rules_table().to_csv(OUT / "rq3_rules.csv", index=False)
-    cont = []
+    cont, mech = [], []
     for basin in D.BASINS:
         for h in D.HORIZONS:
             tag = f"{SLUG[basin]}_h{h}"
@@ -119,11 +124,20 @@ def main() -> None:
                     continue
                 for e, (q, min_level) in EVENTS.items():
                     obs = obs_flow[idx] > thr[e][idx]
-                    for metodo, pred in (("difuso", level[idx] >= min_level), ("umbral", pct[idx] >= q)):
+                    fz, th = level[idx] >= min_level, pct[idx] >= q
+                    for metodo, pred in (("difuso", fz), ("umbral", th)):
                         cont.append({"cuenca": basin, "h": h, "clave": k, "evento": e, "metodo": metodo,
                                      **_counts(obs, pred)})
+                    # descriptivo: de dónde sale la diferencia entre métodos
+                    for cat, sel in (("ambos", fz & th), ("solo_umbral", th & ~fz), ("solo_difuso", fz & ~th)):
+                        mech.append({"h": h, "evento": e, "categoria": cat, "alarmas": int(sel.sum()),
+                                     "aciertos": int((sel & obs).sum()),
+                                     "dispersion_alta": int((sel & (disp[idx] >= 0.15)).sum())})
     ct = pd.DataFrame(cont)
     ct.to_csv(OUT / "rq3_contingency.csv", index=False)
+    mc = pd.DataFrame(mech).groupby(["h", "evento", "categoria"], as_index=False).sum()
+    mc["tasa_acierto"] = (mc["aciertos"] / mc["alarmas"].where(mc["alarmas"] > 0)).round(4)
+    mc.to_csv(OUT / "rq3_mechanism.csv", index=False)
 
     summ, deltas = [], {}
     groups = [(b, ct[ct["cuenca"] == b]) for b in D.BASINS] + [("agregado", ct)]
@@ -154,6 +168,10 @@ def main() -> None:
            "ensamble": {"miembros": len(MODELS) * len(SEEDS), "modelos": MODELS},
            "H3": {"delta_csi_ic": {k: [round(x, 4) for x in v] for k, v in deltas.items()}, "veredicto": v3}}
     (OUT / "e_rq3.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
+    sec = round(time.perf_counter() - t0, 1)
+    manifest.replace(OUT / "compute_manifest.csv", fecha=date.today().isoformat(), tipo="evaluacion",
+                     run="xai_07_alerts", modelo="alertas_rq3", dispositivo=platform.processor() or "cpu",
+                     hilos=1, segundos=sec, pared_s=sec)
     log.info("H3 %s", v3)
 
 

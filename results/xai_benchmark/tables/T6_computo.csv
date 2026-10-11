@@ -1,0 +1,12 @@
+recurso,componente,horas
+GPU Tesla T4,TCN,0.412
+GPU Tesla T4,ConvNeXt-1D,0.433
+GPU Tesla T4,PatchTST,0.781
+CPU,ARIMA,1.665
+CPU,XGBoost,0.184
+CPU,piloto de tiempos,0.392
+CPU,xai_05_evaluate,0.004
+CPU,xai_06_explain,0.553
+CPU,xai_07_alerts,0.002
+GPU,total,1.625
+CPU,total,2.8

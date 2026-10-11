@@ -17,6 +17,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import platform
+import time
 from datetime import date
 from pathlib import Path
 
@@ -24,6 +26,7 @@ import numpy as np
 import pandas as pd
 
 from hidroxai_mx.models import data as D
+from hidroxai_mx.models import manifest
 from hidroxai_mx.models import metrics as M
 from hidroxai_mx.utils import ROOT, get_logger
 
@@ -44,7 +47,9 @@ def _load(cpu: Path, nets: Path, basin: str, h: int) -> dict:
         nm = nets / "meta" / f"{tag}_{p}.parquet"
         if nm.exists():
             other = pd.read_parquet(nm)
-            assert other[["clave", "issue"]].equals(meta[p][["clave", "issue"]]), f"meta distinta {tag} {p}"
+            same = ((other["clave"].to_numpy() == meta[p]["clave"].to_numpy()).all()
+                    and (other["issue"].to_numpy("datetime64[D]") == meta[p]["issue"].to_numpy("datetime64[D]")).all())
+            assert len(other) == len(meta[p]) and same, f"meta distinta {tag} {p}"
     base = np.load(cpu / "preds" / f"baselines_{tag}.npz")
     pred = {p: {"persistencia": base[f"persistence_{p}"], "climatologia": base[f"climatology_{p}"],
                 "arima": base[f"arima_{p}"]} for p in ("val", "test")}
@@ -71,6 +76,7 @@ def main() -> None:
     ap.add_argument("--cpu", type=Path, default=ROOT / "data" / "interim" / "xai_benchmark" / "cpu")
     ap.add_argument("--nets", type=Path, default=ROOT / "data" / "interim" / "xai_benchmark" / "nets")
     a = ap.parse_args()
+    t0 = time.perf_counter()
     prof = pd.read_csv(OUT / "sample_profile.csv", dtype={"clave": str})
     test = prof[prof["particion"] == "test"]
     evaluable = {h: set(test.loc[(test["h"] == h) & (test["n"] >= 180) & (test["var_objetivo"] > 0), "clave"])
@@ -164,12 +170,16 @@ def main() -> None:
     res = {"fecha": date.today().isoformat(),
            "fuente": "scripts/xai_05_evaluate.py; results/xai_benchmark/rq1_station_metrics.csv",
            "configuracion_elegida": {f"{m}_h{h}": c for (m, h), c in chosen.items()},
-           "estaciones_evaluables": {f"h{h}": len(v) for h, v in evaluable.items()},
+           "estaciones_evaluables": {f"h{h}": int(n) for h, n in st.groupby("h")["clave"].nunique().items()},
            "H1": {"ic_mediana_ss": {k: [round(x, 4) for x in v] for k, v in h1.items()},
                   "modelos_con_ic_positivo": {f"h{h}": n for h, n in n_pos.items()}, "veredicto": v1},
            "H1b": {"ic_mediana_delta_nse": {k: [round(x, 4) for x in v] for k, v in h1b.items()},
                    "veredicto": v1b}}
     (OUT / "e_rq1.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
+    sec = round(time.perf_counter() - t0, 1)
+    manifest.replace(OUT / "compute_manifest.csv", fecha=date.today().isoformat(), tipo="evaluacion",
+                     run="xai_05_evaluate", modelo="evaluacion_rq1", dispositivo=platform.processor() or "cpu",
+                     hilos=1, segundos=sec, pared_s=sec)
     log.info("H1 %s | H1-b %s", v1, v1b)
 
 

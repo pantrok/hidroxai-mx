@@ -1,0 +1,85 @@
+cuenca,estaciones,h,modelo,NSE mediana,SS mediana [IC 95 %]
+Lerma–Santiago,41,1,Persistence,0.609,0.000
+Lerma–Santiago,41,1,Climatology,0.176,"-1.745 [-4.058, -0.640]"
+Lerma–Santiago,41,1,ARIMA,0.681,"0.115 [-0.018, 0.194]"
+Lerma–Santiago,41,1,XGBoost,0.680,"0.110 [-0.035, 0.189]"
+Lerma–Santiago,41,1,TCN,0.687,"0.154 [0.023, 0.226]"
+Lerma–Santiago,41,1,ConvNeXt-1D,0.696,"0.140 [0.048, 0.170]"
+Lerma–Santiago,41,1,PatchTST,0.677,"0.159 [0.047, 0.200]"
+Lerma–Santiago,41,7,Persistence,0.070,0.000
+Lerma–Santiago,41,7,Climatology,0.187,"0.043 [-0.198, 0.226]"
+Lerma–Santiago,41,7,ARIMA,0.274,"0.250 [0.158, 0.316]"
+Lerma–Santiago,41,7,XGBoost,0.351,"0.277 [0.185, 0.325]"
+Lerma–Santiago,41,7,TCN,0.325,"0.257 [0.199, 0.326]"
+Lerma–Santiago,41,7,ConvNeXt-1D,0.331,"0.288 [0.211, 0.339]"
+Lerma–Santiago,41,7,PatchTST,0.325,"0.265 [0.206, 0.307]"
+Lerma–Santiago,41,14,Persistence,-0.108,0.000
+Lerma–Santiago,41,14,Climatology,0.184,"0.228 [0.078, 0.316]"
+Lerma–Santiago,41,14,ARIMA,0.120,"0.210 [0.145, 0.316]"
+Lerma–Santiago,41,14,XGBoost,0.213,"0.331 [0.220, 0.383]"
+Lerma–Santiago,41,14,TCN,0.174,"0.345 [0.258, 0.376]"
+Lerma–Santiago,41,14,ConvNeXt-1D,0.140,"0.307 [0.216, 0.349]"
+Lerma–Santiago,41,14,PatchTST,0.174,"0.315 [0.175, 0.344]"
+Pánuco,37,1,Persistence,0.515,0.000
+Pánuco,37,1,Climatology,-0.029,"-1.683 [-3.197, -0.824]"
+Pánuco,37,1,ARIMA,0.535,"0.175 [0.088, 0.215]"
+Pánuco,37,1,XGBoost,0.526,"0.151 [0.012, 0.198]"
+Pánuco,37,1,TCN,0.544,"0.151 [0.039, 0.228]"
+Pánuco,37,1,ConvNeXt-1D,0.537,"0.130 [-0.142, 0.207]"
+Pánuco,37,1,PatchTST,0.584,"0.144 [-0.038, 0.196]"
+Pánuco,37,7,Persistence,-0.335,0.000
+Pánuco,37,7,Climatology,-0.031,"0.081 [-0.143, 0.284]"
+Pánuco,37,7,ARIMA,0.090,"0.325 [0.294, 0.365]"
+Pánuco,37,7,XGBoost,0.127,"0.305 [0.274, 0.382]"
+Pánuco,37,7,TCN,0.093,"0.346 [0.269, 0.378]"
+Pánuco,37,7,ConvNeXt-1D,0.088,"0.314 [0.274, 0.379]"
+Pánuco,37,7,PatchTST,0.065,"0.301 [0.246, 0.361]"
+Pánuco,37,14,Persistence,-0.550,0.000
+Pánuco,37,14,Climatology,-0.031,"0.204 [0.065, 0.361]"
+Pánuco,37,14,ARIMA,-0.003,"0.348 [0.246, 0.372]"
+Pánuco,37,14,XGBoost,0.039,"0.364 [0.296, 0.389]"
+Pánuco,37,14,TCN,0.026,"0.347 [0.263, 0.388]"
+Pánuco,37,14,ConvNeXt-1D,0.004,"0.355 [0.234, 0.375]"
+Pánuco,37,14,PatchTST,0.006,"0.322 [0.235, 0.371]"
+Alta del Balsas,12,1,Persistence,0.187,0.000
+Alta del Balsas,12,1,Climatology,-0.047,"-0.444 [-3.193, -0.064]"
+Alta del Balsas,12,1,ARIMA,0.354,"0.266 [0.181, 0.301]"
+Alta del Balsas,12,1,XGBoost,0.350,"0.277 [0.109, 0.328]"
+Alta del Balsas,12,1,TCN,0.345,"0.258 [0.095, 0.317]"
+Alta del Balsas,12,1,ConvNeXt-1D,0.348,"0.255 [0.120, 0.321]"
+Alta del Balsas,12,1,PatchTST,0.359,"0.276 [0.108, 0.333]"
+Alta del Balsas,12,7,Persistence,-0.352,0.000
+Alta del Balsas,12,7,Climatology,-0.044,"0.040 [-1.159, 0.465]"
+Alta del Balsas,12,7,ARIMA,0.084,"0.369 [0.330, 0.431]"
+Alta del Balsas,12,7,XGBoost,0.141,"0.402 [0.332, 0.432]"
+Alta del Balsas,12,7,TCN,0.148,"0.409 [0.332, 0.429]"
+Alta del Balsas,12,7,ConvNeXt-1D,0.141,"0.407 [0.344, 0.455]"
+Alta del Balsas,12,7,PatchTST,0.129,"0.409 [0.344, 0.433]"
+Alta del Balsas,12,14,Persistence,-0.472,0.000
+Alta del Balsas,12,14,Climatology,-0.045,"0.214 [-1.092, 0.498]"
+Alta del Balsas,12,14,ARIMA,0.038,"0.365 [0.321, 0.464]"
+Alta del Balsas,12,14,XGBoost,0.129,"0.415 [0.346, 0.502]"
+Alta del Balsas,12,14,TCN,0.138,"0.456 [0.340, 0.508]"
+Alta del Balsas,12,14,ConvNeXt-1D,0.152,"0.450 [0.329, 0.513]"
+Alta del Balsas,12,14,PatchTST,0.120,"0.412 [0.341, 0.500]"
+Cutzamala,1,1,Persistence,0.640,0.000
+Cutzamala,1,1,Climatology,0.107,-1.483
+Cutzamala,1,1,ARIMA,0.726,0.238
+Cutzamala,1,1,XGBoost,0.717,0.213
+Cutzamala,1,1,TCN,0.728,0.245
+Cutzamala,1,1,ConvNeXt-1D,0.668,0.077
+Cutzamala,1,1,PatchTST,0.718,0.216
+Cutzamala,1,7,Persistence,0.260,0.000
+Cutzamala,1,7,Climatology,0.110,-0.203
+Cutzamala,1,7,ARIMA,0.453,0.261
+Cutzamala,1,7,XGBoost,0.496,0.319
+Cutzamala,1,7,TCN,0.501,0.326
+Cutzamala,1,7,ConvNeXt-1D,0.424,0.222
+Cutzamala,1,7,PatchTST,0.489,0.310
+Cutzamala,1,14,Persistence,-0.010,0.000
+Cutzamala,1,14,Climatology,0.084,0.093
+Cutzamala,1,14,ARIMA,0.310,0.317
+Cutzamala,1,14,XGBoost,0.427,0.432
+Cutzamala,1,14,TCN,0.314,0.321
+Cutzamala,1,14,ConvNeXt-1D,0.266,0.273
+Cutzamala,1,14,PatchTST,0.232,0.239

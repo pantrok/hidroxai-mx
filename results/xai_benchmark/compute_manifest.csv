@@ -81,3 +81,222 @@ fecha,tipo,run,modelo,config,cuenca,h,semilla,dispositivo,hilos,epocas,segundos,
 2026-10-10,principal,xgboost-6_cutzamala_h14_s20261011,xgboost,6,Cutzamala,14,20261011,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",16,46,2.0,2.0,0.220207,,
 2026-10-10,principal,xgboost-4_cutzamala_h14_s20261012,xgboost,4,Cutzamala,14,20261012,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",16,51,1.3,1.3,0.18423,,
 2026-10-10,principal,xgboost-6_cutzamala_h14_s20261012,xgboost,6,Cutzamala,14,20261012,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",16,50,2.2,2.2,0.22264,,
+2026-10-10,evaluacion,xai_05_evaluate,evaluacion_rq1,,,,,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",1,,13.1,13.1,,,
+2026-10-11,principal,tcn-32_lerma_santiago_h1_s20261010,tcn,32,Lerma–Santiago,1,20261010,Tesla T4,,24,51.9,57.7,0.174041,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h1_s20261010,tcn,64,Lerma–Santiago,1,20261010,Tesla T4,,15,32.8,32.9,0.174406,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h1_s20261010,convnext,32,Lerma–Santiago,1,20261010,Tesla T4,,31,60.0,60.3,0.174923,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h1_s20261010,convnext,64,Lerma–Santiago,1,20261010,Tesla T4,,23,49.9,50.2,0.172876,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h1_s20261010,patchtst,32,Lerma–Santiago,1,20261010,Tesla T4,,14,38.2,38.4,0.175107,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h1_s20261010,patchtst,64,Lerma–Santiago,1,20261010,Tesla T4,,20,66.4,66.7,0.175471,True,70017
+2026-10-11,principal,tcn-32_panuco_h1_s20261010,tcn,32,Pánuco,1,20261010,Tesla T4,,23,47.5,47.7,0.161291,True,22593
+2026-10-11,principal,tcn-64_panuco_h1_s20261010,tcn,64,Pánuco,1,20261010,Tesla T4,,23,50.1,50.3,0.16133,True,88193
+2026-10-11,principal,convnext-32_panuco_h1_s20261010,convnext,32,Pánuco,1,20261010,Tesla T4,,27,51.9,52.2,0.164725,True,26433
+2026-10-11,principal,convnext-64_panuco_h1_s20261010,convnext,64,Pánuco,1,20261010,Tesla T4,,27,58.1,58.5,0.163689,True,102017
+2026-10-11,principal,patchtst-32_panuco_h1_s20261010,patchtst,32,Pánuco,1,20261010,Tesla T4,,46,125.7,126.1,0.164248,True,18625
+2026-10-11,principal,patchtst-64_panuco_h1_s20261010,patchtst,64,Pánuco,1,20261010,Tesla T4,,31,102.4,102.8,0.163707,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h1_s20261010,tcn,32,Alta del Balsas,1,20261010,Tesla T4,,15,7.6,7.8,0.320166,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h1_s20261010,tcn,64,Alta del Balsas,1,20261010,Tesla T4,,16,8.5,8.6,0.320999,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h1_s20261010,convnext,32,Alta del Balsas,1,20261010,Tesla T4,,32,15.0,15.3,0.322592,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h1_s20261010,convnext,64,Alta del Balsas,1,20261010,Tesla T4,,26,13.5,13.8,0.318346,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h1_s20261010,patchtst,32,Alta del Balsas,1,20261010,Tesla T4,,15,10.0,10.2,0.320563,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h1_s20261010,patchtst,64,Alta del Balsas,1,20261010,Tesla T4,,17,13.5,13.7,0.327529,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h1_s20261010,tcn,32,Cutzamala,1,20261010,Tesla T4,,33,1.3,1.6,0.049856,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h1_s20261010,tcn,64,Cutzamala,1,20261010,Tesla T4,,20,0.9,1.0,0.04648,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h1_s20261010,convnext,32,Cutzamala,1,20261010,Tesla T4,,100,3.9,5.0,0.05881,False,26433
+2026-10-11,principal,convnext-64_cutzamala_h1_s20261010,convnext,64,Cutzamala,1,20261010,Tesla T4,,58,2.2,2.9,0.06192,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h1_s20261010,patchtst,32,Cutzamala,1,20261010,Tesla T4,,27,1.5,1.7,0.050371,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h1_s20261010,patchtst,64,Cutzamala,1,20261010,Tesla T4,,27,1.6,1.8,0.049232,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h7_s20261010,tcn,32,Lerma–Santiago,7,20261010,Tesla T4,,26,54.2,54.4,0.407879,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h7_s20261010,tcn,64,Lerma–Santiago,7,20261010,Tesla T4,,12,25.9,26.1,0.412895,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h7_s20261010,convnext,32,Lerma–Santiago,7,20261010,Tesla T4,,14,26.9,27.1,0.410543,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h7_s20261010,convnext,64,Lerma–Santiago,7,20261010,Tesla T4,,12,25.6,25.8,0.404599,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h7_s20261010,patchtst,32,Lerma–Santiago,7,20261010,Tesla T4,,27,73.2,73.5,0.410704,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h7_s20261010,patchtst,64,Lerma–Santiago,7,20261010,Tesla T4,,26,85.1,85.5,0.411436,True,70017
+2026-10-11,principal,tcn-32_panuco_h7_s20261010,tcn,32,Pánuco,7,20261010,Tesla T4,,20,42.3,42.5,0.407878,True,22593
+2026-10-11,principal,tcn-64_panuco_h7_s20261010,tcn,64,Pánuco,7,20261010,Tesla T4,,15,32.5,32.6,0.410937,True,88193
+2026-10-11,principal,convnext-32_panuco_h7_s20261010,convnext,32,Pánuco,7,20261010,Tesla T4,,13,25.1,25.3,0.429678,True,26433
+2026-10-11,principal,convnext-64_panuco_h7_s20261010,convnext,64,Pánuco,7,20261010,Tesla T4,,13,27.8,28.0,0.43333,True,102017
+2026-10-11,principal,patchtst-32_panuco_h7_s20261010,patchtst,32,Pánuco,7,20261010,Tesla T4,,16,43.7,43.9,0.414558,True,18625
+2026-10-11,principal,patchtst-64_panuco_h7_s20261010,patchtst,64,Pánuco,7,20261010,Tesla T4,,16,52.5,52.6,0.411862,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h7_s20261010,tcn,32,Alta del Balsas,7,20261010,Tesla T4,,16,8.1,8.3,0.471634,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h7_s20261010,tcn,64,Alta del Balsas,7,20261010,Tesla T4,,11,5.8,5.9,0.474033,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h7_s20261010,convnext,32,Alta del Balsas,7,20261010,Tesla T4,,33,15.2,15.6,0.454837,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h7_s20261010,convnext,64,Alta del Balsas,7,20261010,Tesla T4,,24,12.3,12.6,0.457785,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h7_s20261010,patchtst,32,Alta del Balsas,7,20261010,Tesla T4,,22,14.4,14.7,0.46439,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h7_s20261010,patchtst,64,Alta del Balsas,7,20261010,Tesla T4,,16,12.5,12.7,0.47182,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h7_s20261010,tcn,32,Cutzamala,7,20261010,Tesla T4,,19,0.8,0.9,0.108644,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h7_s20261010,tcn,64,Cutzamala,7,20261010,Tesla T4,,22,0.9,1.1,0.108087,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h7_s20261010,convnext,32,Cutzamala,7,20261010,Tesla T4,,36,1.3,1.7,0.123793,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h7_s20261010,convnext,64,Cutzamala,7,20261010,Tesla T4,,39,1.5,2.0,0.112972,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h7_s20261010,patchtst,32,Cutzamala,7,20261010,Tesla T4,,21,1.1,1.3,0.103967,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h7_s20261010,patchtst,64,Cutzamala,7,20261010,Tesla T4,,15,0.8,1.0,0.114584,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h14_s20261010,tcn,32,Lerma–Santiago,14,20261010,Tesla T4,,15,31.1,31.2,0.505192,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h14_s20261010,tcn,64,Lerma–Santiago,14,20261010,Tesla T4,,15,32.1,32.2,0.497451,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h14_s20261010,convnext,32,Lerma–Santiago,14,20261010,Tesla T4,,15,28.7,28.9,0.512272,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h14_s20261010,convnext,64,Lerma–Santiago,14,20261010,Tesla T4,,15,31.6,31.8,0.521432,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h14_s20261010,patchtst,32,Lerma–Santiago,14,20261010,Tesla T4,,19,51.5,51.7,0.520402,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h14_s20261010,patchtst,64,Lerma–Santiago,14,20261010,Tesla T4,,19,61.3,61.6,0.520321,True,70017
+2026-10-11,principal,tcn-32_panuco_h14_s20261010,tcn,32,Pánuco,14,20261010,Tesla T4,,13,27.3,27.4,0.475896,True,22593
+2026-10-11,principal,tcn-64_panuco_h14_s20261010,tcn,64,Pánuco,14,20261010,Tesla T4,,13,28.0,28.1,0.475323,True,88193
+2026-10-11,principal,convnext-32_panuco_h14_s20261010,convnext,32,Pánuco,14,20261010,Tesla T4,,13,25.1,25.2,0.475618,True,26433
+2026-10-11,principal,convnext-64_panuco_h14_s20261010,convnext,64,Pánuco,14,20261010,Tesla T4,,13,27.6,27.8,0.478718,True,102017
+2026-10-11,principal,patchtst-32_panuco_h14_s20261010,patchtst,32,Pánuco,14,20261010,Tesla T4,,18,49.1,49.3,0.476954,True,18625
+2026-10-11,principal,patchtst-64_panuco_h14_s20261010,patchtst,64,Pánuco,14,20261010,Tesla T4,,20,65.1,65.4,0.473051,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h14_s20261010,tcn,32,Alta del Balsas,14,20261010,Tesla T4,,17,8.4,8.6,0.518022,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h14_s20261010,tcn,64,Alta del Balsas,14,20261010,Tesla T4,,17,8.8,9.0,0.519155,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h14_s20261010,convnext,32,Alta del Balsas,14,20261010,Tesla T4,,27,12.5,12.8,0.508386,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h14_s20261010,convnext,64,Alta del Balsas,14,20261010,Tesla T4,,23,11.6,11.9,0.505321,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h14_s20261010,patchtst,32,Alta del Balsas,14,20261010,Tesla T4,,16,10.5,10.6,0.523308,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h14_s20261010,patchtst,64,Alta del Balsas,14,20261010,Tesla T4,,21,16.3,16.5,0.527366,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h14_s20261010,tcn,32,Cutzamala,14,20261010,Tesla T4,,17,0.7,0.8,0.147621,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h14_s20261010,tcn,64,Cutzamala,14,20261010,Tesla T4,,24,1.0,1.2,0.139624,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h14_s20261010,convnext,32,Cutzamala,14,20261010,Tesla T4,,36,1.3,1.7,0.169342,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h14_s20261010,convnext,64,Cutzamala,14,20261010,Tesla T4,,51,1.9,2.6,0.14595,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h14_s20261010,patchtst,32,Cutzamala,14,20261010,Tesla T4,,19,1.0,1.2,0.134523,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h14_s20261010,patchtst,64,Cutzamala,14,20261010,Tesla T4,,15,0.8,1.0,0.155781,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h1_s20261011,tcn,32,Lerma–Santiago,1,20261011,Tesla T4,,25,53.3,53.5,0.173603,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h1_s20261011,tcn,64,Lerma–Santiago,1,20261011,Tesla T4,,17,37.3,37.5,0.175089,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h1_s20261011,convnext,32,Lerma–Santiago,1,20261011,Tesla T4,,24,46.9,47.2,0.173807,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h1_s20261011,convnext,64,Lerma–Santiago,1,20261011,Tesla T4,,21,45.5,45.8,0.173547,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h1_s20261011,patchtst,32,Lerma–Santiago,1,20261011,Tesla T4,,29,80.5,80.8,0.174899,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h1_s20261011,patchtst,64,Lerma–Santiago,1,20261011,Tesla T4,,29,96.5,96.8,0.175659,True,70017
+2026-10-11,principal,tcn-32_panuco_h1_s20261011,tcn,32,Pánuco,1,20261011,Tesla T4,,23,48.6,48.8,0.161832,True,22593
+2026-10-11,principal,tcn-64_panuco_h1_s20261011,tcn,64,Pánuco,1,20261011,Tesla T4,,23,50.2,50.4,0.162007,True,88193
+2026-10-11,principal,convnext-32_panuco_h1_s20261011,convnext,32,Pánuco,1,20261011,Tesla T4,,23,44.5,44.8,0.164314,True,26433
+2026-10-11,principal,convnext-64_panuco_h1_s20261011,convnext,64,Pánuco,1,20261011,Tesla T4,,23,49.5,49.8,0.162776,True,102017
+2026-10-11,principal,patchtst-32_panuco_h1_s20261011,patchtst,32,Pánuco,1,20261011,Tesla T4,,31,85.1,85.4,0.165778,True,18625
+2026-10-11,principal,patchtst-64_panuco_h1_s20261011,patchtst,64,Pánuco,1,20261011,Tesla T4,,20,66.1,66.4,0.167151,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h1_s20261011,tcn,32,Alta del Balsas,1,20261011,Tesla T4,,20,10.1,10.3,0.319734,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h1_s20261011,tcn,64,Alta del Balsas,1,20261011,Tesla T4,,18,9.6,9.7,0.32115,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h1_s20261011,convnext,32,Alta del Balsas,1,20261011,Tesla T4,,27,12.6,12.9,0.320181,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h1_s20261011,convnext,64,Alta del Balsas,1,20261011,Tesla T4,,23,11.9,12.2,0.320454,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h1_s20261011,patchtst,32,Alta del Balsas,1,20261011,Tesla T4,,21,14.0,14.2,0.321677,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h1_s20261011,patchtst,64,Alta del Balsas,1,20261011,Tesla T4,,16,12.7,12.9,0.32688,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h1_s20261011,tcn,32,Cutzamala,1,20261011,Tesla T4,,30,1.2,1.5,0.046513,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h1_s20261011,tcn,64,Cutzamala,1,20261011,Tesla T4,,22,0.9,1.1,0.047001,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h1_s20261011,convnext,32,Cutzamala,1,20261011,Tesla T4,,89,3.3,4.2,0.052579,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h1_s20261011,convnext,64,Cutzamala,1,20261011,Tesla T4,,67,2.5,3.3,0.06044,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h1_s20261011,patchtst,32,Cutzamala,1,20261011,Tesla T4,,39,2.0,2.4,0.049266,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h1_s20261011,patchtst,64,Cutzamala,1,20261011,Tesla T4,,36,2.1,2.5,0.049977,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h7_s20261011,tcn,32,Lerma–Santiago,7,20261011,Tesla T4,,15,31.4,31.5,0.404622,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h7_s20261011,tcn,64,Lerma–Santiago,7,20261011,Tesla T4,,12,26.0,26.1,0.405497,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h7_s20261011,convnext,32,Lerma–Santiago,7,20261011,Tesla T4,,15,29.2,29.4,0.402,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h7_s20261011,convnext,64,Lerma–Santiago,7,20261011,Tesla T4,,12,25.6,25.8,0.406161,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h7_s20261011,patchtst,32,Lerma–Santiago,7,20261011,Tesla T4,,17,46.3,46.5,0.407282,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h7_s20261011,patchtst,64,Lerma–Santiago,7,20261011,Tesla T4,,18,58.9,59.1,0.410685,True,70017
+2026-10-11,principal,tcn-32_panuco_h7_s20261011,tcn,32,Pánuco,7,20261011,Tesla T4,,15,31.5,31.6,0.407426,True,22593
+2026-10-11,principal,tcn-64_panuco_h7_s20261011,tcn,64,Pánuco,7,20261011,Tesla T4,,14,30.3,30.5,0.405313,True,88193
+2026-10-11,principal,convnext-32_panuco_h7_s20261011,convnext,32,Pánuco,7,20261011,Tesla T4,,14,27.2,27.4,0.427004,True,26433
+2026-10-11,principal,convnext-64_panuco_h7_s20261011,convnext,64,Pánuco,7,20261011,Tesla T4,,14,30.0,30.2,0.430261,True,102017
+2026-10-11,principal,patchtst-32_panuco_h7_s20261011,patchtst,32,Pánuco,7,20261011,Tesla T4,,14,38.5,38.7,0.414,True,18625
+2026-10-11,principal,patchtst-64_panuco_h7_s20261011,patchtst,64,Pánuco,7,20261011,Tesla T4,,33,108.3,108.7,0.414478,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h7_s20261011,tcn,32,Alta del Balsas,7,20261011,Tesla T4,,12,6.1,6.2,0.472876,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h7_s20261011,tcn,64,Alta del Balsas,7,20261011,Tesla T4,,15,7.9,8.0,0.475027,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h7_s20261011,convnext,32,Alta del Balsas,7,20261011,Tesla T4,,26,12.4,12.7,0.463988,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h7_s20261011,convnext,64,Alta del Balsas,7,20261011,Tesla T4,,21,10.8,11.1,0.455573,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h7_s20261011,patchtst,32,Alta del Balsas,7,20261011,Tesla T4,,20,13.5,13.7,0.46577,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h7_s20261011,patchtst,64,Alta del Balsas,7,20261011,Tesla T4,,15,11.8,11.9,0.47088,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h7_s20261011,tcn,32,Cutzamala,7,20261011,Tesla T4,,18,0.7,0.9,0.101776,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h7_s20261011,tcn,64,Cutzamala,7,20261011,Tesla T4,,17,0.7,0.8,0.100779,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h7_s20261011,convnext,32,Cutzamala,7,20261011,Tesla T4,,42,1.6,2.1,0.124957,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h7_s20261011,convnext,64,Cutzamala,7,20261011,Tesla T4,,29,1.2,1.6,0.124327,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h7_s20261011,patchtst,32,Cutzamala,7,20261011,Tesla T4,,15,0.8,0.9,0.109001,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h7_s20261011,patchtst,64,Cutzamala,7,20261011,Tesla T4,,16,0.9,1.1,0.113885,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h14_s20261011,tcn,32,Lerma–Santiago,14,20261011,Tesla T4,,18,37.7,37.9,0.499357,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h14_s20261011,tcn,64,Lerma–Santiago,14,20261011,Tesla T4,,14,30.0,30.1,0.508644,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h14_s20261011,convnext,32,Lerma–Santiago,14,20261011,Tesla T4,,17,32.6,32.8,0.52347,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h14_s20261011,convnext,64,Lerma–Santiago,14,20261011,Tesla T4,,13,27.3,27.5,0.518642,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h14_s20261011,patchtst,32,Lerma–Santiago,14,20261011,Tesla T4,,13,34.8,35.0,0.523676,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h14_s20261011,patchtst,64,Lerma–Santiago,14,20261011,Tesla T4,,18,58.1,58.4,0.523472,True,70017
+2026-10-11,principal,tcn-32_panuco_h14_s20261011,tcn,32,Pánuco,14,20261011,Tesla T4,,19,39.2,39.3,0.469592,True,22593
+2026-10-11,principal,tcn-64_panuco_h14_s20261011,tcn,64,Pánuco,14,20261011,Tesla T4,,15,32.2,32.4,0.47119,True,88193
+2026-10-11,principal,convnext-32_panuco_h14_s20261011,convnext,32,Pánuco,14,20261011,Tesla T4,,15,28.8,29.0,0.472717,True,26433
+2026-10-11,principal,convnext-64_panuco_h14_s20261011,convnext,64,Pánuco,14,20261011,Tesla T4,,13,27.6,27.8,0.486771,True,102017
+2026-10-11,principal,patchtst-32_panuco_h14_s20261011,patchtst,32,Pánuco,14,20261011,Tesla T4,,15,40.5,40.7,0.475313,True,18625
+2026-10-11,principal,patchtst-64_panuco_h14_s20261011,patchtst,64,Pánuco,14,20261011,Tesla T4,,19,61.8,62.1,0.477033,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h14_s20261011,tcn,32,Alta del Balsas,14,20261011,Tesla T4,,19,9.4,9.5,0.504951,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h14_s20261011,tcn,64,Alta del Balsas,14,20261011,Tesla T4,,19,9.8,10.0,0.514656,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h14_s20261011,convnext,32,Alta del Balsas,14,20261011,Tesla T4,,19,8.8,9.0,0.512431,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h14_s20261011,convnext,64,Alta del Balsas,14,20261011,Tesla T4,,21,10.6,10.9,0.498808,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h14_s20261011,patchtst,32,Alta del Balsas,14,20261011,Tesla T4,,18,11.8,12.0,0.516913,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h14_s20261011,patchtst,64,Alta del Balsas,14,20261011,Tesla T4,,18,13.9,14.2,0.525563,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h14_s20261011,tcn,32,Cutzamala,14,20261011,Tesla T4,,22,0.9,1.0,0.14857,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h14_s20261011,tcn,64,Cutzamala,14,20261011,Tesla T4,,20,0.8,1.0,0.14214,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h14_s20261011,convnext,32,Cutzamala,14,20261011,Tesla T4,,35,1.3,1.7,0.184694,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h14_s20261011,convnext,64,Cutzamala,14,20261011,Tesla T4,,13,0.5,0.7,0.186352,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h14_s20261011,patchtst,32,Cutzamala,14,20261011,Tesla T4,,19,1.0,1.2,0.153671,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h14_s20261011,patchtst,64,Cutzamala,14,20261011,Tesla T4,,14,0.8,0.9,0.153132,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h1_s20261012,tcn,32,Lerma–Santiago,1,20261012,Tesla T4,,20,42.6,42.8,0.174116,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h1_s20261012,tcn,64,Lerma–Santiago,1,20261012,Tesla T4,,17,37.3,37.5,0.173996,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h1_s20261012,convnext,32,Lerma–Santiago,1,20261012,Tesla T4,,34,66.4,66.8,0.172182,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h1_s20261012,convnext,64,Lerma–Santiago,1,20261012,Tesla T4,,20,43.3,43.5,0.173539,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h1_s20261012,patchtst,32,Lerma–Santiago,1,20261012,Tesla T4,,22,60.8,61.1,0.175345,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h1_s20261012,patchtst,64,Lerma–Santiago,1,20261012,Tesla T4,,23,76.6,76.9,0.175901,True,70017
+2026-10-11,principal,tcn-32_panuco_h1_s20261012,tcn,32,Pánuco,1,20261012,Tesla T4,,21,44.6,44.8,0.16306,True,22593
+2026-10-11,principal,tcn-64_panuco_h1_s20261012,tcn,64,Pánuco,1,20261012,Tesla T4,,15,32.8,32.9,0.161447,True,88193
+2026-10-11,principal,convnext-32_panuco_h1_s20261012,convnext,32,Pánuco,1,20261012,Tesla T4,,27,52.9,53.2,0.165204,True,26433
+2026-10-11,principal,convnext-64_panuco_h1_s20261012,convnext,64,Pánuco,1,20261012,Tesla T4,,25,53.9,54.2,0.163998,True,102017
+2026-10-11,principal,patchtst-32_panuco_h1_s20261012,patchtst,32,Pánuco,1,20261012,Tesla T4,,40,109.7,110.1,0.16485,True,18625
+2026-10-11,principal,patchtst-64_panuco_h1_s20261012,patchtst,64,Pánuco,1,20261012,Tesla T4,,40,132.5,133.0,0.166422,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h1_s20261012,tcn,32,Alta del Balsas,1,20261012,Tesla T4,,13,6.7,6.8,0.325249,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h1_s20261012,tcn,64,Alta del Balsas,1,20261012,Tesla T4,,19,10.1,10.3,0.320259,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h1_s20261012,convnext,32,Alta del Balsas,1,20261012,Tesla T4,,31,14.5,14.9,0.31935,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h1_s20261012,convnext,64,Alta del Balsas,1,20261012,Tesla T4,,25,12.9,13.3,0.318517,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h1_s20261012,patchtst,32,Alta del Balsas,1,20261012,Tesla T4,,17,11.4,11.6,0.319843,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h1_s20261012,patchtst,64,Alta del Balsas,1,20261012,Tesla T4,,15,11.9,12.1,0.32703,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h1_s20261012,tcn,32,Cutzamala,1,20261012,Tesla T4,,43,1.7,2.0,0.045466,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h1_s20261012,tcn,64,Cutzamala,1,20261012,Tesla T4,,29,1.2,1.4,0.047345,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h1_s20261012,convnext,32,Cutzamala,1,20261012,Tesla T4,,85,3.2,4.1,0.053279,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h1_s20261012,convnext,64,Cutzamala,1,20261012,Tesla T4,,94,3.6,4.8,0.053335,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h1_s20261012,patchtst,32,Cutzamala,1,20261012,Tesla T4,,52,2.7,3.2,0.045954,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h1_s20261012,patchtst,64,Cutzamala,1,20261012,Tesla T4,,28,1.6,1.9,0.048335,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h7_s20261012,tcn,32,Lerma–Santiago,7,20261012,Tesla T4,,17,35.8,36.0,0.408793,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h7_s20261012,tcn,64,Lerma–Santiago,7,20261012,Tesla T4,,14,30.4,30.5,0.409542,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h7_s20261012,convnext,32,Lerma–Santiago,7,20261012,Tesla T4,,14,27.5,27.7,0.40497,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h7_s20261012,convnext,64,Lerma–Santiago,7,20261012,Tesla T4,,14,29.9,30.1,0.398281,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h7_s20261012,patchtst,32,Lerma–Santiago,7,20261012,Tesla T4,,20,55.4,55.6,0.405407,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h7_s20261012,patchtst,64,Lerma–Santiago,7,20261012,Tesla T4,,20,65.5,65.7,0.410843,True,70017
+2026-10-11,principal,tcn-32_panuco_h7_s20261012,tcn,32,Pánuco,7,20261012,Tesla T4,,17,35.8,36.0,0.408781,True,22593
+2026-10-11,principal,tcn-64_panuco_h7_s20261012,tcn,64,Pánuco,7,20261012,Tesla T4,,15,32.5,32.6,0.409274,True,88193
+2026-10-11,principal,convnext-32_panuco_h7_s20261012,convnext,32,Pánuco,7,20261012,Tesla T4,,15,28.8,29.0,0.429552,True,26433
+2026-10-11,principal,convnext-64_panuco_h7_s20261012,convnext,64,Pánuco,7,20261012,Tesla T4,,14,29.9,30.1,0.427228,True,102017
+2026-10-11,principal,patchtst-32_panuco_h7_s20261012,patchtst,32,Pánuco,7,20261012,Tesla T4,,22,60.8,61.0,0.410301,True,18625
+2026-10-11,principal,patchtst-64_panuco_h7_s20261012,patchtst,64,Pánuco,7,20261012,Tesla T4,,25,82.1,82.3,0.413792,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h7_s20261012,tcn,32,Alta del Balsas,7,20261012,Tesla T4,,17,8.5,8.6,0.476342,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h7_s20261012,tcn,64,Alta del Balsas,7,20261012,Tesla T4,,12,6.3,6.4,0.474009,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h7_s20261012,convnext,32,Alta del Balsas,7,20261012,Tesla T4,,22,10.1,10.3,0.461189,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h7_s20261012,convnext,64,Alta del Balsas,7,20261012,Tesla T4,,29,14.8,15.2,0.464821,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h7_s20261012,patchtst,32,Alta del Balsas,7,20261012,Tesla T4,,30,19.6,20.0,0.467442,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h7_s20261012,patchtst,64,Alta del Balsas,7,20261012,Tesla T4,,17,13.4,13.6,0.478303,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h7_s20261012,tcn,32,Cutzamala,7,20261012,Tesla T4,,38,1.6,1.9,0.105355,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h7_s20261012,tcn,64,Cutzamala,7,20261012,Tesla T4,,18,0.7,0.9,0.106288,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h7_s20261012,convnext,32,Cutzamala,7,20261012,Tesla T4,,37,1.4,1.9,0.118771,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h7_s20261012,convnext,64,Cutzamala,7,20261012,Tesla T4,,40,1.7,2.2,0.112409,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h7_s20261012,patchtst,32,Cutzamala,7,20261012,Tesla T4,,21,1.1,1.3,0.1044,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h7_s20261012,patchtst,64,Cutzamala,7,20261012,Tesla T4,,21,1.2,1.4,0.120386,True,70017
+2026-10-11,principal,tcn-32_lerma_santiago_h14_s20261012,tcn,32,Lerma–Santiago,14,20261012,Tesla T4,,13,26.9,27.0,0.508932,True,22593
+2026-10-11,principal,tcn-64_lerma_santiago_h14_s20261012,tcn,64,Lerma–Santiago,14,20261012,Tesla T4,,13,27.8,27.9,0.498513,True,88193
+2026-10-11,principal,convnext-32_lerma_santiago_h14_s20261012,convnext,32,Lerma–Santiago,14,20261012,Tesla T4,,17,32.5,32.7,0.49496,True,26433
+2026-10-11,principal,convnext-64_lerma_santiago_h14_s20261012,convnext,64,Lerma–Santiago,14,20261012,Tesla T4,,13,27.3,27.5,0.494428,True,102017
+2026-10-11,principal,patchtst-32_lerma_santiago_h14_s20261012,patchtst,32,Lerma–Santiago,14,20261012,Tesla T4,,29,78.1,78.5,0.519295,True,18625
+2026-10-11,principal,patchtst-64_lerma_santiago_h14_s20261012,patchtst,64,Lerma–Santiago,14,20261012,Tesla T4,,19,61.4,61.6,0.530324,True,70017
+2026-10-11,principal,tcn-32_panuco_h14_s20261012,tcn,32,Pánuco,14,20261012,Tesla T4,,14,29.5,29.7,0.475357,True,22593
+2026-10-11,principal,tcn-64_panuco_h14_s20261012,tcn,64,Pánuco,14,20261012,Tesla T4,,15,32.5,32.6,0.465892,True,88193
+2026-10-11,principal,convnext-32_panuco_h14_s20261012,convnext,32,Pánuco,14,20261012,Tesla T4,,13,24.9,25.0,0.477631,True,26433
+2026-10-11,principal,convnext-64_panuco_h14_s20261012,convnext,64,Pánuco,14,20261012,Tesla T4,,15,31.8,32.0,0.478595,True,102017
+2026-10-11,principal,patchtst-32_panuco_h14_s20261012,patchtst,32,Pánuco,14,20261012,Tesla T4,,30,81.4,81.7,0.475229,True,18625
+2026-10-11,principal,patchtst-64_panuco_h14_s20261012,patchtst,64,Pánuco,14,20261012,Tesla T4,,30,97.8,98.2,0.473942,True,70017
+2026-10-11,principal,tcn-32_alta_balsas_h14_s20261012,tcn,32,Alta del Balsas,14,20261012,Tesla T4,,25,12.2,12.4,0.523589,True,22593
+2026-10-11,principal,tcn-64_alta_balsas_h14_s20261012,tcn,64,Alta del Balsas,14,20261012,Tesla T4,,16,8.3,8.4,0.519911,True,88193
+2026-10-11,principal,convnext-32_alta_balsas_h14_s20261012,convnext,32,Alta del Balsas,14,20261012,Tesla T4,,27,12.8,13.1,0.509635,True,26433
+2026-10-11,principal,convnext-64_alta_balsas_h14_s20261012,convnext,64,Alta del Balsas,14,20261012,Tesla T4,,18,9.1,9.3,0.511767,True,102017
+2026-10-11,principal,patchtst-32_alta_balsas_h14_s20261012,patchtst,32,Alta del Balsas,14,20261012,Tesla T4,,16,10.4,10.5,0.526286,True,18625
+2026-10-11,principal,patchtst-64_alta_balsas_h14_s20261012,patchtst,64,Alta del Balsas,14,20261012,Tesla T4,,18,13.9,14.2,0.537772,True,70017
+2026-10-11,principal,tcn-32_cutzamala_h14_s20261012,tcn,32,Cutzamala,14,20261012,Tesla T4,,32,1.3,1.5,0.14464,True,22593
+2026-10-11,principal,tcn-64_cutzamala_h14_s20261012,tcn,64,Cutzamala,14,20261012,Tesla T4,,23,0.9,1.1,0.14215,True,88193
+2026-10-11,principal,convnext-32_cutzamala_h14_s20261012,convnext,32,Cutzamala,14,20261012,Tesla T4,,35,1.4,1.8,0.167622,True,26433
+2026-10-11,principal,convnext-64_cutzamala_h14_s20261012,convnext,64,Cutzamala,14,20261012,Tesla T4,,35,1.4,1.9,0.172497,True,102017
+2026-10-11,principal,patchtst-32_cutzamala_h14_s20261012,patchtst,32,Cutzamala,14,20261012,Tesla T4,,18,1.0,1.2,0.155244,True,18625
+2026-10-11,principal,patchtst-64_cutzamala_h14_s20261012,patchtst,64,Cutzamala,14,20261012,Tesla T4,,15,0.8,1.0,0.174071,True,70017
+2026-10-10,evaluacion,xai_06_explain,explicabilidad_rq2,,,,,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",16,,1990.5,1990.5,,,
+2026-10-10,evaluacion,xai_07_alerts,alertas_rq3,,,,,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",1,,5.6,5.6,,,

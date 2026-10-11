@@ -1,0 +1,6 @@
+ID,criterio SUPPORTED,veredicto
+H1,IC 95 % de la mediana de SS > 0 para ≥ 3 de 4 modelos aprendidos a 7 y 14 días (agregado),SUPPORTED
+H1-b,"IC 95 % de la mediana de ΔNSE (profundo − XGBoost) > 0, por horizonte","h1: SUPPORTED, h7: OPEN, h14: OPEN"
+H2-a,mediana de Spearman ≥ 0.5 en ≥ 2/3 de las combinaciones cuenca (≥ 8 est.) × horizonte,REJECTED
+H2-b,"≥ 75 % de los pares (modelo, cuenca) con rezago de precipitación más importante en 1–3 días (h = 1)",SUPPORTED
+H3,IC 95 % de ΔCSI (difuso − umbral) > 0 para P90 en h = 1 y h = 7 (agregado),SUPPORTED

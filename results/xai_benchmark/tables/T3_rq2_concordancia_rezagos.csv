@@ -1,0 +1,13 @@
+cuenca,h,Spearman mediano,rezago P XGBoost (d),rezago P TCN (d),rezago P ConvNeXt-1D (d),rezago P PatchTST (d)
+Lerma–Santiago,1,0.34,1,1,1,1
+Lerma–Santiago,7,0.24,7,7,7,32
+Lerma–Santiago,14,0.22,14,14,14,18
+Pánuco,1,0.31,1,1,1,1
+Pánuco,7,0.27,7,7,7,7
+Pánuco,14,0.23,14,14,17,14
+Alta del Balsas,1,0.27,1,1,1,1
+Alta del Balsas,7,0.26,29,7,7,7
+Alta del Balsas,14,0.21,15,14,17,24
+Cutzamala,1,0.26,1,1,1,1
+Cutzamala,7,0.09,7,7,8,7
+Cutzamala,14,-0.08,43,14,14,31

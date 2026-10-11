@@ -1,0 +1,19 @@
+{
+  "fecha": "2026-10-10",
+  "fuente": "scripts/xai_03c_import_kaggle.py",
+  "zip_md5": "1a64cedcd65a37b04cdf703b7694dcd9",
+  "corridas_esperadas": 216,
+  "predicciones": 216,
+  "pesos": 216,
+  "faltantes": [],
+  "muestras_distintas": [],
+  "corridas_con_nan": [],
+  "longitudes_distintas": [],
+  "filas_manifiesto_kaggle": 216,
+  "dispositivo": [
+    "Tesla T4"
+  ],
+  "gpu_h": 1.625,
+  "gpu_pared_h": 1.642,
+  "ok": true
+}
