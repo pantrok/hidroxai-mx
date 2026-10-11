@@ -35,3 +35,12 @@ def test_climatology_and_persistence():
     pred = c.predict(pd.to_datetime(["2023-03-01", "2023-10-01"]))
     assert pred[0] == pytest.approx(1.0) and pred[1] == pytest.approx(3.0)
     assert (B.persistence([2.0, 5.0]) == np.array([2.0, 5.0])).all()
+
+
+def test_kge_components_recompose_kge():
+    rng = np.random.default_rng(1)
+    o = rng.gamma(2.0, 3.0, 200)
+    s = 0.6 * o + rng.normal(0, 1.0, 200) + 0.5
+    r, alpha, beta = M.kge_components(o, s)
+    assert alpha == pytest.approx(s.std() / o.std()) and beta == pytest.approx(s.mean() / o.mean())
+    assert M.kge(o, s) == pytest.approx(1 - np.sqrt((r - 1) ** 2 + (alpha - 1) ** 2 + (beta - 1) ** 2))

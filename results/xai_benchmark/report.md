@@ -1,6 +1,6 @@
 # Reporte técnico · benchmark de arquitecturas, explicabilidad y alertas difusas
 
-Generado por `scripts/xai_08_report.py` el 2026-10-10. Todas las cifras vienen de `numbers.json`; cada bloque indica su fuente. Protocolo: `protocol.md` (SHA-256 coincide con el congelado).
+Generado por `scripts/xai_08_report.py` el 2026-10-11. Todas las cifras vienen de `numbers.json`; cada bloque indica su fuente. Protocolo: `protocol.md` (SHA-256 coincide con el congelado).
 
 > Pronósticos retrospectivos sobre 2023–2025; no es un sistema operativo.
 
@@ -28,6 +28,7 @@ Generado por `scripts/xai_08_report.py` el 2026-10-10. Todas las cifras vienen d
 - H1: SUPPORTED. Modelos con IC > 0: h = 7 → 4, h = 14 → 4.
 - H1-b: h1: SUPPORTED, h7: OPEN, h14: OPEN. ΔNSE (profundo − XGBoost): tcn_h1 0.003 [0.001, 0.006], convnext_h1 0.001 [-0.004, 0.004], patchtst_h1 0.003 [-0.005, 0.006], tcn_h7 -0.001 [-0.010, 0.004], convnext_h7 -0.003 [-0.011, 0.003], patchtst_h7 -0.004 [-0.012, 0.001], tcn_h14 -0.007 [-0.017, 0.006], convnext_h14 -0.028 [-0.038, -0.021], patchtst_h14 -0.021 [-0.035, -0.005].
 - Descriptivo (no preregistrado), ΔNSE contra ARIMA: xgboost_h1 -0.004 [-0.019, 0.005], tcn_h1 0.003 [-0.005, 0.007], convnext_h1 -0.005 [-0.020, 0.005], patchtst_h1 -0.005 [-0.014, 0.003], xgboost_h7 0.021 [0.012, 0.037], tcn_h7 0.022 [0.002, 0.033], convnext_h7 0.003 [-0.007, 0.023], patchtst_h7 0.014 [0.003, 0.028], xgboost_h14 0.043 [0.028, 0.065], tcn_h14 0.033 [0.013, 0.062], convnext_h14 0.019 [0.005, 0.043], patchtst_h14 0.023 [0.003, 0.045].
+- Descriptivo (no preregistrado), componentes del KGE a h = 1 (α = σ_sim/σ_obs; mediana y fracción de estaciones con α < 1): Persistence α 0.999 (0.659), r 0.779, ARIMA α 0.771 (1.000), r 0.784, XGBoost α 0.715 (0.978), r 0.783, TCN α 0.730 (0.989), r 0.788, ConvNeXt-1D α 0.720 (0.967), r 0.784, PatchTST α 0.771 (0.956), r 0.782.
 
 | h | modelo | NSE mediana [IQR] | KGE mediana | RMSE mediana (m³/s) | SS mediana [IC 95 %] |
 |---|---|---|---|---|---|
@@ -52,6 +53,30 @@ Generado por `scripts/xai_08_report.py` el 2026-10-10. Todas las cifras vienen d
 | 14 | TCN | 0.089 [0.011, 0.285] | 0.058 | 7.21 | 0.350 [0.323, 0.370] |
 | 14 | ConvNeXt-1D | 0.080 [-0.000, 0.253] | 0.031 | 7.28 | 0.343 [0.298, 0.359] |
 | 14 | PatchTST | 0.079 [0.000, 0.255] | 0.016 | 7.20 | 0.328 [0.293, 0.351] |
+
+| h | modelo | KGE mediana | r mediana | α mediana | β mediana | fracción con α < 1 |
+|---|---|---|---|---|---|---|
+| 1 | Persistence | 0.776 | 0.779 | 0.999 | 0.999 | 0.659 |
+| 1 | Climatology | 0.050 | 0.357 | 0.517 | 1.155 | 0.890 |
+| 1 | ARIMA | 0.654 | 0.784 | 0.771 | 0.896 | 1.000 |
+| 1 | XGBoost | 0.579 | 0.783 | 0.715 | 0.862 | 0.978 |
+| 1 | TCN | 0.598 | 0.788 | 0.730 | 0.881 | 0.989 |
+| 1 | ConvNeXt-1D | 0.582 | 0.784 | 0.720 | 0.877 | 0.967 |
+| 1 | PatchTST | 0.619 | 0.782 | 0.771 | 0.899 | 0.956 |
+| 7 | Persistence | 0.375 | 0.386 | 0.996 | 0.992 | 0.648 |
+| 7 | Climatology | 0.056 | 0.357 | 0.515 | 1.152 | 0.846 |
+| 7 | ARIMA | 0.133 | 0.439 | 0.420 | 0.729 | 0.989 |
+| 7 | XGBoost | 0.167 | 0.496 | 0.457 | 0.741 | 0.967 |
+| 7 | TCN | 0.164 | 0.481 | 0.459 | 0.710 | 0.967 |
+| 7 | ConvNeXt-1D | 0.157 | 0.486 | 0.456 | 0.728 | 0.967 |
+| 7 | PatchTST | 0.161 | 0.469 | 0.460 | 0.722 | 0.945 |
+| 14 | Persistence | 0.282 | 0.289 | 0.992 | 0.983 | 0.637 |
+| 14 | Climatology | 0.065 | 0.360 | 0.515 | 1.149 | 0.868 |
+| 14 | ARIMA | -0.052 | 0.317 | 0.303 | 0.673 | 0.978 |
+| 14 | XGBoost | 0.071 | 0.437 | 0.392 | 0.708 | 0.956 |
+| 14 | TCN | 0.058 | 0.420 | 0.421 | 0.709 | 0.945 |
+| 14 | ConvNeXt-1D | 0.031 | 0.404 | 0.405 | 0.658 | 0.945 |
+| 14 | PatchTST | 0.016 | 0.388 | 0.370 | 0.689 | 0.934 |
 
 ## 4. RQ2 · explicabilidad
 
@@ -92,9 +117,25 @@ Generado por `scripts/xai_08_report.py` el 2026-10-10. Todas las cifras vienen d
 | P99 | 7 | 686 | 0.016 | 0.871 | 0.015 | 0.009 | 0.786 | 0.009 | 0.006 [0.000, 0.013] | 0.006 [0.000, 0.013] |
 | P99 | 14 | 682 | 0.004 | 0.955 | 0.004 | 0.004 | 0.939 | 0.004 | -0.000 [-0.001, 0.000] | -0.003 [-0.008, 0.000] |
 
-## 6. Cómputo
+## 6. Robustez · walk-forward anual
 
-- GPU (Tesla T4, Kaggle): 1.625 h en 216 corridas. CPU local: 2.8 h (presupuesto 40 h).
+- Pliegues del protocolo §3 (entrenamiento 2010 – Y−2, validación Y−1, prueba Y; Y = 2021–2025), una semilla (20261010); especificación: proof_ledger.md, especificación de ejecución del walk-forward (2026-10-11).
+- Comprobaciones: las funciones de criterios reproducen los veredictos oficiales y la evaluación de alertas con 12 miembros reproduce `e_rq3.json`.
+- Ranking por NSE mediana (descriptivo): W de Kendall entre años h = 1: 0.664, h = 7: 0.744, h = 14: 0.488.
+- Pendiente: faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan.
+
+| año de prueba | estaciones (h = 1) | H1 | H1-b (h1 / h7 / h14) | H2-a | H2-b | H3 (4 miembros) | mejor NSE (h1 / h7 / h14) |
+|---|---|---|---|---|---|---|---|
+| 2021 | 92 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / XGBoost |
+| 2022 | 91 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | XGBoost / XGBoost / XGBoost |
+| 2023 | 58 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | XGBoost / XGBoost / XGBoost |
+| 2024 | 77 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / Climatology |
+| 2025 | 51 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / Climatology |
+| robustez |  | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | W de Kendall 0.664 / 0.744 / 0.488 |
+
+## 7. Cómputo
+
+- GPU (Tesla T4, Kaggle): 1.625 h en 216 corridas del diseño principal y 0.0 h en 0 del walk-forward. CPU local: 4.187 h en total (presupuesto 40 h).
 - Épocas de las redes (mediana; fracción con parada temprana): ConvNeXt-1D 23.0 (0.986), PatchTST 19.5 (1.0), TCN 17.0 (1.0).
 
 | recurso | componente | horas |
@@ -105,18 +146,22 @@ Generado por `scripts/xai_08_report.py` el 2026-10-10. Todas las cifras vienen d
 | CPU | ARIMA | 1.665 |
 | CPU | XGBoost | 0.184 |
 | CPU | piloto de tiempos | 0.392 |
-| CPU | xai_05_evaluate | 0.004 |
 | CPU | xai_06_explain | 0.553 |
 | CPU | xai_07_alerts | 0.002 |
-| GPU | total | 1.625 |
-| CPU | total | 2.8 |
+| CPU | xai_05_evaluate | 0.006 |
+| CPU | walk-forward ARIMA | 1.136 |
+| CPU | walk-forward XGBoost | 0.249 |
+| GPU | walk-forward (redes) | 0.0 |
+| GPU | total diseño principal | 1.625 |
+| GPU | total con walk-forward | 1.625 |
+| CPU | total | 4.187 |
 
-## 7. No realizado
+## 8. No realizado
 
-- Walk-forward anual (protocolo §3): no corrido todavía; requiere reentrenar por año (redes en Kaggle)
+- Walk-forward anual, parte de redes: faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan
 - Informer: fuera del diseño principal (protocolo §4)
 
-## 8. Archivos
+## 9. Archivos
 
 - Figuras: `results/xai_benchmark/figures/` (PNG a 300 dpi y PDF).
 - Tablas: `results/xai_benchmark/tables/` (CSV y `tables.md`).

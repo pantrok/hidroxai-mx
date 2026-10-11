@@ -122,9 +122,11 @@ def main() -> None:
             o = obs[idx]
             for name, sim in models.items():
                 s = sim[idx]
+                r_, alpha, beta = M.kge_components(o, s)       # descriptivo (no preregistrado)
                 rows.append({"cuenca": b, "h": h, "clave": k, "modelo": name, "n": len(idx),
                              "nse": M.nse(o, s), "kge": M.kge(o, s), "rmse": M.rmse(o, s),
-                             "ss": M.skill_mse(o, s, pers[idx])})
+                             "ss": M.skill_mse(o, s, pers[idx]),
+                             "kge_r": r_, "kge_alpha": alpha, "kge_beta": beta})
                 if name in LEARNED:
                     seeds = d["pred"]["test"][f"{chosen[(name, h)]}__seeds"][:, idx]
                     rows[-1]["nse_semillas_sd"] = float(np.std([M.nse(o, x) for x in seeds]))

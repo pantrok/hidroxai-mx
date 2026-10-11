@@ -1,0 +1,101 @@
+{
+  "fecha": "2026-10-11",
+  "fuente": "scripts/xai_10_walk_forward_eval.py; results/xai_benchmark/wf_*.csv",
+  "especificacion": "proof_ledger.md, especificación de ejecución del walk-forward (2026-10-11)",
+  "años": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "semilla": 20261010,
+  "consistencia": {
+    "criterios_reproducen_veredictos_oficiales": true,
+    "alertas_12_miembros_reproducen_e_rq3": true
+  },
+  "estaciones_evaluables": {
+    "2021": {
+      "h1": 92,
+      "h7": 92,
+      "h14": 91
+    },
+    "2022": {
+      "h1": 91,
+      "h7": 91,
+      "h14": 91
+    },
+    "2023": {
+      "h1": 58,
+      "h7": 55,
+      "h14": 47
+    },
+    "2024": {
+      "h1": 77,
+      "h7": 76,
+      "h14": 75
+    },
+    "2025": {
+      "h1": 51,
+      "h7": 45,
+      "h14": 44
+    }
+  },
+  "redes_disponibles": false,
+  "ranking": {
+    "tipo": "descriptivo (no preregistrado)",
+    "criterio": "NSE mediana agregada",
+    "h1": {
+      "modelos": [
+        "persistencia",
+        "climatologia",
+        "arima",
+        "xgboost"
+      ],
+      "kendall_w": 0.664,
+      "tau_media_entre_años": 0.467,
+      "mejor_por_año": {
+        "2021": "arima",
+        "2022": "xgboost",
+        "2023": "xgboost",
+        "2024": "arima",
+        "2025": "arima"
+      }
+    },
+    "h7": {
+      "modelos": [
+        "persistencia",
+        "climatologia",
+        "arima",
+        "xgboost"
+      ],
+      "kendall_w": 0.744,
+      "tau_media_entre_años": 0.6,
+      "mejor_por_año": {
+        "2021": "xgboost",
+        "2022": "xgboost",
+        "2023": "xgboost",
+        "2024": "xgboost",
+        "2025": "xgboost"
+      }
+    },
+    "h14": {
+      "modelos": [
+        "persistencia",
+        "climatologia",
+        "arima",
+        "xgboost"
+      ],
+      "kendall_w": 0.488,
+      "tau_media_entre_años": 0.4,
+      "mejor_por_año": {
+        "2021": "xgboost",
+        "2022": "xgboost",
+        "2023": "xgboost",
+        "2024": "climatologia",
+        "2025": "climatologia"
+      }
+    }
+  },
+  "pendiente": "faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan"
+}

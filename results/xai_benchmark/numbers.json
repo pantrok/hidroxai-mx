@@ -1,6 +1,6 @@
 {
   "proyecto": "HidroXAI-MX · IND-2026-0335 (IPN, PICDT 2026), OE2–OE5",
-  "generado": "2026-10-10",
+  "generado": "2026-10-11",
   "fuente": "scripts/xai_08_report.py",
   "protocolo": {
     "fuente": "results/xai_benchmark/protocol.md",
@@ -74,7 +74,12 @@
         "convnext": 0.433,
         "patchtst": 0.781
       },
-      "horas_total": 1.625
+      "horas_total": 1.625,
+      "walk_forward": {
+        "corridas": 0,
+        "horas": 0.0
+      },
+      "horas_total_con_walk_forward": 1.625
     },
     "cpu": {
       "procesador": "Intel Core Ultra 7 155H (22 hilos)",
@@ -82,13 +87,17 @@
         "arima": 1.665,
         "xgboost": 0.184
       },
+      "horas_walk_forward": {
+        "arima": 1.136,
+        "xgboost": 0.249
+      },
       "horas_piloto": 0.392,
       "horas_evaluacion": {
-        "xai_05_evaluate": 0.004,
         "xai_06_explain": 0.553,
-        "xai_07_alerts": 0.002
+        "xai_07_alerts": 0.002,
+        "xai_05_evaluate": 0.006
       },
-      "horas_total": 2.8
+      "horas_total": 4.187
     },
     "presupuesto_cpu_h": 40,
     "epocas_redes": {
@@ -1860,6 +1869,893 @@
           0.0446
         ]
       }
+    },
+    "kge_componentes": {
+      "tipo": "descriptivo (no preregistrado)",
+      "fuente": "scripts/xai_05_evaluate.py (columnas kge_r, kge_alpha, kge_beta de rq1_station_metrics.csv)",
+      "nota": "KGE = 1 − √((r − 1)² + (α − 1)² + (β − 1)²); α = σ_sim/σ_obs, β = μ_sim/μ_obs",
+      "agregado": {
+        "h1": {
+          "persistencia": {
+            "kge_mediana": 0.7756,
+            "r_mediana": 0.7789,
+            "alpha_mediana": 0.9993,
+            "beta_mediana": 0.9988,
+            "fraccion_alpha_lt_1": 0.659,
+            "estaciones": 91
+          },
+          "climatologia": {
+            "kge_mediana": 0.0503,
+            "r_mediana": 0.3569,
+            "alpha_mediana": 0.5169,
+            "beta_mediana": 1.1547,
+            "fraccion_alpha_lt_1": 0.89,
+            "estaciones": 91
+          },
+          "arima": {
+            "kge_mediana": 0.6545,
+            "r_mediana": 0.784,
+            "alpha_mediana": 0.7713,
+            "beta_mediana": 0.896,
+            "fraccion_alpha_lt_1": 1.0,
+            "estaciones": 91
+          },
+          "xgboost": {
+            "kge_mediana": 0.5789,
+            "r_mediana": 0.7834,
+            "alpha_mediana": 0.7149,
+            "beta_mediana": 0.8615,
+            "fraccion_alpha_lt_1": 0.978,
+            "estaciones": 91
+          },
+          "tcn": {
+            "kge_mediana": 0.5975,
+            "r_mediana": 0.7882,
+            "alpha_mediana": 0.7296,
+            "beta_mediana": 0.8815,
+            "fraccion_alpha_lt_1": 0.989,
+            "estaciones": 91
+          },
+          "convnext": {
+            "kge_mediana": 0.582,
+            "r_mediana": 0.7844,
+            "alpha_mediana": 0.7202,
+            "beta_mediana": 0.8766,
+            "fraccion_alpha_lt_1": 0.967,
+            "estaciones": 91
+          },
+          "patchtst": {
+            "kge_mediana": 0.6185,
+            "r_mediana": 0.782,
+            "alpha_mediana": 0.7707,
+            "beta_mediana": 0.8992,
+            "fraccion_alpha_lt_1": 0.956,
+            "estaciones": 91
+          }
+        },
+        "h7": {
+          "persistencia": {
+            "kge_mediana": 0.3753,
+            "r_mediana": 0.3862,
+            "alpha_mediana": 0.9959,
+            "beta_mediana": 0.9918,
+            "fraccion_alpha_lt_1": 0.648,
+            "estaciones": 91
+          },
+          "climatologia": {
+            "kge_mediana": 0.0564,
+            "r_mediana": 0.3573,
+            "alpha_mediana": 0.5151,
+            "beta_mediana": 1.152,
+            "fraccion_alpha_lt_1": 0.846,
+            "estaciones": 91
+          },
+          "arima": {
+            "kge_mediana": 0.1325,
+            "r_mediana": 0.4391,
+            "alpha_mediana": 0.4204,
+            "beta_mediana": 0.7287,
+            "fraccion_alpha_lt_1": 0.989,
+            "estaciones": 91
+          },
+          "xgboost": {
+            "kge_mediana": 0.1669,
+            "r_mediana": 0.4956,
+            "alpha_mediana": 0.4566,
+            "beta_mediana": 0.7414,
+            "fraccion_alpha_lt_1": 0.967,
+            "estaciones": 91
+          },
+          "tcn": {
+            "kge_mediana": 0.1644,
+            "r_mediana": 0.481,
+            "alpha_mediana": 0.459,
+            "beta_mediana": 0.7095,
+            "fraccion_alpha_lt_1": 0.967,
+            "estaciones": 91
+          },
+          "convnext": {
+            "kge_mediana": 0.1565,
+            "r_mediana": 0.4864,
+            "alpha_mediana": 0.4555,
+            "beta_mediana": 0.7275,
+            "fraccion_alpha_lt_1": 0.967,
+            "estaciones": 91
+          },
+          "patchtst": {
+            "kge_mediana": 0.1612,
+            "r_mediana": 0.4694,
+            "alpha_mediana": 0.4599,
+            "beta_mediana": 0.722,
+            "fraccion_alpha_lt_1": 0.945,
+            "estaciones": 91
+          }
+        },
+        "h14": {
+          "persistencia": {
+            "kge_mediana": 0.2824,
+            "r_mediana": 0.2888,
+            "alpha_mediana": 0.992,
+            "beta_mediana": 0.9832,
+            "fraccion_alpha_lt_1": 0.637,
+            "estaciones": 91
+          },
+          "climatologia": {
+            "kge_mediana": 0.0646,
+            "r_mediana": 0.3596,
+            "alpha_mediana": 0.5147,
+            "beta_mediana": 1.1487,
+            "fraccion_alpha_lt_1": 0.868,
+            "estaciones": 91
+          },
+          "arima": {
+            "kge_mediana": -0.0516,
+            "r_mediana": 0.3167,
+            "alpha_mediana": 0.3029,
+            "beta_mediana": 0.6729,
+            "fraccion_alpha_lt_1": 0.978,
+            "estaciones": 91
+          },
+          "xgboost": {
+            "kge_mediana": 0.0709,
+            "r_mediana": 0.4373,
+            "alpha_mediana": 0.3919,
+            "beta_mediana": 0.7083,
+            "fraccion_alpha_lt_1": 0.956,
+            "estaciones": 91
+          },
+          "tcn": {
+            "kge_mediana": 0.0576,
+            "r_mediana": 0.4201,
+            "alpha_mediana": 0.4208,
+            "beta_mediana": 0.7091,
+            "fraccion_alpha_lt_1": 0.945,
+            "estaciones": 91
+          },
+          "convnext": {
+            "kge_mediana": 0.0312,
+            "r_mediana": 0.4039,
+            "alpha_mediana": 0.4051,
+            "beta_mediana": 0.6576,
+            "fraccion_alpha_lt_1": 0.945,
+            "estaciones": 91
+          },
+          "patchtst": {
+            "kge_mediana": 0.0156,
+            "r_mediana": 0.3883,
+            "alpha_mediana": 0.37,
+            "beta_mediana": 0.6886,
+            "fraccion_alpha_lt_1": 0.934,
+            "estaciones": 91
+          }
+        }
+      },
+      "por_cuenca": {
+        "Lerma–Santiago": {
+          "h1": {
+            "persistencia": {
+              "kge_mediana": 0.8045,
+              "r_mediana": 0.8045,
+              "alpha_mediana": 0.9988,
+              "beta_mediana": 0.9974,
+              "fraccion_alpha_lt_1": 0.829,
+              "estaciones": 41
+            },
+            "climatologia": {
+              "kge_mediana": 0.1468,
+              "r_mediana": 0.4627,
+              "alpha_mediana": 0.5193,
+              "beta_mediana": 1.1547,
+              "fraccion_alpha_lt_1": 0.951,
+              "estaciones": 41
+            },
+            "arima": {
+              "kge_mediana": 0.712,
+              "r_mediana": 0.8276,
+              "alpha_mediana": 0.8006,
+              "beta_mediana": 0.8837,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "xgboost": {
+              "kge_mediana": 0.6563,
+              "r_mediana": 0.8284,
+              "alpha_mediana": 0.7637,
+              "beta_mediana": 0.8532,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "tcn": {
+              "kge_mediana": 0.6828,
+              "r_mediana": 0.8324,
+              "alpha_mediana": 0.7869,
+              "beta_mediana": 0.8953,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "convnext": {
+              "kge_mediana": 0.7246,
+              "r_mediana": 0.8381,
+              "alpha_mediana": 0.8431,
+              "beta_mediana": 0.8983,
+              "fraccion_alpha_lt_1": 0.951,
+              "estaciones": 41
+            },
+            "patchtst": {
+              "kge_mediana": 0.7139,
+              "r_mediana": 0.8315,
+              "alpha_mediana": 0.7986,
+              "beta_mediana": 0.9077,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            }
+          },
+          "h7": {
+            "persistencia": {
+              "kge_mediana": 0.5226,
+              "r_mediana": 0.5244,
+              "alpha_mediana": 0.9911,
+              "beta_mediana": 0.9794,
+              "fraccion_alpha_lt_1": 0.805,
+              "estaciones": 41
+            },
+            "climatologia": {
+              "kge_mediana": 0.1467,
+              "r_mediana": 0.4599,
+              "alpha_mediana": 0.5666,
+              "beta_mediana": 1.152,
+              "fraccion_alpha_lt_1": 0.927,
+              "estaciones": 41
+            },
+            "arima": {
+              "kge_mediana": 0.1958,
+              "r_mediana": 0.5755,
+              "alpha_mediana": 0.4514,
+              "beta_mediana": 0.6648,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "xgboost": {
+              "kge_mediana": 0.2456,
+              "r_mediana": 0.6218,
+              "alpha_mediana": 0.499,
+              "beta_mediana": 0.6888,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "tcn": {
+              "kge_mediana": 0.2681,
+              "r_mediana": 0.5982,
+              "alpha_mediana": 0.5231,
+              "beta_mediana": 0.6846,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "convnext": {
+              "kge_mediana": 0.2334,
+              "r_mediana": 0.5899,
+              "alpha_mediana": 0.5212,
+              "beta_mediana": 0.7295,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "patchtst": {
+              "kge_mediana": 0.212,
+              "r_mediana": 0.6047,
+              "alpha_mediana": 0.5023,
+              "beta_mediana": 0.6906,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            }
+          },
+          "h14": {
+            "persistencia": {
+              "kge_mediana": 0.4078,
+              "r_mediana": 0.4153,
+              "alpha_mediana": 0.977,
+              "beta_mediana": 0.9566,
+              "fraccion_alpha_lt_1": 0.829,
+              "estaciones": 41
+            },
+            "climatologia": {
+              "kge_mediana": 0.1466,
+              "r_mediana": 0.451,
+              "alpha_mediana": 0.5663,
+              "beta_mediana": 1.1487,
+              "fraccion_alpha_lt_1": 0.927,
+              "estaciones": 41
+            },
+            "arima": {
+              "kge_mediana": -0.0217,
+              "r_mediana": 0.465,
+              "alpha_mediana": 0.3033,
+              "beta_mediana": 0.5628,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 41
+            },
+            "xgboost": {
+              "kge_mediana": 0.1281,
+              "r_mediana": 0.5889,
+              "alpha_mediana": 0.4313,
+              "beta_mediana": 0.6656,
+              "fraccion_alpha_lt_1": 0.976,
+              "estaciones": 41
+            },
+            "tcn": {
+              "kge_mediana": 0.1124,
+              "r_mediana": 0.4672,
+              "alpha_mediana": 0.4704,
+              "beta_mediana": 0.7195,
+              "fraccion_alpha_lt_1": 0.976,
+              "estaciones": 41
+            },
+            "convnext": {
+              "kge_mediana": 0.1058,
+              "r_mediana": 0.4475,
+              "alpha_mediana": 0.439,
+              "beta_mediana": 0.5959,
+              "fraccion_alpha_lt_1": 0.976,
+              "estaciones": 41
+            },
+            "patchtst": {
+              "kge_mediana": 0.0709,
+              "r_mediana": 0.4456,
+              "alpha_mediana": 0.4084,
+              "beta_mediana": 0.6746,
+              "fraccion_alpha_lt_1": 0.976,
+              "estaciones": 41
+            }
+          }
+        },
+        "Pánuco": {
+          "h1": {
+            "persistencia": {
+              "kge_mediana": 0.7562,
+              "r_mediana": 0.7562,
+              "alpha_mediana": 1.0,
+              "beta_mediana": 0.9997,
+              "fraccion_alpha_lt_1": 0.514,
+              "estaciones": 37
+            },
+            "climatologia": {
+              "kge_mediana": -0.0275,
+              "r_mediana": 0.295,
+              "alpha_mediana": 0.4447,
+              "beta_mediana": 1.1085,
+              "fraccion_alpha_lt_1": 0.838,
+              "estaciones": 37
+            },
+            "arima": {
+              "kge_mediana": 0.6201,
+              "r_mediana": 0.7441,
+              "alpha_mediana": 0.7584,
+              "beta_mediana": 0.9324,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 37
+            },
+            "xgboost": {
+              "kge_mediana": 0.5423,
+              "r_mediana": 0.7691,
+              "alpha_mediana": 0.7076,
+              "beta_mediana": 0.8706,
+              "fraccion_alpha_lt_1": 0.946,
+              "estaciones": 37
+            },
+            "tcn": {
+              "kge_mediana": 0.5902,
+              "r_mediana": 0.7559,
+              "alpha_mediana": 0.7276,
+              "beta_mediana": 0.8825,
+              "fraccion_alpha_lt_1": 0.973,
+              "estaciones": 37
+            },
+            "convnext": {
+              "kge_mediana": 0.5531,
+              "r_mediana": 0.7657,
+              "alpha_mediana": 0.712,
+              "beta_mediana": 0.8561,
+              "fraccion_alpha_lt_1": 0.973,
+              "estaciones": 37
+            },
+            "patchtst": {
+              "kge_mediana": 0.6077,
+              "r_mediana": 0.7743,
+              "alpha_mediana": 0.7677,
+              "beta_mediana": 0.8992,
+              "fraccion_alpha_lt_1": 0.892,
+              "estaciones": 37
+            }
+          },
+          "h7": {
+            "persistencia": {
+              "kge_mediana": 0.3519,
+              "r_mediana": 0.3522,
+              "alpha_mediana": 1.0,
+              "beta_mediana": 0.9948,
+              "fraccion_alpha_lt_1": 0.541,
+              "estaciones": 37
+            },
+            "climatologia": {
+              "kge_mediana": -0.0382,
+              "r_mediana": 0.3122,
+              "alpha_mediana": 0.5151,
+              "beta_mediana": 1.0947,
+              "fraccion_alpha_lt_1": 0.757,
+              "estaciones": 37
+            },
+            "arima": {
+              "kge_mediana": 0.0479,
+              "r_mediana": 0.3996,
+              "alpha_mediana": 0.3901,
+              "beta_mediana": 0.8068,
+              "fraccion_alpha_lt_1": 0.973,
+              "estaciones": 37
+            },
+            "xgboost": {
+              "kge_mediana": 0.0702,
+              "r_mediana": 0.4399,
+              "alpha_mediana": 0.4358,
+              "beta_mediana": 0.7992,
+              "fraccion_alpha_lt_1": 0.919,
+              "estaciones": 37
+            },
+            "tcn": {
+              "kge_mediana": 0.0739,
+              "r_mediana": 0.4132,
+              "alpha_mediana": 0.4052,
+              "beta_mediana": 0.7434,
+              "fraccion_alpha_lt_1": 0.919,
+              "estaciones": 37
+            },
+            "convnext": {
+              "kge_mediana": 0.0274,
+              "r_mediana": 0.3607,
+              "alpha_mediana": 0.3954,
+              "beta_mediana": 0.7275,
+              "fraccion_alpha_lt_1": 0.919,
+              "estaciones": 37
+            },
+            "patchtst": {
+              "kge_mediana": 0.0205,
+              "r_mediana": 0.3927,
+              "alpha_mediana": 0.4598,
+              "beta_mediana": 0.7376,
+              "fraccion_alpha_lt_1": 0.865,
+              "estaciones": 37
+            }
+          },
+          "h14": {
+            "persistencia": {
+              "kge_mediana": 0.21,
+              "r_mediana": 0.2248,
+              "alpha_mediana": 1.0,
+              "beta_mediana": 0.997,
+              "fraccion_alpha_lt_1": 0.541,
+              "estaciones": 37
+            },
+            "climatologia": {
+              "kge_mediana": -0.0518,
+              "r_mediana": 0.301,
+              "alpha_mediana": 0.5096,
+              "beta_mediana": 1.0716,
+              "fraccion_alpha_lt_1": 0.811,
+              "estaciones": 37
+            },
+            "arima": {
+              "kge_mediana": -0.1502,
+              "r_mediana": 0.2265,
+              "alpha_mediana": 0.2781,
+              "beta_mediana": 0.7464,
+              "fraccion_alpha_lt_1": 0.946,
+              "estaciones": 37
+            },
+            "xgboost": {
+              "kge_mediana": -0.0009,
+              "r_mediana": 0.3219,
+              "alpha_mediana": 0.3762,
+              "beta_mediana": 0.765,
+              "fraccion_alpha_lt_1": 0.919,
+              "estaciones": 37
+            },
+            "tcn": {
+              "kge_mediana": -0.042,
+              "r_mediana": 0.286,
+              "alpha_mediana": 0.3785,
+              "beta_mediana": 0.6923,
+              "fraccion_alpha_lt_1": 0.892,
+              "estaciones": 37
+            },
+            "convnext": {
+              "kge_mediana": -0.058,
+              "r_mediana": 0.2709,
+              "alpha_mediana": 0.3207,
+              "beta_mediana": 0.615,
+              "fraccion_alpha_lt_1": 0.892,
+              "estaciones": 37
+            },
+            "patchtst": {
+              "kge_mediana": -0.0605,
+              "r_mediana": 0.2694,
+              "alpha_mediana": 0.3318,
+              "beta_mediana": 0.7171,
+              "fraccion_alpha_lt_1": 0.865,
+              "estaciones": 37
+            }
+          }
+        },
+        "Alta del Balsas": {
+          "h1": {
+            "persistencia": {
+              "kge_mediana": 0.5745,
+              "r_mediana": 0.5977,
+              "alpha_mediana": 0.9987,
+              "beta_mediana": 1.0014,
+              "fraccion_alpha_lt_1": 0.583,
+              "estaciones": 12
+            },
+            "climatologia": {
+              "kge_mediana": -0.1487,
+              "r_mediana": 0.1884,
+              "alpha_mediana": 0.5134,
+              "beta_mediana": 1.2073,
+              "fraccion_alpha_lt_1": 0.833,
+              "estaciones": 12
+            },
+            "arima": {
+              "kge_mediana": 0.3891,
+              "r_mediana": 0.6101,
+              "alpha_mediana": 0.575,
+              "beta_mediana": 0.8381,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "xgboost": {
+              "kge_mediana": 0.3443,
+              "r_mediana": 0.6088,
+              "alpha_mediana": 0.4836,
+              "beta_mediana": 0.774,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "tcn": {
+              "kge_mediana": 0.338,
+              "r_mediana": 0.6045,
+              "alpha_mediana": 0.4797,
+              "beta_mediana": 0.7642,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "convnext": {
+              "kge_mediana": 0.335,
+              "r_mediana": 0.6249,
+              "alpha_mediana": 0.4809,
+              "beta_mediana": 0.7496,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "patchtst": {
+              "kge_mediana": 0.3737,
+              "r_mediana": 0.615,
+              "alpha_mediana": 0.5118,
+              "beta_mediana": 0.7882,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            }
+          },
+          "h7": {
+            "persistencia": {
+              "kge_mediana": 0.3203,
+              "r_mediana": 0.3218,
+              "alpha_mediana": 1.0078,
+              "beta_mediana": 1.0106,
+              "fraccion_alpha_lt_1": 0.417,
+              "estaciones": 12
+            },
+            "climatologia": {
+              "kge_mediana": -0.1535,
+              "r_mediana": 0.1856,
+              "alpha_mediana": 0.4343,
+              "beta_mediana": 1.2025,
+              "fraccion_alpha_lt_1": 0.833,
+              "estaciones": 12
+            },
+            "arima": {
+              "kge_mediana": 0.0179,
+              "r_mediana": 0.4197,
+              "alpha_mediana": 0.3126,
+              "beta_mediana": 0.7428,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "xgboost": {
+              "kge_mediana": 0.1067,
+              "r_mediana": 0.4143,
+              "alpha_mediana": 0.3052,
+              "beta_mediana": 0.6734,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "tcn": {
+              "kge_mediana": 0.108,
+              "r_mediana": 0.416,
+              "alpha_mediana": 0.3198,
+              "beta_mediana": 0.6666,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "convnext": {
+              "kge_mediana": 0.1629,
+              "r_mediana": 0.4269,
+              "alpha_mediana": 0.341,
+              "beta_mediana": 0.7162,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "patchtst": {
+              "kge_mediana": 0.1344,
+              "r_mediana": 0.4041,
+              "alpha_mediana": 0.3386,
+              "beta_mediana": 0.6844,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            }
+          },
+          "h14": {
+            "persistencia": {
+              "kge_mediana": 0.2147,
+              "r_mediana": 0.2243,
+              "alpha_mediana": 1.0183,
+              "beta_mediana": 1.0148,
+              "fraccion_alpha_lt_1": 0.333,
+              "estaciones": 12
+            },
+            "climatologia": {
+              "kge_mediana": -0.1898,
+              "r_mediana": 0.1999,
+              "alpha_mediana": 0.4909,
+              "beta_mediana": 1.2235,
+              "fraccion_alpha_lt_1": 0.833,
+              "estaciones": 12
+            },
+            "arima": {
+              "kge_mediana": -0.1043,
+              "r_mediana": 0.2818,
+              "alpha_mediana": 0.2717,
+              "beta_mediana": 0.7193,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "xgboost": {
+              "kge_mediana": 0.0678,
+              "r_mediana": 0.4051,
+              "alpha_mediana": 0.2984,
+              "beta_mediana": 0.6945,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "tcn": {
+              "kge_mediana": 0.1412,
+              "r_mediana": 0.4037,
+              "alpha_mediana": 0.3734,
+              "beta_mediana": 0.7492,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "convnext": {
+              "kge_mediana": 0.0817,
+              "r_mediana": 0.4286,
+              "alpha_mediana": 0.3814,
+              "beta_mediana": 0.7402,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            },
+            "patchtst": {
+              "kge_mediana": 0.0993,
+              "r_mediana": 0.3743,
+              "alpha_mediana": 0.3187,
+              "beta_mediana": 0.6914,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 12
+            }
+          }
+        },
+        "Cutzamala": {
+          "h1": {
+            "persistencia": {
+              "kge_mediana": 0.8217,
+              "r_mediana": 0.8228,
+              "alpha_mediana": 1.0137,
+              "beta_mediana": 1.0141,
+              "fraccion_alpha_lt_1": 0.0,
+              "estaciones": 1
+            },
+            "climatologia": {
+              "kge_mediana": 0.3772,
+              "r_mediana": 0.6039,
+              "alpha_mediana": 0.8683,
+              "beta_mediana": 1.4622,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "arima": {
+              "kge_mediana": 0.8137,
+              "r_mediana": 0.8527,
+              "alpha_mediana": 0.886,
+              "beta_mediana": 0.9978,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "xgboost": {
+              "kge_mediana": 0.7673,
+              "r_mediana": 0.8474,
+              "alpha_mediana": 0.8261,
+              "beta_mediana": 1.025,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "tcn": {
+              "kge_mediana": 0.7642,
+              "r_mediana": 0.8548,
+              "alpha_mediana": 0.8169,
+              "beta_mediana": 0.9684,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "convnext": {
+              "kge_mediana": 0.6767,
+              "r_mediana": 0.8233,
+              "alpha_mediana": 0.7316,
+              "beta_mediana": 0.9647,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "patchtst": {
+              "kge_mediana": 0.7544,
+              "r_mediana": 0.8484,
+              "alpha_mediana": 0.8072,
+              "beta_mediana": 0.9864,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            }
+          },
+          "h7": {
+            "persistencia": {
+              "kge_mediana": 0.6286,
+              "r_mediana": 0.6295,
+              "alpha_mediana": 0.9982,
+              "beta_mediana": 1.0252,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "climatologia": {
+              "kge_mediana": 0.3622,
+              "r_mediana": 0.5836,
+              "alpha_mediana": 0.8263,
+              "beta_mediana": 1.4507,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "arima": {
+              "kge_mediana": 0.6122,
+              "r_mediana": 0.6804,
+              "alpha_mediana": 0.7806,
+              "beta_mediana": 0.9881,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "xgboost": {
+              "kge_mediana": 0.5318,
+              "r_mediana": 0.7084,
+              "alpha_mediana": 0.6344,
+              "beta_mediana": 1.0222,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "tcn": {
+              "kge_mediana": 0.5366,
+              "r_mediana": 0.7129,
+              "alpha_mediana": 0.6389,
+              "beta_mediana": 0.9566,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "convnext": {
+              "kge_mediana": 0.4346,
+              "r_mediana": 0.666,
+              "alpha_mediana": 0.5529,
+              "beta_mediana": 0.9095,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "patchtst": {
+              "kge_mediana": 0.5459,
+              "r_mediana": 0.701,
+              "alpha_mediana": 0.6587,
+              "beta_mediana": 0.9823,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            }
+          },
+          "h14": {
+            "persistencia": {
+              "kge_mediana": 0.5096,
+              "r_mediana": 0.5133,
+              "alpha_mediana": 1.0339,
+              "beta_mediana": 1.0492,
+              "fraccion_alpha_lt_1": 0.0,
+              "estaciones": 1
+            },
+            "climatologia": {
+              "kge_mediana": 0.352,
+              "r_mediana": 0.5719,
+              "alpha_mediana": 0.8258,
+              "beta_mediana": 1.4542,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "arima": {
+              "kge_mediana": 0.4977,
+              "r_mediana": 0.5772,
+              "alpha_mediana": 0.7289,
+              "beta_mediana": 0.9879,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "xgboost": {
+              "kge_mediana": 0.4601,
+              "r_mediana": 0.66,
+              "alpha_mediana": 0.5846,
+              "beta_mediana": 1.0581,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "tcn": {
+              "kge_mediana": 0.3617,
+              "r_mediana": 0.5637,
+              "alpha_mediana": 0.5381,
+              "beta_mediana": 0.9393,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "convnext": {
+              "kge_mediana": 0.2936,
+              "r_mediana": 0.5232,
+              "alpha_mediana": 0.486,
+              "beta_mediana": 0.914,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            },
+            "patchtst": {
+              "kge_mediana": 0.2857,
+              "r_mediana": 0.4872,
+              "alpha_mediana": 0.5088,
+              "beta_mediana": 0.9222,
+              "fraccion_alpha_lt_1": 1.0,
+              "estaciones": 1
+            }
+          }
+        }
+      }
     }
   },
   "rq2": {
@@ -2499,18 +3395,582 @@
     "H2-a": "REJECTED",
     "H2-b": "SUPPORTED",
     "H3": "SUPPORTED",
-    "H3_pre_correccion": "SUPPORTED"
+    "H3_pre_correccion": "SUPPORTED",
+    "robustez_walk_forward": {}
   },
   "no_realizado": [
     {
-      "item": "Walk-forward anual (protocolo §3)",
-      "motivo": "no corrido todavía; requiere reentrenar por año (redes en Kaggle)"
+      "item": "Walk-forward anual, parte de redes",
+      "motivo": "faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan"
     },
     {
       "item": "Informer",
       "motivo": "fuera del diseño principal (protocolo §4)"
     }
   ],
+  "walk_forward": {
+    "fuente": "scripts/xai_09_walk_forward.py, scripts/xai_10_walk_forward_eval.py; results/xai_benchmark/e_walkforward.json, wf_*.csv",
+    "tipo": "robustez (protocolo §3); no cambia los veredictos de §7",
+    "especificacion": "proof_ledger.md, especificación de ejecución del walk-forward (2026-10-11)",
+    "años": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "semilla": 20261010,
+    "consistencia": {
+      "criterios_reproducen_veredictos_oficiales": true,
+      "alertas_12_miembros_reproducen_e_rq3": true
+    },
+    "estaciones_evaluables": {
+      "2021": {
+        "h1": 92,
+        "h7": 92,
+        "h14": 91
+      },
+      "2022": {
+        "h1": 91,
+        "h7": 91,
+        "h14": 91
+      },
+      "2023": {
+        "h1": 58,
+        "h7": 55,
+        "h14": 47
+      },
+      "2024": {
+        "h1": 77,
+        "h7": 76,
+        "h14": 75
+      },
+      "2025": {
+        "h1": 51,
+        "h7": 45,
+        "h14": 44
+      }
+    },
+    "redes_disponibles": false,
+    "ranking": {
+      "tipo": "descriptivo (no preregistrado)",
+      "criterio": "NSE mediana agregada",
+      "h1": {
+        "modelos": [
+          "persistencia",
+          "climatologia",
+          "arima",
+          "xgboost"
+        ],
+        "kendall_w": 0.664,
+        "tau_media_entre_años": 0.467,
+        "mejor_por_año": {
+          "2021": "arima",
+          "2022": "xgboost",
+          "2023": "xgboost",
+          "2024": "arima",
+          "2025": "arima"
+        }
+      },
+      "h7": {
+        "modelos": [
+          "persistencia",
+          "climatologia",
+          "arima",
+          "xgboost"
+        ],
+        "kendall_w": 0.744,
+        "tau_media_entre_años": 0.6,
+        "mejor_por_año": {
+          "2021": "xgboost",
+          "2022": "xgboost",
+          "2023": "xgboost",
+          "2024": "xgboost",
+          "2025": "xgboost"
+        }
+      },
+      "h14": {
+        "modelos": [
+          "persistencia",
+          "climatologia",
+          "arima",
+          "xgboost"
+        ],
+        "kendall_w": 0.488,
+        "tau_media_entre_años": 0.4,
+        "mejor_por_año": {
+          "2021": "xgboost",
+          "2022": "xgboost",
+          "2023": "xgboost",
+          "2024": "climatologia",
+          "2025": "climatologia"
+        }
+      }
+    },
+    "agregado": {
+      "2021": {
+        "h1": {
+          "arima": {
+            "nse_mediana": 0.6559,
+            "ss_mediana": 0.0462,
+            "ss_ic95": [
+              0.0059,
+              0.1098
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.1059,
+            "ss_mediana": -1.3173,
+            "ss_ic95": [
+              -2.2389,
+              -0.8651
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": 0.6501,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.6466,
+            "ss_mediana": 0.0386,
+            "ss_ic95": [
+              -0.0182,
+              0.0887
+            ]
+          }
+        },
+        "h7": {
+          "arima": {
+            "nse_mediana": 0.1222,
+            "ss_mediana": 0.3222,
+            "ss_ic95": [
+              0.2701,
+              0.3529
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.1009,
+            "ss_mediana": 0.3123,
+            "ss_ic95": [
+              0.1639,
+              0.3805
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.2476,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.1958,
+            "ss_mediana": 0.3513,
+            "ss_ic95": [
+              0.3049,
+              0.4069
+            ]
+          }
+        },
+        "h14": {
+          "arima": {
+            "nse_mediana": 0.0562,
+            "ss_mediana": 0.2859,
+            "ss_ic95": [
+              0.2548,
+              0.3453
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.0959,
+            "ss_mediana": 0.3511,
+            "ss_ic95": [
+              0.2049,
+              0.3998
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.3321,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.1077,
+            "ss_mediana": 0.3881,
+            "ss_ic95": [
+              0.3215,
+              0.4233
+            ]
+          }
+        }
+      },
+      "2022": {
+        "h1": {
+          "arima": {
+            "nse_mediana": 0.5695,
+            "ss_mediana": 0.1451,
+            "ss_ic95": [
+              0.0779,
+              0.1874
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": -0.585,
+            "ss_mediana": -3.4949,
+            "ss_ic95": [
+              -5.8557,
+              -1.9084
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": 0.6098,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.6277,
+            "ss_mediana": 0.1587,
+            "ss_ic95": [
+              0.0867,
+              0.1897
+            ]
+          }
+        },
+        "h7": {
+          "arima": {
+            "nse_mediana": 0.1618,
+            "ss_mediana": 0.3171,
+            "ss_ic95": [
+              0.2548,
+              0.3549
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": -0.5854,
+            "ss_mediana": -0.4295,
+            "ss_ic95": [
+              -0.81,
+              -0.088
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.2425,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.1867,
+            "ss_mediana": 0.3343,
+            "ss_ic95": [
+              0.2871,
+              0.3692
+            ]
+          }
+        },
+        "h14": {
+          "arima": {
+            "nse_mediana": 0.075,
+            "ss_mediana": 0.3199,
+            "ss_ic95": [
+              0.2513,
+              0.364
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": -0.5786,
+            "ss_mediana": -0.1157,
+            "ss_ic95": [
+              -0.4619,
+              0.0834
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.3912,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.1245,
+            "ss_mediana": 0.3723,
+            "ss_ic95": [
+              0.3364,
+              0.3939
+            ]
+          }
+        }
+      },
+      "2023": {
+        "h1": {
+          "arima": {
+            "nse_mediana": 0.3683,
+            "ss_mediana": 0.1921,
+            "ss_ic95": [
+              0.1321,
+              0.2403
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": -2.4341,
+            "ss_mediana": -5.0508,
+            "ss_ic95": [
+              -11.4313,
+              -2.2643
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": 0.2669,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.378,
+            "ss_mediana": 0.2148,
+            "ss_ic95": [
+              0.1628,
+              0.2771
+            ]
+          }
+        },
+        "h7": {
+          "arima": {
+            "nse_mediana": 0.0009,
+            "ss_mediana": 0.3751,
+            "ss_ic95": [
+              0.3179,
+              0.4498
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": -2.6105,
+            "ss_mediana": -1.3863,
+            "ss_ic95": [
+              -5.2159,
+              -0.7496
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.6342,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.0076,
+            "ss_mediana": 0.34,
+            "ss_ic95": [
+              0.2864,
+              0.433
+            ]
+          }
+        },
+        "h14": {
+          "arima": {
+            "nse_mediana": -0.0045,
+            "ss_mediana": 0.3821,
+            "ss_ic95": [
+              0.2974,
+              0.4147
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": -2.7219,
+            "ss_mediana": -1.1531,
+            "ss_ic95": [
+              -5.2125,
+              -0.5418
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.6151,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": -0.0041,
+            "ss_mediana": 0.3274,
+            "ss_ic95": [
+              0.1901,
+              0.3976
+            ]
+          }
+        }
+      },
+      "2024": {
+        "h1": {
+          "arima": {
+            "nse_mediana": 0.6379,
+            "ss_mediana": 0.1383,
+            "ss_ic95": [
+              0.0799,
+              0.1708
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.1994,
+            "ss_mediana": -1.4915,
+            "ss_ic95": [
+              -2.3329,
+              -0.7715
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": 0.5667,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.5969,
+            "ss_mediana": 0.0952,
+            "ss_ic95": [
+              0.0164,
+              0.1811
+            ]
+          }
+        },
+        "h7": {
+          "arima": {
+            "nse_mediana": 0.1787,
+            "ss_mediana": 0.2917,
+            "ss_ic95": [
+              0.2369,
+              0.3168
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.1962,
+            "ss_mediana": 0.2355,
+            "ss_ic95": [
+              0.0854,
+              0.2926
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.0811,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.207,
+            "ss_mediana": 0.313,
+            "ss_ic95": [
+              0.2614,
+              0.3345
+            ]
+          }
+        },
+        "h14": {
+          "arima": {
+            "nse_mediana": 0.0394,
+            "ss_mediana": 0.2773,
+            "ss_ic95": [
+              0.2306,
+              0.3217
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.213,
+            "ss_mediana": 0.3331,
+            "ss_ic95": [
+              0.2494,
+              0.3801
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.3546,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.1226,
+            "ss_mediana": 0.3227,
+            "ss_ic95": [
+              0.2921,
+              0.3563
+            ]
+          }
+        }
+      },
+      "2025": {
+        "h1": {
+          "arima": {
+            "nse_mediana": 0.6829,
+            "ss_mediana": 0.0962,
+            "ss_ic95": [
+              -0.0244,
+              0.1363
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.1378,
+            "ss_mediana": -1.1649,
+            "ss_ic95": [
+              -2.0742,
+              -0.7341
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": 0.6719,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.6022,
+            "ss_mediana": 0.1044,
+            "ss_ic95": [
+              -0.0831,
+              0.1923
+            ]
+          }
+        },
+        "h7": {
+          "arima": {
+            "nse_mediana": 0.1157,
+            "ss_mediana": 0.259,
+            "ss_ic95": [
+              0.173,
+              0.3273
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.1347,
+            "ss_mediana": 0.2866,
+            "ss_ic95": [
+              0.1464,
+              0.3721
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.129,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.1746,
+            "ss_mediana": 0.2806,
+            "ss_ic95": [
+              0.2387,
+              0.3381
+            ]
+          }
+        },
+        "h14": {
+          "arima": {
+            "nse_mediana": -0.0296,
+            "ss_mediana": 0.232,
+            "ss_ic95": [
+              0.1038,
+              0.3425
+            ]
+          },
+          "climatologia": {
+            "nse_mediana": 0.134,
+            "ss_mediana": 0.3933,
+            "ss_ic95": [
+              0.3033,
+              0.441
+            ]
+          },
+          "persistencia": {
+            "nse_mediana": -0.3949,
+            "ss_mediana": 0.0
+          },
+          "xgboost": {
+            "nse_mediana": 0.059,
+            "ss_mediana": 0.3063,
+            "ss_ic95": [
+              0.2448,
+              0.3678
+            ]
+          }
+        }
+      }
+    },
+    "pendiente": "faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan"
+  },
   "figuras": {
     "fuente": "scripts/xai_08_report.py",
     "carpeta": "results/xai_benchmark/figures",

@@ -16,13 +16,21 @@ def nse(obs, sim) -> float:
     return float(1 - np.sum((s - o) ** 2) / den) if o.size and den > 0 else np.nan
 
 
-def kge(obs, sim) -> float:
-    """Kling–Gupta efficiency (Gupta et al., 2009)."""
+def kge_components(obs, sim) -> tuple[float, float, float]:
+    """Componentes del KGE: r (correlación), α = σ_sim/σ_obs y β = μ_sim/μ_obs."""
     o, s = _clean(obs, sim)
     if o.size < 2 or o.std() == 0 or o.mean() == 0:
-        return np.nan
+        return np.nan, np.nan, np.nan
     r = np.corrcoef(o, s)[0, 1] if s.std() > 0 else 0.0
-    return float(1 - np.sqrt((r - 1) ** 2 + (s.std() / o.std() - 1) ** 2 + (s.mean() / o.mean() - 1) ** 2))
+    return float(r), float(s.std() / o.std()), float(s.mean() / o.mean())
+
+
+def kge(obs, sim) -> float:
+    """Kling–Gupta efficiency (Gupta et al., 2009)."""
+    r, alpha, beta = kge_components(obs, sim)
+    if np.isnan(r):
+        return np.nan
+    return float(1 - np.sqrt((r - 1) ** 2 + (alpha - 1) ** 2 + (beta - 1) ** 2))
 
 
 def rmse(obs, sim) -> float:

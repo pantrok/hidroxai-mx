@@ -24,6 +24,32 @@
 | 14 | ConvNeXt-1D | 0.080 [-0.000, 0.253] | 0.031 | 7.28 | 0.343 [0.298, 0.359] |
 | 14 | PatchTST | 0.079 [0.000, 0.255] | 0.016 | 7.20 | 0.328 [0.293, 0.351] |
 
+## T1b_rq1_kge_componentes
+
+| h | modelo | KGE mediana | r mediana | α mediana | β mediana | fracción con α < 1 |
+|---|---|---|---|---|---|---|
+| 1 | Persistence | 0.776 | 0.779 | 0.999 | 0.999 | 0.659 |
+| 1 | Climatology | 0.050 | 0.357 | 0.517 | 1.155 | 0.890 |
+| 1 | ARIMA | 0.654 | 0.784 | 0.771 | 0.896 | 1.000 |
+| 1 | XGBoost | 0.579 | 0.783 | 0.715 | 0.862 | 0.978 |
+| 1 | TCN | 0.598 | 0.788 | 0.730 | 0.881 | 0.989 |
+| 1 | ConvNeXt-1D | 0.582 | 0.784 | 0.720 | 0.877 | 0.967 |
+| 1 | PatchTST | 0.619 | 0.782 | 0.771 | 0.899 | 0.956 |
+| 7 | Persistence | 0.375 | 0.386 | 0.996 | 0.992 | 0.648 |
+| 7 | Climatology | 0.056 | 0.357 | 0.515 | 1.152 | 0.846 |
+| 7 | ARIMA | 0.133 | 0.439 | 0.420 | 0.729 | 0.989 |
+| 7 | XGBoost | 0.167 | 0.496 | 0.457 | 0.741 | 0.967 |
+| 7 | TCN | 0.164 | 0.481 | 0.459 | 0.710 | 0.967 |
+| 7 | ConvNeXt-1D | 0.157 | 0.486 | 0.456 | 0.728 | 0.967 |
+| 7 | PatchTST | 0.161 | 0.469 | 0.460 | 0.722 | 0.945 |
+| 14 | Persistence | 0.282 | 0.289 | 0.992 | 0.983 | 0.637 |
+| 14 | Climatology | 0.065 | 0.360 | 0.515 | 1.149 | 0.868 |
+| 14 | ARIMA | -0.052 | 0.317 | 0.303 | 0.673 | 0.978 |
+| 14 | XGBoost | 0.071 | 0.437 | 0.392 | 0.708 | 0.956 |
+| 14 | TCN | 0.058 | 0.420 | 0.421 | 0.709 | 0.945 |
+| 14 | ConvNeXt-1D | 0.031 | 0.404 | 0.405 | 0.658 | 0.945 |
+| 14 | PatchTST | 0.016 | 0.388 | 0.370 | 0.689 | 0.934 |
+
 ## T2_rq1_por_cuenca
 
 | cuenca | estaciones | h | modelo | NSE mediana | SS mediana [IC 95 %] |
@@ -161,8 +187,88 @@
 | CPU | ARIMA | 1.665 |
 | CPU | XGBoost | 0.184 |
 | CPU | piloto de tiempos | 0.392 |
-| CPU | xai_05_evaluate | 0.004 |
 | CPU | xai_06_explain | 0.553 |
 | CPU | xai_07_alerts | 0.002 |
-| GPU | total | 1.625 |
-| CPU | total | 2.8 |
+| CPU | xai_05_evaluate | 0.006 |
+| CPU | walk-forward ARIMA | 1.136 |
+| CPU | walk-forward XGBoost | 0.249 |
+| GPU | walk-forward (redes) | 0.0 |
+| GPU | total diseño principal | 1.625 |
+| GPU | total con walk-forward | 1.625 |
+| CPU | total | 4.187 |
+
+## T7_walk_forward
+
+| año de prueba | estaciones (h = 1) | H1 | H1-b (h1 / h7 / h14) | H2-a | H2-b | H3 (4 miembros) | mejor NSE (h1 / h7 / h14) |
+|---|---|---|---|---|---|---|---|
+| 2021 | 92 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / XGBoost |
+| 2022 | 91 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | XGBoost / XGBoost / XGBoost |
+| 2023 | 58 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | XGBoost / XGBoost / XGBoost |
+| 2024 | 77 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / Climatology |
+| 2025 | 51 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / Climatology |
+| robustez |  | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | W de Kendall 0.664 / 0.744 / 0.488 |
+
+## T7b_walk_forward_metricas
+
+| año | h | modelo | estaciones | NSE mediana | SS mediana [IC 95 %] |
+|---|---|---|---|---|---|
+| 2021 | 1 | ARIMA | 92 | 0.656 | 0.046 [0.006, 0.110] |
+| 2021 | 1 | Climatology | 92 | 0.106 | -1.317 [-2.239, -0.865] |
+| 2021 | 1 | Persistence | 92 | 0.650 | 0.000 |
+| 2021 | 1 | XGBoost | 92 | 0.647 | 0.039 [-0.018, 0.089] |
+| 2022 | 1 | ARIMA | 91 | 0.570 | 0.145 [0.078, 0.187] |
+| 2022 | 1 | Climatology | 91 | -0.585 | -3.495 [-5.856, -1.908] |
+| 2022 | 1 | Persistence | 91 | 0.610 | 0.000 |
+| 2022 | 1 | XGBoost | 91 | 0.628 | 0.159 [0.087, 0.190] |
+| 2023 | 1 | ARIMA | 58 | 0.368 | 0.192 [0.132, 0.240] |
+| 2023 | 1 | Climatology | 58 | -2.434 | -5.051 [-11.431, -2.264] |
+| 2023 | 1 | Persistence | 58 | 0.267 | 0.000 |
+| 2023 | 1 | XGBoost | 58 | 0.378 | 0.215 [0.163, 0.277] |
+| 2024 | 1 | ARIMA | 77 | 0.638 | 0.138 [0.080, 0.171] |
+| 2024 | 1 | Climatology | 77 | 0.199 | -1.492 [-2.333, -0.771] |
+| 2024 | 1 | Persistence | 77 | 0.567 | 0.000 |
+| 2024 | 1 | XGBoost | 77 | 0.597 | 0.095 [0.016, 0.181] |
+| 2025 | 1 | ARIMA | 51 | 0.683 | 0.096 [-0.024, 0.136] |
+| 2025 | 1 | Climatology | 51 | 0.138 | -1.165 [-2.074, -0.734] |
+| 2025 | 1 | Persistence | 51 | 0.672 | 0.000 |
+| 2025 | 1 | XGBoost | 51 | 0.602 | 0.104 [-0.083, 0.192] |
+| 2021 | 7 | ARIMA | 92 | 0.122 | 0.322 [0.270, 0.353] |
+| 2021 | 7 | Climatology | 92 | 0.101 | 0.312 [0.164, 0.381] |
+| 2021 | 7 | Persistence | 92 | -0.248 | 0.000 |
+| 2021 | 7 | XGBoost | 92 | 0.196 | 0.351 [0.305, 0.407] |
+| 2022 | 7 | ARIMA | 91 | 0.162 | 0.317 [0.255, 0.355] |
+| 2022 | 7 | Climatology | 91 | -0.585 | -0.429 [-0.810, -0.088] |
+| 2022 | 7 | Persistence | 91 | -0.242 | 0.000 |
+| 2022 | 7 | XGBoost | 91 | 0.187 | 0.334 [0.287, 0.369] |
+| 2023 | 7 | ARIMA | 55 | 0.001 | 0.375 [0.318, 0.450] |
+| 2023 | 7 | Climatology | 55 | -2.611 | -1.386 [-5.216, -0.750] |
+| 2023 | 7 | Persistence | 55 | -0.634 | 0.000 |
+| 2023 | 7 | XGBoost | 55 | 0.008 | 0.340 [0.286, 0.433] |
+| 2024 | 7 | ARIMA | 76 | 0.179 | 0.292 [0.237, 0.317] |
+| 2024 | 7 | Climatology | 76 | 0.196 | 0.235 [0.085, 0.293] |
+| 2024 | 7 | Persistence | 76 | -0.081 | 0.000 |
+| 2024 | 7 | XGBoost | 76 | 0.207 | 0.313 [0.261, 0.335] |
+| 2025 | 7 | ARIMA | 45 | 0.116 | 0.259 [0.173, 0.327] |
+| 2025 | 7 | Climatology | 45 | 0.135 | 0.287 [0.146, 0.372] |
+| 2025 | 7 | Persistence | 45 | -0.129 | 0.000 |
+| 2025 | 7 | XGBoost | 45 | 0.175 | 0.281 [0.239, 0.338] |
+| 2021 | 14 | ARIMA | 91 | 0.056 | 0.286 [0.255, 0.345] |
+| 2021 | 14 | Climatology | 91 | 0.096 | 0.351 [0.205, 0.400] |
+| 2021 | 14 | Persistence | 91 | -0.332 | 0.000 |
+| 2021 | 14 | XGBoost | 91 | 0.108 | 0.388 [0.322, 0.423] |
+| 2022 | 14 | ARIMA | 91 | 0.075 | 0.320 [0.251, 0.364] |
+| 2022 | 14 | Climatology | 91 | -0.579 | -0.116 [-0.462, 0.083] |
+| 2022 | 14 | Persistence | 91 | -0.391 | 0.000 |
+| 2022 | 14 | XGBoost | 91 | 0.124 | 0.372 [0.336, 0.394] |
+| 2023 | 14 | ARIMA | 47 | -0.004 | 0.382 [0.297, 0.415] |
+| 2023 | 14 | Climatology | 47 | -2.722 | -1.153 [-5.213, -0.542] |
+| 2023 | 14 | Persistence | 47 | -0.615 | 0.000 |
+| 2023 | 14 | XGBoost | 47 | -0.004 | 0.327 [0.190, 0.398] |
+| 2024 | 14 | ARIMA | 75 | 0.039 | 0.277 [0.231, 0.322] |
+| 2024 | 14 | Climatology | 75 | 0.213 | 0.333 [0.249, 0.380] |
+| 2024 | 14 | Persistence | 75 | -0.355 | 0.000 |
+| 2024 | 14 | XGBoost | 75 | 0.123 | 0.323 [0.292, 0.356] |
+| 2025 | 14 | ARIMA | 44 | -0.030 | 0.232 [0.104, 0.343] |
+| 2025 | 14 | Climatology | 44 | 0.134 | 0.393 [0.303, 0.441] |
+| 2025 | 14 | Persistence | 44 | -0.395 | 0.000 |
+| 2025 | 14 | XGBoost | 44 | 0.059 | 0.306 [0.245, 0.368] |

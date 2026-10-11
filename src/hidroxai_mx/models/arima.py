@@ -63,12 +63,23 @@ def forecast_from_filtered(res, y_full: np.ndarray, h: int) -> np.ndarray:
     return (Z @ a_h + d[:, None]).ravel()
 
 
-def station_forecasts(panel: pd.DataFrame, train: tuple[str, str], horizons, target: str):
-    """Ajusta en entrenamiento y devuelve {h: Serie de pronósticos de Q(t+h) en m³/s, índice t}."""
+def station_forecasts(panel: pd.DataFrame, train: tuple[str, str], horizons, target: str,
+                      order: tuple[int, int, int] | None = None):
+    """Ajusta en entrenamiento y devuelve {h: Serie de pronósticos de Q(t+h) en m³/s, índice t}.
+
+    Con `order` se usa ese orden (walk-forward: orden de la partición principal, coeficientes
+    reestimados); sin él, se elige por AIC.
+    """
     q = panel[target].where(panel["calidad"] != 2)
     y = np.log1p(q.clip(lower=0)).to_numpy(dtype=float)
     tr = (panel.index >= train[0]) & (panel.index <= train[1])
-    order, res = select_and_fit(y[tr])
+    if order is None:
+        order, res = select_and_fit(y[tr])
+    else:
+        order = tuple(int(v) for v in order)
+        res = _fit(y[tr], order)
+        if res is None:
+            raise RuntimeError(f"ARIMA{order} no convergió")
     # el filtro corre desde el inicio del entrenamiento para que los estados estén asentados
     start = np.argmax(tr)
     out = {h: pd.Series(np.expm1(forecast_from_filtered(res, y[start:], h)), index=panel.index[start:])

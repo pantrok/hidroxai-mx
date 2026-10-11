@@ -138,6 +138,23 @@ Aquí se completan los detalles de ejecución. No cambia ningún criterio de H1�
 - No cambia los veredictos de §7.
 - El ranking y el ΔCSI con 4 miembros se marcan "descriptivo (no preregistrado)".
 
+### Ejecución del walk-forward
+
+- **2026-10-11:**
+  - **CPU** (`scripts/xai_09_walk_forward.py --models baselines xgboost`): referencias, ARIMA
+    con el orden principal y XGBoost, en los 5 pliegues; filas `walk_forward` en el
+    manifiesto.
+  - **Evaluación parcial sin redes** (`scripts/xai_10_walk_forward_eval.py`).
+  - **Comprobaciones superadas:** las funciones de `models/criteria.py` reproducen los
+    veredictos oficiales, y `alert/evaluation.py` con 12 miembros reproduce el ΔCSI de
+    `e_rq3.json`.
+  - **Redes:** pendientes en Kaggle (`notebooks/kaggle_xai_walk_forward.ipynb`).
+- **2026-10-11, descomposición del KGE** (descriptivo, no preregistrado; brief de robustez,
+  tarea 2):
+  - `xai_05` añade r, α y β por estación sin cambiar ninguna otra cifra (`rq1_summary.csv` y
+    `e_rq1.json` idénticos);
+  - el resumen está en `numbers.json` → `rq1.kge_componentes` y en la tabla T1b.
+
 ## Evidencia
 
 - `e_rq1.json`, `e_rq2.json` y `e_rq3.json`: veredictos con sus IC.

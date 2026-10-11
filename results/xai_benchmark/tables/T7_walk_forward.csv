@@ -1,0 +1,7 @@
+año de prueba,estaciones (h = 1),H1,H1-b (h1 / h7 / h14),H2-a,H2-b,H3 (4 miembros),mejor NSE (h1 / h7 / h14)
+2021,92,pendiente,pendiente / pendiente / pendiente,pendiente,pendiente,pendiente,ARIMA / XGBoost / XGBoost
+2022,91,pendiente,pendiente / pendiente / pendiente,pendiente,pendiente,pendiente,XGBoost / XGBoost / XGBoost
+2023,58,pendiente,pendiente / pendiente / pendiente,pendiente,pendiente,pendiente,XGBoost / XGBoost / XGBoost
+2024,77,pendiente,pendiente / pendiente / pendiente,pendiente,pendiente,pendiente,ARIMA / XGBoost / Climatology
+2025,51,pendiente,pendiente / pendiente / pendiente,pendiente,pendiente,pendiente,ARIMA / XGBoost / Climatology
+robustez,,pendiente,pendiente / pendiente / pendiente,pendiente,pendiente,pendiente,W de Kendall 0.664 / 0.744 / 0.488

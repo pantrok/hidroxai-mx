@@ -70,8 +70,8 @@ def _r(x, n: int = 4):
 
 
 def _save(fig, name: str) -> None:
-    for ext in ("png", "pdf"):
-        fig.savefig(FIG / f"{name}.{ext}", dpi=300, bbox_inches="tight")
+    fig.savefig(FIG / f"{name}.png", dpi=300, bbox_inches="tight")
+    fig.savefig(FIG / f"{name}.pdf", dpi=300, bbox_inches="tight", metadata={"CreationDate": None})  # PDF reproducible
     plt.close(fig)
 
 
@@ -114,14 +114,19 @@ def block_compute(man: pd.DataFrame, kag: dict) -> dict:
 
     nets = man[main & gpu].copy()
     nets["parada_temprana"] = nets["parada_temprana"].astype(str).str.lower() == "true"
+    wf = man["tipo"] == "walk_forward"
     return {
         "fuente": "results/xai_benchmark/compute_manifest.csv; kaggle_import.json",
         "nota": "horas = suma de la columna 'segundos' (tiempo de pared por corrida; en ARIMA, suma por estación)",
-        "gpu": {"dispositivo": kag["dispositivo"], "corridas": int((main & gpu).sum()),
+        "gpu": {"dispositivo": sorted(man.loc[gpu, "dispositivo"].unique().tolist()),
+                "corridas": int((main & gpu).sum()),
                 "horas_por_modelo": {m: hrs(main & gpu & (man["modelo"] == m)) for m in DEEP},
-                "horas_total": hrs(main & gpu)},
+                "horas_total": hrs(main & gpu),
+                "walk_forward": {"corridas": int((wf & gpu).sum()), "horas": hrs(wf & gpu)},
+                "horas_total_con_walk_forward": hrs(gpu)},
         "cpu": {"procesador": "Intel Core Ultra 7 155H (22 hilos)",
                 "horas_por_modelo": {m: hrs(main & ~gpu & (man["modelo"] == m)) for m in ("arima", "xgboost")},
+                "horas_walk_forward": {m: hrs(wf & ~gpu & (man["modelo"] == m)) for m in ("arima", "xgboost")},
                 "horas_piloto": hrs((man["tipo"] == "piloto") & ~gpu),
                 "horas_evaluacion": {r: hrs(man["run"] == r) for r in man.loc[man["tipo"] == "evaluacion", "run"]},
                 "horas_total": hrs(~gpu)},
@@ -166,7 +171,38 @@ def block_rq1(e1: dict, sm: pd.DataFrame, st: pd.DataFrame, big: list[str]) -> d
     res["delta_nse_vs_arima"] = {"tipo": "descriptivo (no preregistrado)",
                                  "metodo": "mediana por estación de NSE_modelo − NSE_ARIMA; bootstrap de estaciones "
                                            "(10,000, semilla 20261010)", "ic95": dn}
+
+    def comps(x: pd.DataFrame) -> dict:
+        return {"kge_mediana": _r(x["kge"].median()), "r_mediana": _r(x["kge_r"].median()),
+                "alpha_mediana": _r(x["kge_alpha"].median()), "beta_mediana": _r(x["kge_beta"].median()),
+                "fraccion_alpha_lt_1": _r((x["kge_alpha"] < 1).mean(), 3), "estaciones": int(x["clave"].nunique())}
+
+    res["kge_componentes"] = {
+        "tipo": "descriptivo (no preregistrado)",
+        "fuente": "scripts/xai_05_evaluate.py (columnas kge_r, kge_alpha, kge_beta de rq1_station_metrics.csv)",
+        "nota": "KGE = 1 − √((r − 1)² + (α − 1)² + (β − 1)²); α = σ_sim/σ_obs, β = μ_sim/μ_obs",
+        "agregado": {f"h{h}": {m: comps(st[(st["h"] == h) & (st["modelo"] == m)]) for m in ORDER} for h in HS},
+        "por_cuenca": {b: {f"h{h}": {m: comps(st[(st["cuenca"] == b) & (st["h"] == h) & (st["modelo"] == m)])
+                                     for m in ORDER} for h in HS} for b in D.BASINS}}
     return res
+
+
+def block_walk_forward(ewf: dict, wfs: pd.DataFrame) -> dict:
+    agg = wfs[wfs["grupo"] == "agregado"]
+    out = {"fuente": "scripts/xai_09_walk_forward.py, scripts/xai_10_walk_forward_eval.py; "
+                     "results/xai_benchmark/e_walkforward.json, wf_*.csv",
+           "tipo": "robustez (protocolo §3); no cambia los veredictos de §7",
+           **{k: ewf[k] for k in ("especificacion", "años", "semilla", "consistencia", "estaciones_evaluables",
+                                  "redes_disponibles", "ranking")},
+           "agregado": {str(y): {f"h{h}": {r.modelo: {"nse_mediana": _r(r.nse_mediana), "ss_mediana": _r(r.ss_mediana),
+                                                    **({"ss_ic95": [_r(r.ss_ic_lo), _r(r.ss_ic_hi)]}
+                                                       if pd.notna(r.ss_ic_lo) else {})}
+                                          for r in agg[(agg["año"] == y) & (agg["h"] == h)].itertuples()}
+                                 for h in HS} for y in ewf["años"]}}
+    for k in ("H1", "H1b", "H2a", "H2b", "H3", "pendiente"):
+        if k in ewf:
+            out[k] = ewf[k]
+    return out
 
 
 def block_rq2(e2: dict, imp: pd.DataFrame, conc: pd.DataFrame, lags: pd.DataFrame, igd: pd.DataFrame,
@@ -479,6 +515,91 @@ def fig_rq3_timeline(ct: pd.DataFrame) -> str:
     return clave
 
 
+def fig_walk_forward(wfs: pd.DataFrame, ewf: dict, e3: dict) -> None:
+    agg = wfs[wfs["grupo"] == "agregado"]
+    years = ewf["años"]
+    fig, axes = plt.subplots(2, 2, figsize=(9.5, 6.4))
+    ax = axes[0, 0]
+    for m in ORDER:
+        s = agg[(agg["h"] == 1) & (agg["modelo"] == m)].set_index("año").reindex(years)
+        if s["nse_mediana"].notna().any():
+            ax.plot(years, s["nse_mediana"], "o-", ms=3.5, lw=1, color=COLOR[m], label=LABEL[m])
+    ax.set_ylabel("Median NSE")
+    ax.set_title("(a) h = 1 d", loc="left", fontsize=9)
+    for ax, h, t in ((axes[0, 1], 7, "b"), (axes[1, 0], 14, "c")):
+        models = [m for m in ORDER if m != "persistencia"]
+        for i, m in enumerate(models):
+            s = agg[(agg["h"] == h) & (agg["modelo"] == m)].set_index("año").reindex(years)
+            if s["ss_mediana"].isna().all():
+                continue
+            x = np.array(years) + (i - (len(models) - 1) / 2) * 0.1
+            ax.errorbar(x, s["ss_mediana"], yerr=[s["ss_mediana"] - s["ss_ic_lo"], s["ss_ic_hi"] - s["ss_mediana"]],
+                        fmt="o-", ms=3.5, lw=0.9, capsize=1.5, color=COLOR[m])
+        ax.axhline(0, color="k", lw=0.5)
+        ax.set_ylabel("Skill vs persistence (median, 95% CI)")
+        ax.set_title(f"({t}) h = {h} d", loc="left", fontsize=9)
+    ax = axes[1, 1]
+    if "H3" in ewf:
+        for j, (key, col) in enumerate((("P90_h1", "#c62828"), ("P90_h7", "#1565c0"))):
+            v = np.array([ewf["H3"]["por_año"][str(y)]["delta_csi_ic"][key] for y in years])
+            x = np.array(years) + (j - 0.5) * 0.15
+            ax.errorbar(x, v[:, 0], yerr=[v[:, 0] - v[:, 1], v[:, 2] - v[:, 0]], fmt="o", ms=4, capsize=2,
+                        color=col, label=f"{key.replace('_', ', ')} (4 members, fold)")
+            ax.axhline(ewf["H3"]["referencia_principal_4_miembros"]["delta_csi_ic"][key][0], color=col, ls="--", lw=0.8)
+            ax.axhline(e3["H3"]["delta_csi_ic"][key][0], color=col, ls=":", lw=0.8)
+        ax.axhline(0, color="k", lw=0.5)
+        ax.legend(fontsize=6.5, frameon=False, loc="upper right")
+        ax.text(0.01, 0.02, "dashed: main split, 4 members · dotted: main split, 12 members",
+                transform=ax.transAxes, fontsize=6.5)
+    else:
+        ax.text(0.5, 0.5, "pending (network runs)", ha="center", va="center", transform=ax.transAxes)
+    ax.set_ylabel("ΔCSI (Mamdani − threshold), 95% CI")
+    ax.set_title("(d) Alerts, events > P90", loc="left", fontsize=9)
+    for ax in axes.ravel():
+        ax.set_xticks(years, [str(y) for y in years])
+        ax.tick_params(labelsize=7.5)
+    for ax in axes[1]:
+        ax.set_xlabel("Test year (training 2010 to year − 2, validation year − 1)", fontsize=8)
+    fig.legend(*axes[0, 0].get_legend_handles_labels(), loc="lower center", ncol=7, fontsize=7, frameon=False,
+               bbox_to_anchor=(0.5, -0.03))
+    fig.tight_layout(rect=(0, 0.03, 1, 1))
+    _save(fig, "fig10_walk_forward")
+
+
+def tables_walk_forward(ewf: dict, wfs: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    def get(*keys):
+        x = ewf
+        for k in keys:
+            if k not in x:
+                return "pendiente"
+            x = x[k]
+        return x
+
+    rk = ewf["ranking"]
+    rows = []
+    for y in ewf["años"]:
+        ys = str(y)
+        rows.append({"año de prueba": y, "estaciones (h = 1)": ewf["estaciones_evaluables"][ys]["h1"],
+                     "H1": get("H1", "por_año", ys, "veredicto"),
+                     "H1-b (h1 / h7 / h14)": " / ".join(str(get("H1b", "por_año", ys, f"h{h}", "veredicto")) for h in HS),
+                     "H2-a": get("H2a", "por_año", ys, "veredicto_h2a"),
+                     "H2-b": get("H2a", "por_año", ys, "veredicto_h2b"),
+                     "H3 (4 miembros)": get("H3", "por_año", ys, "veredicto"),
+                     "mejor NSE (h1 / h7 / h14)": " / ".join(LABEL[rk[f"h{h}"]["mejor_por_año"][ys]] for h in HS)})
+    rob = {"H1": get("H1", "robustez", "robustez"), "H2-a": get("H2a", "robustez", "robustez"),
+           "H2-b": get("H2b", "robustez", "robustez"), "H3 (4 miembros)": get("H3", "robustez", "robustez"),
+           "H1-b (h1 / h7 / h14)": " / ".join(str(get("H1b", "robustez", f"h{h}", "robustez")) for h in HS),
+           "mejor NSE (h1 / h7 / h14)": "W de Kendall " + " / ".join(str(rk[f"h{h}"]["kendall_w"]) for h in HS)}
+    rows.append({"año de prueba": "robustez", "estaciones (h = 1)": "", **rob})
+    agg = wfs[wfs["grupo"] == "agregado"]
+    t7b = pd.DataFrame([{"año": r.año, "h": r.h, "modelo": LABEL[r.modelo], "estaciones": int(r.estaciones),
+                         "NSE mediana": f"{r.nse_mediana:.3f}",
+                         "SS mediana [IC 95 %]": (f"{r.ss_mediana:.3f} [{r.ss_ic_lo:.3f}, {r.ss_ic_hi:.3f}]"
+                                                  if pd.notna(r.ss_ic_lo) else f"{r.ss_mediana:.3f}")}
+                        for r in agg.sort_values(["h", "año"]).itertuples()])
+    return {"T7_walk_forward": pd.DataFrame(rows), "T7b_walk_forward_metricas": t7b}
+
+
 # ----------------------------------------------------------------------------- tablas y reporte
 def tables(nums: dict, sm: pd.DataFrame, conc: pd.DataFrame, lags: pd.DataFrame, rs: pd.DataFrame,
            pre: dict, e3: dict) -> dict[str, pd.DataFrame]:
@@ -522,10 +643,46 @@ def tables(nums: dict, sm: pd.DataFrame, conc: pd.DataFrame, lags: pd.DataFrame,
                        {"recurso": "CPU", "componente": "piloto de tiempos", "horas": c["cpu"]["horas_piloto"]},
                        *({"recurso": "CPU", "componente": r, "horas": h}
                          for r, h in c["cpu"]["horas_evaluacion"].items()),
-                       {"recurso": "GPU", "componente": "total", "horas": c["gpu"]["horas_total"]},
+                       *({"recurso": "CPU", "componente": f"walk-forward {LABEL[m]}", "horas": h}
+                         for m, h in c["cpu"]["horas_walk_forward"].items()),
+                       {"recurso": "GPU", "componente": "walk-forward (redes)", "horas": c["gpu"]["walk_forward"]["horas"]},
+                       {"recurso": "GPU", "componente": "total diseño principal", "horas": c["gpu"]["horas_total"]},
+                       {"recurso": "GPU", "componente": "total con walk-forward",
+                        "horas": c["gpu"]["horas_total_con_walk_forward"]},
                        {"recurso": "CPU", "componente": "total", "horas": c["cpu"]["horas_total"]}])
-    return {"T1_rq1_agregado": t1, "T2_rq1_por_cuenca": t2, "T3_rq2_concordancia_rezagos": t3,
-            "T4_rq3_alertas": t4, "T5_hipotesis": t5, "T6_computo": t6}
+    kc = nums["rq1"]["kge_componentes"]["agregado"]
+    t1b = pd.DataFrame([{"h": h, "modelo": LABEL[m], "KGE mediana": f"{x['kge_mediana']:.3f}",
+                         "r mediana": f"{x['r_mediana']:.3f}", "α mediana": f"{x['alpha_mediana']:.3f}",
+                         "β mediana": f"{x['beta_mediana']:.3f}", "fracción con α < 1": f"{x['fraccion_alpha_lt_1']:.3f}"}
+                        for h in HS for m in ORDER for x in [kc[f"h{h}"][m]]])
+    return {"T1_rq1_agregado": t1, "T1b_rq1_kge_componentes": t1b, "T2_rq1_por_cuenca": t2,
+            "T3_rq2_concordancia_rezagos": t3, "T4_rq3_alertas": t4, "T5_hipotesis": t5, "T6_computo": t6}
+
+
+def walk_forward_section(nums: dict, tabs: dict[str, pd.DataFrame]) -> list[str]:
+    if "walk_forward" not in nums:
+        return []
+    w = nums["walk_forward"]
+    out = ["## 6. Robustez · walk-forward anual", "",
+           f"- Pliegues del protocolo §3 (entrenamiento 2010 – Y−2, validación Y−1, prueba Y; Y = "
+           f"{w['años'][0]}–{w['años'][-1]}), una semilla ({w['semilla']}); especificación: {w['especificacion']}.",
+           "- Comprobaciones: las funciones de criterios reproducen los veredictos oficiales y la evaluación de "
+           "alertas con 12 miembros reproduce `e_rq3.json`.",
+           "- Ranking por NSE mediana (descriptivo): W de Kendall entre años "
+           + ", ".join(f"h = {h}: {w['ranking'][f'h{h}']['kendall_w']}" for h in HS) + "."]
+    if "pendiente" in w:
+        out.append(f"- Pendiente: {w['pendiente']}.")
+    else:
+        out.append("- Robustez (veredicto anual contra el principal): "
+                   + "; ".join([f"H1 {w['H1']['robustez']['robustez']}",
+                                *(f"H1-b h = {h} {w['H1b']['robustez'][f'h{h}']['robustez']}" for h in HS),
+                                *([f"H2-a {w['H2a']['robustez']['robustez']}", f"H2-b {w['H2b']['robustez']['robustez']}"]
+                                  if "H2a" in w else []),
+                                f"H3 (4 miembros) {w['H3']['robustez']['robustez']}"]) + ".")
+        out.append("- H3 con 4 miembros en la partición principal (referencia): "
+                   f"{w['H3']['referencia_principal_4_miembros']['veredicto']}.")
+    out += ["", _md(tabs["T7_walk_forward"]), ""]
+    return out
 
 
 def report(nums: dict, tabs: dict[str, pd.DataFrame]) -> str:
@@ -571,8 +728,14 @@ def report(nums: dict, tabs: dict[str, pd.DataFrame]) -> str:
         + ", ".join(f"{k} {_ci(val)}" for k, val in r1["H1b"]["ic_mediana_delta_nse"].items()) + ".",
         "- Descriptivo (no preregistrado), ΔNSE contra ARIMA: "
         + ", ".join(f"{k} {_ci(val)}" for k, val in r1["delta_nse_vs_arima"]["ic95"].items()) + ".",
+        "- Descriptivo (no preregistrado), componentes del KGE a h = 1 (α = σ_sim/σ_obs; mediana y fracción "
+        "de estaciones con α < 1): "
+        + ", ".join(f"{LABEL[m]} α {x['alpha_mediana']:.3f} ({x['fraccion_alpha_lt_1']:.3f}), r {x['r_mediana']:.3f}"
+                    for m, x in r1["kge_componentes"]["agregado"]["h1"].items() if m != "climatologia") + ".",
         "",
         _md(tabs["T1_rq1_agregado"]),
+        "",
+        _md(tabs["T1b_rq1_kge_componentes"]),
         "",
         "## 4. RQ2 · explicabilidad",
         "",
@@ -611,22 +774,24 @@ def report(nums: dict, tabs: dict[str, pd.DataFrame]) -> str:
         "",
         _md(tabs["T4_rq3_alertas"]),
         "",
-        "## 6. Cómputo",
+        *walk_forward_section(nums, tabs),
+        "## 7. Cómputo",
         "",
         f"- GPU ({', '.join(c['gpu']['dispositivo'])}, Kaggle): {c['gpu']['horas_total']} h en "
-        f"{c['gpu']['corridas']} corridas. CPU local: {c['cpu']['horas_total']} h (presupuesto "
-        f"{c['presupuesto_cpu_h']} h).",
+        f"{c['gpu']['corridas']} corridas del diseño principal y {c['gpu']['walk_forward']['horas']} h en "
+        f"{c['gpu']['walk_forward']['corridas']} del walk-forward. CPU local: {c['cpu']['horas_total']} h en total "
+        f"(presupuesto {c['presupuesto_cpu_h']} h).",
         "- Épocas de las redes (mediana; fracción con parada temprana): "
         + ", ".join(f"{LABEL[m]} {x['mediana']} ({x['parada_temprana_frac']})" for m, x in c["epocas_redes"].items())
         + ".",
         "",
         _md(tabs["T6_computo"]),
         "",
-        "## 7. No realizado",
+        "## 8. No realizado",
         "",
         *[f"- {x['item']}: {x['motivo']}" for x in nums["no_realizado"]],
         "",
-        "## 8. Archivos",
+        "## 9. Archivos",
         "",
         "- Figuras: `results/xai_benchmark/figures/` (PNG a 300 dpi y PDF).",
         "- Tablas: `results/xai_benchmark/tables/` (CSV y `tables.md`).",
@@ -665,9 +830,19 @@ def main() -> None:
                           "H2-b": e2["H2b"]["veredicto"], "H3": e3["H3"]["veredicto"],
                           "H3_pre_correccion": pre["H3"]["veredicto"]}
     nums["no_realizado"] = []
-    if not (OUT / "e_walkforward.json").exists():
+    ewf = _json("e_walkforward.json") if (OUT / "e_walkforward.json").exists() else None
+    if ewf is None:
         nums["no_realizado"].append({"item": "Walk-forward anual (protocolo §3)",
                                      "motivo": "no corrido todavía; requiere reentrenar por año (redes en Kaggle)"})
+    else:
+        wfs = pd.read_csv(OUT / "wf_summary.csv")
+        nums["walk_forward"] = block_walk_forward(ewf, wfs)
+        if "pendiente" in ewf:
+            nums["no_realizado"].append({"item": "Walk-forward anual, parte de redes", "motivo": ewf["pendiente"]})
+        nums["veredictos"]["robustez_walk_forward"] = {
+            k: (ewf[k]["robustez"]["robustez"] if k != "H1b" else
+                {h: v["robustez"] for h, v in ewf[k]["robustez"].items()})
+            for k in ("H1", "H1b", "H2a", "H2b", "H3") if k in ewf}
     nums["no_realizado"].append({"item": "Informer", "motivo": "fuera del diseño principal (protocolo §4)"})
 
     fig_rq1_skill(sm)
@@ -683,6 +858,9 @@ def main() -> None:
                        "regla_estacion_ejemplo": "estación de Lerma–Santiago con más eventos P90 observados a h = 1"}
 
     tabs = tables(nums, sm, conc, lags, rs, pre, e3)
+    if ewf is not None:
+        fig_walk_forward(wfs, ewf, e3)
+        tabs.update(tables_walk_forward(ewf, wfs))
     for name, t in tabs.items():
         t.to_csv(TAB / f"{name}.csv", index=False)
     (TAB / "tables.md").write_text("\n\n".join(f"## {n}\n\n{_md(t)}" for n, t in tabs.items()) + "\n",

@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-10-10",
+  "fecha": "2026-10-11",
   "fuente": "scripts/xai_05_evaluate.py; results/xai_benchmark/rq1_station_metrics.csv",
   "configuracion_elegida": {
     "xgboost_h1": "xgboost-6",

@@ -32,3 +32,11 @@ def test_station_forecasts_shapes(monkeypatch):
     order, out = A.station_forecasts(panel, ("2010-01-01", "2010-12-31"), (1, 7), "gasto_medio_m3s")
     assert order in A.ORDERS and set(out) == {1, 7}
     assert len(out[1]) == 500 and np.isfinite(out[7].iloc[-1])
+
+
+def test_station_forecasts_with_fixed_order():
+    idx = pd.date_range("2010-01-01", periods=500, freq="D")
+    panel = pd.DataFrame({"gasto_medio_m3s": np.expm1(_ar1(500)).clip(0), "calidad": 0}, index=idx)
+    order, out = A.station_forecasts(panel, ("2010-01-01", "2010-12-31"), (1,), "gasto_medio_m3s",
+                                     order=[1, 0, 0])
+    assert order == (1, 0, 0) and np.isfinite(out[1].iloc[-1])
