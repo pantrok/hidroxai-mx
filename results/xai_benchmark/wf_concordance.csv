@@ -1,0 +1,235 @@
+modelo_a,modelo_b,spearman,año,cuenca,h
+convnext,patchtst,0.39768717141475557,2021,Lerma–Santiago,1
+convnext,tcn,0.4151033468111156,2021,Lerma–Santiago,1
+convnext,xgboost,0.33922240398366205,2021,Lerma–Santiago,1
+patchtst,tcn,0.24976902579297713,2021,Lerma–Santiago,1
+patchtst,xgboost,0.2536744961264236,2021,Lerma–Santiago,1
+tcn,xgboost,0.30949720670391057,2021,Lerma–Santiago,1
+convnext,patchtst,0.4044137164727306,2021,Lerma–Santiago,7
+convnext,tcn,0.35152113748366715,2021,Lerma–Santiago,7
+convnext,xgboost,0.3330080869774547,2021,Lerma–Santiago,7
+patchtst,tcn,0.186446083726864,2021,Lerma–Santiago,7
+patchtst,xgboost,0.26480753992642164,2021,Lerma–Santiago,7
+tcn,xgboost,0.16076593255646382,2021,Lerma–Santiago,7
+convnext,patchtst,0.026074878854285624,2021,Lerma–Santiago,14
+convnext,tcn,0.03969464078109407,2021,Lerma–Santiago,14
+convnext,xgboost,-0.05082667160509069,2021,Lerma–Santiago,14
+patchtst,tcn,0.061738531024620104,2021,Lerma–Santiago,14
+patchtst,xgboost,0.26440116464499935,2021,Lerma–Santiago,14
+tcn,xgboost,0.06028786896714918,2021,Lerma–Santiago,14
+convnext,patchtst,0.28919411092934966,2021,Pánuco,1
+convnext,tcn,0.47807442616541657,2021,Pánuco,1
+convnext,xgboost,0.176684465569925,2021,Pánuco,1
+patchtst,tcn,0.2629669640009465,2021,Pánuco,1
+patchtst,xgboost,0.252295852752657,2021,Pánuco,1
+tcn,xgboost,0.2426185993394858,2021,Pánuco,1
+convnext,patchtst,0.27394878442750287,2021,Pánuco,7
+convnext,tcn,0.16583022109735898,2021,Pánuco,7
+convnext,xgboost,0.28385590016476986,2021,Pánuco,7
+patchtst,tcn,0.10931201580295688,2021,Pánuco,7
+patchtst,xgboost,0.091500208342046,2021,Pánuco,7
+tcn,xgboost,0.18525255539282015,2021,Pánuco,7
+convnext,patchtst,0.019866868318981035,2021,Pánuco,14
+convnext,tcn,0.3256458532670761,2021,Pánuco,14
+convnext,xgboost,0.07714435630729344,2021,Pánuco,14
+patchtst,tcn,0.16230542094920625,2021,Pánuco,14
+patchtst,xgboost,0.1307962179902672,2021,Pánuco,14
+tcn,xgboost,0.05291932878586788,2021,Pánuco,14
+convnext,patchtst,0.19425496671707976,2021,Alta del Balsas,1
+convnext,tcn,0.33796722121053124,2021,Alta del Balsas,1
+convnext,xgboost,0.0829313963581487,2021,Alta del Balsas,1
+patchtst,tcn,0.137037151352408,2021,Alta del Balsas,1
+patchtst,xgboost,0.2279826330422322,2021,Alta del Balsas,1
+tcn,xgboost,0.25280669987757215,2021,Alta del Balsas,1
+convnext,patchtst,0.20662983425414364,2021,Alta del Balsas,7
+convnext,tcn,0.1884193956603599,2021,Alta del Balsas,7
+convnext,xgboost,0.3144611917631776,2021,Alta del Balsas,7
+patchtst,tcn,0.02413654742430322,2021,Alta del Balsas,7
+patchtst,xgboost,0.16611123909952036,2021,Alta del Balsas,7
+tcn,xgboost,0.17501814879104205,2021,Alta del Balsas,7
+convnext,patchtst,0.27820611747276147,2021,Alta del Balsas,14
+convnext,tcn,0.14790785723839212,2021,Alta del Balsas,14
+convnext,xgboost,0.041824336142062,2021,Alta del Balsas,14
+patchtst,tcn,0.036743932425897914,2021,Alta del Balsas,14
+patchtst,xgboost,0.25470744981841004,2021,Alta del Balsas,14
+tcn,xgboost,0.16610800744878956,2021,Alta del Balsas,14
+convnext,patchtst,0.22874162782801938,2022,Lerma–Santiago,1
+convnext,tcn,0.4283156887558257,2022,Lerma–Santiago,1
+convnext,xgboost,0.2304248073500211,2022,Lerma–Santiago,1
+patchtst,tcn,0.2578556951346235,2022,Lerma–Santiago,1
+patchtst,xgboost,0.328594503945595,2022,Lerma–Santiago,1
+tcn,xgboost,0.25582888360751876,2022,Lerma–Santiago,1
+convnext,patchtst,0.23418006728602733,2022,Lerma–Santiago,7
+convnext,tcn,0.279146475714271,2022,Lerma–Santiago,7
+convnext,xgboost,0.2421576797637787,2022,Lerma–Santiago,7
+patchtst,tcn,0.08069590625225058,2022,Lerma–Santiago,7
+patchtst,xgboost,0.1543195777647458,2022,Lerma–Santiago,7
+tcn,xgboost,0.1456402975400475,2022,Lerma–Santiago,7
+convnext,patchtst,0.16545778161877422,2022,Lerma–Santiago,14
+convnext,tcn,0.18585347284381204,2022,Lerma–Santiago,14
+convnext,xgboost,0.05493173657623177,2022,Lerma–Santiago,14
+patchtst,tcn,-0.026447318332870354,2022,Lerma–Santiago,14
+patchtst,xgboost,0.09149870880788502,2022,Lerma–Santiago,14
+tcn,xgboost,0.0794139736823153,2022,Lerma–Santiago,14
+convnext,patchtst,0.3119623033632725,2022,Pánuco,1
+convnext,tcn,0.5111248289556263,2022,Pánuco,1
+convnext,xgboost,0.06251839048530305,2022,Pánuco,1
+patchtst,tcn,0.2618126073850016,2022,Pánuco,1
+patchtst,xgboost,0.29878288424539856,2022,Pánuco,1
+tcn,xgboost,0.2523287755794932,2022,Pánuco,1
+convnext,patchtst,0.30963301336460997,2022,Pánuco,7
+convnext,tcn,0.3267323065526714,2022,Pánuco,7
+convnext,xgboost,0.13294031708797596,2022,Pánuco,7
+patchtst,tcn,0.19081453131269482,2022,Pánuco,7
+patchtst,xgboost,0.2491311460230254,2022,Pánuco,7
+tcn,xgboost,0.14210109365515397,2022,Pánuco,7
+convnext,patchtst,0.01175756453388479,2022,Pánuco,14
+convnext,tcn,0.34403119437842733,2022,Pánuco,14
+convnext,xgboost,0.04895007047542619,2022,Pánuco,14
+patchtst,tcn,0.047522042861405184,2022,Pánuco,14
+patchtst,xgboost,0.18928361986481065,2022,Pánuco,14
+tcn,xgboost,0.04584709404611253,2022,Pánuco,14
+convnext,patchtst,0.17688200253094227,2022,Alta del Balsas,1
+convnext,tcn,0.3952817473790343,2022,Alta del Balsas,1
+convnext,xgboost,0.24096229356994328,2022,Alta del Balsas,1
+patchtst,tcn,0.18639669948660967,2022,Alta del Balsas,1
+patchtst,xgboost,0.17287888148755925,2022,Alta del Balsas,1
+tcn,xgboost,0.18182875079930322,2022,Alta del Balsas,1
+convnext,patchtst,0.20404333467082317,2022,Alta del Balsas,7
+convnext,tcn,0.3716493307406607,2022,Alta del Balsas,7
+convnext,xgboost,0.2979757762616217,2022,Alta del Balsas,7
+patchtst,tcn,-0.1274957045999362,2022,Alta del Balsas,7
+patchtst,xgboost,0.1569385799590276,2022,Alta del Balsas,7
+tcn,xgboost,0.1262655259593126,2022,Alta del Balsas,7
+convnext,patchtst,0.24472977561035833,2022,Alta del Balsas,14
+convnext,tcn,0.13147113594040968,2022,Alta del Balsas,14
+convnext,xgboost,0.2401288105599967,2022,Alta del Balsas,14
+patchtst,tcn,0.18177927302282992,2022,Alta del Balsas,14
+patchtst,xgboost,0.12990730166568926,2022,Alta del Balsas,14
+tcn,xgboost,0.10096196384662078,2022,Alta del Balsas,14
+convnext,patchtst,0.4036420877187567,2023,Lerma–Santiago,1
+convnext,tcn,0.4549934668765496,2023,Lerma–Santiago,1
+convnext,xgboost,0.4063746823461629,2023,Lerma–Santiago,1
+patchtst,tcn,0.41107647355371046,2023,Lerma–Santiago,1
+patchtst,xgboost,0.3106371595831147,2023,Lerma–Santiago,1
+tcn,xgboost,0.2933773676142268,2023,Lerma–Santiago,1
+convnext,patchtst,0.1029105836599895,2023,Lerma–Santiago,7
+convnext,tcn,0.24717841085630216,2023,Lerma–Santiago,7
+convnext,xgboost,0.2579153677582641,2023,Lerma–Santiago,7
+patchtst,tcn,0.05977756515118778,2023,Lerma–Santiago,7
+patchtst,xgboost,0.1714908896365114,2023,Lerma–Santiago,7
+tcn,xgboost,0.03857732234533987,2023,Lerma–Santiago,7
+convnext,patchtst,0.029365103861230278,2023,Lerma–Santiago,14
+convnext,tcn,0.10181384199100796,2023,Lerma–Santiago,14
+convnext,xgboost,0.14858071751185736,2023,Lerma–Santiago,14
+patchtst,tcn,0.07869584452195028,2023,Lerma–Santiago,14
+patchtst,xgboost,0.1054559297097647,2023,Lerma–Santiago,14
+tcn,xgboost,0.0717717625029579,2023,Lerma–Santiago,14
+convnext,patchtst,0.4031647067296315,2023,Pánuco,1
+convnext,tcn,0.4513431484510838,2023,Pánuco,1
+convnext,xgboost,-0.03522948239143183,2023,Pánuco,1
+patchtst,tcn,0.3356749693920594,2023,Pánuco,1
+patchtst,xgboost,0.2726833132709857,2023,Pánuco,1
+tcn,xgboost,0.22285667253104519,2023,Pánuco,1
+convnext,patchtst,0.17316583845180405,2023,Pánuco,7
+convnext,tcn,0.47386853503708964,2023,Pánuco,7
+convnext,xgboost,-0.004724425650997459,2023,Pánuco,7
+patchtst,tcn,0.17715361585234113,2023,Pánuco,7
+patchtst,xgboost,0.17796845581653753,2023,Pánuco,7
+tcn,xgboost,0.18457154027387676,2023,Pánuco,7
+convnext,patchtst,0.2120456392687017,2023,Pánuco,14
+convnext,tcn,0.3227013179419118,2023,Pánuco,14
+convnext,xgboost,0.10515756659156147,2023,Pánuco,14
+patchtst,tcn,0.1234996964926901,2023,Pánuco,14
+patchtst,xgboost,0.1317880181487083,2023,Pánuco,14
+tcn,xgboost,0.07079436608125765,2023,Pánuco,14
+convnext,patchtst,0.3998230398057553,2024,Lerma–Santiago,1
+convnext,tcn,0.44823811434509286,2024,Lerma–Santiago,1
+convnext,xgboost,0.3405784129139788,2024,Lerma–Santiago,1
+patchtst,tcn,0.34702305626716873,2024,Lerma–Santiago,1
+patchtst,xgboost,0.327353724909205,2024,Lerma–Santiago,1
+tcn,xgboost,0.3795117133244853,2024,Lerma–Santiago,1
+convnext,patchtst,0.27349403788182763,2024,Lerma–Santiago,7
+convnext,tcn,0.4312725701410537,2024,Lerma–Santiago,7
+convnext,xgboost,0.23156476022922515,2024,Lerma–Santiago,7
+patchtst,tcn,0.18113727789952364,2024,Lerma–Santiago,7
+patchtst,xgboost,0.18471763531796248,2024,Lerma–Santiago,7
+tcn,xgboost,0.036272724466804525,2024,Lerma–Santiago,7
+convnext,patchtst,0.4261489552146671,2024,Lerma–Santiago,14
+convnext,tcn,0.14689342263650113,2024,Lerma–Santiago,14
+convnext,xgboost,-0.04677099087420394,2024,Lerma–Santiago,14
+patchtst,tcn,0.12715413027151043,2024,Lerma–Santiago,14
+patchtst,xgboost,0.058522382378056924,2024,Lerma–Santiago,14
+tcn,xgboost,0.05809644330586334,2024,Lerma–Santiago,14
+convnext,patchtst,0.3054888525366009,2024,Pánuco,1
+convnext,tcn,0.42504398283897643,2024,Pánuco,1
+convnext,xgboost,0.11293787449816495,2024,Pánuco,1
+patchtst,tcn,0.20313384157947262,2024,Pánuco,1
+patchtst,xgboost,0.27100892210500516,2024,Pánuco,1
+tcn,xgboost,0.3105081648785134,2024,Pánuco,1
+convnext,patchtst,0.3089457493544039,2024,Pánuco,7
+convnext,tcn,0.4422338138008375,2024,Pánuco,7
+convnext,xgboost,0.2262123596593796,2024,Pánuco,7
+patchtst,tcn,0.20208442647406813,2024,Pánuco,7
+patchtst,xgboost,0.24417660325370208,2024,Pánuco,7
+tcn,xgboost,0.2045620080939783,2024,Pánuco,7
+convnext,patchtst,0.23791680813193822,2024,Pánuco,14
+convnext,tcn,0.23655462617158965,2024,Pánuco,14
+convnext,xgboost,0.25413130034877623,2024,Pánuco,14
+patchtst,tcn,0.14590985318476907,2024,Pánuco,14
+patchtst,xgboost,0.23970492916448036,2024,Pánuco,14
+tcn,xgboost,0.09470456907106185,2024,Pánuco,14
+convnext,patchtst,0.12170540243011616,2024,Alta del Balsas,1
+convnext,tcn,0.4227887692006955,2024,Alta del Balsas,1
+convnext,xgboost,0.22015813326902856,2024,Alta del Balsas,1
+patchtst,tcn,0.16001522680741173,2024,Alta del Balsas,1
+patchtst,xgboost,0.15654987576920293,2024,Alta del Balsas,1
+tcn,xgboost,0.3215763942159806,2024,Alta del Balsas,1
+convnext,patchtst,0.22103357099498958,2024,Alta del Balsas,7
+convnext,tcn,0.1335432163544142,2024,Alta del Balsas,7
+convnext,xgboost,0.0793597007119115,2024,Alta del Balsas,7
+patchtst,tcn,0.05736391040875746,2024,Alta del Balsas,7
+patchtst,xgboost,0.19558990396238604,2024,Alta del Balsas,7
+tcn,xgboost,0.13975707573808674,2024,Alta del Balsas,7
+convnext,patchtst,0.03835097791084087,2024,Alta del Balsas,14
+convnext,tcn,0.04818667242816137,2024,Alta del Balsas,14
+convnext,xgboost,0.20941387079848142,2024,Alta del Balsas,14
+patchtst,tcn,0.037501157443130956,2024,Alta del Balsas,14
+patchtst,xgboost,0.22276819243392285,2024,Alta del Balsas,14
+tcn,xgboost,0.012504501167731512,2024,Alta del Balsas,14
+convnext,patchtst,0.325207568134819,2025,Lerma–Santiago,1
+convnext,tcn,0.422753788697182,2025,Lerma–Santiago,1
+convnext,xgboost,0.32506970379744227,2025,Lerma–Santiago,1
+patchtst,tcn,0.3076411823410188,2025,Lerma–Santiago,1
+patchtst,xgboost,0.4378159819747523,2025,Lerma–Santiago,1
+tcn,xgboost,0.33725938043355247,2025,Lerma–Santiago,1
+convnext,patchtst,0.3362449458316615,2025,Lerma–Santiago,7
+convnext,tcn,0.3868390999722214,2025,Lerma–Santiago,7
+convnext,xgboost,0.3335308702943507,2025,Lerma–Santiago,7
+patchtst,tcn,0.1029743716369847,2025,Lerma–Santiago,7
+patchtst,xgboost,0.18292745660874307,2025,Lerma–Santiago,7
+tcn,xgboost,0.15888761998827122,2025,Lerma–Santiago,7
+convnext,patchtst,0.16637139006347929,2025,Lerma–Santiago,14
+convnext,tcn,0.21788944103213062,2025,Lerma–Santiago,14
+convnext,xgboost,0.20189512021975986,2025,Lerma–Santiago,14
+patchtst,tcn,0.02879512742162824,2025,Lerma–Santiago,14
+patchtst,xgboost,0.23306686420362768,2025,Lerma–Santiago,14
+tcn,xgboost,0.10821321645729805,2025,Lerma–Santiago,14
+convnext,patchtst,0.26059446279206144,2025,Pánuco,1
+convnext,tcn,0.42708108274946754,2025,Pánuco,1
+convnext,xgboost,0.11017418233073037,2025,Pánuco,1
+patchtst,tcn,0.42785888453347326,2025,Pánuco,1
+patchtst,xgboost,0.28996573968332356,2025,Pánuco,1
+tcn,xgboost,0.1801084395608918,2025,Pánuco,1
+convnext,patchtst,0.32606150395588335,2025,Pánuco,7
+convnext,tcn,0.3988867969176003,2025,Pánuco,7
+convnext,xgboost,0.013060073870592713,2025,Pánuco,7
+patchtst,tcn,0.18172371575254379,2025,Pánuco,7
+patchtst,xgboost,0.13022418387398788,2025,Pánuco,7
+tcn,xgboost,0.22814695926829015,2025,Pánuco,7
+convnext,patchtst,0.1979587847361544,2025,Pánuco,14
+convnext,tcn,0.2502628681955204,2025,Pánuco,14
+convnext,xgboost,-0.03743119643610399,2025,Pánuco,14
+patchtst,tcn,0.1812936613269957,2025,Pánuco,14
+patchtst,xgboost,0.19829624371122564,2025,Pánuco,14
+tcn,xgboost,0.03994979268907477,2025,Pánuco,14

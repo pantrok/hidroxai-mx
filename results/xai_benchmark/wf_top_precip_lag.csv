@@ -1,0 +1,157 @@
+año,cuenca,h,modelo,rezago_precip_mas_importante
+2021,Lerma–Santiago,1,xgboost,1
+2021,Lerma–Santiago,1,tcn,1
+2021,Lerma–Santiago,1,convnext,1
+2021,Lerma–Santiago,1,patchtst,1
+2021,Lerma–Santiago,7,xgboost,7
+2021,Lerma–Santiago,7,tcn,7
+2021,Lerma–Santiago,7,convnext,7
+2021,Lerma–Santiago,7,patchtst,22
+2021,Lerma–Santiago,14,xgboost,14
+2021,Lerma–Santiago,14,tcn,30
+2021,Lerma–Santiago,14,convnext,17
+2021,Lerma–Santiago,14,patchtst,14
+2021,Pánuco,1,xgboost,1
+2021,Pánuco,1,tcn,1
+2021,Pánuco,1,convnext,1
+2021,Pánuco,1,patchtst,1
+2021,Pánuco,7,xgboost,7
+2021,Pánuco,7,tcn,7
+2021,Pánuco,7,convnext,7
+2021,Pánuco,7,patchtst,7
+2021,Pánuco,14,xgboost,14
+2021,Pánuco,14,tcn,14
+2021,Pánuco,14,convnext,18
+2021,Pánuco,14,patchtst,14
+2021,Alta del Balsas,1,xgboost,1
+2021,Alta del Balsas,1,tcn,1
+2021,Alta del Balsas,1,convnext,1
+2021,Alta del Balsas,1,patchtst,2
+2021,Alta del Balsas,7,xgboost,12
+2021,Alta del Balsas,7,tcn,15
+2021,Alta del Balsas,7,convnext,7
+2021,Alta del Balsas,7,patchtst,27
+2021,Alta del Balsas,14,xgboost,43
+2021,Alta del Balsas,14,tcn,16
+2021,Alta del Balsas,14,convnext,17
+2021,Alta del Balsas,14,patchtst,29
+2022,Lerma–Santiago,1,xgboost,1
+2022,Lerma–Santiago,1,tcn,1
+2022,Lerma–Santiago,1,convnext,1
+2022,Lerma–Santiago,1,patchtst,1
+2022,Lerma–Santiago,7,xgboost,7
+2022,Lerma–Santiago,7,tcn,7
+2022,Lerma–Santiago,7,convnext,7
+2022,Lerma–Santiago,7,patchtst,32
+2022,Lerma–Santiago,14,xgboost,14
+2022,Lerma–Santiago,14,tcn,38
+2022,Lerma–Santiago,14,convnext,14
+2022,Lerma–Santiago,14,patchtst,29
+2022,Pánuco,1,xgboost,1
+2022,Pánuco,1,tcn,1
+2022,Pánuco,1,convnext,1
+2022,Pánuco,1,patchtst,1
+2022,Pánuco,7,xgboost,7
+2022,Pánuco,7,tcn,7
+2022,Pánuco,7,convnext,7
+2022,Pánuco,7,patchtst,7
+2022,Pánuco,14,xgboost,14
+2022,Pánuco,14,tcn,22
+2022,Pánuco,14,convnext,17
+2022,Pánuco,14,patchtst,24
+2022,Alta del Balsas,1,xgboost,1
+2022,Alta del Balsas,1,tcn,1
+2022,Alta del Balsas,1,convnext,5
+2022,Alta del Balsas,1,patchtst,1
+2022,Alta del Balsas,7,xgboost,29
+2022,Alta del Balsas,7,tcn,15
+2022,Alta del Balsas,7,convnext,10
+2022,Alta del Balsas,7,patchtst,14
+2022,Alta del Balsas,14,xgboost,15
+2022,Alta del Balsas,14,tcn,30
+2022,Alta del Balsas,14,convnext,15
+2022,Alta del Balsas,14,patchtst,39
+2023,Lerma–Santiago,1,xgboost,1
+2023,Lerma–Santiago,1,tcn,1
+2023,Lerma–Santiago,1,convnext,1
+2023,Lerma–Santiago,1,patchtst,1
+2023,Lerma–Santiago,7,xgboost,7
+2023,Lerma–Santiago,7,tcn,7
+2023,Lerma–Santiago,7,convnext,7
+2023,Lerma–Santiago,7,patchtst,7
+2023,Lerma–Santiago,14,xgboost,14
+2023,Lerma–Santiago,14,tcn,30
+2023,Lerma–Santiago,14,convnext,14
+2023,Lerma–Santiago,14,patchtst,18
+2023,Pánuco,1,xgboost,1
+2023,Pánuco,1,tcn,1
+2023,Pánuco,1,convnext,1
+2023,Pánuco,1,patchtst,1
+2023,Pánuco,7,xgboost,7
+2023,Pánuco,7,tcn,7
+2023,Pánuco,7,convnext,10
+2023,Pánuco,7,patchtst,8
+2023,Pánuco,14,xgboost,14
+2023,Pánuco,14,tcn,22
+2023,Pánuco,14,convnext,18
+2023,Pánuco,14,patchtst,14
+2024,Lerma–Santiago,1,xgboost,1
+2024,Lerma–Santiago,1,tcn,1
+2024,Lerma–Santiago,1,convnext,1
+2024,Lerma–Santiago,1,patchtst,1
+2024,Lerma–Santiago,7,xgboost,7
+2024,Lerma–Santiago,7,tcn,7
+2024,Lerma–Santiago,7,convnext,7
+2024,Lerma–Santiago,7,patchtst,12
+2024,Lerma–Santiago,14,xgboost,14
+2024,Lerma–Santiago,14,tcn,22
+2024,Lerma–Santiago,14,convnext,38
+2024,Lerma–Santiago,14,patchtst,29
+2024,Pánuco,1,xgboost,1
+2024,Pánuco,1,tcn,1
+2024,Pánuco,1,convnext,2
+2024,Pánuco,1,patchtst,1
+2024,Pánuco,7,xgboost,7
+2024,Pánuco,7,tcn,7
+2024,Pánuco,7,convnext,7
+2024,Pánuco,7,patchtst,7
+2024,Pánuco,14,xgboost,14
+2024,Pánuco,14,tcn,14
+2024,Pánuco,14,convnext,17
+2024,Pánuco,14,patchtst,19
+2024,Alta del Balsas,1,xgboost,1
+2024,Alta del Balsas,1,tcn,1
+2024,Alta del Balsas,1,convnext,2
+2024,Alta del Balsas,1,patchtst,14
+2024,Alta del Balsas,7,xgboost,29
+2024,Alta del Balsas,7,tcn,7
+2024,Alta del Balsas,7,convnext,10
+2024,Alta del Balsas,7,patchtst,23
+2024,Alta del Balsas,14,xgboost,35
+2024,Alta del Balsas,14,tcn,14
+2024,Alta del Balsas,14,convnext,40
+2024,Alta del Balsas,14,patchtst,40
+2025,Lerma–Santiago,1,xgboost,1
+2025,Lerma–Santiago,1,tcn,1
+2025,Lerma–Santiago,1,convnext,1
+2025,Lerma–Santiago,1,patchtst,1
+2025,Lerma–Santiago,7,xgboost,7
+2025,Lerma–Santiago,7,tcn,7
+2025,Lerma–Santiago,7,convnext,7
+2025,Lerma–Santiago,7,patchtst,8
+2025,Lerma–Santiago,14,xgboost,14
+2025,Lerma–Santiago,14,tcn,38
+2025,Lerma–Santiago,14,convnext,14
+2025,Lerma–Santiago,14,patchtst,29
+2025,Pánuco,1,xgboost,1
+2025,Pánuco,1,tcn,1
+2025,Pánuco,1,convnext,1
+2025,Pánuco,1,patchtst,1
+2025,Pánuco,7,xgboost,7
+2025,Pánuco,7,tcn,7
+2025,Pánuco,7,convnext,7
+2025,Pánuco,7,patchtst,7
+2025,Pánuco,14,xgboost,14
+2025,Pánuco,14,tcn,30
+2025,Pánuco,14,convnext,14
+2025,Pánuco,14,patchtst,34

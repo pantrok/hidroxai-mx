@@ -8,9 +8,10 @@ CPU,piloto de tiempos,0.392
 CPU,xai_06_explain,0.553
 CPU,xai_07_alerts,0.002
 CPU,xai_05_evaluate,0.006
+CPU,xai_10_walk_forward_eval,0.654
 CPU,walk-forward ARIMA,1.136
 CPU,walk-forward XGBoost,0.249
-GPU,walk-forward (redes),0.0
+GPU,walk-forward (redes),1.394
 GPU,total diseño principal,1.625
-GPU,total con walk-forward,1.625
-CPU,total,4.187
+GPU,total con walk-forward,3.019
+CPU,total,4.841

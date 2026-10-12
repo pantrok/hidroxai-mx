@@ -148,7 +148,32 @@ Aquí se completan los detalles de ejecución. No cambia ningún criterio de H1�
   - **Comprobaciones superadas:** las funciones de `models/criteria.py` reproducen los
     veredictos oficiales, y `alert/evaluation.py` con 12 miembros reproduce el ΔCSI de
     `e_rq3.json`.
-  - **Redes:** pendientes en Kaggle (`notebooks/kaggle_xai_walk_forward.ipynb`).
+  - **Redes:** 180 corridas en Kaggle (`notebooks/kaggle_xai_walk_forward.ipynb`, código
+    fijado en `b341ab3`). Verificación y horas de GPU: `e_walkforward.json` →
+    `verificacion_redes`.
+  - **Evaluación completa** con `xai_10` (todos los modelos y explicabilidad por año).
+
+### Robustez (walk-forward; no cambia los veredictos de §7)
+
+Veredicto anual con la regla congelada contra el veredicto principal, según la especificación
+de arriba. Las cifras están en `e_walkforward.json` y en `numbers.json` → `walk_forward`.
+
+| ID | Principal | 2021 | 2022 | 2023 | 2024 | 2025 | Robustez |
+|---|---|---|---|---|---|---|---|
+| H1 | SUPPORTED | SUPPORTED | SUPPORTED | SUPPORTED | SUPPORTED | SUPPORTED | estable |
+| H1-b, *h* = 1 | SUPPORTED | SUPPORTED | OPEN | OPEN | OPEN | OPEN | inestable |
+| H1-b, *h* = 7 | OPEN | OPEN | OPEN | OPEN | REJECTED | OPEN | estable con excepciones (2024) |
+| H1-b, *h* = 14 | OPEN | OPEN | REJECTED | OPEN | REJECTED | OPEN | estable con excepciones (2022, 2024) |
+| H2-a | REJECTED | REJECTED | REJECTED | REJECTED | REJECTED | REJECTED | estable |
+| H2-b | SUPPORTED | SUPPORTED | SUPPORTED | SUPPORTED | SUPPORTED | SUPPORTED | estable |
+| H3 (4 miembros, descriptivo) | SUPPORTED | SUPPORTED | REJECTED | OPEN | SUPPORTED | SUPPORTED | estable con excepciones (2022, 2023) |
+
+- **H3 de referencia:** en la partición principal, con el mismo ensamble de 4 miembros, H3 es
+  SUPPORTED (`referencia_principal_4_miembros`).
+- **Lectura de H1-b:** las excepciones son siempre a favor de XGBoost (REJECTED = los tres
+  modelos profundos por debajo). El SUPPORTED principal a *h* = 1 no se repite fuera de 2021.
+- **Semillas:** el walk-forward usa una semilla, mientras que el diseño principal promedia
+  tres. Eso puede penalizar más a las redes que a XGBoost.
 - **2026-10-11, descomposición del KGE** (descriptivo, no preregistrado; brief de robustez,
   tarea 2):
   - `xai_05` añade r, α y β por estación sin cambiar ninguna otra cifra (`rq1_summary.csv` y
@@ -164,6 +189,4 @@ Aquí se completan los detalles de ejecución. No cambia ningún criterio de H1�
 
 ### No realizado
 
-- **Walk-forward anual** (protocolo §3): especificado arriba el 2026-10-11; todavía no se
-  corre.
 - **Informer:** fuera del diseño principal (protocolo §4).

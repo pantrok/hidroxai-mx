@@ -193,7 +193,7 @@ def block_walk_forward(ewf: dict, wfs: pd.DataFrame) -> dict:
                      "results/xai_benchmark/e_walkforward.json, wf_*.csv",
            "tipo": "robustez (protocolo §3); no cambia los veredictos de §7",
            **{k: ewf[k] for k in ("especificacion", "años", "semilla", "consistencia", "estaciones_evaluables",
-                                  "redes_disponibles", "ranking")},
+                                  "redes_disponibles", "verificacion_redes", "ranking")},
            "agregado": {str(y): {f"h{h}": {r.modelo: {"nse_mediana": _r(r.nse_mediana), "ss_mediana": _r(r.ss_mediana),
                                                     **({"ss_ic95": [_r(r.ss_ic_lo), _r(r.ss_ic_hi)]}
                                                        if pd.notna(r.ss_ic_lo) else {})}
@@ -519,15 +519,16 @@ def fig_walk_forward(wfs: pd.DataFrame, ewf: dict, e3: dict) -> None:
     agg = wfs[wfs["grupo"] == "agregado"]
     years = ewf["años"]
     fig, axes = plt.subplots(2, 2, figsize=(9.5, 6.4))
+    shown = [m for m in ORDER if m != "climatologia"]   # su escala (NSE −2.4 en 2023) taparía al resto; ver T7b
     ax = axes[0, 0]
-    for m in ORDER:
+    for m in shown:
         s = agg[(agg["h"] == 1) & (agg["modelo"] == m)].set_index("año").reindex(years)
         if s["nse_mediana"].notna().any():
             ax.plot(years, s["nse_mediana"], "o-", ms=3.5, lw=1, color=COLOR[m], label=LABEL[m])
     ax.set_ylabel("Median NSE")
     ax.set_title("(a) h = 1 d", loc="left", fontsize=9)
     for ax, h, t in ((axes[0, 1], 7, "b"), (axes[1, 0], 14, "c")):
-        models = [m for m in ORDER if m != "persistencia"]
+        models = [m for m in shown if m != "persistencia"]
         for i, m in enumerate(models):
             s = agg[(agg["h"] == h) & (agg["modelo"] == m)].set_index("año").reindex(years)
             if s["ss_mediana"].isna().all():
@@ -560,9 +561,9 @@ def fig_walk_forward(wfs: pd.DataFrame, ewf: dict, e3: dict) -> None:
         ax.tick_params(labelsize=7.5)
     for ax in axes[1]:
         ax.set_xlabel("Test year (training 2010 to year − 2, validation year − 1)", fontsize=8)
-    fig.legend(*axes[0, 0].get_legend_handles_labels(), loc="lower center", ncol=7, fontsize=7, frameon=False,
-               bbox_to_anchor=(0.5, -0.03))
-    fig.tight_layout(rect=(0, 0.03, 1, 1))
+    fig.legend(*axes[0, 0].get_legend_handles_labels(), loc="lower center", ncol=6, fontsize=7, frameon=False,
+               bbox_to_anchor=(0.5, -0.03), title="Climatology omitted (see table T7b)", title_fontsize=7)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
     _save(fig, "fig10_walk_forward")
 
 

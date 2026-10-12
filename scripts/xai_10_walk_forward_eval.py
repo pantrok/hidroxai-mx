@@ -83,7 +83,24 @@ def load_fold(wf: Path, wf_nets: Path, chosen: dict, tag: str, h: int):
         f = (wf if m == "xgboost" else wf_nets) / "preds" / f"{chosen[f'{m}_h{h}']}_{tag}.npz"
         if f.exists():
             pred[m] = np.load(f)["flow_test"]
+            assert len(pred[m]) == len(meta), f"longitud distinta en {f.name}"
     return meta, pred
+
+
+def verify_nets(wf_nets: Path, chosen: dict) -> dict:
+    """Corridas de redes esperadas, presentes, con pesos y sin NaN; horas de GPU del manifiesto de Kaggle."""
+    expected = {f"{chosen[f'{m}_h{h}']}_{SLUG[b]}_h{h}_y{y}" for y in YEARS for b in D.BASINS
+                for h in D.HORIZONS for m in DEEP}
+    preds = {p.stem for p in (wf_nets / "preds").glob("*.npz")}
+    weights = {p.stem for p in (wf_nets / "weights").glob("*.pt")}
+    nan = sorted(r for r in expected & preds if np.isnan(np.load(wf_nets / "preds" / f"{r}.npz")["flow_test"]).any())
+    man = pd.read_csv(wf_nets / "compute_manifest.csv") if (wf_nets / "compute_manifest.csv").exists() else pd.DataFrame()
+    man = man[man["run"].isin(expected)] if len(man) else man
+    return {"corridas_esperadas": len(expected), "predicciones": len(expected & preds), "pesos": len(expected & weights),
+            "faltantes": sorted(expected - preds), "con_nan": nan,
+            "dispositivo": sorted(man["dispositivo"].dropna().unique().tolist()) if len(man) else [],
+            "gpu_h": round(float(man["segundos"].sum()) / 3600, 3) if len(man) else 0.0,
+            "ok": not (expected - preds) and not nan and expected <= weights}
 
 
 def evaluable_stations(meta: pd.DataFrame) -> set[str]:
@@ -190,6 +207,9 @@ def main() -> None:
     st = pd.DataFrame(rows)
     st.to_csv(OUT / "wf_station_metrics.csv", index=False)
     have_nets = all(m in preds[k] for k in preds for m in DEEP)
+    nets_check = verify_nets(a.wf_nets, chosen) if a.wf_nets.exists() else None
+    if have_nets:
+        assert nets_check and nets_check["ok"], f"redes del walk-forward incompletas: {nets_check}"
     summ = []
     for g, sub in [(b, st[st["cuenca"] == b]) for b in D.BASINS] + [("agregado", st)]:
         for (y, h, m), x in sub.groupby(["año", "h", "modelo"]):
@@ -211,7 +231,7 @@ def main() -> None:
                             "alertas_12_miembros_reproducen_e_rq3": True},
            "estaciones_evaluables": {str(y): {f"h{h}": int(st[(st["año"] == y) & (st["h"] == h)]["clave"].nunique())
                                               for h in D.HORIZONS} for y in YEARS},
-           "redes_disponibles": have_nets}
+           "redes_disponibles": have_nets, "verificacion_redes": nets_check}
 
     # 2. ranking (descriptivo)
     agg = sm[sm["grupo"] == "agregado"]

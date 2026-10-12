@@ -41,7 +41,19 @@
       "h14": 44
     }
   },
-  "redes_disponibles": false,
+  "redes_disponibles": true,
+  "verificacion_redes": {
+    "corridas_esperadas": 180,
+    "predicciones": 180,
+    "pesos": 180,
+    "faltantes": [],
+    "con_nan": [],
+    "dispositivo": [
+      "Tesla T4"
+    ],
+    "gpu_h": 1.394,
+    "ok": true
+  },
   "ranking": {
     "tipo": "descriptivo (no preregistrado)",
     "criterio": "NSE mediana agregada",
@@ -50,13 +62,16 @@
         "persistencia",
         "climatologia",
         "arima",
-        "xgboost"
+        "xgboost",
+        "tcn",
+        "convnext",
+        "patchtst"
       ],
-      "kendall_w": 0.664,
-      "tau_media_entre_años": 0.467,
+      "kendall_w": 0.52,
+      "tau_media_entre_años": 0.314,
       "mejor_por_año": {
         "2021": "arima",
-        "2022": "xgboost",
+        "2022": "tcn",
         "2023": "xgboost",
         "2024": "arima",
         "2025": "arima"
@@ -67,16 +82,19 @@
         "persistencia",
         "climatologia",
         "arima",
-        "xgboost"
+        "xgboost",
+        "tcn",
+        "convnext",
+        "patchtst"
       ],
-      "kendall_w": 0.744,
-      "tau_media_entre_años": 0.6,
+      "kendall_w": 0.577,
+      "tau_media_entre_años": 0.333,
       "mejor_por_año": {
         "2021": "xgboost",
         "2022": "xgboost",
         "2023": "xgboost",
         "2024": "xgboost",
-        "2025": "xgboost"
+        "2025": "convnext"
       }
     },
     "h14": {
@@ -84,10 +102,13 @@
         "persistencia",
         "climatologia",
         "arima",
-        "xgboost"
+        "xgboost",
+        "tcn",
+        "convnext",
+        "patchtst"
       ],
-      "kendall_w": 0.488,
-      "tau_media_entre_años": 0.4,
+      "kendall_w": 0.537,
+      "tau_media_entre_años": 0.39,
       "mejor_por_año": {
         "2021": "xgboost",
         "2022": "xgboost",
@@ -97,5 +118,989 @@
       }
     }
   },
-  "pendiente": "faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan"
+  "H1": {
+    "por_año": {
+      "2021": {
+        "ic_mediana_ss": {
+          "xgboost_h7": [
+            0.3513,
+            0.3049,
+            0.4069
+          ],
+          "xgboost_h14": [
+            0.3881,
+            0.3215,
+            0.4233
+          ],
+          "tcn_h7": [
+            0.343,
+            0.292,
+            0.402
+          ],
+          "tcn_h14": [
+            0.3787,
+            0.3495,
+            0.4067
+          ],
+          "convnext_h7": [
+            0.3617,
+            0.304,
+            0.4076
+          ],
+          "convnext_h14": [
+            0.3699,
+            0.3128,
+            0.4188
+          ],
+          "patchtst_h7": [
+            0.3545,
+            0.2862,
+            0.396
+          ],
+          "patchtst_h14": [
+            0.352,
+            0.2886,
+            0.3872
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      },
+      "2022": {
+        "ic_mediana_ss": {
+          "xgboost_h7": [
+            0.3343,
+            0.2871,
+            0.3692
+          ],
+          "xgboost_h14": [
+            0.3723,
+            0.3364,
+            0.3939
+          ],
+          "tcn_h7": [
+            0.2972,
+            0.2329,
+            0.3586
+          ],
+          "tcn_h14": [
+            0.3766,
+            0.3151,
+            0.3961
+          ],
+          "convnext_h7": [
+            0.3184,
+            0.2485,
+            0.3681
+          ],
+          "convnext_h14": [
+            0.3171,
+            0.2703,
+            0.3807
+          ],
+          "patchtst_h7": [
+            0.31,
+            0.254,
+            0.3633
+          ],
+          "patchtst_h14": [
+            0.3138,
+            0.2738,
+            0.3617
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      },
+      "2023": {
+        "ic_mediana_ss": {
+          "xgboost_h7": [
+            0.34,
+            0.2864,
+            0.433
+          ],
+          "xgboost_h14": [
+            0.3274,
+            0.1901,
+            0.3976
+          ],
+          "tcn_h7": [
+            0.3743,
+            0.299,
+            0.4454
+          ],
+          "tcn_h14": [
+            0.3364,
+            0.1548,
+            0.3775
+          ],
+          "convnext_h7": [
+            0.3452,
+            0.2853,
+            0.4445
+          ],
+          "convnext_h14": [
+            0.3422,
+            0.2713,
+            0.394
+          ],
+          "patchtst_h7": [
+            0.334,
+            0.2691,
+            0.4328
+          ],
+          "patchtst_h14": [
+            0.303,
+            0.1661,
+            0.3597
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      },
+      "2024": {
+        "ic_mediana_ss": {
+          "xgboost_h7": [
+            0.313,
+            0.2614,
+            0.3345
+          ],
+          "xgboost_h14": [
+            0.3227,
+            0.2921,
+            0.3563
+          ],
+          "tcn_h7": [
+            0.2787,
+            0.1963,
+            0.3221
+          ],
+          "tcn_h14": [
+            0.3034,
+            0.2535,
+            0.3343
+          ],
+          "convnext_h7": [
+            0.2801,
+            0.2088,
+            0.3159
+          ],
+          "convnext_h14": [
+            0.2823,
+            0.226,
+            0.3191
+          ],
+          "patchtst_h7": [
+            0.2899,
+            0.2629,
+            0.3238
+          ],
+          "patchtst_h14": [
+            0.2809,
+            0.2428,
+            0.3211
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      },
+      "2025": {
+        "ic_mediana_ss": {
+          "xgboost_h7": [
+            0.2806,
+            0.2387,
+            0.3381
+          ],
+          "xgboost_h14": [
+            0.3063,
+            0.2448,
+            0.3678
+          ],
+          "tcn_h7": [
+            0.2815,
+            0.2456,
+            0.3547
+          ],
+          "tcn_h14": [
+            0.3278,
+            0.2411,
+            0.367
+          ],
+          "convnext_h7": [
+            0.2813,
+            0.2034,
+            0.3475
+          ],
+          "convnext_h14": [
+            0.3295,
+            0.2866,
+            0.3833
+          ],
+          "patchtst_h7": [
+            0.2995,
+            0.2129,
+            0.3281
+          ],
+          "patchtst_h14": [
+            0.3021,
+            0.2406,
+            0.3713
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      }
+    },
+    "robustez": {
+      "veredicto_principal": "SUPPORTED",
+      "por_año": {
+        "2021": "SUPPORTED",
+        "2022": "SUPPORTED",
+        "2023": "SUPPORTED",
+        "2024": "SUPPORTED",
+        "2025": "SUPPORTED"
+      },
+      "coincidencias": 5,
+      "años": 5,
+      "excepciones": {},
+      "robustez": "estable"
+    }
+  },
+  "H1b": {
+    "por_año": {
+      "2021": {
+        "h1": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              0.0053,
+              0.0004,
+              0.0091
+            ],
+            "convnext": [
+              -0.0017,
+              -0.0065,
+              0.0056
+            ],
+            "patchtst": [
+              -0.005,
+              -0.0137,
+              -0.0019
+            ]
+          },
+          "veredicto": "SUPPORTED"
+        },
+        "h7": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0055,
+              -0.0097,
+              -0.0025
+            ],
+            "convnext": [
+              -0.006,
+              -0.0149,
+              0.005
+            ],
+            "patchtst": [
+              -0.0122,
+              -0.0192,
+              -0.0081
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h14": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0065,
+              -0.0172,
+              0.0012
+            ],
+            "convnext": [
+              -0.0166,
+              -0.0261,
+              -0.0036
+            ],
+            "patchtst": [
+              -0.0301,
+              -0.0459,
+              -0.0206
+            ]
+          },
+          "veredicto": "OPEN"
+        }
+      },
+      "2022": {
+        "h1": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0101,
+              -0.0182,
+              -0.0044
+            ],
+            "convnext": [
+              -0.0022,
+              -0.0088,
+              0.0018
+            ],
+            "patchtst": [
+              -0.0074,
+              -0.0106,
+              -0.0051
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h7": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0251,
+              -0.0356,
+              -0.0041
+            ],
+            "convnext": [
+              -0.0029,
+              -0.0296,
+              0.0067
+            ],
+            "patchtst": [
+              -0.0157,
+              -0.0291,
+              -0.0061
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h14": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0214,
+              -0.0361,
+              -0.0025
+            ],
+            "convnext": [
+              -0.0312,
+              -0.0598,
+              -0.0019
+            ],
+            "patchtst": [
+              -0.0304,
+              -0.0621,
+              -0.0069
+            ]
+          },
+          "veredicto": "REJECTED"
+        }
+      },
+      "2023": {
+        "h1": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0036,
+              -0.018,
+              0.0016
+            ],
+            "convnext": [
+              -0.0089,
+              -0.0201,
+              -0.0004
+            ],
+            "patchtst": [
+              -0.0069,
+              -0.0171,
+              -0.0014
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h7": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              0.0014,
+              -0.0068,
+              0.0405
+            ],
+            "convnext": [
+              0.0032,
+              -0.0049,
+              0.0202
+            ],
+            "patchtst": [
+              -0.0006,
+              -0.0129,
+              0.0127
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h14": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0146,
+              -0.0282,
+              0.0007
+            ],
+            "convnext": [
+              0.0013,
+              -0.0394,
+              0.0425
+            ],
+            "patchtst": [
+              -0.0016,
+              -0.0318,
+              0.0206
+            ]
+          },
+          "veredicto": "OPEN"
+        }
+      },
+      "2024": {
+        "h1": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0006,
+              -0.0035,
+              0.0037
+            ],
+            "convnext": [
+              -0.0032,
+              -0.0076,
+              0.0004
+            ],
+            "patchtst": [
+              -0.0114,
+              -0.0205,
+              -0.0017
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h7": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0387,
+              -0.0492,
+              -0.028
+            ],
+            "convnext": [
+              -0.0321,
+              -0.0388,
+              -0.0187
+            ],
+            "patchtst": [
+              -0.0143,
+              -0.0235,
+              -0.0083
+            ]
+          },
+          "veredicto": "REJECTED"
+        },
+        "h14": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0418,
+              -0.0587,
+              -0.0332
+            ],
+            "convnext": [
+              -0.0557,
+              -0.065,
+              -0.043
+            ],
+            "patchtst": [
+              -0.0462,
+              -0.0659,
+              -0.0363
+            ]
+          },
+          "veredicto": "REJECTED"
+        }
+      },
+      "2025": {
+        "h1": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0113,
+              -0.0179,
+              0.0024
+            ],
+            "convnext": [
+              -0.0094,
+              -0.0186,
+              0.0064
+            ],
+            "patchtst": [
+              -0.0038,
+              -0.0157,
+              0.0011
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h7": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              0.0074,
+              -0.0046,
+              0.0213
+            ],
+            "convnext": [
+              -0.0042,
+              -0.0221,
+              0.0047
+            ],
+            "patchtst": [
+              0.0139,
+              -0.0248,
+              0.0266
+            ]
+          },
+          "veredicto": "OPEN"
+        },
+        "h14": {
+          "ic_mediana_delta_nse": {
+            "tcn": [
+              -0.0079,
+              -0.0197,
+              0.0106
+            ],
+            "convnext": [
+              -0.0108,
+              -0.0243,
+              0.017
+            ],
+            "patchtst": [
+              -0.0036,
+              -0.0166,
+              0.0135
+            ]
+          },
+          "veredicto": "OPEN"
+        }
+      }
+    },
+    "robustez": {
+      "h1": {
+        "veredicto_principal": "SUPPORTED",
+        "por_año": {
+          "2021": "SUPPORTED",
+          "2022": "OPEN",
+          "2023": "OPEN",
+          "2024": "OPEN",
+          "2025": "OPEN"
+        },
+        "coincidencias": 1,
+        "años": 5,
+        "excepciones": {
+          "2022": "OPEN",
+          "2023": "OPEN",
+          "2024": "OPEN",
+          "2025": "OPEN"
+        },
+        "robustez": "inestable"
+      },
+      "h7": {
+        "veredicto_principal": "OPEN",
+        "por_año": {
+          "2021": "OPEN",
+          "2022": "OPEN",
+          "2023": "OPEN",
+          "2024": "REJECTED",
+          "2025": "OPEN"
+        },
+        "coincidencias": 4,
+        "años": 5,
+        "excepciones": {
+          "2024": "REJECTED"
+        },
+        "robustez": "estable con excepciones"
+      },
+      "h14": {
+        "veredicto_principal": "OPEN",
+        "por_año": {
+          "2021": "OPEN",
+          "2022": "REJECTED",
+          "2023": "OPEN",
+          "2024": "REJECTED",
+          "2025": "OPEN"
+        },
+        "coincidencias": 3,
+        "años": 5,
+        "excepciones": {
+          "2022": "REJECTED",
+          "2024": "REJECTED"
+        },
+        "robustez": "estable con excepciones"
+      }
+    }
+  },
+  "H2a": {
+    "por_año": {
+      "2021": {
+        "cuencas": [
+          "Lerma–Santiago",
+          "Pánuco",
+          "Alta del Balsas"
+        ],
+        "spearman_mediano": {
+          "Alta del Balsas_h1": 0.211,
+          "Alta del Balsas_h7": 0.182,
+          "Alta del Balsas_h14": 0.157,
+          "Lerma–Santiago_h1": 0.324,
+          "Lerma–Santiago_h7": 0.299,
+          "Lerma–Santiago_h14": 0.05,
+          "Pánuco_h1": 0.258,
+          "Pánuco_h7": 0.176,
+          "Pánuco_h14": 0.104
+        },
+        "fraccion_ge_0.5": 0.0,
+        "fraccion_lt_0.3": 0.889,
+        "veredicto_h2a": "REJECTED",
+        "proporcion_1_3_dias_h1": 1.0,
+        "veredicto_h2b": "SUPPORTED"
+      },
+      "2022": {
+        "cuencas": [
+          "Lerma–Santiago",
+          "Pánuco",
+          "Alta del Balsas"
+        ],
+        "spearman_mediano": {
+          "Alta del Balsas_h1": 0.184,
+          "Alta del Balsas_h7": 0.18,
+          "Alta del Balsas_h14": 0.157,
+          "Lerma–Santiago_h1": 0.257,
+          "Lerma–Santiago_h7": 0.194,
+          "Lerma–Santiago_h14": 0.085,
+          "Pánuco_h1": 0.28,
+          "Pánuco_h7": 0.22,
+          "Pánuco_h14": 0.048
+        },
+        "fraccion_ge_0.5": 0.0,
+        "fraccion_lt_0.3": 1.0,
+        "veredicto_h2a": "REJECTED",
+        "proporcion_1_3_dias_h1": 0.917,
+        "veredicto_h2b": "SUPPORTED"
+      },
+      "2023": {
+        "cuencas": [
+          "Lerma–Santiago",
+          "Pánuco"
+        ],
+        "spearman_mediano": {
+          "Lerma–Santiago_h1": 0.405,
+          "Lerma–Santiago_h7": 0.137,
+          "Lerma–Santiago_h14": 0.09,
+          "Pánuco_h1": 0.304,
+          "Pánuco_h7": 0.178,
+          "Pánuco_h14": 0.128
+        },
+        "fraccion_ge_0.5": 0.0,
+        "fraccion_lt_0.3": 0.667,
+        "veredicto_h2a": "REJECTED",
+        "proporcion_1_3_dias_h1": 1.0,
+        "veredicto_h2b": "SUPPORTED"
+      },
+      "2024": {
+        "cuencas": [
+          "Lerma–Santiago",
+          "Pánuco",
+          "Alta del Balsas"
+        ],
+        "spearman_mediano": {
+          "Alta del Balsas_h1": 0.19,
+          "Alta del Balsas_h7": 0.137,
+          "Alta del Balsas_h14": 0.043,
+          "Lerma–Santiago_h1": 0.363,
+          "Lerma–Santiago_h7": 0.208,
+          "Lerma–Santiago_h14": 0.093,
+          "Pánuco_h1": 0.288,
+          "Pánuco_h7": 0.235,
+          "Pánuco_h14": 0.237
+        },
+        "fraccion_ge_0.5": 0.0,
+        "fraccion_lt_0.3": 0.889,
+        "veredicto_h2a": "REJECTED",
+        "proporcion_1_3_dias_h1": 0.917,
+        "veredicto_h2b": "SUPPORTED"
+      },
+      "2025": {
+        "cuencas": [
+          "Lerma–Santiago",
+          "Pánuco"
+        ],
+        "spearman_mediano": {
+          "Lerma–Santiago_h1": 0.331,
+          "Lerma–Santiago_h7": 0.258,
+          "Lerma–Santiago_h14": 0.184,
+          "Pánuco_h1": 0.275,
+          "Pánuco_h7": 0.205,
+          "Pánuco_h14": 0.19
+        },
+        "fraccion_ge_0.5": 0.0,
+        "fraccion_lt_0.3": 0.833,
+        "veredicto_h2a": "REJECTED",
+        "proporcion_1_3_dias_h1": 1.0,
+        "veredicto_h2b": "SUPPORTED"
+      }
+    },
+    "robustez": {
+      "veredicto_principal": "REJECTED",
+      "por_año": {
+        "2021": "REJECTED",
+        "2022": "REJECTED",
+        "2023": "REJECTED",
+        "2024": "REJECTED",
+        "2025": "REJECTED"
+      },
+      "coincidencias": 5,
+      "años": 5,
+      "excepciones": {},
+      "robustez": "estable"
+    }
+  },
+  "H2b": {
+    "tipo": "descriptivo",
+    "robustez": {
+      "veredicto_principal": "SUPPORTED",
+      "por_año": {
+        "2021": "SUPPORTED",
+        "2022": "SUPPORTED",
+        "2023": "SUPPORTED",
+        "2024": "SUPPORTED",
+        "2025": "SUPPORTED"
+      },
+      "coincidencias": 5,
+      "años": 5,
+      "excepciones": {},
+      "robustez": "estable"
+    }
+  },
+  "H3": {
+    "tipo": "descriptivo (no preregistrado): ensamble de 4 miembros (1 semilla), no de 12",
+    "por_año": {
+      "2021": {
+        "delta_csi_ic": {
+          "P90_h1": [
+            0.0573,
+            0.0035,
+            0.0996
+          ],
+          "P99_h1": [
+            0.0929,
+            0.0416,
+            0.1568
+          ],
+          "P90_h7": [
+            0.0134,
+            0.0048,
+            0.0224
+          ],
+          "P99_h7": [
+            0.0019,
+            0.0,
+            0.0065
+          ],
+          "P90_h14": [
+            0.014,
+            0.0057,
+            0.0236
+          ],
+          "P99_h14": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      },
+      "2022": {
+        "delta_csi_ic": {
+          "P90_h1": [
+            0.0345,
+            -0.0021,
+            0.0703
+          ],
+          "P99_h1": [
+            -0.0172,
+            -0.0852,
+            0.0403
+          ],
+          "P90_h7": [
+            0.0077,
+            -0.0052,
+            0.0199
+          ],
+          "P99_h7": [
+            0.0208,
+            0.0046,
+            0.0335
+          ],
+          "P90_h14": [
+            0.0067,
+            0.0006,
+            0.0129
+          ],
+          "P99_h14": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "veredicto": "REJECTED"
+      },
+      "2023": {
+        "delta_csi_ic": {
+          "P90_h1": [
+            0.1079,
+            0.0048,
+            0.1359
+          ],
+          "P99_h1": [
+            0.1696,
+            0.0,
+            0.4103
+          ],
+          "P90_h7": [
+            0.0048,
+            -0.0071,
+            0.0152
+          ],
+          "P99_h7": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "P90_h14": [
+            -0.0027,
+            -0.013,
+            0.0075
+          ],
+          "P99_h14": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "veredicto": "OPEN"
+      },
+      "2024": {
+        "delta_csi_ic": {
+          "P90_h1": [
+            0.0281,
+            0.0022,
+            0.053
+          ],
+          "P99_h1": [
+            0.1364,
+            0.0824,
+            0.1825
+          ],
+          "P90_h7": [
+            0.0107,
+            0.0012,
+            0.02
+          ],
+          "P99_h7": [
+            0.0044,
+            0.0,
+            0.0098
+          ],
+          "P90_h14": [
+            0.006,
+            -0.0022,
+            0.0146
+          ],
+          "P99_h14": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      },
+      "2025": {
+        "delta_csi_ic": {
+          "P90_h1": [
+            0.0527,
+            0.0031,
+            0.0969
+          ],
+          "P99_h1": [
+            0.0899,
+            0.0312,
+            0.1623
+          ],
+          "P90_h7": [
+            0.0405,
+            0.0051,
+            0.081
+          ],
+          "P99_h7": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "P90_h14": [
+            0.0029,
+            -0.0093,
+            0.0197
+          ],
+          "P99_h14": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "veredicto": "SUPPORTED"
+      }
+    },
+    "referencia_principal_4_miembros": {
+      "delta_csi_ic": {
+        "P90_h1": [
+          0.0809,
+          0.0052,
+          0.1337
+        ],
+        "P99_h1": [
+          0.1107,
+          0.0763,
+          0.1459
+        ],
+        "P90_h7": [
+          0.0152,
+          0.0031,
+          0.026
+        ],
+        "P99_h7": [
+          0.0072,
+          -0.0007,
+          0.0206
+        ],
+        "P90_h14": [
+          0.0086,
+          -0.0018,
+          0.0176
+        ],
+        "P99_h14": [
+          -0.0014,
+          -0.004,
+          0.0
+        ]
+      },
+      "veredicto": "SUPPORTED"
+    },
+    "robustez": {
+      "veredicto_principal": "SUPPORTED",
+      "por_año": {
+        "2021": "SUPPORTED",
+        "2022": "REJECTED",
+        "2023": "OPEN",
+        "2024": "SUPPORTED",
+        "2025": "SUPPORTED"
+      },
+      "coincidencias": 3,
+      "años": 5,
+      "excepciones": {
+        "2022": "REJECTED",
+        "2023": "OPEN"
+      },
+      "robustez": "estable con excepciones"
+    }
+  }
 }

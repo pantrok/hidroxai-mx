@@ -121,21 +121,22 @@ Generado por `scripts/xai_08_report.py` el 2026-10-11. Todas las cifras vienen d
 
 - Pliegues del protocolo §3 (entrenamiento 2010 – Y−2, validación Y−1, prueba Y; Y = 2021–2025), una semilla (20261010); especificación: proof_ledger.md, especificación de ejecución del walk-forward (2026-10-11).
 - Comprobaciones: las funciones de criterios reproducen los veredictos oficiales y la evaluación de alertas con 12 miembros reproduce `e_rq3.json`.
-- Ranking por NSE mediana (descriptivo): W de Kendall entre años h = 1: 0.664, h = 7: 0.744, h = 14: 0.488.
-- Pendiente: faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan.
+- Ranking por NSE mediana (descriptivo): W de Kendall entre años h = 1: 0.52, h = 7: 0.577, h = 14: 0.537.
+- Robustez (veredicto anual contra el principal): H1 estable; H1-b h = 1 inestable; H1-b h = 7 estable con excepciones; H1-b h = 14 estable con excepciones; H2-a estable; H2-b estable; H3 (4 miembros) estable con excepciones.
+- H3 con 4 miembros en la partición principal (referencia): SUPPORTED.
 
 | año de prueba | estaciones (h = 1) | H1 | H1-b (h1 / h7 / h14) | H2-a | H2-b | H3 (4 miembros) | mejor NSE (h1 / h7 / h14) |
 |---|---|---|---|---|---|---|---|
-| 2021 | 92 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / XGBoost |
-| 2022 | 91 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | XGBoost / XGBoost / XGBoost |
-| 2023 | 58 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | XGBoost / XGBoost / XGBoost |
-| 2024 | 77 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / Climatology |
-| 2025 | 51 | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | ARIMA / XGBoost / Climatology |
-| robustez |  | pendiente | pendiente / pendiente / pendiente | pendiente | pendiente | pendiente | W de Kendall 0.664 / 0.744 / 0.488 |
+| 2021 | 92 | SUPPORTED | SUPPORTED / OPEN / OPEN | REJECTED | SUPPORTED | SUPPORTED | ARIMA / XGBoost / XGBoost |
+| 2022 | 91 | SUPPORTED | OPEN / OPEN / REJECTED | REJECTED | SUPPORTED | REJECTED | TCN / XGBoost / XGBoost |
+| 2023 | 58 | SUPPORTED | OPEN / OPEN / OPEN | REJECTED | SUPPORTED | OPEN | XGBoost / XGBoost / XGBoost |
+| 2024 | 77 | SUPPORTED | OPEN / REJECTED / REJECTED | REJECTED | SUPPORTED | SUPPORTED | ARIMA / XGBoost / Climatology |
+| 2025 | 51 | SUPPORTED | OPEN / OPEN / OPEN | REJECTED | SUPPORTED | SUPPORTED | ARIMA / ConvNeXt-1D / Climatology |
+| robustez |  | estable | inestable / estable con excepciones / estable con excepciones | estable | estable | estable con excepciones | W de Kendall 0.52 / 0.577 / 0.537 |
 
 ## 7. Cómputo
 
-- GPU (Tesla T4, Kaggle): 1.625 h en 216 corridas del diseño principal y 0.0 h en 0 del walk-forward. CPU local: 4.187 h en total (presupuesto 40 h).
+- GPU (Tesla T4, Kaggle): 1.625 h en 216 corridas del diseño principal y 1.394 h en 180 del walk-forward. CPU local: 4.841 h en total (presupuesto 40 h).
 - Épocas de las redes (mediana; fracción con parada temprana): ConvNeXt-1D 23.0 (0.986), PatchTST 19.5 (1.0), TCN 17.0 (1.0).
 
 | recurso | componente | horas |
@@ -149,16 +150,16 @@ Generado por `scripts/xai_08_report.py` el 2026-10-11. Todas las cifras vienen d
 | CPU | xai_06_explain | 0.553 |
 | CPU | xai_07_alerts | 0.002 |
 | CPU | xai_05_evaluate | 0.006 |
+| CPU | xai_10_walk_forward_eval | 0.654 |
 | CPU | walk-forward ARIMA | 1.136 |
 | CPU | walk-forward XGBoost | 0.249 |
-| GPU | walk-forward (redes) | 0.0 |
+| GPU | walk-forward (redes) | 1.394 |
 | GPU | total diseño principal | 1.625 |
-| GPU | total con walk-forward | 1.625 |
-| CPU | total | 4.187 |
+| GPU | total con walk-forward | 3.019 |
+| CPU | total | 4.841 |
 
 ## 8. No realizado
 
-- Walk-forward anual, parte de redes: faltan las redes del walk-forward (Kaggle): H1, H1-b, H2 y H3 no se evalúan
 - Informer: fuera del diseño principal (protocolo §4)
 
 ## 9. Archivos
