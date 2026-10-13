@@ -1,6 +1,6 @@
 {
   "proyecto": "HidroXAI-MX · IND-2026-0335 (IPN, PICDT 2026), OE2–OE5",
-  "generado": "2026-10-11",
+  "generado": "2026-10-12",
   "fuente": "scripts/xai_08_report.py",
   "protocolo": {
     "fuente": "results/xai_benchmark/protocol.md",
@@ -96,9 +96,10 @@
         "xai_06_explain": 0.553,
         "xai_07_alerts": 0.002,
         "xai_05_evaluate": 0.006,
-        "xai_10_walk_forward_eval": 0.654
+        "xai_10_walk_forward_eval": 0.654,
+        "xai_11_diagnostics": 0.103
       },
-      "horas_total": 4.841
+      "horas_total": 4.944
     },
     "presupuesto_cpu_h": 40,
     "epocas_redes": {
@@ -3413,6 +3414,10 @@
     {
       "item": "Informer",
       "motivo": "fuera del diseño principal (protocolo §4)"
+    },
+    {
+      "item": "Cruce con el Monitor de Sequía municipal (D1, opcional)",
+      "motivo": "cruce con el Monitor de Sequía municipal (requiere descargar el archivo oficial)"
     }
   ],
   "walk_forward": {
@@ -5340,6 +5345,414 @@
           "2023": "OPEN"
         },
         "robustez": "estable con excepciones"
+      }
+    }
+  },
+  "diagnosticos": {
+    "tipo": "descriptivo (no preregistrado, post hoc)",
+    "fuente": "scripts/xai_11_diagnostics.py; e_diagnosticos.json",
+    "criterios": "proof_ledger.md, sección 'Diagnósticos post hoc' (2026-10-11, escritos antes de calcular)",
+    "sequia_2023": {
+      "por_cuenca": {
+        "Lerma–Santiago": {
+          "año_menor_razon_gasto": 2023,
+          "anomalia_precip_2023": -0.2693,
+          "razon_gasto_2023": 0.3883,
+          "cumple": true,
+          "con_inferencia": true
+        },
+        "Pánuco": {
+          "año_menor_razon_gasto": 2023,
+          "anomalia_precip_2023": -0.413,
+          "razon_gasto_2023": 0.4762,
+          "cumple": true,
+          "con_inferencia": true
+        },
+        "Alta del Balsas": {
+          "año_menor_razon_gasto": 2023,
+          "anomalia_precip_2023": -0.3961,
+          "razon_gasto_2023": 0.3705,
+          "cumple": true,
+          "con_inferencia": true
+        },
+        "Cutzamala": {
+          "año_menor_razon_gasto": 2025,
+          "anomalia_precip_2023": null,
+          "razon_gasto_2023": null,
+          "cumple": false,
+          "con_inferencia": false
+        }
+      },
+      "cuencas_que_cumplen": 3,
+      "cuencas_2023_menor_gasto": 3,
+      "veredicto": "SUPPORTED",
+      "fuente": "scripts/xai_11_diagnostics.py; results/xai_benchmark/diag_sequia_2023*.csv",
+      "datos": {
+        "precipitacion": "precip_idw_mm de las 95 estaciones hidrométricas modeladas",
+        "gasto": "gasto_medio_m3s con calidad = 0",
+        "referencia": "2010–2020, mismo periodo calendario",
+        "periodo_2025": "01-01 a 09-03"
+      },
+      "contraste": {
+        "nse_mediana_walk_forward_h1": {
+          "persistencia": {
+            "2021": 0.6501,
+            "2022": 0.6098,
+            "2023": 0.2669,
+            "2024": 0.5667,
+            "2025": 0.6719
+          },
+          "arima": {
+            "2021": 0.6559,
+            "2022": 0.5695,
+            "2023": 0.3683,
+            "2024": 0.6379,
+            "2025": 0.6829
+          },
+          "xgboost": {
+            "2021": 0.6466,
+            "2022": 0.6277,
+            "2023": 0.378,
+            "2024": 0.5969,
+            "2025": 0.6022
+          },
+          "tcn": {
+            "2021": 0.6378,
+            "2022": 0.6485,
+            "2023": 0.3642,
+            "2024": 0.6184,
+            "2025": 0.5988
+          },
+          "convnext": {
+            "2021": 0.6492,
+            "2022": 0.6429,
+            "2023": 0.3353,
+            "2024": 0.5872,
+            "2025": 0.6084
+          },
+          "patchtst": {
+            "2021": 0.6324,
+            "2022": 0.6184,
+            "2023": 0.323,
+            "2024": 0.6079,
+            "2025": 0.5941
+          }
+        },
+        "beta_climatologia_prueba_principal": {
+          "h1": 1.1547,
+          "h7": 1.152,
+          "h14": 1.1487
+        },
+        "beta_climatologia_walk_forward_h1": {
+          "2021": 1.0401,
+          "2022": 1.6261,
+          "2023": 2.7661,
+          "2024": 0.9956,
+          "2025": 0.7833
+        }
+      },
+      "no_realizado": "cruce con el Monitor de Sequía municipal (requiere descargar el archivo oficial)"
+    },
+    "kge_log1p": {
+      "fuente": "scripts/xai_11_diagnostics.py; results/xai_benchmark/diag_kge_log1p*.csv",
+      "a_smearing": {
+        "medianas": {
+          "arima_h1": {
+            "beta_original": 0.896,
+            "beta_smearing": 0.9924,
+            "alpha_original": 0.7713,
+            "alpha_smearing": 0.8379,
+            "r_original": 0.784,
+            "r_smearing": 0.784,
+            "nse_original": 0.6133,
+            "nse_smearing": 0.5881,
+            "kge_original": 0.6545,
+            "kge_smearing": 0.6972,
+            "factor_mediano": 1.0562,
+            "estaciones": 91
+          },
+          "arima_h7": {
+            "beta_original": 0.7287,
+            "beta_smearing": 0.9864,
+            "alpha_original": 0.4204,
+            "alpha_smearing": 0.5299,
+            "r_original": 0.4391,
+            "r_smearing": 0.4391,
+            "nse_original": 0.1402,
+            "nse_smearing": 0.158,
+            "kge_original": 0.1325,
+            "kge_smearing": 0.2529,
+            "factor_mediano": 1.1782,
+            "estaciones": 91
+          },
+          "arima_h14": {
+            "beta_original": 0.6729,
+            "beta_smearing": 0.9795,
+            "alpha_original": 0.3029,
+            "alpha_smearing": 0.3959,
+            "r_original": 0.3167,
+            "r_smearing": 0.3167,
+            "nse_original": 0.0464,
+            "nse_smearing": 0.0692,
+            "kge_original": -0.0516,
+            "kge_smearing": 0.0753,
+            "factor_mediano": 1.212,
+            "estaciones": 91
+          },
+          "convnext_h1": {
+            "beta_original": 0.8766,
+            "beta_smearing": 0.9642,
+            "alpha_original": 0.7202,
+            "alpha_smearing": 0.7611,
+            "r_original": 0.7844,
+            "r_smearing": 0.7844,
+            "nse_original": 0.5845,
+            "nse_smearing": 0.5812,
+            "kge_original": 0.582,
+            "kge_smearing": 0.6323,
+            "factor_mediano": 1.0503,
+            "estaciones": 91
+          },
+          "convnext_h7": {
+            "beta_original": 0.7275,
+            "beta_smearing": 0.9562,
+            "alpha_original": 0.4555,
+            "alpha_smearing": 0.5555,
+            "r_original": 0.4864,
+            "r_smearing": 0.4864,
+            "nse_original": 0.179,
+            "nse_smearing": 0.1571,
+            "kge_original": 0.1565,
+            "kge_smearing": 0.2307,
+            "factor_mediano": 1.1203,
+            "estaciones": 91
+          },
+          "convnext_h14": {
+            "beta_original": 0.6576,
+            "beta_smearing": 0.8929,
+            "alpha_original": 0.4051,
+            "alpha_smearing": 0.4796,
+            "r_original": 0.4039,
+            "r_smearing": 0.4039,
+            "nse_original": 0.0796,
+            "nse_smearing": 0.0942,
+            "kge_original": 0.0312,
+            "kge_smearing": 0.1017,
+            "factor_mediano": 1.1581,
+            "estaciones": 91
+          },
+          "patchtst_h1": {
+            "beta_original": 0.8992,
+            "beta_smearing": 0.9887,
+            "alpha_original": 0.7707,
+            "alpha_smearing": 0.8107,
+            "r_original": 0.782,
+            "r_smearing": 0.782,
+            "nse_original": 0.6071,
+            "nse_smearing": 0.5521,
+            "kge_original": 0.6185,
+            "kge_smearing": 0.6539,
+            "factor_mediano": 1.0495,
+            "estaciones": 91
+          },
+          "patchtst_h7": {
+            "beta_original": 0.722,
+            "beta_smearing": 0.9672,
+            "alpha_original": 0.4599,
+            "alpha_smearing": 0.5839,
+            "r_original": 0.4694,
+            "r_smearing": 0.4694,
+            "nse_original": 0.1709,
+            "nse_smearing": 0.1846,
+            "kge_original": 0.1612,
+            "kge_smearing": 0.2996,
+            "factor_mediano": 1.1281,
+            "estaciones": 91
+          },
+          "patchtst_h14": {
+            "beta_original": 0.6886,
+            "beta_smearing": 0.9481,
+            "alpha_original": 0.37,
+            "alpha_smearing": 0.4902,
+            "r_original": 0.3883,
+            "r_smearing": 0.3883,
+            "nse_original": 0.0789,
+            "nse_smearing": 0.0984,
+            "kge_original": 0.0156,
+            "kge_smearing": 0.1133,
+            "factor_mediano": 1.1706,
+            "estaciones": 91
+          },
+          "tcn_h1": {
+            "beta_original": 0.8815,
+            "beta_smearing": 0.9657,
+            "alpha_original": 0.7296,
+            "alpha_smearing": 0.7863,
+            "r_original": 0.7882,
+            "r_smearing": 0.7882,
+            "nse_original": 0.6061,
+            "nse_smearing": 0.5782,
+            "kge_original": 0.5975,
+            "kge_smearing": 0.6459,
+            "factor_mediano": 1.0527,
+            "estaciones": 91
+          },
+          "tcn_h7": {
+            "beta_original": 0.7095,
+            "beta_smearing": 0.9472,
+            "alpha_original": 0.459,
+            "alpha_smearing": 0.562,
+            "r_original": 0.481,
+            "r_smearing": 0.481,
+            "nse_original": 0.1728,
+            "nse_smearing": 0.1834,
+            "kge_original": 0.1644,
+            "kge_smearing": 0.2552,
+            "factor_mediano": 1.1333,
+            "estaciones": 91
+          },
+          "tcn_h14": {
+            "beta_original": 0.7091,
+            "beta_smearing": 0.9347,
+            "alpha_original": 0.4208,
+            "alpha_smearing": 0.5202,
+            "r_original": 0.4201,
+            "r_smearing": 0.4201,
+            "nse_original": 0.0888,
+            "nse_smearing": 0.1112,
+            "kge_original": 0.0576,
+            "kge_smearing": 0.1317,
+            "factor_mediano": 1.1462,
+            "estaciones": 91
+          },
+          "xgboost_h1": {
+            "beta_original": 0.8615,
+            "beta_smearing": 0.9588,
+            "alpha_original": 0.7149,
+            "alpha_smearing": 0.772,
+            "r_original": 0.7834,
+            "r_smearing": 0.7834,
+            "nse_original": 0.5994,
+            "nse_smearing": 0.5627,
+            "kge_original": 0.5789,
+            "kge_smearing": 0.6271,
+            "factor_mediano": 1.0494,
+            "estaciones": 91
+          },
+          "xgboost_h7": {
+            "beta_original": 0.7414,
+            "beta_smearing": 0.9426,
+            "alpha_original": 0.4566,
+            "alpha_smearing": 0.5648,
+            "r_original": 0.4956,
+            "r_smearing": 0.4956,
+            "nse_original": 0.1726,
+            "nse_smearing": 0.1945,
+            "kge_original": 0.1669,
+            "kge_smearing": 0.2788,
+            "factor_mediano": 1.1163,
+            "estaciones": 91
+          },
+          "xgboost_h14": {
+            "beta_original": 0.7083,
+            "beta_smearing": 0.9259,
+            "alpha_original": 0.3919,
+            "alpha_smearing": 0.4566,
+            "r_original": 0.4373,
+            "r_smearing": 0.4373,
+            "nse_original": 0.1092,
+            "nse_smearing": 0.1087,
+            "kge_original": 0.0709,
+            "kge_smearing": 0.1407,
+            "factor_mediano": 1.1518,
+            "estaciones": 91
+          }
+        },
+        "acercamiento_beta_a_1_h1": {
+          "xgboost": 0.0973,
+          "tcn": 0.0842,
+          "convnext": 0.0876,
+          "patchtst": 0.0895
+        },
+        "delta_beta_h1": {
+          "xgboost": 0.0973,
+          "tcn": 0.0842,
+          "convnext": 0.0876,
+          "patchtst": 0.0895
+        },
+        "estaciones_sin_validacion_f1": {
+          "arima_h1": 1,
+          "xgboost_h1": 1,
+          "tcn_h1": 1,
+          "convnext_h1": 1,
+          "patchtst_h1": 1,
+          "arima_h7": 1,
+          "xgboost_h7": 1,
+          "tcn_h7": 1,
+          "convnext_h7": 1,
+          "patchtst_h7": 1,
+          "arima_h14": 1,
+          "xgboost_h14": 1,
+          "tcn_h14": 1,
+          "convnext_h14": 1,
+          "patchtst_h14": 1
+        },
+        "veredicto": "SUPPORTED",
+        "comprobacion": "las métricas originales reproducen rq1_station_metrics.csv"
+      },
+      "b_xgboost_espacio_original": {
+        "medianas": {
+          "h1": {
+            "beta": 1.0645,
+            "alpha": 0.7989,
+            "r": 0.7718,
+            "nse": 0.543,
+            "kge": 0.5881,
+            "estaciones": 91
+          },
+          "h7": {
+            "beta": 1.09,
+            "alpha": 0.5917,
+            "r": 0.5066,
+            "nse": 0.1864,
+            "kge": 0.2901,
+            "estaciones": 91
+          },
+          "h14": {
+            "beta": 1.0621,
+            "alpha": 0.5071,
+            "r": 0.4124,
+            "nse": 0.1237,
+            "kge": 0.1523,
+            "estaciones": 91
+          }
+        },
+        "xgboost_log1p": {
+          "h1": {
+            "beta": 0.8615,
+            "alpha": 0.7149,
+            "r": 0.7834,
+            "nse": 0.5994,
+            "kge": 0.5789
+          },
+          "h7": {
+            "beta": 0.7414,
+            "alpha": 0.4566,
+            "r": 0.4956,
+            "nse": 0.1726,
+            "kge": 0.1669
+          },
+          "h14": {
+            "beta": 0.7083,
+            "alpha": 0.3919,
+            "r": 0.4373,
+            "nse": 0.1092,
+            "kge": 0.0709
+          }
+        },
+        "veredicto": "SUPPORTED",
+        "horas_cpu": 0.087,
+        "nota": "horas incluidas en la fila xai_11_diagnostics del manifiesto"
       }
     }
   },

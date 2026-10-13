@@ -567,6 +567,47 @@ def fig_walk_forward(wfs: pd.DataFrame, ewf: dict, e3: dict) -> None:
     _save(fig, "fig10_walk_forward")
 
 
+def fig_drought(dq: pd.DataFrame) -> None:
+    years = sorted(dq["año"].unique())
+    basins = list(D.BASINS)
+    cols = {y: ("#c62828" if y == 2023 else c) for y, c in zip(years, ["#90caf9", "#64b5f6", "#c62828", "#1e88e5",
+                                                                       "#0d47a1"], strict=True)}
+    fig, axes = plt.subplots(1, 2, figsize=(9, 3.2))
+    w = 0.16
+    for ax, var, lab, ref in ((axes[0], "anomalia_precip_mediana", "Precipitation anomaly vs 2010–2020 median", 0),
+                              (axes[1], "razon_gasto_mediana", "Streamflow ratio vs 2010–2020 mean", 1)):
+        for i, y in enumerate(years):
+            v = [dq[(dq["cuenca"] == b) & (dq["año"] == y)][var].squeeze() for b in basins]
+            v = [np.nan if isinstance(x, pd.Series) else x for x in v]
+            vals = (np.array(v, dtype=float) * 100) if ref == 0 else np.array(v, dtype=float)
+            ax.bar(np.arange(len(basins)) + (i - 2) * w, vals, w, color=cols[y], label=str(y))
+        ax.axhline(ref, color="k", lw=0.6)
+        ax.set_xticks(range(len(basins)), [b if b != "Cutzamala" else "Cutzamala\n(n = 1, descr.)" for b in basins],
+                      fontsize=7.5)
+        ax.set_ylabel(lab + (" (%)" if ref == 0 else ""), fontsize=8)
+    axes[0].set_title("(a) Precipitation (precip_idw_mm)", loc="left", fontsize=9)
+    axes[1].set_title("(b) Observed streamflow (quality 0)", loc="left", fontsize=9)
+    fig.legend(*axes[1].get_legend_handles_labels(), fontsize=7.5, frameon=False, ncol=5, loc="lower center",
+               bbox_to_anchor=(0.5, -0.04))
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
+    _save(fig, "fig11_drought_2023")
+
+
+def tables_diagnostics(dq: pd.DataFrame, dk: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    t8 = pd.DataFrame([{"cuenca": r.cuenca, "año": r.año,
+                        "anomalía de precipitación (%)": "" if pd.isna(r.anomalia_precip_mediana)
+                        else f"{100 * r.anomalia_precip_mediana:.1f}",
+                        "estaciones (P)": int(r.estaciones_precip),
+                        "razón de gasto": "" if pd.isna(r.razon_gasto_mediana) else f"{r.razon_gasto_mediana:.3f}",
+                        "estaciones (Q)": int(r.estaciones_gasto)} for r in dq.itertuples()])
+    name = {**LABEL, "xgboost_espacio_original": "XGBoost sin log1p"}
+    t1c = pd.DataFrame([{"modelo": name[r.modelo], "h": r.h, "variante": r.variante,
+                         **{k: f"{getattr(r, c):.3f}" for k, c in (("β", "beta"), ("α", "alpha"), ("r", "r"),
+                                                                    ("NSE", "nse"), ("KGE", "kge"))}}
+                        for r in dk.sort_values(["h", "modelo", "variante"]).itertuples()])
+    return {"T8_sequia_2023": t8, "T1c_kge_log1p": t1c}
+
+
 def tables_walk_forward(ewf: dict, wfs: pd.DataFrame) -> dict[str, pd.DataFrame]:
     def get(*keys):
         x = ewf
@@ -658,6 +699,30 @@ def tables(nums: dict, sm: pd.DataFrame, conc: pd.DataFrame, lags: pd.DataFrame,
                         for h in HS for m in ORDER for x in [kc[f"h{h}"][m]]])
     return {"T1_rq1_agregado": t1, "T1b_rq1_kge_componentes": t1b, "T2_rq1_por_cuenca": t2,
             "T3_rq2_concordancia_rezagos": t3, "T4_rq3_alertas": t4, "T5_hipotesis": t5, "T6_computo": t6}
+
+
+def diagnostics_section(nums: dict, tabs: dict[str, pd.DataFrame]) -> list[str]:
+    if "diagnosticos" not in nums:
+        return []
+    d1, d2 = nums["diagnosticos"]["sequia_2023"], nums["diagnosticos"]["kge_log1p"]
+    sm = d2["a_smearing"]
+    out = ["## Diagnósticos post hoc (descriptivos)", "",
+           f"Criterios: {nums['diagnosticos']['criterios']}. No cambian veredictos ni métricas principales.", "",
+           f"- D1 (¿2023 seco?): {d1['veredicto']}. Cuencas con inferencia donde 2023 tiene la menor razón de gasto "
+           f"y anomalía de precipitación < 0: {d1['cuencas_que_cumplen']} de 3. "
+           + "; ".join(f"{b}: precipitación {100 * x['anomalia_precip_2023']:.1f} %, razón de gasto "
+                       f"{x['razon_gasto_2023']:.3f}" for b, x in d1["por_cuenca"].items() if x["con_inferencia"]) + ".",
+           "- β de la climatología por año del walk-forward (h = 1): "
+           + ", ".join(f"{y} {v}" for y, v in d1["contraste"]["beta_climatologia_walk_forward_h1"].items()) + ".",
+           f"- D2-a (smearing de Duan): {sm['veredicto']}. Acercamiento de la mediana de β a 1 (h = 1): "
+           + ", ".join(f"{LABEL[m]} {v}" for m, v in sm["acercamiento_beta_a_1_h1"].items()) + "."]
+    if "b_xgboost_espacio_original" in d2:
+        b = d2["b_xgboost_espacio_original"]
+        out.append(f"- D2-b (XGBoost sin log1p): {b['veredicto']}. Mediana de α a h = 1: {b['medianas']['h1']['alpha']} "
+                   f"(log1p: {b['xgboost_log1p']['h1']['alpha']}); NSE {b['medianas']['h1']['nse']} "
+                   f"(log1p: {b['xgboost_log1p']['h1']['nse']}).")
+    out += ["", _md(tabs["T8_sequia_2023"]), "", _md(tabs["T1c_kge_log1p"]), ""]
+    return out
 
 
 def walk_forward_section(nums: dict, tabs: dict[str, pd.DataFrame]) -> list[str]:
@@ -776,6 +841,7 @@ def report(nums: dict, tabs: dict[str, pd.DataFrame]) -> str:
         _md(tabs["T4_rq3_alertas"]),
         "",
         *walk_forward_section(nums, tabs),
+        *diagnostics_section(nums, tabs),
         "## 7. Cómputo",
         "",
         f"- GPU ({', '.join(c['gpu']['dispositivo'])}, Kaggle): {c['gpu']['horas_total']} h en "
@@ -845,6 +911,13 @@ def main() -> None:
                 {h: v["robustez"] for h, v in ewf[k]["robustez"].items()})
             for k in ("H1", "H1b", "H2a", "H2b", "H3") if k in ewf}
     nums["no_realizado"].append({"item": "Informer", "motivo": "fuera del diseño principal (protocolo §4)"})
+    edg = _json("e_diagnosticos.json") if (OUT / "e_diagnosticos.json").exists() else None
+    if edg is not None:
+        nums["diagnosticos"] = {"tipo": edg["tipo"], "fuente": "scripts/xai_11_diagnostics.py; e_diagnosticos.json",
+                                "criterios": edg["criterios"], "sequia_2023": edg["sequia_2023"],
+                                "kge_log1p": edg["kge_log1p"]}
+        nums["no_realizado"].append({"item": "Cruce con el Monitor de Sequía municipal (D1, opcional)",
+                                     "motivo": edg["sequia_2023"]["no_realizado"]})
 
     fig_rq1_skill(sm)
     fig_rq1_basins(sm)
@@ -862,6 +935,10 @@ def main() -> None:
     if ewf is not None:
         fig_walk_forward(wfs, ewf, e3)
         tabs.update(tables_walk_forward(ewf, wfs))
+    if edg is not None:
+        dq = pd.read_csv(OUT / "diag_sequia_2023.csv")
+        fig_drought(dq)
+        tabs.update(tables_diagnostics(dq, pd.read_csv(OUT / "diag_kge_log1p.csv")))
     for name, t in tabs.items():
         t.to_csv(TAB / f"{name}.csv", index=False)
     (TAB / "tables.md").write_text("\n\n".join(f"## {n}\n\n{_md(t)}" for n, t in tabs.items()) + "\n",

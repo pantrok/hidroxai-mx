@@ -1,0 +1,34 @@
+modelo,h,variante,β,α,r,NSE,KGE
+ARIMA,1,original,0.896,0.771,0.784,0.613,0.654
+ARIMA,1,smearing,0.992,0.838,0.784,0.588,0.697
+ConvNeXt-1D,1,original,0.877,0.720,0.784,0.585,0.582
+ConvNeXt-1D,1,smearing,0.964,0.761,0.784,0.581,0.632
+PatchTST,1,original,0.899,0.771,0.782,0.607,0.619
+PatchTST,1,smearing,0.989,0.811,0.782,0.552,0.654
+TCN,1,original,0.881,0.730,0.788,0.606,0.598
+TCN,1,smearing,0.966,0.786,0.788,0.578,0.646
+XGBoost,1,original,0.862,0.715,0.783,0.599,0.579
+XGBoost,1,smearing,0.959,0.772,0.783,0.563,0.627
+XGBoost sin log1p,1,espacio_original,1.065,0.799,0.772,0.543,0.588
+ARIMA,7,original,0.729,0.420,0.439,0.140,0.133
+ARIMA,7,smearing,0.986,0.530,0.439,0.158,0.253
+ConvNeXt-1D,7,original,0.728,0.456,0.486,0.179,0.157
+ConvNeXt-1D,7,smearing,0.956,0.555,0.486,0.157,0.231
+PatchTST,7,original,0.722,0.460,0.469,0.171,0.161
+PatchTST,7,smearing,0.967,0.584,0.469,0.185,0.300
+TCN,7,original,0.710,0.459,0.481,0.173,0.164
+TCN,7,smearing,0.947,0.562,0.481,0.183,0.255
+XGBoost,7,original,0.741,0.457,0.496,0.173,0.167
+XGBoost,7,smearing,0.943,0.565,0.496,0.195,0.279
+XGBoost sin log1p,7,espacio_original,1.090,0.592,0.507,0.186,0.290
+ARIMA,14,original,0.673,0.303,0.317,0.046,-0.052
+ARIMA,14,smearing,0.980,0.396,0.317,0.069,0.075
+ConvNeXt-1D,14,original,0.658,0.405,0.404,0.080,0.031
+ConvNeXt-1D,14,smearing,0.893,0.480,0.404,0.094,0.102
+PatchTST,14,original,0.689,0.370,0.388,0.079,0.016
+PatchTST,14,smearing,0.948,0.490,0.388,0.098,0.113
+TCN,14,original,0.709,0.421,0.420,0.089,0.058
+TCN,14,smearing,0.935,0.520,0.420,0.111,0.132
+XGBoost,14,original,0.708,0.392,0.437,0.109,0.071
+XGBoost,14,smearing,0.926,0.457,0.437,0.109,0.141
+XGBoost sin log1p,14,espacio_original,1.062,0.507,0.412,0.124,0.152

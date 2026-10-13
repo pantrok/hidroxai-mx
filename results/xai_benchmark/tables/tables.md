@@ -191,12 +191,13 @@
 | CPU | xai_07_alerts | 0.002 |
 | CPU | xai_05_evaluate | 0.006 |
 | CPU | xai_10_walk_forward_eval | 0.654 |
+| CPU | xai_11_diagnostics | 0.103 |
 | CPU | walk-forward ARIMA | 1.136 |
 | CPU | walk-forward XGBoost | 0.249 |
 | GPU | walk-forward (redes) | 1.394 |
 | GPU | total diseño principal | 1.625 |
 | GPU | total con walk-forward | 3.019 |
-| CPU | total | 4.841 |
+| CPU | total | 4.944 |
 
 ## T7_walk_forward
 
@@ -318,3 +319,66 @@
 | 2025 | 14 | Persistence | 44 | -0.395 | 0.000 |
 | 2025 | 14 | TCN | 44 | 0.055 | 0.328 [0.241, 0.367] |
 | 2025 | 14 | XGBoost | 44 | 0.059 | 0.306 [0.245, 0.368] |
+
+## T8_sequia_2023
+
+| cuenca | año | anomalía de precipitación (%) | estaciones (P) | razón de gasto | estaciones (Q) |
+|---|---|---|---|---|---|
+| Alta del Balsas | 2021 | -7.3 | 12 | 0.663 | 12 |
+| Alta del Balsas | 2022 | -36.4 | 12 | 0.591 | 12 |
+| Alta del Balsas | 2023 | -39.6 | 6 | 0.370 | 8 |
+| Alta del Balsas | 2024 | -8.4 | 12 | 0.851 | 12 |
+| Alta del Balsas | 2025 | -18.2 | 11 | 0.940 | 12 |
+| Cutzamala | 2021 | -17.2 | 1 | 0.893 | 1 |
+| Cutzamala | 2022 | -12.3 | 1 | 0.792 | 1 |
+| Cutzamala | 2023 |  | 0 |  | 0 |
+| Cutzamala | 2024 |  | 0 | 1.075 | 1 |
+| Cutzamala | 2025 | -5.8 | 1 | 0.674 | 1 |
+| Lerma–Santiago | 2021 | 9.3 | 38 | 1.264 | 40 |
+| Lerma–Santiago | 2022 | -9.8 | 38 | 0.689 | 40 |
+| Lerma–Santiago | 2023 | -26.9 | 23 | 0.388 | 33 |
+| Lerma–Santiago | 2024 | 0.9 | 37 | 0.901 | 39 |
+| Lerma–Santiago | 2025 | 10.9 | 41 | 1.107 | 39 |
+| Pánuco | 2021 | 10.0 | 38 | 0.778 | 38 |
+| Pánuco | 2022 | -35.5 | 37 | 0.572 | 37 |
+| Pánuco | 2023 | -41.3 | 19 | 0.476 | 32 |
+| Pánuco | 2024 | 5.3 | 32 | 1.007 | 34 |
+| Pánuco | 2025 | 24.6 | 31 | 1.103 | 34 |
+
+## T1c_kge_log1p
+
+| modelo | h | variante | β | α | r | NSE | KGE |
+|---|---|---|---|---|---|---|---|
+| ARIMA | 1 | original | 0.896 | 0.771 | 0.784 | 0.613 | 0.654 |
+| ARIMA | 1 | smearing | 0.992 | 0.838 | 0.784 | 0.588 | 0.697 |
+| ConvNeXt-1D | 1 | original | 0.877 | 0.720 | 0.784 | 0.585 | 0.582 |
+| ConvNeXt-1D | 1 | smearing | 0.964 | 0.761 | 0.784 | 0.581 | 0.632 |
+| PatchTST | 1 | original | 0.899 | 0.771 | 0.782 | 0.607 | 0.619 |
+| PatchTST | 1 | smearing | 0.989 | 0.811 | 0.782 | 0.552 | 0.654 |
+| TCN | 1 | original | 0.881 | 0.730 | 0.788 | 0.606 | 0.598 |
+| TCN | 1 | smearing | 0.966 | 0.786 | 0.788 | 0.578 | 0.646 |
+| XGBoost | 1 | original | 0.862 | 0.715 | 0.783 | 0.599 | 0.579 |
+| XGBoost | 1 | smearing | 0.959 | 0.772 | 0.783 | 0.563 | 0.627 |
+| XGBoost sin log1p | 1 | espacio_original | 1.065 | 0.799 | 0.772 | 0.543 | 0.588 |
+| ARIMA | 7 | original | 0.729 | 0.420 | 0.439 | 0.140 | 0.133 |
+| ARIMA | 7 | smearing | 0.986 | 0.530 | 0.439 | 0.158 | 0.253 |
+| ConvNeXt-1D | 7 | original | 0.728 | 0.456 | 0.486 | 0.179 | 0.157 |
+| ConvNeXt-1D | 7 | smearing | 0.956 | 0.555 | 0.486 | 0.157 | 0.231 |
+| PatchTST | 7 | original | 0.722 | 0.460 | 0.469 | 0.171 | 0.161 |
+| PatchTST | 7 | smearing | 0.967 | 0.584 | 0.469 | 0.185 | 0.300 |
+| TCN | 7 | original | 0.710 | 0.459 | 0.481 | 0.173 | 0.164 |
+| TCN | 7 | smearing | 0.947 | 0.562 | 0.481 | 0.183 | 0.255 |
+| XGBoost | 7 | original | 0.741 | 0.457 | 0.496 | 0.173 | 0.167 |
+| XGBoost | 7 | smearing | 0.943 | 0.565 | 0.496 | 0.195 | 0.279 |
+| XGBoost sin log1p | 7 | espacio_original | 1.090 | 0.592 | 0.507 | 0.186 | 0.290 |
+| ARIMA | 14 | original | 0.673 | 0.303 | 0.317 | 0.046 | -0.052 |
+| ARIMA | 14 | smearing | 0.980 | 0.396 | 0.317 | 0.069 | 0.075 |
+| ConvNeXt-1D | 14 | original | 0.658 | 0.405 | 0.404 | 0.080 | 0.031 |
+| ConvNeXt-1D | 14 | smearing | 0.893 | 0.480 | 0.404 | 0.094 | 0.102 |
+| PatchTST | 14 | original | 0.689 | 0.370 | 0.388 | 0.079 | 0.016 |
+| PatchTST | 14 | smearing | 0.948 | 0.490 | 0.388 | 0.098 | 0.113 |
+| TCN | 14 | original | 0.709 | 0.421 | 0.420 | 0.089 | 0.058 |
+| TCN | 14 | smearing | 0.935 | 0.520 | 0.420 | 0.111 | 0.132 |
+| XGBoost | 14 | original | 0.708 | 0.392 | 0.437 | 0.109 | 0.071 |
+| XGBoost | 14 | smearing | 0.926 | 0.457 | 0.437 | 0.109 | 0.141 |
+| XGBoost sin log1p | 14 | espacio_original | 1.062 | 0.507 | 0.412 | 0.124 | 0.152 |

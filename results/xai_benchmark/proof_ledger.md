@@ -180,6 +180,107 @@ de arriba. Las cifras están en `e_walkforward.json` y en `numbers.json` → `wa
     `e_rq1.json` idénticos);
   - el resumen está en `numbers.json` → `rq1.kge_componentes` y en la tabla T1b.
 
+## Diagnósticos post hoc (2026-10-11, criterios escritos antes de calcular)
+
+Vienen de la Fase A del manuscrito (afirmaciones C16 y C17). Son descriptivos (no
+preregistrados, post hoc): no cambian ningún veredicto de §7, las métricas principales, H1,
+H1-b ni el ranking. No se reentrena ningún modelo del diseño principal. Código:
+`scripts/xai_11_diagnostics.py`; salida en `numbers.json` → `diagnosticos`.
+
+### D1. ¿Fue 2023 un año seco en las cuencas piloto?
+
+**Fuentes y estaciones**
+
+- **Precipitación:** `precip_idw_mm` de las 95 estaciones hidrométricas modeladas (la misma
+  entrada de los modelos). No se usan las 415 estaciones climatológicas.
+- **Gasto:** `gasto_medio_m3s` con `calidad = 0`, de las mismas 95 estaciones.
+
+**Periodos**
+
+- **Periodo de cada año:** para 2021–2024, del 1-ene al 31-dic; para 2025, del 1-ene al 09-03.
+- **Referencia:** el mismo periodo calendario en cada año de 2010–2020.
+
+**Cobertura mínima**
+
+- Una estación-año cuenta si tiene datos en ≥ 90 % de los días del periodo (precipitación) o
+  `calidad = 0` en ≥ 70 % de los días (gasto).
+- La referencia de una estación exige ≥ 5 años válidos en 2010–2020.
+
+**Indicadores por estación**
+
+- **Anomalía de precipitación:** total del periodo / mediana de los totales de referencia − 1.
+- **Razón de gasto:** media del periodo / media de las medias anuales de referencia.
+
+**Valor por cuenca:** mediana de las estaciones válidas de la cuenca en ese año. Las cuencas
+con inferencia son Lerma–Santiago, Pánuco y Alta del Balsas; Cutzamala va solo como
+descriptiva.
+
+**Criterio**
+
+- **SUPPORTED:** en ≥ 2 de las 3 cuencas con inferencia, 2023 tiene la menor razón de gasto
+  de 2021–2025 **y** una anomalía de precipitación < 0.
+- **REJECTED:** 2023 no es el año de menor razón de gasto en ninguna de las 3.
+- **OPEN:** cualquier otro caso.
+
+**Contraste** (descriptivo): NSE mediana por año del walk-forward (`e_walkforward.json`) y β
+mediana de la climatología, en la prueba principal y por año del walk-forward.
+
+**No se hace:** el cruce opcional con el Monitor de Sequía municipal, porque requiere
+descargar un archivo oficial con autorización expresa.
+
+### D2. ¿Por qué α y β < 1?
+
+**(a) Corrección por *smearing* de Duan (1983)**
+
+- **Predicción base:** la evaluada en el diseño principal. Para los 4 modelos aprendidos es la
+  media de las 3 semillas en m³/s; también se aplica a ARIMA. ŷ_log = log1p(Q̂), que es exacto
+  porque Q̂ = expm1(ŷ_log).
+- **Factor por estación y horizonte:** f = media de exp(e) sobre las muestras de **validación**
+  (2021–2022), con e = log1p(Q_obs) − log1p(Q̂). Una estación sin muestras de validación usa
+  f = 1 y se cuenta.
+- **Predicción corregida en prueba:** Q̂_c = (1 + Q̂)·f − 1.
+- **Métricas:** mediana de β, α, r, NSE y KGE sobre las estaciones evaluables (las de
+  `rq1_station_metrics.csv`), con y sin corrección, para h = 1, 7 y 14.
+- **Criterio, a h = 1:**
+  - **SUPPORTED (a)** si en ≥ 3 de los 4 modelos aprendidos |β_mediana − 1| se reduce en
+    ≥ 0.03 con la corrección;
+  - **REJECTED (a)** si |Δβ_mediana| < 0.01 en los cuatro;
+  - **OPEN** en otro caso. α se reporta pero no decide.
+
+**(b) XGBoost en espacio original** (solo CPU)
+
+- **Diseño:** igual al de XGBoost del diseño principal (mismas entradas, profundidad elegida en
+  `e_rq1.json`, 3 semillas, misma partición). Lo único que cambia es el objetivo: m³/s
+  estandarizado por estación con media y desviación de las muestras de entrenamiento, sin
+  log1p.
+- **Predicción:** se devuelve a m³/s y se recorta en 0.
+- **Métricas:** α, β, r, NSE y KGE medianas en las mismas estaciones evaluables, comparadas con
+  XGBoost en log1p.
+- **Criterio, a h = 1:**
+  - **SUPPORTED (b)** si la mediana de α < 0.9;
+  - **REJECTED (b)** si α ≥ 0.95;
+  - **OPEN** si 0.9 ≤ α < 0.95.
+
+### Resultados de los diagnósticos
+
+`scripts/xai_11_diagnostics.py` → `e_diagnosticos.json`; `numbers.json` → `diagnosticos`.
+
+| Diagnóstico | Veredicto | Evidencia |
+|---|---|---|
+| D1. 2023, año más seco del periodo de prueba en nuestros datos | **SUPPORTED** (3 de 3 cuencas con inferencia) | `sequia_2023.por_cuenca`, `diag_sequia_2023.csv` |
+| D2-a. Sesgo de retransformación (smearing) | **SUPPORTED** (4 de 4 modelos aprendidos) | `kge_log1p.a_smearing`, `diag_kge_log1p.csv` |
+| D2-b. Contracción de un predictor de media condicional (XGBoost sin log1p) | **SUPPORTED** | `kge_log1p.b_xgboost_espacio_original` |
+
+**Notas sobre D1 y D2**
+
+- **Cobertura en 2023:** en 2023 hay menos estación-años con cobertura suficiente de
+  precipitación (`estaciones_precip` en `diag_sequia_2023.csv`). Las cuentas por cuenca y año se
+  reportan.
+- **Estaciones sin validación:** una estación evaluable no tiene muestras de validación y usa
+  f = 1 (`estaciones_sin_validacion_f1`).
+- **Alcance:** las métricas corregidas son diagnósticas y no sustituyen a las del diseño
+  principal.
+
 ## Evidencia
 
 - `e_rq1.json`, `e_rq2.json` y `e_rq3.json`: veredictos con sus IC.

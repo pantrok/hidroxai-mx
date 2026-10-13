@@ -1,0 +1,21 @@
+cuenca,año,anomalia_precip_mediana,estaciones_precip,razon_gasto_mediana,estaciones_gasto
+Alta del Balsas,2021,-0.0735,12,0.6633,12
+Alta del Balsas,2022,-0.3635,12,0.5914,12
+Alta del Balsas,2023,-0.3961,6,0.3705,8
+Alta del Balsas,2024,-0.0841,12,0.8505,12
+Alta del Balsas,2025,-0.1819,11,0.9398,12
+Cutzamala,2021,-0.1724,1,0.8932,1
+Cutzamala,2022,-0.123,1,0.7923,1
+Cutzamala,2023,,0,,0
+Cutzamala,2024,,0,1.075,1
+Cutzamala,2025,-0.0583,1,0.6738,1
+Lerma–Santiago,2021,0.0931,38,1.2639,40
+Lerma–Santiago,2022,-0.0985,38,0.6888,40
+Lerma–Santiago,2023,-0.2693,23,0.3883,33
+Lerma–Santiago,2024,0.0088,37,0.9013,39
+Lerma–Santiago,2025,0.1088,41,1.107,39
+Pánuco,2021,0.1004,38,0.7783,38
+Pánuco,2022,-0.3554,37,0.5717,37
+Pánuco,2023,-0.413,19,0.4762,32
+Pánuco,2024,0.0532,32,1.0071,34
+Pánuco,2025,0.2461,31,1.1033,34

@@ -1,0 +1,21 @@
+cuenca,año,anomalía de precipitación (%),estaciones (P),razón de gasto,estaciones (Q)
+Alta del Balsas,2021,-7.3,12,0.663,12
+Alta del Balsas,2022,-36.4,12,0.591,12
+Alta del Balsas,2023,-39.6,6,0.370,8
+Alta del Balsas,2024,-8.4,12,0.851,12
+Alta del Balsas,2025,-18.2,11,0.940,12
+Cutzamala,2021,-17.2,1,0.893,1
+Cutzamala,2022,-12.3,1,0.792,1
+Cutzamala,2023,,0,,0
+Cutzamala,2024,,0,1.075,1
+Cutzamala,2025,-5.8,1,0.674,1
+Lerma–Santiago,2021,9.3,38,1.264,40
+Lerma–Santiago,2022,-9.8,38,0.689,40
+Lerma–Santiago,2023,-26.9,23,0.388,33
+Lerma–Santiago,2024,0.9,37,0.901,39
+Lerma–Santiago,2025,10.9,41,1.107,39
+Pánuco,2021,10.0,38,0.778,38
+Pánuco,2022,-35.5,37,0.572,37
+Pánuco,2023,-41.3,19,0.476,32
+Pánuco,2024,5.3,32,1.007,34
+Pánuco,2025,24.6,31,1.103,34
