@@ -59,6 +59,66 @@
         "val": 57565,
         "test": 60630
       }
+    },
+    "por_cuenca": {
+      "tipo": "descriptivo",
+      "fuente": "scripts/xai_12_figures_esi.py; feature_table.parquet (v2026.10); CNA (1998) cue250kgw",
+      "definiciones": {
+        "area_km2_oficial": "área en EPSG:6372 de la capa CNA (1998) Cuencas Hidrológicas 1:250 000: región 12 (Lerma–Santiago), región 26 (Pánuco) y cuenca Río Cutzamala; Alta del Balsas sin equivalente oficial",
+        "gasto_medio_y_p90": "mediana entre estaciones de la media, la mediana y el P90 de gasto 2010–2020 con calidad = 0; max_entrenamiento_m3s es el máximo de la cuenca. Una media por encima del P90 indica valores extremos con calidad = 0 en el conjunto v2026.10 (no se modifican aquí); la mediana es la cifra robusta",
+        "dias_sin_observacion_original_pct": "media entre estaciones del % de días 2010-01-01 – 2025-09-03 sin observación original (calidad ≠ 0 o sin dato)"
+      },
+      "fecha": "2026-10-13",
+      "valores": {
+        "Alta del Balsas": {
+          "estaciones_modeladas": 12,
+          "estaciones_evaluables": 12,
+          "area_km2_oficial": null,
+          "gasto_medio_entrenamiento_m3s_mediana": 4.405,
+          "gasto_mediano_entrenamiento_m3s_mediana": 1.255,
+          "p90_entrenamiento_m3s_mediana": 2.752,
+          "dias_sin_observacion_original_pct": 30.3,
+          "max_entrenamiento_m3s": 18865.0,
+          "estaciones_media_mayor_que_p90": 3,
+          "estaciones_fuera_del_contorno_dibujado": null
+        },
+        "Cutzamala": {
+          "estaciones_modeladas": 1,
+          "estaciones_evaluables": 1,
+          "area_km2_oficial": 13663.2,
+          "gasto_medio_entrenamiento_m3s_mediana": 0.657,
+          "gasto_mediano_entrenamiento_m3s_mediana": 0.4,
+          "p90_entrenamiento_m3s_mediana": 1.6,
+          "dias_sin_observacion_original_pct": 32.6,
+          "max_entrenamiento_m3s": 5.0,
+          "estaciones_media_mayor_que_p90": 0,
+          "estaciones_fuera_del_contorno_dibujado": 0
+        },
+        "Lerma–Santiago": {
+          "estaciones_modeladas": 43,
+          "estaciones_evaluables": 41,
+          "area_km2_oficial": 132718.2,
+          "gasto_medio_entrenamiento_m3s_mediana": 4.853,
+          "gasto_mediano_entrenamiento_m3s_mediana": 0.62,
+          "p90_entrenamiento_m3s_mediana": 11.86,
+          "dias_sin_observacion_original_pct": 22.1,
+          "max_entrenamiento_m3s": 2072.4,
+          "estaciones_media_mayor_que_p90": 3,
+          "estaciones_fuera_del_contorno_dibujado": 2
+        },
+        "Pánuco": {
+          "estaciones_modeladas": 39,
+          "estaciones_evaluables": 37,
+          "area_km2_oficial": 96815.4,
+          "gasto_medio_entrenamiento_m3s_mediana": 14.89,
+          "gasto_mediano_entrenamiento_m3s_mediana": 8.86,
+          "p90_entrenamiento_m3s_mediana": 30.0,
+          "dias_sin_observacion_original_pct": 20.0,
+          "max_entrenamiento_m3s": 4963.5,
+          "estaciones_media_mayor_que_p90": 2,
+          "estaciones_fuera_del_contorno_dibujado": 1
+        }
+      }
     }
   },
   "computo": {

@@ -40,3 +40,6 @@ dist/
 
 # Zenodo bundle (empaquetado one-shot, no se versiona)
 /dist/
+
+# Figuras ESI: EPS y TIFF se regeneran con scripts/xai_12_figures_esi.py (pesados para git)
+results/xai_benchmark/figures_esi/*.eps

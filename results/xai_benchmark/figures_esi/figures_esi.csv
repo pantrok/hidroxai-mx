@@ -1,0 +1,13 @@
+archivo,ancho_mm,alto_mm,dpi_tiff,ancho_px,alto_px
+fig1_rq1_skill_by_horizon,174,72.0,300,2055,850
+fig3_rq1_delta_nse_vs_xgboost,84,78.0,300,992,921
+fig4_rq2_importance_maps,174,112.0,600,4110,2645
+fig5_rq2_concordance,174,78.0,300,2055,921
+fig6_rq2_precip_lag_profiles,174,118.0,300,2055,1393
+fig7_rq3_alert_skill,174,66.0,300,2055,779
+fig8_rq3_fuzzy_decision_surface,84,66.0,300,992,779
+fig10_walk_forward,174,128.0,300,2055,1511
+fig11_drought_2023,174,68.0,300,2055,803
+fig2_rq1_nse_by_basin,174,98.0,300,2055,1157
+fig9_rq3_alert_timeline_example,174,74.0,300,2055,874
+fig02_study_area,174,132.0,300,2055,1559

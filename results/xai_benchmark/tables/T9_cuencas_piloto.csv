@@ -1,0 +1,5 @@
+cuenca,estaciones_modeladas,estaciones_evaluables,area_km2_oficial,gasto_medio_entrenamiento_m3s_mediana,gasto_mediano_entrenamiento_m3s_mediana,p90_entrenamiento_m3s_mediana,dias_sin_observacion_original_pct,max_entrenamiento_m3s,estaciones_media_mayor_que_p90,estaciones_fuera_del_contorno_dibujado
+Alta del Balsas,12,12,,4.405,1.255,2.752,30.3,18865.0,3,
+Cutzamala,1,1,13663.2,0.657,0.4,1.6,32.6,5.0,0,0.0
+Lerma–Santiago,43,41,132718.2,4.853,0.62,11.86,22.1,2072.4,3,2.0
+Pánuco,39,37,96815.4,14.89,8.86,30.0,20.0,4963.5,2,1.0
