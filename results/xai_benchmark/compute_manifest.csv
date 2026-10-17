@@ -547,3 +547,4 @@ fecha,tipo,run,modelo,config,cuenca,h,semilla,dispositivo,hilos,epocas,segundos,
 2026-10-11,walk_forward,patchtst-64_cutzamala_h14_y2025,patchtst,64,Cutzamala,14,20261010,Tesla T4,,23,1.6,1.8,0.324145,True,70017
 2026-10-11,evaluacion,xai_10_walk_forward_eval,walk_forward,,,,,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",16,,2353.8,2353.8,,,
 2026-10-12,evaluacion,xai_11_diagnostics,diagnosticos,,,,,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",16,,370.5,370.5,,,
+2026-10-16,evaluacion,xai_14_review_analyses,revision_pares,,,,,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",16,,1670.3,1670.3,,,

@@ -1,0 +1,991 @@
+cuenca,h,medida,tipo,modelo_a,modelo_b,valor
+Lerma–Santiago,1,spearman_180,entre_semillas,xgboost,xgboost,0.7371709003364301
+Lerma–Santiago,1,spearman_180,entre_semillas,xgboost,xgboost,0.7318744405691533
+Lerma–Santiago,1,spearman_180,entre_semillas,xgboost,xgboost,0.7296974186446082
+Lerma–Santiago,1,spearman_180,entre_mitades,xgboost,xgboost,0.997456711626902
+Lerma–Santiago,1,spearman_180,entre_semillas,tcn,tcn,0.9651923413274072
+Lerma–Santiago,1,spearman_180,entre_semillas,tcn,tcn,0.9557290862886714
+Lerma–Santiago,1,spearman_180,entre_semillas,tcn,tcn,0.959877362470035
+Lerma–Santiago,1,spearman_180,entre_mitades,tcn,tcn,0.9990884492319722
+Lerma–Santiago,1,spearman_180,entre_semillas,convnext,convnext,0.7407183349280327
+Lerma–Santiago,1,spearman_180,entre_semillas,convnext,convnext,0.6170005247075527
+Lerma–Santiago,1,spearman_180,entre_semillas,convnext,convnext,0.4959638671975472
+Lerma–Santiago,1,spearman_180,entre_mitades,convnext,convnext,0.9976851137380783
+Lerma–Santiago,1,spearman_180,entre_semillas,patchtst,patchtst,0.49323950327685007
+Lerma–Santiago,1,spearman_180,entre_semillas,patchtst,patchtst,0.30734487689949275
+Lerma–Santiago,1,spearman_180,entre_semillas,patchtst,patchtst,0.49519841147360516
+Lerma–Santiago,1,spearman_180,entre_mitades,patchtst,patchtst,0.9989629309546589
+Lerma–Santiago,1,spearman_180,entre_modelos,xgboost,tcn,0.32569729518400775
+Lerma–Santiago,1,spearman_180,entre_modelos,xgboost,convnext,0.3481897589431773
+Lerma–Santiago,1,spearman_180,entre_modelos,xgboost,patchtst,0.29667170797452597
+Lerma–Santiago,1,spearman_180,entre_modelos,tcn,convnext,0.5021245511692748
+Lerma–Santiago,1,spearman_180,entre_modelos,tcn,patchtst,0.22916756690021295
+Lerma–Santiago,1,spearman_180,entre_modelos,convnext,patchtst,0.40518946058005906
+Lerma–Santiago,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.8181818181818182
+Lerma–Santiago,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Lerma–Santiago,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.8181818181818182
+Lerma–Santiago,1,jaccard_top10,entre_mitades,xgboost,xgboost,1.0
+Lerma–Santiago,1,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Lerma–Santiago,1,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Lerma–Santiago,1,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Lerma–Santiago,1,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Lerma–Santiago,1,jaccard_top10,entre_semillas,convnext,convnext,0.17647058823529413
+Lerma–Santiago,1,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Lerma–Santiago,1,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Lerma–Santiago,1,jaccard_top10,entre_mitades,convnext,convnext,1.0
+Lerma–Santiago,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Lerma–Santiago,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.42857142857142855
+Lerma–Santiago,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.42857142857142855
+Lerma–Santiago,1,jaccard_top10,entre_mitades,patchtst,patchtst,1.0
+Lerma–Santiago,1,jaccard_top10,entre_modelos,xgboost,tcn,0.42857142857142855
+Lerma–Santiago,1,jaccard_top10,entre_modelos,xgboost,convnext,0.3333333333333333
+Lerma–Santiago,1,jaccard_top10,entre_modelos,xgboost,patchtst,0.3333333333333333
+Lerma–Santiago,1,jaccard_top10,entre_modelos,tcn,convnext,0.5384615384615384
+Lerma–Santiago,1,jaccard_top10,entre_modelos,tcn,patchtst,0.42857142857142855
+Lerma–Santiago,1,jaccard_top10,entre_modelos,convnext,patchtst,0.3333333333333333
+Lerma–Santiago,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.7391304347826086
+Lerma–Santiago,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.5384615384615384
+Lerma–Santiago,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.7391304347826086
+Lerma–Santiago,1,jaccard_top20,entre_mitades,xgboost,xgboost,1.0
+Lerma–Santiago,1,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Lerma–Santiago,1,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Lerma–Santiago,1,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Lerma–Santiago,1,jaccard_top20,entre_mitades,tcn,tcn,0.9047619047619048
+Lerma–Santiago,1,jaccard_top20,entre_semillas,convnext,convnext,0.5384615384615384
+Lerma–Santiago,1,jaccard_top20,entre_semillas,convnext,convnext,0.48148148148148145
+Lerma–Santiago,1,jaccard_top20,entre_semillas,convnext,convnext,0.6
+Lerma–Santiago,1,jaccard_top20,entre_mitades,convnext,convnext,1.0
+Lerma–Santiago,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.5384615384615384
+Lerma–Santiago,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.42857142857142855
+Lerma–Santiago,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.5384615384615384
+Lerma–Santiago,1,jaccard_top20,entre_mitades,patchtst,patchtst,1.0
+Lerma–Santiago,1,jaccard_top20,entre_modelos,xgboost,tcn,0.3333333333333333
+Lerma–Santiago,1,jaccard_top20,entre_modelos,xgboost,convnext,0.3333333333333333
+Lerma–Santiago,1,jaccard_top20,entre_modelos,xgboost,patchtst,0.25
+Lerma–Santiago,1,jaccard_top20,entre_modelos,tcn,convnext,0.42857142857142855
+Lerma–Santiago,1,jaccard_top20,entre_modelos,tcn,patchtst,0.3333333333333333
+Lerma–Santiago,1,jaccard_top20,entre_modelos,convnext,patchtst,0.25
+Lerma–Santiago,1,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Lerma–Santiago,1,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Lerma–Santiago,1,spearman_canal,entre_semillas,xgboost,xgboost,0.8857142857142858
+Lerma–Santiago,1,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Lerma–Santiago,1,spearman_canal,entre_semillas,tcn,tcn,0.7142857142857143
+Lerma–Santiago,1,spearman_canal,entre_semillas,tcn,tcn,0.942857142857143
+Lerma–Santiago,1,spearman_canal,entre_semillas,tcn,tcn,0.8857142857142858
+Lerma–Santiago,1,spearman_canal,entre_mitades,tcn,tcn,0.942857142857143
+Lerma–Santiago,1,spearman_canal,entre_semillas,convnext,convnext,0.7142857142857143
+Lerma–Santiago,1,spearman_canal,entre_semillas,convnext,convnext,0.7714285714285715
+Lerma–Santiago,1,spearman_canal,entre_semillas,convnext,convnext,0.6
+Lerma–Santiago,1,spearman_canal,entre_mitades,convnext,convnext,1.0
+Lerma–Santiago,1,spearman_canal,entre_semillas,patchtst,patchtst,0.6
+Lerma–Santiago,1,spearman_canal,entre_semillas,patchtst,patchtst,0.6
+Lerma–Santiago,1,spearman_canal,entre_semillas,patchtst,patchtst,0.8285714285714287
+Lerma–Santiago,1,spearman_canal,entre_mitades,patchtst,patchtst,1.0
+Lerma–Santiago,1,spearman_canal,entre_modelos,xgboost,tcn,0.5428571428571429
+Lerma–Santiago,1,spearman_canal,entre_modelos,xgboost,convnext,0.5428571428571429
+Lerma–Santiago,1,spearman_canal,entre_modelos,xgboost,patchtst,0.8285714285714287
+Lerma–Santiago,1,spearman_canal,entre_modelos,tcn,convnext,0.4285714285714286
+Lerma–Santiago,1,spearman_canal,entre_modelos,tcn,patchtst,0.8285714285714287
+Lerma–Santiago,1,spearman_canal,entre_modelos,convnext,patchtst,0.5428571428571429
+Lerma–Santiago,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.825139043381535
+Lerma–Santiago,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.7486095661846496
+Lerma–Santiago,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.8540600667408231
+Lerma–Santiago,1,spearman_rezago,entre_mitades,xgboost,xgboost,0.9991101223581758
+Lerma–Santiago,1,spearman_rezago,entre_semillas,tcn,tcn,0.9830923248053391
+Lerma–Santiago,1,spearman_rezago,entre_semillas,tcn,tcn,0.9773081201334817
+Lerma–Santiago,1,spearman_rezago,entre_semillas,tcn,tcn,0.9830923248053391
+Lerma–Santiago,1,spearman_rezago,entre_mitades,tcn,tcn,0.9991101223581758
+Lerma–Santiago,1,spearman_rezago,entre_semillas,convnext,convnext,0.41846496106785314
+Lerma–Santiago,1,spearman_rezago,entre_semillas,convnext,convnext,0.6186874304783093
+Lerma–Santiago,1,spearman_rezago,entre_semillas,convnext,convnext,0.6840934371523915
+Lerma–Santiago,1,spearman_rezago,entre_mitades,convnext,convnext,0.9523915461624026
+Lerma–Santiago,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.7268075639599554
+Lerma–Santiago,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.5314794215795328
+Lerma–Santiago,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.6355951056729701
+Lerma–Santiago,1,spearman_rezago,entre_mitades,patchtst,patchtst,0.9977753058954394
+Lerma–Santiago,1,spearman_rezago,entre_modelos,xgboost,tcn,0.4122358175750834
+Lerma–Santiago,1,spearman_rezago,entre_modelos,xgboost,convnext,0.6569521690767519
+Lerma–Santiago,1,spearman_rezago,entre_modelos,xgboost,patchtst,0.06295884315906564
+Lerma–Santiago,1,spearman_rezago,entre_modelos,tcn,convnext,0.31746384872080086
+Lerma–Santiago,1,spearman_rezago,entre_modelos,tcn,patchtst,0.3032258064516129
+Lerma–Santiago,1,spearman_rezago,entre_modelos,convnext,patchtst,0.2671857619577308
+Lerma–Santiago,7,spearman_180,entre_semillas,xgboost,xgboost,0.813998374435425
+Lerma–Santiago,7,spearman_180,entre_semillas,xgboost,xgboost,0.7954545922199245
+Lerma–Santiago,7,spearman_180,entre_semillas,xgboost,xgboost,0.8094570820087039
+Lerma–Santiago,7,spearman_180,entre_mitades,xgboost,xgboost,0.9970575223515129
+Lerma–Santiago,7,spearman_180,entre_semillas,tcn,tcn,0.8726112945872815
+Lerma–Santiago,7,spearman_180,entre_semillas,tcn,tcn,0.8827330061627416
+Lerma–Santiago,7,spearman_180,entre_semillas,tcn,tcn,0.9039517680586849
+Lerma–Santiago,7,spearman_180,entre_mitades,tcn,tcn,0.9983682623949298
+Lerma–Santiago,7,spearman_180,entre_semillas,convnext,convnext,0.6432544214327602
+Lerma–Santiago,7,spearman_180,entre_semillas,convnext,convnext,0.6707964237579349
+Lerma–Santiago,7,spearman_180,entre_semillas,convnext,convnext,0.5734436248032347
+Lerma–Santiago,7,spearman_180,entre_mitades,convnext,convnext,0.9925491527516281
+Lerma–Santiago,7,spearman_180,entre_semillas,patchtst,patchtst,0.546955152936819
+Lerma–Santiago,7,spearman_180,entre_semillas,patchtst,patchtst,0.3942734858071751
+Lerma–Santiago,7,spearman_180,entre_semillas,patchtst,patchtst,0.4748912003456897
+Lerma–Santiago,7,spearman_180,entre_mitades,patchtst,patchtst,0.9981336872537218
+Lerma–Santiago,7,spearman_180,entre_modelos,xgboost,tcn,0.09658322787740363
+Lerma–Santiago,7,spearman_180,entre_modelos,xgboost,convnext,0.3536323137545397
+Lerma–Santiago,7,spearman_180,entre_modelos,xgboost,patchtst,0.1333004105064971
+Lerma–Santiago,7,spearman_180,entre_modelos,tcn,convnext,0.3421957467823081
+Lerma–Santiago,7,spearman_180,entre_modelos,tcn,patchtst,0.14768357048057038
+Lerma–Santiago,7,spearman_180,entre_modelos,convnext,patchtst,0.34279453069539184
+Lerma–Santiago,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.8181818181818182
+Lerma–Santiago,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Lerma–Santiago,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Lerma–Santiago,7,jaccard_top10,entre_mitades,xgboost,xgboost,0.8181818181818182
+Lerma–Santiago,7,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Lerma–Santiago,7,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Lerma–Santiago,7,jaccard_top10,entre_semillas,tcn,tcn,0.42857142857142855
+Lerma–Santiago,7,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Lerma–Santiago,7,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Lerma–Santiago,7,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Lerma–Santiago,7,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Lerma–Santiago,7,jaccard_top10,entre_mitades,convnext,convnext,0.8181818181818182
+Lerma–Santiago,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.5384615384615384
+Lerma–Santiago,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.5384615384615384
+Lerma–Santiago,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.6666666666666666
+Lerma–Santiago,7,jaccard_top10,entre_mitades,patchtst,patchtst,1.0
+Lerma–Santiago,7,jaccard_top10,entre_modelos,xgboost,tcn,0.42857142857142855
+Lerma–Santiago,7,jaccard_top10,entre_modelos,xgboost,convnext,0.6666666666666666
+Lerma–Santiago,7,jaccard_top10,entre_modelos,xgboost,patchtst,0.3333333333333333
+Lerma–Santiago,7,jaccard_top10,entre_modelos,tcn,convnext,0.42857142857142855
+Lerma–Santiago,7,jaccard_top10,entre_modelos,tcn,patchtst,0.25
+Lerma–Santiago,7,jaccard_top10,entre_modelos,convnext,patchtst,0.3333333333333333
+Lerma–Santiago,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.6666666666666666
+Lerma–Santiago,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.6666666666666666
+Lerma–Santiago,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.8181818181818182
+Lerma–Santiago,7,jaccard_top20,entre_mitades,xgboost,xgboost,0.9047619047619048
+Lerma–Santiago,7,jaccard_top20,entre_semillas,tcn,tcn,0.48148148148148145
+Lerma–Santiago,7,jaccard_top20,entre_semillas,tcn,tcn,0.3793103448275862
+Lerma–Santiago,7,jaccard_top20,entre_semillas,tcn,tcn,0.48148148148148145
+Lerma–Santiago,7,jaccard_top20,entre_mitades,tcn,tcn,0.9047619047619048
+Lerma–Santiago,7,jaccard_top20,entre_semillas,convnext,convnext,0.3333333333333333
+Lerma–Santiago,7,jaccard_top20,entre_semillas,convnext,convnext,0.5384615384615384
+Lerma–Santiago,7,jaccard_top20,entre_semillas,convnext,convnext,0.3793103448275862
+Lerma–Santiago,7,jaccard_top20,entre_mitades,convnext,convnext,1.0
+Lerma–Santiago,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.48148148148148145
+Lerma–Santiago,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.42857142857142855
+Lerma–Santiago,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.5384615384615384
+Lerma–Santiago,7,jaccard_top20,entre_mitades,patchtst,patchtst,1.0
+Lerma–Santiago,7,jaccard_top20,entre_modelos,xgboost,tcn,0.21212121212121213
+Lerma–Santiago,7,jaccard_top20,entre_modelos,xgboost,convnext,0.2903225806451613
+Lerma–Santiago,7,jaccard_top20,entre_modelos,xgboost,patchtst,0.21212121212121213
+Lerma–Santiago,7,jaccard_top20,entre_modelos,tcn,convnext,0.2903225806451613
+Lerma–Santiago,7,jaccard_top20,entre_modelos,tcn,patchtst,0.17647058823529413
+Lerma–Santiago,7,jaccard_top20,entre_modelos,convnext,patchtst,0.25
+Lerma–Santiago,7,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Lerma–Santiago,7,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Lerma–Santiago,7,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Lerma–Santiago,7,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Lerma–Santiago,7,spearman_canal,entre_semillas,tcn,tcn,0.8285714285714287
+Lerma–Santiago,7,spearman_canal,entre_semillas,tcn,tcn,0.7142857142857143
+Lerma–Santiago,7,spearman_canal,entre_semillas,tcn,tcn,0.7714285714285715
+Lerma–Santiago,7,spearman_canal,entre_mitades,tcn,tcn,1.0
+Lerma–Santiago,7,spearman_canal,entre_semillas,convnext,convnext,0.8285714285714287
+Lerma–Santiago,7,spearman_canal,entre_semillas,convnext,convnext,0.8285714285714287
+Lerma–Santiago,7,spearman_canal,entre_semillas,convnext,convnext,0.5428571428571429
+Lerma–Santiago,7,spearman_canal,entre_mitades,convnext,convnext,1.0
+Lerma–Santiago,7,spearman_canal,entre_semillas,patchtst,patchtst,0.7142857142857143
+Lerma–Santiago,7,spearman_canal,entre_semillas,patchtst,patchtst,0.8285714285714287
+Lerma–Santiago,7,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Lerma–Santiago,7,spearman_canal,entre_mitades,patchtst,patchtst,0.942857142857143
+Lerma–Santiago,7,spearman_canal,entre_modelos,xgboost,tcn,0.4285714285714286
+Lerma–Santiago,7,spearman_canal,entre_modelos,xgboost,convnext,0.7714285714285715
+Lerma–Santiago,7,spearman_canal,entre_modelos,xgboost,patchtst,0.4285714285714286
+Lerma–Santiago,7,spearman_canal,entre_modelos,tcn,convnext,0.8285714285714287
+Lerma–Santiago,7,spearman_canal,entre_modelos,tcn,patchtst,1.0
+Lerma–Santiago,7,spearman_canal,entre_modelos,convnext,patchtst,0.8285714285714287
+Lerma–Santiago,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.725027808676307
+Lerma–Santiago,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.7797552836484983
+Lerma–Santiago,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.8126807563959955
+Lerma–Santiago,7,spearman_rezago,entre_mitades,xgboost,xgboost,0.9968854282536151
+Lerma–Santiago,7,spearman_rezago,entre_semillas,tcn,tcn,0.9323692992213571
+Lerma–Santiago,7,spearman_rezago,entre_semillas,tcn,tcn,0.9408231368186873
+Lerma–Santiago,7,spearman_rezago,entre_semillas,tcn,tcn,0.9559510567296997
+Lerma–Santiago,7,spearman_rezago,entre_mitades,tcn,tcn,0.9986651835372636
+Lerma–Santiago,7,spearman_rezago,entre_semillas,convnext,convnext,0.5670745272525028
+Lerma–Santiago,7,spearman_rezago,entre_semillas,convnext,convnext,0.7401557285873193
+Lerma–Santiago,7,spearman_rezago,entre_semillas,convnext,convnext,0.6836484983314793
+Lerma–Santiago,7,spearman_rezago,entre_mitades,convnext,convnext,0.8375973303670745
+Lerma–Santiago,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.6373748609566184
+Lerma–Santiago,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.40600667408231367
+Lerma–Santiago,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.6787541713014461
+Lerma–Santiago,7,spearman_rezago,entre_mitades,patchtst,patchtst,0.9964404894327029
+Lerma–Santiago,7,spearman_rezago,entre_modelos,xgboost,tcn,0.029588431590656286
+Lerma–Santiago,7,spearman_rezago,entre_modelos,xgboost,convnext,0.1870967741935484
+Lerma–Santiago,7,spearman_rezago,entre_modelos,xgboost,patchtst,0.23203559510567295
+Lerma–Santiago,7,spearman_rezago,entre_modelos,tcn,convnext,0.4153503893214683
+Lerma–Santiago,7,spearman_rezago,entre_modelos,tcn,patchtst,0.2200222469410456
+Lerma–Santiago,7,spearman_rezago,entre_modelos,convnext,patchtst,0.23737486095661847
+Lerma–Santiago,14,spearman_180,entre_semillas,xgboost,xgboost,0.8009588773316049
+Lerma–Santiago,14,spearman_180,entre_semillas,xgboost,xgboost,0.7827751885346255
+Lerma–Santiago,14,spearman_180,entre_semillas,xgboost,xgboost,0.7918886385382266
+Lerma–Santiago,14,spearman_180,entre_mitades,xgboost,xgboost,0.9973065012294619
+Lerma–Santiago,14,spearman_180,entre_semillas,tcn,tcn,0.88061359918516
+Lerma–Santiago,14,spearman_180,entre_semillas,tcn,tcn,0.8289556262024548
+Lerma–Santiago,14,spearman_180,entre_semillas,tcn,tcn,0.9288187907034168
+Lerma–Santiago,14,spearman_180,entre_mitades,tcn,tcn,0.9990658147885223
+Lerma–Santiago,14,spearman_180,entre_semillas,convnext,convnext,0.4952889492474047
+Lerma–Santiago,14,spearman_180,entre_semillas,convnext,convnext,0.1613259668508287
+Lerma–Santiago,14,spearman_180,entre_semillas,convnext,convnext,0.3794664444375855
+Lerma–Santiago,14,spearman_180,entre_mitades,convnext,convnext,0.9879728798213936
+Lerma–Santiago,14,spearman_180,entre_semillas,patchtst,patchtst,0.3914421226992602
+Lerma–Santiago,14,spearman_180,entre_semillas,patchtst,patchtst,0.3506713170159573
+Lerma–Santiago,14,spearman_180,entre_semillas,patchtst,patchtst,0.45283702171877727
+Lerma–Santiago,14,spearman_180,entre_mitades,patchtst,patchtst,0.9973579431463934
+Lerma–Santiago,14,spearman_180,entre_modelos,xgboost,tcn,0.08906447729868205
+Lerma–Santiago,14,spearman_180,entre_modelos,xgboost,convnext,0.26886838071133884
+Lerma–Santiago,14,spearman_180,entre_modelos,xgboost,patchtst,0.2072059837237775
+Lerma–Santiago,14,spearman_180,entre_modelos,tcn,convnext,0.3473522845355309
+Lerma–Santiago,14,spearman_180,entre_modelos,tcn,patchtst,0.1482494315668179
+Lerma–Santiago,14,spearman_180,entre_modelos,convnext,patchtst,0.2417214523081988
+Lerma–Santiago,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.8181818181818182
+Lerma–Santiago,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Lerma–Santiago,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.8181818181818182
+Lerma–Santiago,14,jaccard_top10,entre_mitades,xgboost,xgboost,1.0
+Lerma–Santiago,14,jaccard_top10,entre_semillas,tcn,tcn,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_semillas,tcn,tcn,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Lerma–Santiago,14,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Lerma–Santiago,14,jaccard_top10,entre_semillas,convnext,convnext,0.17647058823529413
+Lerma–Santiago,14,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_semillas,convnext,convnext,0.25
+Lerma–Santiago,14,jaccard_top10,entre_mitades,convnext,convnext,0.6666666666666666
+Lerma–Santiago,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.25
+Lerma–Santiago,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_mitades,patchtst,patchtst,0.8181818181818182
+Lerma–Santiago,14,jaccard_top10,entre_modelos,xgboost,tcn,0.25
+Lerma–Santiago,14,jaccard_top10,entre_modelos,xgboost,convnext,0.25
+Lerma–Santiago,14,jaccard_top10,entre_modelos,xgboost,patchtst,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_modelos,tcn,convnext,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_modelos,tcn,patchtst,0.3333333333333333
+Lerma–Santiago,14,jaccard_top10,entre_modelos,convnext,patchtst,0.25
+Lerma–Santiago,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.6666666666666666
+Lerma–Santiago,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.7391304347826086
+Lerma–Santiago,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.6
+Lerma–Santiago,14,jaccard_top20,entre_mitades,xgboost,xgboost,1.0
+Lerma–Santiago,14,jaccard_top20,entre_semillas,tcn,tcn,0.42857142857142855
+Lerma–Santiago,14,jaccard_top20,entre_semillas,tcn,tcn,0.48148148148148145
+Lerma–Santiago,14,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Lerma–Santiago,14,jaccard_top20,entre_mitades,tcn,tcn,1.0
+Lerma–Santiago,14,jaccard_top20,entre_semillas,convnext,convnext,0.25
+Lerma–Santiago,14,jaccard_top20,entre_semillas,convnext,convnext,0.48148148148148145
+Lerma–Santiago,14,jaccard_top20,entre_semillas,convnext,convnext,0.2903225806451613
+Lerma–Santiago,14,jaccard_top20,entre_mitades,convnext,convnext,0.7391304347826086
+Lerma–Santiago,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.21212121212121213
+Lerma–Santiago,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.2903225806451613
+Lerma–Santiago,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.25
+Lerma–Santiago,14,jaccard_top20,entre_mitades,patchtst,patchtst,1.0
+Lerma–Santiago,14,jaccard_top20,entre_modelos,xgboost,tcn,0.21212121212121213
+Lerma–Santiago,14,jaccard_top20,entre_modelos,xgboost,convnext,0.21212121212121213
+Lerma–Santiago,14,jaccard_top20,entre_modelos,xgboost,patchtst,0.25
+Lerma–Santiago,14,jaccard_top20,entre_modelos,tcn,convnext,0.17647058823529413
+Lerma–Santiago,14,jaccard_top20,entre_modelos,tcn,patchtst,0.25
+Lerma–Santiago,14,jaccard_top20,entre_modelos,convnext,patchtst,0.17647058823529413
+Lerma–Santiago,14,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Lerma–Santiago,14,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Lerma–Santiago,14,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Lerma–Santiago,14,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Lerma–Santiago,14,spearman_canal,entre_semillas,tcn,tcn,0.4285714285714286
+Lerma–Santiago,14,spearman_canal,entre_semillas,tcn,tcn,0.8857142857142858
+Lerma–Santiago,14,spearman_canal,entre_semillas,tcn,tcn,0.5428571428571429
+Lerma–Santiago,14,spearman_canal,entre_mitades,tcn,tcn,1.0
+Lerma–Santiago,14,spearman_canal,entre_semillas,convnext,convnext,0.3714285714285715
+Lerma–Santiago,14,spearman_canal,entre_semillas,convnext,convnext,0.2
+Lerma–Santiago,14,spearman_canal,entre_semillas,convnext,convnext,0.6
+Lerma–Santiago,14,spearman_canal,entre_mitades,convnext,convnext,0.942857142857143
+Lerma–Santiago,14,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Lerma–Santiago,14,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Lerma–Santiago,14,spearman_canal,entre_semillas,patchtst,patchtst,1.0
+Lerma–Santiago,14,spearman_canal,entre_mitades,patchtst,patchtst,0.942857142857143
+Lerma–Santiago,14,spearman_canal,entre_modelos,xgboost,tcn,0.4285714285714286
+Lerma–Santiago,14,spearman_canal,entre_modelos,xgboost,convnext,0.942857142857143
+Lerma–Santiago,14,spearman_canal,entre_modelos,xgboost,patchtst,0.7714285714285715
+Lerma–Santiago,14,spearman_canal,entre_modelos,tcn,convnext,0.6571428571428573
+Lerma–Santiago,14,spearman_canal,entre_modelos,tcn,patchtst,0.48571428571428577
+Lerma–Santiago,14,spearman_canal,entre_modelos,convnext,patchtst,0.8285714285714287
+Lerma–Santiago,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.7699666295884315
+Lerma–Santiago,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.775305895439377
+Lerma–Santiago,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.7993325917686318
+Lerma–Santiago,14,spearman_rezago,entre_mitades,xgboost,xgboost,0.9973303670745272
+Lerma–Santiago,14,spearman_rezago,entre_semillas,tcn,tcn,0.921245828698554
+Lerma–Santiago,14,spearman_rezago,entre_semillas,tcn,tcn,0.8958843159065628
+Lerma–Santiago,14,spearman_rezago,entre_semillas,tcn,tcn,0.9817575083426029
+Lerma–Santiago,14,spearman_rezago,entre_mitades,tcn,tcn,0.9995550611790878
+Lerma–Santiago,14,spearman_rezago,entre_semillas,convnext,convnext,0.5021134593993326
+Lerma–Santiago,14,spearman_rezago,entre_semillas,convnext,convnext,0.49499443826473855
+Lerma–Santiago,14,spearman_rezago,entre_semillas,convnext,convnext,0.16262513904338155
+Lerma–Santiago,14,spearman_rezago,entre_mitades,convnext,convnext,0.9937708565072303
+Lerma–Santiago,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.589321468298109
+Lerma–Santiago,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.7815350389321468
+Lerma–Santiago,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.6017797552836485
+Lerma–Santiago,14,spearman_rezago,entre_mitades,patchtst,patchtst,0.9973303670745272
+Lerma–Santiago,14,spearman_rezago,entre_modelos,xgboost,tcn,0.03982202447163515
+Lerma–Santiago,14,spearman_rezago,entre_modelos,xgboost,convnext,0.03314794215795328
+Lerma–Santiago,14,spearman_rezago,entre_modelos,xgboost,patchtst,0.12258064516129033
+Lerma–Santiago,14,spearman_rezago,entre_modelos,tcn,convnext,0.4705228031145718
+Lerma–Santiago,14,spearman_rezago,entre_modelos,tcn,patchtst,0.14171301446051168
+Lerma–Santiago,14,spearman_rezago,entre_modelos,convnext,patchtst,0.182202447163515
+Pánuco,1,spearman_180,entre_semillas,xgboost,xgboost,0.8113316254616911
+Pánuco,1,spearman_180,entre_semillas,xgboost,xgboost,0.833124479150591
+Pánuco,1,spearman_180,entre_semillas,xgboost,xgboost,0.816971717234071
+Pánuco,1,spearman_180,entre_mitades,xgboost,xgboost,0.9968332355936911
+Pánuco,1,spearman_180,entre_semillas,tcn,tcn,0.9662006028992663
+Pánuco,1,spearman_180,entre_semillas,tcn,tcn,0.9552167247960328
+Pánuco,1,spearman_180,entre_semillas,tcn,tcn,0.9559348539563977
+Pánuco,1,spearman_180,entre_mitades,tcn,tcn,0.998923835097791
+Pánuco,1,spearman_180,entre_semillas,convnext,convnext,0.7694435013426341
+Pánuco,1,spearman_180,entre_semillas,convnext,convnext,0.7049456258938033
+Pánuco,1,spearman_180,entre_semillas,convnext,convnext,0.6219163142895356
+Pánuco,1,spearman_180,entre_mitades,convnext,convnext,0.9955266109036288
+Pánuco,1,spearman_180,entre_semillas,patchtst,patchtst,0.5406833544245192
+Pánuco,1,spearman_180,entre_semillas,patchtst,patchtst,0.5653034558679794
+Pánuco,1,spearman_180,entre_semillas,patchtst,patchtst,0.5395125363951562
+Pánuco,1,spearman_180,entre_mitades,patchtst,patchtst,0.9982489171476486
+Pánuco,1,spearman_180,entre_modelos,xgboost,tcn,0.2514110517814336
+Pánuco,1,spearman_180,entre_modelos,xgboost,convnext,0.13461938125662312
+Pánuco,1,spearman_180,entre_modelos,xgboost,patchtst,0.34770826260069754
+Pánuco,1,spearman_180,entre_modelos,tcn,convnext,0.4458244596026626
+Pánuco,1,spearman_180,entre_modelos,tcn,patchtst,0.28578865602847825
+Pánuco,1,spearman_180,entre_modelos,convnext,patchtst,0.3367511342942684
+Pánuco,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.5384615384615384
+Pánuco,1,jaccard_top10,entre_mitades,xgboost,xgboost,1.0
+Pánuco,1,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Pánuco,1,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Pánuco,1,jaccard_top10,entre_semillas,tcn,tcn,0.8181818181818182
+Pánuco,1,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Pánuco,1,jaccard_top10,entre_semillas,convnext,convnext,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Pánuco,1,jaccard_top10,entre_semillas,convnext,convnext,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_mitades,convnext,convnext,1.0
+Pánuco,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.5384615384615384
+Pánuco,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_mitades,patchtst,patchtst,1.0
+Pánuco,1,jaccard_top10,entre_modelos,xgboost,tcn,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_modelos,xgboost,convnext,0.25
+Pánuco,1,jaccard_top10,entre_modelos,xgboost,patchtst,0.3333333333333333
+Pánuco,1,jaccard_top10,entre_modelos,tcn,convnext,0.42857142857142855
+Pánuco,1,jaccard_top10,entre_modelos,tcn,patchtst,0.5384615384615384
+Pánuco,1,jaccard_top10,entre_modelos,convnext,patchtst,0.3333333333333333
+Pánuco,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.48148148148148145
+Pánuco,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.6
+Pánuco,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.5384615384615384
+Pánuco,1,jaccard_top20,entre_mitades,xgboost,xgboost,1.0
+Pánuco,1,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Pánuco,1,jaccard_top20,entre_semillas,tcn,tcn,0.48148148148148145
+Pánuco,1,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Pánuco,1,jaccard_top20,entre_mitades,tcn,tcn,1.0
+Pánuco,1,jaccard_top20,entre_semillas,convnext,convnext,0.42857142857142855
+Pánuco,1,jaccard_top20,entre_semillas,convnext,convnext,0.42857142857142855
+Pánuco,1,jaccard_top20,entre_semillas,convnext,convnext,0.5384615384615384
+Pánuco,1,jaccard_top20,entre_mitades,convnext,convnext,1.0
+Pánuco,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.2903225806451613
+Pánuco,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.3793103448275862
+Pánuco,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.2903225806451613
+Pánuco,1,jaccard_top20,entre_mitades,patchtst,patchtst,0.9047619047619048
+Pánuco,1,jaccard_top20,entre_modelos,xgboost,tcn,0.21212121212121213
+Pánuco,1,jaccard_top20,entre_modelos,xgboost,convnext,0.21212121212121213
+Pánuco,1,jaccard_top20,entre_modelos,xgboost,patchtst,0.17647058823529413
+Pánuco,1,jaccard_top20,entre_modelos,tcn,convnext,0.5384615384615384
+Pánuco,1,jaccard_top20,entre_modelos,tcn,patchtst,0.3793103448275862
+Pánuco,1,jaccard_top20,entre_modelos,convnext,patchtst,0.3333333333333333
+Pánuco,1,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Pánuco,1,spearman_canal,entre_semillas,xgboost,xgboost,0.7714285714285715
+Pánuco,1,spearman_canal,entre_semillas,xgboost,xgboost,0.8285714285714287
+Pánuco,1,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Pánuco,1,spearman_canal,entre_semillas,tcn,tcn,0.4285714285714286
+Pánuco,1,spearman_canal,entre_semillas,tcn,tcn,0.6571428571428573
+Pánuco,1,spearman_canal,entre_semillas,tcn,tcn,0.7714285714285715
+Pánuco,1,spearman_canal,entre_mitades,tcn,tcn,0.942857142857143
+Pánuco,1,spearman_canal,entre_semillas,convnext,convnext,0.48571428571428577
+Pánuco,1,spearman_canal,entre_semillas,convnext,convnext,0.8857142857142858
+Pánuco,1,spearman_canal,entre_semillas,convnext,convnext,0.48571428571428577
+Pánuco,1,spearman_canal,entre_mitades,convnext,convnext,0.942857142857143
+Pánuco,1,spearman_canal,entre_semillas,patchtst,patchtst,0.942857142857143
+Pánuco,1,spearman_canal,entre_semillas,patchtst,patchtst,1.0
+Pánuco,1,spearman_canal,entre_semillas,patchtst,patchtst,0.942857142857143
+Pánuco,1,spearman_canal,entre_mitades,patchtst,patchtst,0.942857142857143
+Pánuco,1,spearman_canal,entre_modelos,xgboost,tcn,0.8857142857142858
+Pánuco,1,spearman_canal,entre_modelos,xgboost,convnext,0.48571428571428577
+Pánuco,1,spearman_canal,entre_modelos,xgboost,patchtst,0.8285714285714287
+Pánuco,1,spearman_canal,entre_modelos,tcn,convnext,0.48571428571428577
+Pánuco,1,spearman_canal,entre_modelos,tcn,patchtst,0.8285714285714287
+Pánuco,1,spearman_canal,entre_modelos,convnext,patchtst,0.7142857142857143
+Pánuco,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.7806451612903226
+Pánuco,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.8958843159065628
+Pánuco,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.832258064516129
+Pánuco,1,spearman_rezago,entre_mitades,xgboost,xgboost,0.9986651835372636
+Pánuco,1,spearman_rezago,entre_semillas,tcn,tcn,0.9692992213570634
+Pánuco,1,spearman_rezago,entre_semillas,tcn,tcn,0.9746384872080088
+Pánuco,1,spearman_rezago,entre_semillas,tcn,tcn,0.9590656284760846
+Pánuco,1,spearman_rezago,entre_mitades,tcn,tcn,0.9991101223581758
+Pánuco,1,spearman_rezago,entre_semillas,convnext,convnext,0.6462736373748609
+Pánuco,1,spearman_rezago,entre_semillas,convnext,convnext,0.5817575083426029
+Pánuco,1,spearman_rezago,entre_semillas,convnext,convnext,0.8976640711902113
+Pánuco,1,spearman_rezago,entre_mitades,convnext,convnext,0.9684093437152391
+Pánuco,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.696106785317019
+Pánuco,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.8264738598442714
+Pánuco,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.649833147942158
+Pánuco,1,spearman_rezago,entre_mitades,patchtst,patchtst,1.0
+Pánuco,1,spearman_rezago,entre_modelos,xgboost,tcn,0.21557285873192436
+Pánuco,1,spearman_rezago,entre_modelos,xgboost,convnext,0.6266963292547274
+Pánuco,1,spearman_rezago,entre_modelos,xgboost,patchtst,0.25428253615127916
+Pánuco,1,spearman_rezago,entre_modelos,tcn,convnext,0.3552836484983315
+Pánuco,1,spearman_rezago,entre_modelos,tcn,patchtst,0.2827586206896551
+Pánuco,1,spearman_rezago,entre_modelos,convnext,patchtst,0.539043381535039
+Pánuco,7,spearman_180,entre_semillas,xgboost,xgboost,0.8198236571087584
+Pánuco,7,spearman_180,entre_semillas,xgboost,xgboost,0.8294799828818509
+Pánuco,7,spearman_180,entre_semillas,xgboost,xgboost,0.7830648745654294
+Pánuco,7,spearman_180,entre_mitades,xgboost,xgboost,0.9975801722275379
+Pánuco,7,spearman_180,entre_semillas,tcn,tcn,0.9037501157443131
+Pánuco,7,spearman_180,entre_semillas,tcn,tcn,0.9300328199430022
+Pánuco,7,spearman_180,entre_semillas,tcn,tcn,0.928275564060619
+Pánuco,7,spearman_180,entre_mitades,tcn,tcn,0.9990081998415589
+Pánuco,7,spearman_180,entre_semillas,convnext,convnext,0.762325997715979
+Pánuco,7,spearman_180,entre_semillas,convnext,convnext,0.7942385053036616
+Pánuco,7,spearman_180,entre_semillas,convnext,convnext,0.7113470580367707
+Pánuco,7,spearman_180,entre_mitades,convnext,convnext,0.9917590049075589
+Pánuco,7,spearman_180,entre_semillas,patchtst,patchtst,0.4946695885675484
+Pánuco,7,spearman_180,entre_semillas,patchtst,patchtst,0.3641202917785528
+Pánuco,7,spearman_180,entre_semillas,patchtst,patchtst,0.4617858575881972
+Pánuco,7,spearman_180,entre_mitades,patchtst,patchtst,0.9972097904256304
+Pánuco,7,spearman_180,entre_modelos,xgboost,tcn,0.1433295266314804
+Pánuco,7,spearman_180,entre_modelos,xgboost,convnext,0.16674794489541855
+Pánuco,7,spearman_180,entre_modelos,xgboost,patchtst,0.3024187989341235
+Pánuco,7,spearman_180,entre_modelos,tcn,convnext,0.4028046133111104
+Pánuco,7,spearman_180,entre_modelos,tcn,patchtst,0.2451063304422976
+Pánuco,7,spearman_180,entre_modelos,convnext,patchtst,0.43300924925666423
+Pánuco,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Pánuco,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Pánuco,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Pánuco,7,jaccard_top10,entre_mitades,xgboost,xgboost,1.0
+Pánuco,7,jaccard_top10,entre_semillas,tcn,tcn,0.42857142857142855
+Pánuco,7,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Pánuco,7,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Pánuco,7,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Pánuco,7,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Pánuco,7,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Pánuco,7,jaccard_top10,entre_semillas,convnext,convnext,0.6666666666666666
+Pánuco,7,jaccard_top10,entre_mitades,convnext,convnext,0.6666666666666666
+Pánuco,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Pánuco,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Pánuco,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Pánuco,7,jaccard_top10,entre_mitades,patchtst,patchtst,1.0
+Pánuco,7,jaccard_top10,entre_modelos,xgboost,tcn,0.1111111111111111
+Pánuco,7,jaccard_top10,entre_modelos,xgboost,convnext,0.25
+Pánuco,7,jaccard_top10,entre_modelos,xgboost,patchtst,0.17647058823529413
+Pánuco,7,jaccard_top10,entre_modelos,tcn,convnext,0.3333333333333333
+Pánuco,7,jaccard_top10,entre_modelos,tcn,patchtst,0.42857142857142855
+Pánuco,7,jaccard_top10,entre_modelos,convnext,patchtst,0.25
+Pánuco,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.7391304347826086
+Pánuco,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.8181818181818182
+Pánuco,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.7391304347826086
+Pánuco,7,jaccard_top20,entre_mitades,xgboost,xgboost,1.0
+Pánuco,7,jaccard_top20,entre_semillas,tcn,tcn,0.42857142857142855
+Pánuco,7,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Pánuco,7,jaccard_top20,entre_semillas,tcn,tcn,0.6666666666666666
+Pánuco,7,jaccard_top20,entre_mitades,tcn,tcn,1.0
+Pánuco,7,jaccard_top20,entre_semillas,convnext,convnext,0.3793103448275862
+Pánuco,7,jaccard_top20,entre_semillas,convnext,convnext,0.5384615384615384
+Pánuco,7,jaccard_top20,entre_semillas,convnext,convnext,0.3793103448275862
+Pánuco,7,jaccard_top20,entre_mitades,convnext,convnext,0.7391304347826086
+Pánuco,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.48148148148148145
+Pánuco,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.3333333333333333
+Pánuco,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.3793103448275862
+Pánuco,7,jaccard_top20,entre_mitades,patchtst,patchtst,0.9047619047619048
+Pánuco,7,jaccard_top20,entre_modelos,xgboost,tcn,0.2903225806451613
+Pánuco,7,jaccard_top20,entre_modelos,xgboost,convnext,0.2903225806451613
+Pánuco,7,jaccard_top20,entre_modelos,xgboost,patchtst,0.25
+Pánuco,7,jaccard_top20,entre_modelos,tcn,convnext,0.25
+Pánuco,7,jaccard_top20,entre_modelos,tcn,patchtst,0.2903225806451613
+Pánuco,7,jaccard_top20,entre_modelos,convnext,patchtst,0.17647058823529413
+Pánuco,7,spearman_canal,entre_semillas,xgboost,xgboost,0.8857142857142858
+Pánuco,7,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Pánuco,7,spearman_canal,entre_semillas,xgboost,xgboost,0.942857142857143
+Pánuco,7,spearman_canal,entre_mitades,xgboost,xgboost,0.8857142857142858
+Pánuco,7,spearman_canal,entre_semillas,tcn,tcn,0.8285714285714287
+Pánuco,7,spearman_canal,entre_semillas,tcn,tcn,0.6
+Pánuco,7,spearman_canal,entre_semillas,tcn,tcn,0.8857142857142858
+Pánuco,7,spearman_canal,entre_mitades,tcn,tcn,1.0
+Pánuco,7,spearman_canal,entre_semillas,convnext,convnext,0.942857142857143
+Pánuco,7,spearman_canal,entre_semillas,convnext,convnext,0.8285714285714287
+Pánuco,7,spearman_canal,entre_semillas,convnext,convnext,0.7714285714285715
+Pánuco,7,spearman_canal,entre_mitades,convnext,convnext,1.0
+Pánuco,7,spearman_canal,entre_semillas,patchtst,patchtst,0.942857142857143
+Pánuco,7,spearman_canal,entre_semillas,patchtst,patchtst,0.7142857142857143
+Pánuco,7,spearman_canal,entre_semillas,patchtst,patchtst,0.8285714285714287
+Pánuco,7,spearman_canal,entre_mitades,patchtst,patchtst,1.0
+Pánuco,7,spearman_canal,entre_modelos,xgboost,tcn,0.48571428571428577
+Pánuco,7,spearman_canal,entre_modelos,xgboost,convnext,0.6571428571428573
+Pánuco,7,spearman_canal,entre_modelos,xgboost,patchtst,0.8285714285714287
+Pánuco,7,spearman_canal,entre_modelos,tcn,convnext,0.942857142857143
+Pánuco,7,spearman_canal,entre_modelos,tcn,patchtst,0.8857142857142858
+Pánuco,7,spearman_canal,entre_modelos,convnext,patchtst,0.942857142857143
+Pánuco,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.8905450500556173
+Pánuco,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.8714126807563959
+Pánuco,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.9372636262513905
+Pánuco,7,spearman_rezago,entre_mitades,xgboost,xgboost,0.9982202447163514
+Pánuco,7,spearman_rezago,entre_semillas,tcn,tcn,0.9381535038932147
+Pánuco,7,spearman_rezago,entre_semillas,tcn,tcn,0.9724137931034482
+Pánuco,7,spearman_rezago,entre_semillas,tcn,tcn,0.9363737486095662
+Pánuco,7,spearman_rezago,entre_mitades,tcn,tcn,0.9995550611790878
+Pánuco,7,spearman_rezago,entre_semillas,convnext,convnext,0.867853170189099
+Pánuco,7,spearman_rezago,entre_semillas,convnext,convnext,0.8549499443826475
+Pánuco,7,spearman_rezago,entre_semillas,convnext,convnext,0.7334816462736374
+Pánuco,7,spearman_rezago,entre_mitades,convnext,convnext,0.9056729699666296
+Pánuco,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.6729699666295884
+Pánuco,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.5946607341490544
+Pánuco,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.7308120133481646
+Pánuco,7,spearman_rezago,entre_mitades,patchtst,patchtst,0.9964404894327029
+Pánuco,7,spearman_rezago,entre_modelos,xgboost,tcn,0.46073414905450494
+Pánuco,7,spearman_rezago,entre_modelos,xgboost,convnext,0.3819799777530589
+Pánuco,7,spearman_rezago,entre_modelos,xgboost,patchtst,0.41490545050055616
+Pánuco,7,spearman_rezago,entre_modelos,tcn,convnext,0.4785317018909899
+Pánuco,7,spearman_rezago,entre_modelos,tcn,patchtst,0.2832035595105673
+Pánuco,7,spearman_rezago,entre_modelos,convnext,patchtst,0.5007786429365962
+Pánuco,14,spearman_180,entre_semillas,xgboost,xgboost,0.8677881004557754
+Pánuco,14,spearman_180,entre_semillas,xgboost,xgboost,0.8275090794983385
+Pánuco,14,spearman_180,entre_semillas,xgboost,xgboost,0.8440363385701204
+Pánuco,14,spearman_180,entre_mitades,xgboost,xgboost,0.9981563216971717
+Pánuco,14,spearman_180,entre_semillas,tcn,tcn,0.912676317170283
+Pánuco,14,spearman_180,entre_semillas,tcn,tcn,0.87998189244524
+Pánuco,14,spearman_180,entre_semillas,tcn,tcn,0.9097379548751504
+Pánuco,14,spearman_180,entre_mitades,tcn,tcn,0.9987016060166465
+Pánuco,14,spearman_180,entre_semillas,convnext,convnext,0.5001183164089427
+Pánuco,14,spearman_180,entre_semillas,convnext,convnext,0.6923320678621767
+Pánuco,14,spearman_180,entre_semillas,convnext,convnext,0.47644063088366917
+Pánuco,14,spearman_180,entre_mitades,convnext,convnext,0.986415218576705
+Pánuco,14,spearman_180,entre_semillas,patchtst,patchtst,0.37084477915985053
+Pánuco,14,spearman_180,entre_semillas,patchtst,patchtst,0.41634206817082825
+Pánuco,14,spearman_180,entre_semillas,patchtst,patchtst,0.3922816547835839
+Pánuco,14,spearman_180,entre_mitades,patchtst,patchtst,0.9978394394888731
+Pánuco,14,spearman_180,entre_modelos,xgboost,tcn,0.10038375670030966
+Pánuco,14,spearman_180,entre_modelos,xgboost,convnext,0.1233865242754406
+Pánuco,14,spearman_180,entre_modelos,xgboost,patchtst,0.30404024815580727
+Pánuco,14,spearman_180,entre_modelos,tcn,convnext,0.37924010000308656
+Pánuco,14,spearman_180,entre_modelos,tcn,patchtst,0.1644433470168832
+Pánuco,14,spearman_180,entre_modelos,convnext,patchtst,0.29212012716441865
+Pánuco,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.5384615384615384
+Pánuco,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.5384615384615384
+Pánuco,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Pánuco,14,jaccard_top10,entre_mitades,xgboost,xgboost,0.8181818181818182
+Pánuco,14,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Pánuco,14,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Pánuco,14,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Pánuco,14,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Pánuco,14,jaccard_top10,entre_semillas,convnext,convnext,0.25
+Pánuco,14,jaccard_top10,entre_semillas,convnext,convnext,0.5384615384615384
+Pánuco,14,jaccard_top10,entre_semillas,convnext,convnext,0.25
+Pánuco,14,jaccard_top10,entre_mitades,convnext,convnext,0.8181818181818182
+Pánuco,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.17647058823529413
+Pánuco,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.17647058823529413
+Pánuco,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.1111111111111111
+Pánuco,14,jaccard_top10,entre_mitades,patchtst,patchtst,1.0
+Pánuco,14,jaccard_top10,entre_modelos,xgboost,tcn,0.3333333333333333
+Pánuco,14,jaccard_top10,entre_modelos,xgboost,convnext,0.25
+Pánuco,14,jaccard_top10,entre_modelos,xgboost,patchtst,0.1111111111111111
+Pánuco,14,jaccard_top10,entre_modelos,tcn,convnext,0.3333333333333333
+Pánuco,14,jaccard_top10,entre_modelos,tcn,patchtst,0.17647058823529413
+Pánuco,14,jaccard_top10,entre_modelos,convnext,patchtst,0.05263157894736842
+Pánuco,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.6
+Pánuco,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.5384615384615384
+Pánuco,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.6666666666666666
+Pánuco,14,jaccard_top20,entre_mitades,xgboost,xgboost,0.9047619047619048
+Pánuco,14,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Pánuco,14,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Pánuco,14,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Pánuco,14,jaccard_top20,entre_mitades,tcn,tcn,0.9047619047619048
+Pánuco,14,jaccard_top20,entre_semillas,convnext,convnext,0.3793103448275862
+Pánuco,14,jaccard_top20,entre_semillas,convnext,convnext,0.8181818181818182
+Pánuco,14,jaccard_top20,entre_semillas,convnext,convnext,0.3793103448275862
+Pánuco,14,jaccard_top20,entre_mitades,convnext,convnext,0.9047619047619048
+Pánuco,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.25
+Pánuco,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.21212121212121213
+Pánuco,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.14285714285714285
+Pánuco,14,jaccard_top20,entre_mitades,patchtst,patchtst,0.8181818181818182
+Pánuco,14,jaccard_top20,entre_modelos,xgboost,tcn,0.14285714285714285
+Pánuco,14,jaccard_top20,entre_modelos,xgboost,convnext,0.25
+Pánuco,14,jaccard_top20,entre_modelos,xgboost,patchtst,0.25
+Pánuco,14,jaccard_top20,entre_modelos,tcn,convnext,0.21212121212121213
+Pánuco,14,jaccard_top20,entre_modelos,tcn,patchtst,0.14285714285714285
+Pánuco,14,jaccard_top20,entre_modelos,convnext,patchtst,0.1111111111111111
+Pánuco,14,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Pánuco,14,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Pánuco,14,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Pánuco,14,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Pánuco,14,spearman_canal,entre_semillas,tcn,tcn,1.0
+Pánuco,14,spearman_canal,entre_semillas,tcn,tcn,0.6
+Pánuco,14,spearman_canal,entre_semillas,tcn,tcn,0.6
+Pánuco,14,spearman_canal,entre_mitades,tcn,tcn,1.0
+Pánuco,14,spearman_canal,entre_semillas,convnext,convnext,0.8285714285714287
+Pánuco,14,spearman_canal,entre_semillas,convnext,convnext,0.942857142857143
+Pánuco,14,spearman_canal,entre_semillas,convnext,convnext,0.7142857142857143
+Pánuco,14,spearman_canal,entre_mitades,convnext,convnext,1.0
+Pánuco,14,spearman_canal,entre_semillas,patchtst,patchtst,0.8857142857142858
+Pánuco,14,spearman_canal,entre_semillas,patchtst,patchtst,0.942857142857143
+Pánuco,14,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Pánuco,14,spearman_canal,entre_mitades,patchtst,patchtst,0.942857142857143
+Pánuco,14,spearman_canal,entre_modelos,xgboost,tcn,0.4285714285714286
+Pánuco,14,spearman_canal,entre_modelos,xgboost,convnext,0.7142857142857143
+Pánuco,14,spearman_canal,entre_modelos,xgboost,patchtst,0.48571428571428577
+Pánuco,14,spearman_canal,entre_modelos,tcn,convnext,0.4285714285714286
+Pánuco,14,spearman_canal,entre_modelos,tcn,patchtst,0.48571428571428577
+Pánuco,14,spearman_canal,entre_modelos,convnext,patchtst,0.942857142857143
+Pánuco,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.9065628476084538
+Pánuco,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.8527252502780869
+Pánuco,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.8478309232480534
+Pánuco,14,spearman_rezago,entre_mitades,xgboost,xgboost,1.0
+Pánuco,14,spearman_rezago,entre_semillas,tcn,tcn,0.9684093437152391
+Pánuco,14,spearman_rezago,entre_semillas,tcn,tcn,0.9390433815350391
+Pánuco,14,spearman_rezago,entre_semillas,tcn,tcn,0.9817575083426029
+Pánuco,14,spearman_rezago,entre_mitades,tcn,tcn,0.9986651835372636
+Pánuco,14,spearman_rezago,entre_semillas,convnext,convnext,0.6774193548387096
+Pánuco,14,spearman_rezago,entre_semillas,convnext,convnext,0.9087875417130145
+Pánuco,14,spearman_rezago,entre_semillas,convnext,convnext,0.6751946607341489
+Pánuco,14,spearman_rezago,entre_mitades,convnext,convnext,0.9412680756395997
+Pánuco,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.625361512791991
+Pánuco,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.6925472747497218
+Pánuco,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.5804226918798664
+Pánuco,14,spearman_rezago,entre_mitades,patchtst,patchtst,0.9991101223581758
+Pánuco,14,spearman_rezago,entre_modelos,xgboost,tcn,0.16440489432703
+Pánuco,14,spearman_rezago,entre_modelos,xgboost,convnext,-0.0389321468298109
+Pánuco,14,spearman_rezago,entre_modelos,xgboost,patchtst,0.4362625139043382
+Pánuco,14,spearman_rezago,entre_modelos,tcn,convnext,0.5025583982202447
+Pánuco,14,spearman_rezago,entre_modelos,tcn,patchtst,0.12791991101223582
+Pánuco,14,spearman_rezago,entre_modelos,convnext,patchtst,0.04293659621802002
+Alta del Balsas,1,spearman_180,entre_semillas,xgboost,xgboost,0.823549323017408
+Alta del Balsas,1,spearman_180,entre_semillas,xgboost,xgboost,0.8200415036413903
+Alta del Balsas,1,spearman_180,entre_semillas,xgboost,xgboost,0.8300706919953157
+Alta del Balsas,1,spearman_180,entre_mitades,xgboost,xgboost,0.9966068911591922
+Alta del Balsas,1,spearman_180,entre_semillas,tcn,tcn,0.9227692212722615
+Alta del Balsas,1,spearman_180,entre_semillas,tcn,tcn,0.9308065063736535
+Alta del Balsas,1,spearman_180,entre_semillas,tcn,tcn,0.9296295153142586
+Alta del Balsas,1,spearman_180,entre_mitades,tcn,tcn,0.9994300235603979
+Alta del Balsas,1,spearman_180,entre_semillas,convnext,convnext,0.6865211889255841
+Alta del Balsas,1,spearman_180,entre_semillas,convnext,convnext,0.7004166795271458
+Alta del Balsas,1,spearman_180,entre_semillas,convnext,convnext,0.7952529399055526
+Alta del Balsas,1,spearman_180,entre_mitades,convnext,convnext,0.997971130796218
+Alta del Balsas,1,spearman_180,entre_semillas,patchtst,patchtst,0.2918711482864697
+Alta del Balsas,1,spearman_180,entre_semillas,patchtst,patchtst,0.3914421226992602
+Alta del Balsas,1,spearman_180,entre_semillas,patchtst,patchtst,0.38818687819582914
+Alta del Balsas,1,spearman_180,entre_mitades,patchtst,patchtst,0.998267436237744
+Alta del Balsas,1,spearman_180,entre_modelos,xgboost,tcn,0.22982190808358283
+Alta del Balsas,1,spearman_180,entre_modelos,xgboost,convnext,0.27084580799818925
+Alta del Balsas,1,spearman_180,entre_modelos,xgboost,patchtst,0.3210448882167145
+Alta del Balsas,1,spearman_180,entre_modelos,tcn,convnext,0.4885850386328796
+Alta del Balsas,1,spearman_180,entre_modelos,tcn,patchtst,0.17970307725547083
+Alta del Balsas,1,spearman_180,entre_modelos,convnext,patchtst,0.27740362356862863
+Alta del Balsas,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.8181818181818182
+Alta del Balsas,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,1,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,1,jaccard_top10,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,1,jaccard_top10,entre_semillas,tcn,tcn,0.3333333333333333
+Alta del Balsas,1,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,1,jaccard_top10,entre_semillas,tcn,tcn,0.42857142857142855
+Alta del Balsas,1,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Alta del Balsas,1,jaccard_top10,entre_semillas,convnext,convnext,0.25
+Alta del Balsas,1,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Alta del Balsas,1,jaccard_top10,entre_semillas,convnext,convnext,0.42857142857142855
+Alta del Balsas,1,jaccard_top10,entre_mitades,convnext,convnext,1.0
+Alta del Balsas,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Alta del Balsas,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.25
+Alta del Balsas,1,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Alta del Balsas,1,jaccard_top10,entre_mitades,patchtst,patchtst,1.0
+Alta del Balsas,1,jaccard_top10,entre_modelos,xgboost,tcn,0.3333333333333333
+Alta del Balsas,1,jaccard_top10,entre_modelos,xgboost,convnext,0.17647058823529413
+Alta del Balsas,1,jaccard_top10,entre_modelos,xgboost,patchtst,0.3333333333333333
+Alta del Balsas,1,jaccard_top10,entre_modelos,tcn,convnext,0.42857142857142855
+Alta del Balsas,1,jaccard_top10,entre_modelos,tcn,patchtst,0.42857142857142855
+Alta del Balsas,1,jaccard_top10,entre_modelos,convnext,patchtst,0.17647058823529413
+Alta del Balsas,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.5384615384615384
+Alta del Balsas,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.5384615384615384
+Alta del Balsas,1,jaccard_top20,entre_semillas,xgboost,xgboost,0.7391304347826086
+Alta del Balsas,1,jaccard_top20,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,1,jaccard_top20,entre_semillas,tcn,tcn,0.6666666666666666
+Alta del Balsas,1,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Alta del Balsas,1,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,1,jaccard_top20,entre_mitades,tcn,tcn,0.9047619047619048
+Alta del Balsas,1,jaccard_top20,entre_semillas,convnext,convnext,0.3333333333333333
+Alta del Balsas,1,jaccard_top20,entre_semillas,convnext,convnext,0.48148148148148145
+Alta del Balsas,1,jaccard_top20,entre_semillas,convnext,convnext,0.5384615384615384
+Alta del Balsas,1,jaccard_top20,entre_mitades,convnext,convnext,0.9047619047619048
+Alta del Balsas,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.3333333333333333
+Alta del Balsas,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.2903225806451613
+Alta del Balsas,1,jaccard_top20,entre_semillas,patchtst,patchtst,0.3333333333333333
+Alta del Balsas,1,jaccard_top20,entre_mitades,patchtst,patchtst,0.9047619047619048
+Alta del Balsas,1,jaccard_top20,entre_modelos,xgboost,tcn,0.3793103448275862
+Alta del Balsas,1,jaccard_top20,entre_modelos,xgboost,convnext,0.3333333333333333
+Alta del Balsas,1,jaccard_top20,entre_modelos,xgboost,patchtst,0.2903225806451613
+Alta del Balsas,1,jaccard_top20,entre_modelos,tcn,convnext,0.42857142857142855
+Alta del Balsas,1,jaccard_top20,entre_modelos,tcn,patchtst,0.25
+Alta del Balsas,1,jaccard_top20,entre_modelos,convnext,patchtst,0.25
+Alta del Balsas,1,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,1,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,1,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,1,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,1,spearman_canal,entre_semillas,tcn,tcn,0.7142857142857143
+Alta del Balsas,1,spearman_canal,entre_semillas,tcn,tcn,0.8285714285714287
+Alta del Balsas,1,spearman_canal,entre_semillas,tcn,tcn,0.3142857142857143
+Alta del Balsas,1,spearman_canal,entre_mitades,tcn,tcn,1.0
+Alta del Balsas,1,spearman_canal,entre_semillas,convnext,convnext,0.7142857142857143
+Alta del Balsas,1,spearman_canal,entre_semillas,convnext,convnext,0.8857142857142858
+Alta del Balsas,1,spearman_canal,entre_semillas,convnext,convnext,0.8285714285714287
+Alta del Balsas,1,spearman_canal,entre_mitades,convnext,convnext,1.0
+Alta del Balsas,1,spearman_canal,entre_semillas,patchtst,patchtst,0.8285714285714287
+Alta del Balsas,1,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Alta del Balsas,1,spearman_canal,entre_semillas,patchtst,patchtst,0.942857142857143
+Alta del Balsas,1,spearman_canal,entre_mitades,patchtst,patchtst,1.0
+Alta del Balsas,1,spearman_canal,entre_modelos,xgboost,tcn,0.6
+Alta del Balsas,1,spearman_canal,entre_modelos,xgboost,convnext,0.2571428571428572
+Alta del Balsas,1,spearman_canal,entre_modelos,xgboost,patchtst,0.8285714285714287
+Alta del Balsas,1,spearman_canal,entre_modelos,tcn,convnext,0.7142857142857143
+Alta del Balsas,1,spearman_canal,entre_modelos,tcn,patchtst,0.8285714285714287
+Alta del Balsas,1,spearman_canal,entre_modelos,convnext,patchtst,0.3142857142857143
+Alta del Balsas,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.9288097886540599
+Alta del Balsas,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.8883203559510566
+Alta del Balsas,1,spearman_rezago,entre_semillas,xgboost,xgboost,0.9239154616240266
+Alta del Balsas,1,spearman_rezago,entre_mitades,xgboost,xgboost,0.9964404894327029
+Alta del Balsas,1,spearman_rezago,entre_semillas,tcn,tcn,0.9474972191323694
+Alta del Balsas,1,spearman_rezago,entre_semillas,tcn,tcn,0.9777530589543939
+Alta del Balsas,1,spearman_rezago,entre_semillas,tcn,tcn,0.9617352614015572
+Alta del Balsas,1,spearman_rezago,entre_mitades,tcn,tcn,0.9991101223581758
+Alta del Balsas,1,spearman_rezago,entre_semillas,convnext,convnext,0.38242491657397104
+Alta del Balsas,1,spearman_rezago,entre_semillas,convnext,convnext,0.5523915461624027
+Alta del Balsas,1,spearman_rezago,entre_semillas,convnext,convnext,0.6195773081201335
+Alta del Balsas,1,spearman_rezago,entre_mitades,convnext,convnext,0.9443826473859845
+Alta del Balsas,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.5968854282536151
+Alta del Balsas,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.4553948832035596
+Alta del Balsas,1,spearman_rezago,entre_semillas,patchtst,patchtst,0.7170189098998888
+Alta del Balsas,1,spearman_rezago,entre_mitades,patchtst,patchtst,0.9982202447163514
+Alta del Balsas,1,spearman_rezago,entre_modelos,xgboost,tcn,0.47897664071190205
+Alta del Balsas,1,spearman_rezago,entre_modelos,xgboost,convnext,0.5906562847608453
+Alta del Balsas,1,spearman_rezago,entre_modelos,xgboost,patchtst,0.26585094549499444
+Alta del Balsas,1,spearman_rezago,entre_modelos,tcn,convnext,0.43804226918798667
+Alta del Balsas,1,spearman_rezago,entre_modelos,tcn,patchtst,0.27519466073414905
+Alta del Balsas,1,spearman_rezago,entre_modelos,convnext,patchtst,0.2938820912124583
+Alta del Balsas,7,spearman_180,entre_semillas,xgboost,xgboost,0.7866827798038697
+Alta del Balsas,7,spearman_180,entre_semillas,xgboost,xgboost,0.8018817802082673
+Alta del Balsas,7,spearman_180,entre_semillas,xgboost,xgboost,0.7405453745980695
+Alta del Balsas,7,spearman_180,entre_mitades,xgboost,xgboost,0.9987941766551778
+Alta del Balsas,7,spearman_180,entre_semillas,tcn,tcn,0.9071843781186663
+Alta del Balsas,7,spearman_180,entre_semillas,tcn,tcn,0.9357552187824727
+Alta del Balsas,7,spearman_180,entre_semillas,tcn,tcn,0.9370001131722172
+Alta del Balsas,7,spearman_180,entre_mitades,tcn,tcn,0.9989217774211137
+Alta del Balsas,7,spearman_180,entre_semillas,convnext,convnext,0.6264370299494839
+Alta del Balsas,7,spearman_180,entre_semillas,convnext,convnext,0.6216447009681368
+Alta del Balsas,7,spearman_180,entre_semillas,convnext,convnext,0.506972437420908
+Alta del Balsas,7,spearman_180,entre_mitades,convnext,convnext,0.9904503225408191
+Alta del Balsas,7,spearman_180,entre_semillas,patchtst,patchtst,0.4300400218113728
+Alta del Balsas,7,spearman_180,entre_semillas,patchtst,patchtst,0.37504449725814576
+Alta del Balsas,7,spearman_180,entre_semillas,patchtst,patchtst,0.33291562496784877
+Alta del Balsas,7,spearman_180,entre_mitades,patchtst,patchtst,0.9975019805138019
+Alta del Balsas,7,spearman_180,entre_modelos,xgboost,tcn,0.12961232973236303
+Alta del Balsas,7,spearman_180,entre_modelos,xgboost,convnext,0.35564220751707387
+Alta del Balsas,7,spearman_180,entre_modelos,xgboost,patchtst,0.22388369892950036
+Alta del Balsas,7,spearman_180,entre_modelos,tcn,convnext,0.4787760939123635
+Alta del Balsas,7,spearman_180,entre_modelos,tcn,patchtst,0.06153070568021647
+Alta del Balsas,7,spearman_180,entre_modelos,convnext,patchtst,0.3020916283424385
+Alta del Balsas,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,7,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,7,jaccard_top10,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,7,jaccard_top10,entre_semillas,tcn,tcn,0.6666666666666666
+Alta del Balsas,7,jaccard_top10,entre_semillas,tcn,tcn,0.8181818181818182
+Alta del Balsas,7,jaccard_top10,entre_semillas,tcn,tcn,0.8181818181818182
+Alta del Balsas,7,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Alta del Balsas,7,jaccard_top10,entre_semillas,convnext,convnext,0.5384615384615384
+Alta del Balsas,7,jaccard_top10,entre_semillas,convnext,convnext,0.5384615384615384
+Alta del Balsas,7,jaccard_top10,entre_semillas,convnext,convnext,0.42857142857142855
+Alta del Balsas,7,jaccard_top10,entre_mitades,convnext,convnext,1.0
+Alta del Balsas,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.42857142857142855
+Alta del Balsas,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.42857142857142855
+Alta del Balsas,7,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Alta del Balsas,7,jaccard_top10,entre_mitades,patchtst,patchtst,0.8181818181818182
+Alta del Balsas,7,jaccard_top10,entre_modelos,xgboost,tcn,0.3333333333333333
+Alta del Balsas,7,jaccard_top10,entre_modelos,xgboost,convnext,0.25
+Alta del Balsas,7,jaccard_top10,entre_modelos,xgboost,patchtst,0.3333333333333333
+Alta del Balsas,7,jaccard_top10,entre_modelos,tcn,convnext,0.3333333333333333
+Alta del Balsas,7,jaccard_top10,entre_modelos,tcn,patchtst,0.25
+Alta del Balsas,7,jaccard_top10,entre_modelos,convnext,patchtst,0.17647058823529413
+Alta del Balsas,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.7391304347826086
+Alta del Balsas,7,jaccard_top20,entre_semillas,xgboost,xgboost,0.8181818181818182
+Alta del Balsas,7,jaccard_top20,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,7,jaccard_top20,entre_semillas,tcn,tcn,0.6
+Alta del Balsas,7,jaccard_top20,entre_semillas,tcn,tcn,0.42857142857142855
+Alta del Balsas,7,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,7,jaccard_top20,entre_mitades,tcn,tcn,1.0
+Alta del Balsas,7,jaccard_top20,entre_semillas,convnext,convnext,0.3333333333333333
+Alta del Balsas,7,jaccard_top20,entre_semillas,convnext,convnext,0.3333333333333333
+Alta del Balsas,7,jaccard_top20,entre_semillas,convnext,convnext,0.42857142857142855
+Alta del Balsas,7,jaccard_top20,entre_mitades,convnext,convnext,0.9047619047619048
+Alta del Balsas,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.48148148148148145
+Alta del Balsas,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.25
+Alta del Balsas,7,jaccard_top20,entre_semillas,patchtst,patchtst,0.21212121212121213
+Alta del Balsas,7,jaccard_top20,entre_mitades,patchtst,patchtst,1.0
+Alta del Balsas,7,jaccard_top20,entre_modelos,xgboost,tcn,0.3333333333333333
+Alta del Balsas,7,jaccard_top20,entre_modelos,xgboost,convnext,0.2903225806451613
+Alta del Balsas,7,jaccard_top20,entre_modelos,xgboost,patchtst,0.2903225806451613
+Alta del Balsas,7,jaccard_top20,entre_modelos,tcn,convnext,0.42857142857142855
+Alta del Balsas,7,jaccard_top20,entre_modelos,tcn,patchtst,0.21212121212121213
+Alta del Balsas,7,jaccard_top20,entre_modelos,convnext,patchtst,0.25
+Alta del Balsas,7,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,7,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,7,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,7,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,7,spearman_canal,entre_semillas,tcn,tcn,0.8857142857142858
+Alta del Balsas,7,spearman_canal,entre_semillas,tcn,tcn,0.48571428571428577
+Alta del Balsas,7,spearman_canal,entre_semillas,tcn,tcn,0.7142857142857143
+Alta del Balsas,7,spearman_canal,entre_mitades,tcn,tcn,0.942857142857143
+Alta del Balsas,7,spearman_canal,entre_semillas,convnext,convnext,-0.08571428571428573
+Alta del Balsas,7,spearman_canal,entre_semillas,convnext,convnext,0.08571428571428573
+Alta del Balsas,7,spearman_canal,entre_semillas,convnext,convnext,0.8285714285714287
+Alta del Balsas,7,spearman_canal,entre_mitades,convnext,convnext,1.0
+Alta del Balsas,7,spearman_canal,entre_semillas,patchtst,patchtst,0.6
+Alta del Balsas,7,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Alta del Balsas,7,spearman_canal,entre_semillas,patchtst,patchtst,0.7142857142857143
+Alta del Balsas,7,spearman_canal,entre_mitades,patchtst,patchtst,0.942857142857143
+Alta del Balsas,7,spearman_canal,entre_modelos,xgboost,tcn,0.3714285714285715
+Alta del Balsas,7,spearman_canal,entre_modelos,xgboost,convnext,0.3714285714285715
+Alta del Balsas,7,spearman_canal,entre_modelos,xgboost,patchtst,0.5428571428571429
+Alta del Balsas,7,spearman_canal,entre_modelos,tcn,convnext,0.4285714285714286
+Alta del Balsas,7,spearman_canal,entre_modelos,tcn,patchtst,0.7142857142857143
+Alta del Balsas,7,spearman_canal,entre_modelos,convnext,patchtst,0.14285714285714288
+Alta del Balsas,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.8901001112347052
+Alta del Balsas,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.8816462736373749
+Alta del Balsas,7,spearman_rezago,entre_semillas,xgboost,xgboost,0.8763070077864292
+Alta del Balsas,7,spearman_rezago,entre_mitades,xgboost,xgboost,0.9982202447163514
+Alta del Balsas,7,spearman_rezago,entre_semillas,tcn,tcn,0.9604004449388208
+Alta del Balsas,7,spearman_rezago,entre_semillas,tcn,tcn,0.9666295884315905
+Alta del Balsas,7,spearman_rezago,entre_semillas,tcn,tcn,0.9795328142380423
+Alta del Balsas,7,spearman_rezago,entre_mitades,tcn,tcn,0.9991101223581758
+Alta del Balsas,7,spearman_rezago,entre_semillas,convnext,convnext,0.7695216907675194
+Alta del Balsas,7,spearman_rezago,entre_semillas,convnext,convnext,0.32547274749721916
+Alta del Balsas,7,spearman_rezago,entre_semillas,convnext,convnext,0.34282536151279197
+Alta del Balsas,7,spearman_rezago,entre_mitades,convnext,convnext,0.9626251390433814
+Alta del Balsas,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.47274749721913245
+Alta del Balsas,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.710789766407119
+Alta del Balsas,7,spearman_rezago,entre_semillas,patchtst,patchtst,0.5225806451612903
+Alta del Balsas,7,spearman_rezago,entre_mitades,patchtst,patchtst,0.992880978865406
+Alta del Balsas,7,spearman_rezago,entre_modelos,xgboost,tcn,0.450055617352614
+Alta del Balsas,7,spearman_rezago,entre_modelos,xgboost,convnext,0.617797552836485
+Alta del Balsas,7,spearman_rezago,entre_modelos,xgboost,patchtst,0.33303670745272523
+Alta del Balsas,7,spearman_rezago,entre_modelos,tcn,convnext,0.4651835372636262
+Alta del Balsas,7,spearman_rezago,entre_modelos,tcn,patchtst,0.21735261401557288
+Alta del Balsas,7,spearman_rezago,entre_modelos,convnext,patchtst,0.5078976640711901
+Alta del Balsas,14,spearman_180,entre_semillas,xgboost,xgboost,0.7938989886519132
+Alta del Balsas,14,spearman_180,entre_semillas,xgboost,xgboost,0.7971562908320216
+Alta del Balsas,14,spearman_180,entre_semillas,xgboost,xgboost,0.8183092070742924
+Alta del Balsas,14,spearman_180,entre_mitades,xgboost,xgboost,0.9985349342057883
+Alta del Balsas,14,spearman_180,entre_semillas,tcn,tcn,0.9137936356060372
+Alta del Balsas,14,spearman_180,entre_semillas,tcn,tcn,0.8980915048818379
+Alta del Balsas,14,spearman_180,entre_semillas,tcn,tcn,0.926557404035104
+Alta del Balsas,14,spearman_180,entre_mitades,tcn,tcn,0.9990514110517814
+Alta del Balsas,14,spearman_180,entre_semillas,convnext,convnext,0.7037686348344085
+Alta del Balsas,14,spearman_180,entre_semillas,convnext,convnext,0.6291860859903083
+Alta del Balsas,14,spearman_180,entre_semillas,convnext,convnext,0.6988898834326163
+Alta del Balsas,14,spearman_180,entre_mitades,convnext,convnext,0.9878905727543031
+Alta del Balsas,14,spearman_180,entre_semillas,patchtst,patchtst,0.37994999845674243
+Alta del Balsas,14,spearman_180,entre_semillas,patchtst,patchtst,0.40261530705680215
+Alta del Balsas,14,spearman_180,entre_semillas,patchtst,patchtst,0.2576705042336697
+Alta del Balsas,14,spearman_180,entre_mitades,patchtst,patchtst,0.9971069065917672
+Alta del Balsas,14,spearman_180,entre_modelos,xgboost,tcn,0.15239153471814973
+Alta del Balsas,14,spearman_180,entre_modelos,xgboost,convnext,0.5358622179696905
+Alta del Balsas,14,spearman_180,entre_modelos,xgboost,patchtst,0.1769622519213556
+Alta del Balsas,14,spearman_180,entre_modelos,tcn,convnext,0.2688395732378571
+Alta del Balsas,14,spearman_180,entre_modelos,tcn,patchtst,0.1846703087543854
+Alta del Balsas,14,spearman_180,entre_modelos,convnext,patchtst,0.2328734425959649
+Alta del Balsas,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,14,jaccard_top10,entre_semillas,xgboost,xgboost,0.6666666666666666
+Alta del Balsas,14,jaccard_top10,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,14,jaccard_top10,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,14,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,14,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,14,jaccard_top10,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,14,jaccard_top10,entre_mitades,tcn,tcn,1.0
+Alta del Balsas,14,jaccard_top10,entre_semillas,convnext,convnext,0.6666666666666666
+Alta del Balsas,14,jaccard_top10,entre_semillas,convnext,convnext,0.3333333333333333
+Alta del Balsas,14,jaccard_top10,entre_semillas,convnext,convnext,0.5384615384615384
+Alta del Balsas,14,jaccard_top10,entre_mitades,convnext,convnext,0.5384615384615384
+Alta del Balsas,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.25
+Alta del Balsas,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.25
+Alta del Balsas,14,jaccard_top10,entre_semillas,patchtst,patchtst,0.3333333333333333
+Alta del Balsas,14,jaccard_top10,entre_mitades,patchtst,patchtst,1.0
+Alta del Balsas,14,jaccard_top10,entre_modelos,xgboost,tcn,0.25
+Alta del Balsas,14,jaccard_top10,entre_modelos,xgboost,convnext,0.25
+Alta del Balsas,14,jaccard_top10,entre_modelos,xgboost,patchtst,0.42857142857142855
+Alta del Balsas,14,jaccard_top10,entre_modelos,tcn,convnext,0.25
+Alta del Balsas,14,jaccard_top10,entre_modelos,tcn,patchtst,0.25
+Alta del Balsas,14,jaccard_top10,entre_modelos,convnext,patchtst,0.25
+Alta del Balsas,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.5384615384615384
+Alta del Balsas,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.5384615384615384
+Alta del Balsas,14,jaccard_top20,entre_semillas,xgboost,xgboost,0.6
+Alta del Balsas,14,jaccard_top20,entre_mitades,xgboost,xgboost,0.9047619047619048
+Alta del Balsas,14,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,14,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,14,jaccard_top20,entre_semillas,tcn,tcn,0.5384615384615384
+Alta del Balsas,14,jaccard_top20,entre_mitades,tcn,tcn,1.0
+Alta del Balsas,14,jaccard_top20,entre_semillas,convnext,convnext,0.8181818181818182
+Alta del Balsas,14,jaccard_top20,entre_semillas,convnext,convnext,0.6
+Alta del Balsas,14,jaccard_top20,entre_semillas,convnext,convnext,0.6
+Alta del Balsas,14,jaccard_top20,entre_mitades,convnext,convnext,0.9047619047619048
+Alta del Balsas,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.14285714285714285
+Alta del Balsas,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.21212121212121213
+Alta del Balsas,14,jaccard_top20,entre_semillas,patchtst,patchtst,0.25
+Alta del Balsas,14,jaccard_top20,entre_mitades,patchtst,patchtst,1.0
+Alta del Balsas,14,jaccard_top20,entre_modelos,xgboost,tcn,0.25
+Alta del Balsas,14,jaccard_top20,entre_modelos,xgboost,convnext,0.17647058823529413
+Alta del Balsas,14,jaccard_top20,entre_modelos,xgboost,patchtst,0.25
+Alta del Balsas,14,jaccard_top20,entre_modelos,tcn,convnext,0.21212121212121213
+Alta del Balsas,14,jaccard_top20,entre_modelos,tcn,patchtst,0.21212121212121213
+Alta del Balsas,14,jaccard_top20,entre_modelos,convnext,patchtst,0.25
+Alta del Balsas,14,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,14,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,14,spearman_canal,entre_semillas,xgboost,xgboost,1.0
+Alta del Balsas,14,spearman_canal,entre_mitades,xgboost,xgboost,1.0
+Alta del Balsas,14,spearman_canal,entre_semillas,tcn,tcn,0.7142857142857143
+Alta del Balsas,14,spearman_canal,entre_semillas,tcn,tcn,1.0
+Alta del Balsas,14,spearman_canal,entre_semillas,tcn,tcn,0.7142857142857143
+Alta del Balsas,14,spearman_canal,entre_mitades,tcn,tcn,1.0
+Alta del Balsas,14,spearman_canal,entre_semillas,convnext,convnext,0.5428571428571429
+Alta del Balsas,14,spearman_canal,entre_semillas,convnext,convnext,0.6571428571428573
+Alta del Balsas,14,spearman_canal,entre_semillas,convnext,convnext,0.7714285714285715
+Alta del Balsas,14,spearman_canal,entre_mitades,convnext,convnext,1.0
+Alta del Balsas,14,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Alta del Balsas,14,spearman_canal,entre_semillas,patchtst,patchtst,0.7714285714285715
+Alta del Balsas,14,spearman_canal,entre_semillas,patchtst,patchtst,0.3142857142857143
+Alta del Balsas,14,spearman_canal,entre_mitades,patchtst,patchtst,0.942857142857143
+Alta del Balsas,14,spearman_canal,entre_modelos,xgboost,tcn,0.3714285714285715
+Alta del Balsas,14,spearman_canal,entre_modelos,xgboost,convnext,0.7714285714285715
+Alta del Balsas,14,spearman_canal,entre_modelos,xgboost,patchtst,0.3714285714285715
+Alta del Balsas,14,spearman_canal,entre_modelos,tcn,convnext,0.6
+Alta del Balsas,14,spearman_canal,entre_modelos,tcn,patchtst,0.2571428571428572
+Alta del Balsas,14,spearman_canal,entre_modelos,convnext,patchtst,-0.028571428571428574
+Alta del Balsas,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.7530589543937708
+Alta del Balsas,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.7090100111234705
+Alta del Balsas,14,spearman_rezago,entre_semillas,xgboost,xgboost,0.8144605116796441
+Alta del Balsas,14,spearman_rezago,entre_mitades,xgboost,xgboost,0.9982202447163514
+Alta del Balsas,14,spearman_rezago,entre_semillas,tcn,tcn,0.9790878754171303
+Alta del Balsas,14,spearman_rezago,entre_semillas,tcn,tcn,0.9639599555061179
+Alta del Balsas,14,spearman_rezago,entre_semillas,tcn,tcn,0.9728587319243605
+Alta del Balsas,14,spearman_rezago,entre_mitades,tcn,tcn,0.9995550611790878
+Alta del Balsas,14,spearman_rezago,entre_semillas,convnext,convnext,0.8153503893214683
+Alta del Balsas,14,spearman_rezago,entre_semillas,convnext,convnext,0.8562847608453837
+Alta del Balsas,14,spearman_rezago,entre_semillas,convnext,convnext,0.6155728587319244
+Alta del Balsas,14,spearman_rezago,entre_mitades,convnext,convnext,0.9021134593993325
+Alta del Balsas,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.6427141268075639
+Alta del Balsas,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.47319243604004446
+Alta del Balsas,14,spearman_rezago,entre_semillas,patchtst,patchtst,0.3668520578420467
+Alta del Balsas,14,spearman_rezago,entre_mitades,patchtst,patchtst,0.9946607341490545
+Alta del Balsas,14,spearman_rezago,entre_modelos,xgboost,tcn,0.24048943270300333
+Alta del Balsas,14,spearman_rezago,entre_modelos,xgboost,convnext,0.11590656284760845
+Alta del Balsas,14,spearman_rezago,entre_modelos,xgboost,patchtst,0.3971078976640712
+Alta del Balsas,14,spearman_rezago,entre_modelos,tcn,convnext,0.44694104560622916
+Alta del Balsas,14,spearman_rezago,entre_modelos,tcn,patchtst,0.17953281423804227
+Alta del Balsas,14,spearman_rezago,entre_modelos,convnext,patchtst,0.3868743047830923

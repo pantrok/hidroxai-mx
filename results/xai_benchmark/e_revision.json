@@ -1,0 +1,2158 @@
+{
+  "fecha": "2026-10-17",
+  "fuente": "scripts/xai_14_review_analyses.py",
+  "tipo": "descriptivo (post hoc, revisión)",
+  "criterios": "proof_ledger.md, 'Análisis de revisión (2026-10-16)', commit ca12106 (antes de calcular)",
+  "rr1_alertas": {
+    "fuente": "rev_rr1_*.csv",
+    "tipo": "descriptivo (post hoc, revisión)",
+    "variantes": {
+      "P90_h1_F": {
+        "pod": 0.7455,
+        "far": 0.2672,
+        "csi": 0.5862
+      },
+      "P90_h1_F0": {
+        "pod": 0.7481,
+        "far": 0.3209,
+        "csi": 0.5527
+      },
+      "P90_h1_T": {
+        "pod": 0.7374,
+        "far": 0.3196,
+        "csi": 0.5477
+      },
+      "P90_h1_TV": {
+        "pod": 0.7369,
+        "far": 0.2631,
+        "csi": 0.5834
+      },
+      "P90_h7_F": {
+        "pod": 0.3363,
+        "far": 0.5009,
+        "csi": 0.2514
+      },
+      "P90_h7_F0": {
+        "pod": 0.3413,
+        "far": 0.5278,
+        "csi": 0.247
+      },
+      "P90_h7_T": {
+        "pod": 0.3328,
+        "far": 0.5278,
+        "csi": 0.2426
+      },
+      "P90_h7_TV": {
+        "pod": 0.3306,
+        "far": 0.4957,
+        "csi": 0.2495
+      },
+      "P90_h14_F": {
+        "pod": 0.1755,
+        "far": 0.6031,
+        "csi": 0.1386
+      },
+      "P90_h14_F0": {
+        "pod": 0.1807,
+        "far": 0.6751,
+        "csi": 0.1314
+      },
+      "P90_h14_T": {
+        "pod": 0.1724,
+        "far": 0.6812,
+        "csi": 0.126
+      },
+      "P90_h14_TV": {
+        "pod": 0.1703,
+        "far": 0.6038,
+        "csi": 0.1352
+      },
+      "P99_h1_F": {
+        "pod": 0.4236,
+        "far": 0.4155,
+        "csi": 0.3256
+      },
+      "P99_h1_F0": {
+        "pod": 0.428,
+        "far": 0.4354,
+        "csi": 0.3218
+      },
+      "P99_h1_T": {
+        "pod": 0.2493,
+        "far": 0.2822,
+        "csi": 0.227
+      },
+      "P99_h1_TV": {
+        "pod": 0.2493,
+        "far": 0.2638,
+        "csi": 0.2288
+      },
+      "P99_h7_F": {
+        "pod": 0.016,
+        "far": 0.8706,
+        "csi": 0.0145
+      },
+      "P99_h7_F0": {
+        "pod": 0.016,
+        "far": 0.9052,
+        "csi": 0.0139
+      },
+      "P99_h7_T": {
+        "pod": 0.0087,
+        "far": 0.7857,
+        "csi": 0.0085
+      },
+      "P99_h7_TV": {
+        "pod": 0.0087,
+        "far": 0.7778,
+        "csi": 0.0085
+      },
+      "P99_h14_F": {
+        "pod": 0.0044,
+        "far": 0.9545,
+        "csi": 0.004
+      },
+      "P99_h14_F0": {
+        "pod": 0.0044,
+        "far": 0.967,
+        "csi": 0.0039
+      },
+      "P99_h14_T": {
+        "pod": 0.0044,
+        "far": 0.9388,
+        "csi": 0.0041
+      },
+      "P99_h14_TV": {
+        "pod": 0.0044,
+        "far": 0.9318,
+        "csi": 0.0041
+      }
+    },
+    "contrastes": {
+      "P90_h1_A_estaciones": [
+        0.005,
+        -0.0003,
+        0.0132
+      ],
+      "P90_h1_B_estaciones": [
+        0.0335,
+        -0.0012,
+        0.064
+      ],
+      "P90_h1_C_estaciones": [
+        0.0357,
+        0.0015,
+        0.0656
+      ],
+      "P90_h1_D_estaciones": [
+        0.0028,
+        -0.0032,
+        0.011
+      ],
+      "P90_h1_A_grupos_conectados": [
+        0.005,
+        -0.0011,
+        0.0178
+      ],
+      "P90_h1_B_grupos_conectados": [
+        0.0335,
+        -0.002,
+        0.0562
+      ],
+      "P90_h1_C_grupos_conectados": [
+        0.0357,
+        0.0007,
+        0.0591
+      ],
+      "P90_h1_D_grupos_conectados": [
+        0.0028,
+        -0.006,
+        0.0147
+      ],
+      "P90_h1_A_unidades_piloto": [
+        0.005,
+        0.0002,
+        0.0196
+      ],
+      "P90_h1_B_unidades_piloto": [
+        0.0335,
+        -0.0017,
+        0.0457
+      ],
+      "P90_h1_C_unidades_piloto": [
+        0.0357,
+        0.0,
+        0.0486
+      ],
+      "P90_h1_D_unidades_piloto": [
+        0.0028,
+        -0.0021,
+        0.0169
+      ],
+      "P90_h7_A_estaciones": [
+        0.0045,
+        0.0013,
+        0.0076
+      ],
+      "P90_h7_B_estaciones": [
+        0.0044,
+        -0.0034,
+        0.0122
+      ],
+      "P90_h7_C_estaciones": [
+        0.0069,
+        -0.0001,
+        0.014
+      ],
+      "P90_h7_D_estaciones": [
+        0.0019,
+        -0.0016,
+        0.0052
+      ],
+      "P90_h7_A_grupos_conectados": [
+        0.0045,
+        0.0026,
+        0.0064
+      ],
+      "P90_h7_B_grupos_conectados": [
+        0.0044,
+        -0.0051,
+        0.0086
+      ],
+      "P90_h7_C_grupos_conectados": [
+        0.0069,
+        -0.0009,
+        0.0106
+      ],
+      "P90_h7_D_grupos_conectados": [
+        0.0019,
+        -0.0016,
+        0.0034
+      ],
+      "P90_h7_A_unidades_piloto": [
+        0.0045,
+        0.0034,
+        0.0063
+      ],
+      "P90_h7_B_unidades_piloto": [
+        0.0044,
+        -0.0053,
+        0.0088
+      ],
+      "P90_h7_C_unidades_piloto": [
+        0.0069,
+        -0.0018,
+        0.0103
+      ],
+      "P90_h7_D_unidades_piloto": [
+        0.0019,
+        0.0012,
+        0.0029
+      ],
+      "P90_h14_A_estaciones": [
+        0.0054,
+        0.0025,
+        0.009
+      ],
+      "P90_h14_B_estaciones": [
+        0.0072,
+        -0.003,
+        0.0186
+      ],
+      "P90_h14_C_estaciones": [
+        0.0092,
+        -0.0001,
+        0.02
+      ],
+      "P90_h14_D_estaciones": [
+        0.0034,
+        -0.0007,
+        0.0073
+      ],
+      "P90_h14_A_grupos_conectados": [
+        0.0054,
+        0.0014,
+        0.0121
+      ],
+      "P90_h14_B_grupos_conectados": [
+        0.0072,
+        -0.0059,
+        0.0165
+      ],
+      "P90_h14_C_grupos_conectados": [
+        0.0092,
+        0.0001,
+        0.0173
+      ],
+      "P90_h14_D_grupos_conectados": [
+        0.0034,
+        -0.0037,
+        0.009
+      ],
+      "P90_h14_A_unidades_piloto": [
+        0.0054,
+        0.0032,
+        0.0129
+      ],
+      "P90_h14_B_unidades_piloto": [
+        0.0072,
+        -0.0029,
+        0.0194
+      ],
+      "P90_h14_C_unidades_piloto": [
+        0.0092,
+        0.0,
+        0.0189
+      ],
+      "P90_h14_D_unidades_piloto": [
+        0.0034,
+        -0.0013,
+        0.0111
+      ],
+      "P99_h1_A_estaciones": [
+        0.0947,
+        0.0509,
+        0.1385
+      ],
+      "P99_h1_B_estaciones": [
+        0.0038,
+        -0.0049,
+        0.0147
+      ],
+      "P99_h1_C_estaciones": [
+        0.0018,
+        0.0,
+        0.0051
+      ],
+      "P99_h1_D_estaciones": [
+        0.0967,
+        0.0559,
+        0.1392
+      ],
+      "P99_h1_A_grupos_conectados": [
+        0.0947,
+        0.0391,
+        0.1382
+      ],
+      "P99_h1_B_grupos_conectados": [
+        0.0038,
+        -0.0038,
+        0.0197
+      ],
+      "P99_h1_C_grupos_conectados": [
+        0.0018,
+        0.0,
+        0.0054
+      ],
+      "P99_h1_D_grupos_conectados": [
+        0.0967,
+        0.0484,
+        0.1401
+      ],
+      "P99_h1_A_unidades_piloto": [
+        0.0947,
+        0.0267,
+        0.1369
+      ],
+      "P99_h1_B_unidades_piloto": [
+        0.0038,
+        -0.0052,
+        0.0112
+      ],
+      "P99_h1_C_unidades_piloto": [
+        0.0018,
+        0.0,
+        0.0039
+      ],
+      "P99_h1_D_unidades_piloto": [
+        0.0967,
+        0.0267,
+        0.1319
+      ],
+      "P99_h7_A_estaciones": [
+        0.0054,
+        0.0,
+        0.0126
+      ],
+      "P99_h7_B_estaciones": [
+        0.0006,
+        0.0,
+        0.002
+      ],
+      "P99_h7_C_estaciones": [
+        0.0,
+        0.0,
+        0.0001
+      ],
+      "P99_h7_D_estaciones": [
+        0.006,
+        0.0,
+        0.013
+      ],
+      "P99_h7_A_grupos_conectados": [
+        0.0054,
+        0.0,
+        0.0093
+      ],
+      "P99_h7_B_grupos_conectados": [
+        0.0006,
+        0.0,
+        0.0025
+      ],
+      "P99_h7_C_grupos_conectados": [
+        0.0,
+        0.0,
+        0.0001
+      ],
+      "P99_h7_D_grupos_conectados": [
+        0.006,
+        0.0,
+        0.0094
+      ],
+      "P99_h7_A_unidades_piloto": [
+        0.0054,
+        0.0021,
+        0.0162
+      ],
+      "P99_h7_B_unidades_piloto": [
+        0.0006,
+        0.0,
+        0.0014
+      ],
+      "P99_h7_C_unidades_piloto": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "P99_h7_D_unidades_piloto": [
+        0.006,
+        0.0024,
+        0.0162
+      ],
+      "P99_h14_A_estaciones": [
+        -0.0002,
+        -0.001,
+        0.0
+      ],
+      "P99_h14_B_estaciones": [
+        0.0001,
+        0.0,
+        0.0005
+      ],
+      "P99_h14_C_estaciones": [
+        0.0,
+        0.0,
+        0.0001
+      ],
+      "P99_h14_D_estaciones": [
+        -0.0001,
+        -0.0005,
+        0.0
+      ],
+      "P99_h14_A_grupos_conectados": [
+        -0.0002,
+        -0.0013,
+        0.0
+      ],
+      "P99_h14_B_grupos_conectados": [
+        0.0001,
+        0.0,
+        0.0007
+      ],
+      "P99_h14_C_grupos_conectados": [
+        0.0,
+        0.0,
+        0.0002
+      ],
+      "P99_h14_D_grupos_conectados": [
+        -0.0001,
+        -0.0007,
+        0.0
+      ],
+      "P99_h14_A_unidades_piloto": [
+        -0.0002,
+        -0.0007,
+        0.0
+      ],
+      "P99_h14_B_unidades_piloto": [
+        0.0001,
+        0.0,
+        0.0004
+      ],
+      "P99_h14_C_unidades_piloto": [
+        0.0,
+        0.0,
+        0.0001
+      ],
+      "P99_h14_D_unidades_piloto": [
+        -0.0001,
+        -0.0004,
+        0.0
+      ]
+    },
+    "criterios": {
+      "P90_h1": {
+        "desacuerdo": false,
+        "frontera": false,
+        "difuso_frente_a_nitido": "equivalente"
+      },
+      "P90_h7_confirmacion": {
+        "desacuerdo": false,
+        "frontera": true,
+        "difuso_frente_a_nitido": "equivalente"
+      }
+    },
+    "walk_forward_B_P90_h1": {
+      "tipo": "opcional; ensamble de 4 miembros",
+      "ic": {
+        "2021": [
+          0.0545,
+          0.0008,
+          0.0971
+        ],
+        "2022": [
+          0.0349,
+          0.0005,
+          0.0703
+        ],
+        "2023": [
+          0.1046,
+          0.0,
+          0.132
+        ],
+        "2024": [
+          0.0251,
+          -0.001,
+          0.0494
+        ],
+        "2025": [
+          0.0504,
+          0.0004,
+          0.0952
+        ]
+      }
+    }
+  },
+  "rr11_valor_relativo": {
+    "fuente": "rev_rr11_valor_relativo.csv",
+    "tipo": "descriptivo (post hoc, revisión)",
+    "evento": "P90",
+    "h": 1,
+    "frecuencia_base": 0.0931,
+    "por_variante": {
+      "F": {
+        "valor_maximo": 0.7153,
+        "costo_perdida_del_maximo": 0.1,
+        "rango_valor_positivo": [
+          0.03,
+          0.73
+        ]
+      },
+      "F0": {
+        "valor_maximo": 0.7088,
+        "costo_perdida_del_maximo": 0.1,
+        "rango_valor_positivo": [
+          0.03,
+          0.67
+        ]
+      },
+      "T": {
+        "valor_maximo": 0.6989,
+        "costo_perdida_del_maximo": 0.1,
+        "rango_valor_positivo": [
+          0.03,
+          0.68
+        ]
+      },
+      "TV": {
+        "valor_maximo": 0.7076,
+        "costo_perdida_del_maximo": 0.1,
+        "rango_valor_positivo": [
+          0.03,
+          0.73
+        ]
+      }
+    }
+  },
+  "rr2_techo_de_ruido": {
+    "fuente": "rev_rr2_medidas.csv; caché en data/interim/xai_benchmark/review",
+    "tipo": "descriptivo (post hoc, revisión)",
+    "reproduce_rq2_importance_max_abs": 1e-16,
+    "por_medida": {
+      "spearman_180": {
+        "combinaciones": 9,
+        "con_mayoria_de_pares_bajo_el_techo": 9,
+        "entre_modelos_mayor_o_igual_al_techo": 0,
+        "veredicto": "el desacuerdo supera el ruido",
+        "detalle": {
+          "Alta del Balsas_h1": {
+            "entre_modelos_mediana": 0.274,
+            "entre_semillas_mediana": 0.762,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h7": {
+            "entre_modelos_mediana": 0.263,
+            "entre_semillas_mediana": 0.704,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h14": {
+            "entre_modelos_mediana": 0.209,
+            "entre_semillas_mediana": 0.748,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h1": {
+            "entre_modelos_mediana": 0.337,
+            "entre_semillas_mediana": 0.674,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h7": {
+            "entre_modelos_mediana": 0.245,
+            "entre_semillas_mediana": 0.726,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h14": {
+            "entre_modelos_mediana": 0.224,
+            "entre_semillas_mediana": 0.592,
+            "entre_mitades_mediana": 0.997,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h1": {
+            "entre_modelos_mediana": 0.311,
+            "entre_semillas_mediana": 0.761,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h7": {
+            "entre_modelos_mediana": 0.274,
+            "entre_semillas_mediana": 0.791,
+            "entre_mitades_mediana": 0.997,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h14": {
+            "entre_modelos_mediana": 0.228,
+            "entre_semillas_mediana": 0.672,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          }
+        }
+      },
+      "jaccard_top10": {
+        "combinaciones": 9,
+        "con_mayoria_de_pares_bajo_el_techo": 2,
+        "entre_modelos_mayor_o_igual_al_techo": 0,
+        "veredicto": "intermedio",
+        "detalle": {
+          "Alta del Balsas_h1": {
+            "entre_modelos_mediana": 0.333,
+            "entre_semillas_mediana": 0.381,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h7": {
+            "entre_modelos_mediana": 0.292,
+            "entre_semillas_mediana": 0.603,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h14": {
+            "entre_modelos_mediana": 0.25,
+            "entre_semillas_mediana": 0.538,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h1": {
+            "entre_modelos_mediana": 0.381,
+            "entre_semillas_mediana": 0.548,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 2,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h7": {
+            "entre_modelos_mediana": 0.381,
+            "entre_semillas_mediana": 0.538,
+            "entre_mitades_mediana": 0.909,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h14": {
+            "entre_modelos_mediana": 0.292,
+            "entre_semillas_mediana": 0.333,
+            "entre_mitades_mediana": 0.909,
+            "pares_bajo_techo_semillas": 1,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h1": {
+            "entre_modelos_mediana": 0.381,
+            "entre_semillas_mediana": 0.429,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h7": {
+            "entre_modelos_mediana": 0.25,
+            "entre_semillas_mediana": 0.436,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 4,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h14": {
+            "entre_modelos_mediana": 0.213,
+            "entre_semillas_mediana": 0.394,
+            "entre_mitades_mediana": 0.909,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          }
+        }
+      },
+      "jaccard_top20": {
+        "combinaciones": 9,
+        "con_mayoria_de_pares_bajo_el_techo": 6,
+        "entre_modelos_mayor_o_igual_al_techo": 0,
+        "veredicto": "el desacuerdo supera el ruido",
+        "detalle": {
+          "Alta del Balsas_h1": {
+            "entre_modelos_mediana": 0.312,
+            "entre_semillas_mediana": 0.51,
+            "entre_mitades_mediana": 0.905,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h7": {
+            "entre_modelos_mediana": 0.29,
+            "entre_semillas_mediana": 0.436,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h14": {
+            "entre_modelos_mediana": 0.231,
+            "entre_semillas_mediana": 0.538,
+            "entre_mitades_mediana": 0.952,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h1": {
+            "entre_modelos_mediana": 0.333,
+            "entre_semillas_mediana": 0.538,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h7": {
+            "entre_modelos_mediana": 0.231,
+            "entre_semillas_mediana": 0.481,
+            "entre_mitades_mediana": 0.952,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h14": {
+            "entre_modelos_mediana": 0.212,
+            "entre_semillas_mediana": 0.386,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 4,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h1": {
+            "entre_modelos_mediana": 0.273,
+            "entre_semillas_mediana": 0.484,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h7": {
+            "entre_modelos_mediana": 0.27,
+            "entre_semillas_mediana": 0.49,
+            "entre_mitades_mediana": 0.952,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h14": {
+            "entre_modelos_mediana": 0.177,
+            "entre_semillas_mediana": 0.49,
+            "entre_mitades_mediana": 0.905,
+            "pares_bajo_techo_semillas": 5,
+            "pares_bajo_techo_mitades": 6
+          }
+        }
+      },
+      "spearman_canal": {
+        "combinaciones": 9,
+        "con_mayoria_de_pares_bajo_el_techo": 3,
+        "entre_modelos_mayor_o_igual_al_techo": 4,
+        "veredicto": "intermedio",
+        "detalle": {
+          "Alta del Balsas_h1": {
+            "entre_modelos_mediana": 0.657,
+            "entre_semillas_mediana": 0.829,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h7": {
+            "entre_modelos_mediana": 0.4,
+            "entre_semillas_mediana": 0.714,
+            "entre_mitades_mediana": 0.971,
+            "pares_bajo_techo_semillas": 2,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h14": {
+            "entre_modelos_mediana": 0.371,
+            "entre_semillas_mediana": 0.743,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 5,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h1": {
+            "entre_modelos_mediana": 0.543,
+            "entre_semillas_mediana": 0.8,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 4,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h7": {
+            "entre_modelos_mediana": 0.8,
+            "entre_semillas_mediana": 0.8,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 5
+          },
+          "Lerma–Santiago_h14": {
+            "entre_modelos_mediana": 0.714,
+            "entre_semillas_mediana": 0.657,
+            "entre_mitades_mediana": 0.971,
+            "pares_bajo_techo_semillas": 2,
+            "pares_bajo_techo_mitades": 5
+          },
+          "Pánuco_h1": {
+            "entre_modelos_mediana": 0.771,
+            "entre_semillas_mediana": 0.743,
+            "entre_mitades_mediana": 0.943,
+            "pares_bajo_techo_semillas": 0,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h7": {
+            "entre_modelos_mediana": 0.857,
+            "entre_semillas_mediana": 0.829,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 2,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h14": {
+            "entre_modelos_mediana": 0.486,
+            "entre_semillas_mediana": 0.857,
+            "entre_mitades_mediana": 1.0,
+            "pares_bajo_techo_semillas": 5,
+            "pares_bajo_techo_mitades": 5
+          }
+        }
+      },
+      "spearman_rezago": {
+        "combinaciones": 9,
+        "con_mayoria_de_pares_bajo_el_techo": 8,
+        "entre_modelos_mayor_o_igual_al_techo": 0,
+        "veredicto": "el desacuerdo supera el ruido",
+        "detalle": {
+          "Alta del Balsas_h1": {
+            "entre_modelos_mediana": 0.366,
+            "entre_semillas_mediana": 0.76,
+            "entre_mitades_mediana": 0.997,
+            "pares_bajo_techo_semillas": 5,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h7": {
+            "entre_modelos_mediana": 0.458,
+            "entre_semillas_mediana": 0.702,
+            "entre_mitades_mediana": 0.996,
+            "pares_bajo_techo_semillas": 3,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Alta del Balsas_h14": {
+            "entre_modelos_mediana": 0.314,
+            "entre_semillas_mediana": 0.784,
+            "entre_mitades_mediana": 0.996,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h1": {
+            "entre_modelos_mediana": 0.31,
+            "entre_semillas_mediana": 0.73,
+            "entre_mitades_mediana": 0.998,
+            "pares_bajo_techo_semillas": 5,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h7": {
+            "entre_modelos_mediana": 0.226,
+            "entre_semillas_mediana": 0.732,
+            "entre_mitades_mediana": 0.997,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Lerma–Santiago_h14": {
+            "entre_modelos_mediana": 0.132,
+            "entre_semillas_mediana": 0.689,
+            "entre_mitades_mediana": 0.997,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h1": {
+            "entre_modelos_mediana": 0.319,
+            "entre_semillas_mediana": 0.764,
+            "entre_mitades_mediana": 0.999,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h7": {
+            "entre_modelos_mediana": 0.438,
+            "entre_semillas_mediana": 0.873,
+            "entre_mitades_mediana": 0.997,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          },
+          "Pánuco_h14": {
+            "entre_modelos_mediana": 0.146,
+            "entre_semillas_mediana": 0.765,
+            "entre_mitades_mediana": 0.999,
+            "pares_bajo_techo_semillas": 6,
+            "pares_bajo_techo_mitades": 6
+          }
+        }
+      }
+    }
+  },
+  "rr3_rr4_sensibilidad": {
+    "fuente": "rev_rr34_ic.csv; rev_rr3_grupos.csv",
+    "tipo": "descriptivo (post hoc, revisión)",
+    "grupos": {
+      "grupos_conectados": 23,
+      "tamaños": [
+        33,
+        17,
+        10,
+        7,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unidades_piloto": 6
+    },
+    "resultados": {
+      "estaciones|ninguno": {
+        "H1": {
+          "xgboost_h7": [
+            0.3144,
+            0.2862,
+            0.3474
+          ],
+          "xgboost_h14": [
+            0.3613,
+            0.3309,
+            0.3851
+          ],
+          "tcn_h7": [
+            0.3225,
+            0.2732,
+            0.3643
+          ],
+          "tcn_h14": [
+            0.3499,
+            0.3225,
+            0.3699
+          ],
+          "convnext_h7": [
+            0.3214,
+            0.2853,
+            0.3598
+          ],
+          "convnext_h14": [
+            0.3429,
+            0.2979,
+            0.3591
+          ],
+          "patchtst_h7": [
+            0.306,
+            0.2712,
+            0.3471
+          ],
+          "patchtst_h14": [
+            0.3275,
+            0.2928,
+            0.3509
+          ]
+        },
+        "H1b": {
+          "tcn_h1": [
+            0.003,
+            0.0007,
+            0.0058
+          ],
+          "convnext_h1": [
+            0.001,
+            -0.0044,
+            0.0041
+          ],
+          "patchtst_h1": [
+            0.0028,
+            -0.0053,
+            0.0062
+          ],
+          "tcn_h7": [
+            -0.0009,
+            -0.0099,
+            0.004
+          ],
+          "convnext_h7": [
+            -0.0027,
+            -0.0107,
+            0.0032
+          ],
+          "patchtst_h7": [
+            -0.0045,
+            -0.0122,
+            0.0012
+          ],
+          "tcn_h14": [
+            -0.0066,
+            -0.0172,
+            0.0064
+          ],
+          "convnext_h14": [
+            -0.0278,
+            -0.0382,
+            -0.0208
+          ],
+          "patchtst_h14": [
+            -0.0206,
+            -0.0346,
+            -0.0053
+          ]
+        },
+        "H3": {
+          "P90_h1": [
+            0.0385,
+            0.0038,
+            0.0685
+          ],
+          "P90_h7": [
+            0.0089,
+            0.0013,
+            0.0162
+          ]
+        },
+        "veredictos": {
+          "H1": "SUPPORTED",
+          "H1b": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "H3": "SUPPORTED"
+        },
+        "delta_nse_vs_arima": {
+          "xgboost_h1": [
+            -0.0044,
+            -0.0186,
+            0.0047
+          ],
+          "tcn_h1": [
+            0.0025,
+            -0.0048,
+            0.0075
+          ],
+          "convnext_h1": [
+            -0.0048,
+            -0.0199,
+            0.0047
+          ],
+          "patchtst_h1": [
+            -0.0049,
+            -0.0141,
+            0.0025
+          ],
+          "xgboost_h7": [
+            0.0207,
+            0.0123,
+            0.0374
+          ],
+          "tcn_h7": [
+            0.0224,
+            0.0019,
+            0.0331
+          ],
+          "convnext_h7": [
+            0.0028,
+            -0.0072,
+            0.023
+          ],
+          "patchtst_h7": [
+            0.0136,
+            0.0026,
+            0.0283
+          ],
+          "xgboost_h14": [
+            0.0435,
+            0.0281,
+            0.065
+          ],
+          "tcn_h14": [
+            0.0329,
+            0.013,
+            0.0616
+          ],
+          "convnext_h14": [
+            0.0186,
+            0.0052,
+            0.043
+          ],
+          "patchtst_h14": [
+            0.0229,
+            0.0025,
+            0.0446
+          ]
+        }
+      },
+      "estaciones|bonferroni": {
+        "H1": {
+          "xgboost_h7": [
+            0.3144,
+            0.2709,
+            0.3795
+          ],
+          "xgboost_h14": [
+            0.3613,
+            0.3004,
+            0.3939
+          ],
+          "tcn_h7": [
+            0.3225,
+            0.2517,
+            0.3702
+          ],
+          "tcn_h14": [
+            0.3499,
+            0.2896,
+            0.3896
+          ],
+          "convnext_h7": [
+            0.3214,
+            0.2638,
+            0.3738
+          ],
+          "convnext_h14": [
+            0.3429,
+            0.2691,
+            0.3693
+          ],
+          "patchtst_h7": [
+            0.306,
+            0.2457,
+            0.3586
+          ],
+          "patchtst_h14": [
+            0.3275,
+            0.254,
+            0.3588
+          ]
+        },
+        "H1b": {
+          "tcn_h1": [
+            0.003,
+            -0.0002,
+            0.0071
+          ],
+          "convnext_h1": [
+            0.001,
+            -0.0065,
+            0.0046
+          ],
+          "patchtst_h1": [
+            0.0028,
+            -0.0078,
+            0.009
+          ],
+          "tcn_h7": [
+            -0.0009,
+            -0.0114,
+            0.005
+          ],
+          "convnext_h7": [
+            -0.0027,
+            -0.0155,
+            0.0058
+          ],
+          "patchtst_h7": [
+            -0.0045,
+            -0.0132,
+            0.003
+          ],
+          "tcn_h14": [
+            -0.0066,
+            -0.0233,
+            0.0092
+          ],
+          "convnext_h14": [
+            -0.0278,
+            -0.0447,
+            -0.0116
+          ],
+          "patchtst_h14": [
+            -0.0206,
+            -0.0393,
+            -0.0001
+          ]
+        },
+        "H3": {
+          "P90_h1": [
+            0.0385,
+            0.001,
+            0.0728
+          ],
+          "P90_h7": [
+            0.0089,
+            0.0003,
+            0.0173
+          ]
+        },
+        "veredictos": {
+          "H1": "SUPPORTED",
+          "H1b": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "H3": "SUPPORTED"
+        }
+      },
+      "grupos_conectados|ninguno": {
+        "H1": {
+          "xgboost_h7": [
+            0.3144,
+            0.2743,
+            0.3699
+          ],
+          "xgboost_h14": [
+            0.3613,
+            0.3125,
+            0.4085
+          ],
+          "tcn_h7": [
+            0.3225,
+            0.2517,
+            0.3699
+          ],
+          "tcn_h14": [
+            0.3499,
+            0.3225,
+            0.4015
+          ],
+          "convnext_h7": [
+            0.3214,
+            0.2703,
+            0.3678
+          ],
+          "convnext_h14": [
+            0.3429,
+            0.2888,
+            0.4037
+          ],
+          "patchtst_h7": [
+            0.306,
+            0.2623,
+            0.3569
+          ],
+          "patchtst_h14": [
+            0.3275,
+            0.3034,
+            0.3708
+          ]
+        },
+        "H1b": {
+          "tcn_h1": [
+            0.003,
+            -0.0009,
+            0.008
+          ],
+          "convnext_h1": [
+            0.001,
+            -0.0062,
+            0.0044
+          ],
+          "patchtst_h1": [
+            0.0028,
+            -0.0082,
+            0.0046
+          ],
+          "tcn_h7": [
+            -0.0009,
+            -0.0115,
+            0.004
+          ],
+          "convnext_h7": [
+            -0.0027,
+            -0.0154,
+            0.0048
+          ],
+          "patchtst_h7": [
+            -0.0045,
+            -0.0226,
+            0.0012
+          ],
+          "tcn_h14": [
+            -0.0066,
+            -0.0232,
+            0.0066
+          ],
+          "convnext_h14": [
+            -0.0278,
+            -0.0423,
+            -0.0142
+          ],
+          "patchtst_h14": [
+            -0.0206,
+            -0.0364,
+            -0.0066
+          ]
+        },
+        "H3": {
+          "P90_h1": [
+            0.0385,
+            -0.0003,
+            0.0581
+          ],
+          "P90_h7": [
+            0.0089,
+            0.0001,
+            0.0126
+          ]
+        },
+        "veredictos": {
+          "H1": "SUPPORTED",
+          "H1b": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "H3": "OPEN"
+        },
+        "delta_nse_vs_arima": {
+          "xgboost_h1": [
+            -0.0044,
+            -0.02,
+            0.0021
+          ],
+          "tcn_h1": [
+            0.0025,
+            -0.0108,
+            0.0065
+          ],
+          "convnext_h1": [
+            -0.0048,
+            -0.0178,
+            0.0046
+          ],
+          "patchtst_h1": [
+            -0.0049,
+            -0.0149,
+            0.0002
+          ],
+          "xgboost_h7": [
+            0.0207,
+            0.0122,
+            0.0317
+          ],
+          "tcn_h7": [
+            0.0224,
+            -0.0072,
+            0.0318
+          ],
+          "convnext_h7": [
+            0.0028,
+            -0.0186,
+            0.0234
+          ],
+          "patchtst_h7": [
+            0.0136,
+            -0.0149,
+            0.0266
+          ],
+          "xgboost_h14": [
+            0.0435,
+            0.0259,
+            0.065
+          ],
+          "tcn_h14": [
+            0.0329,
+            0.0015,
+            0.0717
+          ],
+          "convnext_h14": [
+            0.0186,
+            -0.0041,
+            0.0484
+          ],
+          "patchtst_h14": [
+            0.0229,
+            -0.0013,
+            0.0453
+          ]
+        }
+      },
+      "grupos_conectados|bonferroni": {
+        "H1": {
+          "xgboost_h7": [
+            0.3144,
+            0.2417,
+            0.3844
+          ],
+          "xgboost_h14": [
+            0.3613,
+            0.3004,
+            0.4212
+          ],
+          "tcn_h7": [
+            0.3225,
+            0.2436,
+            0.3824
+          ],
+          "tcn_h14": [
+            0.3499,
+            0.3035,
+            0.4242
+          ],
+          "convnext_h7": [
+            0.3214,
+            0.2638,
+            0.3869
+          ],
+          "convnext_h14": [
+            0.3429,
+            0.2837,
+            0.4066
+          ],
+          "patchtst_h7": [
+            0.306,
+            0.2457,
+            0.3846
+          ],
+          "patchtst_h14": [
+            0.3275,
+            0.2802,
+            0.4034
+          ]
+        },
+        "H1b": {
+          "tcn_h1": [
+            0.003,
+            -0.0045,
+            0.0137
+          ],
+          "convnext_h1": [
+            0.001,
+            -0.0085,
+            0.011
+          ],
+          "patchtst_h1": [
+            0.0028,
+            -0.0096,
+            0.0047
+          ],
+          "tcn_h7": [
+            -0.0009,
+            -0.0161,
+            0.0054
+          ],
+          "convnext_h7": [
+            -0.0027,
+            -0.0344,
+            0.0074
+          ],
+          "patchtst_h7": [
+            -0.0045,
+            -0.0322,
+            0.0025
+          ],
+          "tcn_h14": [
+            -0.0066,
+            -0.0256,
+            0.0133
+          ],
+          "convnext_h14": [
+            -0.0278,
+            -0.0463,
+            0.0023
+          ],
+          "patchtst_h14": [
+            -0.0206,
+            -0.0515,
+            -0.0001
+          ]
+        },
+        "H3": {
+          "P90_h1": [
+            0.0385,
+            -0.0026,
+            0.0612
+          ],
+          "P90_h7": [
+            0.0089,
+            -0.0003,
+            0.0129
+          ]
+        },
+        "veredictos": {
+          "H1": "SUPPORTED",
+          "H1b": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "H3": "REJECTED"
+        }
+      },
+      "unidades_piloto|ninguno": {
+        "H1": {
+          "xgboost_h7": [
+            0.3144,
+            0.2738,
+            0.3561
+          ],
+          "xgboost_h14": [
+            0.3613,
+            0.3004,
+            0.3935
+          ],
+          "tcn_h7": [
+            0.3225,
+            0.2517,
+            0.3676
+          ],
+          "tcn_h14": [
+            0.3499,
+            0.2994,
+            0.3889
+          ],
+          "convnext_h7": [
+            0.3214,
+            0.2703,
+            0.3628
+          ],
+          "convnext_h14": [
+            0.3429,
+            0.2691,
+            0.363
+          ],
+          "patchtst_h7": [
+            0.306,
+            0.2637,
+            0.3569
+          ],
+          "patchtst_h14": [
+            0.3275,
+            0.2802,
+            0.3509
+          ]
+        },
+        "H1b": {
+          "tcn_h1": [
+            0.003,
+            -0.0006,
+            0.0066
+          ],
+          "convnext_h1": [
+            0.001,
+            -0.0039,
+            0.0043
+          ],
+          "patchtst_h1": [
+            0.0028,
+            0.0006,
+            0.0045
+          ],
+          "tcn_h7": [
+            -0.0009,
+            -0.0099,
+            0.0081
+          ],
+          "convnext_h7": [
+            -0.0027,
+            -0.0107,
+            0.0048
+          ],
+          "patchtst_h7": [
+            -0.0045,
+            -0.0147,
+            0.0015
+          ],
+          "tcn_h14": [
+            -0.0066,
+            -0.0217,
+            0.0177
+          ],
+          "convnext_h14": [
+            -0.0278,
+            -0.0382,
+            0.0023
+          ],
+          "patchtst_h14": [
+            -0.0206,
+            -0.0346,
+            -0.0053
+          ]
+        },
+        "H3": {
+          "P90_h1": [
+            0.0385,
+            0.008,
+            0.0474
+          ],
+          "P90_h7": [
+            0.0089,
+            0.0008,
+            0.0126
+          ]
+        },
+        "veredictos": {
+          "H1": "SUPPORTED",
+          "H1b": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "H3": "SUPPORTED"
+        },
+        "delta_nse_vs_arima": {
+          "xgboost_h1": [
+            -0.0044,
+            -0.012,
+            0.0047
+          ],
+          "tcn_h1": [
+            0.0025,
+            -0.0047,
+            0.0056
+          ],
+          "convnext_h1": [
+            -0.0048,
+            -0.0154,
+            0.0069
+          ],
+          "patchtst_h1": [
+            -0.0049,
+            -0.0141,
+            0.0092
+          ],
+          "xgboost_h7": [
+            0.0207,
+            0.0144,
+            0.0385
+          ],
+          "tcn_h7": [
+            0.0224,
+            -0.0022,
+            0.0379
+          ],
+          "convnext_h7": [
+            0.0028,
+            -0.0181,
+            0.037
+          ],
+          "patchtst_h7": [
+            0.0136,
+            -0.0178,
+            0.0364
+          ],
+          "xgboost_h14": [
+            0.0435,
+            0.0289,
+            0.0872
+          ],
+          "tcn_h14": [
+            0.0329,
+            0.0123,
+            0.1076
+          ],
+          "convnext_h14": [
+            0.0186,
+            -0.0025,
+            0.0859
+          ],
+          "patchtst_h14": [
+            0.0229,
+            -0.0013,
+            0.0597
+          ]
+        }
+      },
+      "unidades_piloto|bonferroni": {
+        "H1": {
+          "xgboost_h7": [
+            0.3144,
+            0.2347,
+            0.3773
+          ],
+          "xgboost_h14": [
+            0.3613,
+            0.2586,
+            0.4122
+          ],
+          "tcn_h7": [
+            0.3225,
+            0.2434,
+            0.3846
+          ],
+          "tcn_h14": [
+            0.3499,
+            0.2667,
+            0.4192
+          ],
+          "convnext_h7": [
+            0.3214,
+            0.224,
+            0.3738
+          ],
+          "convnext_h14": [
+            0.3429,
+            0.2492,
+            0.4037
+          ],
+          "patchtst_h7": [
+            0.306,
+            0.2623,
+            0.3846
+          ],
+          "patchtst_h14": [
+            0.3275,
+            0.2097,
+            0.4028
+          ]
+        },
+        "H1b": {
+          "tcn_h1": [
+            0.003,
+            -0.0045,
+            0.0078
+          ],
+          "convnext_h1": [
+            0.001,
+            -0.0053,
+            0.0067
+          ],
+          "patchtst_h1": [
+            0.0028,
+            -0.0023,
+            0.0046
+          ],
+          "tcn_h7": [
+            -0.0009,
+            -0.0099,
+            0.0133
+          ],
+          "convnext_h7": [
+            -0.0027,
+            -0.0114,
+            0.0048
+          ],
+          "patchtst_h7": [
+            -0.0045,
+            -0.0249,
+            0.0029
+          ],
+          "tcn_h14": [
+            -0.0066,
+            -0.0225,
+            0.0177
+          ],
+          "convnext_h14": [
+            -0.0278,
+            -0.0404,
+            0.0027
+          ],
+          "patchtst_h14": [
+            -0.0206,
+            -0.0375,
+            -0.0037
+          ]
+        },
+        "H3": {
+          "P90_h1": [
+            0.0385,
+            0.0003,
+            0.0484
+          ],
+          "P90_h7": [
+            0.0089,
+            0.0,
+            0.013
+          ]
+        },
+        "veredictos": {
+          "H1": "SUPPORTED",
+          "H1b": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "H3": "SUPPORTED"
+        }
+      }
+    },
+    "cambios": {
+      "estaciones|ninguno": {
+        "H1": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        },
+        "H1b": {
+          "oficial": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "sensibilidad": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "cambia": false
+        },
+        "H3": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        }
+      },
+      "estaciones|bonferroni": {
+        "H1": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        },
+        "H1b": {
+          "oficial": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "sensibilidad": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "cambia": true
+        },
+        "H3": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        }
+      },
+      "grupos_conectados|ninguno": {
+        "H1": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        },
+        "H1b": {
+          "oficial": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "sensibilidad": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "cambia": true
+        },
+        "H3": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "OPEN",
+          "cambia": true
+        }
+      },
+      "grupos_conectados|bonferroni": {
+        "H1": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        },
+        "H1b": {
+          "oficial": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "sensibilidad": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "cambia": true
+        },
+        "H3": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "REJECTED",
+          "cambia": true
+        }
+      },
+      "unidades_piloto|ninguno": {
+        "H1": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        },
+        "H1b": {
+          "oficial": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "sensibilidad": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "cambia": false
+        },
+        "H3": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        }
+      },
+      "unidades_piloto|bonferroni": {
+        "H1": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        },
+        "H1b": {
+          "oficial": {
+            "h1": "SUPPORTED",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "sensibilidad": {
+            "h1": "OPEN",
+            "h7": "OPEN",
+            "h14": "OPEN"
+          },
+          "cambia": true
+        },
+        "H3": {
+          "oficial": "SUPPORTED",
+          "sensibilidad": "SUPPORTED",
+          "cambia": false
+        }
+      }
+    },
+    "familias_bonferroni": {
+      "H1": 8,
+      "H1b": 9,
+      "H3": 2
+    }
+  },
+  "rr6_descriptores": {
+    "fuente": "tables/S1_descriptores.csv",
+    "tipo": "descriptivo (post hoc, revisión)",
+    "umbral_intermitente": 0.05,
+    "mejor_modelo": {
+      "h1": "arima",
+      "h7": "convnext"
+    },
+    "por_cuenca": {
+      "Alta del Balsas": {
+        "area_drenaje_km2": {
+          "mediana": 596.2,
+          "min": 84.8,
+          "max": 6114.0
+        },
+        "gasto_medio_entrenamiento_m3s": {
+          "mediana": 4.4045,
+          "min": 0.79,
+          "max": 48.834
+        },
+        "p90_entrenamiento_m3s": {
+          "mediana": 2.7525,
+          "min": 1.35,
+          "max": 97.375
+        },
+        "fraccion_dias_gasto_cero": {
+          "mediana": 0.0009,
+          "min": 0.0,
+          "max": 0.4994
+        },
+        "fraccion_dias_precip_valida": {
+          "mediana": 0.8479,
+          "min": 0.7628,
+          "max": 0.9418
+        },
+        "estaciones": 12,
+        "intermitentes": 3
+      },
+      "Cutzamala": {
+        "area_drenaje_km2": {
+          "mediana": 106.2,
+          "min": 106.2,
+          "max": 106.2
+        },
+        "gasto_medio_entrenamiento_m3s": {
+          "mediana": 0.657,
+          "min": 0.657,
+          "max": 0.657
+        },
+        "p90_entrenamiento_m3s": {
+          "mediana": 1.6,
+          "min": 1.6,
+          "max": 1.6
+        },
+        "fraccion_dias_gasto_cero": {
+          "mediana": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "fraccion_dias_precip_valida": {
+          "mediana": 0.7233,
+          "min": 0.7233,
+          "max": 0.7233
+        },
+        "estaciones": 1,
+        "intermitentes": 0
+      },
+      "Lerma–Santiago": {
+        "area_drenaje_km2": {
+          "mediana": 2557.25,
+          "min": 15.7,
+          "max": 71129.3
+        },
+        "gasto_medio_entrenamiento_m3s": {
+          "mediana": 4.165,
+          "min": 0.163,
+          "max": 47.235
+        },
+        "p90_entrenamiento_m3s": {
+          "mediana": 11.583,
+          "min": 0.0,
+          "max": 114.212
+        },
+        "fraccion_dias_gasto_cero": {
+          "mediana": 0.1671,
+          "min": 0.0,
+          "max": 0.9215
+        },
+        "fraccion_dias_precip_valida": {
+          "mediana": 0.8487,
+          "min": 0.7064,
+          "max": 0.9787
+        },
+        "estaciones": 41,
+        "intermitentes": 22
+      },
+      "Pánuco": {
+        "area_drenaje_km2": {
+          "mediana": 888.95,
+          "min": 14.2,
+          "max": 33711.2
+        },
+        "gasto_medio_entrenamiento_m3s": {
+          "mediana": 14.89,
+          "min": 0.004,
+          "max": 197.881
+        },
+        "p90_entrenamiento_m3s": {
+          "mediana": 30.0,
+          "min": 0.0,
+          "max": 365.74
+        },
+        "fraccion_dias_gasto_cero": {
+          "mediana": 0.0066,
+          "min": 0.0,
+          "max": 0.9654
+        },
+        "fraccion_dias_precip_valida": {
+          "mediana": 0.8286,
+          "min": 0.6442,
+          "max": 0.9378
+        },
+        "estaciones": 37,
+        "intermitentes": 10
+      }
+    },
+    "nse_por_regimen": {
+      "intermitente": {
+        "nse_h1_arima": {
+          "mediana": 0.5842,
+          "fraccion_negativa": 0.086
+        },
+        "nse_h7_convnext": {
+          "mediana": 0.179,
+          "fraccion_negativa": 0.2
+        },
+        "estaciones": 35
+      },
+      "perenne": {
+        "nse_h1_arima": {
+          "mediana": 0.6281,
+          "fraccion_negativa": 0.089
+        },
+        "nse_h7_convnext": {
+          "mediana": 0.1852,
+          "fraccion_negativa": 0.143
+        },
+        "estaciones": 56
+      }
+    }
+  },
+  "rr5_presas": {
+    "tipo": "descriptivo (post hoc, revisión)",
+    "disponible": false,
+    "archivos_de_presas": [],
+    "atributos_hydrorivers": [
+      "HYRIV_ID",
+      "NEXT_DOWN",
+      "MAIN_RIV",
+      "UPLAND_SKM",
+      "DIS_AV_CMS",
+      "HYBAS_L12"
+    ],
+    "nota": "sin catálogo de presas en el conjunto y sin atributos de regulación en HydroRIVERS v1.0; no se descargó ninguna base nueva"
+  },
+  "computo": {
+    "horas_cpu": 0.464,
+    "nota": "incluye el recálculo de RR-2 si no estaba en caché"
+  }
+}

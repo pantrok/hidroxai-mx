@@ -192,12 +192,13 @@
 | CPU | xai_05_evaluate | 0.006 |
 | CPU | xai_10_walk_forward_eval | 0.654 |
 | CPU | xai_11_diagnostics | 0.103 |
+| CPU | xai_14_review_analyses | 0.464 |
 | CPU | walk-forward ARIMA | 1.136 |
 | CPU | walk-forward XGBoost | 0.249 |
 | GPU | walk-forward (redes) | 1.394 |
 | GPU | total diseño principal | 1.625 |
 | GPU | total con walk-forward | 3.019 |
-| CPU | total | 4.944 |
+| CPU | total | 5.408 |
 
 ## T7_walk_forward
 

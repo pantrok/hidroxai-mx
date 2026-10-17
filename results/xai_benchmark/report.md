@@ -1,6 +1,6 @@
 # Reporte técnico · benchmark de arquitecturas, explicabilidad y alertas difusas
 
-Generado por `scripts/xai_08_report.py` el 2026-10-12. Todas las cifras vienen de `numbers.json`; cada bloque indica su fuente. Protocolo: `protocol.md` (SHA-256 coincide con el congelado).
+Generado por `scripts/xai_08_report.py` el 2026-10-17. Todas las cifras vienen de `numbers.json`; cada bloque indica su fuente. Protocolo: `protocol.md` (SHA-256 coincide con el congelado).
 
 > Pronósticos retrospectivos sobre 2023–2025; no es un sistema operativo.
 
@@ -204,7 +204,7 @@ Criterios: proof_ledger.md, sección 'Diagnósticos post hoc' (2026-10-11, escri
 
 ## 7. Cómputo
 
-- GPU (Tesla T4, Kaggle): 1.625 h en 216 corridas del diseño principal y 1.394 h en 180 del walk-forward. CPU local: 4.944 h en total (presupuesto 40 h).
+- GPU (Tesla T4, Kaggle): 1.625 h en 216 corridas del diseño principal y 1.394 h en 180 del walk-forward. CPU local: 5.408 h en total (presupuesto 40 h).
 - Épocas de las redes (mediana; fracción con parada temprana): ConvNeXt-1D 23.0 (0.986), PatchTST 19.5 (1.0), TCN 17.0 (1.0).
 
 | recurso | componente | horas |
@@ -220,12 +220,13 @@ Criterios: proof_ledger.md, sección 'Diagnósticos post hoc' (2026-10-11, escri
 | CPU | xai_05_evaluate | 0.006 |
 | CPU | xai_10_walk_forward_eval | 0.654 |
 | CPU | xai_11_diagnostics | 0.103 |
+| CPU | xai_14_review_analyses | 0.464 |
 | CPU | walk-forward ARIMA | 1.136 |
 | CPU | walk-forward XGBoost | 0.249 |
 | GPU | walk-forward (redes) | 1.394 |
 | GPU | total diseño principal | 1.625 |
 | GPU | total con walk-forward | 3.019 |
-| CPU | total | 4.944 |
+| CPU | total | 5.408 |
 
 ## 8. No realizado
 

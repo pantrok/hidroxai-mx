@@ -442,6 +442,33 @@ No se descarga ninguna base nueva.
 Las del entorno local (ARIMA, XGBoost, explicaciones, alertas y evaluación). Las de la imagen
 de Kaggle donde se entrenaron las redes se reportan solo si quedaron registradas.
 
+### Resultados del análisis de revisión (2026-10-16/17)
+
+`scripts/xai_14_review_analyses.py` → `e_revision.json` y `numbers.json` → `revision_pares`.
+
+**Comprobaciones internas superadas**
+- F y T reproducen `rq3_contingency.csv`, y su bootstrap reproduce el ΔCSI de `e_rq3.json`.
+- El bootstrap de estaciones sin ajuste reproduce los veredictos de §7.
+- El recálculo de RR-2 reproduce `rq2_importance.csv` (diferencia máxima 1e-16).
+
+| Análisis | Resultado según los criterios de arriba |
+|---|---|
+| RR-1, P90, h = 1 | **"Desacuerdo": no** (IC de B contiene 0; IC de C > 0). **"Frontera": no.** D: **equivalente** |
+| RR-1, P90, h = 7 (confirmación) | "Desacuerdo": no; **"Frontera": sí** (IC de A > 0); D: equivalente |
+| RR-2, Spearman sobre 180 | **El desacuerdo supera el ruido** (9 de 9 combinaciones) |
+| RR-2, Jaccard top-20 | Supera el ruido (6 de 9) |
+| RR-2, Spearman por día de ventana | Supera el ruido (8 de 9) |
+| RR-2, Jaccard top-10 | Intermedio (2 de 9) |
+| RR-2, Spearman por canal | Intermedio (3 de 9) |
+| RR-3, grupos conectados (23) | H1 sin cambio; **H1-b h = 1 pasa a OPEN; H3 pasa a OPEN** |
+| RR-3, peor caso (6 unidades) | Ningún veredicto cambia |
+| RR-4, Bonferroni con estaciones | H1 y H3 sin cambio; **H1-b h = 1 pasa a OPEN** |
+| RR-4, Bonferroni con grupos | H1 sin cambio; H1-b h = 1 OPEN; **H3 pasa a REJECTED** |
+| RR-5 | Sin datos de presas en el conjunto ni en HydroRIVERS; no se descargó nada |
+
+**Cifras e interpretación:** en `e_revision.json` y en la respuesta al brief. **Los
+veredictos oficiales de §7 no cambian:** son análisis de sensibilidad.
+
 ## Evidencia
 
 - `e_rq1.json`, `e_rq2.json` y `e_rq3.json`: veredictos con sus IC.

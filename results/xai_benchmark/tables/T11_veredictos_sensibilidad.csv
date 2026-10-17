@@ -1,0 +1,19 @@
+remuestreo,ajuste,hipotesis,oficial,sensibilidad,cambia
+estaciones,ninguno,H1,"""SUPPORTED""","""SUPPORTED""",False
+estaciones,ninguno,H1b,"{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}","{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}",False
+estaciones,ninguno,H3,"""SUPPORTED""","""SUPPORTED""",False
+estaciones,bonferroni,H1,"""SUPPORTED""","""SUPPORTED""",False
+estaciones,bonferroni,H1b,"{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}","{""h1"": ""OPEN"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}",True
+estaciones,bonferroni,H3,"""SUPPORTED""","""SUPPORTED""",False
+grupos_conectados,ninguno,H1,"""SUPPORTED""","""SUPPORTED""",False
+grupos_conectados,ninguno,H1b,"{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}","{""h1"": ""OPEN"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}",True
+grupos_conectados,ninguno,H3,"""SUPPORTED""","""OPEN""",True
+grupos_conectados,bonferroni,H1,"""SUPPORTED""","""SUPPORTED""",False
+grupos_conectados,bonferroni,H1b,"{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}","{""h1"": ""OPEN"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}",True
+grupos_conectados,bonferroni,H3,"""SUPPORTED""","""REJECTED""",True
+unidades_piloto,ninguno,H1,"""SUPPORTED""","""SUPPORTED""",False
+unidades_piloto,ninguno,H1b,"{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}","{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}",False
+unidades_piloto,ninguno,H3,"""SUPPORTED""","""SUPPORTED""",False
+unidades_piloto,bonferroni,H1,"""SUPPORTED""","""SUPPORTED""",False
+unidades_piloto,bonferroni,H1b,"{""h1"": ""SUPPORTED"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}","{""h1"": ""OPEN"", ""h7"": ""OPEN"", ""h14"": ""OPEN""}",True
+unidades_piloto,bonferroni,H3,"""SUPPORTED""","""SUPPORTED""",False
