@@ -281,6 +281,167 @@ descargar un archivo oficial con autorización expresa.
 - **Alcance:** las métricas corregidas son diagnósticas y no sustituyen a las del diseño
   principal.
 
+## Análisis de revisión (2026-10-16, criterios escritos antes de calcular)
+
+**Origen y alcance**
+
+- Vienen de la revisión simulada v0.6 del manuscrito: RR-1 a RR-4 y RR-6, más los opcionales
+  RR-5 y RR-11.
+- Son descriptivos (post hoc, posteriores a la revisión). No cambian ningún veredicto de §7 ni
+  las cifras del diseño principal, y no se reentrena ningún modelo.
+
+**Ejecución**
+
+- Código: `scripts/xai_14_review_analyses.py`; salida en `numbers.json` → `revision_pares`.
+- Semilla 20261010; bootstrap de 10,000 réplicas; IC percentiles.
+- Esta sección se versiona en un commit propio, antes de cualquier resultado.
+
+**Estado de lo guardado**
+
+- Se usan las predicciones, los niveles de alerta por muestra (`data/interim/xai_benchmark/alerts`)
+  y las métricas por estación ya guardadas.
+- Las atribuciones por semilla y por ventana **no** se guardaron: `xai_06` solo escribió el
+  mapa promedio de semillas. RR-2 requiere recalcularlas con los pesos guardados, y eso se hace
+  solo con autorización del autor.
+
+### RR-1. Separar el efecto del desacuerdo en H3
+
+**Datos**
+- Ensamble de 12 miembros del diseño principal; percentil *p* y dispersión *s* por muestra (los
+  de `xai_07`).
+- Eventos P90 y P99 con los percentiles de entrenamiento de cada estación.
+- Estaciones evaluables y h = 1, 7 y 14.
+
+**Variantes**
+
+| Código | Variante | Decisión |
+|---|---|---|
+| F | Mamdani del diseño principal (corregido) | P90 si nivel ≥ alerta; P99 si nivel = emergencia |
+| F0 | Mismas funciones y reglas, con *s* = 0 en todas las muestras | Igual que F |
+| T | Umbral simple | *p* ≥ 0.90 (P90); *p* ≥ 0.99 (P99) |
+| TV | Umbral con veto | *p* ≥ 0.90 y *s* < 0.15 (P90); *p* ≥ 0.99 y *s* < 0.15 (P99) |
+
+Se comprueba que F reproduce `rq3_contingency.csv`.
+
+**Contrastes**
+- A = F0 − T; B = F − F0; C = TV − T; D = F − TV.
+- Cada uno es un ΔCSI con tablas sumadas sobre las estaciones evaluables y bootstrap pareado de
+  estaciones.
+- Se reportan POD, FAR y CSI de cada variante.
+
+**Criterios** (P90, h = 1; h = 7 como confirmación)
+- **"Desacuerdo":** IC de B > 0 **y** IC de C > 0.
+- **"Frontera":** IC de A > 0.
+- **"Difuso aporta"** si IC de D > 0; **"equivalente"** si contiene 0; **"nítido mejor"** si
+  IC de D < 0.
+
+**Opcional**
+- B por año del walk-forward (ensamble de 4 miembros), h = 1, P90.
+- RR-11: valor económico relativo (Richardson, 2000) de F, F0, T y TV con P90, h = 1. Razón
+  costo/pérdida de 0.01 a 0.99 en pasos de 0.01; tablas sumadas.
+
+### RR-2. Techo de ruido de la concordancia de explicaciones
+
+**Alcance**
+- Cuencas con ≥ 8 estaciones (Lerma–Santiago, Pánuco, Alta del Balsas) × h = 1, 7 y 14.
+- Misma muestra fija de `xai_06` (≤ 2,000 ventanas estratificadas, semilla 20261010).
+
+**Recálculo**
+- TreeSHAP para XGBoost e IG para las redes (64 pasos, línea base cero), por semilla y por
+  ventana, con los pesos guardados.
+- Comprobación: el mapa promedio de semillas debe reproducir `rq2_importance.csv` (diferencia
+  absoluta máxima < 1e-6).
+
+**Mapas**
+- Importancia |atribución| normalizada por ventana y promediada (6 × 30), como en el protocolo.
+- **Intra-modelo entre semillas:** medida entre los mapas de los 3 pares de semillas, y mediana
+  por modelo.
+- **Intra-modelo entre mitades:** dentro de cada estación, las ventanas se permutan al azar
+  (semilla 20261010) y se parten en dos mitades (⌊n/2⌋ y el resto). Mapas con la media de
+  semillas; medida entre las mitades.
+- **Entre modelos:** mapas con la media de semillas de toda la muestra (los del diseño
+  principal).
+
+**Medidas**
+1. Spearman sobre los 180 valores.
+2. Jaccard de los 10 y de los 20 elementos más importantes.
+3. Spearman sobre la importancia sumada por canal (6 valores).
+4. Spearman sobre la importancia sumada por día de ventana (30 valores).
+
+**Criterio** (por medida)
+- **Definición base:** un par (a, b) en una combinación cuenca × horizonte está "bajo el
+  techo" si la medida entre modelos < mín(mediana entre semillas de a, mediana entre semillas
+  de b).
+- **"El desacuerdo supera el ruido":** en ≥ 2/3 de las 9 combinaciones, al menos 4 de los 6
+  pares están bajo el techo.
+- **"Indistinguible del ruido":** en más de la mitad de las combinaciones, la mediana entre
+  pares de la medida entre modelos es ≥ la mediana entre modelos de la medida intra-modelo
+  entre semillas.
+- **"Intermedio":** cualquier otro caso.
+- El techo entre mitades se reporta con las mismas comparaciones, como secundario.
+
+### RR-3. Bootstrap por grupos de estaciones
+
+**Grupos principales**
+- Componentes conexas de las estaciones evaluables sobre la red HydroRIVERS v1.0 (Norteamérica).
+- Dos estaciones quedan conectadas si el tramo de una está en la trayectoria aguas abajo del
+  tramo de la otra (vía `NEXT_DOWN`, desde el `hyriv_id` de `estaciones_hidrorivers.csv`).
+- Las estaciones sin tramo vinculado son grupos de un elemento.
+- Topología leída de la capa registrada en `conf/sources.yaml` (`hydrorivers`), mediante un
+  extracto local de columnas en `data/scratch/hydrorivers/` (no versionado).
+- Es la agrupación más fina que mantiene juntas las estaciones conectadas. Al definirla salen
+  23 grupos (≥ 15); `xai_14` los recalcula y registra el número.
+
+**Peor caso** (secundario): las 6 unidades piloto.
+
+**IC que se recalculan** (bootstrap de grupos: se remuestrean grupos con reemplazo y se toman
+todas sus estaciones)
+- H1: SS, 4 modelos × h = 7 y 14.
+- H1-b: ΔNSE, 3 × 3.
+- ΔNSE contra ARIMA (descriptivo): 4 × 3.
+- H3: ΔCSI P90, h = 1 y 7, sumando las tablas de las estaciones remuestreadas.
+
+**Criterio:** se reaplican las reglas de §7 (`models/criteria.py`) y se reporta si cada
+veredicto cambia. Es sensibilidad: **no cambia el veredicto oficial.**
+
+### RR-4. Comparaciones múltiples
+
+**Familias de Bonferroni**
+
+| Familia | Pruebas (*m*) | Nivel del IC |
+|---|---|---|
+| H1 | 8 | 1 − 0.05/8 |
+| H1-b | 9 | 1 − 0.05/9 |
+| H3 | 2 | 1 − 0.05/2 |
+
+**Cálculo:** con bootstrap de estaciones (como el diseño principal) y de grupos (RR-3). Se
+reaplican las reglas de §7 y se reporta si cambia algún veredicto. ΔNSE contra ARIMA no es una
+hipótesis y no se ajusta.
+
+### RR-6. Descriptores por estación (suplemento)
+
+Por estación evaluable:
+- **Área de drenaje:** `upland_km2` de HydroRIVERS (en `estaciones_hidrorivers.csv`).
+- **Gasto:** media y P90 de 2010–2020 con `calidad = 0`.
+- **Régimen:** fracción de días con gasto = 0 entre los días con `calidad = 0` de 2010-01-01 a
+  2025-09-03. **"Intermitente" si la fracción es > 0.05**; si no, "perenne".
+- **Precipitación:** número de estaciones climatológicas de la interpolación (`vecinos_clima`) y
+  fracción de días con `precip_idw_mm` válida en el mismo periodo.
+- **NSE a h = 1 y 7 del mejor modelo de cada horizonte**, el de mayor NSE mediana agregada en
+  `rq1_summary.csv`.
+
+Resumen por cuenca (mediana y rango) y, de forma descriptiva, NSE por régimen.
+
+### RR-5. Regulación por presas (opcional)
+
+Se usa solo si los datos ya están en el conjunto o en los atributos de HydroRIVERS incluidos.
+No se descarga ninguna base nueva.
+
+### Versiones de software
+
+Las del entorno local (ARIMA, XGBoost, explicaciones, alertas y evaluación). Las de la imagen
+de Kaggle donde se entrenaron las redes se reportan solo si quedaron registradas.
+
 ## Evidencia
 
 - `e_rq1.json`, `e_rq2.json` y `e_rq3.json`: veredictos con sus IC.
