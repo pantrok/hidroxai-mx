@@ -423,3 +423,139 @@ cualquier cambio de imputación hasta la decisión del autor.
   oficial lleva ese nombre (su recuadro cae 60 % en Río Atoyac-A y 22 % en Río Grande de
   Amacuzac); no se dibuja. Se descartó la capa de 757 cuencas CONAGUA 2020 de IDEFOR por
   su licencia CC BY-NC-SA 2.5 MX. Leyenda de Fig. 2 sin cambios en los conteos.
+
+## E14 — Segunda revisión DIB-D-26-01662R1 (congelado 2026-11-09 22:33, antes de ejecutar)
+
+Script nuevo `scripts/dib_17_r2_checks.py`; salidas en `results/dib_revision/r2/`. No se modifican
+`dib_09_baseline.py`, sus CSV y JSON, `estaciones_hidrorivers.csv` ni las figuras. Todo lo que no
+sea un punto de los revisores se anota en `r2/hallazgos_colaterales.md` y no se corrige.
+
+### T1 · R2-i, dependencia temporal y fuga en el baseline
+
+- **Control previo:** el script recalcula la variante principal (`sin_outliers_en_predictores`)
+  con las funciones de `dib_09_baseline.py` y debe reproducir `baseline_por_estacion.csv`
+  (diferencia ≤ 1e-9 en NSE y KGE). Si no, se detiene antes de reportar cifras.
+- **Emisiones de prueba:** las de la variante principal en sus estaciones evaluables. Ventana de
+  predictores = t−30…t (lag30 es t−30; ma7 y ma30 terminan en t).
+- **Fuga por imputación:** fracción de emisiones con algún `calidad = 1` en la ventana, y fracción
+  con Q(t) imputado. Como el objetivo exige `calidad = 0` en t+1, un Q(t) imputado viene de un hueco
+  que termina en t, y su interpolación usa Q(t+1), el propio objetivo. Un imputado con Q(t) original
+  solo usa observaciones ≤ t. Se reportan ambas fracciones con esa lectura.
+- **Variante `sin_imputados_en_ventana`:** la principal más la exclusión de emisiones con
+  `calidad = 1` en t−30…t, aplicada antes de partir, con los mismos mínimos, partición y alpha
+  elegido en validación. Formato de `baseline_summary.csv`, más estaciones con Ridge > persistencia
+  en NSE y emisiones de prueba perdidas frente a la principal (total y por ciento).
+- **Skill:** 1 − MSE_ridge / MSE_persistencia por estación, en ambas variantes: mediana, IQR y
+  número de estaciones con skill > 0.
+- **Criterio:** referencia 0.594 = mediana de NSE de Ridge de la variante principal en
+  `baseline_summary.csv`. Si la variante nueva difiere en menos de 0.02, las cifras del manuscrito
+  se quedan y la variante se reporta como verificación. Si difiere en 0.02 o más, se reporta y se
+  detiene: decide el autor.
+
+### T2 · R2-iv, fin del registro
+
+- Último día con gasto no nulo y `calidad` distinta de 2 dentro de 2023–2025, en las 101
+  estaciones seleccionadas: global, por estación (mínimo, mediana, máximo) y por unidad.
+- Confirmar que ninguna emisión de prueba de la variante principal tiene fecha objetivo posterior.
+
+### T3 · R2-ii, faltantes por unidad
+
+- Unidad = `unidad_piloto` de `estaciones_hidrorivers.csv` (regla `_unit_of`); sin unidad =
+  "fuera de unidad". Filas: 6 unidades, fuera de unidad y total.
+- Cobertura 2010–2025 = columna `cobertura` del catálogo seleccionado (mediana, mínimo, máximo).
+- Faltante = día sin gasto en la serie procesada, sobre el calendario completo 2010–2025.
+- Hueco = racha de faltantes entre dos días con dato (internos); los extremos del periodo cuentan en
+  la fracción de faltantes pero no como huecos. Longitud: mediana, p90 y máximo.
+- `calidad = 1` y `calidad = 2` como fracción de los días con dato en 2010–2025.
+- Estaciones evaluables y mediana de NSE de Ridge por unidad, de `baseline_por_estacion.csv`
+  (variante principal).
+
+### T4 · R2-iii y R3, exactitud del vínculo con HydroRIVERS
+
+- `dist_m` y `dist_cercano_m` de `estaciones_hidrorivers.csv`: mediana, p90 y máximo, global y por
+  unidad.
+- Coordenadas redondeadas: una estación cae en una malla si latitud y longitud son múltiplos de su
+  paso (tolerancia 1e-6 en grados; 0.01 s en segundos). Mallas, de gruesa a fina: minuto, 0.01°,
+  0.001°, segundo. "Parece redondeada" = minuto, 0.01° o 0.001°. Incertidumbre = medio paso en
+  metros (latitud; la longitud se reporta con cos φ).
+- Las 17 con `tramos_distintos`: razón `upland_cercano_km2 / upland_km2`, distancias y cuántas
+  difieren por más de un factor 2 (razón < 0.5 o > 2).
+- Las 8 sin tramo a ≤ 0.01°: distancia al tramo más cercano con el shapefile local de HydroRIVERS
+  v1.0 NA, en EPSG:6372.
+- Sensibilidad al radio (0.005°, 0.01°, 0.02°) con la regla de `06_link_hydrorivers.py`, solo si el
+  shapefile se lee en menos de 5 minutos. Primero, el radio 0.01° debe reproducir el vínculo
+  publicado; si no, se omite y se anota. Cambio = otro `hyriv_id` de mayor área, o pasar de tener
+  tramo a no tenerlo o al revés.
+
+### T5 · R2-v, reproducibilidad
+
+- `dib_16_clean_copy_check.py` sobre `dist/HidroXAI-MX-v2026.10.zip` en un directorio nuevo. En ese
+  mismo entorno se corren `dib_09_baseline.py`, `dib_15_submission_figures.py` y
+  `dib_17_r2_checks.py`. Coincidencia exacta con lo del repositorio: NSE 0.528/0.594, KGE
+  0.764/0.642, 75 de 97, Tabla 3, `figuras_envio.csv` y las salidas de T1–T4 (CSV por valor con
+  rtol 1e-12, JSON por valor sin fechas de ejecución).
+
+### Resultado T1 (2026-11-09 22:44)
+
+Fuente: `r2/t1_resumen.json` y `r2/baseline_sin_imputados_summary.csv`.
+
+- Control: la variante principal se reproduce en 97 estaciones; diferencia máxima 5.7e-14.
+- Rezagos: la serie procesada tiene calendario diario completo en las 101 estaciones, y `lag1` y
+  `lag30` coinciden con Q(t−1 día) y Q(t−30 días) en todas sus filas no nulas.
+- Fuga: 37.8 % de las 75 725 emisiones de prueba tiene algún imputado en t−30…t, y 3.2 % tiene Q(t)
+  imputado.
+- Variante `sin_imputados_en_ventana`: 74 estaciones evaluables (pierde 23) y 41.8 % de las
+  emisiones de prueba. Mediana de NSE de Ridge 0.620 frente a 0.594: diferencia +0.026.
+- **Criterio: detenerse** (diferencia ≥ 0.02). Decide el autor.
+- Diagnóstico no preregistrado, calculado después de ver el resultado: en las mismas 74 estaciones,
+  la variante principal da una mediana de NSE de Ridge de 0.620, y la diferencia es −0.0003. Las 23
+  estaciones perdidas tienen una mediana de 0.314 en la variante principal.
+- **Decisión del autor (2026-11-10):** las cifras del manuscrito se quedan; la variante se reporta
+  como verificación.
+
+### Resultados T2–T5 (2026-11-10 08:05)
+
+- **T2** (`r2/fin_registro_test.json`): el registro termina el 2025-09-03, que es la última fecha de
+  82 de las 101 estaciones. Por estación: mínimo 2023-04-11, mediana y máximo 2025-09-03. Ninguna
+  emisión de prueba tiene fecha objetivo posterior.
+- **T3** (`r2/cobertura_por_unidad.csv`), fila total:
+  - cobertura mediana 0.755 [0.601, 0.916];
+  - faltantes 17.9 % (16.2 % hasta el fin del registro);
+  - 1 355 huecos, de 18 días de mediana, p90 78 y máximo 915;
+  - `calidad = 1` 7.5 %, `calidad = 2` 0.012 %.
+- **T4** (`r2/t4_resumen.json` y los CSV `hydrorivers_*`):
+  - Distancia al tramo asignado: mediana 218 m, p90 814 m, máximo 1 021 m.
+  - Coordenadas: 17 estaciones caen en la malla de minuto (±0.92 km), 84 en la de segundo (±15 m).
+  - Tramos distintos: 17, de los cuales 6 difieren por más de un factor 2 en área.
+  - Sin tramo: 8, con el tramo más cercano a 1.1–2.7 km.
+  - El shapefile se lee en 26–29 s, y el radio 0.01° reproduce el vínculo publicado.
+  - Con radio 0.005°: 14 estaciones pierden tramo y 8 cambian de tramo.
+  - Con radio 0.02°: 5 ganan tramo y 30 cambian (9 de ellas con área distinta por más de un factor 2).
+- **T5** (`r2/reproducibilidad.json`, copia limpia en venv nuevo, Python 3.12.6):
+  - Coinciden NSE 0.528/0.594, KGE 0.764/0.642, 75 de 97, la Tabla 3, los datos fuente de las
+    figuras y `figuras_envio.csv` (con `origen` sin el prefijo `data/`).
+  - Coinciden todas las salidas de `dib_09` y de T1–T4, salvo `r2/t1_resumen.json:control.max_diferencia`:
+    0.0 en la copia y 5.7e-14 en el repositorio. Es el residuo con que cada entorno reproduce su
+    propio `baseline_por_estacion.csv`; los dos quedan bajo 1e-9.
+  - Por el criterio congelado (JSON por valor), `todo_coincide = false`.
+  - `dib_16` sigue en 6 de 7 figuras idénticas por píxel con valores idénticos, como en la prueba
+    del Paso 2 (`clean_copy_check.json`, 2026-10-04).
+
+### Adenda T5 y T6 (2026-11-10 14:12)
+
+- **Decisión del autor:** entran cifras nuevas al manuscrito, así que se hace T6. Versión v2026.11
+  con `REPRODUCE.md`. Los datos son idénticos a v2026.10 (mismo SHA-256 que el manifiesto de
+  v2026.10). El ZIP no incluye código de otros análisis del repositorio que no forma parte del
+  dataset; los reportes internos de esta revisión quedan locales.
+- **Copia limpia repetida** para `REPRODUCE.md`. Se lanzó con el intérprete base, para que el
+  registro no lleve rutas locales, y midiendo por separado `dib_03`, `dib_04` y cada tarea de
+  `dib_17` (`r2/reproducibilidad.json:segundos_por_script`). Un primer intento falló porque una
+  capa de CONABIO no respondió; el segundo descargó las tres.
+- **Resultado conforme a E14, sin cambio:** coinciden las 8 cifras, y de las salidas solo difiere
+  `control.max_diferencia`.
+- **Fuera de E14** (agregado para `REPRODUCE.md`):
+  - Las tablas fuente de las Figs. S1 y S2 coinciden.
+  - `e3_imputation.json` difiere solo en `diagnostico_dato_publicado`. Ese bloque describe los
+    imputados del dato presente al correr: el de v2026.06 en el repositorio y el de v2026.10 en la
+    copia.
+

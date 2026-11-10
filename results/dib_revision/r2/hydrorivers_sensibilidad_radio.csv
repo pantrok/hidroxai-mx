@@ -1,0 +1,4 @@
+radio_grados,con_tramo,asignaciones_que_cambian,otro_tramo_asignado,ganan_tramo,pierden_tramo,razon_area_otro_tramo_mediana,otro_tramo_difiere_mas_de_factor_2
+0.005,79,22,8,0,14,0.930622312487488,2
+0.01,93,0,0,0,0,,0
+0.02,98,35,30,5,0,1.0887481036498927,9

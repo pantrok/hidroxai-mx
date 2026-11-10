@@ -1,0 +1,141 @@
+{
+  "fecha": "2026-11-10",
+  "control": {
+    "estaciones": 97,
+    "max_diferencia": 5.684341886080802e-14
+  },
+  "documentacion": {
+    "particion_por_fecha_del_objetivo": [
+      "scripts/dib_09_baseline.py:79",
+      "scripts/dib_09_baseline.py:84"
+    ],
+    "sin_barajar": {
+      "llamadas_aleatorias_en_dib_09": false,
+      "ajuste_cerrado": "scripts/dib_09_baseline.py:58"
+    },
+    "estandarizacion_con_entrenamiento": [
+      "scripts/dib_09_baseline.py:54",
+      "scripts/dib_09_baseline.py:96"
+    ],
+    "alpha_en_validacion": [
+      "scripts/dib_09_baseline.py:94",
+      "scripts/dib_09_baseline.py:95"
+    ],
+    "rezagos_shift": [
+      "src/hidroxai_mx/features/__init__.py:24",
+      "scripts/07_build_features.py:75"
+    ],
+    "medias_moviles_hasta_t": [
+      "src/hidroxai_mx/features/__init__.py:32",
+      "scripts/07_build_features.py:76"
+    ],
+    "objetivo_t_mas_1": "scripts/dib_09_baseline.py:76",
+    "modelo_por_estacion": "scripts/dib_09_baseline.py:72"
+  },
+  "calendario_feature_table": {
+    "serie_estaciones": 101,
+    "serie_con_calendario_completo": 101,
+    "serie_filas_duplicadas": 0,
+    "lag1_no_nulos": 709177,
+    "lag1_igual_a_Q_t_menos_1_dias": 709177,
+    "lag30_no_nulos": 668991,
+    "lag30_igual_a_Q_t_menos_30_dias": 668991
+  },
+  "fuga": {
+    "emisiones_prueba": 75725,
+    "estaciones": 97,
+    "con_imputado_en_ventana": 28619,
+    "fraccion_imputado_en_ventana": 0.37793331132386926,
+    "con_q_t_imputado": 2433,
+    "fraccion_q_t_imputado": 0.032129415648728954,
+    "estaciones_con_q_t_imputado": 94,
+    "lectura": "Q(t) imputado implica un hueco que termina en t; su interpolación usa Q(t+1), el objetivo."
+  },
+  "variantes": {
+    "sin_outliers_en_predictores": {
+      "estaciones_evaluadas": 97,
+      "estaciones_excluidas": 4,
+      "ridge_mejor_que_persistencia_NSE": 75,
+      "emisiones_prueba": 75725
+    },
+    "sin_imputados_en_ventana": {
+      "estaciones_evaluadas": 74,
+      "estaciones_excluidas": 27,
+      "ridge_mejor_que_persistencia_NSE": 51,
+      "emisiones_prueba": 44103
+    }
+  },
+  "emisiones_prueba_perdidas": {
+    "n": 31622,
+    "fraccion": 0.4175899636843843
+  },
+  "estaciones_perdidas": [
+    "ALUMR",
+    "AMCMR",
+    "ATCHD",
+    "ATEJL",
+    "CMNMC",
+    "CRDMR",
+    "CUAMR",
+    "CXTJL",
+    "CXXMR",
+    "ESTMR",
+    "LPNMC",
+    "LPSMC",
+    "LPZMC",
+    "PERMR",
+    "SAUJL",
+    "SCRMC",
+    "SGRJL",
+    "TEMMR",
+    "TICMR",
+    "TMTSL",
+    "XICMR",
+    "YAHMR",
+    "ZCTMR"
+  ],
+  "skill": {
+    "sin_outliers_en_predictores": {
+      "mediana": 0.1424468119715231,
+      "q25": 0.008164357039391557,
+      "q75": 0.23196036509762574,
+      "n": 97,
+      "skill_positivo": 75
+    },
+    "sin_imputados_en_ventana": {
+      "mediana": 0.11303339188993172,
+      "q25": -0.014658507203962945,
+      "q75": 0.18800190209460374,
+      "n": 74,
+      "skill_positivo": 51
+    }
+  },
+  "criterio": {
+    "referencia_NSE_ridge": 0.594,
+    "nueva_NSE_ridge": 0.6201061507871444,
+    "diferencia": 0.0261061507871444,
+    "umbral": 0.02,
+    "resultado": "detenerse"
+  },
+  "diagnostico_no_preregistrado": {
+    "nota": "No forma parte del criterio de E14; se calculó después de ver el resultado.",
+    "mismas_estaciones": 74,
+    "principal_en_mismas_estaciones": {
+      "NSE_ridge_mediana": 0.6203990981634079,
+      "NSE_persistencia_mediana": 0.5741224080582163,
+      "KGE_ridge_mediana": 0.6886736315618203,
+      "KGE_persistencia_mediana": 0.7860500425007586
+    },
+    "nueva": {
+      "NSE_ridge_mediana": 0.6201061507871444,
+      "NSE_persistencia_mediana": 0.5622385727720313
+    },
+    "diferencia_NSE_ridge_mediana_mismas_estaciones": -0.0002929473762635082,
+    "mediana_de_diferencias_por_estacion_NSE_ridge": -0.0004994556338159262,
+    "estaciones_perdidas": {
+      "n": 23,
+      "NSE_ridge_mediana_en_principal": 0.3138870821873361,
+      "NSE_persistencia_mediana_en_principal": 0.2437659701257664
+    }
+  }
+}

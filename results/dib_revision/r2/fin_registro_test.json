@@ -1,0 +1,61 @@
+{
+  "fecha": "2026-11-10",
+  "ultima_fecha_global": "2025-09-03",
+  "por_estacion": {
+    "minimo": "2023-04-11",
+    "mediana": "2025-09-03",
+    "maximo": "2025-09-03",
+    "n": 101
+  },
+  "estaciones_con_dato_en_prueba": 101,
+  "estaciones_en_ultima_fecha": 82,
+  "por_unidad": {
+    "Alta del Balsas": {
+      "minimo": "2025-09-03",
+      "mediana": "2025-09-03",
+      "maximo": "2025-09-03",
+      "n": 12
+    },
+    "Bajio": {
+      "minimo": "2025-09-02",
+      "mediana": "2025-09-03",
+      "maximo": "2025-09-03",
+      "n": 26
+    },
+    "Cutzamala": {
+      "minimo": "2025-09-03",
+      "mediana": "2025-09-03",
+      "maximo": "2025-09-03",
+      "n": 1
+    },
+    "Lerma Alto": {
+      "minimo": "2025-09-03",
+      "mediana": "2025-09-03",
+      "maximo": "2025-09-03",
+      "n": 8
+    },
+    "Panuco": {
+      "minimo": "2023-04-11",
+      "mediana": "2025-09-03",
+      "maximo": "2025-09-03",
+      "n": 39
+    },
+    "Santiago": {
+      "minimo": "2024-04-30",
+      "mediana": "2025-09-03",
+      "maximo": "2025-09-03",
+      "n": 9
+    },
+    "fuera de unidad": {
+      "minimo": "2025-07-23",
+      "mediana": "2025-09-03",
+      "maximo": "2025-09-03",
+      "n": 6
+    }
+  },
+  "fin_declarado_en_SPLITS": "2025-12-31",
+  "emisiones_prueba_variante_principal": 75725,
+  "ultima_fecha_objetivo_de_prueba": "2025-09-03",
+  "emisiones_despues_de_la_ultima_fecha": 0,
+  "estaciones_sin_dato_en_prueba": []
+}

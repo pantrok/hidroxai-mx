@@ -5,6 +5,34 @@ All changes to the Hidro-MX dataset snapshots deposited on Zenodo
 The scripts and outputs that support every item below are in
 `results/dib_revision/` of the source repository.
 
+## v2026.11 — 2026-11
+
+Second revision of the associated *Data in Brief* article. The raw inputs, processed
+products and feature table are byte-identical to v2026.10 (same SHA-256 in
+`manifest_zenodo.json`). This version adds the checks requested in the second round of
+peer review and a guide to reproduce the article.
+
+### Added
+- `REPRODUCE.md`: for every table, figure and baseline number of the article, the
+  command that produces it, its output file and its run time in a clean copy of the
+  archive, with the Python and package versions used.
+- `scripts/dib_17_r2_checks.py` and its outputs in `results/dib_revision/r2/`:
+  - the persistence and ridge baseline recomputed without imputed values
+    (`calidad = 1`) in the 31-day predictor window, and the skill of ridge against
+    persistence;
+  - the end of the record within the test period;
+  - missing days, gaps and coverage per operational unit (Table 4 of the article);
+  - station–reach distances, precision of the catalogue coordinates, stations whose
+    nearest and largest-area reaches differ, and sensitivity of the HydroRIVERS link
+    to the search radius (0.005°, 0.01° and 0.02°);
+  - a clean-copy reproducibility check.
+- Entry E14 of `results/dib_revision/proof_ledger.md`: criteria of these checks,
+  written before running them, and their results.
+
+### Changed
+- Code style fixes (ruff) in the pipeline scripts and the package, with no change in
+  behaviour.
+
 ## v2026.10 — 2026-10
 
 Revision prompted by the peer review of the associated *Data in Brief* article.

@@ -20,6 +20,7 @@ Contenido del ZIP (datos y código; el archivo reproduce productos y figuras):
   src/, scripts/, tests/   — paquete hidroxai_mx, etapas 01–12 y scripts dib_* de la revisión
   results/dib_revision/    — auditoría de la revisión (sin audit_code/ ni *.log)
   pyproject.toml, LICENSE, CITATION.cff, README_repository.md (README del repositorio)
+  REPRODUCE.md             — elemento del artículo → comando → salida → tiempo (desde v2026.11)
   README.md                — metadata + estructura (autogenerado, en inglés)
   LICENSE-DATA.md          — CC BY 4.0 (autogenerado, en inglés)
   CHANGELOG.md             — cambios entre versiones del snapshot
@@ -29,7 +30,8 @@ Con raw/, processed/ y features/ en la raíz, `hidroxai_mx.utils` toma la raíz 
 como directorio de datos (o la que indique HIDROXAI_DATA).
 
 Se excluyen: .npz (regla de oro), data/interim (rasters intermedios de whitebox),
-data/scratch, .venv, .env, .dvc/config.local, __pycache__, .git, .gitkeep.
+data/scratch, .venv, .env, .dvc/config.local, __pycache__, .git, .gitkeep, y el código de
+otros análisis del repositorio que no forma parte del dataset (EXCLUDE_ARCNAMES).
 
 Uso:
     python scripts/11_build_zenodo_bundle.py [--version v2026.10] [--out dist/]
@@ -37,6 +39,7 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import hashlib
 import json
 import sys
@@ -66,6 +69,7 @@ INCLUDES: list[tuple[Path, str]] = [
     (REPO / "LICENSE", "LICENSE"),
     (REPO / "CITATION.cff", "CITATION.cff"),
     (REPO / "README.md", "README_repository.md"),
+    (REPO / "REPRODUCE.md", "REPRODUCE.md"),
     # LICENSE-DATA.md and README.md are generated in English at packaging time.
 ]
 
@@ -73,6 +77,11 @@ INCLUDES: list[tuple[Path, str]] = [
 EXCLUDE_SUFFIXES = {".npz", ".log", ".pyc"}
 EXCLUDE_NAMES = {".gitkeep", ".gitignore"}
 EXCLUDE_DIRS = {"__pycache__", ".ipynb_checkpoints", "audit_code", ".pytest_cache"}
+# Código de otros análisis del repositorio que no forma parte del dataset ni del artículo de
+# datos (desde v2026.11). Patrones sobre la ruta dentro del ZIP.
+EXCLUDE_ARCNAMES = ("scripts/xai_*", "src/hidroxai_mx/models/*", "src/hidroxai_mx/xai/*",
+                    "src/hidroxai_mx/alert/*", "tests/test_xai.py", "tests/test_models_*.py",
+                    "tests/test_alert_fuzzy.py", "tests/test_criteria.py")
 
 
 def sha256(path: Path, chunk: int = 1 << 20) -> str:
@@ -207,6 +216,7 @@ src/hidroxai_mx/, scripts/, tests/    pipeline code (stages 01–12) and revisio
 results/dib_revision/                 audit of the previous release and every figure cited
                                       in the article (numbers.json)
 pyproject.toml, LICENSE (MIT), CITATION.cff, README_repository.md
+REPRODUCE.md                          article element → command → output file → run time
 CHANGELOG.md                          changes between snapshots
 LICENSE-DATA.md                       Creative Commons Attribution 4.0
 manifest_zenodo.json                  SHA-256, size and path for every file
@@ -239,8 +249,10 @@ python scripts/12_make_workflow_figure.py  # Fig1
 python scripts/dib_13_paso2_tables.py      # Table 3 and feature-table description
 ```
 
-The same snapshot can be pulled from the DVC remote of the GitHub repository
-(`dvc pull`). The file-to-figure map is given in `README_repository.md`.
+`REPRODUCE.md` maps every table, figure and number of the article to the command
+that produces it, its output file and its run time in a clean copy. The same
+snapshot can be pulled from the DVC remote of the GitHub repository (`dvc pull`).
+The file-to-figure map is given in `README_repository.md`.
 
 ## How to cite
 
@@ -327,6 +339,8 @@ def main() -> int:
     for src, dest in INCLUDES:
         for f in iter_files(src):
             arcname = dest if src.is_file() else f"{dest}/{f.relative_to(src).as_posix()}"
+            if any(fnmatch.fnmatch(arcname, pat) for pat in EXCLUDE_ARCNAMES):
+                continue
             entries.append((f, arcname))
 
     total_bytes = sum(f.stat().st_size for f, _ in entries)

@@ -1,0 +1,16 @@
+{
+  "fecha": "2026-11-10",
+  "shapefile_disponible": true,
+  "segundos_lectura": 23.332282781600952,
+  "radio_0_01_reproduce_vinculo_publicado": true,
+  "tramos_distintos": 17,
+  "difieren_mas_de_factor_2": 6,
+  "sin_tramo": 8,
+  "redondeo": {
+    "segundo": 84,
+    "minuto": 17
+  },
+  "parecen_redondeadas": 17,
+  "redondeadas_sin_tramo": 5,
+  "redondeadas_en_tramos_distintos": 2
+}

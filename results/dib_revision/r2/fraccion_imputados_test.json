@@ -1,0 +1,11 @@
+{
+  "fecha": "2026-11-10",
+  "emisiones_prueba": 75725,
+  "estaciones": 97,
+  "con_imputado_en_ventana": 28619,
+  "fraccion_imputado_en_ventana": 0.37793331132386926,
+  "con_q_t_imputado": 2433,
+  "fraccion_q_t_imputado": 0.032129415648728954,
+  "estaciones_con_q_t_imputado": 94,
+  "lectura": "Q(t) imputado implica un hueco que termina en t; su interpolación usa Q(t+1), el objetivo."
+}

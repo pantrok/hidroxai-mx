@@ -1,0 +1,202 @@
+{
+  "fecha": "2026-11-10",
+  "zip": "HidroXAI-MX-v2026.10.zip",
+  "minutos": 9.8,
+  "copia_reusada": false,
+  "python_entorno": "3.12.6",
+  "dib_16": {
+    "ok": false,
+    "valores_identicos": true,
+    "figuras_identicas": "6/7",
+    "minutos_total": 8.8,
+    "minutos_pip_install": 4.6
+  },
+  "segundos_por_script": {
+    "dib_09": 3.150250196456909,
+    "dib_15": 0.8923687934875488,
+    "dib_03": 22.172129154205322,
+    "dib_04": 6.789769172668457,
+    "dib_17_t1": 4.041029214859009,
+    "dib_17_t2": 2.1435835361480713,
+    "dib_17_t3": 1.8947360515594482,
+    "dib_17_t4": 16.663535118103027
+  },
+  "cifras": [
+    {
+      "cifra": "NSE mediana persistencia",
+      "esperado": 0.528,
+      "obtenido": 0.528,
+      "archivo": "baseline_summary.csv:NSE_mediana",
+      "coincide": true
+    },
+    {
+      "cifra": "NSE mediana Ridge",
+      "esperado": 0.594,
+      "obtenido": 0.594,
+      "archivo": "baseline_summary.csv:NSE_mediana",
+      "coincide": true
+    },
+    {
+      "cifra": "KGE mediana persistencia",
+      "esperado": 0.764,
+      "obtenido": 0.764,
+      "archivo": "baseline_summary.csv:KGE_mediana",
+      "coincide": true
+    },
+    {
+      "cifra": "KGE mediana Ridge",
+      "esperado": 0.642,
+      "obtenido": 0.642,
+      "archivo": "baseline_summary.csv:KGE_mediana",
+      "coincide": true
+    },
+    {
+      "cifra": "Ridge > persistencia (de evaluadas)",
+      "esperado": "75 de 97",
+      "obtenido": "75 de 97",
+      "archivo": "e9_baseline.json",
+      "coincide": true
+    },
+    {
+      "cifra": "Tabla 3",
+      "esperado": "igual",
+      "obtenido": "igual",
+      "archivo": "tabla3_v2026_10.csv (vía dib_16)",
+      "coincide": true
+    },
+    {
+      "cifra": "Datos fuente de Fig. 1–7 (metrics.json y CSV de reportes)",
+      "esperado": "igual",
+      "obtenido": "igual",
+      "archivo": "clean_copy_check_r2.json:valores_identicos",
+      "coincide": true
+    },
+    {
+      "cifra": "Figuras de envío (figuras_envio.csv)",
+      "esperado": "igual",
+      "obtenido": "igual",
+      "archivo": "figuras_envio.csv (origen sin el prefijo data/)",
+      "coincide": true
+    }
+  ],
+  "salidas_r2": [
+    {
+      "archivo": "baseline_summary.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "baseline_por_estacion.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "baseline_excluidas.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "e9_baseline.json",
+      "coincide": true,
+      "detalle": "valores sin fechas de ejecución"
+    },
+    {
+      "archivo": "r2/baseline_sin_imputados_por_estacion.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/baseline_sin_imputados_summary.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/cobertura_por_unidad.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/coordenadas_redondeo.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/fin_registro_test.json",
+      "coincide": true,
+      "detalle": "valores sin fechas de ejecución"
+    },
+    {
+      "archivo": "r2/fraccion_imputados_test.json",
+      "coincide": true,
+      "detalle": "valores sin fechas de ejecución"
+    },
+    {
+      "archivo": "r2/hydrorivers_distancias.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/hydrorivers_sensibilidad_radio.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/hydrorivers_sin_vinculo.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/hydrorivers_tramos_distintos.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/skill_vs_persistencia.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "r2/t1_resumen.json",
+      "coincide": false,
+      "detalle": "difiere en control.max_diferencia: copia 0.0, repositorio 5.684341886080802e-14"
+    },
+    {
+      "archivo": "r2/t4_resumen.json",
+      "coincide": true,
+      "detalle": "valores sin fechas de ejecución"
+    }
+  ],
+  "todo_coincide": false,
+  "figuras_suplementarias_fuera_de_E14": [
+    {
+      "archivo": "imputation_masking_summary.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "imputation_masking_gaps.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "e3_imputation.json",
+      "coincide": false,
+      "detalle": "difiere en diagnostico_dato_publicado.dias_imputados: copia 81670, repositorio 120919; diagnostico_dato_publicado.dias_imputados_en_huecos_mayores_a_7: copia 0, repositorio 36078; diagnostico_dato_publicado.imputados_negativos: copia 0, repositorio 13279; diagnostico_dato_publicado.pct_dias_imputados_en_huecos_mayores_a_7: copia 0.0, repositorio 29.84; diagnostico_dato_publicado.rachas_imputadas: copia 43969"
+    },
+    {
+      "archivo": "outliers_hidro.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "outliers_por_estacion.csv",
+      "coincide": true,
+      "detalle": "valores, rtol 1e-12"
+    },
+    {
+      "archivo": "e4_outliers.json",
+      "coincide": true,
+      "detalle": "valores sin fechas de ejecución"
+    }
+  ]
+}

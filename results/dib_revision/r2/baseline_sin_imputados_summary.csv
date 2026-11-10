@@ -1,0 +1,5 @@
+variante,modelo,n_estaciones,NSE_mediana,NSE_q25,NSE_q75,KGE_mediana,KGE_q25,KGE_q75
+sin_outliers_en_predictores,persistencia,97,0.528,0.125,0.772,0.764,0.545,0.882
+sin_outliers_en_predictores,ridge,97,0.594,0.293,0.717,0.642,0.353,0.815
+sin_imputados_en_ventana,persistencia,74,0.562,0.201,0.799,0.779,0.6,0.897
+sin_imputados_en_ventana,ridge,74,0.62,0.378,0.793,0.688,0.413,0.824
