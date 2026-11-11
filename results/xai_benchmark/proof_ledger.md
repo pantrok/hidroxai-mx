@@ -53,6 +53,10 @@ El protocolo no ha cambiado (su SHA-256 coincide con el congelado; `numbers.json
     `numbers.json` → `rq3.variante_pre_correccion`.
   - **Pendiente fuera de este repo:** el mismo defecto existe en `hidroxmx-forecasting`
     (`src/hidroxmx/alert/fuzzy.py`); no se toca porque ese repositorio está congelado.
+- **2026-11-11 · enmienda MESE (descriptiva, después de la transferencia de revista).** Se agrega
+  un LSTM como modelo descriptivo y se evalúa el efecto de los valores imputados en la prueba.
+  No cambia el protocolo, sus resultados ni ningún veredicto. Detalle, criterios y huellas en la
+  sección "Enmienda MESE".
 
 ## Notas de ejecución
 
@@ -468,6 +472,118 @@ de Kaggle donde se entrenaron las redes se reportan solo si quedaron registradas
 
 **Cifras e interpretación:** en `e_revision.json` y en la respuesta al brief. **Los
 veredictos oficiales de §7 no cambian:** son análisis de sensibilidad.
+
+## Enmienda MESE (2026-11-11, antes de entrenar y de calcular)
+
+**Origen y alcance**
+
+- Ajuste del trabajo para *Modeling Earth Systems and Environment* (MESE), después de la
+  transferencia de revista. Parte del tag `xai-benchmark-v1.3`.
+- Todo es **descriptivo y posterior a ver los resultados del protocolo**. No cambia
+  `protocol.md`, sus resultados, los archivos de v1.3 ni ningún veredicto de §7.
+- Cifras nuevas: en `numbers.json`, secciones `mese_*`, escritas por script; tablas en
+  `results/xai_benchmark/mese/`.
+- Esta sección se versiona en un commit propio, antes de entrenar el LSTM y de calcular T2.
+
+### M1. LSTM como modelo descriptivo adicional
+
+**Modelo** (`hidroxai_mx.models.nets.LSTM`, `nets.build("lstm", tamaño)`)
+- Entrada 6 × 30 y salida escalar, como las otras redes.
+- LSTM de una capa con `batch_first`; se toma el último estado oculto; dropout 0.1; cabeza lineal.
+- **Malla de un parámetro:** tamaño oculto ∈ {32, 64}.
+
+**Entrenamiento** (idéntico a las redes del protocolo §4)
+- `scripts/xai_03_train_nets.py --models lstm`, sin cambios en el script: AdamW (lr 1e-3, weight
+  decay 1e-4), lotes de 256, MSE sobre el objetivo estandarizado, hasta 100 épocas, early
+  stopping con paciencia 10 y checkpoint por época.
+- Mismas muestras, particiones y escalado (`hidroxai_mx.models.data`).
+- **Semillas:** 20261010, 20261011 y 20261012; la predicción evaluada es la media de las tres.
+- **Selección:** por horizonte, el tamaño con mayor mediana de NSE de validación sobre las cuatro
+  cuencas; en empate, el menor. Misma regla y cálculo que `xai_05`
+  (`scripts/xai_15_lstm_walk_forward.py`, función `select`).
+- **Walk-forward 2021–2025:** pliegues de `D.walk_forward_partitions`, una semilla (20261010) y el
+  tamaño elegido, como la rama de redes de `xai_09` (`scripts/xai_15_lstm_walk_forward.py`).
+
+**Cómputo**
+- CPU del LNS-BUAP, partición `comp` (scripts en `hpc/lns/`). Las otras redes se entrenaron en
+  GPU de Kaggle; el dispositivo queda en el manifiesto.
+- El entorno se registra en `env_lns.txt`. Si el sistema obliga a otra versión de PyTorch (ruta b
+  de `hpc/lns/01_entorno.sh`), se reporta.
+
+**Qué no hace**
+- No entra en H1, H1-b, H2-a, H2-b ni H3.
+- No entra en el ensamble de alertas de 12 miembros.
+- No cambia la mediana de 6 pares de H2-a ni el ranking del walk-forward.
+
+**Qué se reporta** (descriptivo, sin veredicto)
+1. **Habilidad**, partición principal: NSE, KGE y SS contra persistencia por estación evaluable
+   (las de `rq1_station_metrics.csv`); mediana e IQR por cuenca, horizonte y agregado.
+2. **ΔNSE (LSTM − XGBoost)** por estación: mediana con IC 95 % por bootstrap de estaciones y por
+   bootstrap de los 23 grupos conectados de RR-3 (10,000 réplicas, semilla 20261010).
+3. **Acuerdo de explicaciones:**
+   - IG con 64 pasos y línea base cero, en la misma muestra fija de `xai_06` (≤ 2,000 ventanas por
+     cuenca y horizonte, semilla 20261010), por semilla; se reporta el error de completitud;
+   - Spearman sobre las 180 importancias entre el LSTM y cada uno de los 4 modelos aprendidos, en
+     las cuencas con ≥ 8 estaciones × h = 1, 7 y 14;
+   - son 4 pares adicionales y no entran en la mediana de 6 pares de H2-a.
+4. **Techo de ruido entre semillas:** las medidas de RR-2 entre los 3 pares de semillas del LSTM,
+   y si cada par con el LSTM queda bajo el techo según la definición de RR-2.
+5. **Walk-forward 2021–2025:** NSE mediana por año y horizonte, y ΔNSE contra XGBoost con IC por
+   bootstrap de estaciones.
+
+### M2. Valores imputados en la ventana (solo evaluación, sin reentrenar)
+
+**Motivo:** el protocolo §3 admite `calidad = 1` en las entradas. Un Q(t) imputado se interpola con
+Q(t+1), información posterior a la emisión (a h = 1 es el propio objetivo). En la revisión de
+Data in Brief se recomienda excluir esos días en pronóstico.
+
+**Subconjuntos de la prueba principal**
+- **(i)** sin las emisiones con Q(t) imputado (`calidad = 1` en el día de emisión);
+- **(ii)** sin las emisiones con algún imputado en la ventana de 30 días (*t*−29…*t*).
+
+La bandera sale de la serie diaria de cada estación (`calidad` de la feature table).
+
+**Qué se reporta**, por subconjunto:
+- fracción de emisiones excluidas (global y por horizonte);
+- mediana de NSE por modelo y horizonte;
+- ΔNSE contra XGBoost por modelo profundo y horizonte;
+- ΔCSI P90 (difuso − umbral) a h = 1 y 7, con tablas sumadas y bootstrap de estaciones como en H3.
+
+**Misma muestra de estaciones:** para no confundir el efecto de quitar imputados con el de cambiar
+de estaciones, cada comparación usa las estaciones evaluables en la prueba principal que siguen
+siendo evaluables en el subconjunto (≥ 180 muestras y varianza > 0). La prueba principal se
+recalcula en ese mismo conjunto; se reportan ambos valores y el número de estaciones que salen.
+
+Modelos: los 7 del protocolo. Las predicciones y los niveles de alerta son los guardados; no se
+reentrena nada. Descriptivo: no cambia ningún veredicto.
+
+### Huellas
+
+- **Base:** tag `xai-benchmark-v1.3` (commit `74d1461`). `train.py`, `data.py` y
+  `xai_03_train_nets.py` no cambian desde ese tag; `nets.py` solo agrega la clase `LSTM` y su
+  entrada en `ARCHITECTURES`.
+- **Commit:** el primero que contiene esta sección. Se verifica con
+  `git show <commit>:<ruta> | sha256sum`.
+- **SHA-256** (contenido con fin de línea LF, como queda en git):
+
+| Archivo | SHA-256 |
+|---|---|
+| `results/xai_benchmark/protocol.md` | `8df99290b17bfc8a5a15dd46492772866ace00ec57d9687d0b5e73809db05799` (el congelado) |
+| `src/hidroxai_mx/models/nets.py` | `60dfd7f8a1a8ced85947e4f8a64182c202552f965bdba28e2ee6d9989010f3bb` |
+| `src/hidroxai_mx/models/train.py` | `f9470321462b5bfcfbb4e45f78fbb7c977c7f5576ee1d8c261e3569b6730a96c` |
+| `src/hidroxai_mx/models/data.py` | `1688757fe29e1ac2b7522af2dd9dae7a58bb7b271ddc4bf2bd385a6125cd0616` |
+| `scripts/xai_03_train_nets.py` | `200594c27b4be63b03fb64e3aa45bead2a0bdefef587e9de8fea812d5281a64e` |
+| `scripts/xai_15_lstm_walk_forward.py` | `752b88705812210b5b4091a978d4d9e40ecd6ce73300ddfaeec5c8d20a58405f` |
+| `hpc/lns/comun.sh` | `c98a50af6123f312e5787e1deeef835088a730b75457106fc7e283eb7cf04f55` |
+| `hpc/lns/10_lstm_split.sbatch` | `6939e8d3a6a93f7cec0c6dbad241ac01b94e644b947bf820421274f0ed86417b` |
+| `hpc/lns/11_lstm_walkforward.sbatch` | `db44067c120af81c1ee4de37d2e3051119884f5ea42885e248fc7b00d6b02efb` |
+
+- **Verificación local antes del clúster** (CPU, 2026-11-11):
+  - `xai_03 --models lstm`, Cutzamala, h = 1, tamaño 32, una semilla y 2 épocas: corre y deja
+    predicciones, pesos y fila en el manifiesto (5,153 parámetros);
+  - `select` y el walk-forward de `xai_15` corren sobre una mini partición;
+  - `tests/test_models_lstm.py` pasa (interfaz, entrenamiento común e IG con Captum).
+  Son pruebas de funcionamiento; sus números no se reportan.
 
 ## Evidencia
 

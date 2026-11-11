@@ -122,8 +122,27 @@ class PatchTST(nn.Module):
         return [layer.last_attn for layer in self.layers]
 
 
+# -------------------------------------------------------------------------- LSTM
+class LSTM(nn.Module):
+    """LSTM de una capa (batch_first); último estado oculto, dropout 0.1 y cabeza lineal.
+
+    Modelo descriptivo agregado después de la transferencia de revista (enmienda MESE en
+    results/xai_benchmark/proof_ledger.md): no entra en H1–H3 ni en el ensamble de alertas.
+    """
+
+    def __init__(self, n_inputs: int = 6, hidden: int = 32, dropout: float = 0.1):
+        super().__init__()
+        self.lstm = nn.LSTM(n_inputs, hidden, num_layers=1, batch_first=True)
+        self.drop = nn.Dropout(dropout)
+        self.head = nn.Linear(hidden, 1)
+
+    def forward(self, x):                      # x [B, T, C]
+        _, (h, _) = self.lstm(x)               # h [capas = 1, B, hidden]
+        return self.head(self.drop(h[-1])).squeeze(-1)
+
+
 ARCHITECTURES = {"tcn": (TCN, "channels"), "convnext": (ConvNeXt1D, "dim"),
-                 "patchtst": (PatchTST, "d_model")}
+                 "patchtst": (PatchTST, "d_model"), "lstm": (LSTM, "hidden")}
 
 
 def build(name: str, size: int, n_inputs: int = 6) -> nn.Module:
