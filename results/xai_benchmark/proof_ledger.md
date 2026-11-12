@@ -585,6 +585,38 @@ reentrena nada. Descriptivo: no cambia ningún veredicto.
   - `tests/test_models_lstm.py` pasa (interfaz, entrenamiento común e IG con Captum).
   Son pruebas de funcionamiento; sus números no se reportan.
 
+### Notas de ejecución en el LNS (2026-11-11)
+
+No cambian ningún criterio de M1 ni los archivos con huella; los ajustes van en la línea de
+comandos de `sbatch`. Las fuentes viajan con los resultados: `env_lns.txt`, `logs/` y
+`sacct_lns*.txt`.
+
+- **Sistema y entorno.** Rocky Linux 8.7 con glibc 2.28, así que se usó la ruta a de
+  `01_entorno.sh`: conda del clúster, Python 3.12.16, torch 2.14.1+cpu, numpy 2.4.6, pandas 3.0.3
+  y pyarrow 24.0.0. Coincide con el estudio en CPU salvo la versión de mantenimiento de Python
+  (3.12.6 en local).
+- **Diferencias con la guía de 2019.**
+  - La partición de CPU es `normal`, no `comp`, con nodos exclusivos de 24 cores y 128 GB.
+  - El límite es de 120 cores simultáneos por usuario.
+  - No hay `/scratch`: el paquete y los resultados están en el `HOME` de red.
+  - Por eso: `-p normal` y `%5` en los arreglos.
+- **GPU.** Hay particiones con GPU (`gpu`, `gpu2`), pero el LSTM se entrena en CPU, como dice M1:
+  el tiempo cabe y en CPU no hay el no determinismo del LSTM de cuDNN.
+- **Piloto de tiempo** (`09_piloto_tiempo.sbatch`: Lerma–Santiago, h = 1, tamaño 64, 3 épocas).
+  - 24 hilos: 7.6 s por época. 12 hilos: 3.2 s por época.
+  - Memoria máxima: 721 MB.
+  - Se usan `--cpus-per-task=12`, `--mem=8G` y `-t` de 2 h (partición principal) y 1 h
+    (walk-forward), con margen sobre el peor caso de 100 épocas.
+  - Dos envíos previos fallaron al instante (código 0:53) porque no existía `logs/`; no llegaron a
+    entrenar.
+- **Límite de trabajos enviados.** El arreglo de 24 elementos fue rechazado con
+  `AssocGrpSubmitJobsLimit` (la cuenta limita los trabajos en cola y cada elemento cuenta).
+  - Se usa `hpc/lns/12_lote.sbatch`: un solo trabajo por etapa (`ETAPA=10`, elementos 0–23;
+    `ETAPA=11`, 0–59).
+  - Corre los elementos dos a la vez en un nodo, con 12 hilos cada uno.
+  - Llama a `10_lstm_split.sbatch` y `11_lstm_walkforward.sbatch` sin modificarlos, así que las
+    corridas, semillas y salidas son las mismas que con el arreglo.
+
 ## Evidencia
 
 - `e_rq1.json`, `e_rq2.json` y `e_rq3.json`: veredictos con sus IC.

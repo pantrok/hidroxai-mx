@@ -77,11 +77,17 @@ Si prefieres crear el entorno a mano con tu cliente, lo necesario es: Python 3.1
 `numpy==2.4.6 pandas==3.0.3 pyarrow==24.0.0 captum==0.9.0 pyyaml`. Después corre igual
 `bash hpc/lns/01_entorno.sh`: no reinstala lo que ya está bien y escribe el registro de versiones.
 
-**Piloto de tiempo** (mide segundos por época y memoria; tarda menos de una hora):
+**Piloto de tiempo** (mide segundos por época y memoria; tarda menos de una hora). La carpeta
+`logs/` tiene que existir antes de enviar trabajos: SLURM abre ahí la bitácora y, si no existe,
+el trabajo falla al instante sin dejar rastro en `squeue`. `01_entorno.sh` la crea; si no, a mano:
 
 ```bash
-sbatch hpc/lns/09_piloto_tiempo.sbatch
+mkdir -p logs
+sbatch -p normal hpc/lns/09_piloto_tiempo.sbatch
 ```
+
+En el LNS la partición de CPU se llama `normal` (la guía de 2019 dice `comp`) y el límite es de
+120 cores simultáneos por usuario; por eso los comandos de abajo llevan `-p normal` y `%5`.
 
 Cuando termine (`squeue -u $USER` ya no lo muestra):
 
@@ -95,13 +101,29 @@ sacct -j <id> --format=JobID,Elapsed,MaxRSS,State
 **Partición principal y walk-forward** (con los valores que te dé; aquí van de ejemplo):
 
 ```bash
-sbatch -t 12:00:00 --mem=16G hpc/lns/10_lstm_split.sbatch
+sbatch -p normal -a 0-23%5 -t 12:00:00 --mem=16G hpc/lns/10_lstm_split.sbatch
 # anota el número de trabajo que imprime, p. ej. 123456, y encadena el walk-forward:
-sbatch --dependency=afterok:123456 -t 6:00:00 --mem=16G hpc/lns/11_lstm_walkforward.sbatch
+sbatch -p normal -a 0-59%5 --dependency=afterok:123456 -t 6:00:00 --mem=16G hpc/lns/11_lstm_walkforward.sbatch
 ```
 
-Los valores de `-t`, `--mem` y `--cpus-per-task` en la línea de comandos sustituyen a los del
-archivo, así que no hay que editarlo.
+Los valores de `-p`, `-a`, `-t`, `--mem` y `--cpus-per-task` en la línea de comandos sustituyen
+a los del archivo, así que no hay que editarlo (sus SHA-256 están en la enmienda).
+
+**Si `sbatch` responde `AssocGrpSubmitJobsLimit`** (así ocurrió en el LNS): la cuenta limita el
+número de trabajos enviados y cada elemento de un arreglo cuenta como uno. En vez de arreglos se
+usa `12_lote.sbatch`, que corre los elementos dentro de un solo trabajo, dos a la vez en el mismo
+nodo con 12 hilos cada uno, llamando a `10_` u `11_` sin modificarlos:
+
+```bash
+sbatch -p normal -t 8:00:00 --export=ALL,ETAPA=10,DESDE=0,HASTA=23 hpc/lns/12_lote.sbatch
+# con el número que imprime, p. ej. 123456:
+sbatch -p normal -t 8:00:00 --export=ALL,ETAPA=11,DESDE=0,HASTA=59 --dependency=afterok:123456 hpc/lns/12_lote.sbatch
+```
+
+Si el segundo envío también se rechaza, el límite es de un trabajo: envíalo sin `--dependency`
+cuando termine el primero. Las bitácoras quedan en `logs/lstm_lote_<id>.out` y, por elemento, en
+`logs/lstm_split_lote<id>_<n>.out` o `logs/lstm_wf_lote<id>_<n>.out`. Para repetir un elemento que
+falló, el mismo lote con `DESDE=n,HASTA=n`.
 
 ## 3. Seguimiento
 
@@ -117,7 +139,7 @@ Si un elemento falla o se queda sin tiempo, se reenvía solo ese elemento; retom
 último checkpoint:
 
 ```bash
-sbatch -a 7 -t 12:00:00 --mem=16G hpc/lns/10_lstm_split.sbatch
+sbatch -p normal -a 7 -t 12:00:00 --mem=16G hpc/lns/10_lstm_split.sbatch
 ```
 
 ## 4. Recoger y bajar los resultados

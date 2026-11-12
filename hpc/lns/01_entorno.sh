@@ -23,7 +23,8 @@ PREFIX="$ENVS/hidroxai"
 BASE="$(cd "$(dirname "$0")/../.." && pwd)"     # carpeta del paquete (…/hidroxai)
 PYTORCH_CPU="https://download.pytorch.org/whl/cpu"
 export PIP_NO_CACHE_DIR=1
-mkdir -p "$ENVS"
+# logs/ debe existir antes de sbatch: SLURM abre ahí la salida (-o logs/...) antes de correr el trabajo.
+mkdir -p "$ENVS" "$BASE/logs"
 type module >/dev/null 2>&1 || source /etc/profile >/dev/null 2>&1 || true
 
 glibc=$(getconf GNU_LIBC_VERSION 2>/dev/null | awk '{print $2}')

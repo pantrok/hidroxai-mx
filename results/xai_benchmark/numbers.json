@@ -7997,5 +7997,684 @@
     },
     "alcance": "entorno local: ARIMA, XGBoost, explicaciones, alertas y evaluación",
     "kaggle": "las redes se entrenaron en la imagen de GPU de Kaggle (Tesla T4); sus versiones no quedaron registradas en la salida del notebook"
+  },
+  "mese_imputados": {
+    "fuente": "scripts/xai_16_mese_imputados.py",
+    "tipo": "descriptivo (post hoc, MESE M2)",
+    "control_nse_max_diferencia": 2.842170943040401e-14,
+    "subconjuntos": {
+      "i_sin_qt_imputado": {
+        "fraccion_excluida": {
+          "h1": {
+            "emisiones": 63210,
+            "excluidas": 1902,
+            "fraccion": 0.03009
+          },
+          "h7": {
+            "emisiones": 61814,
+            "excluidas": 1947,
+            "fraccion": 0.0315
+          },
+          "h14": {
+            "emisiones": 60420,
+            "excluidas": 1999,
+            "fraccion": 0.03309
+          },
+          "global": {
+            "emisiones": 185444,
+            "excluidas": 5848,
+            "fraccion": 0.03154
+          }
+        },
+        "por_horizonte": {
+          "h1": {
+            "estaciones_evaluables": 91,
+            "estaciones_mismas": 91,
+            "estaciones_que_salen": [],
+            "nse_mediana": {
+              "persistencia": {
+                "principal_mismas": 0.5577,
+                "subconjunto": 0.5409,
+                "diferencia": -0.0168
+              },
+              "climatologia": {
+                "principal_mismas": 0.0355,
+                "subconjunto": 0.0474,
+                "diferencia": 0.0119
+              },
+              "arima": {
+                "principal_mismas": 0.6133,
+                "subconjunto": 0.6115,
+                "diferencia": -0.0019
+              },
+              "xgboost": {
+                "principal_mismas": 0.5994,
+                "subconjunto": 0.5973,
+                "diferencia": -0.0021
+              },
+              "tcn": {
+                "principal_mismas": 0.6061,
+                "subconjunto": 0.6142,
+                "diferencia": 0.0082
+              },
+              "convnext": {
+                "principal_mismas": 0.5845,
+                "subconjunto": 0.5822,
+                "diferencia": -0.0024
+              },
+              "patchtst": {
+                "principal_mismas": 0.6071,
+                "subconjunto": 0.6084,
+                "diferencia": 0.0013
+              }
+            },
+            "delta_nse_vs_xgboost": {
+              "tcn": {
+                "principal_mismas": [
+                  0.003,
+                  0.0007,
+                  0.0058
+                ],
+                "subconjunto": [
+                  0.003,
+                  0.0003,
+                  0.0064
+                ],
+                "diferencia": -0.0
+              },
+              "convnext": {
+                "principal_mismas": [
+                  0.001,
+                  -0.0044,
+                  0.0041
+                ],
+                "subconjunto": [
+                  -0.0016,
+                  -0.0041,
+                  0.0032
+                ],
+                "diferencia": -0.0025
+              },
+              "patchtst": {
+                "principal_mismas": [
+                  0.0028,
+                  -0.0053,
+                  0.0062
+                ],
+                "subconjunto": [
+                  0.0035,
+                  -0.0025,
+                  0.0045
+                ],
+                "diferencia": 0.0007
+              }
+            },
+            "delta_csi_p90": {
+              "principal_mismas": [
+                0.0385,
+                0.0038,
+                0.0685
+              ],
+              "subconjunto": [
+                0.0383,
+                0.0032,
+                0.0683
+              ],
+              "diferencia": -0.0002
+            }
+          },
+          "h7": {
+            "estaciones_evaluables": 91,
+            "estaciones_mismas": 91,
+            "estaciones_que_salen": [],
+            "nse_mediana": {
+              "persistencia": {
+                "principal_mismas": -0.1581,
+                "subconjunto": -0.1974,
+                "diferencia": -0.0393
+              },
+              "climatologia": {
+                "principal_mismas": 0.0396,
+                "subconjunto": 0.0618,
+                "diferencia": 0.0222
+              },
+              "arima": {
+                "principal_mismas": 0.1402,
+                "subconjunto": 0.1398,
+                "diferencia": -0.0004
+              },
+              "xgboost": {
+                "principal_mismas": 0.1726,
+                "subconjunto": 0.1726,
+                "diferencia": 0.0
+              },
+              "tcn": {
+                "principal_mismas": 0.1728,
+                "subconjunto": 0.1721,
+                "diferencia": -0.0008
+              },
+              "convnext": {
+                "principal_mismas": 0.179,
+                "subconjunto": 0.1775,
+                "diferencia": -0.0015
+              },
+              "patchtst": {
+                "principal_mismas": 0.1709,
+                "subconjunto": 0.1709,
+                "diferencia": 0.0
+              }
+            },
+            "delta_nse_vs_xgboost": {
+              "tcn": {
+                "principal_mismas": [
+                  -0.0009,
+                  -0.0099,
+                  0.004
+                ],
+                "subconjunto": [
+                  -0.0028,
+                  -0.0104,
+                  0.004
+                ],
+                "diferencia": -0.0019
+              },
+              "convnext": {
+                "principal_mismas": [
+                  -0.0027,
+                  -0.0107,
+                  0.0032
+                ],
+                "subconjunto": [
+                  -0.0036,
+                  -0.0108,
+                  0.0039
+                ],
+                "diferencia": -0.001
+              },
+              "patchtst": {
+                "principal_mismas": [
+                  -0.0045,
+                  -0.0122,
+                  0.0012
+                ],
+                "subconjunto": [
+                  -0.0036,
+                  -0.0114,
+                  0.0015
+                ],
+                "diferencia": 0.0008
+              }
+            },
+            "delta_csi_p90": {
+              "principal_mismas": [
+                0.0089,
+                0.0013,
+                0.0162
+              ],
+              "subconjunto": [
+                0.0092,
+                0.0016,
+                0.0165
+              ],
+              "diferencia": 0.0004
+            }
+          },
+          "h14": {
+            "estaciones_evaluables": 91,
+            "estaciones_mismas": 91,
+            "estaciones_que_salen": [],
+            "nse_mediana": {
+              "persistencia": {
+                "principal_mismas": -0.3896,
+                "subconjunto": -0.3721,
+                "diferencia": 0.0175
+              },
+              "climatologia": {
+                "principal_mismas": 0.0349,
+                "subconjunto": 0.0376,
+                "diferencia": 0.0027
+              },
+              "arima": {
+                "principal_mismas": 0.0464,
+                "subconjunto": 0.0496,
+                "diferencia": 0.0032
+              },
+              "xgboost": {
+                "principal_mismas": 0.1092,
+                "subconjunto": 0.117,
+                "diferencia": 0.0078
+              },
+              "tcn": {
+                "principal_mismas": 0.0888,
+                "subconjunto": 0.0807,
+                "diferencia": -0.0081
+              },
+              "convnext": {
+                "principal_mismas": 0.0796,
+                "subconjunto": 0.0791,
+                "diferencia": -0.0005
+              },
+              "patchtst": {
+                "principal_mismas": 0.0789,
+                "subconjunto": 0.0788,
+                "diferencia": -0.0001
+              }
+            },
+            "delta_nse_vs_xgboost": {
+              "tcn": {
+                "principal_mismas": [
+                  -0.0066,
+                  -0.0172,
+                  0.0064
+                ],
+                "subconjunto": [
+                  -0.0029,
+                  -0.0169,
+                  0.0064
+                ],
+                "diferencia": 0.0038
+              },
+              "convnext": {
+                "principal_mismas": [
+                  -0.0278,
+                  -0.0382,
+                  -0.0208
+                ],
+                "subconjunto": [
+                  -0.027,
+                  -0.0405,
+                  -0.0195
+                ],
+                "diferencia": 0.0007
+              },
+              "patchtst": {
+                "principal_mismas": [
+                  -0.0206,
+                  -0.0346,
+                  -0.0053
+                ],
+                "subconjunto": [
+                  -0.0206,
+                  -0.0332,
+                  -0.0074
+                ],
+                "diferencia": -0.0
+              }
+            }
+          }
+        }
+      },
+      "ii_sin_imputados_en_ventana": {
+        "fraccion_excluida": {
+          "h1": {
+            "emisiones": 63210,
+            "excluidas": 21945,
+            "fraccion": 0.34718
+          },
+          "h7": {
+            "emisiones": 61814,
+            "excluidas": 21418,
+            "fraccion": 0.34649
+          },
+          "h14": {
+            "emisiones": 60420,
+            "excluidas": 20963,
+            "fraccion": 0.34695
+          },
+          "global": {
+            "emisiones": 185444,
+            "excluidas": 64326,
+            "fraccion": 0.34688
+          }
+        },
+        "por_horizonte": {
+          "h1": {
+            "estaciones_evaluables": 91,
+            "estaciones_mismas": 73,
+            "estaciones_que_salen": [
+              "ALUMR",
+              "AMCMR",
+              "ATCHD",
+              "CRDMR",
+              "CUAMR",
+              "CXTJL",
+              "CXXMR",
+              "ESTMR",
+              "PERMR",
+              "SAUJL",
+              "SCRJL",
+              "SCRMC",
+              "SVTSL",
+              "TEMMR",
+              "TICMR",
+              "XICMR",
+              "YAHMR",
+              "ZCTMR"
+            ],
+            "nse_mediana": {
+              "persistencia": {
+                "principal_mismas": 0.5677,
+                "subconjunto": 0.5728,
+                "diferencia": 0.005
+              },
+              "climatologia": {
+                "principal_mismas": 0.092,
+                "subconjunto": 0.1007,
+                "diferencia": 0.0088
+              },
+              "arima": {
+                "principal_mismas": 0.6167,
+                "subconjunto": 0.6301,
+                "diferencia": 0.0134
+              },
+              "xgboost": {
+                "principal_mismas": 0.6089,
+                "subconjunto": 0.6104,
+                "diferencia": 0.0015
+              },
+              "tcn": {
+                "principal_mismas": 0.6181,
+                "subconjunto": 0.6225,
+                "diferencia": 0.0044
+              },
+              "convnext": {
+                "principal_mismas": 0.6053,
+                "subconjunto": 0.5988,
+                "diferencia": -0.0064
+              },
+              "patchtst": {
+                "principal_mismas": 0.6136,
+                "subconjunto": 0.6027,
+                "diferencia": -0.0109
+              }
+            },
+            "delta_nse_vs_xgboost": {
+              "tcn": {
+                "principal_mismas": [
+                  0.0043,
+                  0.0021,
+                  0.0078
+                ],
+                "subconjunto": [
+                  0.0059,
+                  0.0025,
+                  0.0096
+                ],
+                "diferencia": 0.0016
+              },
+              "convnext": {
+                "principal_mismas": [
+                  0.0021,
+                  -0.0071,
+                  0.0044
+                ],
+                "subconjunto": [
+                  0.001,
+                  -0.0083,
+                  0.0074
+                ],
+                "diferencia": -0.0011
+              },
+              "patchtst": {
+                "principal_mismas": [
+                  0.0042,
+                  -0.0064,
+                  0.0075
+                ],
+                "subconjunto": [
+                  0.0008,
+                  -0.0064,
+                  0.0106
+                ],
+                "diferencia": -0.0034
+              }
+            },
+            "delta_csi_p90": {
+              "principal_mismas": [
+                0.0439,
+                0.0,
+                0.0781
+              ],
+              "subconjunto": [
+                0.0467,
+                0.0004,
+                0.0779
+              ],
+              "diferencia": 0.0027
+            }
+          },
+          "h7": {
+            "estaciones_evaluables": 91,
+            "estaciones_mismas": 71,
+            "estaciones_que_salen": [
+              "ALUMR",
+              "AMCMR",
+              "ATCHD",
+              "CRDMR",
+              "CUAMR",
+              "CXTJL",
+              "CXXMR",
+              "ESTMR",
+              "PERMR",
+              "SAUJL",
+              "SCRJL",
+              "SCRMC",
+              "SGRJL",
+              "SVTSL",
+              "TEMMR",
+              "TICMR",
+              "TMSTP",
+              "XICMR",
+              "YAHMR",
+              "ZCTMR"
+            ],
+            "nse_mediana": {
+              "persistencia": {
+                "principal_mismas": -0.1469,
+                "subconjunto": -0.184,
+                "diferencia": -0.0372
+              },
+              "climatologia": {
+                "principal_mismas": 0.0892,
+                "subconjunto": 0.1117,
+                "diferencia": 0.0225
+              },
+              "arima": {
+                "principal_mismas": 0.1378,
+                "subconjunto": 0.1589,
+                "diferencia": 0.0212
+              },
+              "xgboost": {
+                "principal_mismas": 0.1685,
+                "subconjunto": 0.1709,
+                "diferencia": 0.0025
+              },
+              "tcn": {
+                "principal_mismas": 0.1661,
+                "subconjunto": 0.178,
+                "diferencia": 0.0119
+              },
+              "convnext": {
+                "principal_mismas": 0.1588,
+                "subconjunto": 0.1476,
+                "diferencia": -0.0111
+              },
+              "patchtst": {
+                "principal_mismas": 0.1668,
+                "subconjunto": 0.1574,
+                "diferencia": -0.0094
+              }
+            },
+            "delta_nse_vs_xgboost": {
+              "tcn": {
+                "principal_mismas": [
+                  -0.0023,
+                  -0.0112,
+                  0.0054
+                ],
+                "subconjunto": [
+                  -0.0039,
+                  -0.0124,
+                  0.0054
+                ],
+                "diferencia": -0.0015
+              },
+              "convnext": {
+                "principal_mismas": [
+                  -0.0088,
+                  -0.0163,
+                  0.0032
+                ],
+                "subconjunto": [
+                  -0.0098,
+                  -0.0177,
+                  0.0022
+                ],
+                "diferencia": -0.001
+              },
+              "patchtst": {
+                "principal_mismas": [
+                  -0.0082,
+                  -0.0226,
+                  -0.0032
+                ],
+                "subconjunto": [
+                  -0.0124,
+                  -0.0268,
+                  -0.0032
+                ],
+                "diferencia": -0.0042
+              }
+            },
+            "delta_csi_p90": {
+              "principal_mismas": [
+                0.0116,
+                0.0026,
+                0.0196
+              ],
+              "subconjunto": [
+                0.0138,
+                0.0028,
+                0.0234
+              ],
+              "diferencia": 0.0022
+            }
+          },
+          "h14": {
+            "estaciones_evaluables": 91,
+            "estaciones_mismas": 68,
+            "estaciones_que_salen": [
+              "ALUMR",
+              "AMCMR",
+              "ATCHD",
+              "CRDMR",
+              "CUAMR",
+              "CXTJL",
+              "CXXMR",
+              "ESTMR",
+              "K27MX",
+              "PERMR",
+              "RQTSL",
+              "SAUJL",
+              "SCRJL",
+              "SCRMC",
+              "SGRJL",
+              "SVTSL",
+              "TEMMR",
+              "TESMX",
+              "TICMR",
+              "TMSTP",
+              "XICMR",
+              "YAHMR",
+              "ZCTMR"
+            ],
+            "nse_mediana": {
+              "persistencia": {
+                "principal_mismas": -0.3793,
+                "subconjunto": -0.3183,
+                "diferencia": 0.061
+              },
+              "climatologia": {
+                "principal_mismas": 0.0898,
+                "subconjunto": 0.1108,
+                "diferencia": 0.021
+              },
+              "arima": {
+                "principal_mismas": 0.0439,
+                "subconjunto": 0.0554,
+                "diferencia": 0.0115
+              },
+              "xgboost": {
+                "principal_mismas": 0.1021,
+                "subconjunto": 0.1178,
+                "diferencia": 0.0157
+              },
+              "tcn": {
+                "principal_mismas": 0.0664,
+                "subconjunto": 0.0974,
+                "diferencia": 0.031
+              },
+              "convnext": {
+                "principal_mismas": 0.0774,
+                "subconjunto": 0.0711,
+                "diferencia": -0.0063
+              },
+              "patchtst": {
+                "principal_mismas": 0.0758,
+                "subconjunto": 0.075,
+                "diferencia": -0.0008
+              }
+            },
+            "delta_nse_vs_xgboost": {
+              "tcn": {
+                "principal_mismas": [
+                  -0.0101,
+                  -0.0257,
+                  0.0065
+                ],
+                "subconjunto": [
+                  -0.0076,
+                  -0.0257,
+                  0.009
+                ],
+                "diferencia": 0.0025
+              },
+              "convnext": {
+                "principal_mismas": [
+                  -0.0305,
+                  -0.0441,
+                  -0.0232
+                ],
+                "subconjunto": [
+                  -0.0259,
+                  -0.0365,
+                  -0.0184
+                ],
+                "diferencia": 0.0046
+              },
+              "patchtst": {
+                "principal_mismas": [
+                  -0.0291,
+                  -0.0491,
+                  -0.0102
+                ],
+                "subconjunto": [
+                  -0.024,
+                  -0.04,
+                  -0.0135
+                ],
+                "diferencia": 0.005
+              }
+            }
+          }
+        }
+      }
+    },
+    "computo": {
+      "fecha": "2026-11-11",
+      "segundos": 32.5,
+      "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel"
+    },
+    "tabla": "mese/imputados_test.csv"
   }
 }

@@ -1,0 +1,17 @@
+archivo,ancho_mm,alto_mm,dpi_tiff,ancho_px,alto_px,contenido
+Fig1,174,104.0,300,2055,1228,"Flujo del estudio (datos, RQ1–RQ3); el LSTM descriptivo con borde discontinuo, fuera del ensamble"
+Fig2,174,150.0,300,2055,1771,Mapa: estaciones modeladas por grupo conectado (HydroRIVERS) y régimen
+Fig3,174,78.0,300,2055,921,"Habilidad en la partición principal: NSE (mediana, IQR) y SS contra persistencia (mediana, IC 95 %)"
+Fig4,174,112.0,600,4110,2645,"Mapas de importancia (variable × día de entrada), cuencas con ≥ 8 estaciones"
+Fig5,174,80.0,300,2055,944,"Acuerdo entre explicaciones y techo de ruido entre semillas y mitades (Spearman, 180 importancias)"
+Fig6,174,124.0,300,2055,1464,"Alertas: CSI difuso y umbral (P90, P99) y descomposición del ΔCSI P90 (F − T = A + B; C, D)"
+ESM_FigS1,84,66.0,300,992,779,Superficie de decisión del sistema Mamdani
+ESM_FigS2,84,78.0,300,992,921,"ΔNSE contra XGBoost (mediana, IC 95 %)"
+ESM_FigS3,174,118.0,300,2055,1393,Perfiles de importancia de la precipitación por rezago respecto al objetivo
+ESM_FigS4,174,132.0,300,2055,1559,Walk-forward anual 2021–2025
+ESM_FigS5,174,68.0,300,2055,803,Sequía de 2023: anomalía de precipitación y razón de gasto por cuenca
+ESM_FigS6,174,98.0,300,2055,1157,"NSE mediana por cuenca, modelo y horizonte"
+ESM_FigS7,174,74.0,300,2055,874,Ejemplo de serie con niveles de alerta
+ESM_FigS8,174,72.0,300,2055,850,Ablaciones de las alertas (contrastes A–D) y valor económico relativo
+ESM_FigS9,174,62.0,300,2055,732,Techo de ruido con las cinco medidas de acuerdo
+ESM_FigS10,174,70.0,300,2055,826,NSE por régimen (fracción de días con gasto cero)

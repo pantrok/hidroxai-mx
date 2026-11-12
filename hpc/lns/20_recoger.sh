@@ -15,9 +15,9 @@ ckpt=$(find runs -path '*/ckpt/*.pt' | wc -l)
 
 cp -f env_lns.txt runs/ 2>/dev/null || echo "AVISO: no está env_lns.txt (¿se corrió 01_entorno.sh?)"
 # Horas-core: CPUTime = cores asignados × tiempo de pared (lo que se cobra); TotalCPU = uso real.
-sacct -u "$USER" -S "$DESDE" --name=lstm_piloto,lstm_split,lstm_wf -X -P \
+sacct -u "$USER" -S "$DESDE" --name=lstm_piloto,lstm_split,lstm_wf,lstm_lote -X -P \
     --format=JobID,JobName,Partition,AllocCPUS,Elapsed,CPUTimeRAW,TotalCPU,State,ExitCode > runs/sacct_lns.txt
-sacct -u "$USER" -S "$DESDE" --name=lstm_piloto,lstm_split,lstm_wf -P \
+sacct -u "$USER" -S "$DESDE" --name=lstm_piloto,lstm_split,lstm_wf,lstm_lote -P \
     --format=JobID,JobName,MaxRSS,Elapsed,State > runs/sacct_lns_pasos.txt
 
 tar -czf "$SCR/lstm_resultados.tar.gz" runs logs

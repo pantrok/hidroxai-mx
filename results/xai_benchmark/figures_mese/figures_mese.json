@@ -1,0 +1,36 @@
+{
+  "lstm_incluido": {
+    "skill": false,
+    "delta": false,
+    "imp": false,
+    "conc": false,
+    "wf": false
+  },
+  "fig2_mapa": {
+    "estaciones_modeladas": 95,
+    "estaciones_evaluables": 91,
+    "no_evaluables": [
+      "CAPNR",
+      "GDLMX",
+      "SRSJL",
+      "TMTSL"
+    ],
+    "grupos": 23,
+    "grupos_con_varias": 8,
+    "aisladas": 15,
+    "tamano_grupos": {
+      "A": 33,
+      "B": 17,
+      "C": 10,
+      "D": 7,
+      "E": 3,
+      "F": 2,
+      "G": 2,
+      "H": 2
+    },
+    "regimen": {
+      "perenne": 56,
+      "intermitente": 35
+    }
+  }
+}
