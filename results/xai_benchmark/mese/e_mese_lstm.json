@@ -1,0 +1,291 @@
+{
+  "fuente": "scripts/xai_18_mese_lstm.py",
+  "tipo": "descriptivo (post hoc, MESE M1)",
+  "verificacion": {
+    "fecha": "2026-11-11",
+    "fuente": "scripts/xai_18_mese_lstm.py",
+    "corridas_principal": {
+      "esperadas": 72,
+      "predicciones": 72,
+      "pesos": 72,
+      "faltantes": []
+    },
+    "corridas_walk_forward": {
+      "esperadas": 60,
+      "predicciones": 60,
+      "pesos": 60,
+      "faltantes": []
+    },
+    "muestras_distintas": [],
+    "corridas_con_nan": [],
+    "longitudes_distintas": [],
+    "seleccion": {
+      "h1": "lstm-32",
+      "h7": "lstm-64",
+      "h14": "lstm-64"
+    },
+    "seleccion_coincide_con_walk_forward": true,
+    "entorno_lns": [
+      "ruta a · 2026-11-11T19:30:02-06:00 · LNSHEAD",
+      "sistema: Rocky Linux release 8.7 (Green Obsidian) · glibc 2.28",
+      "gestor: /opt/ohpc/pub/BUILDS/software/Anaconda3/2022.05/bin/conda",
+      "python 3.12.16 | torch 2.14.1+cpu | numpy 2.4.6 | pandas 3.0.3 | pyarrow 24.0.0 | hilos por defecto 24"
+    ],
+    "computo_slurm": {
+      "horas_core_asignadas": 50.57,
+      "horas_cpu_usadas": 0.0,
+      "trabajos": [
+        {
+          "JobID": "33100",
+          "JobName": "lstm_piloto",
+          "AllocCPUS": "24",
+          "Elapsed": "00:00:01",
+          "State": "FAILED"
+        },
+        {
+          "JobID": "33101",
+          "JobName": "lstm_piloto",
+          "AllocCPUS": "24",
+          "Elapsed": "00:00:00",
+          "State": "FAILED"
+        },
+        {
+          "JobID": "33102",
+          "JobName": "lstm_piloto",
+          "AllocCPUS": "24",
+          "Elapsed": "00:08:43",
+          "State": "COMPLETED"
+        },
+        {
+          "JobID": "33103",
+          "JobName": "lstm_lote",
+          "AllocCPUS": "24",
+          "Elapsed": "00:57:36",
+          "State": "COMPLETED"
+        },
+        {
+          "JobID": "33104",
+          "JobName": "lstm_lote",
+          "AllocCPUS": "24",
+          "Elapsed": "01:00:05",
+          "State": "COMPLETED"
+        }
+      ]
+    },
+    "entrenamiento_segundos": 5250.9,
+    "ok": true
+  },
+  "habilidad": {
+    "estaciones": 91,
+    "agregado": {
+      "h1": {
+        "nse_mediana": 0.6279,
+        "nse_q25": 0.3044,
+        "nse_q75": 0.7578,
+        "kge_mediana": 0.611,
+        "ss_mediana": 0.1646,
+        "ss_ic_lo": 0.0805,
+        "ss_ic_hi": 0.2145
+      },
+      "h7": {
+        "nse_mediana": 0.1659,
+        "nse_q25": 0.0598,
+        "nse_q75": 0.393,
+        "kge_mediana": 0.1914,
+        "ss_mediana": 0.3159,
+        "ss_ic_lo": 0.2663,
+        "ss_ic_hi": 0.355
+      },
+      "h14": {
+        "nse_mediana": 0.0682,
+        "nse_q25": 0.0004,
+        "nse_q75": 0.2892,
+        "kge_mediana": 0.036,
+        "ss_mediana": 0.3466,
+        "ss_ic_lo": 0.3188,
+        "ss_ic_hi": 0.3726
+      }
+    },
+    "delta_nse_vs_xgboost": {
+      "h1_estaciones": [
+        0.008,
+        0.0049,
+        0.012
+      ],
+      "h1_grupos_conectados": [
+        0.008,
+        0.0018,
+        0.0111
+      ],
+      "h7_estaciones": [
+        -0.0044,
+        -0.0144,
+        0.0005
+      ],
+      "h7_grupos_conectados": [
+        -0.0044,
+        -0.0235,
+        0.0031
+      ],
+      "h14_estaciones": [
+        -0.0071,
+        -0.0136,
+        -0.0026
+      ],
+      "h14_grupos_conectados": [
+        -0.0071,
+        -0.0168,
+        0.0
+      ]
+    }
+  },
+  "explicaciones": {
+    "ig_error_completitud": {
+      "delta_abs_mediana_max": 5.96e-08,
+      "delta_abs_p95_max": 2.38e-07
+    },
+    "spearman_180_lstm_vs": {
+      "xgboost": 0.253,
+      "tcn": 0.545,
+      "convnext": 0.555,
+      "patchtst": 0.25
+    },
+    "spearman_180_lstm_entre_semillas_mediana": 0.951,
+    "spearman_180_lstm_entre_mitades_mediana": 0.999,
+    "pares_con_lstm_bajo_techo": {
+      "jaccard_top10": "25 de 36",
+      "jaccard_top20": "24 de 36",
+      "spearman_180": "35 de 36",
+      "spearman_canal": "18 de 36",
+      "spearman_rezago": "30 de 36"
+    },
+    "nota": "Pares adicionales; la mediana de 6 pares de H2-a no cambia."
+  },
+  "walk_forward": {
+    "2021_h1": {
+      "nse_mediana": 0.6679,
+      "delta_nse_xgboost": [
+        0.0092,
+        0.0011,
+        0.0127
+      ]
+    },
+    "2021_h7": {
+      "nse_mediana": 0.1731,
+      "delta_nse_xgboost": [
+        -0.0069,
+        -0.0214,
+        0.0028
+      ]
+    },
+    "2021_h14": {
+      "nse_mediana": 0.0846,
+      "delta_nse_xgboost": [
+        -0.0119,
+        -0.022,
+        -0.0017
+      ]
+    },
+    "2022_h1": {
+      "nse_mediana": 0.6437,
+      "delta_nse_xgboost": [
+        0.0017,
+        -0.004,
+        0.0062
+      ]
+    },
+    "2022_h7": {
+      "nse_mediana": 0.171,
+      "delta_nse_xgboost": [
+        -0.0086,
+        -0.0268,
+        0.0089
+      ]
+    },
+    "2022_h14": {
+      "nse_mediana": 0.1143,
+      "delta_nse_xgboost": [
+        -0.0221,
+        -0.0475,
+        -0.0035
+      ]
+    },
+    "2023_h1": {
+      "nse_mediana": 0.3736,
+      "delta_nse_xgboost": [
+        -0.0025,
+        -0.0124,
+        0.006
+      ]
+    },
+    "2023_h7": {
+      "nse_mediana": -0.001,
+      "delta_nse_xgboost": [
+        0.0026,
+        -0.0021,
+        0.0201
+      ]
+    },
+    "2023_h14": {
+      "nse_mediana": -0.0296,
+      "delta_nse_xgboost": [
+        -0.0165,
+        -0.06,
+        0.0043
+      ]
+    },
+    "2024_h1": {
+      "nse_mediana": 0.6424,
+      "delta_nse_xgboost": [
+        0.0053,
+        0.0007,
+        0.0113
+      ]
+    },
+    "2024_h7": {
+      "nse_mediana": 0.1531,
+      "delta_nse_xgboost": [
+        -0.0127,
+        -0.023,
+        -0.0002
+      ]
+    },
+    "2024_h14": {
+      "nse_mediana": 0.0709,
+      "delta_nse_xgboost": [
+        -0.0204,
+        -0.0325,
+        -0.0105
+      ]
+    },
+    "2025_h1": {
+      "nse_mediana": 0.6365,
+      "delta_nse_xgboost": [
+        0.0011,
+        -0.004,
+        0.0185
+      ]
+    },
+    "2025_h7": {
+      "nse_mediana": 0.1675,
+      "delta_nse_xgboost": [
+        0.0078,
+        -0.0087,
+        0.0177
+      ]
+    },
+    "2025_h14": {
+      "nse_mediana": 0.053,
+      "delta_nse_xgboost": [
+        -0.0107,
+        -0.027,
+        -0.004
+      ]
+    }
+  },
+  "computo_local": {
+    "fecha": "2026-11-11",
+    "segundos": 428.7,
+    "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel"
+  }
+}

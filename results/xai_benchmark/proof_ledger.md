@@ -616,6 +616,57 @@ comandos de `sbatch`. Las fuentes viajan con los resultados: `env_lns.txt`, `log
   - Corre los elementos dos a la vez en un nodo, con 12 hilos cada uno.
   - Llama a `10_lstm_split.sbatch` y `11_lstm_walkforward.sbatch` sin modificarlos, así que las
     corridas, semillas y salidas son las mismas que con el arreglo.
+- **Ejecución.** Partición principal (trabajo 33103) en 57.6 min y walk-forward (33104) en
+  60.1 min, ambos completos. Horas-core asignadas: `numbers.json` →
+  `mese_lstm.verificacion.computo_slurm`. El LNS no registra el uso real de CPU (`TotalCPU` = 0).
+
+### Resultados MESE (2026-11-11; descriptivos, sin veredicto)
+
+**M2 · imputados en la ventana** (`mese/e_mese_imputados.json`, `mese/imputados_test.csv`)
+
+- **Controles:** el NSE recalculado reproduce `rq1_station_metrics.csv` (diferencia ≤ 3e-14) y el
+  ΔCSI de la prueba completa reproduce `e_rq3.json`.
+- **(i) sin Q(t) imputado:**
+  - se excluye el 3.2 % de las emisiones y siguen las 91 estaciones;
+  - la mediana de NSE de los modelos aprendidos cambia como mucho 0.008;
+  - el ΔCSI P90 a 1 d pasa de 0.0385 a 0.0383, con IC > 0.
+- **(ii) sin imputados en 30 días:**
+  - se excluye el 34.7 % y quedan 73, 71 y 68 estaciones a 1, 7 y 14 d;
+  - en esas estaciones, el NSE de los modelos aprendidos cambia entre −0.011 y +0.031;
+  - el ΔCSI P90 a 1 d pasa de 0.0439 a 0.0467; los IC de ΔNSE conservan el signo.
+- **Lectura:** ninguna conclusión del estudio depende de los valores imputados.
+
+**M1 · LSTM** (`mese/e_mese_lstm.json` y los CSV `mese/lstm_*.csv`)
+
+- **Verificación:** 72/72 corridas de la partición principal y 60/60 del walk-forward, con pesos,
+  las mismas muestras que en CPU y sin NaN.
+- **Selección por validación:** lstm-32 a 1 d y lstm-64 a 7 y 14 d. Es la misma que usó el
+  walk-forward.
+- **Habilidad agregada (91 estaciones; `mese/lstm_skill.csv`):**
+
+  | Horizonte | NSE mediana | SS (IC 95 %) |
+  |---|---|---|
+  | 1 d | 0.6279 | 0.1646 [0.0805, 0.2145] |
+  | 7 d | 0.1659 | 0.3159 [0.2663, 0.3550] |
+  | 14 d | 0.0682 | 0.3466 [0.3188, 0.3726] |
+
+- **ΔNSE contra XGBoost (`mese/lstm_vs_xgboost.csv`), IC 95 %:**
+
+  | Horizonte | Mediana | Bootstrap de estaciones | Bootstrap de grupos |
+  |---|---|---|---|
+  | 1 d | 0.0080 | [0.0049, 0.0120] | [0.0018, 0.0111] |
+  | 7 d | −0.0044 | [−0.0144, 0.0005] | [−0.0235, 0.0031] |
+  | 14 d | −0.0071 | [−0.0136, −0.0026] | [−0.0168, 0.0000] |
+
+- **Explicaciones:**
+  - error de completitud de IG: medianas de |δ| ≤ 6.0e-8, del orden de ConvNeXt y PatchTST;
+  - Spearman (180) del LSTM, mediana de las 9 combinaciones: con XGBoost 0.253, con TCN 0.545,
+    con ConvNeXt-1D 0.555 y con PatchTST 0.250;
+  - entre semillas del LSTM, 0.951;
+  - 35 de los 36 pares con el LSTM quedan bajo el techo de semillas (Spearman, 180).
+- **Walk-forward por año:** `mese/lstm_walkforward.csv`.
+- **Alcance:** ninguno de estos resultados entra en H1–H3, en el ensamble ni en la mediana de 6
+  pares de H2-a.
 
 ## Evidencia
 

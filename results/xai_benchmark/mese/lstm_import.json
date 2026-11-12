@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-11-11",
+  "fuente": "scripts/xai_18_mese_lstm.py",
+  "corridas_principal": {
+    "esperadas": 72,
+    "predicciones": 72,
+    "pesos": 72,
+    "faltantes": []
+  },
+  "corridas_walk_forward": {
+    "esperadas": 60,
+    "predicciones": 60,
+    "pesos": 60,
+    "faltantes": []
+  },
+  "muestras_distintas": [],
+  "corridas_con_nan": [],
+  "longitudes_distintas": [],
+  "seleccion": {
+    "h1": "lstm-32",
+    "h7": "lstm-64",
+    "h14": "lstm-64"
+  },
+  "seleccion_coincide_con_walk_forward": true,
+  "entorno_lns": [
+    "ruta a · 2026-11-11T19:30:02-06:00 · LNSHEAD",
+    "sistema: Rocky Linux release 8.7 (Green Obsidian) · glibc 2.28",
+    "gestor: /opt/ohpc/pub/BUILDS/software/Anaconda3/2022.05/bin/conda",
+    "python 3.12.16 | torch 2.14.1+cpu | numpy 2.4.6 | pandas 3.0.3 | pyarrow 24.0.0 | hilos por defecto 24"
+  ],
+  "computo_slurm": {
+    "horas_core_asignadas": 50.57,
+    "horas_cpu_usadas": 0.0,
+    "trabajos": [
+      {
+        "JobID": "33100",
+        "JobName": "lstm_piloto",
+        "AllocCPUS": "24",
+        "Elapsed": "00:00:01",
+        "State": "FAILED"
+      },
+      {
+        "JobID": "33101",
+        "JobName": "lstm_piloto",
+        "AllocCPUS": "24",
+        "Elapsed": "00:00:00",
+        "State": "FAILED"
+      },
+      {
+        "JobID": "33102",
+        "JobName": "lstm_piloto",
+        "AllocCPUS": "24",
+        "Elapsed": "00:08:43",
+        "State": "COMPLETED"
+      },
+      {
+        "JobID": "33103",
+        "JobName": "lstm_lote",
+        "AllocCPUS": "24",
+        "Elapsed": "00:57:36",
+        "State": "COMPLETED"
+      },
+      {
+        "JobID": "33104",
+        "JobName": "lstm_lote",
+        "AllocCPUS": "24",
+        "Elapsed": "01:00:05",
+        "State": "COMPLETED"
+      }
+    ]
+  },
+  "entrenamiento_segundos": 5250.9,
+  "ok": true
+}

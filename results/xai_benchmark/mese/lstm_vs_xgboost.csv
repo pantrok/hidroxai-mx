@@ -1,0 +1,7 @@
+h,remuestreo,unidades,mediana,ic_lo,ic_hi
+1,estaciones,91,0.008,0.0049,0.012
+1,grupos_conectados,23,0.008,0.0018,0.0111
+7,estaciones,91,-0.0044,-0.0144,0.0005
+7,grupos_conectados,23,-0.0044,-0.0235,0.0031
+14,estaciones,91,-0.0071,-0.0136,-0.0026
+14,grupos_conectados,23,-0.0071,-0.0168,0.0

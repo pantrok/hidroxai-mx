@@ -1,0 +1,2161 @@
+cuenca,h,modelo,canal,rezago_ventana,rezago_objetivo,importancia
+Lerma–Santiago,1,lstm,gasto_medio_m3s,29,30,0.0007316428236663342
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,29,30,0.00016576836060266942
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,29,30,0.00016568787395954132
+Lerma–Santiago,1,lstm,precip_idw_mm,29,30,0.000364501349395141
+Lerma–Santiago,1,lstm,doy_sin,29,30,0.0001039062044583261
+Lerma–Santiago,1,lstm,doy_cos,29,30,0.00019287940813228488
+Lerma–Santiago,1,lstm,gasto_medio_m3s,28,29,0.000459709350252524
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,28,29,0.00016731698997318745
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,28,29,0.00017919774109032005
+Lerma–Santiago,1,lstm,precip_idw_mm,28,29,0.00030785572016611695
+Lerma–Santiago,1,lstm,doy_sin,28,29,0.0001049400816555135
+Lerma–Santiago,1,lstm,doy_cos,28,29,0.00014783484220970422
+Lerma–Santiago,1,lstm,gasto_medio_m3s,27,28,0.0006469143554568291
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,27,28,0.00018153712153434753
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,27,28,0.00019983614038210362
+Lerma–Santiago,1,lstm,precip_idw_mm,27,28,0.0003012358502019197
+Lerma–Santiago,1,lstm,doy_sin,27,28,0.00011639892909443006
+Lerma–Santiago,1,lstm,doy_cos,27,28,0.00016306138422805816
+Lerma–Santiago,1,lstm,gasto_medio_m3s,26,27,0.0006683242390863597
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,26,27,0.00018700904911383986
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,26,27,0.00021249191195238382
+Lerma–Santiago,1,lstm,precip_idw_mm,26,27,0.00029688255744986236
+Lerma–Santiago,1,lstm,doy_sin,26,27,0.00013272931391838938
+Lerma–Santiago,1,lstm,doy_cos,26,27,0.0001768219517543912
+Lerma–Santiago,1,lstm,gasto_medio_m3s,25,26,0.0007713101804256439
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,25,26,0.00020331377163529396
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,25,26,0.00023205450270324945
+Lerma–Santiago,1,lstm,precip_idw_mm,25,26,0.00033316295593976974
+Lerma–Santiago,1,lstm,doy_sin,25,26,0.00014846045814920217
+Lerma–Santiago,1,lstm,doy_cos,25,26,0.00019158671784680337
+Lerma–Santiago,1,lstm,gasto_medio_m3s,24,25,0.0007980688824318349
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,24,25,0.00021945021580904722
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,24,25,0.0002495808294042945
+Lerma–Santiago,1,lstm,precip_idw_mm,24,25,0.0003210627764929086
+Lerma–Santiago,1,lstm,doy_sin,24,25,0.00016090784629341215
+Lerma–Santiago,1,lstm,doy_cos,24,25,0.00020625680917873979
+Lerma–Santiago,1,lstm,gasto_medio_m3s,23,24,0.000838759180624038
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,23,24,0.00023434039030689746
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,23,24,0.00026648101629689336
+Lerma–Santiago,1,lstm,precip_idw_mm,23,24,0.00033702151267789304
+Lerma–Santiago,1,lstm,doy_sin,23,24,0.00017344090156257153
+Lerma–Santiago,1,lstm,doy_cos,23,24,0.00021155404101591557
+Lerma–Santiago,1,lstm,gasto_medio_m3s,22,23,0.0008690148242749274
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,22,23,0.0002520832640584558
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,22,23,0.00028408344951458275
+Lerma–Santiago,1,lstm,precip_idw_mm,22,23,0.00036021610139869153
+Lerma–Santiago,1,lstm,doy_sin,22,23,0.00019043053907807916
+Lerma–Santiago,1,lstm,doy_cos,22,23,0.00022618415823671967
+Lerma–Santiago,1,lstm,gasto_medio_m3s,21,22,0.0009845695458352566
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,21,22,0.00027040744316764176
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,21,22,0.00031341714202426374
+Lerma–Santiago,1,lstm,precip_idw_mm,21,22,0.0003953268751502037
+Lerma–Santiago,1,lstm,doy_sin,21,22,0.00020513328490778804
+Lerma–Santiago,1,lstm,doy_cos,21,22,0.00023935595527291298
+Lerma–Santiago,1,lstm,gasto_medio_m3s,20,21,0.0009949631057679653
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,20,21,0.00029008148703724146
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,20,21,0.0003359897236805409
+Lerma–Santiago,1,lstm,precip_idw_mm,20,21,0.00041785495704971254
+Lerma–Santiago,1,lstm,doy_sin,20,21,0.00022587938292417675
+Lerma–Santiago,1,lstm,doy_cos,20,21,0.00025992875453084707
+Lerma–Santiago,1,lstm,gasto_medio_m3s,19,20,0.0011178100248798728
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,19,20,0.00031557385227642953
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,19,20,0.00036329522845335305
+Lerma–Santiago,1,lstm,precip_idw_mm,19,20,0.00043053741683252156
+Lerma–Santiago,1,lstm,doy_sin,19,20,0.00024861839483492076
+Lerma–Santiago,1,lstm,doy_cos,19,20,0.0002785087563097477
+Lerma–Santiago,1,lstm,gasto_medio_m3s,18,19,0.0012329104356467724
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,18,19,0.00033433560747653246
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,18,19,0.0004008470568805933
+Lerma–Santiago,1,lstm,precip_idw_mm,18,19,0.00047072870074771345
+Lerma–Santiago,1,lstm,doy_sin,18,19,0.0002754594897851348
+Lerma–Santiago,1,lstm,doy_cos,18,19,0.0002920338592957705
+Lerma–Santiago,1,lstm,gasto_medio_m3s,17,18,0.0013416135916486382
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,17,18,0.00036240238114260137
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,17,18,0.0004396903095766902
+Lerma–Santiago,1,lstm,precip_idw_mm,17,18,0.0004942903760820627
+Lerma–Santiago,1,lstm,doy_sin,17,18,0.0003005961189046502
+Lerma–Santiago,1,lstm,doy_cos,17,18,0.0003265691048000008
+Lerma–Santiago,1,lstm,gasto_medio_m3s,16,17,0.001441508182324469
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,16,17,0.000393525609979406
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,16,17,0.000483875279314816
+Lerma–Santiago,1,lstm,precip_idw_mm,16,17,0.000534720194991678
+Lerma–Santiago,1,lstm,doy_sin,16,17,0.00033679811167530715
+Lerma–Santiago,1,lstm,doy_cos,16,17,0.0003571409033611417
+Lerma–Santiago,1,lstm,gasto_medio_m3s,15,16,0.0015757674118503928
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,15,16,0.0004305317997932434
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,15,16,0.0005336292670108378
+Lerma–Santiago,1,lstm,precip_idw_mm,15,16,0.0005517872050404549
+Lerma–Santiago,1,lstm,doy_sin,15,16,0.00037674358463846147
+Lerma–Santiago,1,lstm,doy_cos,15,16,0.00039982135058380663
+Lerma–Santiago,1,lstm,gasto_medio_m3s,14,15,0.0017030461458489299
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,14,15,0.0004761341551784426
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,14,15,0.0006012153462506831
+Lerma–Santiago,1,lstm,precip_idw_mm,14,15,0.0006148029933683574
+Lerma–Santiago,1,lstm,doy_sin,14,15,0.0004292823432479054
+Lerma–Santiago,1,lstm,doy_cos,14,15,0.0004419703909661621
+Lerma–Santiago,1,lstm,gasto_medio_m3s,13,14,0.0018598962342366576
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,13,14,0.0005271799745969474
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,13,14,0.0006862285663373768
+Lerma–Santiago,1,lstm,precip_idw_mm,13,14,0.0007352608372457325
+Lerma–Santiago,1,lstm,doy_sin,13,14,0.0004977208445779979
+Lerma–Santiago,1,lstm,doy_cos,13,14,0.0005106968455947936
+Lerma–Santiago,1,lstm,gasto_medio_m3s,12,13,0.002036978490650654
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,12,13,0.0005865052808076143
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,12,13,0.0007890003616921604
+Lerma–Santiago,1,lstm,precip_idw_mm,12,13,0.0008013609913177788
+Lerma–Santiago,1,lstm,doy_sin,12,13,0.0005836134077981114
+Lerma–Santiago,1,lstm,doy_cos,12,13,0.000595051737036556
+Lerma–Santiago,1,lstm,gasto_medio_m3s,11,12,0.002239769324660301
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,11,12,0.0006714172777719796
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,11,12,0.0009310767636634409
+Lerma–Santiago,1,lstm,precip_idw_mm,11,12,0.0009707044227980077
+Lerma–Santiago,1,lstm,doy_sin,11,12,0.0006916158017702401
+Lerma–Santiago,1,lstm,doy_cos,11,12,0.0006953382398933172
+Lerma–Santiago,1,lstm,gasto_medio_m3s,10,11,0.002553913975134492
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,10,11,0.0007892097346484661
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,10,11,0.0010864941868931055
+Lerma–Santiago,1,lstm,precip_idw_mm,10,11,0.0010356488637626171
+Lerma–Santiago,1,lstm,doy_sin,10,11,0.000842655950691551
+Lerma–Santiago,1,lstm,doy_cos,10,11,0.0007977263885550201
+Lerma–Santiago,1,lstm,gasto_medio_m3s,9,10,0.003209182061254978
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,9,10,0.0009730636957101524
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,9,10,0.0012924536131322384
+Lerma–Santiago,1,lstm,precip_idw_mm,9,10,0.001401986344717443
+Lerma–Santiago,1,lstm,doy_sin,9,10,0.0010357802966609597
+Lerma–Santiago,1,lstm,doy_cos,9,10,0.0009479583823122084
+Lerma–Santiago,1,lstm,gasto_medio_m3s,8,9,0.0037255401257425547
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,8,9,0.001275602146051824
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,8,9,0.0015105096390470862
+Lerma–Santiago,1,lstm,precip_idw_mm,8,9,0.0016241337871178985
+Lerma–Santiago,1,lstm,doy_sin,8,9,0.0012478124117478728
+Lerma–Santiago,1,lstm,doy_cos,8,9,0.0010717709083110094
+Lerma–Santiago,1,lstm,gasto_medio_m3s,7,8,0.004481499549001455
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,7,8,0.001701262895949185
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,7,8,0.001780545455403626
+Lerma–Santiago,1,lstm,precip_idw_mm,7,8,0.001845946186222136
+Lerma–Santiago,1,lstm,doy_sin,7,8,0.0014441842213273048
+Lerma–Santiago,1,lstm,doy_cos,7,8,0.0011958311079069972
+Lerma–Santiago,1,lstm,gasto_medio_m3s,6,7,0.005326414946466684
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,6,7,0.002347558969631791
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,6,7,0.002061573090031743
+Lerma–Santiago,1,lstm,precip_idw_mm,6,7,0.002197900088503957
+Lerma–Santiago,1,lstm,doy_sin,6,7,0.001550933695398271
+Lerma–Santiago,1,lstm,doy_cos,6,7,0.0013414494460448623
+Lerma–Santiago,1,lstm,gasto_medio_m3s,5,6,0.006910441908985376
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,5,6,0.003395732492208481
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,5,6,0.002274102298542857
+Lerma–Santiago,1,lstm,precip_idw_mm,5,6,0.0022009515669196844
+Lerma–Santiago,1,lstm,doy_sin,5,6,0.0015684935497120023
+Lerma–Santiago,1,lstm,doy_cos,5,6,0.001612790976651013
+Lerma–Santiago,1,lstm,gasto_medio_m3s,4,5,0.011413823813199997
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,4,5,0.005297115072607994
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,4,5,0.0024733496829867363
+Lerma–Santiago,1,lstm,precip_idw_mm,4,5,0.002316979458555579
+Lerma–Santiago,1,lstm,doy_sin,4,5,0.0018727864371612668
+Lerma–Santiago,1,lstm,doy_cos,4,5,0.0020182430744171143
+Lerma–Santiago,1,lstm,gasto_medio_m3s,3,4,0.01568254642188549
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,3,4,0.007834245450794697
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,3,4,0.0029821183998137712
+Lerma–Santiago,1,lstm,precip_idw_mm,3,4,0.002701960736885667
+Lerma–Santiago,1,lstm,doy_sin,3,4,0.002694870112463832
+Lerma–Santiago,1,lstm,doy_cos,3,4,0.002770853927358985
+Lerma–Santiago,1,lstm,gasto_medio_m3s,2,3,0.019831951707601547
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,2,3,0.005834273528307676
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,2,3,0.003709740238264203
+Lerma–Santiago,1,lstm,precip_idw_mm,2,3,0.0037048005033284426
+Lerma–Santiago,1,lstm,doy_sin,2,3,0.004332250449806452
+Lerma–Santiago,1,lstm,doy_cos,2,3,0.0043947650119662285
+Lerma–Santiago,1,lstm,gasto_medio_m3s,1,2,0.0405457504093647
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,1,2,0.014601835049688816
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,1,2,0.010981080122292042
+Lerma–Santiago,1,lstm,precip_idw_mm,1,2,0.00717984838411212
+Lerma–Santiago,1,lstm,doy_sin,1,2,0.010620757937431335
+Lerma–Santiago,1,lstm,doy_cos,1,2,0.01477909181267023
+Lerma–Santiago,1,lstm,gasto_medio_m3s,0,1,0.5766751766204834
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma7,0,1,0.013487312011420727
+Lerma–Santiago,1,lstm,gasto_medio_m3s_ma30,0,1,0.011692321859300137
+Lerma–Santiago,1,lstm,precip_idw_mm,0,1,0.02590196579694748
+Lerma–Santiago,1,lstm,doy_sin,0,1,0.018267394974827766
+Lerma–Santiago,1,lstm,doy_cos,0,1,0.02523735724389553
+Lerma–Santiago,7,lstm,gasto_medio_m3s,29,36,0.0006402219296433032
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,29,36,0.00036267508403398097
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,29,36,0.0006622596993111074
+Lerma–Santiago,7,lstm,precip_idw_mm,29,36,0.0007807092624716461
+Lerma–Santiago,7,lstm,doy_sin,29,36,0.0005396437481977046
+Lerma–Santiago,7,lstm,doy_cos,29,36,0.0010760776931419969
+Lerma–Santiago,7,lstm,gasto_medio_m3s,28,35,0.0007546395645476878
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,28,35,0.0004091386217623949
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,28,35,0.0007174403290264308
+Lerma–Santiago,7,lstm,precip_idw_mm,28,35,0.0008295301231555641
+Lerma–Santiago,7,lstm,doy_sin,28,35,0.0005866073188371956
+Lerma–Santiago,7,lstm,doy_cos,28,35,0.0012016602559015155
+Lerma–Santiago,7,lstm,gasto_medio_m3s,27,34,0.0008303464855998755
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,27,34,0.00044503621757030487
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,27,34,0.0007701281574554741
+Lerma–Santiago,7,lstm,precip_idw_mm,27,34,0.000815291132312268
+Lerma–Santiago,7,lstm,doy_sin,27,34,0.0006173464353196323
+Lerma–Santiago,7,lstm,doy_cos,27,34,0.001290887244977057
+Lerma–Santiago,7,lstm,gasto_medio_m3s,26,33,0.0009161956259049475
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,26,33,0.0004711798392236233
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,26,33,0.0008236472494900227
+Lerma–Santiago,7,lstm,precip_idw_mm,26,33,0.0008761393837630749
+Lerma–Santiago,7,lstm,doy_sin,26,33,0.0006378780235536397
+Lerma–Santiago,7,lstm,doy_cos,26,33,0.0013603521510958672
+Lerma–Santiago,7,lstm,gasto_medio_m3s,25,32,0.0010084601817652583
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,25,32,0.000490513164550066
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,25,32,0.0008787953411228955
+Lerma–Santiago,7,lstm,precip_idw_mm,25,32,0.0009061992168426514
+Lerma–Santiago,7,lstm,doy_sin,25,32,0.0006594748701900244
+Lerma–Santiago,7,lstm,doy_cos,25,32,0.0014344066148623824
+Lerma–Santiago,7,lstm,gasto_medio_m3s,24,31,0.0010864759096875787
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,24,31,0.0005044960416853428
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,24,31,0.0009364603902213275
+Lerma–Santiago,7,lstm,precip_idw_mm,24,31,0.0009638999472372234
+Lerma–Santiago,7,lstm,doy_sin,24,31,0.0006903631729073822
+Lerma–Santiago,7,lstm,doy_cos,24,31,0.0015163379721343517
+Lerma–Santiago,7,lstm,gasto_medio_m3s,23,30,0.0011796202743425965
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,23,30,0.0005283655482344329
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,23,30,0.000998835894279182
+Lerma–Santiago,7,lstm,precip_idw_mm,23,30,0.0010262624127790332
+Lerma–Santiago,7,lstm,doy_sin,23,30,0.0007342706085182726
+Lerma–Santiago,7,lstm,doy_cos,23,30,0.0015955449780449271
+Lerma–Santiago,7,lstm,gasto_medio_m3s,22,29,0.0012575773289427161
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,22,29,0.0005629648803733289
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,22,29,0.0010711579816415906
+Lerma–Santiago,7,lstm,precip_idw_mm,22,29,0.001053030602633953
+Lerma–Santiago,7,lstm,doy_sin,22,29,0.000799431698396802
+Lerma–Santiago,7,lstm,doy_cos,22,29,0.0016780538717284799
+Lerma–Santiago,7,lstm,gasto_medio_m3s,21,28,0.00132035615388304
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,21,28,0.0005976332467980683
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,21,28,0.0011434530606493354
+Lerma–Santiago,7,lstm,precip_idw_mm,21,28,0.0011569984490051866
+Lerma–Santiago,7,lstm,doy_sin,21,28,0.0008747121901251376
+Lerma–Santiago,7,lstm,doy_cos,21,28,0.0017727221129462123
+Lerma–Santiago,7,lstm,gasto_medio_m3s,20,27,0.0014080865075811744
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,20,27,0.0006555463187396526
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,20,27,0.0012207772815600038
+Lerma–Santiago,7,lstm,precip_idw_mm,20,27,0.0012573361163958907
+Lerma–Santiago,7,lstm,doy_sin,20,27,0.0009595797746442258
+Lerma–Santiago,7,lstm,doy_cos,20,27,0.001875395537354052
+Lerma–Santiago,7,lstm,gasto_medio_m3s,19,26,0.0014980531996116042
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,19,26,0.0007191385957412422
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,19,26,0.001315578818321228
+Lerma–Santiago,7,lstm,precip_idw_mm,19,26,0.0013772672973573208
+Lerma–Santiago,7,lstm,doy_sin,19,26,0.001057691522873938
+Lerma–Santiago,7,lstm,doy_cos,19,26,0.002003236673772335
+Lerma–Santiago,7,lstm,gasto_medio_m3s,18,25,0.0015835572266951203
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,18,25,0.0007891039713285863
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,18,25,0.0014337176689878106
+Lerma–Santiago,7,lstm,precip_idw_mm,18,25,0.0015423618024215102
+Lerma–Santiago,7,lstm,doy_sin,18,25,0.0011659320443868637
+Lerma–Santiago,7,lstm,doy_cos,18,25,0.0021645764354616404
+Lerma–Santiago,7,lstm,gasto_medio_m3s,17,24,0.0017353702569380403
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,17,24,0.0008605465409345925
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,17,24,0.0015885261818766594
+Lerma–Santiago,7,lstm,precip_idw_mm,17,24,0.0016653597122058272
+Lerma–Santiago,7,lstm,doy_sin,17,24,0.0012866802280768752
+Lerma–Santiago,7,lstm,doy_cos,17,24,0.0023727111984044313
+Lerma–Santiago,7,lstm,gasto_medio_m3s,16,23,0.0018946916097775102
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,16,23,0.0009236549958586693
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,16,23,0.0018126926152035594
+Lerma–Santiago,7,lstm,precip_idw_mm,16,23,0.0019196938956156373
+Lerma–Santiago,7,lstm,doy_sin,16,23,0.0014185215113684535
+Lerma–Santiago,7,lstm,doy_cos,16,23,0.0026269119698554277
+Lerma–Santiago,7,lstm,gasto_medio_m3s,15,22,0.002076199511066079
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,15,22,0.0009785507572814822
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,15,22,0.002138989744707942
+Lerma–Santiago,7,lstm,precip_idw_mm,15,22,0.0022999870125204325
+Lerma–Santiago,7,lstm,doy_sin,15,22,0.0015606387751176953
+Lerma–Santiago,7,lstm,doy_cos,15,22,0.0029359227046370506
+Lerma–Santiago,7,lstm,gasto_medio_m3s,14,21,0.0023537660017609596
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,14,21,0.001038676011376083
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,14,21,0.0025915217120200396
+Lerma–Santiago,7,lstm,precip_idw_mm,14,21,0.00254923477768898
+Lerma–Santiago,7,lstm,doy_sin,14,21,0.001728732604533434
+Lerma–Santiago,7,lstm,doy_cos,14,21,0.0033095695544034243
+Lerma–Santiago,7,lstm,gasto_medio_m3s,13,20,0.0026573718059808016
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,13,20,0.0011088907485827804
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,13,20,0.0031769173219799995
+Lerma–Santiago,7,lstm,precip_idw_mm,13,20,0.0030906072352081537
+Lerma–Santiago,7,lstm,doy_sin,13,20,0.0019286546157673001
+Lerma–Santiago,7,lstm,doy_cos,13,20,0.0037315411027520895
+Lerma–Santiago,7,lstm,gasto_medio_m3s,12,19,0.0030768157448619604
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,12,19,0.001208131667226553
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,12,19,0.003917013760656118
+Lerma–Santiago,7,lstm,precip_idw_mm,12,19,0.0036208126693964005
+Lerma–Santiago,7,lstm,doy_sin,12,19,0.0021704535465687513
+Lerma–Santiago,7,lstm,doy_cos,12,19,0.004189984407275915
+Lerma–Santiago,7,lstm,gasto_medio_m3s,11,18,0.0036459804978221655
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,11,18,0.0014096238883212209
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,11,18,0.004794961307197809
+Lerma–Santiago,7,lstm,precip_idw_mm,11,18,0.004098217468708754
+Lerma–Santiago,7,lstm,doy_sin,11,18,0.0024816112127155066
+Lerma–Santiago,7,lstm,doy_cos,11,18,0.004665864631533623
+Lerma–Santiago,7,lstm,gasto_medio_m3s,10,17,0.004248421173542738
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,10,17,0.0017322174971923232
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,10,17,0.005716661456972361
+Lerma–Santiago,7,lstm,precip_idw_mm,10,17,0.004834103863686323
+Lerma–Santiago,7,lstm,doy_sin,10,17,0.002868512412533164
+Lerma–Santiago,7,lstm,doy_cos,10,17,0.005120602902024984
+Lerma–Santiago,7,lstm,gasto_medio_m3s,9,16,0.004902230110019445
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,9,16,0.002213049679994583
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,9,16,0.006656393874436617
+Lerma–Santiago,7,lstm,precip_idw_mm,9,16,0.0052485112100839615
+Lerma–Santiago,7,lstm,doy_sin,9,16,0.00336117553524673
+Lerma–Santiago,7,lstm,doy_cos,9,16,0.005536905024200678
+Lerma–Santiago,7,lstm,gasto_medio_m3s,8,15,0.005757423583418131
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,8,15,0.002815892919898033
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,8,15,0.0075098667293787
+Lerma–Santiago,7,lstm,precip_idw_mm,8,15,0.005794581491500139
+Lerma–Santiago,7,lstm,doy_sin,8,15,0.003941838163882494
+Lerma–Santiago,7,lstm,doy_cos,8,15,0.005863051861524582
+Lerma–Santiago,7,lstm,gasto_medio_m3s,7,14,0.006997975986450911
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,7,14,0.0034560898784548044
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,7,14,0.008184812031686306
+Lerma–Santiago,7,lstm,precip_idw_mm,7,14,0.006070741917937994
+Lerma–Santiago,7,lstm,doy_sin,7,14,0.004575003404170275
+Lerma–Santiago,7,lstm,doy_cos,7,14,0.006080092396587133
+Lerma–Santiago,7,lstm,gasto_medio_m3s,6,13,0.008532067760825157
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,6,13,0.0038900068029761314
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,6,13,0.00854869931936264
+Lerma–Santiago,7,lstm,precip_idw_mm,6,13,0.00617700070142746
+Lerma–Santiago,7,lstm,doy_sin,6,13,0.005214042495936155
+Lerma–Santiago,7,lstm,doy_cos,6,13,0.006259874906390905
+Lerma–Santiago,7,lstm,gasto_medio_m3s,5,12,0.011150338687002659
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,5,12,0.003856830997392535
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,5,12,0.008539126254618168
+Lerma–Santiago,7,lstm,precip_idw_mm,5,12,0.006020100321620703
+Lerma–Santiago,7,lstm,doy_sin,5,12,0.0057743024080991745
+Lerma–Santiago,7,lstm,doy_cos,5,12,0.006530931685119867
+Lerma–Santiago,7,lstm,gasto_medio_m3s,4,11,0.014580716378986835
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,4,11,0.00329773616977036
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,4,11,0.008268148638308048
+Lerma–Santiago,7,lstm,precip_idw_mm,4,11,0.005283050239086151
+Lerma–Santiago,7,lstm,doy_sin,4,11,0.006143566220998764
+Lerma–Santiago,7,lstm,doy_cos,4,11,0.00721893273293972
+Lerma–Santiago,7,lstm,gasto_medio_m3s,3,10,0.01892673969268799
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,3,10,0.004065396264195442
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,3,10,0.008319197222590446
+Lerma–Santiago,7,lstm,precip_idw_mm,3,10,0.004532722290605307
+Lerma–Santiago,7,lstm,doy_sin,3,10,0.006238847970962524
+Lerma–Santiago,7,lstm,doy_cos,3,10,0.009569318033754826
+Lerma–Santiago,7,lstm,gasto_medio_m3s,2,9,0.029254993423819542
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,2,9,0.009299219585955143
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,2,9,0.008013851009309292
+Lerma–Santiago,7,lstm,precip_idw_mm,2,9,0.004066683817654848
+Lerma–Santiago,7,lstm,doy_sin,2,9,0.005691912025213242
+Lerma–Santiago,7,lstm,doy_cos,2,9,0.016078593209385872
+Lerma–Santiago,7,lstm,gasto_medio_m3s,1,8,0.07152778655290604
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,1,8,0.018786408007144928
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,1,8,0.005415407475084066
+Lerma–Santiago,7,lstm,precip_idw_mm,1,8,0.005004407837986946
+Lerma–Santiago,7,lstm,doy_sin,1,8,0.0070180087350308895
+Lerma–Santiago,7,lstm,doy_cos,1,8,0.023339368402957916
+Lerma–Santiago,7,lstm,gasto_medio_m3s,0,7,0.23611736297607422
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma7,0,7,0.022737687453627586
+Lerma–Santiago,7,lstm,gasto_medio_m3s_ma30,0,7,0.011194747872650623
+Lerma–Santiago,7,lstm,precip_idw_mm,0,7,0.017961544916033745
+Lerma–Santiago,7,lstm,doy_sin,0,7,0.02225845865905285
+Lerma–Santiago,7,lstm,doy_cos,0,7,0.016300247982144356
+Lerma–Santiago,14,lstm,gasto_medio_m3s,29,43,0.0009963178308680654
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,29,43,0.0006474231486208737
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,29,43,0.0019093326991423965
+Lerma–Santiago,14,lstm,precip_idw_mm,29,43,0.0010914286831393838
+Lerma–Santiago,14,lstm,doy_sin,29,43,0.001211532042361796
+Lerma–Santiago,14,lstm,doy_cos,29,43,0.0031302664428949356
+Lerma–Santiago,14,lstm,gasto_medio_m3s,28,42,0.0011508646421134472
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,28,42,0.0007416648440994322
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,28,42,0.0019561152439564466
+Lerma–Santiago,14,lstm,precip_idw_mm,28,42,0.0011499422835186124
+Lerma–Santiago,14,lstm,doy_sin,28,42,0.0014061960391700268
+Lerma–Santiago,14,lstm,doy_cos,28,42,0.003324904479086399
+Lerma–Santiago,14,lstm,gasto_medio_m3s,27,41,0.00128257239703089
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,27,41,0.0007944860844872892
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,27,41,0.0019524982199072838
+Lerma–Santiago,14,lstm,precip_idw_mm,27,41,0.0012466789921745658
+Lerma–Santiago,14,lstm,doy_sin,27,41,0.0015465050237253308
+Lerma–Santiago,14,lstm,doy_cos,27,41,0.0034358762204647064
+Lerma–Santiago,14,lstm,gasto_medio_m3s,26,40,0.0013837749138474464
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,26,40,0.0008326785755343735
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,26,40,0.0019424200290814042
+Lerma–Santiago,14,lstm,precip_idw_mm,26,40,0.001262606238014996
+Lerma–Santiago,14,lstm,doy_sin,26,40,0.001665152725763619
+Lerma–Santiago,14,lstm,doy_cos,26,40,0.0034997828770428896
+Lerma–Santiago,14,lstm,gasto_medio_m3s,25,39,0.0015048561617732048
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,25,39,0.0008623416651971638
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,25,39,0.0019418037263676524
+Lerma–Santiago,14,lstm,precip_idw_mm,25,39,0.0013752797385677695
+Lerma–Santiago,14,lstm,doy_sin,25,39,0.0017649984220042825
+Lerma–Santiago,14,lstm,doy_cos,25,39,0.0035377079620957375
+Lerma–Santiago,14,lstm,gasto_medio_m3s,24,38,0.0015969648957252502
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,24,38,0.0008987034671008587
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,24,38,0.0019703691359609365
+Lerma–Santiago,14,lstm,precip_idw_mm,24,38,0.0014221445890143514
+Lerma–Santiago,14,lstm,doy_sin,24,38,0.0018655085004866123
+Lerma–Santiago,14,lstm,doy_cos,24,38,0.0035678620915859938
+Lerma–Santiago,14,lstm,gasto_medio_m3s,23,37,0.0017190227517858148
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,23,37,0.0009392663487233222
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,23,37,0.00203711143694818
+Lerma–Santiago,14,lstm,precip_idw_mm,23,37,0.0014868552098050714
+Lerma–Santiago,14,lstm,doy_sin,23,37,0.0019741524010896683
+Lerma–Santiago,14,lstm,doy_cos,23,37,0.0036045322194695473
+Lerma–Santiago,14,lstm,gasto_medio_m3s,22,36,0.0018218009499832988
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,22,36,0.0009791128104552627
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,22,36,0.0021422216668725014
+Lerma–Santiago,14,lstm,precip_idw_mm,22,36,0.0015409585321322083
+Lerma–Santiago,14,lstm,doy_sin,22,36,0.002101840451359749
+Lerma–Santiago,14,lstm,doy_cos,22,36,0.0036678239703178406
+Lerma–Santiago,14,lstm,gasto_medio_m3s,21,35,0.001968249911442399
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,21,35,0.0010165447602048516
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,21,35,0.002269025193527341
+Lerma–Santiago,14,lstm,precip_idw_mm,21,35,0.0016250753542408347
+Lerma–Santiago,14,lstm,doy_sin,21,35,0.0022514527663588524
+Lerma–Santiago,14,lstm,doy_cos,21,35,0.0037677574437111616
+Lerma–Santiago,14,lstm,gasto_medio_m3s,20,34,0.002127822721377015
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,20,34,0.0010684708831831813
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,20,34,0.0024310883600264788
+Lerma–Santiago,14,lstm,precip_idw_mm,20,34,0.0017718632007017732
+Lerma–Santiago,14,lstm,doy_sin,20,34,0.0024190584663301706
+Lerma–Santiago,14,lstm,doy_cos,20,34,0.0039048604667186737
+Lerma–Santiago,14,lstm,gasto_medio_m3s,19,33,0.002322305692359805
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,19,33,0.0011407864512875676
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,19,33,0.0026317026931792498
+Lerma–Santiago,14,lstm,precip_idw_mm,19,33,0.0018211608985438943
+Lerma–Santiago,14,lstm,doy_sin,19,33,0.0026135817170143127
+Lerma–Santiago,14,lstm,doy_cos,19,33,0.004092891234904528
+Lerma–Santiago,14,lstm,gasto_medio_m3s,18,32,0.002574833342805505
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,18,32,0.001220228965394199
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,18,32,0.0028500945772975683
+Lerma–Santiago,14,lstm,precip_idw_mm,18,32,0.001974803628399968
+Lerma–Santiago,14,lstm,doy_sin,18,32,0.002822120441123843
+Lerma–Santiago,14,lstm,doy_cos,18,32,0.004319853615015745
+Lerma–Santiago,14,lstm,gasto_medio_m3s,17,31,0.0028858017176389694
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,17,31,0.00130174879450351
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,17,31,0.003076795255765319
+Lerma–Santiago,14,lstm,precip_idw_mm,17,31,0.0020592634100466967
+Lerma–Santiago,14,lstm,doy_sin,17,31,0.003056546673178673
+Lerma–Santiago,14,lstm,doy_cos,17,31,0.004586711525917053
+Lerma–Santiago,14,lstm,gasto_medio_m3s,16,30,0.0032461073715239763
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,16,30,0.0013841432519257069
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,16,30,0.0033042198047041893
+Lerma–Santiago,14,lstm,precip_idw_mm,16,30,0.002154091140255332
+Lerma–Santiago,14,lstm,doy_sin,16,30,0.0033090123906731606
+Lerma–Santiago,14,lstm,doy_cos,16,30,0.004897391889244318
+Lerma–Santiago,14,lstm,gasto_medio_m3s,15,29,0.0036472438368946314
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,15,29,0.0014895964413881302
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,15,29,0.0035369794350117445
+Lerma–Santiago,14,lstm,precip_idw_mm,15,29,0.0023995451629161835
+Lerma–Santiago,14,lstm,doy_sin,15,29,0.003574674716219306
+Lerma–Santiago,14,lstm,doy_cos,15,29,0.005233227740973234
+Lerma–Santiago,14,lstm,gasto_medio_m3s,14,28,0.004143550526350737
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,14,28,0.0016055084997788072
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,14,28,0.0037509892135858536
+Lerma–Santiago,14,lstm,precip_idw_mm,14,28,0.0025486843660473824
+Lerma–Santiago,14,lstm,doy_sin,14,28,0.0038590840995311737
+Lerma–Santiago,14,lstm,doy_cos,14,28,0.005584453698247671
+Lerma–Santiago,14,lstm,gasto_medio_m3s,13,27,0.004716332536190748
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,13,27,0.001741345040500164
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,13,27,0.003960051108151674
+Lerma–Santiago,14,lstm,precip_idw_mm,13,27,0.0026870558504015207
+Lerma–Santiago,14,lstm,doy_sin,13,27,0.00414471747353673
+Lerma–Santiago,14,lstm,doy_cos,13,27,0.0059446427039802074
+Lerma–Santiago,14,lstm,gasto_medio_m3s,12,26,0.005201574880629778
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,12,26,0.0018822824349626899
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,12,26,0.004136527422815561
+Lerma–Santiago,14,lstm,precip_idw_mm,12,26,0.0028936825692653656
+Lerma–Santiago,14,lstm,doy_sin,12,26,0.004424646962434053
+Lerma–Santiago,14,lstm,doy_cos,12,26,0.00630028685554862
+Lerma–Santiago,14,lstm,gasto_medio_m3s,11,25,0.0057462905533611774
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,11,25,0.0020329251419752836
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,11,25,0.004281606059521437
+Lerma–Santiago,14,lstm,precip_idw_mm,11,25,0.0029890332370996475
+Lerma–Santiago,14,lstm,doy_sin,11,25,0.004678454715758562
+Lerma–Santiago,14,lstm,doy_cos,11,25,0.00665292190387845
+Lerma–Santiago,14,lstm,gasto_medio_m3s,10,24,0.006347870919853449
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,10,24,0.00220760446973145
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,10,24,0.004397551063448191
+Lerma–Santiago,14,lstm,precip_idw_mm,10,24,0.003215551609173417
+Lerma–Santiago,14,lstm,doy_sin,10,24,0.0049020759761333466
+Lerma–Santiago,14,lstm,doy_cos,10,24,0.006976319011300802
+Lerma–Santiago,14,lstm,gasto_medio_m3s,9,23,0.006822573486715555
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,9,23,0.002435295842587948
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,9,23,0.004552319645881653
+Lerma–Santiago,14,lstm,precip_idw_mm,9,23,0.0032952039036899805
+Lerma–Santiago,14,lstm,doy_sin,9,23,0.00506261782720685
+Lerma–Santiago,14,lstm,doy_cos,9,23,0.007280032616108656
+Lerma–Santiago,14,lstm,gasto_medio_m3s,8,22,0.0072831385768949986
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,8,22,0.0027286848053336143
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,8,22,0.004768244922161102
+Lerma–Santiago,14,lstm,precip_idw_mm,8,22,0.0033649553079158068
+Lerma–Santiago,14,lstm,doy_sin,8,22,0.005156689789146185
+Lerma–Santiago,14,lstm,doy_cos,8,22,0.007580933626741171
+Lerma–Santiago,14,lstm,gasto_medio_m3s,7,21,0.007435972336679697
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,7,21,0.003190829185768962
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,7,21,0.005230455193668604
+Lerma–Santiago,14,lstm,precip_idw_mm,7,21,0.003508402267470956
+Lerma–Santiago,14,lstm,doy_sin,7,21,0.005173714365810156
+Lerma–Santiago,14,lstm,doy_cos,7,21,0.007893271744251251
+Lerma–Santiago,14,lstm,gasto_medio_m3s,6,20,0.007635431829839945
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,6,20,0.003912023734301329
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,6,20,0.006131077650934458
+Lerma–Santiago,14,lstm,precip_idw_mm,6,20,0.0035650257486850023
+Lerma–Santiago,14,lstm,doy_sin,6,20,0.00517529621720314
+Lerma–Santiago,14,lstm,doy_cos,6,20,0.008253735490143299
+Lerma–Santiago,14,lstm,gasto_medio_m3s,5,19,0.008447282947599888
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,5,19,0.00493351835757494
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,5,19,0.007304968778043985
+Lerma–Santiago,14,lstm,precip_idw_mm,5,19,0.003729032352566719
+Lerma–Santiago,14,lstm,doy_sin,5,19,0.005329542327672243
+Lerma–Santiago,14,lstm,doy_cos,5,19,0.008717388845980167
+Lerma–Santiago,14,lstm,gasto_medio_m3s,4,18,0.010944929905235767
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,4,18,0.006127324420958757
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,4,18,0.008480277843773365
+Lerma–Santiago,14,lstm,precip_idw_mm,4,18,0.0037615562323480844
+Lerma–Santiago,14,lstm,doy_sin,4,18,0.005727296229451895
+Lerma–Santiago,14,lstm,doy_cos,4,18,0.00936215091496706
+Lerma–Santiago,14,lstm,gasto_medio_m3s,3,17,0.01841438002884388
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,3,17,0.007153851445764303
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,3,17,0.009237988851964474
+Lerma–Santiago,14,lstm,precip_idw_mm,3,17,0.003905167104676366
+Lerma–Santiago,14,lstm,doy_sin,3,17,0.0067754448391497135
+Lerma–Santiago,14,lstm,doy_cos,3,17,0.010082260705530643
+Lerma–Santiago,14,lstm,gasto_medio_m3s,2,16,0.037188820540905
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,2,16,0.007909676060080528
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,2,16,0.008567866869270802
+Lerma–Santiago,14,lstm,precip_idw_mm,2,16,0.004616132937371731
+Lerma–Santiago,14,lstm,doy_sin,2,16,0.008906819857656956
+Lerma–Santiago,14,lstm,doy_cos,2,16,0.010501701384782791
+Lerma–Santiago,14,lstm,gasto_medio_m3s,1,15,0.0770430639386177
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,1,15,0.00933475885540247
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,1,15,0.005199984181672335
+Lerma–Santiago,14,lstm,precip_idw_mm,1,15,0.006858261302113533
+Lerma–Santiago,14,lstm,doy_sin,1,15,0.013331398367881775
+Lerma–Santiago,14,lstm,doy_cos,1,15,0.009511996991932392
+Lerma–Santiago,14,lstm,gasto_medio_m3s,0,14,0.14894598722457886
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma7,0,14,0.012406326830387115
+Lerma–Santiago,14,lstm,gasto_medio_m3s_ma30,0,14,0.00842155423015356
+Lerma–Santiago,14,lstm,precip_idw_mm,0,14,0.015315201133489609
+Lerma–Santiago,14,lstm,doy_sin,0,14,0.02039295621216297
+Lerma–Santiago,14,lstm,doy_cos,0,14,0.007690591271966696
+Pánuco,1,lstm,gasto_medio_m3s,29,30,0.0011283652856945992
+Pánuco,1,lstm,gasto_medio_m3s_ma7,29,30,0.0005788058624602854
+Pánuco,1,lstm,gasto_medio_m3s_ma30,29,30,0.00017284062050748616
+Pánuco,1,lstm,precip_idw_mm,29,30,0.00041222211439162493
+Pánuco,1,lstm,doy_sin,29,30,0.00011292186536593363
+Pánuco,1,lstm,doy_cos,29,30,0.00021067021589260548
+Pánuco,1,lstm,gasto_medio_m3s,28,29,0.0006707270513288677
+Pánuco,1,lstm,gasto_medio_m3s_ma7,28,29,0.0005606926861219108
+Pánuco,1,lstm,gasto_medio_m3s_ma30,28,29,0.00017686747014522552
+Pánuco,1,lstm,precip_idw_mm,28,29,0.0003952532133553177
+Pánuco,1,lstm,doy_sin,28,29,0.0001396231964463368
+Pánuco,1,lstm,doy_cos,28,29,0.00019617826910689473
+Pánuco,1,lstm,gasto_medio_m3s,27,28,0.0006951827090233564
+Pánuco,1,lstm,gasto_medio_m3s_ma7,27,28,0.0006217346526682377
+Pánuco,1,lstm,gasto_medio_m3s_ma30,27,28,0.0001960156805580482
+Pánuco,1,lstm,precip_idw_mm,27,28,0.00039188985829241574
+Pánuco,1,lstm,doy_sin,27,28,0.0001479987258790061
+Pánuco,1,lstm,doy_cos,27,28,0.0002055358636425808
+Pánuco,1,lstm,gasto_medio_m3s,26,27,0.0008111982024274766
+Pánuco,1,lstm,gasto_medio_m3s_ma7,26,27,0.0006708729197271168
+Pánuco,1,lstm,gasto_medio_m3s_ma30,26,27,0.0002039531245827675
+Pánuco,1,lstm,precip_idw_mm,26,27,0.0003706166462507099
+Pánuco,1,lstm,doy_sin,26,27,0.00016152810712810606
+Pánuco,1,lstm,doy_cos,26,27,0.00021090028167236596
+Pánuco,1,lstm,gasto_medio_m3s,25,26,0.0009217241895385087
+Pánuco,1,lstm,gasto_medio_m3s_ma7,25,26,0.000708813953679055
+Pánuco,1,lstm,gasto_medio_m3s_ma30,25,26,0.0002252815174870193
+Pánuco,1,lstm,precip_idw_mm,25,26,0.00039617810398340225
+Pánuco,1,lstm,doy_sin,25,26,0.00017609701899345964
+Pánuco,1,lstm,doy_cos,25,26,0.00022267457097768784
+Pánuco,1,lstm,gasto_medio_m3s,24,25,0.0009111981489695609
+Pánuco,1,lstm,gasto_medio_m3s_ma7,24,25,0.0007384648197330534
+Pánuco,1,lstm,gasto_medio_m3s_ma30,24,25,0.0002592159144114703
+Pánuco,1,lstm,precip_idw_mm,24,25,0.000384669256163761
+Pánuco,1,lstm,doy_sin,24,25,0.0001922954252222553
+Pánuco,1,lstm,doy_cos,24,25,0.0002405641134828329
+Pánuco,1,lstm,gasto_medio_m3s,23,24,0.001045790035277605
+Pánuco,1,lstm,gasto_medio_m3s_ma7,23,24,0.0007426078082062304
+Pánuco,1,lstm,gasto_medio_m3s_ma30,23,24,0.0002964816230814904
+Pánuco,1,lstm,precip_idw_mm,23,24,0.0004129094013478607
+Pánuco,1,lstm,doy_sin,23,24,0.0002125909668393433
+Pánuco,1,lstm,doy_cos,23,24,0.0002629660884849727
+Pánuco,1,lstm,gasto_medio_m3s,22,23,0.0010787906358018517
+Pánuco,1,lstm,gasto_medio_m3s_ma7,22,23,0.0007373059052042663
+Pánuco,1,lstm,gasto_medio_m3s_ma30,22,23,0.00033217997406609356
+Pánuco,1,lstm,precip_idw_mm,22,23,0.0004377464938443154
+Pánuco,1,lstm,doy_sin,22,23,0.00023662055900786072
+Pánuco,1,lstm,doy_cos,22,23,0.0002965325547847897
+Pánuco,1,lstm,gasto_medio_m3s,21,22,0.0011764648370444775
+Pánuco,1,lstm,gasto_medio_m3s_ma7,21,22,0.0007528809364885092
+Pánuco,1,lstm,gasto_medio_m3s_ma30,21,22,0.0003425509203225374
+Pánuco,1,lstm,precip_idw_mm,21,22,0.00045726625830866396
+Pánuco,1,lstm,doy_sin,21,22,0.0002695395378395915
+Pánuco,1,lstm,doy_cos,21,22,0.0003458838036749512
+Pánuco,1,lstm,gasto_medio_m3s,20,21,0.0011746077798306942
+Pánuco,1,lstm,gasto_medio_m3s_ma7,20,21,0.0007800126331858337
+Pánuco,1,lstm,gasto_medio_m3s_ma30,20,21,0.0003324589633848518
+Pánuco,1,lstm,precip_idw_mm,20,21,0.0004718242271337658
+Pánuco,1,lstm,doy_sin,20,21,0.0003020174044650048
+Pánuco,1,lstm,doy_cos,20,21,0.00040742653072811663
+Pánuco,1,lstm,gasto_medio_m3s,19,20,0.001329796970821917
+Pánuco,1,lstm,gasto_medio_m3s_ma7,19,20,0.0008142616716213524
+Pánuco,1,lstm,gasto_medio_m3s_ma30,19,20,0.00030431547202169895
+Pánuco,1,lstm,precip_idw_mm,19,20,0.0005217422149144113
+Pánuco,1,lstm,doy_sin,19,20,0.0003323059936519712
+Pánuco,1,lstm,doy_cos,19,20,0.0004932490410283208
+Pánuco,1,lstm,gasto_medio_m3s,18,19,0.0013175708008930087
+Pánuco,1,lstm,gasto_medio_m3s_ma7,18,19,0.0008414899930357933
+Pánuco,1,lstm,gasto_medio_m3s_ma30,18,19,0.00028617418138310313
+Pánuco,1,lstm,precip_idw_mm,18,19,0.00055664376122877
+Pánuco,1,lstm,doy_sin,18,19,0.00035366733209230006
+Pánuco,1,lstm,doy_cos,18,19,0.0005780858336947858
+Pánuco,1,lstm,gasto_medio_m3s,17,18,0.0014934699283912778
+Pánuco,1,lstm,gasto_medio_m3s_ma7,17,18,0.0008723509381525218
+Pánuco,1,lstm,gasto_medio_m3s_ma30,17,18,0.00032669733627699316
+Pánuco,1,lstm,precip_idw_mm,17,18,0.0006289937300607562
+Pánuco,1,lstm,doy_sin,17,18,0.00038243489689193666
+Pánuco,1,lstm,doy_cos,17,18,0.0006520201568491757
+Pánuco,1,lstm,gasto_medio_m3s,16,17,0.0016602136893197894
+Pánuco,1,lstm,gasto_medio_m3s_ma7,16,17,0.0009726869757287204
+Pánuco,1,lstm,gasto_medio_m3s_ma30,16,17,0.00040881140739656985
+Pánuco,1,lstm,precip_idw_mm,16,17,0.000736574933398515
+Pánuco,1,lstm,doy_sin,16,17,0.0004386986547615379
+Pánuco,1,lstm,doy_cos,16,17,0.0006869214703328907
+Pánuco,1,lstm,gasto_medio_m3s,15,16,0.0018199342302978039
+Pánuco,1,lstm,gasto_medio_m3s_ma7,15,16,0.0012178182369098067
+Pánuco,1,lstm,gasto_medio_m3s_ma30,15,16,0.00048578952555544674
+Pánuco,1,lstm,precip_idw_mm,15,16,0.0008040335378609598
+Pánuco,1,lstm,doy_sin,15,16,0.0005312840803526342
+Pánuco,1,lstm,doy_cos,15,16,0.0006613371078856289
+Pánuco,1,lstm,gasto_medio_m3s,14,15,0.001827229163609445
+Pánuco,1,lstm,gasto_medio_m3s_ma7,14,15,0.0016803884645923972
+Pánuco,1,lstm,gasto_medio_m3s_ma30,14,15,0.000519502442330122
+Pánuco,1,lstm,precip_idw_mm,14,15,0.0009506099740974605
+Pánuco,1,lstm,doy_sin,14,15,0.0006563200731761754
+Pánuco,1,lstm,doy_cos,14,15,0.0005863539408892393
+Pánuco,1,lstm,gasto_medio_m3s,13,14,0.0019228275632485747
+Pánuco,1,lstm,gasto_medio_m3s_ma7,13,14,0.002275939332321286
+Pánuco,1,lstm,gasto_medio_m3s_ma30,13,14,0.0005863271071575582
+Pánuco,1,lstm,precip_idw_mm,13,14,0.0010119859362021089
+Pánuco,1,lstm,doy_sin,13,14,0.0007894320297054946
+Pánuco,1,lstm,doy_cos,13,14,0.0005636017885990441
+Pánuco,1,lstm,gasto_medio_m3s,12,13,0.00211463519372046
+Pánuco,1,lstm,gasto_medio_m3s_ma7,12,13,0.00286042015068233
+Pánuco,1,lstm,gasto_medio_m3s_ma30,12,13,0.0008805841207504272
+Pánuco,1,lstm,precip_idw_mm,12,13,0.0010587662691250443
+Pánuco,1,lstm,doy_sin,12,13,0.0008907078881748021
+Pánuco,1,lstm,doy_cos,12,13,0.0006820859271101654
+Pánuco,1,lstm,gasto_medio_m3s,11,12,0.0025214655324816704
+Pánuco,1,lstm,gasto_medio_m3s_ma7,11,12,0.0032740726601332426
+Pánuco,1,lstm,gasto_medio_m3s_ma30,11,12,0.0014636166160926223
+Pánuco,1,lstm,precip_idw_mm,11,12,0.0011576206889003515
+Pánuco,1,lstm,doy_sin,11,12,0.0009735723142512143
+Pánuco,1,lstm,doy_cos,11,12,0.0008559492416679859
+Pánuco,1,lstm,gasto_medio_m3s,10,11,0.003770645475015044
+Pánuco,1,lstm,gasto_medio_m3s_ma7,10,11,0.003391837701201439
+Pánuco,1,lstm,gasto_medio_m3s_ma30,10,11,0.0021610548719763756
+Pánuco,1,lstm,precip_idw_mm,10,11,0.0011385054094716907
+Pánuco,1,lstm,doy_sin,10,11,0.0010902289068326354
+Pánuco,1,lstm,doy_cos,10,11,0.001009942265227437
+Pánuco,1,lstm,gasto_medio_m3s,9,10,0.0050475262105464935
+Pánuco,1,lstm,gasto_medio_m3s_ma7,9,10,0.003147165523841977
+Pánuco,1,lstm,gasto_medio_m3s_ma30,9,10,0.002849757671356201
+Pánuco,1,lstm,precip_idw_mm,9,10,0.0011223958572372794
+Pánuco,1,lstm,doy_sin,9,10,0.0013089828426018357
+Pánuco,1,lstm,doy_cos,9,10,0.0010917222825810313
+Pánuco,1,lstm,gasto_medio_m3s,8,9,0.006861958187073469
+Pánuco,1,lstm,gasto_medio_m3s_ma7,8,9,0.002616873010993004
+Pánuco,1,lstm,gasto_medio_m3s_ma30,8,9,0.0034016624558717012
+Pánuco,1,lstm,precip_idw_mm,8,9,0.001120263827033341
+Pánuco,1,lstm,doy_sin,8,9,0.0016300628194585443
+Pánuco,1,lstm,doy_cos,8,9,0.0011603045277297497
+Pánuco,1,lstm,gasto_medio_m3s,7,8,0.008566850796341896
+Pánuco,1,lstm,gasto_medio_m3s_ma7,7,8,0.0022952479775995016
+Pánuco,1,lstm,gasto_medio_m3s_ma30,7,8,0.0037254467606544495
+Pánuco,1,lstm,precip_idw_mm,7,8,0.0012835048837587237
+Pánuco,1,lstm,doy_sin,7,8,0.0020590166095644236
+Pánuco,1,lstm,doy_cos,7,8,0.0013050261186435819
+Pánuco,1,lstm,gasto_medio_m3s,6,7,0.01070619747042656
+Pánuco,1,lstm,gasto_medio_m3s_ma7,6,7,0.0025039026513695717
+Pánuco,1,lstm,gasto_medio_m3s_ma30,6,7,0.0036704305093735456
+Pánuco,1,lstm,precip_idw_mm,6,7,0.001511211390607059
+Pánuco,1,lstm,doy_sin,6,7,0.002483105519786477
+Pánuco,1,lstm,doy_cos,6,7,0.0014416027115657926
+Pánuco,1,lstm,gasto_medio_m3s,5,6,0.012976028956472874
+Pánuco,1,lstm,gasto_medio_m3s_ma7,5,6,0.002716322196647525
+Pánuco,1,lstm,gasto_medio_m3s_ma30,5,6,0.003477174788713455
+Pánuco,1,lstm,precip_idw_mm,5,6,0.001830324181355536
+Pánuco,1,lstm,doy_sin,5,6,0.002805634168908
+Pánuco,1,lstm,doy_cos,5,6,0.00170688156504184
+Pánuco,1,lstm,gasto_medio_m3s,4,5,0.01714721880853176
+Pánuco,1,lstm,gasto_medio_m3s_ma7,4,5,0.002641679486259818
+Pánuco,1,lstm,gasto_medio_m3s_ma30,4,5,0.003107835305854678
+Pánuco,1,lstm,precip_idw_mm,4,5,0.0021920418366789818
+Pánuco,1,lstm,doy_sin,4,5,0.0032441001385450363
+Pánuco,1,lstm,doy_cos,4,5,0.0022675329819321632
+Pánuco,1,lstm,gasto_medio_m3s,3,4,0.020273523405194283
+Pánuco,1,lstm,gasto_medio_m3s_ma7,3,4,0.0034890789538621902
+Pánuco,1,lstm,gasto_medio_m3s_ma30,3,4,0.0034544828813523054
+Pánuco,1,lstm,precip_idw_mm,3,4,0.0024975219275802374
+Pánuco,1,lstm,doy_sin,3,4,0.004071487113833427
+Pánuco,1,lstm,doy_cos,3,4,0.0028821565210819244
+Pánuco,1,lstm,gasto_medio_m3s,2,3,0.03595137968659401
+Pánuco,1,lstm,gasto_medio_m3s_ma7,2,3,0.005743088200688362
+Pánuco,1,lstm,gasto_medio_m3s_ma30,2,3,0.003577764146029949
+Pánuco,1,lstm,precip_idw_mm,2,3,0.0033861612901091576
+Pánuco,1,lstm,doy_sin,2,3,0.005183902103453875
+Pánuco,1,lstm,doy_cos,2,3,0.003481510793790221
+Pánuco,1,lstm,gasto_medio_m3s,1,2,0.037157267332077026
+Pánuco,1,lstm,gasto_medio_m3s_ma7,1,2,0.008072763681411743
+Pánuco,1,lstm,gasto_medio_m3s_ma30,1,2,0.009554236195981503
+Pánuco,1,lstm,precip_idw_mm,1,2,0.008960556238889694
+Pánuco,1,lstm,doy_sin,1,2,0.004350465256720781
+Pánuco,1,lstm,doy_cos,1,2,0.0063650296069681644
+Pánuco,1,lstm,gasto_medio_m3s,0,1,0.4468212127685547
+Pánuco,1,lstm,gasto_medio_m3s_ma7,0,1,0.05706989765167236
+Pánuco,1,lstm,gasto_medio_m3s_ma30,0,1,0.011726644821465015
+Pánuco,1,lstm,precip_idw_mm,0,1,0.03669063746929169
+Pánuco,1,lstm,doy_sin,0,1,0.036018069833517075
+Pánuco,1,lstm,doy_cos,0,1,0.019297080114483833
+Pánuco,7,lstm,gasto_medio_m3s,29,36,0.0006070779054425657
+Pánuco,7,lstm,gasto_medio_m3s_ma7,29,36,0.0004978002398274839
+Pánuco,7,lstm,gasto_medio_m3s_ma30,29,36,0.0002561105357017368
+Pánuco,7,lstm,precip_idw_mm,29,36,0.0003569497202988714
+Pánuco,7,lstm,doy_sin,29,36,0.00011490759061416611
+Pánuco,7,lstm,doy_cos,29,36,0.00021848554024472833
+Pánuco,7,lstm,gasto_medio_m3s,28,35,0.00061401491984725
+Pánuco,7,lstm,gasto_medio_m3s_ma7,28,35,0.0005441486719064415
+Pánuco,7,lstm,gasto_medio_m3s_ma30,28,35,0.00029501260723918676
+Pánuco,7,lstm,precip_idw_mm,28,35,0.0003896676644217223
+Pánuco,7,lstm,doy_sin,28,35,0.0001354406267637387
+Pánuco,7,lstm,doy_cos,28,35,0.000254378275712952
+Pánuco,7,lstm,gasto_medio_m3s,27,34,0.0005947924219071865
+Pánuco,7,lstm,gasto_medio_m3s_ma7,27,34,0.0005752649740315974
+Pánuco,7,lstm,gasto_medio_m3s_ma30,27,34,0.0003256208437960595
+Pánuco,7,lstm,precip_idw_mm,27,34,0.0004303794412408024
+Pánuco,7,lstm,doy_sin,27,34,0.00015161083138082176
+Pánuco,7,lstm,doy_cos,27,34,0.000291279488010332
+Pánuco,7,lstm,gasto_medio_m3s,26,33,0.0006244400283321738
+Pánuco,7,lstm,gasto_medio_m3s_ma7,26,33,0.0005597991985268891
+Pánuco,7,lstm,gasto_medio_m3s_ma30,26,33,0.00035134333302266896
+Pánuco,7,lstm,precip_idw_mm,26,33,0.0004840768233407289
+Pánuco,7,lstm,doy_sin,26,33,0.00016379081353079528
+Pánuco,7,lstm,doy_cos,26,33,0.00032003913656808436
+Pánuco,7,lstm,gasto_medio_m3s,25,32,0.0006480079609900713
+Pánuco,7,lstm,gasto_medio_m3s_ma7,25,32,0.0005520134582184255
+Pánuco,7,lstm,gasto_medio_m3s_ma30,25,32,0.000381529243895784
+Pánuco,7,lstm,precip_idw_mm,25,32,0.0005992670194245875
+Pánuco,7,lstm,doy_sin,25,32,0.0001741836458677426
+Pánuco,7,lstm,doy_cos,25,32,0.00033429867471568286
+Pánuco,7,lstm,gasto_medio_m3s,24,31,0.0007405318319797516
+Pánuco,7,lstm,gasto_medio_m3s_ma7,24,31,0.0006318174418993294
+Pánuco,7,lstm,gasto_medio_m3s_ma30,24,31,0.00041772727854549885
+Pánuco,7,lstm,precip_idw_mm,24,31,0.0007102263043634593
+Pánuco,7,lstm,doy_sin,24,31,0.0001897888578241691
+Pánuco,7,lstm,doy_cos,24,31,0.00033669351250864565
+Pánuco,7,lstm,gasto_medio_m3s,23,30,0.0009156346786767244
+Pánuco,7,lstm,gasto_medio_m3s_ma7,23,30,0.0007273984956555068
+Pánuco,7,lstm,gasto_medio_m3s_ma30,23,30,0.00045750910066999495
+Pánuco,7,lstm,precip_idw_mm,23,30,0.0008630595984868705
+Pánuco,7,lstm,doy_sin,23,30,0.00021321659733075649
+Pánuco,7,lstm,doy_cos,23,30,0.00033984039328061044
+Pánuco,7,lstm,gasto_medio_m3s,22,29,0.0011443818220868707
+Pánuco,7,lstm,gasto_medio_m3s_ma7,22,29,0.0007995671476237476
+Pánuco,7,lstm,gasto_medio_m3s_ma30,22,29,0.0005046508158557117
+Pánuco,7,lstm,precip_idw_mm,22,29,0.0010532342130318284
+Pánuco,7,lstm,doy_sin,22,29,0.0002408596919849515
+Pánuco,7,lstm,doy_cos,22,29,0.0003875373222399503
+Pánuco,7,lstm,gasto_medio_m3s,21,28,0.0014675637939944863
+Pánuco,7,lstm,gasto_medio_m3s_ma7,21,28,0.0007870947592891753
+Pánuco,7,lstm,gasto_medio_m3s_ma30,21,28,0.0005575321265496314
+Pánuco,7,lstm,precip_idw_mm,21,28,0.0012416112003847957
+Pánuco,7,lstm,doy_sin,21,28,0.00027223789948038757
+Pánuco,7,lstm,doy_cos,21,28,0.0004761606396641582
+Pánuco,7,lstm,gasto_medio_m3s,20,27,0.0019432855769991875
+Pánuco,7,lstm,gasto_medio_m3s_ma7,20,27,0.0007472191355191171
+Pánuco,7,lstm,gasto_medio_m3s_ma30,20,27,0.000612990406807512
+Pánuco,7,lstm,precip_idw_mm,20,27,0.0013008685782551765
+Pánuco,7,lstm,doy_sin,20,27,0.0003029984363820404
+Pánuco,7,lstm,doy_cos,20,27,0.0005865953280590475
+Pánuco,7,lstm,gasto_medio_m3s,19,26,0.0024187809322029352
+Pánuco,7,lstm,gasto_medio_m3s_ma7,19,26,0.0008718560566194355
+Pánuco,7,lstm,gasto_medio_m3s_ma30,19,26,0.0006661888328380883
+Pánuco,7,lstm,precip_idw_mm,19,26,0.0013496289029717445
+Pánuco,7,lstm,doy_sin,19,26,0.0003369453188497573
+Pánuco,7,lstm,doy_cos,19,26,0.0007000904879532754
+Pánuco,7,lstm,gasto_medio_m3s,18,25,0.002932945266366005
+Pánuco,7,lstm,gasto_medio_m3s_ma7,18,25,0.0012439914280548692
+Pánuco,7,lstm,gasto_medio_m3s_ma30,18,25,0.0007290458306670189
+Pánuco,7,lstm,precip_idw_mm,18,25,0.001384291797876358
+Pánuco,7,lstm,doy_sin,18,25,0.0003962724294979125
+Pánuco,7,lstm,doy_cos,18,25,0.0008009430021047592
+Pánuco,7,lstm,gasto_medio_m3s,17,24,0.0033716007601469755
+Pánuco,7,lstm,gasto_medio_m3s_ma7,17,24,0.0017146541504189372
+Pánuco,7,lstm,gasto_medio_m3s_ma30,17,24,0.0008066745358519256
+Pánuco,7,lstm,precip_idw_mm,17,24,0.0015148972161114216
+Pánuco,7,lstm,doy_sin,17,24,0.00048675076686777174
+Pánuco,7,lstm,doy_cos,17,24,0.000900797953363508
+Pánuco,7,lstm,gasto_medio_m3s,16,23,0.0036316218320280313
+Pánuco,7,lstm,gasto_medio_m3s_ma7,16,23,0.0020488996524363756
+Pánuco,7,lstm,gasto_medio_m3s_ma30,16,23,0.0009086159989237785
+Pánuco,7,lstm,precip_idw_mm,16,23,0.0015377714298665524
+Pánuco,7,lstm,doy_sin,16,23,0.0005674762069247663
+Pánuco,7,lstm,doy_cos,16,23,0.0010484525701031089
+Pánuco,7,lstm,gasto_medio_m3s,15,22,0.0037153661251068115
+Pánuco,7,lstm,gasto_medio_m3s_ma7,15,22,0.0020886557176709175
+Pánuco,7,lstm,gasto_medio_m3s_ma30,15,22,0.0010516770416870713
+Pánuco,7,lstm,precip_idw_mm,15,22,0.0017445603152737021
+Pánuco,7,lstm,doy_sin,15,22,0.0006252792663872242
+Pánuco,7,lstm,doy_cos,15,22,0.0013325921026989818
+Pánuco,7,lstm,gasto_medio_m3s,14,21,0.0035537201911211014
+Pánuco,7,lstm,gasto_medio_m3s_ma7,14,21,0.0018279299838468432
+Pánuco,7,lstm,gasto_medio_m3s_ma30,14,21,0.0012239766074344516
+Pánuco,7,lstm,precip_idw_mm,14,21,0.0019129649735987186
+Pánuco,7,lstm,doy_sin,14,21,0.0006641096551902592
+Pánuco,7,lstm,doy_cos,14,21,0.0016288006445392966
+Pánuco,7,lstm,gasto_medio_m3s,13,20,0.003458101535215974
+Pánuco,7,lstm,gasto_medio_m3s_ma7,13,20,0.0014197415439411998
+Pánuco,7,lstm,gasto_medio_m3s_ma30,13,20,0.0014610253274440765
+Pánuco,7,lstm,precip_idw_mm,13,20,0.0022746981121599674
+Pánuco,7,lstm,doy_sin,13,20,0.0007095813634805381
+Pánuco,7,lstm,doy_cos,13,20,0.001826371648348868
+Pánuco,7,lstm,gasto_medio_m3s,12,19,0.0035868575796484947
+Pánuco,7,lstm,gasto_medio_m3s_ma7,12,19,0.001666648662649095
+Pánuco,7,lstm,gasto_medio_m3s_ma30,12,19,0.0018401462584733963
+Pánuco,7,lstm,precip_idw_mm,12,19,0.002829350298270583
+Pánuco,7,lstm,doy_sin,12,19,0.0008547601173631847
+Pánuco,7,lstm,doy_cos,12,19,0.0018701943336054683
+Pánuco,7,lstm,gasto_medio_m3s,11,18,0.004091727081686258
+Pánuco,7,lstm,gasto_medio_m3s_ma7,11,18,0.002950550988316536
+Pánuco,7,lstm,gasto_medio_m3s_ma30,11,18,0.0024498149286955595
+Pánuco,7,lstm,precip_idw_mm,11,18,0.003792203962802887
+Pánuco,7,lstm,doy_sin,11,18,0.0010944290552288294
+Pánuco,7,lstm,doy_cos,11,18,0.001757730613462627
+Pánuco,7,lstm,gasto_medio_m3s,10,17,0.005231546703726053
+Pánuco,7,lstm,gasto_medio_m3s_ma7,10,17,0.004233917687088251
+Pánuco,7,lstm,gasto_medio_m3s_ma30,10,17,0.0032934434711933136
+Pánuco,7,lstm,precip_idw_mm,10,17,0.004806260112673044
+Pánuco,7,lstm,doy_sin,10,17,0.0013635045615956187
+Pánuco,7,lstm,doy_cos,10,17,0.0015490185469388962
+Pánuco,7,lstm,gasto_medio_m3s,9,16,0.007287101354449987
+Pánuco,7,lstm,gasto_medio_m3s_ma7,9,16,0.00490307342261076
+Pánuco,7,lstm,gasto_medio_m3s_ma30,9,16,0.004271503072232008
+Pánuco,7,lstm,precip_idw_mm,9,16,0.005619358737021685
+Pánuco,7,lstm,doy_sin,9,16,0.0016275261295959353
+Pánuco,7,lstm,doy_cos,9,16,0.0014365370152518153
+Pánuco,7,lstm,gasto_medio_m3s,8,15,0.010575669817626476
+Pánuco,7,lstm,gasto_medio_m3s_ma7,8,15,0.004460573196411133
+Pánuco,7,lstm,gasto_medio_m3s_ma30,8,15,0.005209144204854965
+Pánuco,7,lstm,precip_idw_mm,8,15,0.006093698088079691
+Pánuco,7,lstm,doy_sin,8,15,0.0018968115327879786
+Pánuco,7,lstm,doy_cos,8,15,0.0017716606380417943
+Pánuco,7,lstm,gasto_medio_m3s,7,14,0.015177576802670956
+Pánuco,7,lstm,gasto_medio_m3s_ma7,7,14,0.0030905406456440687
+Pánuco,7,lstm,gasto_medio_m3s_ma30,7,14,0.005933491047471762
+Pánuco,7,lstm,precip_idw_mm,7,14,0.006012683268636465
+Pánuco,7,lstm,doy_sin,7,14,0.0022618197835981846
+Pánuco,7,lstm,doy_cos,7,14,0.002535792300477624
+Pánuco,7,lstm,gasto_medio_m3s,6,13,0.020013006404042244
+Pánuco,7,lstm,gasto_medio_m3s_ma7,6,13,0.00390360108576715
+Pánuco,7,lstm,gasto_medio_m3s_ma30,6,13,0.006360415369272232
+Pánuco,7,lstm,precip_idw_mm,6,13,0.0056831189431250095
+Pánuco,7,lstm,doy_sin,6,13,0.002622121013700962
+Pánuco,7,lstm,doy_cos,6,13,0.003671647747978568
+Pánuco,7,lstm,gasto_medio_m3s,5,12,0.02469506673514843
+Pánuco,7,lstm,gasto_medio_m3s_ma7,5,12,0.009066293016076088
+Pánuco,7,lstm,gasto_medio_m3s_ma30,5,12,0.0064194039441645145
+Pánuco,7,lstm,precip_idw_mm,5,12,0.004909409210085869
+Pánuco,7,lstm,doy_sin,5,12,0.0029174748342484236
+Pánuco,7,lstm,doy_cos,5,12,0.005581904202699661
+Pánuco,7,lstm,gasto_medio_m3s,4,11,0.028843119740486145
+Pánuco,7,lstm,gasto_medio_m3s_ma7,4,11,0.014748163521289825
+Pánuco,7,lstm,gasto_medio_m3s_ma30,4,11,0.006118018180131912
+Pánuco,7,lstm,precip_idw_mm,4,11,0.004329970572143793
+Pánuco,7,lstm,doy_sin,4,11,0.003282237099483609
+Pánuco,7,lstm,doy_cos,4,11,0.008790689520537853
+Pánuco,7,lstm,gasto_medio_m3s,3,10,0.0331575982272625
+Pánuco,7,lstm,gasto_medio_m3s_ma7,3,10,0.01831166446208954
+Pánuco,7,lstm,gasto_medio_m3s_ma30,3,10,0.005651852581650019
+Pánuco,7,lstm,precip_idw_mm,3,10,0.004224782343953848
+Pánuco,7,lstm,doy_sin,3,10,0.004581611603498459
+Pánuco,7,lstm,doy_cos,3,10,0.012789507396519184
+Pánuco,7,lstm,gasto_medio_m3s,2,9,0.04279100522398949
+Pánuco,7,lstm,gasto_medio_m3s_ma7,2,9,0.016305038705468178
+Pánuco,7,lstm,gasto_medio_m3s_ma30,2,9,0.0047600711695849895
+Pánuco,7,lstm,precip_idw_mm,2,9,0.004320494364947081
+Pánuco,7,lstm,doy_sin,2,9,0.00871952623128891
+Pánuco,7,lstm,doy_cos,2,9,0.01653047651052475
+Pánuco,7,lstm,gasto_medio_m3s,1,8,0.07645589113235474
+Pánuco,7,lstm,gasto_medio_m3s_ma7,1,8,0.005997443106025457
+Pánuco,7,lstm,gasto_medio_m3s_ma30,1,8,0.0036549277137964964
+Pánuco,7,lstm,precip_idw_mm,1,8,0.004053841810673475
+Pánuco,7,lstm,doy_sin,1,8,0.017411643639206886
+Pánuco,7,lstm,doy_cos,1,8,0.018495414406061172
+Pánuco,7,lstm,gasto_medio_m3s,0,7,0.18350820243358612
+Pánuco,7,lstm,gasto_medio_m3s_ma7,0,7,0.03208143264055252
+Pánuco,7,lstm,gasto_medio_m3s_ma30,0,7,0.01479045394808054
+Pánuco,7,lstm,precip_idw_mm,0,7,0.022037213668227196
+Pánuco,7,lstm,doy_sin,0,7,0.03199053928256035
+Pánuco,7,lstm,doy_cos,0,7,0.018293142318725586
+Pánuco,14,lstm,gasto_medio_m3s,29,43,0.0011104863369837403
+Pánuco,14,lstm,gasto_medio_m3s_ma7,29,43,0.0008325728704221547
+Pánuco,14,lstm,gasto_medio_m3s_ma30,29,43,0.001612398773431778
+Pánuco,14,lstm,precip_idw_mm,29,43,0.0006778310053050518
+Pánuco,14,lstm,doy_sin,29,43,0.0005126339965499938
+Pánuco,14,lstm,doy_cos,29,43,0.0011521757114678621
+Pánuco,14,lstm,gasto_medio_m3s,28,42,0.0011827738489955664
+Pánuco,14,lstm,gasto_medio_m3s_ma7,28,42,0.0009398648398928344
+Pánuco,14,lstm,gasto_medio_m3s_ma30,28,42,0.0016595452325418591
+Pánuco,14,lstm,precip_idw_mm,28,42,0.0007750983349978924
+Pánuco,14,lstm,doy_sin,28,42,0.0005964134470559657
+Pánuco,14,lstm,doy_cos,28,42,0.0012786166043952107
+Pánuco,14,lstm,gasto_medio_m3s,27,41,0.0012585987569764256
+Pánuco,14,lstm,gasto_medio_m3s_ma7,27,41,0.0010214250069111586
+Pánuco,14,lstm,gasto_medio_m3s_ma30,27,41,0.0016846442595124245
+Pánuco,14,lstm,precip_idw_mm,27,41,0.000826108327601105
+Pánuco,14,lstm,doy_sin,27,41,0.0006642211228609085
+Pánuco,14,lstm,doy_cos,27,41,0.0013785194605588913
+Pánuco,14,lstm,gasto_medio_m3s,26,40,0.0014078710228204727
+Pánuco,14,lstm,gasto_medio_m3s_ma7,26,40,0.0010879081673920155
+Pánuco,14,lstm,gasto_medio_m3s_ma30,26,40,0.0017095627263188362
+Pánuco,14,lstm,precip_idw_mm,26,40,0.0009392231586389244
+Pánuco,14,lstm,doy_sin,26,40,0.0007234993390738964
+Pánuco,14,lstm,doy_cos,26,40,0.0014719647588208318
+Pánuco,14,lstm,gasto_medio_m3s,25,39,0.0015587994130328298
+Pánuco,14,lstm,gasto_medio_m3s_ma7,25,39,0.0011354513699188828
+Pánuco,14,lstm,gasto_medio_m3s_ma30,25,39,0.0017532719066366553
+Pánuco,14,lstm,precip_idw_mm,25,39,0.001011304440908134
+Pánuco,14,lstm,doy_sin,25,39,0.0007775131962262094
+Pánuco,14,lstm,doy_cos,25,39,0.0015514245023950934
+Pánuco,14,lstm,gasto_medio_m3s,24,38,0.0017153285443782806
+Pánuco,14,lstm,gasto_medio_m3s_ma7,24,38,0.0011638905853033066
+Pánuco,14,lstm,gasto_medio_m3s_ma30,24,38,0.0018272822489961982
+Pánuco,14,lstm,precip_idw_mm,24,38,0.0011291304836049676
+Pánuco,14,lstm,doy_sin,24,38,0.0008283150382339954
+Pánuco,14,lstm,doy_cos,24,38,0.001639333087950945
+Pánuco,14,lstm,gasto_medio_m3s,23,37,0.0018818299286067486
+Pánuco,14,lstm,gasto_medio_m3s_ma7,23,37,0.0011885588755831122
+Pánuco,14,lstm,gasto_medio_m3s_ma30,23,37,0.001919373869895935
+Pánuco,14,lstm,precip_idw_mm,23,37,0.0011982538271695375
+Pánuco,14,lstm,doy_sin,23,37,0.0008885523420758545
+Pánuco,14,lstm,doy_cos,23,37,0.0017325457883998752
+Pánuco,14,lstm,gasto_medio_m3s,22,36,0.0019822262693196535
+Pánuco,14,lstm,gasto_medio_m3s_ma7,22,36,0.0012116354191675782
+Pánuco,14,lstm,gasto_medio_m3s_ma30,22,36,0.002032571705058217
+Pánuco,14,lstm,precip_idw_mm,22,36,0.0012499323347583413
+Pánuco,14,lstm,doy_sin,22,36,0.0009822807041928172
+Pánuco,14,lstm,doy_cos,22,36,0.001839501317590475
+Pánuco,14,lstm,gasto_medio_m3s,21,35,0.002145584672689438
+Pánuco,14,lstm,gasto_medio_m3s_ma7,21,35,0.0012694901088252664
+Pánuco,14,lstm,gasto_medio_m3s_ma30,21,35,0.002162906574085355
+Pánuco,14,lstm,precip_idw_mm,21,35,0.0013487475225701928
+Pánuco,14,lstm,doy_sin,21,35,0.0011338804615661502
+Pánuco,14,lstm,doy_cos,21,35,0.00196953141130507
+Pánuco,14,lstm,gasto_medio_m3s,20,34,0.0023101521655917168
+Pánuco,14,lstm,gasto_medio_m3s_ma7,20,34,0.0013813822297379375
+Pánuco,14,lstm,gasto_medio_m3s_ma30,20,34,0.002298054052516818
+Pánuco,14,lstm,precip_idw_mm,20,34,0.0014497122028842568
+Pánuco,14,lstm,doy_sin,20,34,0.0013505956158041954
+Pánuco,14,lstm,doy_cos,20,34,0.0021303300745785236
+Pánuco,14,lstm,gasto_medio_m3s,19,33,0.0024712474551051855
+Pánuco,14,lstm,gasto_medio_m3s_ma7,19,33,0.001530937384814024
+Pánuco,14,lstm,gasto_medio_m3s_ma30,19,33,0.0024515490513294935
+Pánuco,14,lstm,precip_idw_mm,19,33,0.001587753533385694
+Pánuco,14,lstm,doy_sin,19,33,0.0016257542883977294
+Pánuco,14,lstm,doy_cos,19,33,0.002320552011951804
+Pánuco,14,lstm,gasto_medio_m3s,18,32,0.002598482184112072
+Pánuco,14,lstm,gasto_medio_m3s_ma7,18,32,0.0017430954612791538
+Pánuco,14,lstm,gasto_medio_m3s_ma30,18,32,0.00261722132563591
+Pánuco,14,lstm,precip_idw_mm,18,32,0.0017618749989196658
+Pánuco,14,lstm,doy_sin,18,32,0.0019413911504670978
+Pánuco,14,lstm,doy_cos,18,32,0.00254814769141376
+Pánuco,14,lstm,gasto_medio_m3s,17,31,0.0027199804317206144
+Pánuco,14,lstm,gasto_medio_m3s_ma7,17,31,0.0019858870655298233
+Pánuco,14,lstm,gasto_medio_m3s_ma30,17,31,0.002810973674058914
+Pánuco,14,lstm,precip_idw_mm,17,31,0.0019862577319145203
+Pánuco,14,lstm,doy_sin,17,31,0.0022734024096280336
+Pánuco,14,lstm,doy_cos,17,31,0.0027969591319561005
+Pánuco,14,lstm,gasto_medio_m3s,16,30,0.0028594061732292175
+Pánuco,14,lstm,gasto_medio_m3s_ma7,16,30,0.002273015910759568
+Pánuco,14,lstm,gasto_medio_m3s_ma30,16,30,0.0030428150203078985
+Pánuco,14,lstm,precip_idw_mm,16,30,0.002258824883028865
+Pánuco,14,lstm,doy_sin,16,30,0.002596007427200675
+Pánuco,14,lstm,doy_cos,16,30,0.003067375160753727
+Pánuco,14,lstm,gasto_medio_m3s,15,29,0.0030368377920240164
+Pánuco,14,lstm,gasto_medio_m3s_ma7,15,29,0.0026704927440732718
+Pánuco,14,lstm,gasto_medio_m3s_ma30,15,29,0.003300962271168828
+Pánuco,14,lstm,precip_idw_mm,15,29,0.0024531797971576452
+Pánuco,14,lstm,doy_sin,15,29,0.0028788279742002487
+Pánuco,14,lstm,doy_cos,15,29,0.003336939960718155
+Pánuco,14,lstm,gasto_medio_m3s,14,28,0.0035058241337537766
+Pánuco,14,lstm,gasto_medio_m3s_ma7,14,28,0.0032575931400060654
+Pánuco,14,lstm,gasto_medio_m3s_ma30,14,28,0.0035741564352065325
+Pánuco,14,lstm,precip_idw_mm,14,28,0.002635423792526126
+Pánuco,14,lstm,doy_sin,14,28,0.0031064983922988176
+Pánuco,14,lstm,doy_cos,14,28,0.00358488317579031
+Pánuco,14,lstm,gasto_medio_m3s,13,27,0.004107302986085415
+Pánuco,14,lstm,gasto_medio_m3s_ma7,13,27,0.004081347957253456
+Pánuco,14,lstm,gasto_medio_m3s_ma30,13,27,0.0038147682789713144
+Pánuco,14,lstm,precip_idw_mm,13,27,0.0028791099321097136
+Pánuco,14,lstm,doy_sin,13,27,0.003283923491835594
+Pánuco,14,lstm,doy_cos,13,27,0.003774849697947502
+Pánuco,14,lstm,gasto_medio_m3s,12,26,0.004873206373304129
+Pánuco,14,lstm,gasto_medio_m3s_ma7,12,26,0.005159689579159021
+Pánuco,14,lstm,gasto_medio_m3s_ma30,12,26,0.004058042075484991
+Pánuco,14,lstm,precip_idw_mm,12,26,0.003143258159980178
+Pánuco,14,lstm,doy_sin,12,26,0.0034027937799692154
+Pánuco,14,lstm,doy_cos,12,26,0.003902491880580783
+Pánuco,14,lstm,gasto_medio_m3s,11,25,0.005781402345746756
+Pánuco,14,lstm,gasto_medio_m3s_ma7,11,25,0.00638807425275445
+Pánuco,14,lstm,gasto_medio_m3s_ma30,11,25,0.004301136359572411
+Pánuco,14,lstm,precip_idw_mm,11,25,0.0032986963633447886
+Pánuco,14,lstm,doy_sin,11,25,0.0034620717633515596
+Pánuco,14,lstm,doy_cos,11,25,0.00397263141348958
+Pánuco,14,lstm,gasto_medio_m3s,10,24,0.006866494659334421
+Pánuco,14,lstm,gasto_medio_m3s_ma7,10,24,0.007535868790000677
+Pánuco,14,lstm,gasto_medio_m3s_ma30,10,24,0.004600154235959053
+Pánuco,14,lstm,precip_idw_mm,10,24,0.003473943332210183
+Pánuco,14,lstm,doy_sin,10,24,0.00347889238037169
+Pánuco,14,lstm,doy_cos,10,24,0.004049684386700392
+Pánuco,14,lstm,gasto_medio_m3s,9,23,0.008017621003091335
+Pánuco,14,lstm,gasto_medio_m3s_ma7,9,23,0.00851381104439497
+Pánuco,14,lstm,gasto_medio_m3s_ma30,9,23,0.005026731174439192
+Pánuco,14,lstm,precip_idw_mm,9,23,0.003551669418811798
+Pánuco,14,lstm,doy_sin,9,23,0.003582936944440007
+Pánuco,14,lstm,doy_cos,9,23,0.004278898239135742
+Pánuco,14,lstm,gasto_medio_m3s,8,22,0.009267748333513737
+Pánuco,14,lstm,gasto_medio_m3s_ma7,8,22,0.009126299060881138
+Pánuco,14,lstm,gasto_medio_m3s_ma30,8,22,0.005688065197318792
+Pánuco,14,lstm,precip_idw_mm,8,22,0.0035692350938916206
+Pánuco,14,lstm,doy_sin,8,22,0.003863251768052578
+Pánuco,14,lstm,doy_cos,8,22,0.005170881282538176
+Pánuco,14,lstm,gasto_medio_m3s,7,21,0.010499329306185246
+Pánuco,14,lstm,gasto_medio_m3s_ma7,7,21,0.009026722051203251
+Pánuco,14,lstm,gasto_medio_m3s_ma30,7,21,0.006774409208446741
+Pánuco,14,lstm,precip_idw_mm,7,21,0.0036621761973947287
+Pánuco,14,lstm,doy_sin,7,21,0.004365997388958931
+Pánuco,14,lstm,doy_cos,7,21,0.007017808500677347
+Pánuco,14,lstm,gasto_medio_m3s,6,20,0.011495259590446949
+Pánuco,14,lstm,gasto_medio_m3s_ma7,6,20,0.008003389462828636
+Pánuco,14,lstm,gasto_medio_m3s_ma30,6,20,0.008076307363808155
+Pánuco,14,lstm,precip_idw_mm,6,20,0.0034457796718925238
+Pánuco,14,lstm,doy_sin,6,20,0.0048243580386042595
+Pánuco,14,lstm,doy_cos,6,20,0.009458026848733425
+Pánuco,14,lstm,gasto_medio_m3s,5,19,0.013360877521336079
+Pánuco,14,lstm,gasto_medio_m3s_ma7,5,19,0.005956822540611029
+Pánuco,14,lstm,gasto_medio_m3s_ma30,5,19,0.009243539534509182
+Pánuco,14,lstm,precip_idw_mm,5,19,0.003239259123802185
+Pánuco,14,lstm,doy_sin,5,19,0.0050113447941839695
+Pánuco,14,lstm,doy_cos,5,19,0.012213167734444141
+Pánuco,14,lstm,gasto_medio_m3s,4,18,0.016569554805755615
+Pánuco,14,lstm,gasto_medio_m3s_ma7,4,18,0.003307727398350835
+Pánuco,14,lstm,gasto_medio_m3s_ma30,4,18,0.009814213961362839
+Pánuco,14,lstm,precip_idw_mm,4,18,0.002869718475267291
+Pánuco,14,lstm,doy_sin,4,18,0.004893713165074587
+Pánuco,14,lstm,doy_cos,4,18,0.0150733208283782
+Pánuco,14,lstm,gasto_medio_m3s,3,17,0.02332194708287716
+Pánuco,14,lstm,gasto_medio_m3s_ma7,3,17,0.0049172076396644115
+Pánuco,14,lstm,gasto_medio_m3s_ma30,3,17,0.009304934181272984
+Pánuco,14,lstm,precip_idw_mm,3,17,0.0027869243640452623
+Pánuco,14,lstm,doy_sin,3,17,0.005021024029701948
+Pánuco,14,lstm,doy_cos,3,17,0.017773611471056938
+Pánuco,14,lstm,gasto_medio_m3s,2,16,0.03725801035761833
+Pánuco,14,lstm,gasto_medio_m3s_ma7,2,16,0.011221930384635925
+Pánuco,14,lstm,gasto_medio_m3s_ma30,2,16,0.007291285786777735
+Pánuco,14,lstm,precip_idw_mm,2,16,0.0030359625816345215
+Pánuco,14,lstm,doy_sin,2,16,0.007276447955518961
+Pánuco,14,lstm,doy_cos,2,16,0.019837109372019768
+Pánuco,14,lstm,gasto_medio_m3s,1,15,0.06497520953416824
+Pánuco,14,lstm,gasto_medio_m3s_ma7,1,15,0.01719594933092594
+Pánuco,14,lstm,gasto_medio_m3s_ma30,1,15,0.004959117621183395
+Pánuco,14,lstm,precip_idw_mm,1,15,0.0029056190978735685
+Pánuco,14,lstm,doy_sin,1,15,0.011653010733425617
+Pánuco,14,lstm,doy_cos,1,15,0.020517075434327126
+Pánuco,14,lstm,gasto_medio_m3s,0,14,0.11779093742370605
+Pánuco,14,lstm,gasto_medio_m3s_ma7,0,14,0.017140964046120644
+Pánuco,14,lstm,gasto_medio_m3s_ma30,0,14,0.010615415871143341
+Pánuco,14,lstm,precip_idw_mm,0,14,0.01025548204779625
+Pánuco,14,lstm,doy_sin,0,14,0.018822314217686653
+Pánuco,14,lstm,doy_cos,0,14,0.017709584906697273
+Alta del Balsas,1,lstm,gasto_medio_m3s,29,30,5.945623342995532e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,29,30,3.276717734479462e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,29,30,1.3116437003191095e-06
+Alta del Balsas,1,lstm,precip_idw_mm,29,30,2.3370489543594886e-06
+Alta del Balsas,1,lstm,doy_sin,29,30,1.4285868701335858e-06
+Alta del Balsas,1,lstm,doy_cos,29,30,1.5145373026825837e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s,28,29,8.100504601316061e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,28,29,4.59299053545692e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,28,29,1.7753077372617554e-06
+Alta del Balsas,1,lstm,precip_idw_mm,28,29,3.4314718959649326e-06
+Alta del Balsas,1,lstm,doy_sin,28,29,1.6827406170705217e-06
+Alta del Balsas,1,lstm,doy_cos,28,29,2.2951669507165207e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s,27,28,1.1460027053544763e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,27,28,6.2668514146935195e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,27,28,2.4626797312521376e-06
+Alta del Balsas,1,lstm,precip_idw_mm,27,28,4.894267931376817e-06
+Alta del Balsas,1,lstm,doy_sin,27,28,2.0074901385669364e-06
+Alta del Balsas,1,lstm,doy_cos,27,28,3.2915615975070978e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s,26,27,1.5460334907402284e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,26,27,8.63789227878442e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,26,27,3.5985030990559608e-06
+Alta del Balsas,1,lstm,precip_idw_mm,26,27,6.8111580731056165e-06
+Alta del Balsas,1,lstm,doy_sin,26,27,2.397299795120489e-06
+Alta del Balsas,1,lstm,doy_cos,26,27,4.584463113133097e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s,25,26,2.0493005649768747e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,25,26,1.1920515134988818e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,25,26,4.860947683482664e-06
+Alta del Balsas,1,lstm,precip_idw_mm,25,26,1.002493536361726e-05
+Alta del Balsas,1,lstm,doy_sin,25,26,2.8873262181150494e-06
+Alta del Balsas,1,lstm,doy_cos,25,26,6.299438155110693e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s,24,25,2.8288983230595477e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,24,25,1.647635508561507e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,24,25,6.716902134940028e-06
+Alta del Balsas,1,lstm,precip_idw_mm,24,25,1.28682040667627e-05
+Alta del Balsas,1,lstm,doy_sin,24,25,3.5587011097959476e-06
+Alta del Balsas,1,lstm,doy_cos,24,25,8.654612429381814e-06
+Alta del Balsas,1,lstm,gasto_medio_m3s,23,24,3.9045200537657365e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,23,24,2.0921494069625624e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,23,24,8.717313903616741e-06
+Alta del Balsas,1,lstm,precip_idw_mm,23,24,1.7696957002044655e-05
+Alta del Balsas,1,lstm,doy_sin,23,24,4.452858320291853e-06
+Alta del Balsas,1,lstm,doy_cos,23,24,1.188389887829544e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,22,23,5.440824315883219e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,22,23,2.7646363378153183e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,22,23,1.1112087122455705e-05
+Alta del Balsas,1,lstm,precip_idw_mm,22,23,2.3807797333574854e-05
+Alta del Balsas,1,lstm,doy_sin,22,23,5.812461040477501e-06
+Alta del Balsas,1,lstm,doy_cos,22,23,1.6200881873373874e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,21,22,7.567118882434443e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,21,22,3.839603596134111e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,21,22,1.4831800399406347e-05
+Alta del Balsas,1,lstm,precip_idw_mm,21,22,3.328973616589792e-05
+Alta del Balsas,1,lstm,doy_sin,21,22,7.978312169143464e-06
+Alta del Balsas,1,lstm,doy_cos,21,22,2.1962137907394208e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,20,21,0.0001042420553858392
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,20,21,5.09654164488893e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,20,21,1.888907172542531e-05
+Alta del Balsas,1,lstm,precip_idw_mm,20,21,4.359351078164764e-05
+Alta del Balsas,1,lstm,doy_sin,20,21,1.1059347343689296e-05
+Alta del Balsas,1,lstm,doy_cos,20,21,2.978897282446269e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,19,20,0.00014326575910672545
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,19,20,6.709707668051124e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,19,20,2.4564535124227405e-05
+Alta del Balsas,1,lstm,precip_idw_mm,19,20,5.733642683480866e-05
+Alta del Balsas,1,lstm,doy_sin,19,20,1.5609415640938096e-05
+Alta del Balsas,1,lstm,doy_cos,19,20,4.042436557938345e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,18,19,0.00020128172764088959
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,18,19,9.029612556332722e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,18,19,3.2791107514640316e-05
+Alta del Balsas,1,lstm,precip_idw_mm,18,19,7.737569831078872e-05
+Alta del Balsas,1,lstm,doy_sin,18,19,2.1914760509389453e-05
+Alta del Balsas,1,lstm,doy_cos,18,19,5.46726951142773e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,17,18,0.0002816393389366567
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,17,18,0.00011901045945705846
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,17,18,4.325644113123417e-05
+Alta del Balsas,1,lstm,precip_idw_mm,17,18,0.000102969330328051
+Alta del Balsas,1,lstm,doy_sin,17,18,3.07246737065725e-05
+Alta del Balsas,1,lstm,doy_cos,17,18,7.398619345622137e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,16,17,0.0003922264731954783
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,16,17,0.00016086189134512097
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,16,17,5.857269206899218e-05
+Alta del Balsas,1,lstm,precip_idw_mm,16,17,0.0001396971201756969
+Alta del Balsas,1,lstm,doy_sin,16,17,4.253961014910601e-05
+Alta del Balsas,1,lstm,doy_cos,16,17,9.961833711713552e-05
+Alta del Balsas,1,lstm,gasto_medio_m3s,15,16,0.0005505257286131382
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,15,16,0.0002139662392437458
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,15,16,8.070575859164819e-05
+Alta del Balsas,1,lstm,precip_idw_mm,15,16,0.00017910879978444427
+Alta del Balsas,1,lstm,doy_sin,15,16,5.828259963891469e-05
+Alta del Balsas,1,lstm,doy_cos,15,16,0.00013448437675833702
+Alta del Balsas,1,lstm,gasto_medio_m3s,14,15,0.000759440881665796
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,14,15,0.00028467210358940065
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,14,15,0.0001125119742937386
+Alta del Balsas,1,lstm,precip_idw_mm,14,15,0.0002429424785077572
+Alta del Balsas,1,lstm,doy_sin,14,15,7.841899787308648e-05
+Alta del Balsas,1,lstm,doy_cos,14,15,0.0001812102273106575
+Alta del Balsas,1,lstm,gasto_medio_m3s,13,14,0.0010691218776628375
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,13,14,0.00039357258356176317
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,13,14,0.0001605829456821084
+Alta del Balsas,1,lstm,precip_idw_mm,13,14,0.00031406714697368443
+Alta del Balsas,1,lstm,doy_sin,13,14,0.00010494524758541957
+Alta del Balsas,1,lstm,doy_cos,13,14,0.00024332113389391452
+Alta del Balsas,1,lstm,gasto_medio_m3s,12,13,0.0014905879506841302
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,12,13,0.0005319266929291189
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,12,13,0.00022432497644331306
+Alta del Balsas,1,lstm,precip_idw_mm,12,13,0.0004057905462104827
+Alta del Balsas,1,lstm,doy_sin,12,13,0.00013675774971488863
+Alta del Balsas,1,lstm,doy_cos,12,13,0.0003289991582278162
+Alta del Balsas,1,lstm,gasto_medio_m3s,11,12,0.0021219265181571245
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,11,12,0.0007304136524908245
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,11,12,0.0003125324728898704
+Alta del Balsas,1,lstm,precip_idw_mm,11,12,0.0005501116975210607
+Alta del Balsas,1,lstm,doy_sin,11,12,0.00017487826698925346
+Alta del Balsas,1,lstm,doy_cos,11,12,0.0004469646664801985
+Alta del Balsas,1,lstm,gasto_medio_m3s,10,11,0.0030158848967403173
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,10,11,0.0010211941553279757
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,10,11,0.00042858789674937725
+Alta del Balsas,1,lstm,precip_idw_mm,10,11,0.000725308433175087
+Alta del Balsas,1,lstm,doy_sin,10,11,0.0002211624087067321
+Alta del Balsas,1,lstm,doy_cos,10,11,0.000612865958828479
+Alta del Balsas,1,lstm,gasto_medio_m3s,9,10,0.004311827477067709
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,9,10,0.0014289970276877284
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,9,10,0.0005738625768572092
+Alta del Balsas,1,lstm,precip_idw_mm,9,10,0.0009109145030379295
+Alta del Balsas,1,lstm,doy_sin,9,10,0.0002889250754378736
+Alta del Balsas,1,lstm,doy_cos,9,10,0.0008584398892708123
+Alta del Balsas,1,lstm,gasto_medio_m3s,8,9,0.006177659612149
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,8,9,0.0020033831242471933
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,8,9,0.0007567252032458782
+Alta del Balsas,1,lstm,precip_idw_mm,8,9,0.0012252450687810779
+Alta del Balsas,1,lstm,doy_sin,8,9,0.00040119161712937057
+Alta del Balsas,1,lstm,doy_cos,8,9,0.0012357941595837474
+Alta del Balsas,1,lstm,gasto_medio_m3s,7,8,0.008419563062489033
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,7,8,0.002841297769919038
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,7,8,0.0010152426548302174
+Alta del Balsas,1,lstm,precip_idw_mm,7,8,0.001602552249096334
+Alta del Balsas,1,lstm,doy_sin,7,8,0.0005834900657646358
+Alta del Balsas,1,lstm,doy_cos,7,8,0.0018161823973059654
+Alta del Balsas,1,lstm,gasto_medio_m3s,6,7,0.010766368359327316
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,6,7,0.003984504379332066
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,6,7,0.001399464439600706
+Alta del Balsas,1,lstm,precip_idw_mm,6,7,0.0020636606495827436
+Alta del Balsas,1,lstm,doy_sin,6,7,0.0007797822472639382
+Alta del Balsas,1,lstm,doy_cos,6,7,0.0026743311900645494
+Alta del Balsas,1,lstm,gasto_medio_m3s,5,6,0.012369581498205662
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,5,6,0.005517559126019478
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,5,6,0.0019304902525618672
+Alta del Balsas,1,lstm,precip_idw_mm,5,6,0.002897856058552861
+Alta del Balsas,1,lstm,doy_sin,5,6,0.0011844401014968753
+Alta del Balsas,1,lstm,doy_cos,5,6,0.0038246270269155502
+Alta del Balsas,1,lstm,gasto_medio_m3s,4,5,0.012965898960828781
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,4,5,0.007179854903370142
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,4,5,0.0024001160636544228
+Alta del Balsas,1,lstm,precip_idw_mm,4,5,0.003481302410364151
+Alta del Balsas,1,lstm,doy_sin,4,5,0.0021220024209469557
+Alta del Balsas,1,lstm,doy_cos,4,5,0.005098212510347366
+Alta del Balsas,1,lstm,gasto_medio_m3s,3,4,0.016724400222301483
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,3,4,0.008231344632804394
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,3,4,0.003017029957845807
+Alta del Balsas,1,lstm,precip_idw_mm,3,4,0.003532746806740761
+Alta del Balsas,1,lstm,doy_sin,3,4,0.0055923499166965485
+Alta del Balsas,1,lstm,doy_cos,3,4,0.006141396705061197
+Alta del Balsas,1,lstm,gasto_medio_m3s,2,3,0.043248917907476425
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,2,3,0.008309965021908283
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,2,3,0.0060274675488471985
+Alta del Balsas,1,lstm,precip_idw_mm,2,3,0.004628580063581467
+Alta del Balsas,1,lstm,doy_sin,2,3,0.011710666120052338
+Alta del Balsas,1,lstm,doy_cos,2,3,0.007156321778893471
+Alta del Balsas,1,lstm,gasto_medio_m3s,1,2,0.1486356258392334
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,1,2,0.008055652491748333
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,1,2,0.010978039354085922
+Alta del Balsas,1,lstm,precip_idw_mm,1,2,0.016827544197440147
+Alta del Balsas,1,lstm,doy_sin,1,2,0.010621865279972553
+Alta del Balsas,1,lstm,doy_cos,1,2,0.01193482056260109
+Alta del Balsas,1,lstm,gasto_medio_m3s,0,1,0.39167320728302
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma7,0,1,0.02090858481824398
+Alta del Balsas,1,lstm,gasto_medio_m3s_ma30,0,1,0.03592459484934807
+Alta del Balsas,1,lstm,precip_idw_mm,0,1,0.03941066935658455
+Alta del Balsas,1,lstm,doy_sin,0,1,0.026950331404805183
+Alta del Balsas,1,lstm,doy_cos,0,1,0.012717649340629578
+Alta del Balsas,7,lstm,gasto_medio_m3s,29,36,0.000655157258734107
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,29,36,0.00036030809860676527
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,29,36,0.00027972899260930717
+Alta del Balsas,7,lstm,precip_idw_mm,29,36,0.00015220388013403863
+Alta del Balsas,7,lstm,doy_sin,29,36,0.00018482912855688483
+Alta del Balsas,7,lstm,doy_cos,29,36,0.0005073252832517028
+Alta del Balsas,7,lstm,gasto_medio_m3s,28,35,0.0006964848726056516
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,28,35,0.0003806382592301816
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,28,35,0.00029912361060269177
+Alta del Balsas,7,lstm,precip_idw_mm,28,35,0.0001689460623310879
+Alta del Balsas,7,lstm,doy_sin,28,35,0.00021237168402876705
+Alta del Balsas,7,lstm,doy_cos,28,35,0.0005735173472203314
+Alta del Balsas,7,lstm,gasto_medio_m3s,27,34,0.0007533354219049215
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,27,34,0.0003966463264077902
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,27,34,0.0003083567426074296
+Alta del Balsas,7,lstm,precip_idw_mm,27,34,0.00019394814444240183
+Alta del Balsas,7,lstm,doy_sin,27,34,0.00023471492750104517
+Alta del Balsas,7,lstm,doy_cos,27,34,0.0006332346820272505
+Alta del Balsas,7,lstm,gasto_medio_m3s,26,33,0.0008211092208512127
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,26,33,0.00040690027526579797
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,26,33,0.00031898682937026024
+Alta del Balsas,7,lstm,precip_idw_mm,26,33,0.00021781081159133464
+Alta del Balsas,7,lstm,doy_sin,26,33,0.000254959479207173
+Alta del Balsas,7,lstm,doy_cos,26,33,0.0006899789441376925
+Alta del Balsas,7,lstm,gasto_medio_m3s,25,32,0.0008661026949994266
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,25,32,0.00042464202851988375
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,25,32,0.00032930259476415813
+Alta del Balsas,7,lstm,precip_idw_mm,25,32,0.00023741909535601735
+Alta del Balsas,7,lstm,doy_sin,25,32,0.00027765004779212177
+Alta del Balsas,7,lstm,doy_cos,25,32,0.0007485501118935645
+Alta del Balsas,7,lstm,gasto_medio_m3s,24,31,0.0009544361964799464
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,24,31,0.0004489838902372867
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,24,31,0.0003446268674451858
+Alta del Balsas,7,lstm,precip_idw_mm,24,31,0.00025702404673211277
+Alta del Balsas,7,lstm,doy_sin,24,31,0.0003034194523934275
+Alta del Balsas,7,lstm,doy_cos,24,31,0.0008109409827739
+Alta del Balsas,7,lstm,gasto_medio_m3s,23,30,0.0010371870594099164
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,23,30,0.000477761757792905
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,23,30,0.00036544239264912903
+Alta del Balsas,7,lstm,precip_idw_mm,23,30,0.00029607772012241185
+Alta del Balsas,7,lstm,doy_sin,23,30,0.0003345307195559144
+Alta del Balsas,7,lstm,doy_cos,23,30,0.0008801138610579073
+Alta del Balsas,7,lstm,gasto_medio_m3s,22,29,0.0011173454113304615
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,22,29,0.000520964153110981
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,22,29,0.00039066048339009285
+Alta del Balsas,7,lstm,precip_idw_mm,22,29,0.00032311040558852255
+Alta del Balsas,7,lstm,doy_sin,22,29,0.0003686847921926528
+Alta del Balsas,7,lstm,doy_cos,22,29,0.0009574438445270061
+Alta del Balsas,7,lstm,gasto_medio_m3s,21,28,0.0012523164041340351
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,21,28,0.0005750303971581161
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,21,28,0.00042189224041067064
+Alta del Balsas,7,lstm,precip_idw_mm,21,28,0.00034820419386960566
+Alta del Balsas,7,lstm,doy_sin,21,28,0.0004096559714525938
+Alta del Balsas,7,lstm,doy_cos,21,28,0.0010439392644912004
+Alta del Balsas,7,lstm,gasto_medio_m3s,20,27,0.0013823959743604064
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,20,27,0.0006432933150790632
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,20,27,0.0004602767585311085
+Alta del Balsas,7,lstm,precip_idw_mm,20,27,0.0003880416916217655
+Alta del Balsas,7,lstm,doy_sin,20,27,0.00045724245137535036
+Alta del Balsas,7,lstm,doy_cos,20,27,0.0011420204536989331
+Alta del Balsas,7,lstm,gasto_medio_m3s,19,26,0.0015287493588402867
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,19,26,0.0007193597848527133
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,19,26,0.0005146870389580727
+Alta del Balsas,7,lstm,precip_idw_mm,19,26,0.0004483169177547097
+Alta del Balsas,7,lstm,doy_sin,19,26,0.0005148804630152881
+Alta del Balsas,7,lstm,doy_cos,19,26,0.0012510187225416303
+Alta del Balsas,7,lstm,gasto_medio_m3s,18,25,0.0017264308407902718
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,18,25,0.0008181366720236838
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,18,25,0.000579994753934443
+Alta del Balsas,7,lstm,precip_idw_mm,18,25,0.0005080312839709222
+Alta del Balsas,7,lstm,doy_sin,18,25,0.0005829217261634767
+Alta del Balsas,7,lstm,doy_cos,18,25,0.0013744294410571456
+Alta del Balsas,7,lstm,gasto_medio_m3s,17,24,0.0019810693338513374
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,17,24,0.0009300292585976422
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,17,24,0.0006628897390328348
+Alta del Balsas,7,lstm,precip_idw_mm,17,24,0.0005654647247865796
+Alta del Balsas,7,lstm,doy_sin,17,24,0.0006678755744360387
+Alta del Balsas,7,lstm,doy_cos,17,24,0.001516565796919167
+Alta del Balsas,7,lstm,gasto_medio_m3s,16,23,0.0022621722891926765
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,16,23,0.001063534407876432
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,16,23,0.0007679859991185367
+Alta del Balsas,7,lstm,precip_idw_mm,16,23,0.0006527993828058243
+Alta del Balsas,7,lstm,doy_sin,16,23,0.0007721229922026396
+Alta del Balsas,7,lstm,doy_cos,16,23,0.0016774529358372092
+Alta del Balsas,7,lstm,gasto_medio_m3s,15,22,0.002595355035737157
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,15,22,0.0012127450900152326
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,15,22,0.0008962876163423061
+Alta del Balsas,7,lstm,precip_idw_mm,15,22,0.0007474662270396948
+Alta del Balsas,7,lstm,doy_sin,15,22,0.0009090530802495778
+Alta del Balsas,7,lstm,doy_cos,15,22,0.0018622205825522542
+Alta del Balsas,7,lstm,gasto_medio_m3s,14,21,0.002965341554954648
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,14,21,0.0013869603862985969
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,14,21,0.0010575694032013416
+Alta del Balsas,7,lstm,precip_idw_mm,14,21,0.0008836158667691052
+Alta del Balsas,7,lstm,doy_sin,14,21,0.0010875399457290769
+Alta del Balsas,7,lstm,doy_cos,14,21,0.0020685950294137
+Alta del Balsas,7,lstm,gasto_medio_m3s,13,20,0.0036236343439668417
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,13,20,0.0015799552202224731
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,13,20,0.0012564252829179168
+Alta del Balsas,7,lstm,precip_idw_mm,13,20,0.0010617939988151193
+Alta del Balsas,7,lstm,doy_sin,13,20,0.0013205715222284198
+Alta del Balsas,7,lstm,doy_cos,13,20,0.002301204251125455
+Alta del Balsas,7,lstm,gasto_medio_m3s,12,19,0.004208744969218969
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,12,19,0.0018238128395751119
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,12,19,0.0014958448009565473
+Alta del Balsas,7,lstm,precip_idw_mm,12,19,0.0012575329747051
+Alta del Balsas,7,lstm,doy_sin,12,19,0.0016202764818444848
+Alta del Balsas,7,lstm,doy_cos,12,19,0.002569325966760516
+Alta del Balsas,7,lstm,gasto_medio_m3s,11,18,0.005112160462886095
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,11,18,0.002104826271533966
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,11,18,0.0017820388311520219
+Alta del Balsas,7,lstm,precip_idw_mm,11,18,0.0014775586314499378
+Alta del Balsas,7,lstm,doy_sin,11,18,0.0020009982399642467
+Alta del Balsas,7,lstm,doy_cos,11,18,0.002871788339689374
+Alta del Balsas,7,lstm,gasto_medio_m3s,10,17,0.006323678884655237
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,10,17,0.002532589714974165
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,10,17,0.0020991191267967224
+Alta del Balsas,7,lstm,precip_idw_mm,10,17,0.0017561129061505198
+Alta del Balsas,7,lstm,doy_sin,10,17,0.002469573402777314
+Alta del Balsas,7,lstm,doy_cos,10,17,0.003216231008991599
+Alta del Balsas,7,lstm,gasto_medio_m3s,9,16,0.007998830638825893
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,9,16,0.0032602567225694656
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,9,16,0.0024541246239095926
+Alta del Balsas,7,lstm,precip_idw_mm,9,16,0.002032872522249818
+Alta del Balsas,7,lstm,doy_sin,9,16,0.003017971059307456
+Alta del Balsas,7,lstm,doy_cos,9,16,0.0035953030455857515
+Alta del Balsas,7,lstm,gasto_medio_m3s,8,15,0.010425027459859848
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,8,15,0.004307223949581385
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,8,15,0.002796717220917344
+Alta del Balsas,7,lstm,precip_idw_mm,8,15,0.002505100332200527
+Alta del Balsas,7,lstm,doy_sin,8,15,0.0036189064849168062
+Alta del Balsas,7,lstm,doy_cos,8,15,0.004022690001875162
+Alta del Balsas,7,lstm,gasto_medio_m3s,7,14,0.014063731767237186
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,7,14,0.005662046372890472
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,7,14,0.003068450139835477
+Alta del Balsas,7,lstm,precip_idw_mm,7,14,0.00320408190600574
+Alta del Balsas,7,lstm,doy_sin,7,14,0.004222789313644171
+Alta del Balsas,7,lstm,doy_cos,7,14,0.0045433263294398785
+Alta del Balsas,7,lstm,gasto_medio_m3s,6,13,0.019751956686377525
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,6,13,0.0072124190628528595
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,6,13,0.003185556037351489
+Alta del Balsas,7,lstm,precip_idw_mm,6,13,0.004049669485539198
+Alta del Balsas,7,lstm,doy_sin,6,13,0.004768393933773041
+Alta del Balsas,7,lstm,doy_cos,6,13,0.0052244956605136395
+Alta del Balsas,7,lstm,gasto_medio_m3s,5,12,0.027393033728003502
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,5,12,0.008776536211371422
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,5,12,0.0030397220980376005
+Alta del Balsas,7,lstm,precip_idw_mm,5,12,0.005331886932253838
+Alta del Balsas,7,lstm,doy_sin,5,12,0.005289673805236816
+Alta del Balsas,7,lstm,doy_cos,5,12,0.006293315906077623
+Alta del Balsas,7,lstm,gasto_medio_m3s,4,11,0.03934381902217865
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,4,11,0.010110635310411453
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,4,11,0.002595511032268405
+Alta del Balsas,7,lstm,precip_idw_mm,4,11,0.0067511978559195995
+Alta del Balsas,7,lstm,doy_sin,4,11,0.005726206582039595
+Alta del Balsas,7,lstm,doy_cos,4,11,0.008126725442707539
+Alta del Balsas,7,lstm,gasto_medio_m3s,3,10,0.05549398437142372
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,3,10,0.010823098011314869
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,3,10,0.0025761546567082405
+Alta del Balsas,7,lstm,precip_idw_mm,3,10,0.007783219218254089
+Alta del Balsas,7,lstm,doy_sin,3,10,0.006451932247728109
+Alta del Balsas,7,lstm,doy_cos,3,10,0.011107471771538258
+Alta del Balsas,7,lstm,gasto_medio_m3s,2,9,0.07738501578569412
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,2,9,0.010528539307415485
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,2,9,0.003800623817369342
+Alta del Balsas,7,lstm,precip_idw_mm,2,9,0.007667867932468653
+Alta del Balsas,7,lstm,doy_sin,2,9,0.009814952500164509
+Alta del Balsas,7,lstm,doy_cos,2,9,0.015689939260482788
+Alta del Balsas,7,lstm,gasto_medio_m3s,1,8,0.10549997538328171
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,1,8,0.009305696003139019
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,1,8,0.0063465009443461895
+Alta del Balsas,7,lstm,precip_idw_mm,1,8,0.004824642091989517
+Alta del Balsas,7,lstm,doy_sin,1,8,0.018137192353606224
+Alta del Balsas,7,lstm,doy_cos,1,8,0.02151612937450409
+Alta del Balsas,7,lstm,gasto_medio_m3s,0,7,0.1337624043226242
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma7,0,7,0.009449903853237629
+Alta del Balsas,7,lstm,gasto_medio_m3s_ma30,0,7,0.009279206395149231
+Alta del Balsas,7,lstm,precip_idw_mm,0,7,0.01603657193481922
+Alta del Balsas,7,lstm,doy_sin,0,7,0.03121747262775898
+Alta del Balsas,7,lstm,doy_cos,0,7,0.026808567345142365
+Alta del Balsas,14,lstm,gasto_medio_m3s,29,43,0.0011960677802562714
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,29,43,0.00060343585209921
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,29,43,0.0006650562863796949
+Alta del Balsas,14,lstm,precip_idw_mm,29,43,0.0009171973797492683
+Alta del Balsas,14,lstm,doy_sin,29,43,0.0006007251213304698
+Alta del Balsas,14,lstm,doy_cos,29,43,0.0017614680109545588
+Alta del Balsas,14,lstm,gasto_medio_m3s,28,42,0.0013158870860934258
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,28,42,0.0006553668645210564
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,28,42,0.0007268036133609712
+Alta del Balsas,14,lstm,precip_idw_mm,28,42,0.001068219542503357
+Alta del Balsas,14,lstm,doy_sin,28,42,0.0006975512951612473
+Alta del Balsas,14,lstm,doy_cos,28,42,0.00192664482165128
+Alta del Balsas,14,lstm,gasto_medio_m3s,27,41,0.0014484055573120713
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,27,41,0.0007046332466416061
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,27,41,0.0007715655374340713
+Alta del Balsas,14,lstm,precip_idw_mm,27,41,0.0012328000739216805
+Alta del Balsas,14,lstm,doy_sin,27,41,0.0007773262914270163
+Alta del Balsas,14,lstm,doy_cos,27,41,0.0020422562956809998
+Alta del Balsas,14,lstm,gasto_medio_m3s,26,40,0.0015222349902614951
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,26,40,0.0007546061533503234
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,26,40,0.000814077677205205
+Alta del Balsas,14,lstm,precip_idw_mm,26,40,0.0013407968217507005
+Alta del Balsas,14,lstm,doy_sin,26,40,0.000848296273034066
+Alta del Balsas,14,lstm,doy_cos,26,40,0.0021373825147747993
+Alta del Balsas,14,lstm,gasto_medio_m3s,25,39,0.0015996232395991683
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,25,39,0.0008060088730417192
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,25,39,0.0008541395072825253
+Alta del Balsas,14,lstm,precip_idw_mm,25,39,0.0014354785671457648
+Alta del Balsas,14,lstm,doy_sin,25,39,0.0009157849126495421
+Alta del Balsas,14,lstm,doy_cos,25,39,0.002225959673523903
+Alta del Balsas,14,lstm,gasto_medio_m3s,24,38,0.0017347839893773198
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,24,38,0.0008572502410970628
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,24,38,0.0008927505114115775
+Alta del Balsas,14,lstm,precip_idw_mm,24,38,0.001581256277859211
+Alta del Balsas,14,lstm,doy_sin,24,38,0.0009852555813267827
+Alta del Balsas,14,lstm,doy_cos,24,38,0.0023143605794757605
+Alta del Balsas,14,lstm,gasto_medio_m3s,23,37,0.0018865996971726418
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,23,37,0.000902339059393853
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,23,37,0.0009290484595112503
+Alta del Balsas,14,lstm,precip_idw_mm,23,37,0.0016951035941019654
+Alta del Balsas,14,lstm,doy_sin,23,37,0.001055960194207728
+Alta del Balsas,14,lstm,doy_cos,23,37,0.002414000453427434
+Alta del Balsas,14,lstm,gasto_medio_m3s,22,36,0.002029599854722619
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,22,36,0.0009426437318325043
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,22,36,0.0009708203724585474
+Alta del Balsas,14,lstm,precip_idw_mm,22,36,0.0017772909486666322
+Alta del Balsas,14,lstm,doy_sin,22,36,0.0011330588022246957
+Alta del Balsas,14,lstm,doy_cos,22,36,0.0025217270012944937
+Alta del Balsas,14,lstm,gasto_medio_m3s,21,35,0.0022311874199658632
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,21,35,0.0009878469863906503
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,21,35,0.0010082590160891414
+Alta del Balsas,14,lstm,precip_idw_mm,21,35,0.001963850809261203
+Alta del Balsas,14,lstm,doy_sin,21,35,0.0012157817836850882
+Alta del Balsas,14,lstm,doy_cos,21,35,0.002640903927385807
+Alta del Balsas,14,lstm,gasto_medio_m3s,20,34,0.002351517789065838
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,20,34,0.0010222011478617787
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,20,34,0.001044980832375586
+Alta del Balsas,14,lstm,precip_idw_mm,20,34,0.0021486314944922924
+Alta del Balsas,14,lstm,doy_sin,20,34,0.0013101104414090514
+Alta del Balsas,14,lstm,doy_cos,20,34,0.0027808190789073706
+Alta del Balsas,14,lstm,gasto_medio_m3s,19,33,0.0025535449385643005
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,19,33,0.0010577271459624171
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,19,33,0.001083491020835936
+Alta del Balsas,14,lstm,precip_idw_mm,19,33,0.002293373690918088
+Alta del Balsas,14,lstm,doy_sin,19,33,0.001420255284756422
+Alta del Balsas,14,lstm,doy_cos,19,33,0.0029391867574304342
+Alta del Balsas,14,lstm,gasto_medio_m3s,18,32,0.002776441164314747
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,18,32,0.0010869018733501434
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,18,32,0.0011151566868647933
+Alta del Balsas,14,lstm,precip_idw_mm,18,32,0.0025034414138644934
+Alta del Balsas,14,lstm,doy_sin,18,32,0.0015499405562877655
+Alta del Balsas,14,lstm,doy_cos,18,32,0.0031154875177890062
+Alta del Balsas,14,lstm,gasto_medio_m3s,17,31,0.003071739338338375
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,17,31,0.0011113673681393266
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,17,31,0.0011456286301836371
+Alta del Balsas,14,lstm,precip_idw_mm,17,31,0.002721088705584407
+Alta del Balsas,14,lstm,doy_sin,17,31,0.001697355299256742
+Alta del Balsas,14,lstm,doy_cos,17,31,0.0033163540065288544
+Alta del Balsas,14,lstm,gasto_medio_m3s,16,30,0.003393903374671936
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,16,30,0.0011477712541818619
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,16,30,0.001177496276795864
+Alta del Balsas,14,lstm,precip_idw_mm,16,30,0.0029968617018312216
+Alta del Balsas,14,lstm,doy_sin,16,30,0.0018705902621150017
+Alta del Balsas,14,lstm,doy_cos,16,30,0.003545393468812108
+Alta del Balsas,14,lstm,gasto_medio_m3s,15,29,0.003804080421105027
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,15,29,0.0012054018443450332
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,15,29,0.0012220739154145122
+Alta del Balsas,14,lstm,precip_idw_mm,15,29,0.0032338930759578943
+Alta del Balsas,14,lstm,doy_sin,15,29,0.0020701976027339697
+Alta del Balsas,14,lstm,doy_cos,15,29,0.0038018643390387297
+Alta del Balsas,14,lstm,gasto_medio_m3s,14,28,0.004276311956346035
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,14,28,0.001284123631194234
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,14,28,0.001263047568500042
+Alta del Balsas,14,lstm,precip_idw_mm,14,28,0.0035003924276679754
+Alta del Balsas,14,lstm,doy_sin,14,28,0.0023000275250524282
+Alta del Balsas,14,lstm,doy_cos,14,28,0.0040986607782542706
+Alta del Balsas,14,lstm,gasto_medio_m3s,13,27,0.004889437463134527
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,13,27,0.001435450161807239
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,13,27,0.001328380312770605
+Alta del Balsas,14,lstm,precip_idw_mm,13,27,0.003777590813115239
+Alta del Balsas,14,lstm,doy_sin,13,27,0.0025574115570634604
+Alta del Balsas,14,lstm,doy_cos,13,27,0.0044294241815805435
+Alta del Balsas,14,lstm,gasto_medio_m3s,12,26,0.00578920915722847
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,12,26,0.0017088106833398342
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,12,26,0.0014403158565983176
+Alta del Balsas,14,lstm,precip_idw_mm,12,26,0.004123894032090902
+Alta del Balsas,14,lstm,doy_sin,12,26,0.00285065989010036
+Alta del Balsas,14,lstm,doy_cos,12,26,0.004799833986908197
+Alta del Balsas,14,lstm,gasto_medio_m3s,11,25,0.00694251200184226
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,11,25,0.0021076500415802
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,11,25,0.001594665925949812
+Alta del Balsas,14,lstm,precip_idw_mm,11,25,0.0044575524516403675
+Alta del Balsas,14,lstm,doy_sin,11,25,0.00318137020803988
+Alta del Balsas,14,lstm,doy_cos,11,25,0.005203647073358297
+Alta del Balsas,14,lstm,gasto_medio_m3s,10,24,0.008495812304317951
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,10,24,0.002621306339278817
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,10,24,0.00181266397703439
+Alta del Balsas,14,lstm,precip_idw_mm,10,24,0.004723660182207823
+Alta del Balsas,14,lstm,doy_sin,10,24,0.0035433396697044373
+Alta del Balsas,14,lstm,doy_cos,10,24,0.005635088309645653
+Alta del Balsas,14,lstm,gasto_medio_m3s,9,23,0.010511522181332111
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,9,23,0.0033166103530675173
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,9,23,0.0021187111269682646
+Alta del Balsas,14,lstm,precip_idw_mm,9,23,0.005021018907427788
+Alta del Balsas,14,lstm,doy_sin,9,23,0.0039014937356114388
+Alta del Balsas,14,lstm,doy_cos,9,23,0.006082981824874878
+Alta del Balsas,14,lstm,gasto_medio_m3s,8,22,0.013112452812492847
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,8,22,0.00419742614030838
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,8,22,0.0025264774449169636
+Alta del Balsas,14,lstm,precip_idw_mm,8,22,0.005265446379780769
+Alta del Balsas,14,lstm,doy_sin,8,22,0.004231414292007685
+Alta del Balsas,14,lstm,doy_cos,8,22,0.006530404090881348
+Alta del Balsas,14,lstm,gasto_medio_m3s,7,21,0.016122790053486824
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,7,21,0.00530417263507843
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,7,21,0.0030357365030795336
+Alta del Balsas,14,lstm,precip_idw_mm,7,21,0.005272585898637772
+Alta del Balsas,14,lstm,doy_sin,7,21,0.004509464837610722
+Alta del Balsas,14,lstm,doy_cos,7,21,0.006962561514228582
+Alta del Balsas,14,lstm,gasto_medio_m3s,6,20,0.02024741657078266
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,6,20,0.006732029374688864
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,6,20,0.0035661461297422647
+Alta del Balsas,14,lstm,precip_idw_mm,6,20,0.005288267508149147
+Alta del Balsas,14,lstm,doy_sin,6,20,0.004744690377265215
+Alta del Balsas,14,lstm,doy_cos,6,20,0.007408143486827612
+Alta del Balsas,14,lstm,gasto_medio_m3s,5,19,0.025307178497314453
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,5,19,0.008540185168385506
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,5,19,0.00410713953897357
+Alta del Balsas,14,lstm,precip_idw_mm,5,19,0.005033920984715223
+Alta del Balsas,14,lstm,doy_sin,5,19,0.0050687543116509914
+Alta del Balsas,14,lstm,doy_cos,5,19,0.007941863499581814
+Alta del Balsas,14,lstm,gasto_medio_m3s,4,18,0.03140358254313469
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,4,18,0.010720454156398773
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,4,18,0.004511824809014797
+Alta del Balsas,14,lstm,precip_idw_mm,4,18,0.004528030287474394
+Alta del Balsas,14,lstm,doy_sin,4,18,0.005573043134063482
+Alta del Balsas,14,lstm,doy_cos,4,18,0.008625994436442852
+Alta del Balsas,14,lstm,gasto_medio_m3s,3,17,0.039821457117795944
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,3,17,0.01339857280254364
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,3,17,0.0046799806877970695
+Alta del Balsas,14,lstm,precip_idw_mm,3,17,0.004155618604272604
+Alta del Balsas,14,lstm,doy_sin,3,17,0.0063251624815166
+Alta del Balsas,14,lstm,doy_cos,3,17,0.009516577236354351
+Alta del Balsas,14,lstm,gasto_medio_m3s,2,16,0.05188491567969322
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,2,16,0.01655685342848301
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,2,16,0.004476580768823624
+Alta del Balsas,14,lstm,precip_idw_mm,2,16,0.003979511093348265
+Alta del Balsas,14,lstm,doy_sin,2,16,0.008093967102468014
+Alta del Balsas,14,lstm,doy_cos,2,16,0.01071357261389494
+Alta del Balsas,14,lstm,gasto_medio_m3s,1,15,0.06935857981443405
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,1,15,0.020463230088353157
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,1,15,0.004658778663724661
+Alta del Balsas,14,lstm,precip_idw_mm,1,15,0.004528046119958162
+Alta del Balsas,14,lstm,doy_sin,1,15,0.011623111553490162
+Alta del Balsas,14,lstm,doy_cos,1,15,0.012393966317176819
+Alta del Balsas,14,lstm,gasto_medio_m3s,0,14,0.0963970348238945
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma7,0,14,0.026515452191233635
+Alta del Balsas,14,lstm,gasto_medio_m3s_ma30,0,14,0.007357551250606775
+Alta del Balsas,14,lstm,precip_idw_mm,0,14,0.008904699236154556
+Alta del Balsas,14,lstm,doy_sin,0,14,0.01656159944832325
+Alta del Balsas,14,lstm,doy_cos,0,14,0.01636720821261406
+Cutzamala,1,lstm,gasto_medio_m3s,29,30,2.993573434650898e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,29,30,5.117649561725557e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,29,30,3.313037086627446e-05
+Cutzamala,1,lstm,precip_idw_mm,29,30,3.482574174995534e-05
+Cutzamala,1,lstm,doy_sin,29,30,1.843806057877373e-05
+Cutzamala,1,lstm,doy_cos,29,30,1.5615800293744542e-05
+Cutzamala,1,lstm,gasto_medio_m3s,28,29,4.341989188105799e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,28,29,7.061578071443364e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,28,29,4.621852349373512e-05
+Cutzamala,1,lstm,precip_idw_mm,28,29,4.8021291149780154e-05
+Cutzamala,1,lstm,doy_sin,28,29,2.6398274712846614e-05
+Cutzamala,1,lstm,doy_cos,28,29,2.2213333068066277e-05
+Cutzamala,1,lstm,gasto_medio_m3s,27,28,5.7128534535877407e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,27,28,9.220102219842374e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,27,28,6.109195965109393e-05
+Cutzamala,1,lstm,precip_idw_mm,27,28,6.066890273359604e-05
+Cutzamala,1,lstm,doy_sin,27,28,3.591726999729872e-05
+Cutzamala,1,lstm,doy_cos,27,28,2.9485037885024212e-05
+Cutzamala,1,lstm,gasto_medio_m3s,26,27,7.275735697476193e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,26,27,0.00011675505811581388
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,26,27,7.796083809807897e-05
+Cutzamala,1,lstm,precip_idw_mm,26,27,7.791819371050224e-05
+Cutzamala,1,lstm,doy_sin,26,27,4.7552439355058596e-05
+Cutzamala,1,lstm,doy_cos,26,27,3.760511754080653e-05
+Cutzamala,1,lstm,gasto_medio_m3s,25,26,9.130308171734214e-05
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,25,26,0.00014505634317174554
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,25,26,9.771209442988038e-05
+Cutzamala,1,lstm,precip_idw_mm,25,26,9.705458796815947e-05
+Cutzamala,1,lstm,doy_sin,25,26,6.192445289343596e-05
+Cutzamala,1,lstm,doy_cos,25,26,4.715507384389639e-05
+Cutzamala,1,lstm,gasto_medio_m3s,24,25,0.0001119565567933023
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,24,25,0.0001782404724508524
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,24,25,0.00012129509559599683
+Cutzamala,1,lstm,precip_idw_mm,24,25,0.00011934617214137688
+Cutzamala,1,lstm,doy_sin,24,25,7.982942770468071e-05
+Cutzamala,1,lstm,doy_cos,24,25,5.867809886694886e-05
+Cutzamala,1,lstm,gasto_medio_m3s,23,24,0.00013577262870967388
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,23,24,0.0002174581604776904
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,23,24,0.0001497906632721424
+Cutzamala,1,lstm,precip_idw_mm,23,24,0.00014787187683396041
+Cutzamala,1,lstm,doy_sin,23,24,0.0001021546486299485
+Cutzamala,1,lstm,doy_cos,23,24,7.27715014363639e-05
+Cutzamala,1,lstm,gasto_medio_m3s,22,23,0.0001659254339756444
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,22,23,0.00026795396115630865
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,22,23,0.00018470703798811883
+Cutzamala,1,lstm,precip_idw_mm,22,23,0.00017983558063860983
+Cutzamala,1,lstm,doy_sin,22,23,0.000130235988763161
+Cutzamala,1,lstm,doy_cos,22,23,9.058899740921333e-05
+Cutzamala,1,lstm,gasto_medio_m3s,21,22,0.0002031030016951263
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,21,22,0.0003291067259851843
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,21,22,0.00022785890905652195
+Cutzamala,1,lstm,precip_idw_mm,21,22,0.00021911815565545112
+Cutzamala,1,lstm,doy_sin,21,22,0.00016514358867425472
+Cutzamala,1,lstm,doy_cos,21,22,0.00011231141979806125
+Cutzamala,1,lstm,gasto_medio_m3s,20,21,0.0002474130305927247
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,20,21,0.000403578276745975
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,20,21,0.0002811078156810254
+Cutzamala,1,lstm,precip_idw_mm,20,21,0.0002661961771082133
+Cutzamala,1,lstm,doy_sin,20,21,0.00020916108042001724
+Cutzamala,1,lstm,doy_cos,20,21,0.0001393678248859942
+Cutzamala,1,lstm,gasto_medio_m3s,19,20,0.0003014601825270802
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,19,20,0.0004947919514961541
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,19,20,0.0003475671692285687
+Cutzamala,1,lstm,precip_idw_mm,19,20,0.0003355389926582575
+Cutzamala,1,lstm,doy_sin,19,20,0.000264460890321061
+Cutzamala,1,lstm,doy_cos,19,20,0.00017320057668257505
+Cutzamala,1,lstm,gasto_medio_m3s,18,19,0.00036780411028303206
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,18,19,0.0006084479973651469
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,18,19,0.00042995469993911684
+Cutzamala,1,lstm,precip_idw_mm,18,19,0.0004272273799870163
+Cutzamala,1,lstm,doy_sin,18,19,0.0003341545525472611
+Cutzamala,1,lstm,doy_cos,18,19,0.0002147843479178846
+Cutzamala,1,lstm,gasto_medio_m3s,17,18,0.0004444454098120332
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,17,18,0.0007501390646211803
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,17,18,0.0005327551625669003
+Cutzamala,1,lstm,precip_idw_mm,17,18,0.0005318329203873873
+Cutzamala,1,lstm,doy_sin,17,18,0.0004222957941237837
+Cutzamala,1,lstm,doy_cos,17,18,0.00026780206826515496
+Cutzamala,1,lstm,gasto_medio_m3s,16,17,0.0005433723563328385
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,16,17,0.0009282390237785876
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,16,17,0.0006600020569749177
+Cutzamala,1,lstm,precip_idw_mm,16,17,0.0006557038868777454
+Cutzamala,1,lstm,doy_sin,16,17,0.0005330190761014819
+Cutzamala,1,lstm,doy_cos,16,17,0.00033459594123996794
+Cutzamala,1,lstm,gasto_medio_m3s,15,16,0.0006727699073962867
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,15,16,0.0011485298164188862
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,15,16,0.0008192745153792202
+Cutzamala,1,lstm,precip_idw_mm,15,16,0.000815961800981313
+Cutzamala,1,lstm,doy_sin,15,16,0.0006724083796143532
+Cutzamala,1,lstm,doy_cos,15,16,0.00041904751560650766
+Cutzamala,1,lstm,gasto_medio_m3s,14,15,0.0008378296624869108
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,14,15,0.0014282137854024768
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,14,15,0.001019565388560295
+Cutzamala,1,lstm,precip_idw_mm,14,15,0.0010165435960516334
+Cutzamala,1,lstm,doy_sin,14,15,0.000847113027703017
+Cutzamala,1,lstm,doy_cos,14,15,0.0005284590879455209
+Cutzamala,1,lstm,gasto_medio_m3s,13,14,0.0010436340235173702
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,13,14,0.0017796480096876621
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,13,14,0.0012690448202192783
+Cutzamala,1,lstm,precip_idw_mm,13,14,0.0012861739378422499
+Cutzamala,1,lstm,doy_sin,13,14,0.0010647641029208899
+Cutzamala,1,lstm,doy_cos,13,14,0.0006668049027211964
+Cutzamala,1,lstm,gasto_medio_m3s,12,13,0.0013099663192406297
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,12,13,0.0022181274835020304
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,12,13,0.001581451273523271
+Cutzamala,1,lstm,precip_idw_mm,12,13,0.0016535237664356828
+Cutzamala,1,lstm,doy_sin,12,13,0.001331424922682345
+Cutzamala,1,lstm,doy_cos,12,13,0.0008376502082683146
+Cutzamala,1,lstm,gasto_medio_m3s,11,12,0.0016513267764821649
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,11,12,0.0027685260865837336
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,11,12,0.0019731216598302126
+Cutzamala,1,lstm,precip_idw_mm,11,12,0.00214085984043777
+Cutzamala,1,lstm,doy_sin,11,12,0.0016533645102754235
+Cutzamala,1,lstm,doy_cos,11,12,0.0010494611924514174
+Cutzamala,1,lstm,gasto_medio_m3s,10,11,0.0020870110020041466
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,10,11,0.003477419028058648
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,10,11,0.0024759601801633835
+Cutzamala,1,lstm,precip_idw_mm,10,11,0.0026459957007318735
+Cutzamala,1,lstm,doy_sin,10,11,0.002036110730841756
+Cutzamala,1,lstm,doy_cos,10,11,0.0013160345843061805
+Cutzamala,1,lstm,gasto_medio_m3s,9,10,0.0026196837425231934
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,9,10,0.004380306228995323
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,9,10,0.0030987125355750322
+Cutzamala,1,lstm,precip_idw_mm,9,10,0.0033215750008821487
+Cutzamala,1,lstm,doy_sin,9,10,0.002465871162712574
+Cutzamala,1,lstm,doy_cos,9,10,0.0016304150922223926
+Cutzamala,1,lstm,gasto_medio_m3s,8,9,0.0032866427209228277
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,8,9,0.0055219028145074844
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,8,9,0.003904998302459717
+Cutzamala,1,lstm,precip_idw_mm,8,9,0.004141629207879305
+Cutzamala,1,lstm,doy_sin,8,9,0.002916136756539345
+Cutzamala,1,lstm,doy_cos,8,9,0.0019917141180485487
+Cutzamala,1,lstm,gasto_medio_m3s,7,8,0.0041367667727172375
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,7,8,0.006963461171835661
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,7,8,0.00498020788654685
+Cutzamala,1,lstm,precip_idw_mm,7,8,0.0052210744470357895
+Cutzamala,1,lstm,doy_sin,7,8,0.0033135104458779097
+Cutzamala,1,lstm,doy_cos,7,8,0.0023663153406232595
+Cutzamala,1,lstm,gasto_medio_m3s,6,7,0.005393868777900934
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,6,7,0.00882550049573183
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,6,7,0.006466252263635397
+Cutzamala,1,lstm,precip_idw_mm,6,7,0.006373620126396418
+Cutzamala,1,lstm,doy_sin,6,7,0.003494058968499303
+Cutzamala,1,lstm,doy_cos,6,7,0.0027260305359959602
+Cutzamala,1,lstm,gasto_medio_m3s,5,6,0.007571067661046982
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,5,6,0.011346891522407532
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,5,6,0.008483423851430416
+Cutzamala,1,lstm,precip_idw_mm,5,6,0.007822361774742603
+Cutzamala,1,lstm,doy_sin,5,6,0.0031416669953614473
+Cutzamala,1,lstm,doy_cos,5,6,0.0030241713393479586
+Cutzamala,1,lstm,gasto_medio_m3s,4,5,0.012603984214365482
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,4,5,0.01491045206785202
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,4,5,0.011074300855398178
+Cutzamala,1,lstm,precip_idw_mm,4,5,0.010111062787473202
+Cutzamala,1,lstm,doy_sin,4,5,0.0022488869726657867
+Cutzamala,1,lstm,doy_cos,4,5,0.003189000068232417
+Cutzamala,1,lstm,gasto_medio_m3s,3,4,0.022807573899626732
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,3,4,0.020131876692175865
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,3,4,0.014248643070459366
+Cutzamala,1,lstm,precip_idw_mm,3,4,0.014211378060281277
+Cutzamala,1,lstm,doy_sin,3,4,0.004549715202301741
+Cutzamala,1,lstm,doy_cos,3,4,0.0032305235508829355
+Cutzamala,1,lstm,gasto_medio_m3s,2,3,0.040790680795907974
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,2,3,0.027673864737153053
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,2,3,0.017838211730122566
+Cutzamala,1,lstm,precip_idw_mm,2,3,0.022953959181904793
+Cutzamala,1,lstm,doy_sin,2,3,0.013197173364460468
+Cutzamala,1,lstm,doy_cos,2,3,0.004027299117296934
+Cutzamala,1,lstm,gasto_medio_m3s,1,2,0.0696612074971199
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,1,2,0.038771167397499084
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,1,2,0.023341193795204163
+Cutzamala,1,lstm,precip_idw_mm,1,2,0.04059933125972748
+Cutzamala,1,lstm,doy_sin,1,2,0.027628252282738686
+Cutzamala,1,lstm,doy_cos,1,2,0.008779953233897686
+Cutzamala,1,lstm,gasto_medio_m3s,0,1,0.10625547915697098
+Cutzamala,1,lstm,gasto_medio_m3s_ma7,0,1,0.050100505352020264
+Cutzamala,1,lstm,gasto_medio_m3s_ma30,0,1,0.029831165447831154
+Cutzamala,1,lstm,precip_idw_mm,0,1,0.07453519105911255
+Cutzamala,1,lstm,doy_sin,0,1,0.043944019824266434
+Cutzamala,1,lstm,doy_cos,0,1,0.01631222479045391
+Cutzamala,7,lstm,gasto_medio_m3s,29,36,1.1834844372060616e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,29,36,1.2025579962937627e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,29,36,4.880628330283798e-05
+Cutzamala,7,lstm,precip_idw_mm,29,36,1.5181244634732138e-05
+Cutzamala,7,lstm,doy_sin,29,36,8.38418236526195e-06
+Cutzamala,7,lstm,doy_cos,29,36,3.167801878589671e-06
+Cutzamala,7,lstm,gasto_medio_m3s,28,35,1.1577122677408624e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,28,35,1.7974120055441745e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,28,35,5.1545179303502664e-05
+Cutzamala,7,lstm,precip_idw_mm,28,35,1.8324190023122355e-05
+Cutzamala,7,lstm,doy_sin,28,35,1.2112046533729881e-05
+Cutzamala,7,lstm,doy_cos,28,35,4.420524419401772e-06
+Cutzamala,7,lstm,gasto_medio_m3s,27,34,1.5447936675627716e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,27,34,2.680587931536138e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,27,34,5.235530261415988e-05
+Cutzamala,7,lstm,precip_idw_mm,27,34,1.9610932213254273e-05
+Cutzamala,7,lstm,doy_sin,27,34,1.7116226445068605e-05
+Cutzamala,7,lstm,doy_cos,27,34,6.136495358077809e-06
+Cutzamala,7,lstm,gasto_medio_m3s,26,33,2.805583062581718e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,26,33,3.745387584785931e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,26,33,5.117604086990468e-05
+Cutzamala,7,lstm,precip_idw_mm,26,33,1.9360908481758088e-05
+Cutzamala,7,lstm,doy_sin,26,33,2.254425453429576e-05
+Cutzamala,7,lstm,doy_cos,26,33,8.44844453240512e-06
+Cutzamala,7,lstm,gasto_medio_m3s,25,32,4.91959071950987e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,25,32,4.913474913337268e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,25,32,4.974905095878057e-05
+Cutzamala,7,lstm,precip_idw_mm,25,32,1.909109232656192e-05
+Cutzamala,7,lstm,doy_sin,25,32,2.781522744044196e-05
+Cutzamala,7,lstm,doy_cos,25,32,1.1303960491204634e-05
+Cutzamala,7,lstm,gasto_medio_m3s,24,31,7.592441397719085e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,24,31,6.12960138823837e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,24,31,5.2721599786309525e-05
+Cutzamala,7,lstm,precip_idw_mm,24,31,2.6772286219056696e-05
+Cutzamala,7,lstm,doy_sin,24,31,3.292216206318699e-05
+Cutzamala,7,lstm,doy_cos,24,31,1.4715745237481315e-05
+Cutzamala,7,lstm,gasto_medio_m3s,23,30,0.00010512231528991833
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,23,30,7.334163092309609e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,23,30,6.957112054806203e-05
+Cutzamala,7,lstm,precip_idw_mm,23,30,4.5376324123935774e-05
+Cutzamala,7,lstm,doy_sin,23,30,3.781179475481622e-05
+Cutzamala,7,lstm,doy_cos,23,30,1.9155078916810453e-05
+Cutzamala,7,lstm,gasto_medio_m3s,22,29,0.00013337806740310043
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,22,29,8.766436803853139e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,22,29,9.346735896542668e-05
+Cutzamala,7,lstm,precip_idw_mm,22,29,6.992710405029356e-05
+Cutzamala,7,lstm,doy_sin,22,29,4.2826122808037326e-05
+Cutzamala,7,lstm,doy_cos,22,29,2.4503955501131713e-05
+Cutzamala,7,lstm,gasto_medio_m3s,21,28,0.00015673873713240027
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,21,28,9.933395631378517e-05
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,21,28,0.0001266368926735595
+Cutzamala,7,lstm,precip_idw_mm,21,28,9.529690578347072e-05
+Cutzamala,7,lstm,doy_sin,21,28,4.886844544671476e-05
+Cutzamala,7,lstm,doy_cos,21,28,3.117190863122232e-05
+Cutzamala,7,lstm,gasto_medio_m3s,20,27,0.00017162082076538354
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,20,27,0.00010689197370084003
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,20,27,0.0001619028626009822
+Cutzamala,7,lstm,precip_idw_mm,20,27,0.00012020015128655359
+Cutzamala,7,lstm,doy_sin,20,27,5.6408069212920964e-05
+Cutzamala,7,lstm,doy_cos,20,27,4.005937080364674e-05
+Cutzamala,7,lstm,gasto_medio_m3s,19,26,0.00017410390137229115
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,19,26,0.00011119229020550847
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,19,26,0.00019591156160458922
+Cutzamala,7,lstm,precip_idw_mm,19,26,0.00014526564336847514
+Cutzamala,7,lstm,doy_sin,19,26,7.085623656166717e-05
+Cutzamala,7,lstm,doy_cos,19,26,5.2721938118338585e-05
+Cutzamala,7,lstm,gasto_medio_m3s,18,25,0.0001639870897633955
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,18,25,0.00011895701027242467
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,18,25,0.00022839033044874668
+Cutzamala,7,lstm,precip_idw_mm,18,25,0.00016684755973983556
+Cutzamala,7,lstm,doy_sin,18,25,9.247424895875156e-05
+Cutzamala,7,lstm,doy_cos,18,25,7.436252053594217e-05
+Cutzamala,7,lstm,gasto_medio_m3s,17,24,0.00015803946007508785
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,17,24,0.00016323477029800415
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,17,24,0.00026498257648199797
+Cutzamala,7,lstm,precip_idw_mm,17,24,0.00018923064635600895
+Cutzamala,7,lstm,doy_sin,17,24,0.00012251187581568956
+Cutzamala,7,lstm,doy_cos,17,24,0.00010723519517341629
+Cutzamala,7,lstm,gasto_medio_m3s,16,23,0.0002629628870636225
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,16,23,0.00027204377693124115
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,16,23,0.0003456632839515805
+Cutzamala,7,lstm,precip_idw_mm,16,23,0.00022231413458939642
+Cutzamala,7,lstm,doy_sin,16,23,0.0001655127853155136
+Cutzamala,7,lstm,doy_cos,16,23,0.00015114997222553939
+Cutzamala,7,lstm,gasto_medio_m3s,15,22,0.00047802613698877394
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,15,22,0.00042043274152092636
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,15,22,0.0005195000558160245
+Cutzamala,7,lstm,precip_idw_mm,15,22,0.00034969739499501884
+Cutzamala,7,lstm,doy_sin,15,22,0.00022650707978755236
+Cutzamala,7,lstm,doy_cos,15,22,0.00020388489065226167
+Cutzamala,7,lstm,gasto_medio_m3s,14,21,0.0007475668098777533
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,14,21,0.0006095943972468376
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,14,21,0.0008079377585090697
+Cutzamala,7,lstm,precip_idw_mm,14,21,0.0005772341974079609
+Cutzamala,7,lstm,doy_sin,14,21,0.00031524570658802986
+Cutzamala,7,lstm,doy_cos,14,21,0.0002661778999026865
+Cutzamala,7,lstm,gasto_medio_m3s,13,20,0.001052333740517497
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,13,20,0.0008454637718386948
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,13,20,0.0012135490542277694
+Cutzamala,7,lstm,precip_idw_mm,13,20,0.0008680650498718023
+Cutzamala,7,lstm,doy_sin,13,20,0.00045849327580071986
+Cutzamala,7,lstm,doy_cos,13,20,0.0003492523974273354
+Cutzamala,7,lstm,gasto_medio_m3s,12,19,0.0013897829921916127
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,12,19,0.0011403787648305297
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,12,19,0.0017041483661159873
+Cutzamala,7,lstm,precip_idw_mm,12,19,0.0012100772000849247
+Cutzamala,7,lstm,doy_sin,12,19,0.0007224055589176714
+Cutzamala,7,lstm,doy_cos,12,19,0.0004767912032548338
+Cutzamala,7,lstm,gasto_medio_m3s,11,18,0.0017338698962703347
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,11,18,0.0015382423298433423
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,11,18,0.0022631995379924774
+Cutzamala,7,lstm,precip_idw_mm,11,18,0.0016042339848354459
+Cutzamala,7,lstm,doy_sin,11,18,0.0011484110727906227
+Cutzamala,7,lstm,doy_cos,11,18,0.0007095448672771454
+Cutzamala,7,lstm,gasto_medio_m3s,10,17,0.0021115427371114492
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,10,17,0.0021063077729195356
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,10,17,0.0028126316610723734
+Cutzamala,7,lstm,precip_idw_mm,10,17,0.002006427850574255
+Cutzamala,7,lstm,doy_sin,10,17,0.0018334415508434176
+Cutzamala,7,lstm,doy_cos,10,17,0.0011290170950815082
+Cutzamala,7,lstm,gasto_medio_m3s,9,16,0.0026153649669140577
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,9,16,0.0029724875930696726
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,9,16,0.003360539907589555
+Cutzamala,7,lstm,precip_idw_mm,9,16,0.0024860661942511797
+Cutzamala,7,lstm,doy_sin,9,16,0.002917272737249732
+Cutzamala,7,lstm,doy_cos,9,16,0.0018338995287194848
+Cutzamala,7,lstm,gasto_medio_m3s,8,15,0.003376538632437587
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,8,15,0.0044166576117277145
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,8,15,0.0038951945025473833
+Cutzamala,7,lstm,precip_idw_mm,8,15,0.0030563874170184135
+Cutzamala,7,lstm,doy_sin,8,15,0.004570449702441692
+Cutzamala,7,lstm,doy_cos,8,15,0.002987191779538989
+Cutzamala,7,lstm,gasto_medio_m3s,7,14,0.004728215280920267
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,7,14,0.0067597441375255585
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,7,14,0.0044531673192977905
+Cutzamala,7,lstm,precip_idw_mm,7,14,0.003876563161611557
+Cutzamala,7,lstm,doy_sin,7,14,0.006911650765687227
+Cutzamala,7,lstm,doy_cos,7,14,0.004782034549862146
+Cutzamala,7,lstm,gasto_medio_m3s,6,13,0.007506103720515966
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,6,13,0.009915780276060104
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,6,13,0.005249029491096735
+Cutzamala,7,lstm,precip_idw_mm,6,13,0.00537490239366889
+Cutzamala,7,lstm,doy_sin,6,13,0.010087087750434875
+Cutzamala,7,lstm,doy_cos,6,13,0.007366666570305824
+Cutzamala,7,lstm,gasto_medio_m3s,5,12,0.011501380242407322
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,5,12,0.013847443275153637
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,5,12,0.00664540147408843
+Cutzamala,7,lstm,precip_idw_mm,5,12,0.008169125765562057
+Cutzamala,7,lstm,doy_sin,5,12,0.014222756959497929
+Cutzamala,7,lstm,doy_cos,5,12,0.010821860283613205
+Cutzamala,7,lstm,gasto_medio_m3s,4,11,0.016730142757296562
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,4,11,0.018474414944648743
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,4,11,0.0095674442127347
+Cutzamala,7,lstm,precip_idw_mm,4,11,0.012486900202929974
+Cutzamala,7,lstm,doy_sin,4,11,0.01935426890850067
+Cutzamala,7,lstm,doy_cos,4,11,0.015184056013822556
+Cutzamala,7,lstm,gasto_medio_m3s,3,10,0.022881461307406425
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,3,10,0.023456061258912086
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,3,10,0.01406248938292265
+Cutzamala,7,lstm,precip_idw_mm,3,10,0.01892789453268051
+Cutzamala,7,lstm,doy_sin,3,10,0.02533484436571598
+Cutzamala,7,lstm,doy_cos,3,10,0.020305773243308067
+Cutzamala,7,lstm,gasto_medio_m3s,2,9,0.02920551598072052
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,2,9,0.0280211940407753
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,2,9,0.01952684111893177
+Cutzamala,7,lstm,precip_idw_mm,2,9,0.026629844680428505
+Cutzamala,7,lstm,doy_sin,2,9,0.031641989946365356
+Cutzamala,7,lstm,doy_cos,2,9,0.025666536763310432
+Cutzamala,7,lstm,gasto_medio_m3s,1,8,0.03452710434794426
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,1,8,0.030985787510871887
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,1,8,0.02501828968524933
+Cutzamala,7,lstm,precip_idw_mm,1,8,0.035150568932294846
+Cutzamala,7,lstm,doy_sin,1,8,0.0371476374566555
+Cutzamala,7,lstm,doy_cos,1,8,0.030111202970147133
+Cutzamala,7,lstm,gasto_medio_m3s,0,7,0.035085614770650864
+Cutzamala,7,lstm,gasto_medio_m3s_ma7,0,7,0.029108161106705666
+Cutzamala,7,lstm,gasto_medio_m3s_ma30,0,7,0.027546538040041924
+Cutzamala,7,lstm,precip_idw_mm,0,7,0.040783435106277466
+Cutzamala,7,lstm,doy_sin,0,7,0.040189456194639206
+Cutzamala,7,lstm,doy_cos,0,7,0.031204352155327797
+Cutzamala,14,lstm,gasto_medio_m3s,29,43,3.2290336093865335e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,29,43,2.9977314625284635e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,29,43,4.4743417674908414e-05
+Cutzamala,14,lstm,precip_idw_mm,29,43,4.785209603141993e-05
+Cutzamala,14,lstm,doy_sin,29,43,2.6111194529221393e-05
+Cutzamala,14,lstm,doy_cos,29,43,2.1776460926048458e-05
+Cutzamala,14,lstm,gasto_medio_m3s,28,42,3.732432742253877e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,28,42,3.660239963210188e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,28,42,5.639598748530261e-05
+Cutzamala,14,lstm,precip_idw_mm,28,42,6.453012611018494e-05
+Cutzamala,14,lstm,doy_sin,28,42,3.8488964491989464e-05
+Cutzamala,14,lstm,doy_cos,28,42,2.810574551403988e-05
+Cutzamala,14,lstm,gasto_medio_m3s,27,41,4.443455327418633e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,27,41,4.480874122236855e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,27,41,7.13617992005311e-05
+Cutzamala,14,lstm,precip_idw_mm,27,41,8.219724986702204e-05
+Cutzamala,14,lstm,doy_sin,27,41,5.341384166968055e-05
+Cutzamala,14,lstm,doy_cos,27,41,3.5411445423960686e-05
+Cutzamala,14,lstm,gasto_medio_m3s,26,40,5.684421557816677e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,26,40,5.508311733137816e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,26,40,9.019701246870682e-05
+Cutzamala,14,lstm,precip_idw_mm,26,40,9.79671094682999e-05
+Cutzamala,14,lstm,doy_sin,26,40,6.957476580282673e-05
+Cutzamala,14,lstm,doy_cos,26,40,4.394830102683045e-05
+Cutzamala,14,lstm,gasto_medio_m3s,25,39,7.239801925607026e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,25,39,6.684940308332443e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,25,39,0.00010752590605989099
+Cutzamala,14,lstm,precip_idw_mm,25,39,0.00011216056736884639
+Cutzamala,14,lstm,doy_sin,25,39,8.531798812327906e-05
+Cutzamala,14,lstm,doy_cos,25,39,5.413183316704817e-05
+Cutzamala,14,lstm,gasto_medio_m3s,24,38,9.000910358736292e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,24,38,7.922642544144765e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,24,38,0.0001248611806659028
+Cutzamala,14,lstm,precip_idw_mm,24,38,0.00012481935846153647
+Cutzamala,14,lstm,doy_sin,24,38,0.00010019366163760424
+Cutzamala,14,lstm,doy_cos,24,38,6.632483564317226e-05
+Cutzamala,14,lstm,gasto_medio_m3s,23,37,0.00011082749551860616
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,23,37,9.197086183121428e-05
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,23,37,0.00014337942411657423
+Cutzamala,14,lstm,precip_idw_mm,23,37,0.00013360369484871626
+Cutzamala,14,lstm,doy_sin,23,37,0.00011502412235131487
+Cutzamala,14,lstm,doy_cos,23,37,8.137324039125815e-05
+Cutzamala,14,lstm,gasto_medio_m3s,22,36,0.00013234450307209045
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,22,36,0.00010712151561165228
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,22,36,0.00016428045637439936
+Cutzamala,14,lstm,precip_idw_mm,22,36,0.00014523947902489454
+Cutzamala,14,lstm,doy_sin,22,36,0.00013028438843321055
+Cutzamala,14,lstm,doy_cos,22,36,0.00010025846859207377
+Cutzamala,14,lstm,gasto_medio_m3s,21,35,0.0001565257116453722
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,21,35,0.0001247682812390849
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,21,35,0.00018887815531343222
+Cutzamala,14,lstm,precip_idw_mm,21,35,0.00015238030755426735
+Cutzamala,14,lstm,doy_sin,21,35,0.00014642327732872218
+Cutzamala,14,lstm,doy_cos,21,35,0.00012377950770314783
+Cutzamala,14,lstm,gasto_medio_m3s,20,34,0.00018477723642718047
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,20,34,0.00014732556883245707
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,20,34,0.0002175000263378024
+Cutzamala,14,lstm,precip_idw_mm,20,34,0.00016728400078136474
+Cutzamala,14,lstm,doy_sin,20,34,0.0001644718722673133
+Cutzamala,14,lstm,doy_cos,20,34,0.00015419079863931984
+Cutzamala,14,lstm,gasto_medio_m3s,19,33,0.00022456278384197503
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,19,33,0.00017714558634907007
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,19,33,0.0002487446472514421
+Cutzamala,14,lstm,precip_idw_mm,19,33,0.0001931108272401616
+Cutzamala,14,lstm,doy_sin,19,33,0.0001844389335019514
+Cutzamala,14,lstm,doy_cos,19,33,0.00019284512382000685
+Cutzamala,14,lstm,gasto_medio_m3s,18,32,0.0002880078973248601
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,18,32,0.00021946894412394613
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,18,32,0.0002865995920728892
+Cutzamala,14,lstm,precip_idw_mm,18,32,0.0002521375135984272
+Cutzamala,14,lstm,doy_sin,18,32,0.00020614400273188949
+Cutzamala,14,lstm,doy_cos,18,32,0.00024217374448198825
+Cutzamala,14,lstm,gasto_medio_m3s,17,31,0.000381661084247753
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,17,31,0.0002771615982055664
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,17,31,0.00033211204572580755
+Cutzamala,14,lstm,precip_idw_mm,17,31,0.0003640765498857945
+Cutzamala,14,lstm,doy_sin,17,31,0.00022932251158636063
+Cutzamala,14,lstm,doy_cos,17,31,0.0003063479089178145
+Cutzamala,14,lstm,gasto_medio_m3s,16,30,0.0005110506317578256
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,16,30,0.00035485977423377335
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,16,30,0.00039388114237226546
+Cutzamala,14,lstm,precip_idw_mm,16,30,0.0005261834594421089
+Cutzamala,14,lstm,doy_sin,16,30,0.0002547076146584004
+Cutzamala,14,lstm,doy_cos,16,30,0.00039761257357895374
+Cutzamala,14,lstm,gasto_medio_m3s,15,29,0.0006814754451625049
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,15,29,0.00046024072798900306
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,15,29,0.0004889190313406289
+Cutzamala,14,lstm,precip_idw_mm,15,29,0.0007869277615100145
+Cutzamala,14,lstm,doy_sin,15,29,0.0002864004054572433
+Cutzamala,14,lstm,doy_cos,15,29,0.0005380369257181883
+Cutzamala,14,lstm,gasto_medio_m3s,14,28,0.0008991709910333157
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,14,28,0.000609398412052542
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,14,28,0.0006789052858948708
+Cutzamala,14,lstm,precip_idw_mm,14,28,0.0011191116645932198
+Cutzamala,14,lstm,doy_sin,14,28,0.0003347637830302119
+Cutzamala,14,lstm,doy_cos,14,28,0.0007505064713768661
+Cutzamala,14,lstm,gasto_medio_m3s,13,27,0.0011516952654346824
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,13,27,0.0008215708076022565
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,13,27,0.0010215264046564698
+Cutzamala,14,lstm,precip_idw_mm,13,27,0.0015421556308865547
+Cutzamala,14,lstm,doy_sin,13,27,0.0004241389688104391
+Cutzamala,14,lstm,doy_cos,13,27,0.0010758956195786595
+Cutzamala,14,lstm,gasto_medio_m3s,12,26,0.0014353491133078933
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,12,26,0.0011272137053310871
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,12,26,0.0015210589626803994
+Cutzamala,14,lstm,precip_idw_mm,12,26,0.002020952058956027
+Cutzamala,14,lstm,doy_sin,12,26,0.0006214562454260886
+Cutzamala,14,lstm,doy_cos,12,26,0.0015622802311554551
+Cutzamala,14,lstm,gasto_medio_m3s,11,25,0.0017342854989692569
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,11,25,0.00154984334949404
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,11,25,0.002189847407862544
+Cutzamala,14,lstm,precip_idw_mm,11,25,0.0025426028296351433
+Cutzamala,14,lstm,doy_sin,11,25,0.0009932015091180801
+Cutzamala,14,lstm,doy_cos,11,25,0.0022818499710410833
+Cutzamala,14,lstm,gasto_medio_m3s,10,24,0.002055568853393197
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,10,24,0.0021473916713148355
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,10,24,0.0029789747204631567
+Cutzamala,14,lstm,precip_idw_mm,10,24,0.003036692040041089
+Cutzamala,14,lstm,doy_sin,10,24,0.001642631716094911
+Cutzamala,14,lstm,doy_cos,10,24,0.0033445346634835005
+Cutzamala,14,lstm,gasto_medio_m3s,9,23,0.002433057175949216
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,9,23,0.002986943582072854
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,9,23,0.003878694726154208
+Cutzamala,14,lstm,precip_idw_mm,9,23,0.0034468125086277723
+Cutzamala,14,lstm,doy_sin,9,23,0.0026672445237636566
+Cutzamala,14,lstm,doy_cos,9,23,0.004902214277535677
+Cutzamala,14,lstm,gasto_medio_m3s,8,22,0.0030089926440268755
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,8,22,0.004203604068607092
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,8,22,0.004842082504183054
+Cutzamala,14,lstm,precip_idw_mm,8,22,0.003744986606761813
+Cutzamala,14,lstm,doy_sin,8,22,0.004165780730545521
+Cutzamala,14,lstm,doy_cos,8,22,0.007103447336703539
+Cutzamala,14,lstm,gasto_medio_m3s,7,21,0.00412087282165885
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,7,21,0.005990207195281982
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,7,21,0.005807155277580023
+Cutzamala,14,lstm,precip_idw_mm,7,21,0.0037484297063201666
+Cutzamala,14,lstm,doy_sin,7,21,0.006281672511249781
+Cutzamala,14,lstm,doy_cos,7,21,0.010077266953885555
+Cutzamala,14,lstm,gasto_medio_m3s,6,20,0.006275463849306107
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,6,20,0.008475784212350845
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,6,20,0.006712728645652533
+Cutzamala,14,lstm,precip_idw_mm,6,20,0.0037482324987649918
+Cutzamala,14,lstm,doy_sin,6,20,0.00916679110378027
+Cutzamala,14,lstm,doy_cos,6,20,0.013929206877946854
+Cutzamala,14,lstm,gasto_medio_m3s,5,19,0.01007398497313261
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,5,19,0.0117501774802804
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,5,19,0.007577776908874512
+Cutzamala,14,lstm,precip_idw_mm,5,19,0.004109241999685764
+Cutzamala,14,lstm,doy_sin,5,19,0.012938782572746277
+Cutzamala,14,lstm,doy_cos,5,19,0.01871410198509693
+Cutzamala,14,lstm,gasto_medio_m3s,4,18,0.01567024551331997
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,4,18,0.015822062268853188
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,4,18,0.008565390482544899
+Cutzamala,14,lstm,precip_idw_mm,4,18,0.005891368258744478
+Cutzamala,14,lstm,doy_sin,4,18,0.017621153965592384
+Cutzamala,14,lstm,doy_cos,4,18,0.024355456233024597
+Cutzamala,14,lstm,gasto_medio_m3s,3,17,0.022866016253829002
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,3,17,0.020555250346660614
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,3,17,0.010253497399389744
+Cutzamala,14,lstm,precip_idw_mm,3,17,0.010027054697275162
+Cutzamala,14,lstm,doy_sin,3,17,0.023007767274975777
+Cutzamala,14,lstm,doy_cos,3,17,0.030566642060875893
+Cutzamala,14,lstm,gasto_medio_m3s,2,16,0.030909210443496704
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,2,16,0.025384074077010155
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,2,16,0.013949006795883179
+Cutzamala,14,lstm,precip_idw_mm,2,16,0.016157494857907295
+Cutzamala,14,lstm,doy_sin,2,16,0.028462179005146027
+Cutzamala,14,lstm,doy_cos,2,16,0.03673705831170082
+Cutzamala,14,lstm,gasto_medio_m3s,1,15,0.03814418241381645
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,1,15,0.02922092378139496
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,1,15,0.019597157835960388
+Cutzamala,14,lstm,precip_idw_mm,1,15,0.022508151829242706
+Cutzamala,14,lstm,doy_sin,1,15,0.032687537372112274
+Cutzamala,14,lstm,doy_cos,1,15,0.041962265968322754
+Cutzamala,14,lstm,gasto_medio_m3s,0,14,0.04001612588763237
+Cutzamala,14,lstm,gasto_medio_m3s_ma7,0,14,0.030252346768975258
+Cutzamala,14,lstm,gasto_medio_m3s_ma30,0,14,0.024633673951029778
+Cutzamala,14,lstm,precip_idw_mm,0,14,0.026295164600014687
+Cutzamala,14,lstm,doy_sin,0,14,0.03465285524725914
+Cutzamala,14,lstm,doy_cos,0,14,0.04516876861453056

@@ -1,0 +1,7 @@
+modelo,h,config,nse_val_mediana,elegida
+lstm,1,32,0.6569,True
+lstm,1,64,0.6521,False
+lstm,7,32,0.2254,False
+lstm,7,64,0.2309,True
+lstm,14,32,0.135,False
+lstm,14,64,0.1379,True

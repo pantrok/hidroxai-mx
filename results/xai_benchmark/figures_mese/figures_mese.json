@@ -1,10 +1,10 @@
 {
   "lstm_incluido": {
-    "skill": false,
-    "delta": false,
-    "imp": false,
-    "conc": false,
-    "wf": false
+    "skill": true,
+    "delta": true,
+    "imp": true,
+    "conc": true,
+    "wf": true
   },
   "fig2_mapa": {
     "estaciones_modeladas": 95,

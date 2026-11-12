@@ -1,0 +1,361 @@
+cuenca,h,medida,tipo,modelo_a,modelo_b,valor,bajo_techo_semillas
+Lerma–Santiago,1,spearman_180,entre_semillas,lstm,lstm,0.874183359568711,
+Lerma–Santiago,1,spearman_180,entre_semillas,lstm,lstm,0.9248268979495251,
+Lerma–Santiago,1,spearman_180,entre_semillas,lstm,lstm,0.9398376493101639,
+Lerma–Santiago,1,spearman_180,entre_mitades,lstm,lstm,0.9992736401329259,
+Lerma–Santiago,1,spearman_180,entre_modelos,xgboost,lstm,0.3139068078232867,True
+Lerma–Santiago,1,spearman_180,entre_modelos,tcn,lstm,0.7156208524954474,True
+Lerma–Santiago,1,spearman_180,entre_modelos,convnext,lstm,0.5976809983847238,True
+Lerma–Santiago,1,spearman_180,entre_modelos,patchtst,lstm,0.31984114736051517,True
+Lerma–Santiago,1,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,1,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,1,jaccard_top10,entre_semillas,lstm,lstm,0.5384615384615384,
+Lerma–Santiago,1,jaccard_top10,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,1,jaccard_top10,entre_modelos,xgboost,lstm,0.42857142857142855,True
+Lerma–Santiago,1,jaccard_top10,entre_modelos,tcn,lstm,0.5384615384615384,True
+Lerma–Santiago,1,jaccard_top10,entre_modelos,convnext,lstm,0.5384615384615384,False
+Lerma–Santiago,1,jaccard_top10,entre_modelos,patchtst,lstm,0.42857142857142855,False
+Lerma–Santiago,1,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,1,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,1,jaccard_top20,entre_semillas,lstm,lstm,0.8181818181818182,
+Lerma–Santiago,1,jaccard_top20,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,1,jaccard_top20,entre_modelos,xgboost,lstm,0.48148148148148145,True
+Lerma–Santiago,1,jaccard_top20,entre_modelos,tcn,lstm,0.48148148148148145,True
+Lerma–Santiago,1,jaccard_top20,entre_modelos,convnext,lstm,0.7391304347826086,False
+Lerma–Santiago,1,jaccard_top20,entre_modelos,patchtst,lstm,0.3333333333333333,True
+Lerma–Santiago,1,spearman_canal,entre_semillas,lstm,lstm,0.8857142857142858,
+Lerma–Santiago,1,spearman_canal,entre_semillas,lstm,lstm,0.6,
+Lerma–Santiago,1,spearman_canal,entre_semillas,lstm,lstm,0.5428571428571429,
+Lerma–Santiago,1,spearman_canal,entre_mitades,lstm,lstm,0.942857142857143,
+Lerma–Santiago,1,spearman_canal,entre_modelos,xgboost,lstm,0.8857142857142858,False
+Lerma–Santiago,1,spearman_canal,entre_modelos,tcn,lstm,0.4285714285714286,True
+Lerma–Santiago,1,spearman_canal,entre_modelos,convnext,lstm,0.7142857142857143,False
+Lerma–Santiago,1,spearman_canal,entre_modelos,patchtst,lstm,0.6,False
+Lerma–Santiago,1,spearman_rezago,entre_semillas,lstm,lstm,0.9995550611790878,
+Lerma–Santiago,1,spearman_rezago,entre_semillas,lstm,lstm,0.9955506117908787,
+Lerma–Santiago,1,spearman_rezago,entre_semillas,lstm,lstm,0.9933259176863181,
+Lerma–Santiago,1,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,1,spearman_rezago,entre_modelos,xgboost,lstm,0.30589543937708563,True
+Lerma–Santiago,1,spearman_rezago,entre_modelos,tcn,lstm,0.7348164627363738,True
+Lerma–Santiago,1,spearman_rezago,entre_modelos,convnext,lstm,0.27919911012235815,True
+Lerma–Santiago,1,spearman_rezago,entre_modelos,patchtst,lstm,0.3810901001112347,True
+Lerma–Santiago,7,spearman_180,entre_semillas,lstm,lstm,0.9129006039281047,
+Lerma–Santiago,7,spearman_180,entre_semillas,lstm,lstm,0.9563237548484005,
+Lerma–Santiago,7,spearman_180,entre_semillas,lstm,lstm,0.9640071195613032,
+Lerma–Santiago,7,spearman_180,entre_mitades,lstm,lstm,0.9992016214492216,
+Lerma–Santiago,7,spearman_180,entre_modelos,xgboost,lstm,0.2220562363035896,True
+Lerma–Santiago,7,spearman_180,entre_modelos,tcn,lstm,0.4407913824500756,True
+Lerma–Santiago,7,spearman_180,entre_modelos,convnext,lstm,0.40580059055320633,True
+Lerma–Santiago,7,spearman_180,entre_modelos,patchtst,lstm,0.20544667016471702,True
+Lerma–Santiago,7,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,7,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,7,jaccard_top10,entre_semillas,lstm,lstm,0.5384615384615384,
+Lerma–Santiago,7,jaccard_top10,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,7,jaccard_top10,entre_modelos,xgboost,lstm,0.5384615384615384,True
+Lerma–Santiago,7,jaccard_top10,entre_modelos,tcn,lstm,0.42857142857142855,True
+Lerma–Santiago,7,jaccard_top10,entre_modelos,convnext,lstm,0.5384615384615384,False
+Lerma–Santiago,7,jaccard_top10,entre_modelos,patchtst,lstm,0.25,True
+Lerma–Santiago,7,jaccard_top20,entre_semillas,lstm,lstm,0.5384615384615384,
+Lerma–Santiago,7,jaccard_top20,entre_semillas,lstm,lstm,0.6,
+Lerma–Santiago,7,jaccard_top20,entre_semillas,lstm,lstm,0.42857142857142855,
+Lerma–Santiago,7,jaccard_top20,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,7,jaccard_top20,entre_modelos,xgboost,lstm,0.3333333333333333,True
+Lerma–Santiago,7,jaccard_top20,entre_modelos,tcn,lstm,0.2903225806451613,True
+Lerma–Santiago,7,jaccard_top20,entre_modelos,convnext,lstm,0.5384615384615384,False
+Lerma–Santiago,7,jaccard_top20,entre_modelos,patchtst,lstm,0.2903225806451613,True
+Lerma–Santiago,7,spearman_canal,entre_semillas,lstm,lstm,0.2571428571428572,
+Lerma–Santiago,7,spearman_canal,entre_semillas,lstm,lstm,0.6,
+Lerma–Santiago,7,spearman_canal,entre_semillas,lstm,lstm,0.8857142857142858,
+Lerma–Santiago,7,spearman_canal,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,7,spearman_canal,entre_modelos,xgboost,lstm,0.6571428571428573,False
+Lerma–Santiago,7,spearman_canal,entre_modelos,tcn,lstm,0.028571428571428574,True
+Lerma–Santiago,7,spearman_canal,entre_modelos,convnext,lstm,0.3142857142857143,True
+Lerma–Santiago,7,spearman_canal,entre_modelos,patchtst,lstm,0.028571428571428574,True
+Lerma–Santiago,7,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Lerma–Santiago,7,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Lerma–Santiago,7,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Lerma–Santiago,7,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,7,spearman_rezago,entre_modelos,xgboost,lstm,0.10923248053392658,True
+Lerma–Santiago,7,spearman_rezago,entre_modelos,tcn,lstm,0.48209121245828696,True
+Lerma–Santiago,7,spearman_rezago,entre_modelos,convnext,lstm,0.8478309232480534,False
+Lerma–Santiago,7,spearman_rezago,entre_modelos,patchtst,lstm,0.3010011123470523,True
+Lerma–Santiago,14,spearman_180,entre_semillas,lstm,lstm,0.9464674835643075,
+Lerma–Santiago,14,spearman_180,entre_semillas,lstm,lstm,0.8951922384435733,
+Lerma–Santiago,14,spearman_180,entre_semillas,lstm,lstm,0.9167114211343971,
+Lerma–Santiago,14,spearman_180,entre_mitades,lstm,lstm,0.9990966799386812,
+Lerma–Santiago,14,spearman_180,entre_modelos,xgboost,lstm,0.14862804407543442,True
+Lerma–Santiago,14,spearman_180,entre_modelos,tcn,lstm,0.4699836414704157,True
+Lerma–Santiago,14,spearman_180,entre_modelos,convnext,lstm,0.5742996183009763,False
+Lerma–Santiago,14,spearman_180,entre_modelos,patchtst,lstm,0.2363138780003498,True
+Lerma–Santiago,14,jaccard_top10,entre_semillas,lstm,lstm,0.3333333333333333,
+Lerma–Santiago,14,jaccard_top10,entre_semillas,lstm,lstm,0.5384615384615384,
+Lerma–Santiago,14,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,14,jaccard_top10,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,14,jaccard_top10,entre_modelos,xgboost,lstm,0.25,True
+Lerma–Santiago,14,jaccard_top10,entre_modelos,tcn,lstm,0.3333333333333333,False
+Lerma–Santiago,14,jaccard_top10,entre_modelos,convnext,lstm,0.17647058823529413,True
+Lerma–Santiago,14,jaccard_top10,entre_modelos,patchtst,lstm,0.25,True
+Lerma–Santiago,14,jaccard_top20,entre_semillas,lstm,lstm,0.42857142857142855,
+Lerma–Santiago,14,jaccard_top20,entre_semillas,lstm,lstm,0.3793103448275862,
+Lerma–Santiago,14,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Lerma–Santiago,14,jaccard_top20,entre_mitades,lstm,lstm,0.9047619047619048,
+Lerma–Santiago,14,jaccard_top20,entre_modelos,xgboost,lstm,0.21212121212121213,True
+Lerma–Santiago,14,jaccard_top20,entre_modelos,tcn,lstm,0.25,True
+Lerma–Santiago,14,jaccard_top20,entre_modelos,convnext,lstm,0.17647058823529413,True
+Lerma–Santiago,14,jaccard_top20,entre_modelos,patchtst,lstm,0.2903225806451613,False
+Lerma–Santiago,14,spearman_canal,entre_semillas,lstm,lstm,0.942857142857143,
+Lerma–Santiago,14,spearman_canal,entre_semillas,lstm,lstm,0.7142857142857143,
+Lerma–Santiago,14,spearman_canal,entre_semillas,lstm,lstm,0.7714285714285715,
+Lerma–Santiago,14,spearman_canal,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,14,spearman_canal,entre_modelos,xgboost,lstm,0.6,True
+Lerma–Santiago,14,spearman_canal,entre_modelos,tcn,lstm,0.8857142857142858,False
+Lerma–Santiago,14,spearman_canal,entre_modelos,convnext,lstm,0.7142857142857143,False
+Lerma–Santiago,14,spearman_canal,entre_modelos,patchtst,lstm,0.3714285714285715,True
+Lerma–Santiago,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Lerma–Santiago,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Lerma–Santiago,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Lerma–Santiago,14,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Lerma–Santiago,14,spearman_rezago,entre_modelos,xgboost,lstm,0.0002224694104560623,True
+Lerma–Santiago,14,spearman_rezago,entre_modelos,tcn,lstm,0.4834260289210234,True
+Lerma–Santiago,14,spearman_rezago,entre_modelos,convnext,lstm,0.9879866518353726,False
+Lerma–Santiago,14,spearman_rezago,entre_modelos,patchtst,lstm,0.23781979977753054,True
+Pánuco,1,spearman_180,entre_semillas,lstm,lstm,0.9508606232702654,
+Pánuco,1,spearman_180,entre_semillas,lstm,lstm,0.9360083130137761,
+Pánuco,1,spearman_180,entre_semillas,lstm,lstm,0.9602539173019744,
+Pánuco,1,spearman_180,entre_mitades,lstm,lstm,0.9973908659732296,
+Pánuco,1,spearman_180,entre_modelos,xgboost,lstm,0.27788511991110837,True
+Pánuco,1,spearman_180,entre_modelos,tcn,lstm,0.7366770579338868,True
+Pánuco,1,spearman_180,entre_modelos,convnext,lstm,0.5752728993693221,True
+Pánuco,1,spearman_180,entre_modelos,patchtst,lstm,0.45927960739528995,True
+Pánuco,1,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,1,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,1,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,1,jaccard_top10,entre_mitades,lstm,lstm,1.0,
+Pánuco,1,jaccard_top10,entre_modelos,xgboost,lstm,0.3333333333333333,True
+Pánuco,1,jaccard_top10,entre_modelos,tcn,lstm,0.5384615384615384,True
+Pánuco,1,jaccard_top10,entre_modelos,convnext,lstm,0.42857142857142855,False
+Pánuco,1,jaccard_top10,entre_modelos,patchtst,lstm,0.5384615384615384,False
+Pánuco,1,jaccard_top20,entre_semillas,lstm,lstm,0.7391304347826086,
+Pánuco,1,jaccard_top20,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,1,jaccard_top20,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,1,jaccard_top20,entre_mitades,lstm,lstm,1.0,
+Pánuco,1,jaccard_top20,entre_modelos,xgboost,lstm,0.25,True
+Pánuco,1,jaccard_top20,entre_modelos,tcn,lstm,0.6666666666666666,False
+Pánuco,1,jaccard_top20,entre_modelos,convnext,lstm,0.5384615384615384,False
+Pánuco,1,jaccard_top20,entre_modelos,patchtst,lstm,0.42857142857142855,False
+Pánuco,1,spearman_canal,entre_semillas,lstm,lstm,0.6,
+Pánuco,1,spearman_canal,entre_semillas,lstm,lstm,1.0,
+Pánuco,1,spearman_canal,entre_semillas,lstm,lstm,0.6,
+Pánuco,1,spearman_canal,entre_mitades,lstm,lstm,1.0,
+Pánuco,1,spearman_canal,entre_modelos,xgboost,lstm,0.8285714285714287,False
+Pánuco,1,spearman_canal,entre_modelos,tcn,lstm,0.8285714285714287,False
+Pánuco,1,spearman_canal,entre_modelos,convnext,lstm,0.48571428571428577,False
+Pánuco,1,spearman_canal,entre_modelos,patchtst,lstm,0.5428571428571429,True
+Pánuco,1,spearman_rezago,entre_semillas,lstm,lstm,0.9973303670745272,
+Pánuco,1,spearman_rezago,entre_semillas,lstm,lstm,0.9991101223581758,
+Pánuco,1,spearman_rezago,entre_semillas,lstm,lstm,0.9982202447163514,
+Pánuco,1,spearman_rezago,entre_mitades,lstm,lstm,0.9986651835372636,
+Pánuco,1,spearman_rezago,entre_modelos,xgboost,lstm,0.22180200222469412,True
+Pánuco,1,spearman_rezago,entre_modelos,tcn,lstm,0.785539488320356,True
+Pánuco,1,spearman_rezago,entre_modelos,convnext,lstm,0.43403781979977757,True
+Pánuco,1,spearman_rezago,entre_modelos,patchtst,lstm,0.45850945494994433,True
+Pánuco,7,spearman_180,entre_semillas,lstm,lstm,0.9674228628455611,
+Pánuco,7,spearman_180,entre_semillas,lstm,lstm,0.9716020041770836,
+Pánuco,7,spearman_180,entre_semillas,lstm,lstm,0.9658363941273906,
+Pánuco,7,spearman_180,entre_mitades,lstm,lstm,0.998806547527187,
+Pánuco,7,spearman_180,entre_modelos,xgboost,lstm,0.20059878391308372,True
+Pánuco,7,spearman_180,entre_modelos,tcn,lstm,0.5224770311840901,True
+Pánuco,7,spearman_180,entre_modelos,convnext,lstm,0.4543699908433388,True
+Pánuco,7,spearman_180,entre_modelos,patchtst,lstm,0.3564575038324228,True
+Pánuco,7,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Pánuco,7,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Pánuco,7,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,7,jaccard_top10,entre_mitades,lstm,lstm,1.0,
+Pánuco,7,jaccard_top10,entre_modelos,xgboost,lstm,0.17647058823529413,True
+Pánuco,7,jaccard_top10,entre_modelos,tcn,lstm,0.3333333333333333,True
+Pánuco,7,jaccard_top10,entre_modelos,convnext,lstm,0.25,True
+Pánuco,7,jaccard_top10,entre_modelos,patchtst,lstm,0.42857142857142855,False
+Pánuco,7,jaccard_top20,entre_semillas,lstm,lstm,0.9047619047619048,
+Pánuco,7,jaccard_top20,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,7,jaccard_top20,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,7,jaccard_top20,entre_mitades,lstm,lstm,1.0,
+Pánuco,7,jaccard_top20,entre_modelos,xgboost,lstm,0.2903225806451613,True
+Pánuco,7,jaccard_top20,entre_modelos,tcn,lstm,0.48148148148148145,True
+Pánuco,7,jaccard_top20,entre_modelos,convnext,lstm,0.21212121212121213,True
+Pánuco,7,jaccard_top20,entre_modelos,patchtst,lstm,0.3793103448275862,False
+Pánuco,7,spearman_canal,entre_semillas,lstm,lstm,0.942857142857143,
+Pánuco,7,spearman_canal,entre_semillas,lstm,lstm,0.942857142857143,
+Pánuco,7,spearman_canal,entre_semillas,lstm,lstm,1.0,
+Pánuco,7,spearman_canal,entre_mitades,lstm,lstm,1.0,
+Pánuco,7,spearman_canal,entre_modelos,xgboost,lstm,0.7714285714285715,True
+Pánuco,7,spearman_canal,entre_modelos,tcn,lstm,0.2571428571428572,True
+Pánuco,7,spearman_canal,entre_modelos,convnext,lstm,0.48571428571428577,True
+Pánuco,7,spearman_canal,entre_modelos,patchtst,lstm,0.6,True
+Pánuco,7,spearman_rezago,entre_semillas,lstm,lstm,0.9982202447163514,
+Pánuco,7,spearman_rezago,entre_semillas,lstm,lstm,0.9995550611790878,
+Pánuco,7,spearman_rezago,entre_semillas,lstm,lstm,0.9986651835372636,
+Pánuco,7,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Pánuco,7,spearman_rezago,entre_modelos,xgboost,lstm,0.29744160177975526,True
+Pánuco,7,spearman_rezago,entre_modelos,tcn,lstm,0.5577308120133482,True
+Pánuco,7,spearman_rezago,entre_modelos,convnext,lstm,0.8447163515016683,True
+Pánuco,7,spearman_rezago,entre_modelos,patchtst,lstm,0.5012235817575084,True
+Pánuco,14,spearman_180,entre_semillas,lstm,lstm,0.8758212702038128,
+Pánuco,14,spearman_180,entre_semillas,lstm,lstm,0.9309114478841939,
+Pánuco,14,spearman_180,entre_semillas,lstm,lstm,0.9321604576272929,
+Pánuco,14,spearman_180,entre_mitades,lstm,lstm,0.9990534687284587,
+Pánuco,14,spearman_180,entre_modelos,xgboost,lstm,0.22265090486331882,True
+Pánuco,14,spearman_180,entre_modelos,tcn,lstm,0.4917826681893474,True
+Pánuco,14,spearman_180,entre_modelos,convnext,lstm,0.42721277405681246,True
+Pánuco,14,spearman_180,entre_modelos,patchtst,lstm,0.16409765733510293,True
+Pánuco,14,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Pánuco,14,jaccard_top10,entre_semillas,lstm,lstm,0.5384615384615384,
+Pánuco,14,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Pánuco,14,jaccard_top10,entre_mitades,lstm,lstm,0.8181818181818182,
+Pánuco,14,jaccard_top10,entre_modelos,xgboost,lstm,0.17647058823529413,True
+Pánuco,14,jaccard_top10,entre_modelos,tcn,lstm,0.3333333333333333,True
+Pánuco,14,jaccard_top10,entre_modelos,convnext,lstm,0.17647058823529413,True
+Pánuco,14,jaccard_top10,entre_modelos,patchtst,lstm,0.1111111111111111,True
+Pánuco,14,jaccard_top20,entre_semillas,lstm,lstm,0.7391304347826086,
+Pánuco,14,jaccard_top20,entre_semillas,lstm,lstm,0.5384615384615384,
+Pánuco,14,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Pánuco,14,jaccard_top20,entre_mitades,lstm,lstm,1.0,
+Pánuco,14,jaccard_top20,entre_modelos,xgboost,lstm,0.21212121212121213,True
+Pánuco,14,jaccard_top20,entre_modelos,tcn,lstm,0.25,True
+Pánuco,14,jaccard_top20,entre_modelos,convnext,lstm,0.17647058823529413,True
+Pánuco,14,jaccard_top20,entre_modelos,patchtst,lstm,0.21212121212121213,False
+Pánuco,14,spearman_canal,entre_semillas,lstm,lstm,0.942857142857143,
+Pánuco,14,spearman_canal,entre_semillas,lstm,lstm,0.942857142857143,
+Pánuco,14,spearman_canal,entre_semillas,lstm,lstm,0.8285714285714287,
+Pánuco,14,spearman_canal,entre_mitades,lstm,lstm,1.0,
+Pánuco,14,spearman_canal,entre_modelos,xgboost,lstm,0.8857142857142858,True
+Pánuco,14,spearman_canal,entre_modelos,tcn,lstm,0.6,False
+Pánuco,14,spearman_canal,entre_modelos,convnext,lstm,0.8285714285714287,False
+Pánuco,14,spearman_canal,entre_modelos,patchtst,lstm,0.6571428571428573,True
+Pánuco,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Pánuco,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Pánuco,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Pánuco,14,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Pánuco,14,spearman_rezago,entre_modelos,xgboost,lstm,0.061179087875417135,True
+Pánuco,14,spearman_rezago,entre_modelos,tcn,lstm,0.5123470522803114,True
+Pánuco,14,spearman_rezago,entre_modelos,convnext,lstm,0.9443826473859845,False
+Pánuco,14,spearman_rezago,entre_modelos,patchtst,lstm,0.15773081201334815,True
+Alta del Balsas,1,spearman_180,entre_semillas,lstm,lstm,0.9865201600872454,
+Alta del Balsas,1,spearman_180,entre_semillas,lstm,lstm,0.9803512454088089,
+Alta del Balsas,1,spearman_180,entre_semillas,lstm,lstm,0.9839171990905068,
+Alta del Balsas,1,spearman_180,entre_mitades,lstm,lstm,0.9997510211220512,
+Alta del Balsas,1,spearman_180,entre_modelos,xgboost,lstm,0.28614874944699936,True
+Alta del Balsas,1,spearman_180,entre_modelos,tcn,lstm,0.7071740897352798,True
+Alta del Balsas,1,spearman_180,entre_modelos,convnext,lstm,0.5553031472164779,True
+Alta del Balsas,1,spearman_180,entre_modelos,patchtst,lstm,0.2501229461814665,True
+Alta del Balsas,1,jaccard_top10,entre_semillas,lstm,lstm,0.42857142857142855,
+Alta del Balsas,1,jaccard_top10,entre_semillas,lstm,lstm,0.42857142857142855,
+Alta del Balsas,1,jaccard_top10,entre_semillas,lstm,lstm,0.3333333333333333,
+Alta del Balsas,1,jaccard_top10,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,1,jaccard_top10,entre_modelos,xgboost,lstm,0.3333333333333333,True
+Alta del Balsas,1,jaccard_top10,entre_modelos,tcn,lstm,0.6666666666666666,False
+Alta del Balsas,1,jaccard_top10,entre_modelos,convnext,lstm,0.3333333333333333,False
+Alta del Balsas,1,jaccard_top10,entre_modelos,patchtst,lstm,0.42857142857142855,False
+Alta del Balsas,1,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Alta del Balsas,1,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Alta del Balsas,1,jaccard_top20,entre_semillas,lstm,lstm,0.6,
+Alta del Balsas,1,jaccard_top20,entre_mitades,lstm,lstm,0.9047619047619048,
+Alta del Balsas,1,jaccard_top20,entre_modelos,xgboost,lstm,0.48148148148148145,True
+Alta del Balsas,1,jaccard_top20,entre_modelos,tcn,lstm,0.42857142857142855,True
+Alta del Balsas,1,jaccard_top20,entre_modelos,convnext,lstm,0.5384615384615384,False
+Alta del Balsas,1,jaccard_top20,entre_modelos,patchtst,lstm,0.3333333333333333,False
+Alta del Balsas,1,spearman_canal,entre_semillas,lstm,lstm,0.4285714285714286,
+Alta del Balsas,1,spearman_canal,entre_semillas,lstm,lstm,0.6,
+Alta del Balsas,1,spearman_canal,entre_semillas,lstm,lstm,0.028571428571428574,
+Alta del Balsas,1,spearman_canal,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,1,spearman_canal,entre_modelos,xgboost,lstm,0.7714285714285715,False
+Alta del Balsas,1,spearman_canal,entre_modelos,tcn,lstm,0.7142857142857143,False
+Alta del Balsas,1,spearman_canal,entre_modelos,convnext,lstm,0.14285714285714288,True
+Alta del Balsas,1,spearman_canal,entre_modelos,patchtst,lstm,0.942857142857143,False
+Alta del Balsas,1,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,1,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,1,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,1,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,1,spearman_rezago,entre_modelos,xgboost,lstm,0.5119021134593993,True
+Alta del Balsas,1,spearman_rezago,entre_modelos,tcn,lstm,0.6849833147942158,True
+Alta del Balsas,1,spearman_rezago,entre_modelos,convnext,lstm,0.6235817575083425,False
+Alta del Balsas,1,spearman_rezago,entre_modelos,patchtst,lstm,0.41357063403781974,True
+Alta del Balsas,7,spearman_180,entre_semillas,lstm,lstm,0.9731432040083541,
+Alta del Balsas,7,spearman_180,entre_semillas,lstm,lstm,0.9395701513421195,
+Alta del Balsas,7,spearman_180,entre_semillas,lstm,lstm,0.9472555737316996,
+Alta del Balsas,7,spearman_180,entre_mitades,lstm,lstm,0.9994896961840385,
+Alta del Balsas,7,spearman_180,entre_modelos,xgboost,lstm,0.25312975843966995,True
+Alta del Balsas,7,spearman_180,entre_modelos,tcn,lstm,0.7000051441916931,True
+Alta del Balsas,7,spearman_180,entre_modelos,convnext,lstm,0.5756041853143615,True
+Alta del Balsas,7,spearman_180,entre_modelos,patchtst,lstm,0.1713489099457802,True
+Alta del Balsas,7,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Alta del Balsas,7,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Alta del Balsas,7,jaccard_top10,entre_semillas,lstm,lstm,0.6666666666666666,
+Alta del Balsas,7,jaccard_top10,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,7,jaccard_top10,entre_modelos,xgboost,lstm,0.17647058823529413,True
+Alta del Balsas,7,jaccard_top10,entre_modelos,tcn,lstm,0.42857142857142855,True
+Alta del Balsas,7,jaccard_top10,entre_modelos,convnext,lstm,0.3333333333333333,True
+Alta del Balsas,7,jaccard_top10,entre_modelos,patchtst,lstm,0.25,True
+Alta del Balsas,7,jaccard_top20,entre_semillas,lstm,lstm,0.7391304347826086,
+Alta del Balsas,7,jaccard_top20,entre_semillas,lstm,lstm,0.7391304347826086,
+Alta del Balsas,7,jaccard_top20,entre_semillas,lstm,lstm,0.5384615384615384,
+Alta del Balsas,7,jaccard_top20,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,7,jaccard_top20,entre_modelos,xgboost,lstm,0.2903225806451613,True
+Alta del Balsas,7,jaccard_top20,entre_modelos,tcn,lstm,0.42857142857142855,True
+Alta del Balsas,7,jaccard_top20,entre_modelos,convnext,lstm,0.3793103448275862,False
+Alta del Balsas,7,jaccard_top20,entre_modelos,patchtst,lstm,0.17647058823529413,True
+Alta del Balsas,7,spearman_canal,entre_semillas,lstm,lstm,0.8285714285714287,
+Alta del Balsas,7,spearman_canal,entre_semillas,lstm,lstm,0.8285714285714287,
+Alta del Balsas,7,spearman_canal,entre_semillas,lstm,lstm,0.4285714285714286,
+Alta del Balsas,7,spearman_canal,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,7,spearman_canal,entre_modelos,xgboost,lstm,0.48571428571428577,True
+Alta del Balsas,7,spearman_canal,entre_modelos,tcn,lstm,0.8285714285714287,False
+Alta del Balsas,7,spearman_canal,entre_modelos,convnext,lstm,0.2571428571428572,False
+Alta del Balsas,7,spearman_canal,entre_modelos,patchtst,lstm,0.48571428571428577,True
+Alta del Balsas,7,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,7,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,7,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,7,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,7,spearman_rezago,entre_modelos,xgboost,lstm,0.35261401557285876,True
+Alta del Balsas,7,spearman_rezago,entre_modelos,tcn,lstm,0.7352614015572858,True
+Alta del Balsas,7,spearman_rezago,entre_modelos,convnext,lstm,0.4229143492769744,False
+Alta del Balsas,7,spearman_rezago,entre_modelos,patchtst,lstm,0.3219132369299221,True
+Alta del Balsas,14,spearman_180,entre_semillas,lstm,lstm,0.9703385906972437,
+Alta del Balsas,14,spearman_180,entre_semillas,lstm,lstm,0.9569595769416752,
+Alta del Balsas,14,spearman_180,entre_semillas,lstm,lstm,0.9518894616088975,
+Alta del Balsas,14,spearman_180,entre_mitades,lstm,lstm,0.9990966799386812,
+Alta del Balsas,14,spearman_180,entre_modelos,xgboost,lstm,0.28002510365546257,True
+Alta del Balsas,14,spearman_180,entre_modelos,tcn,lstm,0.5445270944576479,True
+Alta del Balsas,14,spearman_180,entre_modelos,convnext,lstm,0.41708488945132055,True
+Alta del Balsas,14,spearman_180,entre_modelos,patchtst,lstm,0.34778233896107896,True
+Alta del Balsas,14,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Alta del Balsas,14,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Alta del Balsas,14,jaccard_top10,entre_semillas,lstm,lstm,0.8181818181818182,
+Alta del Balsas,14,jaccard_top10,entre_mitades,lstm,lstm,0.8181818181818182,
+Alta del Balsas,14,jaccard_top10,entre_modelos,xgboost,lstm,0.42857142857142855,True
+Alta del Balsas,14,jaccard_top10,entre_modelos,tcn,lstm,0.3333333333333333,True
+Alta del Balsas,14,jaccard_top10,entre_modelos,convnext,lstm,0.42857142857142855,True
+Alta del Balsas,14,jaccard_top10,entre_modelos,patchtst,lstm,0.42857142857142855,False
+Alta del Balsas,14,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Alta del Balsas,14,jaccard_top20,entre_semillas,lstm,lstm,0.6,
+Alta del Balsas,14,jaccard_top20,entre_semillas,lstm,lstm,0.6666666666666666,
+Alta del Balsas,14,jaccard_top20,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,14,jaccard_top20,entre_modelos,xgboost,lstm,0.3333333333333333,True
+Alta del Balsas,14,jaccard_top20,entre_modelos,tcn,lstm,0.2903225806451613,True
+Alta del Balsas,14,jaccard_top20,entre_modelos,convnext,lstm,0.3333333333333333,True
+Alta del Balsas,14,jaccard_top20,entre_modelos,patchtst,lstm,0.2903225806451613,False
+Alta del Balsas,14,spearman_canal,entre_semillas,lstm,lstm,0.8857142857142858,
+Alta del Balsas,14,spearman_canal,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,14,spearman_canal,entre_semillas,lstm,lstm,0.8857142857142858,
+Alta del Balsas,14,spearman_canal,entre_mitades,lstm,lstm,0.942857142857143,
+Alta del Balsas,14,spearman_canal,entre_modelos,xgboost,lstm,0.7142857142857143,True
+Alta del Balsas,14,spearman_canal,entre_modelos,tcn,lstm,0.7714285714285715,False
+Alta del Balsas,14,spearman_canal,entre_modelos,convnext,lstm,0.6571428571428573,False
+Alta del Balsas,14,spearman_canal,entre_modelos,patchtst,lstm,0.48571428571428577,True
+Alta del Balsas,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,14,spearman_rezago,entre_semillas,lstm,lstm,1.0,
+Alta del Balsas,14,spearman_rezago,entre_mitades,lstm,lstm,1.0,
+Alta del Balsas,14,spearman_rezago,entre_modelos,xgboost,lstm,0.20800889877641823,True
+Alta del Balsas,14,spearman_rezago,entre_modelos,tcn,lstm,0.5550611790878754,True
+Alta del Balsas,14,spearman_rezago,entre_modelos,convnext,lstm,0.8220244716351501,False
+Alta del Balsas,14,spearman_rezago,entre_modelos,patchtst,lstm,0.33170189098998887,True

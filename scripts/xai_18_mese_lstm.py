@@ -316,8 +316,8 @@ def explain(chosen: dict, files: dict, big: list[str], threads: int, X14) -> dic
     conc.to_csv(MESE / "lstm_concordance.csv", index=False)
     s180 = conc[conc["medida"] == "spearman_180"]
     bm = s180[s180["tipo"] == "entre_modelos"]
-    res = {"ig_error_completitud": {"delta_abs_mediana_max": _r(dl["delta_abs_mediana"].max(), 6),
-                                    "delta_abs_p95_max": _r(dl["delta_abs_p95"].max(), 6)},
+    res = {"ig_error_completitud": {"delta_abs_mediana_max": float(f"{dl['delta_abs_mediana'].max():.3g}"),
+                                    "delta_abs_p95_max": float(f"{dl['delta_abs_p95'].max():.3g}")},
            "spearman_180_lstm_vs": {m: _r(bm[bm["modelo_a"] == m]["valor"].median(), 3) for m in LEARNED},
            "spearman_180_lstm_entre_semillas_mediana": _r(s180[s180["tipo"] == "entre_semillas"]["valor"].median(), 3),
            "spearman_180_lstm_entre_mitades_mediana": _r(s180[s180["tipo"] == "entre_mitades"]["valor"].median(), 3),
