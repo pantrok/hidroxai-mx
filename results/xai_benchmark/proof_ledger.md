@@ -53,6 +53,15 @@ El protocolo no ha cambiado (su SHA-256 coincide con el congelado; `numbers.json
     `numbers.json` → `rq3.variante_pre_correccion`.
   - **Pendiente fuera de este repo:** el mismo defecto existe en `hidroxmx-forecasting`
     (`src/hidroxmx/alert/fuzzy.py`); no se toca porque ese repositorio está congelado.
+- **2026-11-12 · metadatos de `xai_03_train_nets.py` (corrección sin efecto en cifras).**
+  - **Qué:** el manifiesto escribía `tipo = "principal"` fijo. Ahora la etiqueta es explícita:
+    argumento `--tipo` (`principal` o `walk_forward`), con `principal` por defecto. La fila se arma en
+    `manifest_row`, cubierta por `tests/test_run_type_metadata.py`.
+  - **Efecto:** ninguno en el entrenamiento ni en los manifiestos publicados, que no se
+    regeneran. `tipo` es la partición de la corrida. Las corridas del LSTM en la partición
+    principal llevan `principal`, que es correcto; su carácter descriptivo lo indica `modelo = lstm`.
+  - **Huella:** el SHA-256 pasa de `200594c2…` (el de la enmienda MESE, con el que se entrenó en el
+    LNS) a `ecf7d139342f13ffe26d1c2bce6836200ee1b02cfdc273b919fd1ff65a8265b2`.
 - **2026-11-11 · enmienda MESE (descriptiva, después de la transferencia de revista).** Se agrega
   un LSTM como modelo descriptivo y se evalúa el efecto de los valores imputados en la prueba.
   No cambia el protocolo, sus resultados ni ningún veredicto. Detalle, criterios y huellas en la

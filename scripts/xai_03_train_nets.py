@@ -48,8 +48,24 @@ def device_name(dev: torch.device) -> str:
     return torch.cuda.get_device_name(dev) if dev.type == "cuda" else (platform.processor() or "cpu")
 
 
+RUN_TYPES = ("principal", "walk_forward")
+
+
+def manifest_row(tipo: str, rid: str, model_name: str, size: int, basin: str, h: int, seed: int, device: str,
+                 threads, r: dict, wall: float, params: int) -> dict:
+    """Fila del manifiesto de cómputo. `tipo` es la partición de la corrida (principal o walk_forward)."""
+    if tipo not in RUN_TYPES:
+        raise ValueError(f"tipo debe ser uno de {RUN_TYPES}: {tipo!r}")
+    return {"fecha": date.today().isoformat(), "tipo": tipo, "run": rid, "modelo": model_name,
+            "config": size, "cuenca": basin, "h": h, "semilla": seed, "dispositivo": device,
+            "hilos": threads, "epocas": r["epochs"], "segundos": round(r["seconds"], 1), "pared_s": round(wall, 1),
+            "mejor_val_mse": round(r["best_val_mse"], 6), "parada_temprana": r["stopped_early"], "parametros": params}
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--tipo", choices=RUN_TYPES, default="principal",
+                    help="Partición de las corridas en el manifiesto (este script entrena la principal).")
     ap.add_argument("--out", type=Path, default=ROOT / "data" / "interim" / "xai_benchmark" / "nets")
     ap.add_argument("--device", default="auto")
     ap.add_argument("--threads", type=int, default=0, help="Hilos de PyTorch en CPU (0 = por defecto).")
@@ -118,12 +134,9 @@ def main() -> None:
         np.savez_compressed(a.out / "preds" / f"{rid}.npz", **out)
         torch.save({k: v.cpu() for k, v in model.state_dict().items()}, a.out / "weights" / f"{rid}.pt")
         (a.out / "ckpt" / f"{rid}.pt").unlink(missing_ok=True)
-        row = {"fecha": date.today().isoformat(), "tipo": "principal", "run": rid, "modelo": model_name,
-               "config": size, "cuenca": basin, "h": h, "semilla": seed, "dispositivo": device_name(dev),
-               "hilos": torch.get_num_threads() if dev.type == "cpu" else None, "epocas": r["epochs"],
-               "segundos": round(r["seconds"], 1), "pared_s": round(wall, 1),
-               "mejor_val_mse": round(r["best_val_mse"], 6), "parada_temprana": r["stopped_early"],
-               "parametros": sum(p.numel() for p in model.parameters())}
+        row = manifest_row(a.tipo, rid, model_name, size, basin, h, seed, device_name(dev),
+                           torch.get_num_threads() if dev.type == "cpu" else None, r, wall,
+                           sum(p.numel() for p in model.parameters()))
         pd.DataFrame([row]).to_csv(manifest, mode="a", header=not manifest.exists(), index=False)
         log.info("%s: %d épocas, %.0f s, val MSE %.4f", rid, r["epochs"], r["seconds"], r["best_val_mse"])
 
