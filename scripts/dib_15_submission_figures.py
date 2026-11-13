@@ -12,11 +12,12 @@ Uso:  python scripts/dib_15_submission_figures.py
 from __future__ import annotations
 
 import shutil
+from pathlib import Path
 
 import pandas as pd
 from PIL import Image
 
-from hidroxai_mx.utils import PROCESSED, ROOT, get_logger
+from hidroxai_mx.utils import DATA, PROCESSED, ROOT, get_logger
 
 log = get_logger("dib_15")
 OUT = ROOT / "dist" / "figuras_envio"
@@ -37,6 +38,14 @@ MAPA = {
 }
 
 
+def repo_path(p: Path) -> str:
+    """Ruta relativa a la raíz del repositorio, la misma en el repositorio (data/…) y en el archivo de
+    Zenodo, donde raw/, processed/ y features/ están en la raíz (hidroxai_mx.utils._data_root)."""
+    if p.is_relative_to(ROOT / "results"):
+        return p.relative_to(ROOT).as_posix()
+    return "data/" + p.relative_to(DATA).as_posix()
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     rows = []
@@ -45,7 +54,7 @@ def main() -> None:
         with Image.open(src) as im:
             w, h = im.size
             dpi = im.info.get("dpi", (None, None))[0]
-        rows.append({"archivo": dest, "origen": src.relative_to(ROOT).as_posix(), "ancho_px": w,
+        rows.append({"archivo": dest, "origen": repo_path(src), "ancho_px": w,
                      "alto_px": h, "dpi": round(float(dpi)) if dpi else None,
                      "ancho_mm_a_300dpi": round(w / 300 * 25.4, 1),
                      "apta_pagina_completa": w >= MIN_FULL_PAGE_PX})

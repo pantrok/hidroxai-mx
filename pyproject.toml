@@ -11,7 +11,7 @@ authors = [{ name = "Daniel Sánchez Ruiz (UPIIT, Instituto Politécnico Naciona
 dependencies = [
     "pandas>=2.2",
     "numpy>=1.26",
-    "scipy>=1.13",            # interpolación cúbica (imputación corta)
+    "scipy>=1.13",            # experimento de imputación (PCHIP y spline, dib_03) y estadística de rangos; la imputación del pipeline es lineal
     "pyarrow>=16.0",          # Parquet
     "geopandas>=1.0",         # geometría, spatial joins
     "shapely>=2.0",

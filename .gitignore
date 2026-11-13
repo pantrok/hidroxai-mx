@@ -43,3 +43,6 @@ dist/
 
 # Figuras ESI: EPS y TIFF se regeneran con scripts/xai_12_figures_esi.py (pesados para git)
 results/xai_benchmark/figures_esi/*.eps
+
+# Hallazgos colaterales de las revisiones: notas locales, no se versionan
+**/hallazgos_colaterales.md

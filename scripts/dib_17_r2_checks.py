@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -553,23 +554,37 @@ def strip(o):
     return o
 
 
+REL_TOL, ABS_TOL = 1e-12, 1e-12   # JSON: números con tolerancia (como los CSV); abs_tol para valores ≈ 0
+
+
 def same_file(a: Path, b: Path) -> tuple[bool, str]:
+    """CSV por valor con rtol 1e-12; JSON por valor sin fechas de ejecución, los números con
+    rel_tol = abs_tol = 1e-12 (un residuo de control de 5.7e-14 frente a 0.0 cuenta como igual)."""
     if not a.exists() or not b.exists():
         return False, f"regenerado={a.exists()} repositorio={b.exists()}"
     if a.suffix == ".json":
         ja, jb = strip(json.loads(a.read_text(encoding="utf-8"))), strip(json.loads(b.read_text(encoding="utf-8")))
-        if ja == jb:
-            return True, "valores sin fechas de ejecución"
         diffs = []
+
+        def num(x):
+            return isinstance(x, (int, float)) and not isinstance(x, bool)
 
         def walk(x, y, path):
             if isinstance(x, dict) and isinstance(y, dict):
                 for k in sorted(set(x) | set(y)):
                     walk(x.get(k), y.get(k), f"{path}.{k}" if path else k)
+            elif isinstance(x, list) and isinstance(y, list) and len(x) == len(y):
+                for i, (u, v) in enumerate(zip(x, y, strict=True)):
+                    walk(u, v, f"{path}[{i}]")
+            elif num(x) and num(y):
+                if not math.isclose(x, y, rel_tol=REL_TOL, abs_tol=ABS_TOL):
+                    diffs.append(f"{path}: copia {x!r}, repositorio {y!r}")
             elif x != y:
                 diffs.append(f"{path}: copia {x!r}, repositorio {y!r}")
 
         walk(ja, jb, "")
+        if not diffs:
+            return True, "valores sin fechas de ejecución (números con tolerancia 1e-12)"
         return False, "difiere en " + "; ".join(diffs)[:400]
     try:
         pd.testing.assert_frame_equal(pd.read_csv(a), pd.read_csv(b), check_exact=False, rtol=1e-12)
@@ -586,18 +601,19 @@ def copia(zip_path: Path, work: Path, hydrorivers: Path | None, reuse: bool = Fa
         if not ((work / "hidromx").is_dir() and (R2 / "clean_copy_check_r2.json").exists()):
             raise SystemExit("--reusar-copia requiere una copia de dib_16 en --work y r2/clean_copy_check_r2.json")
     else:
-        keep = {n: (OUT / n).read_bytes() for n in ("clean_copy_check.json", "clean_copy_check.md") if (OUT / n).exists()}
+        # dib_16 escribe un registro nuevo con fecha y hora (clean_copy_check_<AAAAMMDD-HHMMSS>.*), sin
+        # sobrescribir los anteriores; aquí se copia el de esta corrida a r2/.
+        before = set(OUT.glob("clean_copy_check_*.json"))
         # Intérprete base (no el del .venv del repositorio), como en la prueba de v2026.10: el
         # registro de dib_16 guarda el comando y no debe llevar rutas locales del repositorio.
         base_py = getattr(sys, "_base_executable", sys.executable)
-        try:
-            run([sys.executable, ROOT / "scripts" / "dib_16_clean_copy_check.py", "--zip", zip_path, "--work", work,
-                 "--python", base_py], ROOT)
-            for n in keep:
-                shutil.copy2(OUT / n, R2 / n.replace("clean_copy_check", "clean_copy_check_r2"))
-        finally:
-            for n, data in keep.items():
-                (OUT / n).write_bytes(data)
+        run([sys.executable, ROOT / "scripts" / "dib_16_clean_copy_check.py", "--zip", zip_path, "--work", work,
+             "--python", base_py], ROOT)
+        new = sorted(set(OUT.glob("clean_copy_check_*.json")) - before)
+        if not new:
+            raise SystemExit("dib_16 no dejó un registro nuevo clean_copy_check_*.json")
+        for suf in (".json", ".md"):
+            shutil.copy2(new[-1].with_suffix(suf), R2 / f"clean_copy_check_r2{suf}")
     root = work / "hidromx"
     py = work / "venv" / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
     shutil.copy2(Path(__file__), root / "scripts" / Path(__file__).name)

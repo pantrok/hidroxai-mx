@@ -8,7 +8,9 @@
    (metrics.json, Fig2–Fig7), etapa 12 (Fig1), dib_01 (conteos, Tabla 1), dib_13 (Tablas 2–3),
    dib_14 (contornos de cuencas piloto).
 5. Compara lo regenerado contra lo empaquetado: JSON y CSV por valor, figuras por píxel.
-Salida: results/dib_revision/clean_copy_check.{json,md} en el repositorio.
+Salida: results/dib_revision/clean_copy_check_<AAAAMMDD-HHMMSS>.{json,md} en el repositorio. Cada
+corrida deja su propio registro y no sobrescribe los anteriores (el de la R1, del 2026-10-04, es
+clean_copy_check.{json,md}).
 
 Uso:  python scripts/dib_16_clean_copy_check.py --zip dist/HidroXAI-MX-v2026.10.zip --work <dir nuevo>
       (solo biblioteca estándar; las comparaciones corren con el Python del entorno nuevo)
@@ -189,7 +191,9 @@ def main() -> None:
            "sistema": platform.platform(), "minutos_total": round((time.time() - t_start) / 60, 1),
            "minutos_pip_install": round(t_pip / 60, 1), "versiones": vers,
            "comparaciones": cmp_, "comandos": log}
-    (OUT / "clean_copy_check.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
+    stamp = time.strftime("%Y%m%d-%H%M%S")
+    record = OUT / f"clean_copy_check_{stamp}"
+    record.with_suffix(".json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")
 
     md = [f"# Prueba desde copia limpia — {a.zip.name}", "",
           f"- Fecha: {res['fecha']}; ZIP SHA-256 `{zip_sha}`.",
@@ -210,8 +214,8 @@ def main() -> None:
                "que se calcula sobre parquets del release v2026.06 que no viajan en el archivo. "
                "Una figura con diferencias de píxeles y valores idénticos refleja el dibujo de "
                "versiones distintas de las bibliotecas (tabla de versiones), no un cambio del dato."]
-    (OUT / "clean_copy_check.md").write_text("\n".join(md) + "\n", encoding="utf-8")
-    print(json.dumps({"ok": ok, "minutos": res["minutos_total"]}))
+    record.with_suffix(".md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    print(json.dumps({"ok": ok, "minutos": res["minutos_total"], "registro": record.name}))
 
 
 if __name__ == "__main__":

@@ -5,6 +5,28 @@ All changes to the Hidro-MX dataset snapshots deposited on Zenodo
 The scripts and outputs that support every item below are in
 `results/dib_revision/` of the source repository.
 
+## Unreleased
+
+Maintenance after the second revision of the *Data in Brief* article. These changes do not
+alter the data or any reported result, and no new snapshot is deposited.
+
+### Changed
+- `pyproject.toml`: the comment on `scipy` now describes its actual use (the PCHIP and spline
+  imputation experiment and rank statistics); the pipeline's imputation is linear.
+- `scripts/dib_15_submission_figures.py`: the `origen` column of `figuras_envio.csv` is written
+  relative to the repository root in both layouts (repository and Zenodo archive). The file in
+  the repository is unchanged.
+- `scripts/dib_16_clean_copy_check.py`: each run writes its own record,
+  `clean_copy_check_<YYYYMMDD-HHMMSS>.{json,md}`, instead of overwriting the previous one.
+- `scripts/dib_17_r2_checks.py`: the reproducibility check compares JSON numbers with a
+  tolerance (relative and absolute 1e-12), as it already did for CSV files. With it, the control
+  residual (5.7e-14 in the repository, 0 in the clean copy) no longer counts as a difference. The
+  published `results/dib_revision/r2/reproducibilidad.json` is not regenerated.
+
+### Added
+- `docs/nota_diseno_cobertura.md`: design note on the coverage window (2010–2025, while the record
+  ends on 2025-09-03). The published definition is kept.
+
 ## v2026.11 — 2026-11
 
 Second revision of the associated *Data in Brief* article. The raw inputs, processed
