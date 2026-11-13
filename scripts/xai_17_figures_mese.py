@@ -60,6 +60,8 @@ ESM_NAMES = {"fig8_rq3_fuzzy_decision_surface": "ESM_FigS1", "fig6_rq2_precip_la
              "figS4_rr2_noise_ceiling": "ESM_FigS9", "figS5_rr6_nse_by_regime": "ESM_FigS10"}
 CONTENT = {
     "Fig1": "Flujo del estudio (datos, RQ1–RQ3); el LSTM descriptivo con borde discontinuo, fuera del ensamble",
+    "Fig1_review": "Fig. 1 para revisión anónima: 'Open hydroclimatic dataset (CONAGUA-SIH)' en lugar del nombre "
+                   "y el depósito del dataset",
     "Fig2":"Mapa: estaciones modeladas por grupo conectado (HydroRIVERS) y régimen",
     "Fig3": "Habilidad en la partición principal: NSE (mediana, IQR) y SS contra persistencia (mediana, IC 95 %)",
     "Fig4": "Mapas de importancia (variable × día de entrada), cuencas con ≥ 8 estaciones",
@@ -215,8 +217,11 @@ def fig_map(layers) -> dict:
 
 
 # ----------------------------------------------------------------------------- texto principal
-def fig1_workflow() -> None:
-    """Fig. 1: flujo del estudio; el LSTM (descriptivo) con borde discontinuo y sin entrar al ensamble."""
+def fig1_workflow(review: bool = False) -> None:
+    """Fig. 1: flujo del estudio; el LSTM (descriptivo) con borde discontinuo y sin entrar al ensamble.
+
+    review=True: versión para revisión anónima (Fig1_review), sin el nombre ni el depósito del dataset.
+    """
     from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
     W, H = 174.0, 104.0
     fig = plt.figure(figsize=(W * MM, H * MM))
@@ -256,7 +261,8 @@ def fig1_workflow() -> None:
         return cols[col][0] + cols[col][1] / 2
 
     boxes = [
-        cell("data", 1, "Hidro-MX v2026.10\n(CONAGUA-SIH; Zenodo)\n95 gauges in\n4 pilot basins"),
+        cell("data", 1, ("Open hydroclimatic\ndataset (CONAGUA-SIH)" if review else "Hidro-MX v2026.10\n(CONAGUA-SIH; Zenodo)")
+             + "\n95 gauges in\n4 pilot basins"),
         cell("data", 2, "6 inputs × 30 days:\nQ, MA7, MA30, P,\nsin/cos(day of year);\ntarget Q(t + h),\nh = 1, 7, 14 d"),
         cell("data", 3, "Chronological split\ntrain 2010–2020\nvalidation 2021–2022\ntest 2023 – 09/2025;\nannual walk-forward\n2021–2025"),
         cell("rq1", 1, "References: persistence,\nclimatology; ARIMA per gauge\nGlobal per basin and lead:\nXGBoost, TCN,\nConvNeXt-1D, PatchTST"),
@@ -289,7 +295,7 @@ def fig1_workflow() -> None:
             ha="center", va="center", fontsize=7, color=lstm)
     for b in boxes:
         assert b[0] + b[2] <= W and b[1] + b[3] <= H
-    ESI.save(fig, "Fig1", 174)
+    ESI.save(fig, "Fig1_review" if review else "Fig1", 174)
 
 
 def fig3_skill(sm: pd.DataFrame, lsm: pd.DataFrame | None) -> None:
@@ -547,10 +553,21 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--lstm-dir", type=Path, default=MESE, help="Solo pruebas: carpeta con las salidas del LSTM.")
     ap.add_argument("--out", type=Path, default=FIGM, help="Solo pruebas: carpeta de salida de las figuras.")
+    ap.add_argument("--review", action="store_true",
+                    help="Solo la Fig. 1 para revisión anónima (Fig1_review); no redibuja las demás.")
     a = ap.parse_args()
     MESE = a.lstm_dir
     a.out.mkdir(parents=True, exist_ok=True)
     ESI.FIG = a.out
+    if a.review:
+        fig1_workflow(review=True)
+        rec = pd.DataFrame(ESI.RECORD).assign(contenido=CONTENT["Fig1_review"])
+        csv = a.out / "figures_mese.csv"
+        old = pd.read_csv(csv) if csv.exists() else pd.DataFrame()
+        old = old[old["archivo"] != "Fig1_review"] if len(old) else old
+        pd.concat([old, rec], ignore_index=True).to_csv(csv, index=False)
+        log.info("Fig1_review lista")
+        return
     js = ESI._json
     nums, e1, e2, e3 = js("numbers.json"), js("e_rq1.json"), js("e_rq2.json"), js("e_rq3.json")
     pre, ewf, erev = js("rq3_pre_correccion/e_rq3.json"), js("e_walkforward.json"), js("e_revision.json")
