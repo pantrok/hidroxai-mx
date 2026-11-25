@@ -38,6 +38,13 @@ VERSIONES = {
 }
 AUTORES = ("Sánchez-Ruiz, D., Ramos Aguilar, E., Ramos-Aguilar, R., Reyes-Peña, C., "
            "Reyes-Cocoletzi, L., & García-Ramírez, J.")
+# Artículo de datos que describe el dataset (metadatos de Crossref).
+ARTICULO_DOI = "10.1016/j.dib.2026.113442"
+ARTICULO = ("Sánchez-Ruiz, D., Reyes-Peña, C., Reyes-Cocoletzi, L., García-Ramírez, J., Ramos-Aguilar, E., "
+            "& Ramos-Aguilar, R. (2026). Hidro-MX: daily hydroclimatic dataset for four pilot basins in "
+            "Mexico from National Water Commission and National Institute of Statistics and Geography "
+            "sources, with digital elevation models and station–river network links. Data in Brief, 69, "
+            f"113442. https://doi.org/{ARTICULO_DOI}")
 ENV_ZIP, ENV_CACHE = "HIDROXAI_MX_ZIP", "HIDROXAI_MX_CACHE"
 CREDITOS = ("Instituto Politécnico Nacional (IPN) · Convocatoria PICDT2026 · proyecto IND-2026-0335. "
             "Datos: CONAGUA (Sistema de Información Hidrológica), INEGI y HydroSHEDS.")
@@ -61,12 +68,13 @@ def url_zenodo(version: str = VERSION_ACTUAL) -> str:
 
 
 def como_citar(version: str = VERSION_ACTUAL) -> str:
-    """Texto de cita del dataset (metadatos del depósito en Zenodo) y créditos del proyecto."""
+    """Cita del artículo de datos y de la versión del dataset, y créditos del proyecto."""
     anio = _meta(version)["fecha"][:4]
-    return (f"{AUTORES} ({anio}). Hidro-MX {version}: a reproducible hydroclimatic dataset for "
-            f"Mexican pilot basins (CONAGUA-SIH and INEGI) [Data set]. Zenodo. "
+    return (f"Artículo de datos:\n{ARTICULO}\n\n"
+            f"Dataset ({version}):\n{AUTORES} ({anio}). Hidro-MX {version}: a reproducible hydroclimatic "
+            f"dataset for Mexican pilot basins (CONAGUA-SIH and INEGI) [Data set]. Zenodo. "
             f"https://doi.org/{doi(version)}\n"
-            f"Todas las versiones (DOI de concepto): https://doi.org/{CONCEPTO_DOI}\n"
+            f"Todas las versiones (DOI de concepto): https://doi.org/{CONCEPTO_DOI}\n\n"
             f"Créditos: {CREDITOS}")
 
 

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software or the dataset, please cite them as below."
+message: "If you use the dataset, please cite the data article (preferred citation) and the dataset version you used; this file also describes the software."
 title: "HidroXAI-MX: reproducible pipeline for the Hidro-MX hydroclimatic dataset"
 abstract: >-
   Library and reproducible pipeline that downloads, curates, validates and versions
@@ -27,6 +27,28 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.21231601"
     description: "Zenodo deposit of the Hidro-MX v2026.06 dataset snapshot."
+preferred-citation:
+  type: article
+  title: "Hidro-MX: daily hydroclimatic dataset for four pilot basins in Mexico from National Water Commission and National Institute of Statistics and Geography sources, with digital elevation models and station–river network links"
+  authors:
+    - family-names: "Sánchez-Ruiz"
+      given-names: "Daniel"
+    - family-names: "Reyes-Peña"
+      given-names: "Cecilia"
+    - family-names: "Reyes-Cocoletzi"
+      given-names: "Lauro"
+    - family-names: "García-Ramírez"
+      given-names: "Jesús"
+    - family-names: "Ramos-Aguilar"
+      given-names: "Eric"
+    - family-names: "Ramos-Aguilar"
+      given-names: "Ricardo"
+  journal: "Data in Brief"
+  volume: 69
+  start: 113442
+  year: 2026
+  doi: "10.1016/j.dib.2026.113442"
+  url: "https://doi.org/10.1016/j.dib.2026.113442"
 keywords:
   - hydrology
   - streamflow

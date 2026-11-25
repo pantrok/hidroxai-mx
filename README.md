@@ -1,5 +1,6 @@
 # hidroxai-mx
 
+[![Data in Brief article](https://img.shields.io/badge/Data%20in%20Brief-10.1016%2Fj.dib.2026.113442-orange.svg)](https://doi.org/10.1016/j.dib.2026.113442)
 [![Dataset DOI (Zenodo, all versions)](https://zenodo.org/badge/DOI/10.5281/zenodo.21231600.svg)](https://doi.org/10.5281/zenodo.21231600)
 [![Data license: CC BY 4.0](https://img.shields.io/badge/data%20license-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
@@ -8,14 +9,64 @@ Reproducible library and data pipeline for **HidroXAI-MX** (IPN · PICDT2026):
 a curated hydroclimatic dataset for pilot basins in Mexico built from open data
 of CONAGUA (SIH) and INEGI (CEM 3.0).
 
-> **Dataset:** cite the concept DOI [10.5281/zenodo.21231600](https://doi.org/10.5281/zenodo.21231600),
-> which resolves to the latest snapshot. Snapshot `v2026.11` (same data as v2026.10, with
-> [`REPRODUCE.md`](REPRODUCE.md)): [10.5281/zenodo.24119292](https://doi.org/10.5281/zenodo.24119292);
-> snapshot `v2026.10` (code included in the archive):
-> [10.5281/zenodo.23150556](https://doi.org/10.5281/zenodo.23150556); snapshot `v2026.06`:
-> [10.5281/zenodo.21231601](https://doi.org/10.5281/zenodo.21231601). Changes between
-> snapshots are listed in [`CHANGELOG.md`](CHANGELOG.md). A versioned mirror is also
-> available through the DVC remote on Cloudflare R2 (`dvc pull`).
+## How to cite
+
+If you use the dataset, cite the data article that describes it and the dataset version you
+used.
+
+**Data article**
+
+> Sánchez-Ruiz, D., Reyes-Peña, C., Reyes-Cocoletzi, L., García-Ramírez, J., Ramos-Aguilar, E.,
+> & Ramos-Aguilar, R. (2026). Hidro-MX: daily hydroclimatic dataset for four pilot basins in
+> Mexico from National Water Commission and National Institute of Statistics and Geography
+> sources, with digital elevation models and station–river network links. *Data in Brief*, 69,
+> 113442. https://doi.org/10.1016/j.dib.2026.113442
+
+**Dataset (Zenodo)**
+
+> Sánchez-Ruiz, D., Ramos Aguilar, E., Ramos-Aguilar, R., Reyes-Peña, C., Reyes-Cocoletzi, L.,
+> & García-Ramírez, J. (2026). *Hidro-MX v2026.11: a reproducible hydroclimatic dataset for
+> Mexican pilot basins (CONAGUA-SIH and INEGI)* [Data set]. Zenodo.
+> https://doi.org/10.5281/zenodo.24119292
+
+Dataset versions:
+
+- The concept DOI [10.5281/zenodo.21231600](https://doi.org/10.5281/zenodo.21231600) resolves to
+  the latest snapshot.
+- Snapshot `v2026.11`, [10.5281/zenodo.24119292](https://doi.org/10.5281/zenodo.24119292): same
+  data as v2026.10, plus [`REPRODUCE.md`](REPRODUCE.md).
+- Snapshot `v2026.10`, [10.5281/zenodo.23150556](https://doi.org/10.5281/zenodo.23150556): code
+  included in the archive.
+- Snapshot `v2026.06`, [10.5281/zenodo.21231601](https://doi.org/10.5281/zenodo.21231601).
+
+Changes between snapshots are listed in [`CHANGELOG.md`](CHANGELOG.md). A versioned mirror is
+also available through the DVC remote on Cloudflare R2 (`dvc pull`).
+
+```bibtex
+@article{SanchezRuiz2026HidroMX,
+  author  = {S{\'a}nchez-Ruiz, Daniel and Reyes-Pe{\~n}a, Cecilia and Reyes-Cocoletzi, Lauro and
+             Garc{\'i}a-Ram{\'i}rez, Jes{\'u}s and Ramos-Aguilar, Eric and Ramos-Aguilar, Ricardo},
+  title   = {Hidro-{MX}: daily hydroclimatic dataset for four pilot basins in {Mexico} from
+             {National Water Commission} and {National Institute of Statistics and Geography}
+             sources, with digital elevation models and station--river network links},
+  journal = {Data in Brief},
+  volume  = {69},
+  pages   = {113442},
+  year    = {2026},
+  doi     = {10.1016/j.dib.2026.113442}
+}
+
+@misc{SanchezRuiz2026HidroMXv202611,
+  author    = {S{\'a}nchez-Ruiz, Daniel and Ramos Aguilar, Eric and Ramos-Aguilar, Ricardo and
+               Reyes-Pe{\~n}a, Cecilia and Reyes-Cocoletzi, Lauro and Garc{\'i}a-Ram{\'i}rez, Jes{\'u}s},
+  title     = {Hidro-{MX} v2026.11: a reproducible hydroclimatic dataset for {Mexican} pilot
+               basins ({CONAGUA-SIH} and {INEGI})},
+  publisher = {Zenodo},
+  version   = {v2026.11},
+  year      = {2026},
+  doi       = {10.5281/zenodo.24119292}
+}
+```
 
 ## Layout
 
@@ -136,5 +187,5 @@ link, HydroSHEDS (Lehner & Grill, 2013).
 Project **IND-2026-0335**, Instituto Politécnico Nacional (IPN), Unidad Profesional
 Interdisciplinaria de Ingeniería campus Tlaxcala (**UPIIT**), 2026 Call for Scientific
 Research and Technological Development Projects, Secretaría de Investigación y Posgrado.
-Technical lead: **Daniel Sánchez Ruiz**. Citation: `CITATION.cff`. Full credits:
-`CREDITOS.md`.
+Technical lead: **Daniel Sánchez Ruiz**. How to cite: see [How to cite](#how-to-cite); software
+metadata in `CITATION.cff`. Full credits: `CREDITOS.md`.

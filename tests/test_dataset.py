@@ -129,6 +129,7 @@ def test_archivo_remoto_detecta_respuesta_incompleta():
 def test_cita_y_versiones():
     texto = D.como_citar("v2026.11")
     assert "https://doi.org/10.5281/zenodo.24119292" in texto and D.CONCEPTO_DOI in texto
+    assert "https://doi.org/10.1016/j.dib.2026.113442" in texto and "Data in Brief, 69, 113442" in texto
     assert "IND-2026-0335" in texto and "HydroSHEDS" in texto
     assert D.doi("v2026.06") == "10.5281/zenodo.21231601"
     assert D.url_zenodo("v2026.10").startswith("https://zenodo.org/records/23150556/files/")
