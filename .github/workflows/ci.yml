@@ -40,3 +40,16 @@ jobs:
           key: hidroxai-mx-zenodo-v2026.11
       - name: Ejecutar los tutoriales
         run: pytest -p no:cacheprovider -o addopts="" --nbmake --nbmake-timeout=1800 notebooks/tutoriales
+
+  # Construye el sitio de documentación (mkdocs.yml) en modo estricto; no lo publica.
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar mkdocs
+        run: pip install "mkdocs-material>=9.5" "mkdocstrings[python]>=0.26" "mkdocs-jupyter>=0.25"
+      - name: Construir el sitio
+        run: mkdocs build --strict

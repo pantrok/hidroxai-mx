@@ -1,0 +1,100 @@
+site_name: HidroXAI-MX
+site_description: Biblioteca, dataset Hidro-MX, tutoriales y benchmark de pronóstico explicable (IPN, proyecto IND-2026-0335)
+site_url: https://pantrok.github.io/hidroxai-mx/
+repo_url: https://github.com/pantrok/hidroxai-mx
+repo_name: pantrok/hidroxai-mx
+edit_uri: ""
+copyright: IPN · Convocatoria PICDT2026 · proyecto IND-2026-0335. Código MIT; datos CC BY 4.0.
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+# Los notebooks se copian de notebooks/tutoriales/ a docs/tutoriales/ antes de construir.
+hooks:
+  - docs/_hooks/tutoriales.py
+
+plugins:
+  - search:
+      lang: es
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_source: false
+            show_root_heading: true
+            show_root_full_path: true
+            members_order: source
+            heading_level: 2
+            show_signature_annotations: true
+            separate_signature: true
+
+# Archivos de docs/ que no son parte del sitio (notas internas y borradores).
+exclude_docs: |
+  _hooks/
+  _build_manuscrito_docx.js
+  manuscrito_data_in_brief_borrador.docx
+  diagrama_ingesta.*
+  cem_descarga.md
+  fuentes_verificacion.md
+  estado_repos_*.md
+  hallazgos_colaterales*.md
+  insumos_informe_sip.md
+  capturas/
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - Inicio: index.md
+  - Instalación: instalacion.md
+  - El dataset:
+      - dataset.md
+      - Nota sobre la cobertura: nota_diseno_cobertura.md
+  - Guía rápida: guia_rapida.md
+  - Tutoriales:
+      - tutoriales/index.md
+      - 1 · Cargar el dataset: tutoriales/01_cargar_dataset.ipynb
+      - 2 · Cobertura y selección: tutoriales/02_cobertura_seleccion.ipynb
+      - 3 · Entrenar y evaluar: tutoriales/03_entrenar_evaluar.ipynb
+      - 4 · Explicaciones: tutoriales/04_explicaciones.ipynb
+      - 5 · Alertas difusas: tutoriales/05_alertas_difusas.ipynb
+  - Referencia de la API:
+      - api/index.md
+      - Acceso al dataset: api/dataset.md
+      - Datos y esquema: api/data.md
+      - Características: api/features.md
+      - Modelos: api/models.md
+      - Explicabilidad: api/xai.md
+      - Alertas difusas: api/alert.md
+      - Ingesta y geografía: api/ingesta.md
+      - Reportes y ejemplos: api/ejemplos.md
+  - Reproducibilidad: reproducibilidad.md
+  - Dashboard: acerca_dashboard.md
+  - Publicaciones: publicaciones.md

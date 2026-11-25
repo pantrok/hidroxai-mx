@@ -56,6 +56,12 @@ ml = [
     "xgboost>=2.1",           # modelo de árboles + TreeSHAP nativo
     "captum>=0.7",            # Integrated Gradients
 ]
+# Sitio de documentación (mkdocs.yml)
+docs = [
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.26",
+    "mkdocs-jupyter>=0.25",
+]
 # Conversión de BANDAS .mdb cuando no haya mdbtools del sistema
 mdb = [
     "pandas-access>=0.0.1",

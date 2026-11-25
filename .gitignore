@@ -46,3 +46,8 @@ results/xai_benchmark/figures_esi/*.eps
 
 # Hallazgos colaterales de las revisiones: notas locales, no se versionan
 **/hallazgos_colaterales.md
+
+# Sitio de documentación: copia de los notebooks (hook de mkdocs) y sitio construido
+docs/tutoriales/*.ipynb
+site/
+.cache/
