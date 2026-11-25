@@ -14,3 +14,29 @@ jobs:
         run: ruff check src scripts tests
       - name: Pruebas (pytest)
         run: pytest -q
+
+  # Los cinco notebooks de notebooks/tutoriales/ en modo reducido (3 estaciones, 1 época),
+  # con los paquetes que ya trae Colab y la biblioteca sin dependencias, como en Colab.
+  # Los datos se leen del ZIP de Zenodo por rangos y quedan en caché entre corridas.
+  tutoriales:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      HIDROXAI_TUTORIAL_REDUCIDO: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar dependencias (como en Colab)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install pandas pyarrow requests pyyaml matplotlib scipy xgboost captum ipykernel nbmake
+          pip install --no-deps -e .
+      - name: Caché de los archivos leídos de Zenodo
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/hidroxai_mx
+          key: hidroxai-mx-zenodo-v2026.11
+      - name: Ejecutar los tutoriales
+        run: pytest -p no:cacheprovider -o addopts="" --nbmake --nbmake-timeout=1800 notebooks/tutoriales
