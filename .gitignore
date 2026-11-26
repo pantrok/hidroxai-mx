@@ -51,3 +51,6 @@ results/xai_benchmark/figures_esi/*.eps
 docs/tutoriales/*.ipynb
 site/
 .cache/
+
+# Datos precalculados del dashboard (scripts/dash_01_build_data.py): sí se versionan
+!dashboard/data/*.parquet
