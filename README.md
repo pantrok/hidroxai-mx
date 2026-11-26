@@ -9,6 +9,13 @@ Reproducible library and data pipeline for **HidroXAI-MX** (IPN · PICDT2026):
 a curated hydroclimatic dataset for pilot basins in Mexico built from open data
 of CONAGUA (SIH) and INEGI (CEM 3.0).
 
+- **Documentation** (Spanish): <https://pantrok.github.io/hidroxai-mx/>. Installation, the
+  dataset, quick guide, tutorials and API reference.
+- **Dashboard**: <https://pantrok.github.io/hidroxai-mx/dashboard/>. Retrospective forecasts,
+  explanations and fuzzy alerts of the benchmark; runs in the browser. For research only, not
+  an operational warning system.
+- **Tutorials**: five Google Colab notebooks in [`notebooks/tutoriales/`](notebooks/tutoriales/).
+
 ## How to cite
 
 If you use the dataset, cite the data article that describes it and the dataset version you
@@ -82,7 +89,10 @@ hidroxai-mx/
 ├── src/hidroxai_mx/           # io/, data/ (schema, cleaning, persistence), features/, geo/, report.py
 ├── scripts/                   # Pipeline stages (01–12) and revision audits (dib_*)
 ├── results/dib_revision/      # Audit of the v2026.06 release (see below)
-├── notebooks/                 # Data access and coverage report
+├── results/xai_benchmark/     # Explainable-forecasting benchmark (protocol, results, README)
+├── notebooks/tutoriales/      # Five Colab tutorials (Spanish)
+├── dashboard/                 # Streamlit app run in the browser with stlite (GitHub Pages)
+├── docs/, mkdocs.yml          # Documentation site (GitHub Pages)
 └── tests/
 ```
 

@@ -1,0 +1,271 @@
+cuenca,h,tipo,modelo_a,modelo_b,valor
+Lerma–Santiago,1,entre_semillas,xgboost,xgboost,0.7371709003364301
+Lerma–Santiago,1,entre_semillas,xgboost,xgboost,0.7318744405691533
+Lerma–Santiago,1,entre_semillas,xgboost,xgboost,0.7296974186446082
+Lerma–Santiago,1,entre_mitades,xgboost,xgboost,0.997456711626902
+Lerma–Santiago,1,entre_semillas,tcn,tcn,0.9651923413274072
+Lerma–Santiago,1,entre_semillas,tcn,tcn,0.9557290862886714
+Lerma–Santiago,1,entre_semillas,tcn,tcn,0.959877362470035
+Lerma–Santiago,1,entre_mitades,tcn,tcn,0.9990884492319722
+Lerma–Santiago,1,entre_semillas,convnext,convnext,0.7407183349280327
+Lerma–Santiago,1,entre_semillas,convnext,convnext,0.6170005247075527
+Lerma–Santiago,1,entre_semillas,convnext,convnext,0.4959638671975472
+Lerma–Santiago,1,entre_mitades,convnext,convnext,0.9976851137380783
+Lerma–Santiago,1,entre_semillas,patchtst,patchtst,0.49323950327685007
+Lerma–Santiago,1,entre_semillas,patchtst,patchtst,0.30734487689949275
+Lerma–Santiago,1,entre_semillas,patchtst,patchtst,0.49519841147360516
+Lerma–Santiago,1,entre_mitades,patchtst,patchtst,0.9989629309546589
+Lerma–Santiago,1,entre_modelos,xgboost,tcn,0.32569729518400775
+Lerma–Santiago,1,entre_modelos,xgboost,convnext,0.3481897589431773
+Lerma–Santiago,1,entre_modelos,xgboost,patchtst,0.29667170797452597
+Lerma–Santiago,1,entre_modelos,tcn,convnext,0.5021245511692748
+Lerma–Santiago,1,entre_modelos,tcn,patchtst,0.22916756690021295
+Lerma–Santiago,1,entre_modelos,convnext,patchtst,0.40518946058005906
+Lerma–Santiago,7,entre_semillas,xgboost,xgboost,0.813998374435425
+Lerma–Santiago,7,entre_semillas,xgboost,xgboost,0.7954545922199245
+Lerma–Santiago,7,entre_semillas,xgboost,xgboost,0.8094570820087039
+Lerma–Santiago,7,entre_mitades,xgboost,xgboost,0.9970575223515129
+Lerma–Santiago,7,entre_semillas,tcn,tcn,0.8726112945872815
+Lerma–Santiago,7,entre_semillas,tcn,tcn,0.8827330061627416
+Lerma–Santiago,7,entre_semillas,tcn,tcn,0.9039517680586849
+Lerma–Santiago,7,entre_mitades,tcn,tcn,0.9983682623949298
+Lerma–Santiago,7,entre_semillas,convnext,convnext,0.6432544214327602
+Lerma–Santiago,7,entre_semillas,convnext,convnext,0.6707964237579349
+Lerma–Santiago,7,entre_semillas,convnext,convnext,0.5734436248032347
+Lerma–Santiago,7,entre_mitades,convnext,convnext,0.9925491527516281
+Lerma–Santiago,7,entre_semillas,patchtst,patchtst,0.546955152936819
+Lerma–Santiago,7,entre_semillas,patchtst,patchtst,0.3942734858071751
+Lerma–Santiago,7,entre_semillas,patchtst,patchtst,0.4748912003456897
+Lerma–Santiago,7,entre_mitades,patchtst,patchtst,0.9981336872537218
+Lerma–Santiago,7,entre_modelos,xgboost,tcn,0.09658322787740363
+Lerma–Santiago,7,entre_modelos,xgboost,convnext,0.3536323137545397
+Lerma–Santiago,7,entre_modelos,xgboost,patchtst,0.1333004105064971
+Lerma–Santiago,7,entre_modelos,tcn,convnext,0.3421957467823081
+Lerma–Santiago,7,entre_modelos,tcn,patchtst,0.14768357048057038
+Lerma–Santiago,7,entre_modelos,convnext,patchtst,0.34279453069539184
+Lerma–Santiago,14,entre_semillas,xgboost,xgboost,0.8009588773316049
+Lerma–Santiago,14,entre_semillas,xgboost,xgboost,0.7827751885346255
+Lerma–Santiago,14,entre_semillas,xgboost,xgboost,0.7918886385382266
+Lerma–Santiago,14,entre_mitades,xgboost,xgboost,0.9973065012294619
+Lerma–Santiago,14,entre_semillas,tcn,tcn,0.88061359918516
+Lerma–Santiago,14,entre_semillas,tcn,tcn,0.8289556262024548
+Lerma–Santiago,14,entre_semillas,tcn,tcn,0.9288187907034168
+Lerma–Santiago,14,entre_mitades,tcn,tcn,0.9990658147885223
+Lerma–Santiago,14,entre_semillas,convnext,convnext,0.4952889492474047
+Lerma–Santiago,14,entre_semillas,convnext,convnext,0.1613259668508287
+Lerma–Santiago,14,entre_semillas,convnext,convnext,0.3794664444375855
+Lerma–Santiago,14,entre_mitades,convnext,convnext,0.9879728798213936
+Lerma–Santiago,14,entre_semillas,patchtst,patchtst,0.3914421226992602
+Lerma–Santiago,14,entre_semillas,patchtst,patchtst,0.3506713170159573
+Lerma–Santiago,14,entre_semillas,patchtst,patchtst,0.45283702171877727
+Lerma–Santiago,14,entre_mitades,patchtst,patchtst,0.9973579431463934
+Lerma–Santiago,14,entre_modelos,xgboost,tcn,0.08906447729868205
+Lerma–Santiago,14,entre_modelos,xgboost,convnext,0.26886838071133884
+Lerma–Santiago,14,entre_modelos,xgboost,patchtst,0.2072059837237775
+Lerma–Santiago,14,entre_modelos,tcn,convnext,0.3473522845355309
+Lerma–Santiago,14,entre_modelos,tcn,patchtst,0.1482494315668179
+Lerma–Santiago,14,entre_modelos,convnext,patchtst,0.2417214523081988
+Pánuco,1,entre_semillas,xgboost,xgboost,0.8113316254616911
+Pánuco,1,entre_semillas,xgboost,xgboost,0.833124479150591
+Pánuco,1,entre_semillas,xgboost,xgboost,0.816971717234071
+Pánuco,1,entre_mitades,xgboost,xgboost,0.9968332355936911
+Pánuco,1,entre_semillas,tcn,tcn,0.9662006028992663
+Pánuco,1,entre_semillas,tcn,tcn,0.9552167247960328
+Pánuco,1,entre_semillas,tcn,tcn,0.9559348539563977
+Pánuco,1,entre_mitades,tcn,tcn,0.998923835097791
+Pánuco,1,entre_semillas,convnext,convnext,0.7694435013426341
+Pánuco,1,entre_semillas,convnext,convnext,0.7049456258938033
+Pánuco,1,entre_semillas,convnext,convnext,0.6219163142895356
+Pánuco,1,entre_mitades,convnext,convnext,0.9955266109036288
+Pánuco,1,entre_semillas,patchtst,patchtst,0.5406833544245192
+Pánuco,1,entre_semillas,patchtst,patchtst,0.5653034558679794
+Pánuco,1,entre_semillas,patchtst,patchtst,0.5395125363951562
+Pánuco,1,entre_mitades,patchtst,patchtst,0.9982489171476486
+Pánuco,1,entre_modelos,xgboost,tcn,0.2514110517814336
+Pánuco,1,entre_modelos,xgboost,convnext,0.13461938125662312
+Pánuco,1,entre_modelos,xgboost,patchtst,0.34770826260069754
+Pánuco,1,entre_modelos,tcn,convnext,0.4458244596026626
+Pánuco,1,entre_modelos,tcn,patchtst,0.28578865602847825
+Pánuco,1,entre_modelos,convnext,patchtst,0.3367511342942684
+Pánuco,7,entre_semillas,xgboost,xgboost,0.8198236571087584
+Pánuco,7,entre_semillas,xgboost,xgboost,0.8294799828818509
+Pánuco,7,entre_semillas,xgboost,xgboost,0.7830648745654294
+Pánuco,7,entre_mitades,xgboost,xgboost,0.9975801722275379
+Pánuco,7,entre_semillas,tcn,tcn,0.9037501157443131
+Pánuco,7,entre_semillas,tcn,tcn,0.9300328199430022
+Pánuco,7,entre_semillas,tcn,tcn,0.928275564060619
+Pánuco,7,entre_mitades,tcn,tcn,0.9990081998415589
+Pánuco,7,entre_semillas,convnext,convnext,0.762325997715979
+Pánuco,7,entre_semillas,convnext,convnext,0.7942385053036616
+Pánuco,7,entre_semillas,convnext,convnext,0.7113470580367707
+Pánuco,7,entre_mitades,convnext,convnext,0.9917590049075589
+Pánuco,7,entre_semillas,patchtst,patchtst,0.4946695885675484
+Pánuco,7,entre_semillas,patchtst,patchtst,0.3641202917785528
+Pánuco,7,entre_semillas,patchtst,patchtst,0.4617858575881972
+Pánuco,7,entre_mitades,patchtst,patchtst,0.9972097904256304
+Pánuco,7,entre_modelos,xgboost,tcn,0.1433295266314804
+Pánuco,7,entre_modelos,xgboost,convnext,0.16674794489541855
+Pánuco,7,entre_modelos,xgboost,patchtst,0.3024187989341235
+Pánuco,7,entre_modelos,tcn,convnext,0.4028046133111104
+Pánuco,7,entre_modelos,tcn,patchtst,0.2451063304422976
+Pánuco,7,entre_modelos,convnext,patchtst,0.43300924925666423
+Pánuco,14,entre_semillas,xgboost,xgboost,0.8677881004557754
+Pánuco,14,entre_semillas,xgboost,xgboost,0.8275090794983385
+Pánuco,14,entre_semillas,xgboost,xgboost,0.8440363385701204
+Pánuco,14,entre_mitades,xgboost,xgboost,0.9981563216971717
+Pánuco,14,entre_semillas,tcn,tcn,0.912676317170283
+Pánuco,14,entre_semillas,tcn,tcn,0.87998189244524
+Pánuco,14,entre_semillas,tcn,tcn,0.9097379548751504
+Pánuco,14,entre_mitades,tcn,tcn,0.9987016060166465
+Pánuco,14,entre_semillas,convnext,convnext,0.5001183164089427
+Pánuco,14,entre_semillas,convnext,convnext,0.6923320678621767
+Pánuco,14,entre_semillas,convnext,convnext,0.47644063088366917
+Pánuco,14,entre_mitades,convnext,convnext,0.986415218576705
+Pánuco,14,entre_semillas,patchtst,patchtst,0.37084477915985053
+Pánuco,14,entre_semillas,patchtst,patchtst,0.41634206817082825
+Pánuco,14,entre_semillas,patchtst,patchtst,0.3922816547835839
+Pánuco,14,entre_mitades,patchtst,patchtst,0.9978394394888731
+Pánuco,14,entre_modelos,xgboost,tcn,0.10038375670030966
+Pánuco,14,entre_modelos,xgboost,convnext,0.1233865242754406
+Pánuco,14,entre_modelos,xgboost,patchtst,0.30404024815580727
+Pánuco,14,entre_modelos,tcn,convnext,0.37924010000308656
+Pánuco,14,entre_modelos,tcn,patchtst,0.1644433470168832
+Pánuco,14,entre_modelos,convnext,patchtst,0.29212012716441865
+Alta del Balsas,1,entre_semillas,xgboost,xgboost,0.823549323017408
+Alta del Balsas,1,entre_semillas,xgboost,xgboost,0.8200415036413903
+Alta del Balsas,1,entre_semillas,xgboost,xgboost,0.8300706919953157
+Alta del Balsas,1,entre_mitades,xgboost,xgboost,0.9966068911591922
+Alta del Balsas,1,entre_semillas,tcn,tcn,0.9227692212722615
+Alta del Balsas,1,entre_semillas,tcn,tcn,0.9308065063736535
+Alta del Balsas,1,entre_semillas,tcn,tcn,0.9296295153142586
+Alta del Balsas,1,entre_mitades,tcn,tcn,0.9994300235603979
+Alta del Balsas,1,entre_semillas,convnext,convnext,0.6865211889255841
+Alta del Balsas,1,entre_semillas,convnext,convnext,0.7004166795271458
+Alta del Balsas,1,entre_semillas,convnext,convnext,0.7952529399055526
+Alta del Balsas,1,entre_mitades,convnext,convnext,0.997971130796218
+Alta del Balsas,1,entre_semillas,patchtst,patchtst,0.2918711482864697
+Alta del Balsas,1,entre_semillas,patchtst,patchtst,0.3914421226992602
+Alta del Balsas,1,entre_semillas,patchtst,patchtst,0.38818687819582914
+Alta del Balsas,1,entre_mitades,patchtst,patchtst,0.998267436237744
+Alta del Balsas,1,entre_modelos,xgboost,tcn,0.22982190808358283
+Alta del Balsas,1,entre_modelos,xgboost,convnext,0.27084580799818925
+Alta del Balsas,1,entre_modelos,xgboost,patchtst,0.3210448882167145
+Alta del Balsas,1,entre_modelos,tcn,convnext,0.4885850386328796
+Alta del Balsas,1,entre_modelos,tcn,patchtst,0.17970307725547083
+Alta del Balsas,1,entre_modelos,convnext,patchtst,0.27740362356862863
+Alta del Balsas,7,entre_semillas,xgboost,xgboost,0.7866827798038697
+Alta del Balsas,7,entre_semillas,xgboost,xgboost,0.8018817802082673
+Alta del Balsas,7,entre_semillas,xgboost,xgboost,0.7405453745980695
+Alta del Balsas,7,entre_mitades,xgboost,xgboost,0.9987941766551778
+Alta del Balsas,7,entre_semillas,tcn,tcn,0.9071843781186663
+Alta del Balsas,7,entre_semillas,tcn,tcn,0.9357552187824727
+Alta del Balsas,7,entre_semillas,tcn,tcn,0.9370001131722172
+Alta del Balsas,7,entre_mitades,tcn,tcn,0.9989217774211137
+Alta del Balsas,7,entre_semillas,convnext,convnext,0.6264370299494839
+Alta del Balsas,7,entre_semillas,convnext,convnext,0.6216447009681368
+Alta del Balsas,7,entre_semillas,convnext,convnext,0.506972437420908
+Alta del Balsas,7,entre_mitades,convnext,convnext,0.9904503225408191
+Alta del Balsas,7,entre_semillas,patchtst,patchtst,0.4300400218113728
+Alta del Balsas,7,entre_semillas,patchtst,patchtst,0.37504449725814576
+Alta del Balsas,7,entre_semillas,patchtst,patchtst,0.33291562496784877
+Alta del Balsas,7,entre_mitades,patchtst,patchtst,0.9975019805138019
+Alta del Balsas,7,entre_modelos,xgboost,tcn,0.12961232973236303
+Alta del Balsas,7,entre_modelos,xgboost,convnext,0.35564220751707387
+Alta del Balsas,7,entre_modelos,xgboost,patchtst,0.22388369892950036
+Alta del Balsas,7,entre_modelos,tcn,convnext,0.4787760939123635
+Alta del Balsas,7,entre_modelos,tcn,patchtst,0.06153070568021647
+Alta del Balsas,7,entre_modelos,convnext,patchtst,0.3020916283424385
+Alta del Balsas,14,entre_semillas,xgboost,xgboost,0.7938989886519132
+Alta del Balsas,14,entre_semillas,xgboost,xgboost,0.7971562908320216
+Alta del Balsas,14,entre_semillas,xgboost,xgboost,0.8183092070742924
+Alta del Balsas,14,entre_mitades,xgboost,xgboost,0.9985349342057883
+Alta del Balsas,14,entre_semillas,tcn,tcn,0.9137936356060372
+Alta del Balsas,14,entre_semillas,tcn,tcn,0.8980915048818379
+Alta del Balsas,14,entre_semillas,tcn,tcn,0.926557404035104
+Alta del Balsas,14,entre_mitades,tcn,tcn,0.9990514110517814
+Alta del Balsas,14,entre_semillas,convnext,convnext,0.7037686348344085
+Alta del Balsas,14,entre_semillas,convnext,convnext,0.6291860859903083
+Alta del Balsas,14,entre_semillas,convnext,convnext,0.6988898834326163
+Alta del Balsas,14,entre_mitades,convnext,convnext,0.9878905727543031
+Alta del Balsas,14,entre_semillas,patchtst,patchtst,0.37994999845674243
+Alta del Balsas,14,entre_semillas,patchtst,patchtst,0.40261530705680215
+Alta del Balsas,14,entre_semillas,patchtst,patchtst,0.2576705042336697
+Alta del Balsas,14,entre_mitades,patchtst,patchtst,0.9971069065917672
+Alta del Balsas,14,entre_modelos,xgboost,tcn,0.15239153471814973
+Alta del Balsas,14,entre_modelos,xgboost,convnext,0.5358622179696905
+Alta del Balsas,14,entre_modelos,xgboost,patchtst,0.1769622519213556
+Alta del Balsas,14,entre_modelos,tcn,convnext,0.2688395732378571
+Alta del Balsas,14,entre_modelos,tcn,patchtst,0.1846703087543854
+Alta del Balsas,14,entre_modelos,convnext,patchtst,0.2328734425959649
+Lerma–Santiago,1,entre_semillas,lstm,lstm,0.874183359568711
+Lerma–Santiago,1,entre_semillas,lstm,lstm,0.9248268979495251
+Lerma–Santiago,1,entre_semillas,lstm,lstm,0.9398376493101639
+Lerma–Santiago,1,entre_mitades,lstm,lstm,0.9992736401329259
+Lerma–Santiago,1,entre_modelos,xgboost,lstm,0.3139068078232867
+Lerma–Santiago,1,entre_modelos,tcn,lstm,0.7156208524954474
+Lerma–Santiago,1,entre_modelos,convnext,lstm,0.5976809983847238
+Lerma–Santiago,1,entre_modelos,patchtst,lstm,0.31984114736051517
+Lerma–Santiago,7,entre_semillas,lstm,lstm,0.9129006039281047
+Lerma–Santiago,7,entre_semillas,lstm,lstm,0.9563237548484005
+Lerma–Santiago,7,entre_semillas,lstm,lstm,0.9640071195613032
+Lerma–Santiago,7,entre_mitades,lstm,lstm,0.9992016214492216
+Lerma–Santiago,7,entre_modelos,xgboost,lstm,0.2220562363035896
+Lerma–Santiago,7,entre_modelos,tcn,lstm,0.4407913824500756
+Lerma–Santiago,7,entre_modelos,convnext,lstm,0.40580059055320633
+Lerma–Santiago,7,entre_modelos,patchtst,lstm,0.20544667016471702
+Lerma–Santiago,14,entre_semillas,lstm,lstm,0.9464674835643075
+Lerma–Santiago,14,entre_semillas,lstm,lstm,0.8951922384435733
+Lerma–Santiago,14,entre_semillas,lstm,lstm,0.9167114211343971
+Lerma–Santiago,14,entre_mitades,lstm,lstm,0.9990966799386812
+Lerma–Santiago,14,entre_modelos,xgboost,lstm,0.14862804407543442
+Lerma–Santiago,14,entre_modelos,tcn,lstm,0.4699836414704157
+Lerma–Santiago,14,entre_modelos,convnext,lstm,0.5742996183009763
+Lerma–Santiago,14,entre_modelos,patchtst,lstm,0.2363138780003498
+Pánuco,1,entre_semillas,lstm,lstm,0.9508606232702654
+Pánuco,1,entre_semillas,lstm,lstm,0.9360083130137761
+Pánuco,1,entre_semillas,lstm,lstm,0.9602539173019744
+Pánuco,1,entre_mitades,lstm,lstm,0.9973908659732296
+Pánuco,1,entre_modelos,xgboost,lstm,0.27788511991110837
+Pánuco,1,entre_modelos,tcn,lstm,0.7366770579338868
+Pánuco,1,entre_modelos,convnext,lstm,0.5752728993693221
+Pánuco,1,entre_modelos,patchtst,lstm,0.45927960739528995
+Pánuco,7,entre_semillas,lstm,lstm,0.9674228628455611
+Pánuco,7,entre_semillas,lstm,lstm,0.9716020041770836
+Pánuco,7,entre_semillas,lstm,lstm,0.9658363941273906
+Pánuco,7,entre_mitades,lstm,lstm,0.998806547527187
+Pánuco,7,entre_modelos,xgboost,lstm,0.20059878391308372
+Pánuco,7,entre_modelos,tcn,lstm,0.5224770311840901
+Pánuco,7,entre_modelos,convnext,lstm,0.4543699908433388
+Pánuco,7,entre_modelos,patchtst,lstm,0.3564575038324228
+Pánuco,14,entre_semillas,lstm,lstm,0.8758212702038128
+Pánuco,14,entre_semillas,lstm,lstm,0.9309114478841939
+Pánuco,14,entre_semillas,lstm,lstm,0.9321604576272929
+Pánuco,14,entre_mitades,lstm,lstm,0.9990534687284587
+Pánuco,14,entre_modelos,xgboost,lstm,0.22265090486331882
+Pánuco,14,entre_modelos,tcn,lstm,0.4917826681893474
+Pánuco,14,entre_modelos,convnext,lstm,0.42721277405681246
+Pánuco,14,entre_modelos,patchtst,lstm,0.16409765733510293
+Alta del Balsas,1,entre_semillas,lstm,lstm,0.9865201600872454
+Alta del Balsas,1,entre_semillas,lstm,lstm,0.9803512454088089
+Alta del Balsas,1,entre_semillas,lstm,lstm,0.9839171990905068
+Alta del Balsas,1,entre_mitades,lstm,lstm,0.9997510211220512
+Alta del Balsas,1,entre_modelos,xgboost,lstm,0.28614874944699936
+Alta del Balsas,1,entre_modelos,tcn,lstm,0.7071740897352798
+Alta del Balsas,1,entre_modelos,convnext,lstm,0.5553031472164779
+Alta del Balsas,1,entre_modelos,patchtst,lstm,0.2501229461814665
+Alta del Balsas,7,entre_semillas,lstm,lstm,0.9731432040083541
+Alta del Balsas,7,entre_semillas,lstm,lstm,0.9395701513421195
+Alta del Balsas,7,entre_semillas,lstm,lstm,0.9472555737316996
+Alta del Balsas,7,entre_mitades,lstm,lstm,0.9994896961840385
+Alta del Balsas,7,entre_modelos,xgboost,lstm,0.25312975843966995
+Alta del Balsas,7,entre_modelos,tcn,lstm,0.7000051441916931
+Alta del Balsas,7,entre_modelos,convnext,lstm,0.5756041853143615
+Alta del Balsas,7,entre_modelos,patchtst,lstm,0.1713489099457802
+Alta del Balsas,14,entre_semillas,lstm,lstm,0.9703385906972437
+Alta del Balsas,14,entre_semillas,lstm,lstm,0.9569595769416752
+Alta del Balsas,14,entre_semillas,lstm,lstm,0.9518894616088975
+Alta del Balsas,14,entre_mitades,lstm,lstm,0.9990966799386812
+Alta del Balsas,14,entre_modelos,xgboost,lstm,0.28002510365546257
+Alta del Balsas,14,entre_modelos,tcn,lstm,0.5445270944576479
+Alta del Balsas,14,entre_modelos,convnext,lstm,0.41708488945132055
+Alta del Balsas,14,entre_modelos,patchtst,lstm,0.34778233896107896

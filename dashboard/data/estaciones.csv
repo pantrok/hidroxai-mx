@@ -1,0 +1,92 @@
+clave,nombre,estado,latitud,longitud,unidad_piloto,cuenca
+ACSGJ,"Arroyo los castillos, Gto.",Guanajuato,21.2,-101.666667,Bajio,Lerma–Santiago
+AMCGJ,"Ameche, Gto.",Guanajuato,20.553889,-100.5825,Bajio,Lerma–Santiago
+ANSGJ,"Arandas, Gto.",Guanajuato,20.712778,-101.370833,Bajio,Lerma–Santiago
+BEGGJ,"La Begoña hidrométrica, Gto.",Guanajuato,20.833333,-100.816667,Bajio,Lerma–Santiago
+BRAGJ,"Braniff, Gto.",Guanajuato,20.05,-100.666667,Bajio,Lerma–Santiago
+CEYGJ,"Canal extracciones Yuriria, Gto.",Guanajuato,20.266667,-101.216667,Bajio,Lerma–Santiago
+CSTGJ,"Los Castillos, Gto.",Guanajuato,21.195556,-101.6675,Bajio,Lerma–Santiago
+CYUGJ,"Canal alimentador Yuriria, Gto.",Guanajuato,20.216667,-101.133333,Bajio,Lerma–Santiago
+ECBGJ,"El Cubo, Gto.",Guanajuato,20.279722,-100.9,Bajio,Lerma–Santiago
+ECHGJ,"El Chapín, Gto.",Guanajuato,20.872222,-101.244444,Bajio,Lerma–Santiago
+LADGJ,"Las Adjuntas, Gto.",Guanajuato,20.675278,-101.844167,Bajio,Lerma–Santiago
+PERGJ,"Pericos, Gto.",Guanajuato,20.5225,-101.111389,Bajio,Lerma–Santiago
+SL2GJ,"Solis, Gto.",Guanajuato,20.05,-100.666667,Bajio,Lerma–Santiago
+SLCGJ,"Canal Solis, Gto.",Guanajuato,20.052222,-100.671667,Bajio,Lerma–Santiago
+SLMGJ,"Salamanca, Gto.",Guanajuato,20.565833,-101.199444,Bajio,Lerma–Santiago
+SLVGJ,"Salvatierra, Gto.",Guanajuato,20.216667,-100.885833,Bajio,Lerma–Santiago
+ACEHD,"Arroyo del centro, Hgo.",Hidalgo,20.455833,-99.230833,Panuco,Pánuco
+ARSHD,"Al Río el Salto, Hgo.",Hidalgo,19.937778,-99.283333,Panuco,Pánuco
+ATCHD,"Atlapexco, Hgo.",Hidalgo,21.019444,-98.348056,Panuco,Pánuco
+CDCHD,"Canal del centro, Hgo.",Hidalgo,20.454167,-99.231111,Panuco,Pánuco
+CDFHD,"Canal de fuerza, Hgo.",Hidalgo,20.452778,-99.230833,Panuco,Pánuco
+CL1HD,"Canal de liga 1 Rojo Gómez a Vicente Aguirre, Hgo.",Hidalgo,20.366667,-99.322222,Panuco,Pánuco
+CPEHD,"Canal a Presa Endhó, Hgo.",Hidalgo,20.132222,-99.351944,Panuco,Pánuco
+CSTHD,"Canal Salto Tlamaco, Hgo.",Hidalgo,20.0375,-99.222778,Panuco,Pánuco
+CVAHD,"Canal Vicente Aguirre, Hgo.",Hidalgo,20.414167,-99.3575,Panuco,Pánuco
+RSTHD,"Río Salado Tablón, Hgo.",Hidalgo,20.051111,-99.225278,Panuco,Pánuco
+RTTHD,"Río Tula Tasquillo, Hgo.",Hidalgo,20.576389,-99.342778,Panuco,Pánuco
+AJJJL,"Ajojúcar, Jal.",Jalisco,21.599444,-102.436944,Santiago,Lerma–Santiago
+ATEJL,"Atemajac, Jal.",Jalisco,20.723056,-102.34,Bajio,Lerma–Santiago
+ATQJL,"Atequiza, Jal.",Jalisco,20.397222,-103.091944,Bajio,Lerma–Santiago
+BCSJL,"Bocas, Jal.",Jalisco,22.406111,-103.724444,Santiago,Lerma–Santiago
+BLNJL,"Bolaños, Jal.",Jalisco,21.831667,-103.782778,Santiago,Lerma–Santiago
+CXTJL,"Cuixtla, Jal.",Jalisco,21.066667,-103.45,Bajio,Lerma–Santiago
+SAUJL,"La Sauceda, Jal.",Jalisco,21.35,-101.85,Bajio,Lerma–Santiago
+SCRJL,"San Cristóbal 2, Jal.",Jalisco,21.038889,-103.429167,Bajio,Lerma–Santiago
+SGRJL,"San Gaspar de los Reyes, Jal.",Jalisco,21.3,-102.5,Bajio,Lerma–Santiago
+ZULJL,"Zula río, Jal.",Jalisco,20.395278,-102.729444,Bajio,Lerma–Santiago
+ARBMX,"Las Arboledas, Méx.",México,19.566667,-99.216667,Panuco,Pánuco
+ATOMX,"Atotonilco 2, Méx.",México,19.452778,-99.776389,Lerma Alto,Lerma–Santiago
+CALMX,"Calixtlahuaca, Méx.",México,19.333333,-99.7,Lerma Alto,Lerma–Santiago
+CHPMX,"Chapingo, Méx.",México,19.483333,-98.884722,Panuco,Pánuco
+EMOMX,"El Molinito Río Hondo, Méx.",México,19.453611,-99.238333,Panuco,Pánuco
+IXCMX,"Ixtlahuaca, Méx.",México,19.5675,-99.769444,Lerma Alto,Lerma–Santiago
+K27MX,"km 27+250, Méx.",México,19.633333,-99.05,Panuco,Pánuco
+LAYMX,"La Y, Méx.",México,19.404444,-99.593889,Lerma Alto,Lerma–Santiago
+MBLMX,"Molino Blanco, Méx.",México,19.477778,-99.220833,Panuco,Pánuco
+OBSMX,"San Martín Obispo, Méx.",México,19.616667,-99.193611,Panuco,Pánuco
+SB2MX,"San Bernabe, Méx",México,19.465556,-99.703889,Lerma Alto,Lerma–Santiago
+SLAMX,"San Luis Ameca, Méx.",México,19.190278,-98.870833,Panuco,Pánuco
+SMLMX,"Santa María del Llano, Méx.",México,19.633333,-99.8,Lerma Alto,Lerma–Santiago
+TESMX,"Texcaltitlán, Méx.",México,18.931389,-99.935833,Cutzamala,Cutzamala
+TJCMX,"El Tejocote, Méx.",México,19.856944,-99.905278,Panuco,Pánuco
+TROMX,"Trojes, Méx.",México,19.429167,-99.6125,Lerma Alto,Lerma–Santiago
+TTLMX,"Totolica hidrométrica, Méx.",México,19.4525,-99.283056,Panuco,Pánuco
+ADUMC,"Adjuntas, Mich.",Michoacán de Ocampo,20.231389,-101.99,Bajio,Lerma–Santiago
+EGIMC,"El Gigante, Mich.",Michoacán de Ocampo,19.966667,-100.45,Lerma Alto,Lerma–Santiago
+SCRMC,"San Cristóbal, Mich.",Michoacán de Ocampo,20.208333,-102.464722,Bajio,Lerma–Santiago
+YURMC,"Yurécuaro, Mich.",Michoacán de Ocampo,20.339444,-102.242222,Bajio,Lerma–Santiago
+ALUMR,"Alpuyeca, Mor.",Morelos,18.734722,-99.258056,Alta del Balsas,Alta del Balsas
+AMCMR,"Amacuzac, Mor.",Morelos,18.596111,-99.376944,Alta del Balsas,Alta del Balsas
+CRDMR,"Canal Rodeo, Mor.",Morelos,18.764444,-99.331944,Alta del Balsas,Alta del Balsas
+CUAMR,"Cuautla, Mor.",Morelos,18.808611,-98.948889,Alta del Balsas,Alta del Balsas
+CXXMR,"Canal Xoxocotla, Mor.",Morelos,18.735,-99.258333,Alta del Balsas,Alta del Balsas
+ESTMR,"Las Estacas, Mor.",Morelos,18.725,-98.1125,Alta del Balsas,Alta del Balsas
+PERMR,"Canal Perritos, Mor.",Morelos,18.784167,-99.315278,Alta del Balsas,Alta del Balsas
+TEMMR,"Temixco, Mor.",Morelos,18.856944,-99.223611,Alta del Balsas,Alta del Balsas
+TICMR,"Ticumán, Mor.",Morelos,18.794167,-99.103889,Alta del Balsas,Alta del Balsas
+XICMR,"Xicatlacotla, Mor.",Morelos,18.528889,-99.190278,Alta del Balsas,Alta del Balsas
+YAHMR,"Yautepec, Mor.",Morelos,18.899167,-99.050556,Alta del Balsas,Alta del Balsas
+ZCTMR,"Observatorio de Zacatepec, Mor.",Morelos,18.651389,-99.196667,Alta del Balsas,Alta del Balsas
+CHPNR,"Chapalagana, Nay.",Nayarit,21.944167,-104.5,Santiago,Lerma–Santiago
+JMANR,"Jesús María, Nay.",Nayarit,22.250833,-104.516944,Santiago,Lerma–Santiago
+LESNR,"La Estancia, Nay.",Nayarit,22.558333,-105.341667,Santiago,Lerma–Santiago
+ROMNR,"Rosamorada, Nay.",Nayarit,22.119722,-105.211667,Santiago,Lerma–Santiago
+BLMSL,"Ballesmi, S.L.P.",San Luis Potosí,21.748889,-98.955833,Panuco,Pánuco
+GANSL,"Gallinas, S.L.P.",San Luis Potosí,21.906944,-99.239444,Panuco,Pánuco
+PUJSL,"El Pujal, S.L.P.",San Luis Potosí,21.847222,-98.939722,Panuco,Pánuco
+RQTSL,"Requetemu, S.L.P.",San Luis Potosí,21.425,-98.888611,Panuco,Pánuco
+STRSL,"Santa Rosa, S.L.P.",San Luis Potosí,22.02,-99.055833,Panuco,Pánuco
+SVTSL,"San Vicente, S.L.P.",San Luis Potosí,21.692778,-98.617222,Panuco,Pánuco
+TBLSL,"Tierra Blanca, S.L.P.",San Luis Potosí,21.246667,-98.857222,Panuco,Pánuco
+AHLTP,"Ahualulco, Tamps.",Tamaulipas,22.986944,-99.145556,Panuco,Pánuco
+LSRTP,"La Servilleta, Tamps.",Tamaulipas,22.852778,-99.120556,Panuco,Pánuco
+MGSTP,"Magiscatzín Dos, Tamps.",Tamaulipas,22.795833,-98.705556,Panuco,Pánuco
+RFRTP,"Río Frío, Tamps.",Tamaulipas,22.843056,-99.026111,Panuco,Pánuco
+SBNTP,"Sabinas, Tamps.",Tamaulipas,23.031389,-99.093056,Panuco,Pánuco
+SGBTP,"San Gabriel, Tamps.",Tamaulipas,23.085556,-98.7875,Panuco,Pánuco
+TMSTP,"Tamesí, Tamps.",Tamaulipas,22.413611,-98.421944,Panuco,Pánuco
+OLVVC,"El Olivo, Ver.",Veracruz de Ignacio de la Llave,21.832222,-98.503889,Panuco,Pánuco
+PSNVC,"Platón Sánchez, Ver.",Veracruz de Ignacio de la Llave,21.297778,-98.356667,Panuco,Pánuco
+TMPVC,"Tempoal, Ver.",Veracruz de Ignacio de la Llave,21.499722,-98.409444,Panuco,Pánuco

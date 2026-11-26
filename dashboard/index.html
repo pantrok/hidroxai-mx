@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HidroXAI-MX · dashboard</title>
+  <meta name="description" content="Pronósticos retrospectivos de gasto del benchmark HidroXAI-MX (IPN, proyecto IND-2026-0335).">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.3/build/stlite.css">
+  <style>
+    #cargando { position: fixed; top: 0; left: 0; right: 0; z-index: 10000; padding: 14px 20px;
+                background: #283593; color: #fff; font: 16px/1.45 system-ui, sans-serif; text-align: center; }
+    #cargando small { display: block; margin-top: 4px; font-size: 13px; opacity: .85; }
+  </style>
+</head>
+<body>
+  <div id="cargando">
+    Cargando Python en tu navegador, puede tardar 15–30 s la primera vez.
+    <small>HidroXAI-MX · IPN · Convocatoria PICDT2026 · proyecto IND-2026-0335. Pronósticos retrospectivos sobre
+      2023–2025 con fines de investigación; no es un sistema de alerta operativo.</small>
+  </div>
+  <div id="root"></div>
+  <noscript>Este dashboard necesita JavaScript y un navegador reciente (Chrome, Edge o Firefox 114 o posterior).</noscript>
+  <script type="module">
+    import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.3/build/stlite.js";
+
+    // Rutas relativas a esta página. El worker de Python las resolvería contra el CDN, así que
+    // se pasan como URL absolutas.
+    const ARCHIVOS = [
+      "app.py", "datos.py", "vistas.py",
+      "data/alertas.parquet", "data/concordancia.csv", "data/contingencia.csv", "data/contornos.json",
+      "data/estaciones.csv", "data/importancia.parquet", "data/meta.json", "data/metricas_cuenca.csv",
+      "data/metricas_estacion.csv", "data/pronosticos.parquet", "data/resumen_alertas.csv", "data/umbrales.csv",
+    ];
+    const url = (p) => new URL(p, window.location.href).href;
+    const files = Object.fromEntries(ARCHIVOS.map((p) => [p, { url: url(p) }]));
+
+    mount({ requirements: ["plotly"], entrypoint: "app.py", files,
+            streamlitConfig: { "client.toolbarMode": "viewer" } }, document.getElementById("root"));
+
+    // Quita el aviso cuando la app ya dibujó sus pestañas y deja el tiempo de carga en la consola.
+    const vigia = new MutationObserver(() => {
+      if (document.querySelector('[data-testid="stTabs"]')) {
+        document.getElementById("cargando")?.remove();
+        vigia.disconnect();
+        console.log(`HidroXAI-MX: dashboard listo en ${(performance.now() / 1000).toFixed(1)} s`);
+      }
+    });
+    vigia.observe(document.body, { childList: true, subtree: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+ "generado": "2026-11-25",
+ "script": "scripts/dash_01_build_data.py",
+ "dataset": {
+  "version": "v2026.10 (datos idénticos a v2026.11)",
+  "doi": "10.5281/zenodo.24119292",
+  "doi_concepto": "10.5281/zenodo.21231600"
+ },
+ "articulo_doi": "10.1016/j.dib.2026.113442",
+ "benchmark_tag": "xai-benchmark-v1.5",
+ "periodo_prueba": [
+  "2023-01-01",
+  "2025-09-03"
+ ],
+ "horizontes": [
+  1,
+  7,
+  14
+ ],
+ "modelos": [
+  "persistencia",
+  "arima",
+  "xgboost",
+  "tcn",
+  "convnext",
+  "patchtst",
+  "lstm"
+ ],
+ "configuracion_elegida": {
+  "convnext_h1": "convnext-64",
+  "convnext_h7": "convnext-64",
+  "convnext_h14": "convnext-32",
+  "lstm_h1": "lstm-32",
+  "lstm_h7": "lstm-64",
+  "lstm_h14": "lstm-64",
+  "patchtst_h1": "patchtst-32",
+  "patchtst_h7": "patchtst-32",
+  "patchtst_h14": "patchtst-64",
+  "tcn_h1": "tcn-64",
+  "tcn_h7": "tcn-32",
+  "tcn_h14": "tcn-32",
+  "xgboost_h1": "xgboost-6",
+  "xgboost_h7": "xgboost-4",
+  "xgboost_h14": "xgboost-6"
+ },
+ "estaciones_evaluables": 91,
+ "verificacion": {
+  "contingencias_iguales_a_rq3": true,
+  "max_dif_nse_relativa_float32": 1.49e-06
+ }
+}

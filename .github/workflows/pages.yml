@@ -1,0 +1,49 @@
+# Sitio de GitHub Pages: la documentación (mkdocs) en la raíz y el dashboard (stlite) en /dashboard/.
+# Pages usa el permiso propio del repositorio (origen "GitHub Actions"); no hace falta ningún secreto.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar mkdocs
+        run: pip install "mkdocs-material>=9.5" "mkdocstrings[python]>=0.26" "mkdocs-jupyter>=0.25"
+      - name: Construir la documentación
+        run: mkdocs build --strict --site-dir site
+      - name: Copiar el dashboard a site/dashboard/
+        run: |
+          mkdir -p site/dashboard
+          cp dashboard/index.html dashboard/app.py dashboard/datos.py dashboard/vistas.py site/dashboard/
+          cp -r dashboard/data site/dashboard/data
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  desplegar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4
