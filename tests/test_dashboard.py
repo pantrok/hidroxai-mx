@@ -93,12 +93,16 @@ def test_importancias_y_resumenes_son_copias():
     pd.testing.assert_frame_equal(_csv(DATA / "resumen_alertas.csv"), _csv(RES / "rq3_summary.csv"))
 
 
-def test_index_monta_todos_los_archivos():
+def test_index_monta_o_difiere_todos_los_archivos():
     html = (DASH / "index.html").read_text(encoding="utf-8")
     bloque = re.search(r"const ARCHIVOS = \[(.*?)\];", html, re.S).group(1)
     montados = set(re.findall(r'"([^"]+)"', bloque))
+    fuente = (DASH / "datos.py").read_text(encoding="utf-8")
+    diferidos = {f"data/{n}" for n in re.findall(r'"([^"]+)"', re.search(r"DIFERIDOS = \((.*?)\)", fuente).group(1))}
     esperados = {f"data/{p.name}" for p in DATA.iterdir() if p.is_file()} | {"app.py", "datos.py", "vistas.py"}
-    assert montados == esperados
+    assert not montados & diferidos                      # los grandes se descargan cuando se piden
+    assert montados | diferidos == esperados
+    assert 'files["url_datos.txt"]' in html
     assert re.search(r"@stlite/browser@\d+\.\d+\.\d+/build/stlite\.js", html)      # versión fija
     assert "Cargando Python en tu navegador, puede tardar 15–30 s la primera vez" in html
 
@@ -109,3 +113,16 @@ def test_tamano_y_metadatos():
     meta = json.loads((DATA / "meta.json").read_text(encoding="utf-8"))
     assert meta["verificacion"]["contingencias_iguales_a_rq3"] is True
     assert meta["estaciones_evaluables"] == 91 and meta["horizontes"] == [1, 7, 14]
+
+
+@pytest.mark.parametrize("vista", ["Mapa", "Estación", "Explicabilidad", "Alertas", "Acerca de"])
+def test_cada_vista_corre_sin_excepciones(vista, monkeypatch):
+    """La misma app con Streamlit local (``streamlit run dashboard/app.py``), sin navegador."""
+    pytest.importorskip("plotly")
+    testing = pytest.importorskip("streamlit.testing.v1")
+    monkeypatch.chdir(DASH)
+    at = testing.AppTest.from_file(str(DASH / "app.py"), default_timeout=180)
+    at.session_state["vista"] = vista
+    at.run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert len(at.warning) == 1                          # el aviso fijo está en todas las vistas

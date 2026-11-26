@@ -23,23 +23,27 @@
   <script type="module">
     import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.3/build/stlite.js";
 
-    // Rutas relativas a esta página. El worker de Python las resolvería contra el CDN, así que
-    // se pasan como URL absolutas.
+    // Archivos que se montan al arrancar. Rutas relativas a esta página; el worker de Python las
+    // resolvería contra el CDN, así que se pasan como URL absolutas. Los dos Parquet grandes
+    // (data/pronosticos.parquet y data/alertas.parquet) no se montan: datos.py los descarga
+    // cuando una vista los pide, desde la URL que queda en url_datos.txt.
     const ARCHIVOS = [
       "app.py", "datos.py", "vistas.py",
-      "data/alertas.parquet", "data/concordancia.csv", "data/contingencia.csv", "data/contornos.json",
-      "data/estaciones.csv", "data/importancia.parquet", "data/meta.json", "data/metricas_cuenca.csv",
-      "data/metricas_estacion.csv", "data/pronosticos.parquet", "data/resumen_alertas.csv", "data/umbrales.csv",
+      "data/concordancia.csv", "data/contingencia.csv", "data/contornos.json", "data/estaciones.csv",
+      "data/importancia.parquet", "data/meta.json", "data/metricas_cuenca.csv", "data/metricas_estacion.csv",
+      "data/resumen_alertas.csv", "data/umbrales.csv",
     ];
     const url = (p) => new URL(p, window.location.href).href;
     const files = Object.fromEntries(ARCHIVOS.map((p) => [p, { url: url(p) }]));
+    files["url_datos.txt"] = { data: url("data/") };
 
     mount({ requirements: ["plotly"], entrypoint: "app.py", files,
             streamlitConfig: { "client.toolbarMode": "viewer" } }, document.getElementById("root"));
 
-    // Quita el aviso cuando la app ya dibujó sus pestañas y deja el tiempo de carga en la consola.
+    // Quita el aviso cuando la app ya se dibujó (su aviso fijo está en pantalla) y deja el tiempo
+    // de carga en la consola.
     const vigia = new MutationObserver(() => {
-      if (document.querySelector('[data-testid="stTabs"]')) {
+      if (document.querySelector('[data-testid="stAlert"]')) {
         document.getElementById("cargando")?.remove();
         vigia.disconnect();
         console.log(`HidroXAI-MX: dashboard listo en ${(performance.now() / 1000).toFixed(1)} s`);

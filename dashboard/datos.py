@@ -3,9 +3,14 @@
 Los genera ``scripts/dash_01_build_data.py`` a partir de los resultados del benchmark, sin
 recalcular nada. Las rutas se resuelven desde este archivo, así que funcionan igual con
 ``streamlit run dashboard/app.py`` que en el navegador con stlite.
+
+En el navegador, ``index.html`` monta al arrancar solo los archivos pequeños. Los grandes
+(``DIFERIDOS``) se descargan cuando una vista los pide, desde la URL que deja en
+``url_datos.txt``; la descarga pasa por la caché HTTP del navegador.
 """
 from __future__ import annotations
 
+import io
 import json
 from pathlib import Path
 
@@ -13,6 +18,8 @@ import pandas as pd
 import streamlit as st
 
 DATA = Path(__file__).resolve().parent / "data"
+URL_DATOS = Path(__file__).resolve().parent / "url_datos.txt"
+DIFERIDOS = ("pronosticos.parquet", "alertas.parquet")
 
 MODELOS = {"persistencia": "Persistencia", "arima": "ARIMA", "xgboost": "XGBoost", "tcn": "TCN",
            "convnext": "ConvNeXt-1D", "patchtst": "PatchTST", "lstm": "LSTM (descriptivo)"}
@@ -43,14 +50,33 @@ def metricas_cuenca() -> pd.DataFrame:
     return pd.read_csv(DATA / "metricas_cuenca.csv")
 
 
-@st.cache_data(show_spinner=False)
+def _fuente(nombre: str):
+    """Ruta local del archivo o, en el navegador, su contenido descargado en ese momento.
+
+    La descarga es una petición síncrona binaria, permitida en el worker de stlite.
+    """
+    local = DATA / nombre
+    if local.exists():
+        return local
+    from js import Uint8Array, XMLHttpRequest  # módulo de Pyodide, solo existe en el navegador
+
+    xhr = XMLHttpRequest.new()
+    xhr.open("GET", URL_DATOS.read_text(encoding="utf-8").strip() + nombre, False)
+    xhr.responseType = "arraybuffer"
+    xhr.send(None)
+    if xhr.status != 200:
+        raise OSError(f"no se pudo descargar {nombre} (HTTP {xhr.status})")
+    return io.BytesIO(Uint8Array.new(xhr.response).to_bytes())
+
+
+@st.cache_data(show_spinner="Descargando los pronósticos (6.6 MB, solo la primera vez)…")
 def pronosticos() -> pd.DataFrame:
-    return pd.read_parquet(DATA / "pronosticos.parquet")
+    return pd.read_parquet(_fuente("pronosticos.parquet"))
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner="Descargando las alertas (2.6 MB, solo la primera vez)…")
 def alertas() -> pd.DataFrame:
-    return pd.read_parquet(DATA / "alertas.parquet")
+    return pd.read_parquet(_fuente("alertas.parquet"))
 
 
 @st.cache_data(show_spinner=False)
